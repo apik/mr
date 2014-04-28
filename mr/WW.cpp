@@ -5,6 +5,9 @@ WW::WW(long double MMt_,long double MMH_,long double MMW_,long double MMZ_,long 
   MMt(MMt_), MMH(MMH_), MMW(MMW_), MMZ(MMZ_), mu2(mu2_)
 {
 
+  CW = sqrt(MMW/MMZ);
+  SW = sqrt(1-MMW/MMZ);
+
   protos[0] =  protWHHWW = new Tsil(MMW, MMH, MMH, MMW, MMW, mu2);
   protos[1] =  protWHZWW = new Tsil(MMW, MMH, MMZ, MMW, MMW, mu2);
   protos[2] =  protWZZWW = new Tsil(MMW, MMZ, MMZ, MMW, MMW, mu2);

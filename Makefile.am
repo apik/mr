@@ -7,5 +7,6 @@
 
 SUBDIRS = \
 	tsil-1.1 \
-	mr
+	mr \
+	examples
 

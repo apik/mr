@@ -2,13 +2,14 @@
 #define __HH_HPP__
 
 #include "tsil.hpp"
-#include "SM3r2m.hpp"
+#include "mr.hpp"
 
 class HH
 {
 
   long double MMt, MMH, MMW, MMZ, mu2;
-
+  long double SW, CW;
+  
   Tsil* protHHHHH;
   Tsil* protHZHZZ;
   Tsil* protHWHWW;
@@ -32,8 +33,7 @@ public:
   {
   }
 
-  HH(long double MMt_,long double MMH_,long double MMW_,long double MMZ_,long double mu2_);// :
-    // MMt(MMt_), MMH(MMH_), MMW(MMW_), MMZ(MMZ_), mu2(mu2_);
+  HH(long double MMt_,long double MMH_,long double MMW_,long double MMZ_,long double mu2_);
 
 
   

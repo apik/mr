@@ -1,6 +1,6 @@
 #include <iostream>
 #include "betaSM.hpp"
-#include "SM3r2m.hpp"
+#include "mr.hpp"
 
 BetaSMFull::BetaSMFull(int pocoa1_, int pocoa2_, int pocoas_, int pocoat_, int pocoab_, int pocoatau_, int pocolam_)
 {

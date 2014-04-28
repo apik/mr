@@ -2,12 +2,13 @@
 #define __WW_HPP__
 
 #include "tsil.hpp"
-#include "SM3r2m.hpp"
+#include "mr.hpp"
 
 class WW
 {
 
   long double MMt, MMH, MMW, MMZ, mu2;
+  long double SW, CW;
 
   Tsil* protWHHWW;
   Tsil* protWHZWW;
