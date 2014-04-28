@@ -1,0 +1,41 @@
+KNOWN ISSUES
+------------
+
+Please send any bug reports to the authors at the email addresses in
+README.txt!
+
+1. The compiler optimization flags have been set to -O3 in the
+   Makefile.  The only platform/compiler for which this is known to
+   cause problems is for gcc v2.96 under RedHat Linux, where a
+   compiler error results in erroneous code being produced for
+   optimization levels other than -O0.  (Later versions of gcc are
+   fine with -O3.)  However, if anomalous results (very long
+   computation times and/or wrong results) are encountered, the user
+   may wish to test whether these can be eliminated by using -O0
+   instead of -O3.
+
+2. The Mac OS X version of gcc does not presently support a long
+   double type that is usefully different from double. Furthermore,
+   some math functions do not have long double prototypes at all on
+   this platform, so long double does *not* just effectively default
+   to double. Therefore, one must compile TSIL with size DOUBLE,
+   rather than LONG, on the Mac.  Also note that the flag -lmx is
+   needed in addition to -lm on this platform for gcc, and g77
+   requires -lmx -lcc_dynamic flags.
+
+3. The test suite can and will result in a few WARNs and even FAILs
+   being reported. This is because some of the cases tested have large
+   mass hierarchies, where some of the functions are very sensitive to
+   roundoff errors.
+
+4. If warning messages become annoying, they can be turned off with
+
+      fclose(stderr);
+
+   Alternatively, one can redirect stderr to a file; e.g. if using
+   ksh/bash
+
+      ./tsil 1 2 3 4 5 10 1 > out 2> errmsgs
+
+   would place the standard output in a file "out" and warnings and
+   errors in "errmsgs".
