@@ -1,5 +1,5 @@
 #include <HH.hpp>
-std::complex<long double> HH::m20(size_t nG = 3)
+std::complex<long double> HH::m20(size_t nG)
 {     
       
       

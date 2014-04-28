@@ -1,3 +1,4 @@
+#include <iostream>
 #include "mr.hpp"
 
 int main (int argc, char *argv[])
@@ -17,8 +18,11 @@ int main (int argc, char *argv[])
       alphaMt  = 0.00779305;
       alphaS = 0.1184;
 
-      HH h2l = HH(MMt, MMH, MMW, MMZ, MMt);
-
+      HH mh = HH(MMt, MMH, MMW, MMZ, MMt);
+      
+      std::cout << "1-loop \\alpha         " << mh.m10() << std::endl;
+      std::cout << "2-loop \\alpha\\alpha_S " << mh.m11() << std::endl;
+      std::cout << "2-loop \\alpha^2       " << mh.m20() << std::endl;
     }
   catch (std::exception &p) 
     {

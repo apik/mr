@@ -116,16 +116,16 @@ public:
 
 
   }
-  std::complex<long double> m01(size_t nG);
+  std::complex<long double> m01(size_t nG = 3);
 
   
-  std::complex<long double> m10(size_t nG);
+  std::complex<long double> m10(size_t nG = 3);
 
   
-  std::complex<long double> m11(size_t nG);
+  std::complex<long double> m11(size_t nG = 3);
   
 
-  std::complex<long double> m20(size_t nG);
+  std::complex<long double> m20(size_t nG = 3);
 
 
   std::complex<long double> dalpha(long double MMt,long double MMH)
