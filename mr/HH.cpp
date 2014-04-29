@@ -1,8 +1,27 @@
 #include <omp.h>
 #include <HH.hpp>
 #include "timer.hpp"
-HH::HH(long double MMt_,long double MMH_,long double MMW_,long double MMZ_,long double mu2_):
-  MMt(MMt_), MMH(MMH_), MMW(MMW_), MMZ(MMZ_), mu2(mu2_)
+
+
+HH::HH(long double MMW_,long double MMZ_,long double MMH_,long double MMt_,long double mu2_):
+  MMW(MMW_), MMZ(MMZ_), MMH(MMH_), MMt(MMt_), mu2(mu2_)
+{
+  init(MMW, MMZ, MMH, MMt, mu2);
+}
+
+HH::HH(SMinput sm, long double mu2_)
+{
+  MMW = sm.MMW();
+  MMZ = sm.MMZ();
+  MMH = sm.MMH();
+  MMt = sm.MMt();
+  mu2 = mu2_;
+
+  init(sm.MMW(), sm.MMZ(), sm.MMH(), sm.MMt(), mu2_);
+}
+
+
+void HH::init(long double MMW_,long double MMZ_,long double MMH_,long double MMt_,long double mu2_)
 {
   
   CW = sqrt(MMW/MMZ);

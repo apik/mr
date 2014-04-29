@@ -9,20 +9,23 @@ int main (int argc, char *argv[])
       fclose(stderr);
       long double MMt,MMW,MMZ,MMH,alphaMt,alphaS;
 
-  
-      MMt = pow(173.5,2);
-      MMW = pow(80.385,2);
-      MMZ = pow(91.1876,2);
-      MMH = pow(125.66,2);
+      // Comare with:
+      // bosonic only part (nH = nL = 0)    : arXiv:hep-ph/0105304
+      // fermionic    part (nH = 1, nL = 2) : arXiv:hep-ph/0212319           
+      SMinput JKVH80(80.419, 91.188, 80, 174.3);
+      SMinput JKVH200(80.419, 91.188, 200, 174.3);
       
       alphaMt  = 0.00779305;
       alphaS = 0.1184;
 
-      HH mh = HH(MMt, MMH, MMW, MMZ, MMt);
+      long double alphaMZ = 1./137.035999;
+
+      HH dMH80  = HH(JKVH80, JKVH80.MMZ());
+      HH dMH200 = HH(JKVH200, JKVH200.MMZ());
       
-      std::cout << "1-loop \\alpha         " << mh.m10() << std::endl;
-      std::cout << "2-loop \\alpha\\alpha_S " << mh.m11() << std::endl;
-      std::cout << "2-loop \\alpha^2       " << mh.m20() << std::endl;
+      std::cout << "1-loop \\alpha      Mh= " << JKVH80.mh()  << " " << alphaMZ/4./Pi*dMH80.m10(0,0) << std::endl;
+      std::cout << "1-loop \\alpha      Mh= " << JKVH200.mh() << " " << alphaMZ/4./Pi*dMH200.m10(0,0) << std::endl;
+
     }
   catch (std::exception &p) 
     {

@@ -1,9 +1,29 @@
 #include <omp.h>
 #include <WW.hpp>
 #include "timer.hpp"
-WW::WW(long double MMt_,long double MMH_,long double MMW_,long double MMZ_,long double mu2_):
-  MMt(MMt_), MMH(MMH_), MMW(MMW_), MMZ(MMZ_), mu2(mu2_)
+
+WW::WW(long double MMW_,long double MMZ_,long double MMH_,long double MMt_,long double mu2_):
+  MMW(MMW_), MMZ(MMZ_), MMH(MMH_), MMt(MMt_), mu2(mu2_)
 {
+  init(MMW, MMZ, MMH, MMt, mu2);
+}
+
+WW::WW(SMinput sm, long double mu2_)
+{
+  MMW = sm.MMW();
+  MMZ = sm.MMZ();
+  MMH = sm.MMH();
+  MMt = sm.MMt();
+  mu2 = mu2_;
+
+  init(sm.MMW(), sm.MMZ(), sm.MMH(), sm.MMt(), mu2_);
+}
+
+
+void WW::init(long double MMW_,long double MMZ_,long double MMH_,long double MMt_,long double mu2_)
+{
+
+  std::cout << "In constr: "  << MMW << " " <<  MMZ << " " <<  MMH << " " <<  MMt << " " <<  mu2 << std::endl;
 
   CW = sqrt(MMW/MMZ);
   SW = sqrt(1-MMW/MMZ);
@@ -32,6 +52,7 @@ WW::WW(long double MMt_,long double MMH_,long double MMW_,long double MMZ_,long 
   protos[21] =  protWH0H = new TsilSTU(MMW, MMH,   0, MMH, mu2);
   protos[22] =  protWZ0Z = new TsilSTU(MMW, MMZ,   0, MMZ, mu2);
   protos[23] =  protHW00 = new TsilSTU(MMH, MMW,   0,   0, mu2);
+
 
 
   // protos[19] = prot0W00  = new TsilSTU(0,     MMW,   0,   0, mu2);

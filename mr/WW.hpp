@@ -2,8 +2,8 @@
 #define __WW_HPP__
 
 #include "tsil.hpp"
-#include "mr.hpp"
-
+#include "sminput.hpp"
+#include "operators.hpp"
 class WW
 {
 
@@ -41,10 +41,11 @@ public:
   {
   }
 
-  WW(long double MMt_,long double MMH_,long double MMW_,long double MMZ_,long double mu2_);// :
-    // MMt(MMt_), MMH(MMH_), MMW(MMW_), MMZ(MMZ_), mu2(mu2_);
+  WW(long double,long double,long double,long double,long double);
 
+  WW(SMinput, long double);
 
+  void init(long double,long double,long double,long double,long double);
   
   std::complex<long double> Mfin1(TSIL_REAL x, TSIL_REAL y, TSIL_REAL z, TSIL_REAL u, TSIL_REAL v)
   {
@@ -125,17 +126,21 @@ public:
 
 
   }
-  std::complex<long double> m01(size_t nG);
+  std::complex<long double> m01(size_t nL = 2, size_t nH = 1);
 
   
-  std::complex<long double> m10(size_t nG);
+  std::complex<long double> m10(size_t nL = 2, size_t nH = 1);
 
   
-  std::complex<long double> m11(size_t nG);
+  std::complex<long double> m11(size_t nL = 2, size_t nH = 1);
   
 
-  std::complex<long double> m20(size_t nG);
+  std::complex<long double> m20(size_t nL = 2, size_t nH = 1);
 
+  // inline std::complex<long double> dd(size_t nG)
+  // {
+  //   return std::complex<long double>(nG == 0 ? 0 : 1,0);
+  // }
 
   std::complex<long double> dalpha(long double MMt,long double MMH)
   {

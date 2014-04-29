@@ -2,7 +2,9 @@
 #define __HH_HPP__
 
 #include "tsil.hpp"
-#include "mr.hpp"
+#include "sminput.hpp"
+#include "operators.hpp"
+
 
 class HH
 {
@@ -33,7 +35,12 @@ public:
   {
   }
 
-  HH(long double MMt_,long double MMH_,long double MMW_,long double MMZ_,long double mu2_);
+
+  HH(long double,long double,long double,long double,long double);
+  
+  HH(SMinput, long double);
+  
+  void init(long double,long double,long double,long double,long double);
 
 
   
@@ -116,16 +123,21 @@ public:
 
 
   }
-  std::complex<long double> m01(size_t nG = 3);
+  std::complex<long double> m01(size_t nL = 2, size_t nH = 1);
 
   
-  std::complex<long double> m10(size_t nG = 3);
+  std::complex<long double> m10(size_t nL = 2, size_t nH = 1);
 
   
-  std::complex<long double> m11(size_t nG = 3);
+  std::complex<long double> m11(size_t nL = 2, size_t nH = 1);
   
 
-  std::complex<long double> m20(size_t nG = 3);
+  std::complex<long double> m20(size_t nL = 2, size_t nH = 1);
+
+  // inline std::complex<long double> dd(size_t nG)
+  // {
+  //   return std::complex<long double>(nG == 0 ? 0 : 1,0);
+  // }
 
 
   std::complex<long double> dalpha(long double MMt,long double MMH)
