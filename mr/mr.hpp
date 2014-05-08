@@ -8,6 +8,7 @@
 // #include <cmath>
 
 #include "WW.hpp"
+#include "ZZ.hpp"
 #include "HH.hpp"
 #include "tt.hpp"
 #include "betaQCD.hpp"

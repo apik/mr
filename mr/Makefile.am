@@ -5,6 +5,7 @@ lib_LIBRARIES = libmr.a
 
 libmr_a_SOURCES =  betaSM.hpp  mr.hpp betaSM.cpp betaQCD.hpp \
 WW.hpp WW.cpp WW10.cpp WW11.cpp WW20.cpp \
+ZZ.hpp ZZ.cpp ZZ10.cpp ZZ11.cpp ZZ20.cpp \
 HH.hpp HH.cpp HH10.cpp HH11.cpp HH20.cpp \
 tt.hpp tt.cpp tt01.cpp tt10.cpp tt11.cpp tt20.cpp \
 tsil.hpp tsil.cpp 
