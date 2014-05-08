@@ -15,7 +15,7 @@
 #if defined(TSIL_SIZE_DOUBLE)
 
 typedef double         TSIL_REAL;
-typedef double complex TSIL_COMPLEX;
+typedef double _Complex TSIL_COMPLEX;
 #define TSIL_EXP       exp
 #define TSIL_CEXP      cexp
 #define TSIL_LOG       log
@@ -37,7 +37,7 @@ typedef double complex TSIL_COMPLEX;
 #else   /* Assume LONG if we get here: */
 
 typedef long double         TSIL_REAL;
-typedef long double complex TSIL_COMPLEX;
+typedef long double _Complex TSIL_COMPLEX;
 #define TSIL_EXP            expl
 #define TSIL_CEXP           cexpl
 #define TSIL_LOG            logl
