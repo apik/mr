@@ -23,7 +23,7 @@ std::complex<long double> WW::m10(size_t nL, size_t nH)
    mWW[15]=mWW[13]*MMt;
    mWW[16]=mWW[15]*mWW[2];
    mWW[14]= - 6*mWW[16] + mWW[13] + mWW[14];
-   mWW[14]=mWW[14]*nH;
+   mWW[14]=mWW[14]*double(nH);
    mWW[16]=mWW[7] + 1./2.;
    mWW[17]=1./3.*MMH;
    mWW[16]=mWW[16]*mWW[17];
@@ -42,7 +42,7 @@ std::complex<long double> WW::m10(size_t nL, size_t nH)
    mWW[14]=mWW[14]*mWW[20];
    mWW[21]=mWW[9]*pow(MMt,2);
    mWW[15]=mWW[21] + mWW[15];
-   mWW[15]=mWW[15]*nH;
+   mWW[15]=mWW[15]*double(nH);
    mWW[21]=MMH*mWW[7];
    mWW[21]= - mWW[21] + mWW[12] - mWW[10];
    mWW[21]=mWW[21]*MMH;
@@ -60,7 +60,7 @@ std::complex<long double> WW::m10(size_t nL, size_t nH)
    mWW[18]= - 59./2. - 4*mWW[5];
    mWW[21]=mWW[6]*mWW[5];
    mWW[22]= - mWW[6] + mWW[9];
-   mWW[22]=nH*mWW[22];
+   mWW[22]=double(nH)*mWW[22];
    mWW[15]=mWW[22] + mWW[7] + 4./3.*mWW[21] - 33./4.*mWW[8] + 1./9.*
    mWW[18] + mWW[15];
    mWW[15]=mWW[15]*mWW[20];

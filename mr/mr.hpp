@@ -12,5 +12,6 @@
 #include "HH.hpp"
 #include "tt.hpp"
 #include "betaQCD.hpp"
+#include "betaSM.hpp"
 
 #endif  // __MR_HPP__

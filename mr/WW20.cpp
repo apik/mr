@@ -297,14 +297,14 @@ std::complex<long double> WW::m20(size_t nL, size_t nH)
    mWW[154]=mWW[154] - mWW[175] + mWW[181];
    mWW[182]=1./9.*mWW[6];
    mWW[154]=mWW[154]*mWW[182];
-   mWW[183]=mWW[119]*nH;
+   mWW[183]=mWW[119]*double(nH);
    mWW[184]=mWW[128]*mWW[183];
-   mWW[185]=MMt*nH;
+   mWW[185]=MMt*double(nH);
    mWW[186]=mWW[131]*mWW[185];
    mWW[126]=mWW[126]*mWW[186];
    mWW[126]=mWW[184] + mWW[126];
    mWW[126]=mWW[126]*MMt;
-   mWW[184]=mWW[157]*nH;
+   mWW[184]=mWW[157]*double(nH);
    mWW[187]=1./3.*mWW[184];
    mWW[188]=mWW[178]*mWW[187];
    mWW[126]=mWW[126] - mWW[188];
@@ -360,7 +360,7 @@ std::complex<long double> WW::m20(size_t nL, size_t nH)
    mWW[201]=mWW[201]*mWW[152];
    mWW[154]=mWW[154] + mWW[201];
    mWW[154]=mWW[154]*mWW[157];
-   mWW[201]=1./2.*nH;
+   mWW[201]=1./2.*double(nH);
    mWW[205]=mWW[180]*mWW[201];
    mWW[154]=mWW[154] - mWW[205];
    mWW[207]=11*mWW[111];
@@ -701,7 +701,7 @@ std::complex<long double> WW::m20(size_t nL, size_t nH)
    mWW[266]=mWW[257]*MMt;
    mWW[253]=mWW[253]*mWW[266];
    mWW[271]=mWW[12]*mWW[2];
-   mWW[272]=nH*mWW[2];
+   mWW[272]=double(nH)*mWW[2];
    mWW[274]=mWW[8]*mWW[272];
    mWW[274]= - mWW[271] + mWW[274];
    mWW[275]=2./3.*mWW[111];
@@ -823,7 +823,7 @@ std::complex<long double> WW::m20(size_t nL, size_t nH)
    mWW[311]=mWW[311] + mWW[114];
    mWW[312]=mWW[311]*mWW[179];
    mWW[312]= - mWW[310] - 1./6.*mWW[312];
-   mWW[312]=nH*mWW[312];
+   mWW[312]=double(nH)*mWW[312];
    mWW[313]= - 1 - 11./18.*mWW[111];
    mWW[313]=mWW[313]*mWW[111];
    mWW[313]=11./6. + mWW[313];
@@ -934,7 +934,7 @@ std::complex<long double> WW::m20(size_t nL, size_t nH)
    mWW[316]=mWW[23]*mWW[162];
    mWW[317]=mWW[288]*mWW[64];
    mWW[228]= - 7./4.*mWW[316] + mWW[228] - mWW[317] + mWW[278];
-   mWW[228]=nH*mWW[228];
+   mWW[228]=double(nH)*mWW[228];
    mWW[278]= - 7./2. + 5*mWW[53];
    mWW[278]= - 9./4.*mWW[23] + 1./8.*mWW[278];
    mWW[278]=mWW[144]*mWW[278];
@@ -943,7 +943,7 @@ std::complex<long double> WW::m20(size_t nL, size_t nH)
    mWW[320]=3*mWW[162];
    mWW[321]=mWW[64]*mWW[320];
    mWW[278]=mWW[321] + mWW[316] + mWW[278];
-   mWW[278]=nH*mWW[278];
+   mWW[278]=double(nH)*mWW[278];
    mWW[316]= - mWW[64]*mWW[144];
    mWW[173]= - 1./2.*mWW[173] + mWW[316];
    mWW[173]=mWW[173]*mWW[185];
@@ -1245,7 +1245,7 @@ std::complex<long double> WW::m20(size_t nL, size_t nH)
    mWW[124]=mWW[175] + mWW[124] + mWW[151];
    mWW[151]=4*mWW[6];
    mWW[124]=mWW[124]*mWW[151];
-   mWW[175]=mWW[166]*nH;
+   mWW[175]=mWW[166]*double(nH);
    mWW[194]=mWW[175]*mWW[8];
    mWW[198]=mWW[176]*mWW[194];
    mWW[199]=mWW[111] + 3./2.;
@@ -1298,7 +1298,7 @@ std::complex<long double> WW::m20(size_t nL, size_t nH)
    mWW[365]=mWW[363] - 4;
    mWW[365]=mWW[365]*mWW[111];
    mWW[365]=mWW[365] + 16./3.;
-   mWW[366]=mWW[111]*nH;
+   mWW[366]=mWW[111]*double(nH);
    mWW[365]=mWW[365]*mWW[366];
    mWW[364]= - mWW[365] + mWW[364];
    mWW[364]=mWW[15]*mWW[364];
@@ -1452,9 +1452,9 @@ std::complex<long double> WW::m20(size_t nL, size_t nH)
    mWW[263]= - mWW[284]*mWW[231];
    mWW[281]=mWW[288]*mWW[107];
    mWW[133]=mWW[263] + mWW[133] - 51./4.*mWW[281];
-   mWW[133]=nH*mWW[133];
+   mWW[133]=double(nH)*mWW[133];
    mWW[263]=3*mWW[222];
-   mWW[355]=mWW[109]*nH;
+   mWW[355]=mWW[109]*double(nH);
    mWW[365]=mWW[355]*mWW[157];
    mWW[367]=mWW[263]*mWW[365];
    mWW[368]=163./8. + mWW[111];
@@ -1611,7 +1611,7 @@ std::complex<long double> WW::m20(size_t nL, size_t nH)
    mWW[381]=mWW[166]*mWW[107];
    mWW[382]=9./8.*mWW[381];
    mWW[380]=mWW[380] + mWW[382];
-   mWW[380]=nH*mWW[380];
+   mWW[380]=double(nH)*mWW[380];
    mWW[261]=mWW[261] + mWW[368] + mWW[380] + mWW[379];
    mWW[261]=mWW[18]*mWW[261];
    mWW[368]= - 2339./3. - 855*mWW[111];
@@ -1630,7 +1630,7 @@ std::complex<long double> WW::m20(size_t nL, size_t nH)
    mWW[380]=mWW[380] - mWW[171];
    mWW[380]=mWW[380]*mWW[241];
    mWW[368]=1./4.*mWW[368] + mWW[380];
-   mWW[368]=nH*mWW[368];
+   mWW[368]=double(nH)*mWW[368];
    mWW[380]=139./3. + mWW[205];
    mWW[380]=mWW[380]*mWW[125];
    mWW[383]=25./2.*mWW[114];
@@ -1950,7 +1950,7 @@ std::complex<long double> WW::m20(size_t nL, size_t nH)
    mWW[390]=mWW[390]*mWW[111];
    mWW[384]= - mWW[384] + mWW[390] - 32./9.;
    mWW[390]= - mWW[15] + mWW[7];
-   mWW[384]=nH*mWW[384]*mWW[390];
+   mWW[384]=double(nH)*mWW[384]*mWW[390];
    mWW[390]=33./2.*mWW[111];
    mWW[395]= - mWW[215]*mWW[390];
    mWW[395]=125 + mWW[395];
@@ -2023,7 +2023,7 @@ std::complex<long double> WW::m20(size_t nL, size_t nH)
    mWW[429]=mWW[429]*mWW[111];
    mWW[429]=mWW[427] + 20 + mWW[429];
    mWW[429]=mWW[23]*mWW[429];
-   mWW[430]=mWW[135]*nH;
+   mWW[430]=mWW[135]*double(nH);
    mWW[431]=27./4. - mWW[33] - mWW[8];
    mWW[431]=mWW[431]*mWW[430];
    mWW[432]=mWW[407] + mWW[297];
@@ -2111,7 +2111,7 @@ std::complex<long double> WW::m20(size_t nL, size_t nH)
    mWW[454]=mWW[453]*mWW[454];
    mWW[425]=mWW[449] + mWW[448] + mWW[454] + mWW[433] + mWW[444] + 1./8.
    *mWW[428] + mWW[443] + mWW[450] + 2*mWW[425];
-   mWW[425]=nH*mWW[425];
+   mWW[425]=double(nH)*mWW[425];
    mWW[428]=mWW[134]*mWW[117];
    mWW[329]=mWW[8] - mWW[329];
    mWW[329]=mWW[428]*mWW[329];
@@ -2129,7 +2129,7 @@ std::complex<long double> WW::m20(size_t nL, size_t nH)
    mWW[329]=mWW[329]*mWW[151];
    mWW[433]=29 + mWW[345];
    mWW[433]=mWW[433]*mWW[125];
-   mWW[444]=nH*mWW[8];
+   mWW[444]=double(nH)*mWW[8];
    mWW[449]=mWW[135]*mWW[444];
    mWW[419]=mWW[13]*mWW[419];
    mWW[400]=mWW[400] + mWW[419] + mWW[449] - 16 + mWW[433];
@@ -2179,7 +2179,7 @@ std::complex<long double> WW::m20(size_t nL, size_t nH)
    mWW[395]=mWW[454] + mWW[449] + mWW[395] + mWW[433];
    mWW[433]= - mWW[89]*mWW[135];
    mWW[395]=1./2.*mWW[395] + mWW[433];
-   mWW[395]=nH*mWW[395];
+   mWW[395]=double(nH)*mWW[395];
    mWW[433]=mWW[450] + mWW[298];
    mWW[449]= - mWW[88]*mWW[433]*mWW[201];
    mWW[395]=mWW[395] + mWW[449];
@@ -2203,10 +2203,10 @@ std::complex<long double> WW::m20(size_t nL, size_t nH)
    mWW[423]= - 1 + mWW[356];
    mWW[423]=mWW[423]*mWW[111];
    mWW[423]=1./3. + mWW[423];
-   mWW[423]=mWW[98]*nH*mWW[423]*mWW[452];
+   mWW[423]=mWW[98]*double(nH)*mWW[423]*mWW[452];
    mWW[357]=mWW[357] + mWW[411] + mWW[423];
    mWW[357]=MMZ*mWW[357];
-   mWW[411]=nH*mWW[424];
+   mWW[411]=double(nH)*mWW[424];
    mWW[423]= - mWW[443]*mWW[151];
    mWW[411]=mWW[411] + mWW[423];
    mWW[411]=mWW[30]*mWW[411];
@@ -2219,12 +2219,12 @@ std::complex<long double> WW::m20(size_t nL, size_t nH)
    mWW[449]=mWW[449] - 16 + mWW[228];
    mWW[449]=mWW[72]*mWW[449];
    mWW[411]=mWW[424] + mWW[411] + mWW[449];
-   mWW[424]=nH*mWW[447];
+   mWW[424]=double(nH)*mWW[447];
    mWW[447]= - mWW[423]*mWW[262];
    mWW[420]=mWW[3]*mWW[420];
    mWW[420]=mWW[420] + mWW[424] + mWW[447];
    mWW[420]=mWW[18]*mWW[420];
-   mWW[121]=nH*mWW[121];
+   mWW[121]=double(nH)*mWW[121];
    mWW[424]= - 1./3. - 2*mWW[135];
    mWW[219]=mWW[219]*mWW[116];
    mWW[219]=2*mWW[424] + mWW[219];
@@ -2283,7 +2283,7 @@ std::complex<long double> WW::m20(size_t nL, size_t nH)
    mWW[131]=mWW[131] + mWW[224] + mWW[262];
    mWW[131]=mWW[2]*mWW[131];
    mWW[131]=6*mWW[327] + mWW[131];
-   mWW[131]=nH*mWW[131];
+   mWW[131]=double(nH)*mWW[131];
    mWW[224]=11./3. + 41./2.*mWW[111];
    mWW[224]=mWW[224]*mWW[111];
    mWW[262]=9./2.*mWW[114];
@@ -2335,7 +2335,7 @@ std::complex<long double> WW::m20(size_t nL, size_t nH)
    mWW[425]= - 29 + 119./2.*mWW[114];
    mWW[425]=mWW[425]*mWW[210];
    mWW[421]=mWW[421] + mWW[425] + 64./9. + mWW[423];
-   mWW[421]=nH*mWW[421];
+   mWW[421]=double(nH)*mWW[421];
    mWW[423]= - 10./3. + mWW[331];
    mWW[423]=mWW[423]*mWW[111];
    mWW[425]= - 10 + mWW[197];
@@ -2469,7 +2469,7 @@ std::complex<long double> WW::m20(size_t nL, size_t nH)
    mWW[454]=5./192.*mWW[455] + 64./3. + 1./128.*mWW[454];
    mWW[454]=mWW[108]*mWW[454];
    mWW[254]= - mWW[277] + mWW[454] + mWW[453] + mWW[338] + mWW[254];
-   mWW[254]=nH*mWW[254];
+   mWW[254]=double(nH)*mWW[254];
    mWW[338]=mWW[143] + 3;
    mWW[338]=mWW[338]*mWW[111];
    mWW[453]=mWW[114] + 3;
@@ -2509,7 +2509,7 @@ std::complex<long double> WW::m20(size_t nL, size_t nH)
    mWW[456]=mWW[456] + mWW[457];
    mWW[456]=mWW[108]*mWW[456]*mWW[284];
    mWW[281]=mWW[456] + mWW[455] - 69*mWW[281];
-   mWW[455]=1./8.*nH;
+   mWW[455]=1./8.*double(nH);
    mWW[281]=mWW[281]*mWW[455];
    mWW[456]=mWW[216] + 3;
    mWW[456]=mWW[456]*mWW[111];
@@ -2541,7 +2541,7 @@ std::complex<long double> WW::m20(size_t nL, size_t nH)
    mWW[365]= - 7./2. - mWW[133];
    mWW[365]=mWW[365]*mWW[116];
    mWW[281]=mWW[281] + mWW[365];
-   mWW[281]=nH*mWW[281];
+   mWW[281]=double(nH)*mWW[281];
    mWW[365]=mWW[456] - 1;
    mWW[365]=mWW[365]*mWW[116];
    mWW[195]=mWW[365] + mWW[195];
@@ -2601,7 +2601,7 @@ std::complex<long double> WW::m20(size_t nL, size_t nH)
    mWW[458]=mWW[458]*mWW[240]*mWW[49];
    mWW[180]=mWW[458] + mWW[180];
    mWW[377]=mWW[377] + mWW[180];
-   mWW[377]=nH*mWW[377];
+   mWW[377]=double(nH)*mWW[377];
    mWW[332]=3*mWW[332];
    mWW[458]=47./24. - mWW[111];
    mWW[458]=mWW[458]*mWW[111];
@@ -2674,7 +2674,7 @@ std::complex<long double> WW::m20(size_t nL, size_t nH)
    mWW[305]=mWW[305] - mWW[293];
    mWW[305]=mWW[305]*mWW[357];
    mWW[305]=mWW[305] - mWW[277];
-   mWW[377]=2*nH;
+   mWW[377]=2*double(nH);
    mWW[458]= - mWW[305]*mWW[377];
    mWW[170]=mWW[170]*mWW[352];
    mWW[460]= - mWW[154]*mWW[375];
@@ -2693,7 +2693,7 @@ std::complex<long double> WW::m20(size_t nL, size_t nH)
    mWW[460]=mWW[460] + 1./192.*mWW[461];
    mWW[460]=mWW[2]*mWW[460];
    mWW[382]=1./64.*mWW[436] + mWW[460] - mWW[382];
-   mWW[382]=nH*mWW[382];
+   mWW[382]=double(nH)*mWW[382];
    mWW[460]= - 199./3. - 47*mWW[111];
    mWW[460]=mWW[460]*mWW[242];
    mWW[461]= - 29./9. - mWW[147];
@@ -2760,7 +2760,7 @@ std::complex<long double> WW::m20(size_t nL, size_t nH)
    mWW[435]=mWW[435] - 64./3. - 99./16.*mWW[442];
    mWW[435]=mWW[108]*mWW[435];
    mWW[385]=mWW[385] + mWW[435];
-   mWW[435]=mWW[13]*nH;
+   mWW[435]=mWW[13]*double(nH);
    mWW[385]=mWW[385]*mWW[435];
    mWW[440]= - 7./9. + mWW[125];
    mWW[440]=mWW[440]*mWW[331];
@@ -2833,7 +2833,7 @@ std::complex<long double> WW::m20(size_t nL, size_t nH)
    mWW[118]=mWW[118] - mWW[141];
    mWW[141]=mWW[7]*mWW[118];
    mWW[141]=mWW[141] - 3*mWW[323];
-   mWW[141]=nH*mWW[141];
+   mWW[141]=double(nH)*mWW[141];
    mWW[148]= - 631./6. - mWW[246];
    mWW[148]=mWW[148]*mWW[111];
    mWW[148]=241./3. + mWW[148];
@@ -2894,7 +2894,7 @@ std::complex<long double> WW::m20(size_t nL, size_t nH)
    mWW[298]=149 - mWW[388];
    mWW[298]=mWW[298]*mWW[192];
    mWW[281]= - 3*mWW[260] + mWW[254] + mWW[298] + 64./9. + mWW[281];
-   mWW[281]=nH*mWW[281];
+   mWW[281]=double(nH)*mWW[281];
    mWW[298]=mWW[363] + 11;
    mWW[298]=mWW[298]*mWW[111];
    mWW[385]=mWW[298] - mWW[457];
@@ -2907,7 +2907,7 @@ std::complex<long double> WW::m20(size_t nL, size_t nH)
    mWW[395]=mWW[2]*mWW[395];
    mWW[423]= - mWW[27]*mWW[157]*mWW[263];
    mWW[395]=mWW[423] + mWW[395];
-   mWW[395]=nH*mWW[395];
+   mWW[395]=double(nH)*mWW[395];
    mWW[235]=mWW[235] - 2*mWW[329];
    mWW[235]=mWW[235]*mWW[352];
    mWW[235]=mWW[395] + 3*mWW[235];
@@ -2918,7 +2918,7 @@ std::complex<long double> WW::m20(size_t nL, size_t nH)
    mWW[329]=mWW[263]*mWW[365];
    mWW[281]=mWW[281] + mWW[329];
    mWW[281]=mWW[3]*mWW[280]*mWW[281];
-   mWW[261]= - nH*mWW[261];
+   mWW[261]= - double(nH)*mWW[261];
    mWW[329]=mWW[287]*mWW[359];
    mWW[261]=mWW[261] + mWW[329];
    mWW[261]=MMt*mWW[261];
@@ -2965,10 +2965,10 @@ std::complex<long double> WW::m20(size_t nL, size_t nH)
    mWW[452]= - 2 + mWW[434];
    mWW[452]=mWW[452]*mWW[111];
    mWW[420]=mWW[452] + mWW[420];
-   mWW[420]=nH*mWW[420];
+   mWW[420]=double(nH)*mWW[420];
    mWW[420]=mWW[420] + mWW[448];
    mWW[420]=mWW[54]*mWW[420];
-   mWW[118]= - nH*mWW[118];
+   mWW[118]= - double(nH)*mWW[118];
    mWW[448]=mWW[345] + 13;
    mWW[452]=mWW[448]*mWW[111];
    mWW[452]= - 139./3. + mWW[452];
@@ -3074,7 +3074,7 @@ std::complex<long double> WW::m20(size_t nL, size_t nH)
    mWW[261]=mWW[64]*mWW[244];
    mWW[141]= - 71./12.*mWW[304] + mWW[235] + mWW[239] - mWW[277] + 
    mWW[186] + mWW[261] + mWW[141];
-   mWW[141]=nH*mWW[141];
+   mWW[141]=double(nH)*mWW[141];
    mWW[186]= - 491./3. - 71*mWW[111];
    mWW[186]=mWW[186]*mWW[125];
    mWW[235]= - 139 + 125./6.*mWW[114];
@@ -3136,7 +3136,7 @@ std::complex<long double> WW::m20(size_t nL, size_t nH)
    mWW[263]=mWW[103]*mWW[144];
    mWW[186]= - 27./8.*mWW[263] + mWW[240] + mWW[239] + mWW[235] - 
    mWW[317] + mWW[186];
-   mWW[186]=nH*mWW[186];
+   mWW[186]=double(nH)*mWW[186];
    mWW[221]= - 3 - mWW[221];
    mWW[221]=mWW[221]*mWW[114];
    mWW[221]= - mWW[376] + mWW[221];
@@ -3154,7 +3154,7 @@ std::complex<long double> WW::m20(size_t nL, size_t nH)
    mWW[235]= - mWW[64]*mWW[310];
    mWW[239]=mWW[89]*mWW[144];
    mWW[221]=3./4.*mWW[239] + mWW[221] + mWW[235];
-   mWW[221]=nH*mWW[221];
+   mWW[221]=double(nH)*mWW[221];
    mWW[235]=5*mWW[339];
    mWW[239]=mWW[169]*mWW[184];
    mWW[240]=mWW[55]*mWW[239];
@@ -3206,7 +3206,7 @@ std::complex<long double> WW::m20(size_t nL, size_t nH)
    mWW[310]=3 + mWW[331];
    mWW[310]=mWW[310]*mWW[111];
    mWW[310]=mWW[310] + mWW[171];
-   mWW[310]=nH*mWW[310];
+   mWW[310]=double(nH)*mWW[310];
    mWW[303]=mWW[310] + mWW[303];
    mWW[303]=mWW[66]*mWW[303];
    mWW[310]=mWW[139] - 1./2.;
@@ -3226,7 +3226,7 @@ std::complex<long double> WW::m20(size_t nL, size_t nH)
    mWW[372]= - 11./2. - mWW[309];
    mWW[372]=mWW[372]*mWW[116];
    mWW[341]=mWW[341] + mWW[372];
-   mWW[341]=nH*mWW[341];
+   mWW[341]=double(nH)*mWW[341];
    mWW[176]=mWW[341] + mWW[176];
    mWW[176]=mWW[62]*mWW[176];
    mWW[221]= - mWW[221]*mWW[462];
@@ -3248,7 +3248,7 @@ std::complex<long double> WW::m20(size_t nL, size_t nH)
    mWW[265]=2 + mWW[116];
    mWW[265]=mWW[265]*mWW[116];
    mWW[265]=mWW[244] + mWW[265];
-   mWW[265]=nH*mWW[265];
+   mWW[265]=double(nH)*mWW[265];
    mWW[129]=mWW[265] + mWW[129];
    mWW[129]=mWW[70]*mWW[129];
    mWW[265]=1./2. + 7*mWW[23];
@@ -3296,7 +3296,7 @@ std::complex<long double> WW::m20(size_t nL, size_t nH)
    mWW[221]=mWW[221]*mWW[114];
    mWW[186]= - mWW[151] + 1./4.*mWW[254] + 1./768.*mWW[221] - 4 + 
    mWW[186];
-   mWW[186]=nH*mWW[186];
+   mWW[186]=double(nH)*mWW[186];
    mWW[221]=1487./8. + mWW[355];
    mWW[221]=mWW[221]*mWW[111];
    mWW[221]=395./8. + mWW[221];
@@ -3309,7 +3309,7 @@ std::complex<long double> WW::m20(size_t nL, size_t nH)
    mWW[221]=1./36.*mWW[221] - mWW[255];
    mWW[221]=mWW[221]*mWW[157];
    mWW[180]=mWW[221] + mWW[180];
-   mWW[180]=nH*mWW[180];
+   mWW[180]=double(nH)*mWW[180];
    mWW[221]= - 121./24. - mWW[111];
    mWW[221]=mWW[221]*mWW[111];
    mWW[221]= - 281./72. + mWW[221];
@@ -3352,7 +3352,7 @@ std::complex<long double> WW::m20(size_t nL, size_t nH)
    mWW[260]=mWW[260]*mWW[284]*mWW[49];
    mWW[221]=mWW[221] + mWW[260];
    mWW[221]=1./4.*mWW[221] + mWW[327];
-   mWW[221]=nH*mWW[221];
+   mWW[221]=double(nH)*mWW[221];
    mWW[260]=5./2. + mWW[207];
    mWW[260]=mWW[260]*mWW[356];
    mWW[260]=14./3. + mWW[260];
@@ -3375,7 +3375,7 @@ std::complex<long double> WW::m20(size_t nL, size_t nH)
    mWW[221]=mWW[221] + 1./128.*mWW[260];
    mWW[221]=mWW[221]*mWW[333];
    mWW[221]=mWW[221] - 1./128.*mWW[436];
-   mWW[221]=nH*mWW[221];
+   mWW[221]=double(nH)*mWW[221];
    mWW[260]=743./64. + mWW[126];
    mWW[260]=mWW[260]*mWW[111];
    mWW[260]=541./64. + mWW[260];
@@ -3404,7 +3404,7 @@ std::complex<long double> WW::m20(size_t nL, size_t nH)
    mWW[200]=mWW[200] - mWW[171];
    mWW[200]=mWW[200]*mWW[333];
    mWW[200]=mWW[200] - mWW[330];
-   mWW[200]=nH*mWW[200];
+   mWW[200]=double(nH)*mWW[200];
    mWW[181]=mWW[200] + mWW[181];
    mWW[181]=MMt*mWW[181];
    mWW[200]=mWW[166] - 8./3.;
@@ -3414,7 +3414,7 @@ std::complex<long double> WW::m20(size_t nL, size_t nH)
    mWW[154]=mWW[154]*mWW[272];
    mWW[154]=mWW[154] + mWW[170];
    mWW[154]=MMt*mWW[154];
-   mWW[170]= - nH*mWW[172]*mWW[306];
+   mWW[170]= - double(nH)*mWW[172]*mWW[306];
    mWW[154]=mWW[170] + mWW[154];
    mWW[154]=mWW[7]*mWW[154];
    mWW[154]=mWW[154] + mWW[260] + mWW[181];
@@ -3434,7 +3434,7 @@ std::complex<long double> WW::m20(size_t nL, size_t nH)
    mWW[127]= - 1./2. + mWW[127];
    mWW[127]=mWW[127]*mWW[111];
    mWW[127]=mWW[127] - mWW[120];
-   mWW[127]=nH*mWW[127];
+   mWW[127]=double(nH)*mWW[127];
    mWW[127]=mWW[127] + mWW[181];
    mWW[127]=MMt*mWW[127];
    mWW[160]=mWW[160] + 3./2.;
@@ -3444,7 +3444,7 @@ std::complex<long double> WW::m20(size_t nL, size_t nH)
    mWW[251]=mWW[178]*mWW[315];
    mWW[181]=mWW[251] + mWW[181];
    mWW[181]=mWW[181]*MMt;
-   mWW[251]=mWW[322]*nH;
+   mWW[251]=mWW[322]*double(nH);
    mWW[181]=mWW[181] - mWW[251];
    mWW[251]= - mWW[181]*mWW[380];
    mWW[127]=mWW[172] + mWW[127] + mWW[251];
@@ -3528,7 +3528,7 @@ std::complex<long double> WW::m20(size_t nL, size_t nH)
    mWW[280]=113./36. + mWW[280];
    mWW[280]=mWW[280]*mWW[111];
    mWW[280]=mWW[280] - mWW[260];
-   mWW[280]=nH*mWW[280];
+   mWW[280]=double(nH)*mWW[280];
    mWW[160]=mWW[280] + mWW[160];
    mWW[160]=mWW[18]*mWW[160];
    mWW[189]= - mWW[189] - mWW[196];
@@ -3543,7 +3543,7 @@ std::complex<long double> WW::m20(size_t nL, size_t nH)
    mWW[280]=mWW[280] + 53./3.;
    mWW[280]=mWW[280]*mWW[111];
    mWW[280]=mWW[280] - 4;
-   mWW[300]=nH*mWW[280];
+   mWW[300]=double(nH)*mWW[280];
    mWW[196]=mWW[300] + mWW[196];
    mWW[196]=mWW[14]*mWW[196];
    mWW[300]=mWW[111] - 1./2.;
@@ -3614,13 +3614,13 @@ std::complex<long double> WW::m20(size_t nL, size_t nH)
    mWW[142]=mWW[154] + 1./12.*mWW[265] + mWW[142] + mWW[174] + mWW[189]
     + mWW[172] + mWW[196] + mWW[164] - 1./2.*mWW[254] + mWW[160] + 
    mWW[186] - 52./3. + mWW[180];
-   mWW[142]=nH*mWW[142];
+   mWW[142]=double(nH)*mWW[142];
    mWW[154]= - 293./4. + mWW[207];
    mWW[154]=mWW[154]*mWW[117];
    mWW[160]= - 53./3. - mWW[114];
    mWW[160]=mWW[160]*mWW[152];
    mWW[164]= - 3*mWW[166] + 1./2.*mWW[136];
-   mWW[164]=nH*mWW[164];
+   mWW[164]=double(nH)*mWW[164];
    mWW[154]=mWW[164] + mWW[154] + mWW[160];
    mWW[154]=mWW[109]*mWW[154];
    mWW[160]=9./2.*mWW[276] + mWW[235];
@@ -3878,7 +3878,7 @@ std::complex<long double> WW::m20(size_t nL, size_t nH)
    mWW[165]=mWW[18]*mWW[181];
    mWW[167]=1./3.*mWW[322] - mWW[323];
    mWW[167]=mWW[167]*mWW[419];
-   mWW[174]=nH*mWW[323];
+   mWW[174]=double(nH)*mWW[323];
    mWW[178]= - mWW[12]*mWW[322];
    mWW[128]=mWW[128] + mWW[165] + mWW[135] + mWW[178] + mWW[167] + 
    mWW[160] + mWW[153] + 1./2.*mWW[136] + mWW[174] + mWW[132];
@@ -3923,7 +3923,7 @@ std::complex<long double> WW::m20(size_t nL, size_t nH)
    mWW[165]=80./27. + mWW[165];
    mWW[165]=mWW[165]*mWW[202];
    mWW[160]=mWW[160] + mWW[165];
-   mWW[160]=nH*mWW[160];
+   mWW[160]=double(nH)*mWW[160];
    mWW[136]=1./9.*mWW[136] + mWW[160];
    mWW[160]= - 7./3. + mWW[111];
    mWW[160]=mWW[160]*mWW[207];
@@ -4045,7 +4045,7 @@ std::complex<long double> WW::m20(size_t nL, size_t nH)
    mWW[156]=mWW[156] + mWW[165];
    mWW[156]=mWW[156]*mWW[241];
    mWW[135]=1./2.*mWW[135] + 1./3.*mWW[156];
-   mWW[135]=nH*mWW[135];
+   mWW[135]=double(nH)*mWW[135];
    mWW[156]= - 257./16. - mWW[246];
    mWW[156]=mWW[156]*mWW[111];
    mWW[156]=5111./48. + mWW[156];
@@ -4166,7 +4166,7 @@ std::complex<long double> WW::m20(size_t nL, size_t nH)
    mWW[173]= - 143./2. + mWW[173];
    mWW[173]=mWW[173]*mWW[114];
    mWW[165]=mWW[165] + mWW[173];
-   mWW[165]=nH*mWW[165];
+   mWW[165]=double(nH)*mWW[165];
    mWW[156]=1./128.*mWW[165] + mWW[156];
    mWW[156]=mWW[98]*mWW[156];
    mWW[165]=MMH*mWW[144];
@@ -4230,7 +4230,7 @@ std::complex<long double> WW::m20(size_t nL, size_t nH)
    mWW[181]=mWW[181] - 32./9.;
    mWW[187]= - mWW[181]*mWW[275];
    mWW[165]=mWW[165] + mWW[187];
-   mWW[165]=nH*mWW[165];
+   mWW[165]=double(nH)*mWW[165];
    mWW[187]= - 5 - mWW[111];
    mWW[187]=mWW[187]*mWW[390];
    mWW[187]=425./3. + mWW[187];
@@ -4251,7 +4251,7 @@ std::complex<long double> WW::m20(size_t nL, size_t nH)
    mWW[131]=mWW[199] - mWW[131] + 32;
    mWW[193]=mWW[193]*mWW[202];
    mWW[131]=mWW[193] + 1./9.*mWW[131];
-   mWW[131]=mWW[131]*nH;
+   mWW[131]=mWW[131]*double(nH);
    mWW[193]=mWW[197] + 181;
    mWW[193]=mWW[193]*mWW[264];
    mWW[193]=mWW[193] - 53;
@@ -4273,7 +4273,7 @@ std::complex<long double> WW::m20(size_t nL, size_t nH)
    mWW[176]=mWW[176]*mWW[352];
    mWW[176]=mWW[182] + mWW[176];
    mWW[176]=mWW[176]*mWW[252];
-   mWW[153]= - nH*mWW[153]*mWW[160];
+   mWW[153]= - double(nH)*mWW[153]*mWW[160];
    mWW[160]= - mWW[2]*mWW[117];
    mWW[160]=mWW[160] + mWW[275];
    mWW[182]=mWW[111] + 16./3.;
@@ -4613,7 +4613,7 @@ std::complex<long double> WW::m20(size_t nL, size_t nH)
    mWW[168]=mWW[109]*mWW[168];
    mWW[171]=mWW[8]*mWW[303];
    mWW[171]=1./2.*mWW[171] + mWW[441];
-   mWW[171]=nH*mWW[171];
+   mWW[171]=double(nH)*mWW[171];
    mWW[178]= - 127 + 363./2.*mWW[111];
    mWW[178]=mWW[178]*mWW[345];
    mWW[178]= - 511./2. + mWW[178];
@@ -4701,7 +4701,7 @@ std::complex<long double> WW::m20(size_t nL, size_t nH)
    mWW[176]=mWW[2]*mWW[176];
    mWW[136]= - mWW[136]*mWW[446];
    mWW[136]=mWW[176] + mWW[136];
-   mWW[136]=nH*mWW[136];
+   mWW[136]=double(nH)*mWW[136];
    mWW[176]= - 43./6. - mWW[226];
    mWW[176]=mWW[176]*mWW[111];
    mWW[182]=35 + 43./3.*mWW[114];
@@ -4759,7 +4759,7 @@ std::complex<long double> WW::m20(size_t nL, size_t nH)
    mWW[193]=337./3. + mWW[308];
    mWW[193]=mWW[193]*mWW[414];
    mWW[186]=mWW[193] - 32./9. + mWW[186];
-   mWW[186]=nH*mWW[186];
+   mWW[186]=double(nH)*mWW[186];
    mWW[193]=40./9. - mWW[205];
    mWW[193]=mWW[193]*mWW[111];
    mWW[167]= - mWW[167]*mWW[391];
@@ -4782,7 +4782,7 @@ std::complex<long double> WW::m20(size_t nL, size_t nH)
    mWW[186]= - 455./12. + mWW[186];
    mWW[186]=mWW[186]*mWW[192];
    mWW[183]=mWW[186] + 32./9. + mWW[183];
-   mWW[183]=nH*mWW[183];
+   mWW[183]=double(nH)*mWW[183];
    mWW[186]= - 3 + mWW[207];
    mWW[186]=mWW[186]*mWW[111];
    mWW[174]=143./3. - mWW[174];
@@ -4816,7 +4816,7 @@ std::complex<long double> WW::m20(size_t nL, size_t nH)
    mWW[133]=mWW[133]*mWW[116];
    mWW[133]=mWW[182] + mWW[133];
    mWW[133]=mWW[133]*mWW[361];
-   mWW[182]=mWW[224]*nH;
+   mWW[182]=mWW[224]*double(nH);
    mWW[183]=mWW[182] - mWW[385];
    mWW[183]=mWW[3]*mWW[183];
    mWW[133]=mWW[183] + 1./2.*mWW[141] + mWW[133];
@@ -4846,7 +4846,7 @@ std::complex<long double> WW::m20(size_t nL, size_t nH)
    mWW[183]=mWW[183] + mWW[185];
    mWW[183]=mWW[2]*mWW[183];
    mWW[183]=mWW[183] - mWW[459];
-   mWW[185]=1./4.*nH;
+   mWW[185]=1./4.*double(nH);
    mWW[183]=mWW[183]*mWW[185];
    mWW[186]=835./9. + mWW[434];
    mWW[186]=mWW[186]*mWW[165];
@@ -4871,7 +4871,7 @@ std::complex<long double> WW::m20(size_t nL, size_t nH)
    mWW[183]=mWW[183] + mWW[186];
    mWW[183]=mWW[183]*mWW[267];
    mWW[183]= - 1./8.*mWW[231] + mWW[183] - 15*mWW[381];
-   mWW[183]=nH*mWW[183];
+   mWW[183]=double(nH)*mWW[183];
    mWW[186]= - 13./3. - mWW[306];
    mWW[186]=mWW[186]*mWW[111];
    mWW[164]= - mWW[164]*mWW[114];
@@ -4953,7 +4953,7 @@ std::complex<long double> WW::m20(size_t nL, size_t nH)
    mWW[185]=23./4. + mWW[185];
    mWW[185]=mWW[185]*mWW[116];
    mWW[112]=mWW[112] + mWW[185];
-   mWW[112]=nH*mWW[112];
+   mWW[112]=double(nH)*mWW[112];
    mWW[184]= - mWW[184]*mWW[117];
    mWW[185]= - 4./3. - mWW[114];
    mWW[185]=mWW[185]*mWW[427];
@@ -5025,7 +5025,7 @@ std::complex<long double> WW::m20(size_t nL, size_t nH)
    mWW[180]= - 2963./18. + mWW[180];
    mWW[180]=mWW[180]*mWW[114];
    mWW[177]=1./96.*mWW[180] - 80./9. + 1./64.*mWW[177];
-   mWW[177]=nH*mWW[177];
+   mWW[177]=double(nH)*mWW[177];
    mWW[158]=mWW[177] + mWW[158];
    mWW[158]=mWW[85]*mWW[158];
    mWW[130]=mWW[2]*mWW[130];
@@ -5069,11 +5069,11 @@ std::complex<long double> WW::m20(size_t nL, size_t nH)
    mWW[166]=mWW[166] - 1./4.*mWW[26];
    mWW[166]=mWW[433]*mWW[166];
    mWW[152]=mWW[162] + mWW[152] + mWW[166];
-   mWW[152]=nH*mWW[152];
+   mWW[152]=double(nH)*mWW[152];
    mWW[162]=5./2. - mWW[450];
    mWW[162]=mWW[162]*mWW[114];
    mWW[162]= - mWW[317] + mWW[162];
-   mWW[162]=mWW[20]*nH*mWW[162];
+   mWW[162]=mWW[20]*double(nH)*mWW[162];
    mWW[166]= - mWW[27]*mWW[175];
    mWW[162]=mWW[166] + mWW[162];
    mWW[152]=1./2.*mWW[162] + mWW[152];

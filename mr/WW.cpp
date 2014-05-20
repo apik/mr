@@ -23,8 +23,6 @@ WW::WW(SMinput sm, long double mu2_)
 void WW::init(long double MMW_,long double MMZ_,long double MMH_,long double MMt_,long double mu2_)
 {
 
-  std::cout << "In constr: "  << MMW << " " <<  MMZ << " " <<  MMH << " " <<  MMt << " " <<  mu2 << std::endl;
-
   CW = sqrt(MMW/MMZ);
   SW = sqrt(1-MMW/MMZ);
 
@@ -76,5 +74,4 @@ void WW::init(long double MMW_,long double MMZ_,long double MMH_,long double MMt
     protos[i]->evaluate(MMW);
   t2.elapsed();
 
-  std::cout << "Constr~!!\n";
 }

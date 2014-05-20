@@ -66,5 +66,4 @@ void HH::init(long double MMW_,long double MMZ_,long double MMH_,long double MMt
     protos[i]->evaluate(MMH);
   t2.elapsed();
 
-  std::cout << "Constr~!!\n";
 }

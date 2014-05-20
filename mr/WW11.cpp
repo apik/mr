@@ -67,7 +67,7 @@ std::complex<long double> WW::m11(size_t nL, size_t nH)
    mWW[15]=2*mWW[15] + mWW[16];
    mWW[15]=mWW[3]*mWW[15];
    mWW[14]=4*mWW[14] + mWW[15];
-   mWW[14]=nH*mWW[14];
+   mWW[14]=double(nH)*mWW[14];
    mWW[15]=MMZ*mWW[7];
    mWW[15]=8./3.*mWW[15];
    mWW[16]=mWW[15] + 31./3. + 4*mWW[6];

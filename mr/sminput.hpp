@@ -2,48 +2,48 @@
 #define __SMINPUT_HPP__
 class SMinput
 {
-  long double MW;
-  long double MZ;
-  long double MH;
-  long double Mt;
+  long double iMW;
+  long double iMZ;
+  long double iMH;
+  long double iMt;
 
 public:
   SMinput(long double MW_, long double MZ_, long double MH_, long double Mt_) : 
-    MW(MW_), MZ(MZ_), MH(MH_), Mt(Mt_)
+    iMW(MW_), iMZ(MZ_), iMH(MH_), iMt(Mt_)
   {
   }
   long double MMW() const
   {
-    return MW*MW;
+    return iMW*iMW;
   }
   long double MMZ() const
   {
-    return MZ*MZ;
+    return iMZ*iMZ;
   }
   long double MMH() const
   {
-    return MH*MH;
+    return iMH*iMH;
   }
   long double MMt() const
   {
-    return Mt*Mt;
+    return iMt*iMt;
   }
 
-  long double mw() const
+  long double MW() const
   {
-    return MW;
+    return iMW;
   }
-  long double mz() const
+  long double MZ() const
   {
-    return MZ;
+    return iMZ;
   }
-  long double mh() const
+  long double MH() const
   {
-    return MH;
+    return iMH;
   }
-  long double mt() const
+  long double Mt() const
   {
-    return Mt;
+    return iMt;
   }
 
 };

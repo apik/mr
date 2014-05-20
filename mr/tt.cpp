@@ -68,5 +68,4 @@ void tt::init(long double MMW_,long double MMZ_,long double MMH_,long double MMt
     protos[i]->evaluate(MMt);
   t2.elapsed();
 
-  std::cout << "Constr~!!\n";
 }
