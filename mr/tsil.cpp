@@ -1,4 +1,5 @@
 #include <tsil.hpp>
+
 std::complex<long double> csqrt(long double z)
 {
   return sqrt(std::complex<long double>(z,0));
@@ -6,12 +7,12 @@ std::complex<long double> csqrt(long double z)
 
 std::complex<long double> Li2(std::complex<long double> z)
 {
-  return TSIL_Dilog(z.real()+I*z.imag());
+  return TSIL_Dilog(z.real()+1.0I*z.imag());
 }
 
 std::complex<long double> Li3(std::complex<long double> z)
 {
-  return TSIL_Trilog(z.real()+I*z.imag());
+  return TSIL_Trilog(z.real()+1.0I*z.imag());
 }
 
 std::complex<long double> acc(std::complex<long double> z)

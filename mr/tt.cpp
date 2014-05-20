@@ -1,4 +1,4 @@
-#include <omp.h>
+// #include <omp.h>
 #include <tt.hpp>
 #include "timer.hpp"
 

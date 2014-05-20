@@ -1,4 +1,4 @@
-#include <omp.h>
+// #include <omp.h>
 #include <WW.hpp>
 #include "timer.hpp"
 
