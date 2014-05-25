@@ -11,6 +11,7 @@
 #include "ZZ.hpp"
 #include "HH.hpp"
 #include "tt.hpp"
+#include "bb.hpp"
 #include "betaQCD.hpp"
 #include "betaSM.hpp"
 

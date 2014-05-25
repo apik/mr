@@ -2,15 +2,20 @@
 #define __SMINPUT_HPP__
 class SMinput
 {
+  long double iMb;
   long double iMW;
   long double iMZ;
   long double iMH;
   long double iMt;
 
 public:
-  SMinput(long double MW_, long double MZ_, long double MH_, long double Mt_) : 
-    iMW(MW_), iMZ(MZ_), iMH(MH_), iMt(Mt_)
+  SMinput(long double Mb_, long double MW_, long double MZ_, long double MH_, long double Mt_) : 
+    iMb(Mb_), iMW(MW_), iMZ(MZ_), iMH(MH_), iMt(Mt_)
   {
+  }
+  long double MMb() const
+  {
+    return iMb*iMb;
   }
   long double MMW() const
   {
@@ -29,6 +34,10 @@ public:
     return iMt*iMt;
   }
 
+  long double Mb() const
+  {
+    return iMb;
+  }
   long double MW() const
   {
     return iMW;

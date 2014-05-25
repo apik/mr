@@ -1,52 +1,29 @@
-#ifndef __TOP_HPP__
-#define __TOP_HPP__
+#ifndef __BB_HPP__
+#define __BB_HPP__
 
 #include "tsil.hpp"
 #include "mr.hpp"
 
-class tt
+class bb
 {
 
-  long double MMt, MMH, MMW, MMZ, mu2;
+  long double MMb, MMt, MMH, MMW, MMZ, mu2;
   long double SW, CW;
 
-  // alpha*alphaS
-  Tsil* protWt000;
-  Tsil* prot0ttHt;
-  Tsil* prot0ttZt;
-  Tsil* prot0tt0t;
-  TsilSTU* prottH0H;
-  TsilSTU* prottZ0Z;
-  // alpha^2
-  Tsil* protHHttH;
-  Tsil* protHZttZ;
-  Tsil* protHWt0W;
-  Tsil* protHttHt;
-  Tsil* protHttZt;
-  Tsil* protZZttH;
-  Tsil* protZWt0W;
-  Tsil* protZttZt;
-  Tsil* protZ0tW0;
-  Tsil* protWW00Z;
-  Tsil* protW00tW;
-  Tsil* prot00WW0;
-  TsilSTU* prot0W00;
-  TsilST* prot000;
-
-  TsilST* protos[20];
+  TsilST* protb00;
 
   static const long double EPAIR2 = 1.; 
 
 public:
-  tt()
+  bb()
   {
   }
 
-  tt(long double,long double,long double,long double,long double);
+  bb(long double,long double,long double,long double,long double,long double);
   
-  tt(SMinput, long double);
+  bb(SMinput, long double);
   
-  void init(long double,long double,long double,long double,long double);
+  void init(long double,long double,long double,long double,long double,long double);
 
 
   
@@ -106,7 +83,7 @@ public:
     std::vector<std::complex<long double> > diffIfin;
 
 
-#include "testtt.hpp"
+#include "testbb.hpp"
     
     for(int i = 0; i < diffMfin.size(); i++)
       std::cout << "Test diffMfin[" << i << "]= " << diffMfin[i] << std::endl;
@@ -129,6 +106,7 @@ public:
 
 
   }
+
   std::complex<long double> m01(size_t nL = 2, size_t nH = 1);
 
   
@@ -140,7 +118,6 @@ public:
 
   std::complex<long double> m20(size_t nL = 2, size_t nH = 1);
   
-
   std::complex<long double> my01(size_t nL = 2, size_t nH = 1);
 
   
@@ -151,14 +128,21 @@ public:
   
 
   std::complex<long double> my20(size_t nL = 2, size_t nH = 1);
+
+
+  std::complex<long double> det(long double a, long double b, long double c)
+  {
+    return 1./(a*a + b*b + c*c - 2*a*b - 2*b*c - 2*c*a);
+  }
   
 
   std::complex<long double> dalpha(long double MMt,long double MMH)
   {
     return 0;
   }
+
   
 };
 
 
-#endif  //  __TOP_HPP__
+#endif  //  __BB_HPP__

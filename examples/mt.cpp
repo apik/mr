@@ -10,12 +10,10 @@ int main (int argc, char *argv[])
       long double MMt,MMW,MMZ,MMH,alphaMt,alphaS;
 
       // Compare with:
-      // bosonic only part (nH = nL = 0)    : arXiv:hep-ph/0105304
-      // fermionic    part (nH = 1, nL = 2) : arXiv:hep-ph/0212319           
       SMinput* KV[3];
-      KV[0] = new SMinput(80.385, 91.1876, 124, 173.5);
-      KV[1] = new SMinput(80.385, 91.1876, 125, 173.5);
-      KV[2] = new SMinput(80.385, 91.1876, 126, 173.5);
+      KV[0] = new SMinput(0, 80.385, 91.1876, 124, 173.5);
+      KV[1] = new SMinput(0, 80.385, 91.1876, 125, 173.5);
+      KV[2] = new SMinput(0, 80.385, 91.1876, 126, 173.5);
       
       alphaMt  = 0.00779305;
       alphaS   = 0.1184;

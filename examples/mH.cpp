@@ -13,8 +13,8 @@ int main (int argc, char *argv[])
       // Comare with:
       // bosonic only part (nH = nL = 0)    : arXiv:hep-ph/0209084
 
-      SMinput ACOVH80(80.419, 91.188, 80, 174.3);
-      SMinput ACOVH200(80.419, 91.188, 200, 174.3);
+      SMinput ACOVH80(0, 80.419, 91.188, 80, 174.3);
+      SMinput ACOVH200(0, 80.419, 91.188, 200, 174.3);
       
       alphaMt  = 0.00779305;
       alphaS   = 0.1185;
@@ -34,8 +34,8 @@ int main (int argc, char *argv[])
       // 
       std::cout << "BKKS arXiv:1205.2893" << std::endl;
 
-      SMinput BKKS2l80 (80.419, 91.188, 80, 174.3);
-      SMinput BKKS2l200(80.419, 91.188, 200, 174.3);
+      SMinput BKKS2l80 (0, 80.419, 91.188, 80, 174.3);
+      SMinput BKKS2l200(0, 80.419, 91.188, 200, 174.3);
 
 
       HH dEW80  = HH(BKKS2l80, BKKS2l80.MMt());
@@ -55,7 +55,7 @@ int main (int argc, char *argv[])
 
       for (int mHi = 0; mHi < 13; mHi++)
         {
-          SMinput DS2l(80.384, 91.1876, mHstart + mHi*mHstep, 173.10);
+          SMinput DS2l(0, 80.384, 91.1876, mHstart + mHi*mHstep, 173.10);
           HH dH  = HH(DS2l, DS2l.MMt());          
           
           plot.add(DS2l.MH(), 
@@ -67,8 +67,8 @@ int main (int argc, char *argv[])
       // 
       // Two-loop comaprison with Degrassi and Strumia
       // 
-      SMinput DS2l80(80.384, 91.1876, 80, 173.10);
-      SMinput DS2l200(80.384, 91.1876, 245, 173.10);
+      SMinput DS2l80(0, 80.384, 91.1876, 80, 173.10);
+      SMinput DS2l200(0, 80.384, 91.1876, 245, 173.10);
 
 
       HH dEWEW80  = HH(DS2l80, DS2l80.MMt());

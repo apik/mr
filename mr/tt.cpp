@@ -69,3 +69,5 @@ void tt::init(long double MMW_,long double MMZ_,long double MMH_,long double MMt
   t2.elapsed();
 
 }
+
+const long double tt::EPAIR2;

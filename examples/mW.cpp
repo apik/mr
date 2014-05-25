@@ -12,8 +12,8 @@ int main (int argc, char *argv[])
       // Comare with JKVH:
       // bosonic only part (nH = nL = 0)    : arXiv:hep-ph/0105304
       // fermionic    part (nH = 1, nL = 2) : arXiv:hep-ph/0212319           
-      SMinput JKVH80(80.419, 91.188, 150, 174.3);
-      SMinput JKVH200(80.419, 91.188, 300, 174.3);
+      SMinput JKVH80(0, 80.419, 91.188, 150, 174.3);
+      SMinput JKVH200(0, 80.419, 91.188, 300, 174.3);
          
       alphaMt  = 0.00779305;
       alphaS = 0.1184;
@@ -93,7 +93,7 @@ int main (int argc, char *argv[])
       for (int mHi = 0; mHi < 13; mHi++)
         {
           // from Table.1
-          SMinput DS2l(80.423, 91.1876, mHstart + mHi*mHstep, 173.10);
+          SMinput DS2l(0, 80.423, 91.1876, mHstart + mHi*mHstep, 173.10);
           WW dW  = WW(DS2l, DS2l.MMZ());          
           
           plot.add(DS2l.MH(), 

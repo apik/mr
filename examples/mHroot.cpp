@@ -17,8 +17,8 @@ int main (int argc, char *argv[])
       // Comare with:
       // bosonic only part (nH = nL = 0)    : arXiv:hep-ph/0209084
 
-      SMinput ACOVH80(80.419, 91.188, 80, 174.3);
-      SMinput ACOVH200(80.419, 91.188, 200, 174.3);
+      SMinput ACOVH80(0, 80.419, 91.188, 80, 174.3);
+      SMinput ACOVH200(0, 80.419, 91.188, 200, 174.3);
       
       alphaMt  = 0.00779305;
       alphaS   = 0.1184;
@@ -46,7 +46,7 @@ int main (int argc, char *argv[])
             
       for (int mHi = 0; mHi < n; mHi++)
         {
-          SMinput DS2l(80.384, 91.1876, mHstart + mHi*mHstep, 173.10);
+          SMinput DS2l(0, 80.384, 91.1876, mHstart + mHi*mHstep, 173.10);
           HH dH  = HH(DS2l, DS2l.MMt());          
 
           std::cout << "2-loop \\alpha^2      Mh= " << DS2l.MH() << ", [mH/MH -1] = " << DS2l.MMH()*pow(alphaMt/4./Pi,2)*dH.m20() << std::endl;     
