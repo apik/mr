@@ -35,7 +35,7 @@ class tt
 
   TsilST* protos[20];
 
-  static const long double EPAIR2 = 1.; 
+  static const long double EPAIR2 = -1.; 
 
 public:
   tt()

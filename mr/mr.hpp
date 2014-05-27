@@ -2,10 +2,6 @@
 // doi:http://dx.doi.org/10.1063/1.3637934
 #ifndef __MR_HPP__
 #define __MR_HPP__
-// #include "tsil.hpp"
-// #undef complex 
-// #include <complex>
-// #include <cmath>
 
 #include "WW.hpp"
 #include "ZZ.hpp"

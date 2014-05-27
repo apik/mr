@@ -1,9 +1,9 @@
 AUTOMAKE_OPTIONS = subdir-objects
 ACLOCAL_AMFLAGS = ${ACLOCAL_FLAGS} -I m4
 
-LDADD = ../mr/libmr.la
+LDADD = ../mr/libmr.a
 
-noinst_PROGRAMS = mW mZ mH mt runAlpha runSM mratio mb yukawa
+noinst_PROGRAMS = mW mZ mH mt runAlpha runSM mb yukawa
 if HAVE_ROOT
 noinst_PROGRAMS += mHroot
 endif 
@@ -47,6 +47,6 @@ runSM_SOURCES =  runSM.cpp
 runSM_CPPFLAGS = $(MR_CFLAGS) -I$(top_srcdir)/tsil-1.1 -I$(top_srcdir)/mr
 runSM_LDADD = $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.1 -ltsil -lm
 
-mratio_SOURCES =  mratio.cpp
-mratio_CPPFLAGS = $(MR_CFLAGS) -I$(top_srcdir)/tsil-1.1 -I$(top_srcdir)/mr
-mratio_LDADD = $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.1 -ltsil -lm
+# mratio_SOURCES =  mratio.cpp
+# mratio_CPPFLAGS = $(MR_CFLAGS) -I$(top_srcdir)/tsil-1.1 -I$(top_srcdir)/mr
+# mratio_LDADD = $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.1 -ltsil -lm

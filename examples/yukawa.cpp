@@ -1,5 +1,6 @@
 #include <iostream>
 #include "mr.hpp"
+#include "gnuplot.hpp"
 
 int main (int argc, char *argv[])
 {
@@ -10,16 +11,17 @@ int main (int argc, char *argv[])
       long double MMt,MMW,MMZ,MMH,alphaMt,alphaS,alphaSMt;
 
       // Compare with:
-      
       SMinput KVPhys(4.40, 80.385, 91.1876, 125.6, 173.5);
       
 
       alphaS   = 0.1184;
 
+      long double alphaSMZ = 0.1184;
       // \mu = Mt
       alphaMt  = 0.00779305;
-      alphaSMt   = 0.1079;
+      alphaSMt   = 0.1184;
 
+      
       // \mu = Mb
       long double alphaMb  = 0.00784257;
       long double alphaSMb   = 0.1905;
@@ -58,6 +60,35 @@ int main (int argc, char *argv[])
       std::cout << "<20> yt/yb = " << dMb.my20()/dMt.my20() << " mt/mb = " << dMb.m20()/dMt.m20() << std::endl;
       
       
+
+      // Test Jegerlehner input
+      // using 1-loop matching
+
+      SMinput inFJ(0,80.385,91.1876,125.5,173.5);
+
+      tt topFJ(inFJ, inFJ.MMZ());
+
+      std::cout << "\n\n \t Jegerlehner input:" << std::endl;
+      
+      std::complex<long double> ytFJ = inFJ.Mt()*(1 + alphaMZ*topFJ.m10() + alphaSMZ*topFJ.m01())*sqrt(2*sqrt(2)*1.16637e-5);
+
+      std::cout << "yT(mZ) = " << ytFJ 
+                << std::endl;
+
+
+      // Plot Yukawa top
+   Plot1 plotYt("yt", "Yukawa Top", "mH", "\\sigma_\\alpha*\\alpha_S", "a*a_S");
+   long double mHstep  = 20; // GeV
+   long double mHstart = 80; // GeV
+   
+   for (int mHi = 0; mHi < 13; mHi++)
+     {
+       SMinput DS2l(4.40, 80.385, 91.1876, mHstart + mHi*mHstep, 173.5);
+       tt dtY  = tt(DS2l, DS2l.MMt());          
+       
+       plotYt.add(DS2l.MH(),alphaMt/4./Pi*alphaSMt/4./Pi*dtY.my11().real());
+     }
+
     }
   catch (std::exception &p) 
     {

@@ -15,8 +15,8 @@ AM_CONDITIONAL(HAVE_ROOT, false)
 ROOT_PATH(, AM_CONDITIONAL(HAVE_ROOT, true))
 
 dnl AM_CONDITIONAL(HAVE_ROOT, test x$ROOTLIBDIR != x)
-dnl AC_PROG_RANLIB
-LT_INIT
+AC_PROG_RANLIB
+dnl LT_INIT
 
 dnl PKG_CHECK_MODULES(SM3R2M, ginac >= 1.3.7)
 AC_CONFIG_FILES(Makefile tsil-1.1/Makefile mr/Makefile examples/Makefile)
