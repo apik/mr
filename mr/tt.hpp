@@ -7,7 +7,7 @@
 class tt
 {
 
-  long double MMt, MMH, MMW, MMZ, mu2;
+  long double MMb,MMt, MMH, MMW, MMZ, mu2;
   long double SW, CW;
 
   // alpha*alphaS
@@ -46,7 +46,7 @@ public:
   
   tt(SMinput, long double);
   
-  void init(long double,long double,long double,long double,long double);
+  void init();
 
 
   

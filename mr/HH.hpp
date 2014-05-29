@@ -9,7 +9,7 @@
 class HH
 {
 
-  long double MMt, MMH, MMW, MMZ, mu2;
+  long double MMb, MMt, MMH, MMW, MMZ, mu2;
   long double SW, CW;
   
   Tsil* protHHHHH;
@@ -40,7 +40,7 @@ public:
   
   HH(SMinput, long double);
   
-  void init(long double,long double,long double,long double,long double);
+  void init();
 
 
   

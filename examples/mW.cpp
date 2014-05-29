@@ -103,6 +103,29 @@ int main (int argc, char *argv[])
                    pow(alpha0/4./Pi,2)*dW.m20(0,0).real());
         }
 
+      // 
+      // Plot 2-loop bosonic part
+      // 
+      Plot3 plotJKV("mW_0105304_fig5", "\\alpha^2 conversion between \\bar{MS} and  On-Shell Z mass", "mH", "mmZ(mZ)/MMZ-1", "1-loop nf=0", "2-loop", "1+2-loop");
+      mHstep  = 20; // GeV
+      mHstart = 100; // GeV
+      
+      for (int mHi = 0; mHi < 11; mHi++)
+        {
+          // from Table.1
+          SMinput DS2l(4.4, 80.419, 91.188, mHstart + mHi*mHstep, 174.3);
+          WW dW  = WW(DS2l, DS2l.MMW());          
+          
+          long double mW_2l = pow(alpha0/4./Pi,2)*dW.m20(0,0).real();
+          long double mW_1l = pow(alpha0/4./Pi,1)*dW.m10(0,0).real();
+          plotJKV.add(DS2l.MH(), 
+                   mW_1l,
+                   mW_2l,
+                   mW_1l+mW_2l
+                   );
+            }
+
+
 
     }
   catch (std::exception &p) 
