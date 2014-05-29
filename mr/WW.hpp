@@ -7,7 +7,7 @@
 class WW
 {
 
-  long double MMt, MMH, MMW, MMZ, mu2;
+  long double MMb, MMt, MMH, MMW, MMZ, mu2;
   long double SW, CW;
 
   Tsil* protWHHWW;
@@ -45,7 +45,7 @@ public:
 
   WW(SMinput, long double);
 
-  void init(long double,long double,long double,long double,long double);
+  void init();
   
   std::complex<long double> Mfin1(TSIL_REAL x, TSIL_REAL y, TSIL_REAL z, TSIL_REAL u, TSIL_REAL v)
   {

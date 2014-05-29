@@ -2,25 +2,26 @@
 #include <WW.hpp>
 #include "timer.hpp"
 
-WW::WW(long double MMW_,long double MMZ_,long double MMH_,long double MMt_,long double mu2_):
-  MMW(MMW_), MMZ(MMZ_), MMH(MMH_), MMt(MMt_), mu2(mu2_)
-{
-  init(MMW, MMZ, MMH, MMt, mu2);
-}
+// WW::WW(long double MMW_,long double MMZ_,long double MMH_,long double MMt_,long double mu2_):
+//   MMb(MMb_), MMW(MMW_), MMZ(MMZ_), MMH(MMH_), MMt(MMt_), mu2(mu2_)
+// {
+//   init(MMB, MMW, MMZ, MMH, MMt, mu2);
+// }
 
 WW::WW(SMinput sm, long double mu2_)
 {
+  MMb = sm.MMb();
   MMW = sm.MMW();
   MMZ = sm.MMZ();
   MMH = sm.MMH();
   MMt = sm.MMt();
   mu2 = mu2_;
 
-  init(sm.MMW(), sm.MMZ(), sm.MMH(), sm.MMt(), mu2_);
+  init();
 }
 
 
-void WW::init(long double MMW_,long double MMZ_,long double MMH_,long double MMt_,long double mu2_)
+void WW::init()
 {
 
   CW = sqrt(MMW/MMZ);

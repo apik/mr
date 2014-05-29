@@ -3,25 +3,26 @@
 #include "timer.hpp"
 
 
-HH::HH(long double MMW_,long double MMZ_,long double MMH_,long double MMt_,long double mu2_):
-  MMW(MMW_), MMZ(MMZ_), MMH(MMH_), MMt(MMt_), mu2(mu2_)
-{
-  init(MMW, MMZ, MMH, MMt, mu2);
-}
+// HH::HH(long double MMW_,long double MMZ_,long double MMH_,long double MMt_,long double mu2_):
+//   MMW(MMW_), MMZ(MMZ_), MMH(MMH_), MMt(MMt_), mu2(mu2_)
+// {
+//   init(MMW, MMZ, MMH, MMt, mu2);
+// }
 
 HH::HH(SMinput sm, long double mu2_)
 {
+  MMb = sm.MMb();
   MMW = sm.MMW();
   MMZ = sm.MMZ();
   MMH = sm.MMH();
   MMt = sm.MMt();
   mu2 = mu2_;
 
-  init(sm.MMW(), sm.MMZ(), sm.MMH(), sm.MMt(), mu2_);
+  init();
 }
 
 
-void HH::init(long double MMW_,long double MMZ_,long double MMH_,long double MMt_,long double mu2_)
+void HH::init()
 {
   
   CW = sqrt(MMW/MMZ);
