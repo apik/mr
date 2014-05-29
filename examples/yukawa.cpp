@@ -49,7 +49,7 @@ int main (int argc, char *argv[])
       std::cout << "[ Bottom quark ]" << std::endl;
       std::cout << "\t1-loop \\alpha         " << alphaMb/4./Pi*dMb.my10() << std::endl;
       std::cout << "\t1-loop \\alpha_S       " << alphaSMb/4./Pi*dMb.my01() << std::endl;
-      std::cout << "\t2-loop \\alpha*\\alpha_S" << alphaMb/4./Pi*alphaSMb/4./Pi*dMb.my11() << std::endl;
+      std::cout << "\t2-loop \\alpha*\\alpha_S" << alphaMb/4./Pi*alphaSMt/4./Pi*dMb.my11() << std::endl;
       std::cout << "\t2-loop \\alpha^2       " << pow(alphaMb/4./Pi,2)*dMb.my20() << std::endl;
       
       
@@ -66,14 +66,17 @@ int main (int argc, char *argv[])
 
       SMinput inFJ(0,80.385,91.1876,125.5,173.5);
 
-      tt topFJ(inFJ, inFJ.MMZ());
+      tt topFJ(inFJ, inFJ.MMt());
 
       std::cout << "\n\n \t Jegerlehner input:" << std::endl;
       
-      std::complex<long double> ytFJ = inFJ.Mt()*(1 + alphaMZ*topFJ.m10() + alphaSMZ*topFJ.m01())*sqrt(2*sqrt(2)*1.16637e-5);
+      std::complex<long double> ytFJ = inFJ.Mt()*(1 
+                                                  + alphaMt/4./Pi*topFJ.m10() 
+                                                  + alphaSMt/4./Pi*topFJ.m01()
+                                                  + alphaMt/4./Pi*alphaSMt/4./Pi*topFJ.m11()
+                                                  )*sqrt(2*sqrt(2)*1.16637e-5);
 
-      std::cout << "yT(mZ) = " << ytFJ 
-                << std::endl;
+      std::cout << "yT(mt) = " << ytFJ << std::endl;
 
 
       // Plot Yukawa top
@@ -87,6 +90,20 @@ int main (int argc, char *argv[])
        tt dtY  = tt(DS2l, DS2l.MMt());          
        
        plotYt.add(DS2l.MH(),alphaMt/4./Pi*alphaSMt/4./Pi*dtY.my11().real());
+     }
+
+
+   // Plot Yukawa bottom
+   Plot1 plotYb("yb", "Yukawa Bottom", "mH", "\\sigma_\\alpha*\\alpha_S", "a*a_S");
+   mHstep  = 10; // GeV
+   mHstart = 1; // GeV
+   
+   for (int mHi = 0; mHi < 100; mHi++)
+     {
+       SMinput DS2l(4.40, 80.385, 91.1876, 125.6, 173.5);
+       bb dbY  = bb(DS2l, mHstart + mHi*mHstep);          
+       
+       plotYb.add(mHstart + mHi*mHstep,alphaMb/4./Pi*alphaSMb/4./Pi*dbY.my11().real());
      }
 
     }

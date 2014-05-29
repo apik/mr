@@ -63,25 +63,44 @@ int main (int argc, char *argv[])
       // 
       // Plot 2-loop bosonic part
       // 
-      Plot4 plot("mZ_0209084_fig6", "\\alpha^2 conversion between \\bar{MS} and  On-Shell Z mass", "mH", "mmZ(mZ)/MMZ-1", "2-loop nf=0", "2-loop fermion", "2-loop full", "EM*QCD");
+      Plot1 plot("mZ_0209084_fig6", "\\alpha^2 conversion between \\bar{MS} and  On-Shell Z mass", "mH", "mmZ(mZ)/MMZ-1", "2-loop ");
       AlphaS as;
-      long double mHstep  = 1; // GeV
-      long double mHstart = 120; // GeV
-      
+      long double mHstep  = 10; // GeV
+      long double mHstart = 80; // GeV
+
       for (int mHi = 0; mHi < 13; mHi++)
         {
           // from Table.1
-          SMinput DS2l(0, 80.423, 91.1876, mHstart + mHi*mHstep, 173.10);
+          SMinput DS2l(0, 80.419, 91.188, mHstart + mHi*mHstep, 174.3);
+          
           ZZ dZ  = ZZ(DS2l, DS2l.MMZ());          
           
-          long double mZ_bos = pow(alpha0/4./Pi,2)*dZ.m20(0,0).real();
-          long double mZ_all = pow(alpha0/4./Pi,2)*dZ.m20().real();
-          long double mZ_fer = mZ_all - mZ_bos;
           plot.add(DS2l.MH(), 
-                   mZ_bos,
-                   mZ_fer,
-                   mZ_all,
-                   alpha0/4./Pi*alphaS/4./Pi*dZ.m11().real()
+                   // alphaMt/4./Pi*dW.m10().real(), 
+                   // alphaMt/4./Pi*as(DS2l.MMt())/4./Pi*dH.m11().real(),
+                   pow(alpha0/4./Pi,2)*dZ.m20(0,0).real());
+        }
+
+
+      // 
+      // Plot 2-loop bosonic part
+      // 
+      Plot3 plotJKV("mZ_0105304_fig3", "\\alpha^2 conversion between \\bar{MS} and  On-Shell Z mass", "mH", "mmZ(mZ)/MMZ-1", "1-loop nf=0", "2-loop", "1+2-loop");
+      mHstep  = 20; // GeV
+      mHstart = 100; // GeV
+      
+      for (int mHi = 0; mHi < 11; mHi++)
+        {
+          // from Table.1
+          SMinput DS2l(0, 80.419, 91.188, mHstart + mHi*mHstep, 174.3);
+          ZZ dZ  = ZZ(DS2l, DS2l.MMZ());          
+          
+          long double mZ_2l = pow(alpha0/4./Pi,2)*dZ.m20(0,0).real();
+          long double mZ_1l = pow(alpha0/4./Pi,1)*dZ.m10(0,0).real();
+          plotJKV.add(DS2l.MH(), 
+                   mZ_1l,
+                   mZ_2l,
+                   mZ_1l+mZ_2l
                    );
             }
 

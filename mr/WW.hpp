@@ -137,6 +137,17 @@ public:
 
   std::complex<long double> m20(size_t nL = 2, size_t nH = 1);
 
+
+  std::complex<long double> my01(size_t nL = 2, size_t nH = 1);
+
+  
+  std::complex<long double> my10(size_t nL = 2, size_t nH = 1);
+
+  
+  std::complex<long double> my11(size_t nL = 2, size_t nH = 1);
+  
+
+  std::complex<long double> my20(size_t nL = 2, size_t nH = 1);
   // inline std::complex<long double> dd(size_t nG)
   // {
   //   return std::complex<long double>(nG == 0 ? 0 : 1,0);

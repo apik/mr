@@ -3,7 +3,7 @@ ACLOCAL_AMFLAGS = ${ACLOCAL_FLAGS} -I m4
 
 LDADD = ../mr/libmr.a
 
-noinst_PROGRAMS = mW mZ mH mt runAlpha runSM mb yukawa
+noinst_PROGRAMS = mW mZ mH mt runAlpha runSM mb yukawa gauge plotyukawa
 if HAVE_ROOT
 noinst_PROGRAMS += mHroot
 endif 
@@ -34,6 +34,14 @@ mt_LDADD = $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.1 -ltsil -l
 yukawa_SOURCES =  yukawa.cpp
 yukawa_CPPFLAGS = $(MR_CFLAGS) -I$(top_srcdir)/tsil-1.1 -I$(top_srcdir)/mr
 yukawa_LDADD = $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.1 -ltsil -lm
+
+plotyukawa_SOURCES =  plotyukawa.cpp CRunDec.cpp CRunDec.h
+plotyukawa_CPPFLAGS = $(MR_CFLAGS) -I$(top_srcdir)/tsil-1.1 -I$(top_srcdir)/mr
+plotyukawa_LDADD = $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.1 -ltsil -lm
+
+gauge_SOURCES =  gauge.cpp
+gauge_CPPFLAGS = $(MR_CFLAGS) -I$(top_srcdir)/tsil-1.1 -I$(top_srcdir)/mr
+gauge_LDADD = $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.1 -ltsil -lm
 
 mb_SOURCES =  mb.cpp
 mb_CPPFLAGS = $(MR_CFLAGS) -I$(top_srcdir)/tsil-1.1 -I$(top_srcdir)/mr

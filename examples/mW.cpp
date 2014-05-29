@@ -93,7 +93,8 @@ int main (int argc, char *argv[])
       for (int mHi = 0; mHi < 13; mHi++)
         {
           // from Table.1
-          SMinput DS2l(0, 80.423, 91.1876, mHstart + mHi*mHstep, 173.10);
+          SMinput DS2l(0, 80.419, 91.188, mHstart + mHi*mHstep, 174.3);
+          
           WW dW  = WW(DS2l, DS2l.MMZ());          
           
           plot.add(DS2l.MH(), 
