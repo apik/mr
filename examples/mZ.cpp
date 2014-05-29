@@ -92,7 +92,7 @@ int main (int argc, char *argv[])
       for (int mHi = 0; mHi < 11; mHi++)
         {
           // from Table.1
-          SMinput DS2l(0, 80.419, 91.188, mHstart + mHi*mHstep, 174.3);
+          SMinput DS2l(4.4, 80.419, 91.188, mHstart + mHi*mHstep, 174.3);
           ZZ dZ  = ZZ(DS2l, DS2l.MMZ());          
           
           long double mZ_2l = pow(alpha0/4./Pi,2)*dZ.m20(0,0).real();
