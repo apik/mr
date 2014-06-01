@@ -1,9 +1,9 @@
 #include <tt.hpp>
-std::complex<long double> tt::m01(size_t nL, size_t nH)
+std::complex<long double> tt::m01()
 {     
       
       
-    std::complex<long double> mtt[3];
+    std::complex<long double> mtt[4];
 
     mtt[1]=Tsil::A(MMt,mu2);
     mtt[2]=pow(MMt,-1);

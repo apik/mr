@@ -3,7 +3,7 @@ std::complex<long double> tt::my20(size_t nL, size_t nH)
 {     
       
       
-    std::complex<long double> myt[500];
+    std::complex<long double> myt[501];
 
     myt[1]=pow(CW,-1);
     myt[2]=pow(MMZ,-1);

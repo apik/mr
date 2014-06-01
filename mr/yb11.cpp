@@ -3,7 +3,7 @@ std::complex<long double> bb::my11(size_t nL, size_t nH)
 {     
       
       
-    std::complex<long double> myb[36];
+    std::complex<long double> myb[37];
 
     myb[1]=pow(CW,-1);
     myb[2]=pow(MMZ,-1);

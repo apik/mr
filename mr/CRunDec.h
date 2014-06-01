@@ -43,7 +43,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 #define mub  4.163
 #define Mtau 1.777
 
-// Some constants:
+/* // Some constants: */
 #define cf 4./3.
 #define ca 3.
 #define tr 1./2.

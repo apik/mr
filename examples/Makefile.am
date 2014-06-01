@@ -43,7 +43,7 @@ yt_SOURCES =  yt.cpp
 yt_CPPFLAGS = $(MR_CFLAGS) -I$(top_srcdir)/tsil-1.1 -I$(top_srcdir)/mr
 yt_LDADD = $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.1 -ltsil -lm
 
-plotyukawa_SOURCES =  plotyukawa.cpp CRunDec.cpp CRunDec.h
+plotyukawa_SOURCES =  plotyukawa.cpp
 plotyukawa_CPPFLAGS = $(MR_CFLAGS) -I$(top_srcdir)/tsil-1.1 -I$(top_srcdir)/mr
 plotyukawa_LDADD = $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.1 -ltsil -lm
 
@@ -55,7 +55,7 @@ mb_SOURCES =  mb.cpp
 mb_CPPFLAGS = $(MR_CFLAGS) -I$(top_srcdir)/tsil-1.1 -I$(top_srcdir)/mr
 mb_LDADD = $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.1 -ltsil -lm
 
-runAlpha_SOURCES =  runAlpha.cpp CRunDec.cpp CRunDec.h
+runAlpha_SOURCES =  runAlpha.cpp 
 runAlpha_CPPFLAGS = $(MR_CFLAGS) -I$(top_srcdir)/tsil-1.1 -I$(top_srcdir)/mr
 runAlpha_LDADD = $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.1 -ltsil -lm
 

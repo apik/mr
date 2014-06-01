@@ -3,7 +3,7 @@ std::complex<long double> tt::m11(size_t nL, size_t nH)
 {     
       
       
-    std::complex<long double> mtt[67];
+    std::complex<long double> mtt[68];
 
     mtt[1]=pow(CW,-1);
     mtt[2]=pow(MMH,-1);

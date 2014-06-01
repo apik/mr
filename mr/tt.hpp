@@ -129,9 +129,10 @@ public:
 
 
   }
-  std::complex<long double> m01(size_t nL = 2, size_t nH = 1);
-  std::complex<long double> m02(size_t nL = 2);
-  std::complex<long double> m03(size_t nL = 2);
+
+  std::complex<long double> m01();
+  std::complex<long double> m02(size_t nL = 5);
+  std::complex<long double> m03(size_t nL = 5);
 
   
   std::complex<long double> m10(size_t nL = 2, size_t nH = 1);
@@ -143,7 +144,7 @@ public:
   std::complex<long double> m20(size_t nL = 2, size_t nH = 1);
   
 
-  std::complex<long double> my01(size_t nL = 2, size_t nH = 1);
+  std::complex<long double> my01();
 
   
   std::complex<long double> my10(size_t nL = 2, size_t nH = 1);

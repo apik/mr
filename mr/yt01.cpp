@@ -1,13 +1,14 @@
 #include <tt.hpp>
-std::complex<long double> tt::my01(size_t nL, size_t nH)
+std::complex<long double> tt::my01()
 {     
       
       
-    std::complex<long double> myt[3];
+    std::complex<long double> myt[4];
 
     myt[1]=Tsil::A(MMt,mu2);
     myt[2]=pow(MMt,-1);
    myt[3]=myt[1]*myt[2];
+   std::cout << "A,debug " << myt[3] << std::endl;
    myt[3]= - 1./3. + myt[3];
 
       return 4*myt[3];

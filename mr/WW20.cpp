@@ -3,7 +3,7 @@ std::complex<long double> WW::m20(size_t nL, size_t nH)
 {     
       
       
-    std::complex<long double> mWW[468];
+    std::complex<long double> mWW[469];
 
     mWW[1]=pow(CW,-1);
     mWW[2]=pow(MMZ,-1);
