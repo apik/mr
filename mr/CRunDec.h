@@ -118,9 +118,14 @@ class CRunDec
   double fOsFromMs1(double mu, double M);
   double fOsFromMs2(double mu, double M, double nl);
   double fOsFromMs3(double mu, double M, double nl);
-  double fMsFromOs1(double mu, double M);
-  double fMsFromOs2(double mu, double M, double nl);
-  double fMsFromOs3(double mu, double M, double nl);
+
+  /* Made public and static to use separately from CRunDec */
+  /* A.Pikelner                                            */
+ public:
+  static double fMsFromOs1(double mu, double M);
+  static double fMsFromOs2(double mu, double M, double nl);
+  static double fMsFromOs3(double mu, double M, double nl);
+ private:
   double fZmM(double n);
   double fZmInvM(double n);
   double fDelta(double mOS,double mq[]);

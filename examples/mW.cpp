@@ -12,12 +12,13 @@ int main (int argc, char *argv[])
       // Comare with JKVH:
       // bosonic only part (nH = nL = 0)    : arXiv:hep-ph/0105304
       // fermionic    part (nH = 1, nL = 2) : arXiv:hep-ph/0212319           
-      SMinput JKVH80(0, 80.419, 91.188, 150, 174.3);
-      SMinput JKVH200(0, 80.419, 91.188, 300, 174.3);
+      SMinput JKVH80(4.4, 80.419, 91.188, 150, 174.3);
+      SMinput JKVH200(4.4, 80.419, 91.188, 300, 174.3);
          
       alphaMt  = 0.00779305;
       alphaS = 0.1184;
 
+      long double alphaMZ = 1./127.944;
       long double alpha0 = 1./137.035999;
 
       WW W80  = WW(JKVH80, JKVH80.MMW());
@@ -36,34 +37,44 @@ int main (int argc, char *argv[])
       // Full SM
       // 
       std::cout << "SM 1-loop \\alpha      Mh= " << JKVH80.MH()  << ", [mW/MW -1] = " 
-                << alpha0/4./Pi*W80.m10(2,1) << std::endl;
+                << alpha0/4./Pi*W80.m10(0,1) << std::endl;
       std::cout << "SM 1-loop \\alpha      Mh= " << JKVH200.MH()  << ", [mW/MW -1] = " 
-                << alpha0/4./Pi*W200.m10(2,1) << std::endl;
-      std::cout << "SM 2-loop \\alpha^2 nf=0     Mh= " << JKVH80.MH()  << ", [mW/MW -1] = " 
-                << pow(alpha0/4./Pi,2)*W80.m20(0,0) << std::endl;
-      std::cout << "SM 2-loop \\alpha^2 nf=0     Mh= " << JKVH200.MH()  << ", [mW/MW -1] = " 
-                << pow(alpha0/4./Pi,2)*W200.m20(0,0) << std::endl;
+                << alpha0/4./Pi*W200.m10(0,1) << std::endl;
+      std::cout << "SM 2-loop \\alpha^2 nf=3     Mh= " << JKVH80.MH()  << ", [mW/MW -1] = " 
+                << pow(alpha0/4./Pi,2)*W80.m20(0) << std::endl;
+      std::cout << "SM 2-loop \\alpha^2 nf=3     Mh= " << JKVH200.MH()  << ", [mW/MW -1] = " 
+                << pow(alpha0/4./Pi,2)*W200.m20(0) << std::endl;
 
       std::cout << " 1 = (1 + X1 + X2)*(1 + Y1 + Y2)" << std::endl;
       
+
+      long double X180,X1200,X280,X2200,Y180,Y1200,Y280,Y2200;
+
+      X180 = alpha0/4./Pi*W80.m10().real();
+      X1200 = alpha0/4./Pi*W200.m10().real();
+    
+      X280 = pow(alpha0/4./Pi,2)*W80.m20().real();
+      X2200 = pow(alpha0/4./Pi,2)*W200.m20().real();
+
+        
       std::cout << "LHS      Mh= " << JKVH80.MH()  << ", [mW/MW -1] = " 
                 << 1 + alpha0/4./Pi*W80.m10() + 0*pow(alpha0/4./Pi,2)*W80.m20() << std::endl;
 
       std::cout << "LHS      Mh= " << JKVH200.MH()  << ", [mW/MW -1] = " 
-                << 1 + alpha0/4./Pi*W200.m10() + 0*pow(alpha0/4./Pi,2)*W200.m20() << std::endl;
+                <<1 + alpha0/4./Pi*W200.m10() + 0*pow(alpha0/4./Pi,2)*W200.m20() << std::endl;
 
       std::cout << "LHS 1l     Mh= " << JKVH80.MH()  << ", [mW/MW -1] = " 
-                << 0.9652791210924665318293049331952014859085794548969162728818377550731344617939375411461317952286357517 + pow(alpha0/4./Pi,2)*W80.m20() << std::endl;
+                <<  pow(alpha0/4./Pi,1)*W80.m10() << std::endl;
 
       std::cout << "LHS 1l     Mh= " << JKVH200.MH()  << ", [mW/MW -1] = " 
-                << 1.044246369785103344770588814451876892018947264237810660355287674109945054514877377628523175447663686 + pow(alpha0/4./Pi,2)*W200.m20() << std::endl;
+                <<  pow(alpha0/4./Pi,1)*W200.m10() << std::endl;
 
 
 
       std::cout << "SM 1-loop \\alpha      Mh= " << JKVH80.MH()  << ", [MW/mW -1] = " 
-                << alpha0/4./Pi*W80.m10(2,1)/(1+alpha0/4./Pi*W80.m10(2,1)) << std::endl;
+                <<  1 -X180 + (X180*X180 - X280)*0 << std::endl;
       std::cout << "SM 1-loop \\alpha      Mh= " << JKVH200.MH()  << ", [MW/mW -1] = " 
-                << alpha0/4./Pi*W200.m10(2,1)/(1+alpha0/4./Pi*W200.m10(2,1)) << std::endl;
+                <<  1 -X1200 + (X1200*X1200 - X2200)*0 << std::endl;
 
 
 
@@ -93,7 +104,7 @@ int main (int argc, char *argv[])
       for (int mHi = 0; mHi < 13; mHi++)
         {
           // from Table.1
-          SMinput DS2l(0, 80.419, 91.188, mHstart + mHi*mHstep, 174.3);
+          SMinput DS2l(4.4, 80.419, 91.188, mHstart + mHi*mHstep, 174.3);
           
           WW dW  = WW(DS2l, DS2l.MMZ());          
           

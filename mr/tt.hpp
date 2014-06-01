@@ -130,6 +130,8 @@ public:
 
   }
   std::complex<long double> m01(size_t nL = 2, size_t nH = 1);
+  std::complex<long double> m02(size_t nL = 2);
+  std::complex<long double> m03(size_t nL = 2);
 
   
   std::complex<long double> m10(size_t nL = 2, size_t nH = 1);

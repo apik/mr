@@ -55,5 +55,27 @@ public:
     return iMt;
   }
 
+  // Modification
+  void setMb(long double mb)
+  {
+    iMb = mb;
+  }
+  void setMW(long double mW)
+  {
+    iMW = mW;
+  }
+  void setMZ(long double mZ)
+  {
+    iMZ = mZ;
+  }
+  void setMH(long double mH)
+  {
+    iMH = mH;
+  }
+  void setMt(long double mt)
+  {
+    iMt = mt;
+  }
+
 };
 #endif // __SMINPUT_HPP__
