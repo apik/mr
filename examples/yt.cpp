@@ -26,7 +26,7 @@ int main (int argc, char *argv[])
       alphaSMt   = 0.1079;
       
      // Plot Yukawa top
-      Plot4 plotYt("ytQCD", "Yukawa top", "mH", "delta_Yt", "a","a*a_S","a+a*a_S", "a+a*a_s+a^2");
+      Plot5 plotYt("ytQCD", "Yukawa top", "mH", "delta_Yt", "as^2","as^3","as^3+a", "as^3+a+a*as","as^3+a+a*as+a^2" );
       // Plot3 plotYtDegr("yt_degr", "Higgs self-coupling", "mH", "lam", "1+a+a*a_s","1+a+a*a_s+a^2","Degrassi");
       Plot4 plotYtDegrPart("ytPart", "Yukawa top parts", "mH", "lam", "a*a_s","a^2","D:a*a_s","D:a^2");
       long double mHstep  = 10; // GeV
@@ -42,22 +42,30 @@ int main (int argc, char *argv[])
           tt dt  = tt(BKKS, BKKS.MMt());          
           
           plotYt.add(BKKS.MH(),
+                     pow(alphaSMt/4./Pi,1)*dt.my01().real()+
                      pow(alphaSMt/4./Pi,2)*dt.m02().real(),
                      
-                     // pow(alphaSMt/4./Pi,1)*dt.m01().real()+
-                     // pow(alphaSMt/4./Pi,2)*dt.m02().real()+
+                     pow(alphaSMt/4./Pi,1)*dt.my01().real()+
+                     pow(alphaSMt/4./Pi,2)*dt.m02().real()+
                      pow(alphaSMt/4./Pi,3)*dt.m03().real(),
 
                      pow(alphaSMt/4./Pi,1)*dt.m01().real()+
                      pow(alphaSMt/4./Pi,2)*dt.m02().real()+
                      pow(alphaSMt/4./Pi,3)*dt.m03().real()+
+                     alpha(BKKS.Mt())/4./Pi*dt.my10().real(),
+
+                     pow(alphaSMt/4./Pi,1)*dt.m01().real()+
+                     pow(alphaSMt/4./Pi,2)*dt.m02().real()+
+                     pow(alphaSMt/4./Pi,3)*dt.m03().real()+
+                     alpha(BKKS.Mt())/4./Pi*dt.my10().real()+
                      alpha(BKKS.Mt())/4./Pi*alphaSMt/4./Pi*dt.my11().real(),
 
                      pow(alphaSMt/4./Pi,1)*dt.m01().real()+
                      pow(alphaSMt/4./Pi,2)*dt.m02().real()+
                      pow(alphaSMt/4./Pi,3)*dt.m03().real()+
                      alpha(BKKS.Mt())/4./Pi*dt.my10().real()+
-                     alpha(BKKS.Mt())/4./Pi*alphaSMt/4./Pi*dt.my11().real());
+                     alpha(BKKS.Mt())/4./Pi*alphaSMt/4./Pi*dt.my11().real()+
+                     pow(alpha(BKKS.Mt())/4./Pi,2)*dt.my20().real());
 
           // plotDegr.add(BKKS.MH(),
           //              (1+
@@ -80,8 +88,7 @@ int main (int argc, char *argv[])
                              );
           
           // std::cout << "Rundec: " << 4.*alphaSMt/4./Pi*CRunDec::fMsFromOs1(BKKS.Mt(), BKKS.Mt()) << std::endl; 
-          std::cout << "      : " << // alphaSMt/4./Pi*
-            dt.my01().real() << "  A= " << Tsil::A(BKKS.MMt(),BKKS.MMt())/BKKS.MMt() << std::endl; 
+          std::cout << "      : " << alphaSMt/4./Pi*dt.my01().real() << "  A= " << Tsil::A(BKKS.MMt(),BKKS.MMt())/BKKS.MMt() << std::endl; 
 
           
           

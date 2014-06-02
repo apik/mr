@@ -125,8 +125,8 @@ class CRunDec
   static double fMsFromOs1(double mu, double M);
   static double fMsFromOs2(double mu, double M, double nl);
   static double fMsFromOs3(double mu, double M, double nl);
- private:
-  double fZmM(double n);
+  static double fZmM(double n);
+private:
   double fZmInvM(double n);
   double fDelta(double mOS,double mq[]);
   double fMsFromRi1(void);
