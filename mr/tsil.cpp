@@ -1,5 +1,10 @@
 #include <tsil.hpp>
 
+std::complex<long double> c2pp(TSIL_COMPLEX z)
+{
+  return std::complex<long double>(__real__ z, __imag__ z);
+}
+
 std::complex<long double> csqrt(long double z)
 {
   return sqrt(std::complex<long double>(z,0));

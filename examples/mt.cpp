@@ -33,6 +33,8 @@ int main (int argc, char *argv[])
           std::cout << "\t1-loop \\alpha_S       " << KV[i]->Mt()*as(KV[i]->MMt())/4./Pi*dMt.m01() << std::endl;
           std::cout << "\t2-loop \\alpha*\\alpha_S" << KV[i]->Mt()*alphaMt/4./Pi*as(KV[i]->MMt())/4./Pi*dMt.m11() << std::endl;
           std::cout << "\t2-loop \\alpha^2       " << KV[i]->Mt()*pow(alphaMt/4./Pi,2)*dMt.m20() << std::endl;
+          
+          dMt.test();
         }
       
     }

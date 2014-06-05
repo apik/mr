@@ -22,6 +22,8 @@ extern "C"{
 #undef complex
 #endif
 
+std::complex<long double> c2pp(TSIL_COMPLEX);
+
 class TsilST
 {
 protected:
@@ -56,27 +58,27 @@ public:
 
   static std::complex<long double> A(TSIL_REAL m, TSIL_REAL qq)
   {
-    return TSIL_A(m,qq);
+    return c2pp(TSIL_A(m,qq));
   }
 
   static std::complex<long double> Aeps(TSIL_REAL m, TSIL_REAL qq)
   {
-    return TSIL_Aeps(m,qq);
+    return c2pp(TSIL_Aeps(m,qq));
   }
 
   static std::complex<long double> B(TSIL_REAL m1, TSIL_REAL m2,TSIL_REAL s,TSIL_REAL qq)
   {
-    return TSIL_B(m1, m2, s, qq);
+    return c2pp(TSIL_B(m1, m2, s, qq));
   }
 
   static std::complex<long double> Beps(TSIL_REAL m1, TSIL_REAL m2,TSIL_REAL s,TSIL_REAL qq)
   {
-    return TSIL_Beps(m1, m2, s, qq);
+    return c2pp(TSIL_Beps(m1, m2, s, qq));
   }
 
   static std::complex<long double> I2(TSIL_REAL x, TSIL_REAL y,TSIL_REAL z,TSIL_REAL qq)
   {
-    return TSIL_Aeps(x, qq) + TSIL_Aeps(y, qq) + TSIL_Aeps(z, qq) + TSIL_I2(x, y, z, qq);
+    return c2pp(TSIL_Aeps(x, qq)) + c2pp(TSIL_Aeps(y, qq)) + c2pp(TSIL_Aeps(z, qq)) + c2pp(TSIL_I2(x, y, z, qq));
   }
 
   // 
@@ -84,12 +86,12 @@ public:
   // 
   inline std::complex<long double> Svyz(int epsord)
   {
-    return TSIL_GetBoldFunction(&result, "Svyz", -epsord);
+    return c2pp(TSIL_GetBoldFunction(&result, "Svyz", -epsord));
   }
 
   inline std::complex<long double> Suxv(int epsord)
   {
-    return TSIL_GetBoldFunction(&result, "Suxv", -epsord);
+    return c2pp(TSIL_GetBoldFunction(&result, "Suxv", -epsord));
   }
 
   // 
@@ -97,32 +99,32 @@ public:
   // 
   inline std::complex<long double> Tvyz(int epsord)
   {
-    return TSIL_GetBoldFunction(&result, "Tvyz", -epsord);
+    return c2pp(TSIL_GetBoldFunction(&result, "Tvyz", -epsord));
   }
 
   inline std::complex<long double> Tuxv(int epsord)
   {
-    return TSIL_GetBoldFunction(&result, "Tuxv", -epsord);
+    return c2pp(TSIL_GetBoldFunction(&result, "Tuxv", -epsord));
   }
 
   inline std::complex<long double> Tyzv(int epsord)
   {
-    return TSIL_GetBoldFunction(&result, "Tyzv", -epsord);
+    return c2pp(TSIL_GetBoldFunction(&result, "Tyzv", -epsord));
   }
  
   inline std::complex<long double> Txuv(int epsord)
   {
-    return TSIL_GetBoldFunction(&result, "Txuv", -epsord);
+    return c2pp(TSIL_GetBoldFunction(&result, "Txuv", -epsord));
   }
   
   inline std::complex<long double> Tzyv(int epsord)
   {
-    return TSIL_GetBoldFunction(&result, "Tzyv", -epsord);
+    return c2pp(TSIL_GetBoldFunction(&result, "Tzyv", -epsord));
   }
 
   inline std::complex<long double> Tvxu(int epsord)
   {
-    return TSIL_GetBoldFunction(&result, "Tvxu", -epsord);
+    return c2pp(TSIL_GetBoldFunction(&result, "Tvxu", -epsord));
   }
 
   void print()
@@ -162,22 +164,22 @@ class TsilSTU : public TsilST
   // 
   inline std::complex<long double> Uzxyv(int epsord)
   {
-    return TSIL_GetBoldFunction(&result, "Uzxyv", -epsord);
+    return c2pp(TSIL_GetBoldFunction(&result, "Uzxyv", -epsord));
   }
 
   inline std::complex<long double> Uuyxv(int epsord)
   {
-    return TSIL_GetBoldFunction(&result, "Uuyxv", -epsord);
+    return c2pp(TSIL_GetBoldFunction(&result, "Uuyxv", -epsord));
   }
 
   inline std::complex<long double> Uxzuv(int epsord)
   {
-    return TSIL_GetBoldFunction(&result, "Uxzuv", -epsord);
+    return c2pp(TSIL_GetBoldFunction(&result, "Uxzuv", -epsord));
   }
 
   inline std::complex<long double> Uyuzv(int epsord)
   {
-    return TSIL_GetBoldFunction(&result, "Uyuzv", -epsord);
+    return c2pp(TSIL_GetBoldFunction(&result, "Uyuzv", -epsord));
   }
 
   
@@ -186,22 +188,22 @@ class TsilSTU : public TsilST
   // 
   inline std::complex<long double> Vzxyv(int epsord)
   {
-    return TSIL_GetBoldFunction(&result, "Vzxyv", -epsord);
+    return c2pp(TSIL_GetBoldFunction(&result, "Vzxyv", -epsord));
   }
 
   inline std::complex<long double> Vuyxv(int epsord)
   {
-    return TSIL_GetBoldFunction(&result, "Vuyxv", -epsord);
+    return c2pp(TSIL_GetBoldFunction(&result, "Vuyxv", -epsord));
   }
 
   inline std::complex<long double> Vxzuv(int epsord)
   {
-    return TSIL_GetBoldFunction(&result, "Vxzuv", -epsord);
+    return c2pp(TSIL_GetBoldFunction(&result, "Vxzuv", -epsord));
   }
 
   inline std::complex<long double> Vyuzv(int epsord)
   {
-    return TSIL_GetBoldFunction(&result, "Vyuzv", -epsord);
+    return c2pp(TSIL_GetBoldFunction(&result, "Vyuzv", -epsord));
   }
 
 
@@ -236,7 +238,7 @@ public:
   // 
   inline std::complex<long double> M(int epsord=0)
   {
-    return TSIL_GetFunction(&result, "M");
+    return c2pp(TSIL_GetFunction(&result, "M"));
   }
 
 
@@ -257,6 +259,7 @@ std::complex<long double> Li3(std::complex<long double>);
 
 std::complex<long double> acc(std::complex<long double>);
 std::complex<long double> inv(std::complex<long double>);
+
 
 
 
