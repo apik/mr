@@ -3,7 +3,7 @@ std::complex<long double> tt::my01()
 {     
       
       
-    std::complex<long double> myt[4];
+  std::complex<long double> myt[4];
 
     myt[1]=Tsil::A(MMt,mu2);
     myt[2]=pow(MMt,-1);
