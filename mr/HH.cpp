@@ -45,6 +45,11 @@ void HH::init()
   protos[14] = protZZ00 = new TsilSTU(MMZ, MMZ,    0,   0, mu2);
   protos[15] = protWW00 = new TsilSTU(MMW, MMW,    0,   0, mu2);
 
+  protos[16] = prot0H0H0 = new Tsil(  0, MMH,   0, MMH,   0, mu2);
+  protos[17] = prot0t0tt = new Tsil(  0, MMt,   0, MMt, MMt, mu2);
+  protos[18] = prot0t0t0 = new Tsil(  0, MMt,   0, MMt,   0, mu2);
+  protos[19] = prot0000H = new Tsil(  0,   0,   0,   0, MMH, mu2);
+
 
 
 
@@ -63,7 +68,7 @@ void HH::init()
 //   t1.elapsed();
 
   Timer t2;
-  for(int i = 0 ; i < 16; i++)
+  for(int i = 0 ; i < 20; i++)
     protos[i]->evaluate(MMH);
   t2.elapsed();
 

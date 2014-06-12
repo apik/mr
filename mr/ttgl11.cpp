@@ -22,9 +22,9 @@ std::complex<long double> tt::mgl11(size_t nL, size_t nH)
     mttgl[15]=prottH0H->Vxzuv(0);
     mttgl[16]=prot0ttHt->Tuxv(0);
     mttgl[17]=protWt000->Tyzv(0);
-    mttgl[18]=Mfin(MMH,MMt,MMt,0,MMt);
-    mttgl[19]=Mfin(0,0,MMt,0,0);
-    mttgl[20]=Mfin(0,0,0,MMt,0);
+    mttgl[18]=protHtt0t->M(0);
+    mttgl[19]=prot00t00->M(0);
+    mttgl[20]=prot000t0->M(0);
    mttgl[21]=mttgl[7] + 1 + mttgl[16];
    mttgl[22]=1./2.*mttgl[4];
    mttgl[21]=mttgl[22]*mttgl[21];

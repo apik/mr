@@ -2,7 +2,9 @@
 #define __TOP_HPP__
 
 #include "tsil.hpp"
-#include "mr.hpp"
+#include "sminput.hpp"
+#include "operators.hpp"
+#include "constants.hpp"
 
 class tt
 {
@@ -33,7 +35,17 @@ class tt
   TsilSTU* prot0W00;
   TsilST* prot000;
 
-  TsilST* protos[20];
+  // Gaugeless limit
+  Tsil* protH0tt0;
+  Tsil* protH0t00;
+  Tsil* prot0Htt0;
+  Tsil* prot0H0t0;
+  Tsil* prot00ttH;
+  Tsil* protHtt0t;
+  Tsil* prot00t00;
+  Tsil* prot000t0;
+
+  TsilST* protos[28];
 
   static const long double EPAIR2 = -1.; 
 
@@ -106,7 +118,7 @@ public:
     std::vector<std::complex<long double> > diffIfin;
 
 
-#include "testtt.hpp"
+#include "testttgl.hpp"
     
     for(int i = 0; i < diffMfin.size(); i++)
       std::cout << "Test diffMfin[" << i << "]= " << diffMfin[i] << std::endl;
@@ -130,36 +142,61 @@ public:
 
   }
 
+  // 
+  // Pure QCD part m_ij=mY_ij by definition
+  // 
   std::complex<long double> m01();
+
   std::complex<long double> m02(size_t nL = 5);
+
   std::complex<long double> m03(size_t nL = 5);
 
-  
+  // 
+  // Mass corrections
+  // 
   std::complex<long double> m10(size_t nL = 2, size_t nH = 1);
-
   
   std::complex<long double> m11(size_t nL = 2, size_t nH = 1);
-  
 
   std::complex<long double> m20(size_t nL = 2, size_t nH = 1);
+
+
+  // Gaugeless limit
+  std::complex<long double> mgl01(size_t nL = 2, size_t nH = 1);
+
+  std::complex<long double> mgl10(size_t nL = 2, size_t nH = 1);
+  
+  std::complex<long double> mgl11(size_t nL = 2, size_t nH = 1);
+
+  std::complex<long double> mgl20(size_t nL = 2, size_t nH = 1);
   
 
+  // 
+  // mass definition using Yukawa couplings 
+  // mY=y/sqrt(2*sqrt(2)*GF)
+  // 
   std::complex<long double> my01();
 
-  
   std::complex<long double> my10(size_t nL = 2, size_t nH = 1);
 
-  
   std::complex<long double> my11(size_t nL = 2, size_t nH = 1);
-  
 
   std::complex<long double> my20(size_t nL = 2, size_t nH = 1);
-  
 
-  std::complex<long double> dalpha(long double MMt,long double MMH)
-  {
-    return 0;
-  }
+
+  // Gaugeless limit
+  std::complex<long double> mygl01();
+
+  std::complex<long double> mygl10(size_t nL = 2, size_t nH = 1);
+
+  std::complex<long double> mygl11(size_t nL = 2, size_t nH = 1);
+
+  std::complex<long double> mygl20(size_t nL = 2, size_t nH = 1);
+
+  // std::complex<long double> dalpha(long double MMt,long double MMH)
+  // {
+  //   return 0;
+  // }
   
 };
 

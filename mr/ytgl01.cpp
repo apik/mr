@@ -1,5 +1,5 @@
 #include <tt.hpp>
-std::complex<long double> tt::mytgl01(size_t nL, size_t nH)
+std::complex<long double> tt::mygl01(size_t nL, size_t nH)
 {     
       
       

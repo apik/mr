@@ -50,6 +50,15 @@ void tt::init()
   protos[18] = prot000   = new TsilST(0,             0,   0, mu2);
   protos[19] = prot0W00  = new TsilSTU(0,     MMW,   0,   0, mu2);
 
+  protos[20]  = protH0tt0 = new Tsil(MMH,   0, MMt, MMt,   0, mu2);
+  protos[21]  = protH0t00 = new Tsil(MMH,   0, MMt,   0,   0, mu2);
+  protos[22]  = prot0Htt0 = new Tsil(  0, MMH, MMt, MMt,   0, mu2);
+  protos[23]  = prot0H0t0 = new Tsil(  0, MMH,   0, MMt,   0, mu2);
+  protos[24]  = prot00ttH = new Tsil(  0,   0, MMt, MMt, MMH, mu2);
+  protos[25]  = protHtt0t = new Tsil(MMH, MMt, MMt,   0, MMt, mu2);
+  protos[26]  = prot00t00 = new Tsil(  0,   0, MMt,   0,   0, mu2);
+  protos[27]  = prot000t0 = new Tsil(  0,   0,   0, MMt,   0, mu2);
+
 //   Timer t1;
 
 //   int TID = 0;
@@ -65,7 +74,7 @@ void tt::init()
 //   t1.elapsed();
 
   Timer t2;
-  for(int i = 0 ; i < 20; i++)
+  for(int i = 0 ; i < 28; i++)
     protos[i]->evaluate(MMt);
   t2.elapsed();
 
