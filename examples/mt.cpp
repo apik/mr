@@ -9,11 +9,16 @@ int main (int argc, char *argv[])
       fclose(stderr);
       long double MMt,MMW,MMZ,MMH,alphaMt,alphaS;
 
+      long double xxx=1.;
+
       // Compare with:
-      SMinput* KV[3];
-      KV[0] = new SMinput(0, 80.385, 91.1876, 124, 173.5);
-      KV[1] = new SMinput(0, 80.385, 91.1876, 125, 173.5);
-      KV[2] = new SMinput(0, 80.385, 91.1876, 126, 173.5);
+      std::vector<SMinput> KV;
+      KV.push_back(SMinput(0, xxx*80.385, xxx*91.1876, 124, 173.5));
+      KV.push_back(SMinput(0, xxx*80.385, xxx*91.1876, 125, 173.5));
+      KV.push_back(SMinput(0, xxx*80.385, xxx*91.1876, 126, 173.5));
+      KV.push_back(SMinput(0, xxx*80.385, xxx*91.1876, 126, 173.5));
+      KV.push_back(SMinput(0, xxx*80.385, xxx*91.1876, 126, 183.5));
+      KV.push_back(SMinput(0, xxx*80.385, xxx*91.1876, 126, 193.5));
       
       alphaMt  = 0.00779305;
       alphaS   = 0.1184;
@@ -23,18 +28,21 @@ int main (int argc, char *argv[])
       long double alphaMZ = 1./137.035999;
 
 
-      
-      for (int i = 0; i < 3; i++)
+      for (std::vector<SMinput>::iterator it = KV.begin(); it != KV.end(); ++it)
         {
-          tt dMt  = tt(*KV[i], KV[i]->MMt());
-          std::cout << "Mh= " << KV[i]->MH()  << std::endl;
-          std::cout << "as(MMt) = " << as(KV[i]->MMt()) << std::endl;          
-          std::cout << "\t1-loop \\alpha         " << KV[i]->Mt()*alphaMt/4./Pi*dMt.m10() << std::endl;
-          std::cout << "\t1-loop \\alpha_S       " << KV[i]->Mt()*as(KV[i]->MMt())/4./Pi*dMt.m01() << std::endl;
-          std::cout << "\t2-loop \\alpha*\\alpha_S" << KV[i]->Mt()*alphaMt/4./Pi*as(KV[i]->MMt())/4./Pi*dMt.m11() << std::endl;
-          std::cout << "\t2-loop \\alpha^2       " << KV[i]->Mt()*pow(alphaMt/4./Pi,2)*dMt.m20() << std::endl;
+          tt dMt  = tt(*it, it->MMZ());
+          std::cout << "Mh= " << it->MH()  << std::endl;
+          std::cout << "as(MMt) = " << as(it->MMt()) << std::endl;          
+          std::cout << "\t1-loop \\alpha         " << pow(xxx,2)*it->Mt()*alphaMt/4./Pi*dMt.m10() << std::endl;
+          std::cout << "\t1-loop \\alpha_S       " << it->Mt()*as(it->MMt())/4./Pi*dMt.m01() << std::endl;
+          std::cout << "\t2-loop \\alpha*\\alpha_S" << pow(xxx,2)*it->Mt()*alphaMt/4./Pi*// as(it->MMt())
+            alphaS/4./Pi*dMt.m11() << std::endl;
+          std::cout << "\t2-loop \\alpha^2  g.l. " << pow(xxx,4)*it->Mt()*pow(alphaMt/4./Pi,2)*dMt.mgl20() << std::endl;
+          std::cout << "\t2-loop \\alpha^2       " << pow(xxx,4)*it->Mt()*pow(alphaMt/4./Pi,2)*dMt.m20() << std::endl;
           
-          dMt.test();
+
+          std::cout << " Full one-loop +QCD " << it->Mt()*alphaMt/4./Pi*dMt.m10() + it->Mt()*alphaS/4./Pi*dMt.m01() << std::endl;
+          // dMt.test();
         }
       
     }

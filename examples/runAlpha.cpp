@@ -19,7 +19,7 @@ int main (int argc, char *argv[])
       alphaS = 0.1184;
 
       // Default loops=4, nf=5
-      AlphaS as4l5;
+      AlphaS as4l5(4,5);
       AlphaS as3l5(3,5);
       AlphaS as2l5(2,5);
       AlphaS as1l5(1,5);
@@ -52,6 +52,19 @@ int main (int argc, char *argv[])
                     << 100*fabs((as1l5(mu2) - pObjnf5 -> AlphasExact(alphaS,sqrt(MMZ),sqrt(mu2),1))/as1l5(mu2)) << " % "<< std::endl << std::endl;
 
         }
+
+      CRunDec crundec;
+      crundec.nfMmu[0].nf = 5;
+      crundec.nfMmu[0].Mth = Mb;
+      crundec.nfMmu[0].muth = Mb;
+      crundec.nfMmu[1].nf = 6;
+      crundec.nfMmu[1].Mth = Mt;
+      crundec.nfMmu[1].muth = Mt;
+      
+      // crundec.AlL2AlH(asMz, Mz,crundec.nfMmu,sqrt(MMt),4);
+      
+      std::cout << "My code: \\mu=M_top, g_3 = " << sqrt(4*Pi*as4l5(MMt)) << std::endl;
+      std::cout << "CRunDec: \\mu=M_top, g_3 = " << sqrt(4*Pi*crundec.AlL2AlH(asMz, Mz,crundec.nfMmu,Mt,4)) << std::endl;
 
     }
   catch (std::exception &p) 

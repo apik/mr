@@ -3,7 +3,7 @@ ACLOCAL_AMFLAGS = ${ACLOCAL_FLAGS} -I m4
 
 LDADD = ../mr/libmr.a
 
-noinst_PROGRAMS = mW mZ mH mt runAlpha runSM mb yukawa lambda yt gauge plotyukawa
+noinst_PROGRAMS = mW mZ mH mt runAlpha runSM mb yukawa lambda yt gauge plotyukawa mtgl bezrukovFit
 if HAVE_ROOT
 noinst_PROGRAMS += mHroot
 endif 
@@ -31,6 +31,10 @@ mt_SOURCES =  mt.cpp
 mt_CPPFLAGS = $(MR_CFLAGS) -I$(top_srcdir)/tsil-1.1 -I$(top_srcdir)/mr
 mt_LDADD = $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.1 -ltsil -lm
 
+mtgl_SOURCES =  mtgl.cpp
+mtgl_CPPFLAGS = $(MR_CFLAGS) -I$(top_srcdir)/tsil-1.1 -I$(top_srcdir)/mr
+mtgl_LDADD = $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.1 -ltsil -lm
+
 yukawa_SOURCES =  yukawa.cpp
 yukawa_CPPFLAGS = $(MR_CFLAGS) -I$(top_srcdir)/tsil-1.1 -I$(top_srcdir)/mr
 yukawa_LDADD = $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.1 -ltsil -lm
@@ -42,6 +46,10 @@ lambda_LDADD = $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.1 -ltsi
 yt_SOURCES =  yt.cpp
 yt_CPPFLAGS = $(MR_CFLAGS) -I$(top_srcdir)/tsil-1.1 -I$(top_srcdir)/mr
 yt_LDADD = $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.1 -ltsil -lm
+
+bezrukovFit_SOURCES =  bezrukovFit.cpp
+bezrukovFit_CPPFLAGS = $(MR_CFLAGS) -I$(top_srcdir)/tsil-1.1 -I$(top_srcdir)/mr
+bezrukovFit_LDADD = $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.1 -ltsil -lm
 
 plotyukawa_SOURCES =  plotyukawa.cpp
 plotyukawa_CPPFLAGS = $(MR_CFLAGS) -I$(top_srcdir)/tsil-1.1 -I$(top_srcdir)/mr

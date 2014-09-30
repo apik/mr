@@ -28,7 +28,7 @@ void bb::init(long double MMb_, long double MMW_,long double MMZ_,long double MM
   CW = sqrt(MMW/MMZ);
   SW = sqrt(1-MMW/MMZ);
   
-  protb00 = new TsilST(MMb,   0,   0, mu2);
+  prot0bb0b = new Tsil(   0, MMb, MMb,   0, MMb, mu2);
 //   Timer t1;
 
 //   int TID = 0;
@@ -47,7 +47,7 @@ void bb::init(long double MMb_, long double MMW_,long double MMZ_,long double MM
   // for(int i = 0 ; i < 20; i++)
   //   protos[i]->evaluate(MMt);
 
-  protb00->evaluate(MMb);
+  prot0bb0b->evaluate(MMb);
   t2.elapsed();
 
 }

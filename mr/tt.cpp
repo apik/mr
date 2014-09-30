@@ -1,4 +1,3 @@
-// #include <omp.h>
 #include <tt.hpp>
 #include "timer.hpp"
 
@@ -50,6 +49,15 @@ void tt::init()
   protos[18] = prot000   = new TsilST(0,             0,   0, mu2);
   protos[19] = prot0W00  = new TsilSTU(0,     MMW,   0,   0, mu2);
 
+  protos[20]  = protH0tt0 = new Tsil(MMH,   0, MMt, MMt,   0, mu2);
+  protos[21]  = protH0t00 = new Tsil(MMH,   0, MMt,   0,   0, mu2);
+  protos[22]  = prot0Htt0 = new Tsil(  0, MMH, MMt, MMt,   0, mu2);
+  protos[23]  = prot0H0t0 = new Tsil(  0, MMH,   0, MMt,   0, mu2);
+  protos[24]  = prot00ttH = new Tsil(  0,   0, MMt, MMt, MMH, mu2);
+  protos[25]  = protHtt0t = new Tsil(MMH, MMt, MMt,   0, MMt, mu2);
+  protos[26]  = prot00t00 = new Tsil(  0,   0, MMt,   0,   0, mu2);
+  protos[27]  = prot000t0 = new Tsil(  0,   0,   0, MMt,   0, mu2);
+
 //   Timer t1;
 
 //   int TID = 0;
@@ -65,10 +73,57 @@ void tt::init()
 //   t1.elapsed();
 
   Timer t2;
-  for(int i = 0 ; i < 20; i++)
+  for(int i = 0 ; i < 28; i++)
     protos[i]->evaluate(MMt);
   t2.elapsed();
 
 }
 
+
+std::complex<long double> DIA(int i)
+{
+  // return i==1?1:0;
+  return 0;
+}
+ 
+std::pair<long double,long double> tt::test2(long double epsabs,long double epsrel)
+{
+
+  std::cout << "Test 2" << std::endl;
+
+  long double DH = 1-MMH/MMt;
+  std::vector<std::complex<long double> > rexact(139);
+  std::vector<std::complex<long double> > rexpan(139);
+
+#include "dump.hpp"
+
+  long double accEX = 0;
+  long double accEP = 0;
+
+  for(int i = 0; i < 139; i++)
+    {
+      const size_t fw = 15;
+
+      long double diff  = fabs((rexact[i] - rexpan[i]).real());
+      long double exact = fabs(rexact[i].real());
+
+      // if (true ||diff > epsabs || diff/exact > epsrel)
+      //   {
+      std::cout << std::scientific << std::setprecision(fw-10);
+      std::cout << "Dia(" << i << ") ";
+      std::cout << "   " << std::setw(fw) <<  rexact[i].real()
+                << "   " << std::setw(fw) <<  rexpan[i].real()
+                << "   " << std::setw(fw) << diff <<std::endl; 
+      // }
+
+      accEX += rexact[i].real();
+      accEP += rexpan[i].real();
+
+    }
+  return std::make_pair(accEX,accEP);
+}
+
+
+
 const long double tt::EPAIR2;
+

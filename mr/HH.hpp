@@ -4,7 +4,7 @@
 #include "tsil.hpp"
 #include "sminput.hpp"
 #include "operators.hpp"
-
+#include "constants.hpp"
 
 class HH
 {
@@ -29,7 +29,13 @@ class HH
   TsilSTU* protZZ00;
   TsilSTU* protWW00;
   
-  TsilST* protos[16];
+  // Gaugeless limit
+  Tsil* prot0H0H0;
+  Tsil* prot0t0tt;
+  Tsil* prot0t0t0;
+  Tsil* prot0000H;
+
+  TsilST* protos[20];
 public:
   HH()
   {
@@ -135,16 +141,31 @@ public:
   std::complex<long double> m20(size_t nL = 2, size_t nH = 1);
 
 
-  // std::complex<long double> m01(size_t nL = 2, size_t nH = 1);
-
+  // Gaugeless limit
+  std::complex<long double> mgl10(size_t nL = 2, size_t nH = 1);
   
+  std::complex<long double> mgl11(size_t nL = 2, size_t nH = 1);
+
+  std::complex<long double> mgl20(size_t nL = 2, size_t nH = 1);
+
+
+    
+  // 
+  // \lambda/sqrt(2)/GF/MMH
+  // 
   std::complex<long double> lam10(size_t nL = 2, size_t nH = 1);
 
-  
   std::complex<long double> lam11(size_t nL = 2, size_t nH = 1);
   
-
   std::complex<long double> lam20(size_t nL = 2, size_t nH = 1);
+
+  // Gaugeless limit
+
+  std::complex<long double> lamgl10(size_t nL = 2, size_t nH = 1);
+
+  std::complex<long double> lamgl11(size_t nL = 2, size_t nH = 1);
+
+  std::complex<long double> lamgl20(size_t nL = 2, size_t nH = 1);
 
   // inline std::complex<long double> dd(size_t nG)
   // {

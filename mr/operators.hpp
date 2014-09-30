@@ -50,4 +50,10 @@ inline std::complex<T> operator-(const U& lhs, std::complex<T> rhs)
   return std::complex<T>(lhs) -= rhs;
 }
 
+template <typename T>
+inline std::complex<T> Re(std::complex<T> z)
+{
+  return std::complex<T>(z.real(),0);
+}
+
 #endif  // __OPERATORS_HPP__
