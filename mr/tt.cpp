@@ -1,4 +1,3 @@
-// #include <omp.h>
 #include <tt.hpp>
 #include "timer.hpp"
 
@@ -80,4 +79,51 @@ void tt::init()
 
 }
 
+
+std::complex<long double> DIA(int i)
+{
+  // return i==1?1:0;
+  return 0;
+}
+ 
+std::pair<long double,long double> tt::test2(long double epsabs,long double epsrel)
+{
+
+  std::cout << "Test 2" << std::endl;
+
+  long double DH = 1-MMH/MMt;
+  std::vector<std::complex<long double> > rexact(139);
+  std::vector<std::complex<long double> > rexpan(139);
+
+#include "dump.hpp"
+
+  long double accEX = 0;
+  long double accEP = 0;
+
+  for(int i = 0; i < 139; i++)
+    {
+      const size_t fw = 15;
+
+      long double diff  = fabs((rexact[i] - rexpan[i]).real());
+      long double exact = fabs(rexact[i].real());
+
+      // if (true ||diff > epsabs || diff/exact > epsrel)
+      //   {
+      std::cout << std::scientific << std::setprecision(fw-10);
+      std::cout << "Dia(" << i << ") ";
+      std::cout << "   " << std::setw(fw) <<  rexact[i].real()
+                << "   " << std::setw(fw) <<  rexpan[i].real()
+                << "   " << std::setw(fw) << diff <<std::endl; 
+      // }
+
+      accEX += rexact[i].real();
+      accEP += rexpan[i].real();
+
+    }
+  return std::make_pair(accEX,accEP);
+}
+
+
+
 const long double tt::EPAIR2;
+

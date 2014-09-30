@@ -7,6 +7,7 @@
 #include <complex>
 
 
+
 #ifdef __cplusplus
 extern "C"{
 #endif  
@@ -129,6 +130,80 @@ public:
     return c2pp(TSIL_GetBoldFunction(&result, "Tvxu", -epsord));
   }
 
+  // GiNaC version!!!!!
+
+  // static GiNaC::ex Aginac(TSIL_REAL m, TSIL_REAL qq)
+  // {
+  //   return g2pp(TSIL_A(m,qq));
+  // }
+
+  // static GiNaC::ex Aepsginac(TSIL_REAL m, TSIL_REAL qq)
+  // {
+  //   return g2pp(TSIL_Aeps(m,qq));
+  // }
+
+  // static GiNaC::ex Bginac(TSIL_REAL m1, TSIL_REAL m2,TSIL_REAL s,TSIL_REAL qq)
+  // {
+  //   return g2pp(TSIL_B(m1, m2, s, qq));
+  // }
+
+  // static GiNaC::ex Bepsginac(TSIL_REAL m1, TSIL_REAL m2,TSIL_REAL s,TSIL_REAL qq)
+  // {
+  //   return g2pp(TSIL_Beps(m1, m2, s, qq));
+  // }
+
+  // static GiNaC::ex I2ginac(TSIL_REAL x, TSIL_REAL y,TSIL_REAL z,TSIL_REAL qq)
+  // {
+  //   return g2pp(TSIL_Aeps(x, qq)) + g2pp(TSIL_Aeps(y, qq)) + g2pp(TSIL_Aeps(z, qq)) + g2pp(TSIL_I2(x, y, z, qq));
+  // }
+
+  // // 
+  // // S-type
+  // // 
+  // inline std::complex<long double> Svyz(int epsord)
+  // {
+  //   return c2pp(TSIL_GetBoldFunction(&result, "Svyz", -epsord));
+  // }
+
+  // inline GiNaC::ex Suxvginac(int epsord)
+  // {
+  //   return g2pp(TSIL_GetBoldFunction(&result, "Suxv", -epsord));
+  // }
+
+  // 
+  // T-type
+  // 
+  // inline GiNaC::ex Tvyzginac(int epsord)
+  // {
+  //   return g2pp(TSIL_GetBoldFunction(&result, "Tvyz", -epsord));
+  // }
+
+  // inline GiNaC::ex Tuxvginac(int epsord)
+  // {
+  //   return g2pp(TSIL_GetBoldFunction(&result, "Tuxv", -epsord));
+  // }
+
+  // inline GiNaC::ex Tyzvginac(int epsord)
+  // {
+  //   return g2pp(TSIL_GetBoldFunction(&result, "Tyzv", -epsord));
+  // }
+ 
+  // inline GiNaC::ex Txuvginac(int epsord)
+  // {
+  //   return g2pp(TSIL_GetBoldFunction(&result, "Txuv", -epsord));
+  // }
+  
+  // inline GiNaC::ex Tzyvginac(int epsord)
+  // {
+  //   return g2pp(TSIL_GetBoldFunction(&result, "Tzyv", -epsord));
+  // }
+
+  // inline GiNaC::ex Tvxuginac(int epsord)
+  // {
+  //   return g2pp(TSIL_GetBoldFunction(&result, "Tvxu", -epsord));
+  // }
+
+
   void print()
   {
     if(evaluated) TSIL_PrintData (&result);
@@ -183,6 +258,29 @@ class TsilSTU : public TsilST
   {
     return c2pp(TSIL_GetBoldFunction(&result, "Uyuzv", -epsord));
   }
+
+
+  // Ginac
+
+  // inline GiNaC::ex Uzxyvginac(int epsord)
+  // {
+  //   return g2pp(TSIL_GetBoldFunction(&result, "Uzxyv", -epsord));
+  // }
+
+  // inline GiNaC::ex Uuyxvginac(int epsord)
+  // {
+  //   return g2pp(TSIL_GetBoldFunction(&result, "Uuyxv", -epsord));
+  // }
+
+  // inline GiNaC::ex Uxzuvginac(int epsord)
+  // {
+  //   return g2pp(TSIL_GetBoldFunction(&result, "Uxzuv", -epsord));
+  // }
+
+  // inline GiNaC::ex Uyuzvginac(int epsord)
+  // {
+  //   return g2pp(TSIL_GetBoldFunction(&result, "Uyuzv", -epsord));
+  // }
 
   
   // 
@@ -242,6 +340,12 @@ public:
   {
     return c2pp(TSIL_GetFunction(&result, "M"));
   }
+
+  // // GiNaC
+  // inline GiNaC::ex Mginac(int epsord=0)
+  // {
+  //   return g2pp(TSIL_GetFunction(&result, "M"));
+  // }
 
 
 

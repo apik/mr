@@ -10,7 +10,7 @@ class bb
   long double MMb, MMt, MMH, MMW, MMZ, mu2;
   long double SW, CW;
 
-  TsilST* protb00;
+  Tsil* prot0bb0b;
 
   static const long double EPAIR2 = 1.; 
 
@@ -32,7 +32,7 @@ public:
   {
     TSIL_DATA    result;
     TSIL_SetParameters (&result, x, y, z, u, v, mu2); 
-    TSIL_Evaluate( &result, MMt); 
+    TSIL_Evaluate( &result, MMb); 
     return TSIL_GetFunction(&result, "M");
   }
 
@@ -41,7 +41,7 @@ public:
     TSIL_DATA    result;
 
     TSIL_SetParametersSTU (&result, x, z, u, v, mu2); 
-    TSIL_Evaluate( &result, MMt); 
+    TSIL_Evaluate( &result, MMb); 
     return TSIL_GetBoldFunction(&result, "Vxzuv",0);
   }
 
@@ -50,7 +50,7 @@ public:
     TSIL_DATA    result;
 
     TSIL_SetParametersSTU (&result, x, z, u, v, mu2); 
-    TSIL_Evaluate( &result, MMt); 
+    TSIL_Evaluate( &result, MMb); 
     return TSIL_GetBoldFunction(&result, "Uxzuv",0);
   }
 
@@ -59,7 +59,7 @@ public:
     TSIL_DATA    result;
 
     TSIL_SetParametersST (&result, x, u, v, mu2); 
-    TSIL_Evaluate( &result, MMt); 
+    TSIL_Evaluate( &result, MMb); 
     return TSIL_GetBoldFunction(&result, "Txuv",0);
   }
 
@@ -68,7 +68,7 @@ public:
     TSIL_DATA    result;
 
     TSIL_SetParametersST (&result, x, u, v, mu2); 
-    TSIL_Evaluate( &result, MMt); 
+    TSIL_Evaluate( &result, MMb); 
     return TSIL_GetBoldFunction(&result, "Sxuv",0);
   }
 
@@ -83,7 +83,7 @@ public:
     std::vector<std::complex<long double> > diffIfin;
 
 
-// #include "testbb.hpp"
+#include "testbb.hpp"
     
     for(int i = 0; i < diffMfin.size(); i++)
       std::cout << "Test diffMfin[" << i << "]= " << diffMfin[i] << std::endl;

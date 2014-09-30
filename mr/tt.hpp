@@ -6,19 +6,20 @@
 #include "operators.hpp"
 #include "constants.hpp"
 
+
 class tt
 {
 
-  long double MMb,MMt, MMH, MMW, MMZ, mu2;
-  long double SW, CW;
+long double MMb,MMt, MMH, MMW, MMZ, mu2;
+long double SW, CW;
 
-  // alpha*alphaS
-  Tsil* protWt000;
-  Tsil* prot0ttHt;
-  Tsil* prot0ttZt;
-  Tsil* prot0tt0t;
-  TsilSTU* prottH0H;
-  TsilSTU* prottZ0Z;
+// alpha*alphaS
+Tsil* protWt000;
+Tsil* prot0ttHt;
+Tsil* prot0ttZt;
+Tsil* prot0tt0t;
+TsilSTU* prottH0H;
+TsilSTU* prottZ0Z;
   // alpha^2
   Tsil* protHHttH;
   Tsil* protHZttZ;
@@ -45,14 +46,14 @@ class tt
   Tsil* prot00t00;
   Tsil* prot000t0;
 
-  TsilST* protos[28];
+TsilST* protos[28];
 
-  static const long double EPAIR2 = -1.; 
+static const long double EPAIR2 = -1.; 
 
 public:
-  tt()
-  {
-  }
+tt()
+{
+}
 
   tt(long double,long double,long double,long double,long double);
   
@@ -108,8 +109,8 @@ public:
   }
 
   
-  void test()
-  {
+void test()
+{
     std::vector<std::complex<long double> > diffMfin;
     std::vector<std::complex<long double> > diffVfin;
     std::vector<std::complex<long double> > diffUfin;
@@ -117,15 +118,17 @@ public:
     std::vector<std::complex<long double> > diffSfin;
     std::vector<std::complex<long double> > diffIfin;
 
+// #include "testtt.hpp"
+// #include "testyt.hpp"
+// #include "testttgl.hpp"
+#include "testytgl.hpp"
 
-#include "testttgl.hpp"
-    
-    for(int i = 0; i < diffMfin.size(); i++)
-      std::cout << "Test diffMfin[" << i << "]= " << diffMfin[i] << std::endl;
+for(int i = 0; i < diffMfin.size(); i++)
+  std::cout << "Test diffMfin[" << i << "]= " << diffMfin[i] << std::endl;
 
 
-    for(int i = 0; i < diffVfin.size(); i++)
-      std::cout << "Test diffVfin[" << i << "]= " << diffVfin[i] << std::endl;
+for(int i = 0; i < diffVfin.size(); i++)
+  std::cout << "Test diffVfin[" << i << "]= " << diffVfin[i] << std::endl;
 
 
     for(int i = 0; i < diffUfin.size(); i++)
@@ -142,6 +145,7 @@ public:
 
   }
 
+std::pair<long double,long double> test2(long double epsabs = 1.E-5,long double epsrel=0.001);
   // 
   // Pure QCD part m_ij=mY_ij by definition
   // 
@@ -159,6 +163,16 @@ public:
   std::complex<long double> m11(size_t nL = 2, size_t nH = 1);
 
   std::complex<long double> m20(size_t nL = 2, size_t nH = 1);
+
+
+  // 
+  // Delta-r
+  // 
+  std::complex<long double> drgl10(size_t nL = 2, size_t nH = 1);
+  
+  std::complex<long double> drgl11(size_t nL = 2, size_t nH = 1);
+
+  std::complex<long double> drgl20(size_t nL = 2, size_t nH = 1);
 
 
   // Gaugeless limit

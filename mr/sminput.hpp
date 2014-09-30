@@ -34,6 +34,25 @@ public:
     return iMt*iMt;
   }
 
+  // Weinberg trigonometric
+  long double CW() const
+  {
+    return iMW/iMZ;
+  }
+  long double CCW() const
+  {
+    return pow(iMW/iMZ,2);
+  }
+  long double SW() const
+  {
+    return sqrt(1-CCW());
+  }
+  long double SSW() const
+  {
+    return 1-CCW();
+  }
+
+
   long double Mb() const
   {
     return iMb;
