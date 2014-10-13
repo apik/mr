@@ -20,8 +20,8 @@ int main (int argc, char *argv[])
 
       long double alpha0 = 1./137.035999;
 
-      ZZ Z80  = ZZ(JKVH80, JKVH80.MMW());
-      ZZ Z200 = ZZ(JKVH200, JKVH200.MMW());
+      ZZ Z80  = ZZ(JKVH80, JKVH80.MMZ());
+      ZZ Z200 = ZZ(JKVH200, JKVH200.MMZ());
 
       std::cout << "\\mu = MW" << std::endl;
       // 
@@ -85,11 +85,11 @@ int main (int argc, char *argv[])
       // 
       // Plot 2-loop bosonic part
       // 
-      Plot3 plotJKV("mZ_0105304_fig3", "\\alpha^2 conversion between \\bar{MS} and  On-Shell Z mass", "mH", "mmZ(mZ)/MMZ-1", "1-loop nf=0", "2-loop", "1+2-loop");
-      mHstep  = 20; // GeV
+      Plot4 plotJKV("mZ_0105304_fig3", "\\alpha^2 conversion between \\bar{MS} and  On-Shell Z mass", "mH", "mmZ(mZ)/MMZ-1", "1-loop nf=0", "1-loop nf=3", "2-loop", "1+2-loop");
+      mHstep  = 100; // GeV
       mHstart = 100; // GeV
       
-      for (int mHi = 0; mHi < 11; mHi++)
+      for (int mHi = 0; mHi < 10; mHi++)
         {
           // from Table.1
           SMinput DS2l(4.4, 80.419, 91.188, mHstart + mHi*mHstep, 174.3);
@@ -97,8 +97,15 @@ int main (int argc, char *argv[])
           
           long double mZ_2l = pow(alpha0/4./Pi,2)*dZ.m20(0,0).real();
           long double mZ_1l = pow(alpha0/4./Pi,1)*dZ.m10(0,0).real();
+          long double mZ_1lnf3 = pow(alpha0/4./Pi,1)*dZ.m10().real();
+
+          std::cout << "mH = " << mHstart + mHi*mHstep << " mZ/MZ(MZ,nf=0)[1-loop] = " << mZ_1l << std::endl;
+          std::cout << "mH = " << mHstart + mHi*mHstep << " mZ/MZ(MZ,nf=3)[1-loop] = " << mZ_1lnf3 << std::endl;
+          std::cout << "mH = " << mHstart + mHi*mHstep << " mZ/MZ(MZ,nf=0)[2-loop] = " << mZ_2l << std::endl << std::endl;
+
           plotJKV.add(DS2l.MH(), 
                    mZ_1l,
+                   mZ_1lnf3,
                    mZ_2l,
                    mZ_1l+mZ_2l
                    );

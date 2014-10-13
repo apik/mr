@@ -19,5 +19,5 @@ AC_PROG_RANLIB
 dnl LT_INIT
 
 dnl PKG_CHECK_MODULES(SM3R2M, ginac >= 1.3.7)
-AC_CONFIG_FILES(Makefile tsil-1.1/Makefile mr/Makefile examples/Makefile)
+AC_CONFIG_FILES(Makefile tsil-1.21/Makefile mr/Makefile examples/Makefile)
 AC_OUTPUT

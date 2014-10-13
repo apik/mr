@@ -155,6 +155,8 @@ public:
     return 0;
   }
   
+  const static long double  EPAIR2 = -1.;
+  
 };
 
 
