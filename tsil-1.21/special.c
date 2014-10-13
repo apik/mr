@@ -21,7 +21,7 @@ int CaseSpecial (TSIL_DATA *foo)
   qq = foo->qq;
 
   /* Temporarily disable WARNs */
-  printWarns = NO;
+  /* printWarns = NO; */
 
   if (foo->whichFns == STUM) {
     foo->B[xz].value = B(x, z, s, qq);
@@ -62,7 +62,7 @@ int CaseSpecial (TSIL_DATA *foo)
   }
 
   /* Restore warnings */
-  printWarns = YES;
+  /* printWarns = YES; */
 
   return success;
 }

@@ -14,7 +14,7 @@ tt.hpp tt.cpp tt01.cpp tt02.cpp tt03.cpp tt10.cpp tt11.cpp tt20.cpp yt01.cpp yt1
 ttgl10.cpp ttgl11.cpp ttgl20.cpp ytgl10.cpp ytgl11.cpp ytgl20.cpp\
 tsil.hpp tsil.cpp 
 
-libmr_a_CPPFLAGS = $(MR_CFLAGS) -I$(top_srcdir)/tsil-1.1
+libmr_a_CPPFLAGS = $(MR_CFLAGS) -I$(top_srcdir)/tsil-1.21
 
 # lib_LTLIBRARIES = libmr.la
 

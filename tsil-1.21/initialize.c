@@ -110,7 +110,7 @@ int TSIL_SetParameters (TSIL_DATA *foo,
   /* Set up data object if necessary */
   /* if (foo->isAligned != YES) */
   Construct (foo);
-  printWarns = YES;
+  /* printWarns = YES; */
 
   /* DGR - STUM evaluation */
   foo->whichFns = STUM;

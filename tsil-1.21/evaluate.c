@@ -24,7 +24,7 @@ int TSIL_Evaluate (TSIL_DATA *foo, TSIL_REAL s)
      case that requires Runge-Kutta evaluation: */
 
   /* Temporarily disable WARNs */
-  printWarns = NO;
+  /* printWarns = NO; */
 
   if (foo->whichFns == STUM)
     isAnalytic = Manalytic (foo->x, foo->y, foo->z, foo->u, foo->v, 
@@ -95,8 +95,8 @@ int TSIL_Evaluate (TSIL_DATA *foo, TSIL_REAL s)
 /*     foo->B[xz].value = B(foo->x, foo->z, foo->s, foo->qq); */
 
   /* Restore warnings */
-  printWarns = YES;
+  /* printWarns = YES; */
 
-  /* Implement status codes eventually */
+  /* implement status codes eventually */
   return status;
 }
