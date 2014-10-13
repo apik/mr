@@ -67,7 +67,7 @@ TSIL_COMPLEX EtaBranch (TSIL_COMPLEX z1, TSIL_COMPLEX z2)
 int NearThreshold (TSIL_DATA *foo, TSIL_REAL *sthresh, TSIL_REAL mindistance)
 {
   TSIL_REAL distance;
-  int i, nThresh;
+  int i;
   int areWeCloseToAThreshold = NO;
 
   *sthresh = 0.0L; /* This should be ignored if it survives. */
@@ -224,7 +224,7 @@ void ScaleData (TSIL_DATA *foo, TSIL_REAL sfac)
 void Rescale (TSIL_DATA *foo)
 {
   TSIL_REAL tmp[6], sf;
-  int i, n = 0;
+  int n = 0;
 
   /* This is the original code, reorganized to handle different
      cases: */
@@ -314,94 +314,175 @@ void TSIL_PrintInfo (void)
 /* ******************************************************************* */
 /* Extract function values from the data object to an array            */
 
-void TSIL_GetData (TSIL_DATA    *foo, 
-		   const char   *which, 
-		   TSIL_COMPLEX *val)
+int TSIL_GetData (TSIL_DATA    *foo, 
+		  const char   *which, 
+		  TSIL_COMPLEX *val)
 {
+  /* Below is cut and pasted directly from tsil_names.h */
+  const char *uname[] = {"Uzxyv","Uuyxv","Uxzuv","Uyuzv"};
+  const char *tname[] = {"Tvyz", "Tuxv", "Tyzv", "Txuv", "Tzyv", "Tvxu"};
+  const char *sname[] = {"Svyz", "Suxv"};
+  const char *bname[] = {"Bxz", "Byu"};
+  const char *vname[] = {"Vzxyv","Vuyxv","Vxzuv","Vyuzv"};
+  const char *tbarname[] = {"TBARvyz", "TBARuxv", "TBARyzv",
+			    "TBARxuv", "TBARzyv", "TBARvxu"};
   int i;
+  int retval = 1;
+  char funcname[] = "TSIL_GetData";
+  char errmsg0[45] = "Function not defined for these parameters: ";
+  char errmsg[55];
 
-  if (foo->status == UNEVALUATED)
-    TSIL_Error ("TSIL_GetData", "This case has not been evaluated!", 1);
+  strcpy (errmsg, errmsg0);
+
+  if (foo->status == UNEVALUATED) {
+    TSIL_Warn (funcname, "This case has not been evaluated!");
+    return 0;
+  }
+
+  /* DGR - Only makes sense to extract Bs using this function for
+     cases other than STUM */
 
   if (foo->whichFns == STUM) {
     if (!strcmp(which, "M")) {
-      *val = foo->M.value;
+      if (TSIL_IsInfinite (*val = foo->M.value))
+	TSIL_Warn (funcname, strncat (errmsg, "M", 1));
     }
     else if (!strcmp(which, "U")) {
       for (i=0; i<NUM_U_FUNCS; i++)
-	val[i] = foo->U[i].value;
+	if (TSIL_IsInfinite (val[i] = foo->U[i].value)) {
+	  TSIL_Warn (funcname, strncat (errmsg, uname[i], 5));	  
+	  strcpy (errmsg, errmsg0);
+	}
     }
     else if (!strcmp(which, "T")) {
       for (i=0; i<NUM_T_FUNCS; i++)
-	val[i] = foo->T[i].value;
+	if (TSIL_IsInfinite (val[i] = foo->T[i].value)) {
+	  TSIL_Warn (funcname, strncat (errmsg, tname[i], 4));
+	  strcpy (errmsg, errmsg0);
+	}
     }
     else if (!strcmp(which, "S")) {
       for (i=0; i<NUM_S_FUNCS; i++)
-	val[i] = foo->S[i].value;
+	if (TSIL_IsInfinite (val[i] = foo->S[i].value)) {
+	  TSIL_Warn (funcname, strncat (errmsg, sname[i], 4));
+	  strcpy (errmsg, errmsg0);
+	}
     }
     else if (!strcmp(which, "B")) {
       for (i=0; i<NUM_B_FUNCS; i++)
-	val[i] = foo->B[i].value;
+	if (TSIL_IsInfinite (val[i] = foo->B[i].value)) {
+	  TSIL_Warn (funcname, strncat (errmsg, bname[i], 3));
+	  strcpy (errmsg, errmsg0);
+	}
     }
     else if (!strcmp(which, "V")) {
       for (i=0; i<NUM_V_FUNCS; i++)
-	val[i] = foo->V[i].value;
+	if (TSIL_IsInfinite (val[i] = foo->V[i].value)) {
+	  TSIL_Warn (funcname, strncat (errmsg, vname[i], 5));
+	  strcpy (errmsg, errmsg0);
+	}
     }
     else if (!strcmp(which, "TBAR")) {
       for (i=0; i<NUM_T_FUNCS; i++)
-	val[i] = foo->Tbar[i].value;
+	if (TSIL_IsInfinite (val[i] = foo->Tbar[i].value)) {
+	  TSIL_Warn (funcname, strncat (errmsg, tbarname[i], 7));
+	  strcpy (errmsg, errmsg0);
+	}
     }
-    else
-      TSIL_Error ("TSIL_GetData", "Invalid identifier", 3);
+    else {
+      TSIL_Error (funcname, "Invalid identifier", 1);
+      retval = 0;
+    }
   }
-  else
-    TSIL_Error ("TSIL_GetData", 
-		"Cannot use this function with subset cases .", 4);
+  else {
+    /* Either STU or ST evaluation... */
+    if (!strcmp(which, "B")) {
+      for (i=0; i<NUM_B_FUNCS; i++)
+	if (TSIL_IsInfinite (val[i] = foo->B[i].value)) {
+	  TSIL_Warn (funcname, strncat (errmsg, bname[i], 3));
+	  strcpy (errmsg, errmsg0);
+	}
+    }
+    else {
+      TSIL_Error (funcname,
+	"Can only use this to extract B functions in subsidiary cases.", 1);
+      retval = 1;
+    }
+  }
 
-  return;
+  return retval;
 }
 
 /* ******************************************************************* */
 /* Extract "bold" function values from the data object to an array     */
 
-void TSIL_GetBoldData (TSIL_DATA    *foo,
-		       const char   *which,
-		       TSIL_COMPLEX val[][3])
+int TSIL_GetBoldData (TSIL_DATA    *foo,
+		      const char   *which,
+		      TSIL_COMPLEX val[][3])
 {
+  /* Below is cut and pasted directly from tsil_names.h */
+  const char *uname[] = {"Uzxyv","Uuyxv","Uxzuv","Uyuzv"};
+  const char *tname[] = {"Tvyz", "Tuxv", "Tyzv", "Txuv", "Tzyv", "Tvxu"};
+  const char *sname[] = {"Svyz", "Suxv"};
+  const char *vname[] = {"Vzxyv","Vuyxv","Vxzuv","Vyuzv"};
+
   int i, j;
+  int retval = 1;
+  char funcname[] = "TSIL_GetBoldData";
+  char errmsg0[45] = "Function not defined for these parameters: ";
+  char errmsg[55];
 
-  if (foo->status == UNEVALUATED)
-    TSIL_Error ("TSIL_GetBoldData", "This case has not been evaluated!", 1);
+  if (foo->status == UNEVALUATED) {
+    TSIL_Warn (funcname, "This case has not been evaluated!");
+    return 0;
+  }
 
+  /* Again, only get the whole array for the Bs if STU or ST... */
   if (foo->whichFns == STUM) {
     if (!strcmp(which, "U")) {
       for (i=0; i<NUM_U_FUNCS; i++)
 	for (j=0; j<3; j++)
-	  val[i][j] = foo->U[i].bold[j];
+	  if (TSIL_IsInfinite (val[i][j] = foo->U[i].bold[j])) {
+	    TSIL_Warn (funcname, strncat (errmsg, uname[i], 5));
+	    strcpy (errmsg, errmsg0);
+	  }
     }
     else if (!strcmp(which, "V")) {
       for (i=0; i<NUM_V_FUNCS; i++)
 	for (j=0; j<3; j++)
-	  val[i][j] = foo->V[i].bold[j];
+	  if (TSIL_IsInfinite (val[i][j] = foo->V[i].bold[j])) {
+	    TSIL_Warn (funcname, strncat (errmsg, vname[i], 5));
+	    strcpy (errmsg, errmsg0);
+	  }
     }
     else if (!strcmp(which, "T")) {
       for (i=0; i<NUM_T_FUNCS; i++)
 	for (j=0; j<3; j++)
-	  val[i][j] = foo->T[i].bold[j];
+	  if (TSIL_IsInfinite (val[i][j] = foo->T[i].bold[j])) {
+	    TSIL_Warn (funcname, strncat (errmsg, tname[i], 4));
+	    strcpy (errmsg, errmsg0);
+	  }
     }
     else if (!strcmp(which, "S")) {
       for (i=0; i<NUM_S_FUNCS; i++)
 	for (j=0; j<3; j++)
-	  val[i][j] = foo->S[i].bold[j];
+	  if (TSIL_IsInfinite (val[i][j] = foo->S[i].bold[j])) {
+	    TSIL_Warn (funcname, strncat (errmsg, sname[i], 4));
+	    strcpy (errmsg, errmsg0);
+	  }
     }
-    else
-      TSIL_Error ("TSIL_GetBoldData", "Invalid identifier", 3);
+    else {
+      TSIL_Error (funcname, "Invalid identifier", 1);
+      retval = 0;
+    }
   }
-  else
-    TSIL_Error ("TSIL_GetBoldData",
-		"Can't use this for subset evaluation (STU or ST).", 4);
+  else {
+    TSIL_Error (funcname,
+	"Can't use this for subsidiary evaluation (STU or ST).", 1);
+    retval = 1;
+  }
 
-  return;
+  return retval;
 }
 
 /* ******************************************************************* */
@@ -418,103 +499,137 @@ TSIL_COMPLEX TSIL_GetFunction (TSIL_DATA *foo, const char *which)
   const char *tbarname[] = {"TBARvyz", "TBARuxv", "TBARyzv", 
                             "TBARxuv", "TBARzyv", "TBARvxu"};
   int i;
+  TSIL_COMPLEX result = (TSIL_COMPLEX) 0.0;
+  char funcname[] = "TSIL_GetFunction";
+  char errmsg[55] = "Function not defined for these parameters: ";
 
   /* Check evaluation status: */
-  if (foo->status == UNEVALUATED)
-    TSIL_Error ("TSIL_GetFunction",
-		"This case has not yet been evaluated!", 1);
+  if (foo->status == UNEVALUATED) {
+    TSIL_Warn (funcname, "This case has not yet been evaluated!");
+    return result;
+  }
 
   /* For simplicity, do evaluation cases separately */
   if (foo->whichFns == STUM) {
     if (!strncmp(which, "M", 1)) {
-      return foo->M.value;
+      result = foo->M.value;
+/*       return foo->M.value; */
     }
     else if (!strncmp(which, "U", 1)) {
       for (i=0; i<NUM_U_FUNCS; i++)
 	if (!strcmp(which, uname[i]))
-	  return foo->U[i].value;
+	  result = foo->U[i].value;
+/* 	  return foo->U[i].value; */
     }
     else if (!strncmp(which, "TBAR", 4)) {
       for (i=0; i<NUM_T_FUNCS; i++)
 	if (!strcmp(which, tbarname[i]))
-	  return foo->Tbar[i].value;
+	  result = foo->Tbar[i].value;
+/* 	  return foo->Tbar[i].value; */
     }
     else if (!strncmp(which, "T", 1)) {
       for (i=0; i<NUM_T_FUNCS; i++)
 	if (!strcmp(which, tname[i]))
-	  return foo->T[i].value;
+	  result = foo->T[i].value;
+/* 	  return foo->T[i].value; */
     }
     else if (!strncmp(which, "S", 1)) {
       for (i=0; i<NUM_S_FUNCS; i++)
 	if (!strcmp(which, sname[i]))
-	  return foo->S[i].value;
+	  result = foo->S[i].value;
+/* 	  return foo->S[i].value; */
     }
     else if (!strncmp(which, "B", 1)) {
       for (i=0; i<NUM_B_FUNCS; i++)
 	if (!strcmp(which, bname[i]))
-	  return foo->B[i].value;
+	  result = foo->B[i].value;
+/* 	  return foo->B[i].value; */
     }
     else if (!strncmp(which, "V", 1)) {
       for (i=0; i<NUM_V_FUNCS; i++)
 	if (!strcmp(which, vname[i]))
-	  return foo->V[i].value;
+	  result = foo->V[i].value;
+/* 	  return foo->V[i].value; */
     }
-    else
-      TSIL_Error ("TSIL_GetFunction", "Invalid identifier", 3);
+    else {
+      /* If we get here the identifier was not recognized: */
+      TSIL_Error (funcname, "Invalid identifier", 1);
+      return (TSIL_COMPLEX) 0.0;
+    }
   }
   else if (foo->whichFns == STU) {
 
-    if (!strncmp(which, "U", 1))
-	  return foo->U[xzuv].value;
+    if (!strcmp(which, uname[xzuv]))
+      result = foo->U[xzuv].value;
+/* 	  return foo->U[xzuv].value; */
 
     else if (!strncmp(which, "TBAR", 4)) {
       for (i=1; i<NUM_T_FUNCS; i+=2)
 	if (!strcmp(which, tbarname[i]))
-	  return foo->Tbar[i].value;
+	  result = foo->Tbar[i].value;
+/* 	  return foo->Tbar[i].value; */
     }
     else if (!strncmp(which, "T", 1)) {
       for (i=1; i<NUM_T_FUNCS; i+=2)
 	if (!strcmp(which, tname[i]))
-	  return foo->T[i].value;
+	  result = foo->T[i].value;
+/* 	  return foo->T[i].value; */
     }
-    else if (!strncmp(which, "S", 1))
-      return foo->S[uxv].value;
+    else if (!strcmp(which, sname[uxv]))
+      result = foo->S[uxv].value;
+/*       return foo->S[uxv].value; */
 
     else if (!strncmp(which, "B", 1)) {
-      return foo->B[xz].value;
+      for (i=0; i<NUM_B_FUNCS; i++)
+	if (!strcmp(which, bname[i]))
+	  result = foo->B[i].value;
+/* 	  return foo->B[i].value; */
     }
-    else if (!strncmp(which, "V", 1))
-      return foo->V[xzuv].value;
+    else if (!strcmp(which, vname[xzuv]))
+      result = foo->V[xzuv].value;
+/* 	  return foo->V[xzuv].value; */
 
-    else
-      TSIL_Error ("TSIL_GetFunction", "Invalid identifier for this case", 3);
+    else {
+      /* If we get here the identifier was not recognized or was wrong: */
+      TSIL_Error (funcname, "Invalid identifier for this case", 1);
+      result = (TSIL_COMPLEX) 0.0;
+    }
   }
   else if (foo->whichFns == ST) {
-
+    
     if (!strncmp(which, "TBAR", 4)) {
       for (i=1; i<NUM_T_FUNCS; i+=2)
 	if (!strcmp(which, tbarname[i]))
-	  return foo->Tbar[i].value;
+	  result = foo->Tbar[i].value;
+/* 	  return foo->Tbar[i].value; */
     }
     else if (!strncmp(which, "T", 1)) {
       for (i=1; i<NUM_T_FUNCS; i+=2)
 	if (!strcmp(which, tname[i]))
-	  return foo->T[i].value;
+	  result = foo->T[i].value;
+/* 	  return foo->T[i].value; */
     }
-    else if (!strncmp(which, "S", 1))
-      return foo->S[uxv].value;
+    else if (!strcmp(which, sname[uxv]))
+      result = foo->S[uxv].value;
+/*       return foo->S[uxv].value; */
 
-/*     else if (!strncmp(which, "B", 1)) { */
-/*       for (i=0; i<NUM_B_FUNCS; i++) */
-/* 	if (!strcmp(which, bname[i])) */
+    else if (!strncmp(which, "B", 1)) {
+      for (i=0; i<NUM_B_FUNCS; i++)
+	if (!strcmp(which, bname[i]))
+	  result = foo->B[i].value;
 /* 	  return foo->B[i].value; */
-/*     } */
-    else
-      TSIL_Error ("TSIL_GetFunction", "Invalid identifier for this case", 3);
+    }
+    else {
+      /* If we get here the identifier was not recognized or was wrong: */
+      TSIL_Error ("TSIL_GetFunction", "Invalid identifier for this case", 1);
+      result = (TSIL_COMPLEX) 0.0;
+    }
   }
-  else
-    TSIL_Error ("TSIL_GetFunction", 
-		"This can't happen!  Evaluation mode set incorrectly.", 4);
+
+  if (TSIL_IsInfinite (result))
+    TSIL_Warn (funcname, strncat (errmsg, which, 7));
+
+  return result;
 }
 
 /* ******************************************************************* */
@@ -530,15 +645,19 @@ TSIL_COMPLEX TSIL_GetBoldFunction (TSIL_DATA  *foo,
   const char *sname[] = {"Svyz", "Suxv"};
   const char *vname[] = {"Vzxyv","Vuyxv","Vxzuv","Vyuzv"};
   int i;
+  TSIL_COMPLEX result = (TSIL_COMPLEX) 0.0;
+  char funcname[] = "TSIL_GetBoldFunction";
+  char errmsg[55] = "Function not defined for these parameters: ";
 
   /* Check inputs and evaluation status: */
-  if (n<0 || n>2)
-    TSIL_Error ("TSIL_GetBoldFunction",
-		"Invalid power specified, must be 0,1, or 2.", 2);
-
-  if (foo->status == UNEVALUATED)
-    TSIL_Error ("TSIL_GetBoldFunction",
-		"This case has not been evaluated!", 1);
+  if (n<0 || n>2) {
+    TSIL_Error (funcname, "Invalid power specified, must be 0,1, or 2.", 1);
+    return result;
+  }
+  if (foo->status == UNEVALUATED) {
+    TSIL_Warn (funcname, "This case has not been evaluated!");
+    return result;
+  }
 
   /* Again, branch on evaluation case */
 
@@ -547,65 +666,83 @@ TSIL_COMPLEX TSIL_GetBoldFunction (TSIL_DATA  *foo,
     if (!strncmp(which, "U", 1)) {
       for (i=0; i<NUM_U_FUNCS; i++)
 	if (!strcmp(which, uname[i]))
-	  return foo->U[i].bold[n];
+	  result = foo->U[i].bold[n];
+/* 	  return foo->U[i].bold[n]; */
     }
     else if (!strncmp(which, "T", 1)) {
       for (i=0; i<NUM_T_FUNCS; i++)
 	if (!strcmp(which, tname[i]))
-	  return foo->T[i].bold[n];
+	  result = foo->T[i].bold[n];
+/* 	  return foo->T[i].bold[n]; */
     }
     else if (!strncmp(which, "S", 1)) {
       for (i=0; i<NUM_S_FUNCS; i++)
 	if (!strcmp(which, sname[i]))
-	  return foo->S[i].bold[n];
+	  result = foo->S[i].bold[n];
+/* 	  return foo->S[i].bold[n]; */
     }
     else if (!strncmp(which, "V", 1)) {
       for (i=0; i<NUM_V_FUNCS; i++)
 	if (!strcmp(which, vname[i]))
-	  return foo->V[i].bold[n];
+	  result = foo->V[i].bold[n];
+/* 	  return foo->V[i].bold[n]; */
     }
-    else
-      TSIL_Error ("TSIL_GetBoldFunction",
-		  "Invalid identifier for this case", 3);
+    else {
+      /* If we get here the identifier was not recognized: */
+      TSIL_Error (funcname, "Invalid identifier for this case", 1);
+      result = (TSIL_COMPLEX) 0.0;
+    }
   }
   else if (foo->whichFns == STU) {
     
     /* Find and return appropriate value: */
-    if (!strncmp(which, "U", 1))
-      return foo->U[xzuv].bold[n];
+    if (!strcmp(which, uname[xzuv]))
+      result = foo->U[xzuv].bold[n];
+/*       return foo->U[xzuv].bold[n]; */
 
     else if (!strncmp(which, "T", 1)) {
       for (i=1; i<NUM_T_FUNCS; i+=2)
 	if (!strcmp(which, tname[i]))
-	  return foo->T[i].bold[n];
+	  result = foo->T[i].bold[n];
+/* 	  return foo->T[i].bold[n]; */
     }
-    else if (!strncmp(which, "S", 1))
-      return foo->S[uxv].bold[n];
+    else if (!strcmp(which, sname[uxv]))
+      result = foo->S[uxv].bold[n];
+/*       return foo->S[uxv].bold[n]; */
 
-    else if (!strncmp(which, "V", 1))
-      return foo->V[xzuv].bold[n];
+    else if (!strcmp(which, vname[xzuv]))
+      result = foo->V[xzuv].bold[n];
+/*       return foo->V[xzuv].bold[n]; */
     
-    else
-      TSIL_Error ("TSIL_GetBoldFunction", 
-		  "Invalid identifier for this case.", 3);
+    else {
+      /* If we get here the identifier was not recognized: */
+      TSIL_Error (funcname, "Invalid identifier for this case.", 1);
+      result = (TSIL_COMPLEX) 0.0;
+    }
   }
   else if (foo->whichFns == ST) {
 
     if (!strncmp(which, "T", 1)) {
       for (i=1; i<NUM_T_FUNCS; i+=2)
 	if (!strcmp(which, tname[i]))
-	  return foo->T[i].bold[n];
+	  result = foo->T[i].bold[n];
+/* 	  return foo->T[i].bold[n]; */
     }
-    else if (!strncmp(which, "S", 1))
-      return foo->S[uxv].bold[n];
+    else if (!strcmp(which, sname[uxv]))
+      result = foo->S[uxv].bold[n];
+/*       return foo->S[uxv].bold[n]; */
 
-    else
-      TSIL_Error ("TSIL_GetBoldFunction",
-		  "Invalid identifier for this case.", 3);
+    else {
+      /* If we get here the identifier was not recognized: */
+      TSIL_Error (funcname, "Invalid identifier for this case.", 1);
+      result = (TSIL_COMPLEX) 0.0;
+    }
   }
-  else
-    TSIL_Error ("TSIL_GetBoldFunction", 
-		"This can't happen!  Evaluation mode set incorrectly.", 4);
+
+  if (TSIL_IsInfinite (result))
+    TSIL_Warn (funcname, strncat (errmsg, which, 7));
+
+  return result;
 }
 
 /* ******************************************************************* */
@@ -714,7 +851,6 @@ void TSIL_WriteData (FILE *fp, TSIL_DATA *foo)
     return;
   }
 
-  /* Format strings shortened somewhat */
   fprintf(fp, "x = %.12Lf\n", (long double) (fac * foo->x));
   if (foo->whichFns == STUM)
     fprintf(fp, "y = %.12Lf\n", (long double) (fac * foo->y));
@@ -1118,9 +1254,6 @@ void TSIL_PrintStatus (TSIL_DATA *foo)
 /* Returns true/false indicating whether these parameters correspond   */
 /* to the "unnatural" threshold case.                                  */
 
-/* DGR - This should work with the subsidiary cases, as the unused
-   parameters in these have been set to TSIL_Infinity */
-
 int UnnaturalCase (TSIL_DATA *foo)
 {
   TSIL_REAL x, y, z, u, v;
@@ -1157,12 +1290,20 @@ void TSIL_PrintVersion (void)
 }
 
 /* ******************************************************************* */
+#include <execinfo.h>
 
 void TSIL_Error (char *func, char *msg, int val)
 {
+  void *callstack[128];
+  int i, frames = backtrace(callstack, 128);
+  char **strs = backtrace_symbols(callstack, frames);
+
   fprintf (stderr, "ERROR (%s): %s\n", func, msg);
-  fprintf (stderr, "Exiting!\n");
-  fflush (stdout);
+
+  for (i=0; i<frames; i++)
+    fprintf(stderr, "%s\n", strs[i]);
+
+  fflush (stderr);
   exit (val);
 }
 
@@ -1170,8 +1311,10 @@ void TSIL_Error (char *func, char *msg, int val)
 
 void TSIL_Warn (char *func, char *msg)
 {
-  fprintf (stderr, "WARNING (%s): %s\n", func, msg);
-  fflush (stdout);
+  if (printWarns) {
+    fprintf (stderr, "WARNING (%s): %s\n", func, msg);
+    fflush (stderr);
+  }
   return;
 }
 
@@ -1180,12 +1323,10 @@ void TSIL_Warn (char *func, char *msg)
 
 void TSIL_Info (char *msg)
 {
-  /*
-  fprintf(stderr, "INFO: ");
-  fprintf(stderr, msg);
-  fprintf(stderr, "\n");
-  fflush(stdout);
-  */
+/*   fprintf(stderr, "INFO: ");  */
+/*   fprintf(stderr, msg);  */
+/*   fprintf(stderr, "\n");  */
+/*   fflush(stdout);  */
   return;
 }
 
@@ -1198,7 +1339,7 @@ void CheckConsistent (TSIL_COMPLEX arg1, TSIL_COMPLEX arg2)
 /*       (isnan (TSIL_CREAL (arg2)) || isnan (TSIL_CIMAG (arg2)) ))   */
 /*     return; */
   
-  /* DGR */
+/* DGR */
   if (TSIL_IsInfinite (arg1) && TSIL_IsInfinite (arg2))
     return;
 
@@ -1229,6 +1370,255 @@ void TSIL_ResetStepSizeParams (TSIL_DATA *foo,
   foo->nStepsMaxCon  = nstepsMaxCon;
   foo->nStepsMaxVar  = nstepsMaxVar;
   foo->nStepsMin     = nstepsMin;
+
+  return;
+}
+
+/* **************************************************************** */
+/* Copies the results in a TSIL_DATA struct to a TSIL_RESULT struct */
+
+int TSIL_CopyResult (TSIL_DATA *foo, TSIL_RESULT *bar)
+{
+  if (foo->status == UNEVALUATED) {
+    TSIL_Warn ("TSIL_CopyResult", 
+	       "TSIL data has not yet been evaluated!");
+    return 1;
+  }
+
+  if (foo->whichFns == 0) {
+
+    bar->x = foo->x;
+    bar->y = foo->y;
+    bar->z = foo->z;
+    bar->u = foo->u;
+    bar->v = foo->v;
+    bar->s = foo->s;
+    bar->qq = foo->qq;
+    
+    bar->M = TSIL_GetFunction (foo, "M");
+    TSIL_GetData (foo, "U", bar->U);
+    TSIL_GetData (foo, "V", bar->V);
+    TSIL_GetData (foo, "T", bar->T);
+    TSIL_GetData (foo, "S", bar->S);
+    TSIL_GetData (foo, "B", bar->B);
+    TSIL_GetData (foo, "TBAR", bar->TBAR);
+  }
+  else if (foo->whichFns == 1) {
+
+    bar->x = foo->x;
+/*     bar->y = TSIL_Infinity; */
+    bar->z = foo->z;
+    bar->u = foo->u;
+    bar->v = foo->v;
+    bar->s = foo->s;
+    bar->qq = foo->qq;
+
+    bar->U[xzuv] = TSIL_GetFunction (foo, "Uxzuv");
+    bar->V[xzuv] = TSIL_GetFunction (foo, "Vxzuv");
+    bar->T[uxv] = TSIL_GetFunction (foo, "Tuxv");
+    bar->T[xuv] = TSIL_GetFunction (foo, "Txuv");
+    bar->T[vxu] = TSIL_GetFunction (foo, "Tvxu");
+    bar->S[uxv] = TSIL_GetFunction (foo, "Suxv");
+    bar->B[xz] = TSIL_GetFunction (foo, "Bxz");
+    bar->TBAR[uxv] = TSIL_GetFunction (foo, "TBARuxv");
+    bar->TBAR[xuv] = TSIL_GetFunction (foo, "TBARxuv");
+    bar->TBAR[vxu] = TSIL_GetFunction (foo, "TBARvxu");
+  }
+  else if (foo->whichFns == 2) {
+
+    bar->x = foo->x;
+/*     bar->y = TSIL_Infinity; */
+/*     bar->z = TSIL_Infinity; */
+    bar->u = foo->u;
+    bar->v = foo->v;
+    bar->s = foo->s;
+    bar->qq = foo->qq;
+
+    bar->T[uxv] = TSIL_GetFunction (foo, "Tuxv");
+    bar->T[xuv] = TSIL_GetFunction (foo, "Txuv");
+    bar->T[vxu] = TSIL_GetFunction (foo, "Tvxu");
+    bar->S[uxv] = TSIL_GetFunction (foo, "Suxv");
+    bar->TBAR[uxv] = TSIL_GetFunction (foo, "TBARuxv");
+    bar->TBAR[xuv] = TSIL_GetFunction (foo, "TBARxuv");
+    bar->TBAR[vxu] = TSIL_GetFunction (foo, "TBARvxu");
+  }
+  else 
+    TSIL_Error ("TSIL_CopyResult",
+		"This can't happen! whichFns was set incorrectly",
+		99);
+
+  return 0;
+}
+
+/* **************************************************************** */
+/* Permutes a TSIL_RESULT.  Allowed permutations are:               */
+/*   0) None; just copies  (which = 0 or NOSWAP)                    */
+/*   1) x<->y and z<->u    (which = 1 or XYandZU)                   */
+/*   2) x<->z and y<->u    (which = 2 or XZandYU)                   */
+/*   3) x<->u and y<->z    (which = 3 or XUandYZ)                   */
+
+void TSIL_PermuteResult (TSIL_RESULT *in, 
+			 int which, 
+			 TSIL_RESULT *out)
+{
+  /* Always the same: */
+  out->v  = in->v;
+  out->s  = in->s;
+  out->qq = in->qq;
+  out->M  = in->M;
+
+  if (which == XYandZU) {
+
+    out->x = in->y;
+    out->y = in->x;
+    out->z = in->u;
+    out->u = in->z;
+
+    out->U[uyxv] = in->U[zxyv];
+    out->U[zxyv] = in->U[uyxv];
+    out->U[yuzv] = in->U[xzuv];
+    out->U[xzuv] = in->U[yuzv];
+
+    out->V[uyxv] = in->V[zxyv];
+    out->V[zxyv] = in->V[uyxv];
+    out->V[yuzv] = in->V[xzuv];
+    out->V[xzuv] = in->V[yuzv];
+
+    out->T[vxu] = in->T[vyz];
+    out->T[zyv] = in->T[uxv];
+    out->T[xuv] = in->T[yzv];
+    out->T[yzv] = in->T[xuv];
+    out->T[uxv] = in->T[zyv];
+    out->T[vyz] = in->T[vxu];
+
+    out->S[uxv] = in->S[vyz];
+    out->S[vyz] = in->S[uxv];
+
+    out->B[yu] = in->B[xz];
+    out->B[xz] = in->B[yu];
+
+    out->TBAR[vxu] = in->TBAR[vyz];
+    out->TBAR[zyv] = in->TBAR[uxv];
+    out->TBAR[xuv] = in->TBAR[yzv];
+    out->TBAR[yzv] = in->TBAR[xuv];
+    out->TBAR[uxv] = in->TBAR[zyv];
+    out->TBAR[vyz] = in->TBAR[vxu];
+  }
+  else if (which == XZandYU) {
+
+    out->x = in->z;
+    out->z = in->x;
+    out->y = in->u;
+    out->u = in->y;
+
+    out->U[xzuv] = in->U[zxyv];
+    out->U[yuzv] = in->U[uyxv];
+    out->U[zxyv] = in->U[xzuv];
+    out->U[uyxv] = in->U[yuzv];
+
+    out->V[xzuv] = in->V[zxyv];
+    out->V[yuzv] = in->V[uyxv];
+    out->V[zxyv] = in->V[xzuv];
+    out->V[uyxv] = in->V[yuzv];
+
+    out->T[vxu] = in->T[vyz];
+    out->T[yzv] = in->T[uxv];
+    out->T[uxv] = in->T[yzv];
+    out->T[zyv] = in->T[xuv];
+    out->T[xuv] = in->T[zyv];
+    out->T[vyz] = in->T[vxu];
+
+    out->S[uxv] = in->S[vyz];
+    out->S[vyz] = in->S[uxv];
+
+    out->B[yu] = in->B[yu];
+    out->B[xz] = in->B[xz];
+
+    out->TBAR[vxu] = in->TBAR[vyz];
+    out->TBAR[yzv] = in->TBAR[uxv];
+    out->TBAR[uxv] = in->TBAR[yzv];
+    out->TBAR[zyv] = in->TBAR[xuv];
+    out->TBAR[xuv] = in->TBAR[zyv];
+    out->TBAR[vyz] = in->TBAR[vxu];
+  }
+  else if (which == XUandYZ) {
+
+    out->x = in->u;
+    out->u = in->x;
+    out->z = in->y;
+    out->y = in->z;
+
+    out->U[yuzv] = in->U[zxyv];
+    out->U[xzuv] = in->U[uyxv];
+    out->U[uyxv] = in->U[xzuv];
+    out->U[zxyv] = in->U[yuzv];
+
+    out->V[yuzv] = in->V[zxyv];
+    out->V[xzuv] = in->V[uyxv];
+    out->V[uyxv] = in->V[xzuv];
+    out->V[zxyv] = in->V[yuzv];
+
+    out->T[vyz] = in->T[vyz];
+    out->T[xuv] = in->T[uxv];
+    out->T[zyv] = in->T[yzv];
+    out->T[uxv] = in->T[xuv];
+    out->T[yzv] = in->T[zyv];
+    out->T[vxu] = in->T[vxu];
+
+    out->S[uxv] = in->S[uxv];
+    out->S[vyz] = in->S[vyz];
+
+    out->B[yu] = in->B[xz];
+    out->B[xz] = in->B[yu];
+
+    out->TBAR[vyz] = in->TBAR[vyz];
+    out->TBAR[xuv] = in->TBAR[uxv];
+    out->TBAR[zyv] = in->TBAR[yzv];
+    out->TBAR[uxv] = in->TBAR[xuv];
+    out->TBAR[yzv] = in->TBAR[zyv];
+    out->TBAR[vxu] = in->TBAR[vxu];
+  }
+  else if (which == NOSWAP) {
+
+    out->x = in->x;
+    out->y = in->y;
+    out->z = in->z;
+    out->u = in->u;
+
+    out->U[uyxv] = in->U[uyxv];
+    out->U[zxyv] = in->U[zxyv];
+    out->U[yuzv] = in->U[yuzv];
+    out->U[xzuv] = in->U[xzuv];
+
+    out->V[uyxv] = in->V[uyxv];
+    out->V[zxyv] = in->V[zxyv];
+    out->V[yuzv] = in->V[yuzv];
+    out->V[xzuv] = in->V[xzuv];
+
+    out->T[vxu] = in->T[vxu];
+    out->T[zyv] = in->T[zyv];
+    out->T[xuv] = in->T[xuv];
+    out->T[yzv] = in->T[yzv];
+    out->T[uxv] = in->T[uxv];
+    out->T[vyz] = in->T[vyz];
+
+    out->S[uxv] = in->S[uxv];
+    out->S[vyz] = in->S[vyz];
+
+    out->B[yu] = in->B[yu];
+    out->B[xz] = in->B[xz];
+
+    out->TBAR[vxu] = in->TBAR[vxu];
+    out->TBAR[zyv] = in->TBAR[zyv];
+    out->TBAR[xuv] = in->TBAR[xuv];
+    out->TBAR[yzv] = in->TBAR[yzv];
+    out->TBAR[uxv] = in->TBAR[uxv];
+    out->TBAR[vyz] = in->TBAR[vyz];
+  }
+  else
+    TSIL_Error ("TSIL_PermuteResults",
+		"Invalid permutation specified",
+		9);
 
   return;
 }

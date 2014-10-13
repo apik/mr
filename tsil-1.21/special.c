@@ -20,6 +20,9 @@ int CaseSpecial (TSIL_DATA *foo)
   s  = foo->s;
   qq = foo->qq;
 
+  /* Temporarily disable WARNs */
+  printWarns = NO;
+
   if (foo->whichFns == STUM) {
     foo->B[xz].value = B(x, z, s, qq);
     foo->B[yu].value = B(y, u, s, qq);
@@ -57,6 +60,9 @@ int CaseSpecial (TSIL_DATA *foo)
     success *= Tanalytic (x, u, v, s, qq, &(foo->T[xuv].value));
     success *= Tanalytic (u, x, v, s, qq, &(foo->T[uxv].value));
   }
+
+  /* Restore warnings */
+  printWarns = YES;
 
   return success;
 }

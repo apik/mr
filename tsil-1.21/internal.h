@@ -5,6 +5,8 @@
 #include "tsil_funcs.h"  /* Contains remaining functions */
 #include "tsil_params.h" /* Parameters, e.g. for integration */
 #include "tsil_build.h"  /* TSIL version number */
+#include <fcntl.h>
+#include <unistd.h>
 
 #ifndef PI
 #define PI 4.0L*TSIL_ATAN(1.0L)

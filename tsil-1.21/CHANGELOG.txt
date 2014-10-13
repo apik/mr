@@ -1,5 +1,53 @@
-11/1/06 Version 1.1 
---------------------
+September 3, 2014 Version 1.21
+------------------------
+
+* Changed generic.c to fix problems that occurred for small s in cases 
+  where s=0 is a threshold. Thanks to Stefano Di Vita for pointing out the
+  problem.
+
+
+June 1, 2014 Version 1.2
+------------------------
+
+* Added code in function U0xyz(), located in file analyticU.c, to trap
+  cases that could evaluate to incorrect branches of CLOG. This problem was 
+  noticed on recent systems running Ubuntu 12.04, Ubuntu 14.04, and 
+  OpenSuse 13.1 with gcc. Thanks to Stefano Di Vita for pointing out the 
+  problem.
+
+* Added the TSIL_RESULT struct, plus the manipulation utilities
+  TSIL_CopyResult and TSIL_PermuteResult. See the end of section 5.2
+  and Appendix C of the preprint 
+  http://arxiv.org/abs/hep-ph/0501132 for more information.
+
+* Updated TSIL_A, TSIL_Ap (new function), TSIL_I2, I20xy, and I200x to
+  work with negative mass squared arguments.
+
+* Data rescaling in TSIL_Evaluate now saves original argument values
+  and restores them, rather than recomputing them and subjecting them
+  to roundoff error.
+
+* Added a toggle (printWarns) that controls printing of warning
+  messages. Warnings for undefined functions no longer appear when
+  invoking TSIL_Evaluate(); instead, such warnings are issued whan a
+  user tries to access such a function with TSIL_GetFunction() or
+  TSIL_GetBoldFunction() or TSIL_GetData() or TSIL_GetBoldData(), or
+  when an analytic evaluation routine is called directly by the user.
+
+* Fixed printfs lacking format strings in testprog.c.
+
+* Makefile updates: -lm moved to end of $(LIBS); thanks to Filippo Sala
+  for pointing out the issue. Antiquated entries for gcc under Mac OS X 
+  deleted. 
+
+* Deleted obsolete remarks about long doubles in Mac OS X from ISSUES.txt.
+
+* Added to ISSUES.txt a mention of a problem encountered on a system with 
+  Red Hat 4.1.2-52 and gcc 4.1.2.
+  
+
+November 1, 2006 Version 1.1 
+----------------------------
 
 * Added capability to compute subsets of the basis functions,
   specifically:
@@ -26,11 +74,11 @@
   subset cases and only tests the relevant results against the
   benchmark data.
 
-* TSIL_GetFunction and TSIL_GetBoldFunction modified so that in subset 
+* TSIL_GetFunction and TSIL_GetBoldFunction modified so that in subset
   cases where there is only a single function of a given type (U, V,
   S, or B) only the first letter of the specification string is
-  relevant. So, for example, either "U" or "Uxzuv" will work in the STU
-  evaluation case.
+  relevant. So, for example, either "U" or "Uxzuv" will work in the
+  STU evaluation case.
 
 * Eliminated some TSIL_EPSILONs in favor of the less dangerous
   TSIL_TOL, to avoid roundoff errors in certain cases.
@@ -47,8 +95,8 @@
 * README.txt updated.
 
 
-2/24/06 Version 1.04
---------------------
+February 24, 2006 Version 1.04
+------------------------------
 
 * The function TSIL_SetParameters ()  now always calls Construct () 
   (see line 112 of initialize.c). This avoids core dumps that 
@@ -65,8 +113,8 @@
   string now results in a TSIL_Error, rather than a TSIL_Warn. 
  
 
-8/22/05 Version 1.03
---------------------
+August 22, 2005 Version 1.03
+----------------------------
 
 * The code in generic.c and rk6.c has been modified to avoid taking
   too many small steps very close to threshold when roundoff errors
@@ -75,8 +123,8 @@
   data is used.
 
 
-7/6/05 Version 1.02
--------------------
+July 6, 2005 Version 1.02
+-------------------------
 
 * Non-analytic cases near the lowest threshold are now treated in
   Runge-Kutta by going off the real s-axis (generic.c). Also, the
@@ -87,8 +135,8 @@
   other special cases.
 
 
-2/28/05 Version 1.01
---------------------
+February 28, 2005 Version 1.01
+------------------------------
 
 * Error in function UnnaturalCase fixed (functions.c).
 

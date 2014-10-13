@@ -336,7 +336,7 @@ int Integrate (TSIL_DATA    *foo,
   int rk6status = 1; /* 1 for success or forced; 0 for need retry, 
                         -1 when the error is big and we need to bail. */
 
-  goodsteps = badsteps = 0;   
+  goodsteps = badsteps = 0;
 
   if (intmode > 0)
     rkmode = intmode - 1;
@@ -367,7 +367,8 @@ int Integrate (TSIL_DATA    *foo,
     }
   }
 
-  /* If the error got too big, it's over. Do not pass Go, do not collect $200. */
+  /* If the error got too big, it's over. Do not pass Go, do not
+     collect $200. */
   if (-1 == rk6status) return 0;
 
   /* The remaining distance is less than twice the step size.  So, for
@@ -401,7 +402,7 @@ void CaseGeneric (TSIL_DATA *foo)
   TSIL_REAL    s = foo->s;
   TSIL_REAL    qq = foo->qq;
   TSIL_REAL    threshMin = foo->threshMin;
-  TSIL_REAL    smallestnonzerospecialpoint;
+  TSIL_REAL    smallestspecialpoint;
   TSIL_REAL    temp;
   int          i;
 
@@ -424,27 +425,25 @@ void CaseGeneric (TSIL_DATA *foo)
   }
 
   /* Find the point nearest s=0 that could give problems: */
-  smallestnonzerospecialpoint = (foo->x) + (foo->u) + (foo->v);
-  if (foo->whichFns != ST)   smallestnonzerospecialpoint += (foo->z);
-  if (foo->whichFns == STUM) smallestnonzerospecialpoint += (foo->y);
+  smallestspecialpoint = (foo->threshold)[0];
 
-  /* DGR - changed two TSIL_EPSILONs to TSILS_TOLs below */
-  for (i=0; i<(foo->nThresh); i++) {
-    if (((foo->threshold)[i] < smallestnonzerospecialpoint) &&
-        ((foo->threshold)[i] > TSIL_TOL))
-      smallestnonzerospecialpoint = (foo->threshold)[i];
+  for (i=1; i<(foo->nThresh); i++) {
+    if ((foo->threshold)[i] < smallestspecialpoint) 
+      smallestspecialpoint = (foo->threshold)[i];
   }
 
   for (i=0; i<(foo->nPthresh); i++) {
-    if (((foo->pseudoThreshold)[i] < smallestnonzerospecialpoint) &&
-        ((foo->pseudoThreshold)[i] > TSIL_TOL))
-      smallestnonzerospecialpoint = (foo->pseudoThreshold)[i];
+    if ((foo->pseudoThreshold)[i] < smallestspecialpoint) 
+      smallestspecialpoint = (foo->pseudoThreshold)[i];
   }
 
-  if (s <= 0.9999L*smallestnonzerospecialpoint) {
+  if (s < (smallestspecialpoint - THRESH_CUTOFF)) {
+    /* Integrate along real s axis. */
     sFinal = (TSIL_COMPLEX) 0.5L*s;
 
     if (threshMin < THRESH_CUTOFF) {
+      /* The smallest threshold is either 0 or close to 0, so change
+         variables to r = lnbar(-s) for the first part of integration. */
       rInit  = TSIL_CLOG(-sInit/qq);
       temp = -0.5L*s/qq;
       if (temp > TSIL_TOL) rFinal = TSIL_CLOG(temp);
@@ -457,29 +456,13 @@ void CaseGeneric (TSIL_DATA *foo)
 
     sInit  = sFinal;
     sFinal = (TSIL_COMPLEX) s;
-
-    if (NearThreshold (foo, &sthresh, THRESH_CUTOFF) == YES) {
-      if (sthresh < TSIL_TOL) {
-        rInit  = TSIL_CLOG(-sInit/qq);
-        rFinal = TSIL_CLOG(-sFinal/qq);
-	Integrate (foo, rInit, rFinal, MaxSteps(foo,rFinal-rInit), 3, 0.0L);
-      }
-      else {
-        rInit  = TSIL_CLOG(1.L - sInit/sthresh);
-        temp = 1.L - s/sthresh;
-        if (temp > TSIL_TOL) rFinal = TSIL_CLOG(temp);
-        else if (temp < -TSIL_TOL) rFinal = TSIL_CLOG(-temp) - I*PI;
-        else rFinal = TSIL_CLOG(0.001L*TSIL_EPSILON) - I*0.5L*PI;
-	Integrate (foo, rInit, rFinal, MaxSteps(foo,rFinal - rInit), 2, sthresh);
-      }
-    }
-    else
-      Integrate (foo, sInit, sFinal, MaxSteps(foo, sFinal-sInit), 1, 0.0L);
+    Integrate (foo, sInit, sFinal, MaxSteps(foo, sFinal-sInit), 1, 0.0L);
 
     /* Set status value */
     foo->status = REAXIS;
   }
   else {
+    /* Integrate in complex s plane.                            */
     /* No reason to go too far off the real axis if s is small. */
     if (s < IM_DISPL/10.0)
       imDisp = 10.0L * s * I;
@@ -503,14 +486,20 @@ void CaseGeneric (TSIL_DATA *foo)
     sInit  = sFinal;
     sFinal = s;
     if (NearThreshold (foo, &sthresh, THRESH_CUTOFF) == YES) {
-      TSIL_Info("Using near-threshold stepper for final leg of contour.");
-      rInit  = TSIL_CLOG(1.L - sInit/sthresh);
-      temp = 1.L - s/sthresh;
-      if (temp > TSIL_TOL) rFinal = TSIL_CLOG(temp);
-      else if (temp < -TSIL_TOL) rFinal = TSIL_CLOG(-temp) - I*PI;
-      else rFinal = TSIL_CLOG(0.001L*TSIL_EPSILON) - I*0.5L*PI;
-
-      Integrate (foo, rInit, rFinal, MaxSteps(foo,rFinal - rInit), 2, sthresh);
+      if (TSIL_CABS(sthresh) < TSIL_TOL) {
+        rInit  = TSIL_CLOG(-sInit/qq);
+        rFinal = TSIL_CLOG(-sFinal/qq - I*TSIL_EPSILON);
+        Integrate (foo, rInit, rFinal, MaxSteps(foo,rFinal-rInit), 3, 0.0L);
+      }
+      else {
+        TSIL_Info("Using near-threshold stepper for final leg of contour.");
+        rInit  = TSIL_CLOG(1.L - sInit/sthresh);
+        temp = 1.L - s/sthresh;
+        if (temp > TSIL_TOL) rFinal = TSIL_CLOG(temp);
+        else if (temp < -TSIL_TOL) rFinal = TSIL_CLOG(-temp) - I*PI;
+        else rFinal = TSIL_CLOG(0.001L*TSIL_EPSILON) - I*0.5L*PI;
+        Integrate (foo, rInit, rFinal, MaxSteps(foo,rFinal - rInit), 2, sthresh);
+      }
     }
     else 
       Integrate (foo, sInit, sFinal, MaxSteps(foo,sFinal - sInit), 1, 0.0L);

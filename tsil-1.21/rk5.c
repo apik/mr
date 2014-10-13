@@ -22,7 +22,7 @@
   a major speed hit, and because they are not needed (since this is
   ONLY to be used for the last step!)
 
-  NOTE: do NOT call rk6 AFTER calling rk5, because rk6 expects the
+  NOTE: do NOT call rk4 AFTER calling rk5, because rk4 expects the
   derivatives to be up-to-date in the struct, and rk5 doesn't update
   them!  It is permitted to call rk5 repeatedly as a test, because rk5
   doesn't assume that the derivatives in the struct are updated. But
@@ -313,7 +313,7 @@ void rk5 (TSIL_DATA *foo,
 
 
 /* **************************************************************** */
-/* This version takes an RK step for the STU case.                  */
+/* This versions take a RK step for the STU case.                   */
 
 void rk5_STU (TSIL_DATA    *foo, 
 	      TSIL_COMPLEX *RKindvar,
@@ -490,7 +490,7 @@ void rk5_STU (TSIL_DATA    *foo,
 
 
 /* **************************************************************** */
-/* This version takes an RK step for the ST case.                   */
+/* This versions take a RK step for the ST case.                    */
 
 void rk5_ST (TSIL_DATA *foo, 
 	     TSIL_COMPLEX *RKindvar,

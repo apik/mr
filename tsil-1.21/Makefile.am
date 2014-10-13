@@ -13,7 +13,8 @@
 ########################## COMPILER ################################
 # Uncomment the choices appropriate for your computing environment.
 # (Not guaranteed to be complete. Please send info to the authors if
-# you succeed in making things work on a new system.)
+# you succeed in making things work on a system requiring different
+# flags.)
 #
 # Intel C compiler:
 # =================
@@ -23,13 +24,7 @@
 # GNU C Compiler:
 # ===============
  CC		= gcc
- TSIL_OPT 	= # -O3 -funroll-loops
-#
-# GNU C Compiler under Mac OS X:
-# ==============================
-# CC		= gcc
-# TSIL_OPT	= # -Wno-long-double -O3 -funroll-loops 
-# TSIL_LIBX	= -lmx
+ TSIL_OPT	= -O3 -funroll-loops 
 #
 ################### INSTALLATION DIRECTORIES #######################
 #
@@ -37,9 +32,7 @@
 # TSIL_INCDIR	= /usr/include
 #
 ################### TEST SUITE MODE ################################
-# Uncomment one of these to test subset evaluation. If this macro is
-# unset, full evaluation is tested.
-# 
+#
 # TSIL_TESTOPT	= -DTSIL_TEST_STU
 # TSIL_TESTOPT	= -DTSIL_TEST_ST
 #
@@ -53,7 +46,7 @@
 
 CFLAGS	= $(TSIL_RESCALE) $(TSIL_SIZE) $(TSIL_OPT)
 LDFLAGS	= 
-LIBS	= -lm $(TSIL_LIBX) -L. -ltsil
+LIBS	= -L. -ltsil -lm
 ARFLAGS = -rus
 
 TSIL_SRCS = initialize.c \
@@ -97,19 +90,19 @@ TEST_SRC = testprog.c
 
 TEST_OBJ = $(TEST_SRC:.c=.o)
 
-all:	libtsil.a 
+all:	libtsil.a tsil tsil.tst
 
 libtsil.a: $(TSIL_OBJS)
 	$(AR) $(ARFLAGS) $@ $?
 
-# tsil:	$(MAIN_OBJ) libtsil.a
-# 	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $(MAIN_OBJ) $(LIBS)
+tsil:	$(MAIN_OBJ) libtsil.a
+	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $(MAIN_OBJ) $(LIBS)
 
-# $(TEST_OBJ):	$(TEST_SRC)
-# 	$(CC) -c $(CFLAGS) $(TSIL_TESTOPT) $(TEST_SRC)
+$(TEST_OBJ):	$(TEST_SRC)
+	$(CC) -c $(CFLAGS) $(TSIL_TESTOPT) $(TEST_SRC)
 
-# tsil.tst:	$(TEST_OBJ) libtsil.a
-# 	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $(TEST_OBJ) $(LIBS)
+tsil.tst:	$(TEST_OBJ) libtsil.a
+	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $(TEST_OBJ) $(LIBS)
 
 install: libtsil.a
 	cp libtsil.a $(TSIL_LIBDIR)
@@ -126,8 +119,8 @@ clean:
 
 generic.o initialize.o: tsil_params.h
 
-$(TSILOBJS):	internal.h tsil.h tsil_funcs.h tsil_global.h
+$(TSIL_OBJS):	internal.h tsil.h tsil_funcs.h tsil_global.h
 
-# tsil_main.o:	tsil.h
+tsil_main.o:	tsil.h
 
-# $(TEST_OBJ):	tsil_testparams.h internal.h tsil.h
+$(TEST_OBJ):	tsil_testparams.h internal.h tsil.h

@@ -1,7 +1,7 @@
 /* Names of the various functions. */
 
 /* This file is not actually #included anywhere. It is just a
-reference template; cut and past relevant sections into files that
+reference template; cut and paste relevant sections into files that
 need them, to avoid typos. (This to avoid warnings about unused
 variables.) */
 

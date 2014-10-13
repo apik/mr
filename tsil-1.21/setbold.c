@@ -90,12 +90,14 @@ void SetBoldV (TSIL_VTYPE *fun, TSIL_REAL s, TSIL_REAL qq)
   Deltasxy = Delta(s,x,y);
   
   if (y/(x + y + TSIL_FABS(s)) < TSIL_TOL) {
-    TSIL_Warn("SetBoldV", "Vbold(x,y,z,u) is undefined for y = 0.");
+    /* DGR commented out in v1.2 */
+/*     TSIL_Warn("SetBoldV", "Vbold(x,y,z,u) is undefined for y = 0."); */
     fun->bold[0] = TSIL_Infinity;
     fun->bold[1] = TSIL_Infinity;
   }
   else if (TSIL_FABS((s - x - y - 2.0L*TSIL_SQRT(x*y))/(x + y)) < TSIL_TOL) {
-    TSIL_Warn("SetBoldV", "Vbold(x,y,z,u) is undefined for sqrt(s) = sqrt(x)+sqrt(y).");
+    /* DGR commented out in v1.2 */
+/*     TSIL_Warn("SetBoldV", "Vbold(x,y,z,u) is undefined for sqrt(s) = sqrt(x)+sqrt(y)."); */
     fun->bold[0] = TSIL_Infinity;
     fun->bold[1] = TSIL_Infinity;
   }

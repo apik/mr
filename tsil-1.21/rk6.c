@@ -623,7 +623,7 @@ int rk6 (TSIL_DATA    *foo,
 
       
 /* **************************************************************** */
-/* This version takes an RK step for the STU case.                  */
+/* This version takes a RK step for the STU case.                   */
 
 int rk6_STU (TSIL_DATA   *foo, 
 	    TSIL_COMPLEX *RKindvar,
@@ -877,6 +877,7 @@ int rk6_STU (TSIL_DATA   *foo,
 
   maxerr = 0.0;
 
+
   errorS = TSIL_CABS(ButchCKFe1 * k1S + ButchCKFe2 * k2S 
 		     + ButchCKFe3 * k3S + ButchCKFe4 * k4S 
 		     + ButchCKFe5 * k5S + ButchCKFe6 * k6S);
@@ -998,7 +999,7 @@ int rk6_STU (TSIL_DATA   *foo,
 
 
 /* **************************************************************** */
-/* This version takes an RK step for the ST case.                   */
+/* This version takes a RK step for the ST case.                    */
 
 int rk6_ST (TSIL_DATA *foo, 
 	   TSIL_COMPLEX *RKindvar,

@@ -45,8 +45,8 @@ DeKalb, IL 60115
 USA
 
 D.G. Robertson [drobertson AT otterbein.edu]
-Department of Physics and Astronomy
-Otterbein College
+Department of Physics
+Otterbein University
 Westerville, OH 43081
 USA
 
@@ -65,10 +65,10 @@ Phys. Rev. D 68, 075002 (2003) [hep-ph/0307101].
 
 TSIL is available from:
 
-       http://zippy.physics.niu.edu/TSIL
-       http://www.otterbein.edu/home/fac/dvdgrbrt/TSIL
+       http://www.niu.edu/spmartin/TSIL
+       http://faculty.otterbein.edu/drobertson/TSIL
 
-Version number: 1.1
+Version number: 1.21
 
 
 ************************************************************************
@@ -221,12 +221,12 @@ the more difficult cases. Even so, you may see some WARNs, and
 possibly even FAILs, when running the test suite, depending on your
 platform.
 
-Users should not need to do this to insure correct
-functionality, but the test program can be configured to evaluate
-subset cases (STU or ST functions) by uncommenting the appropriate
-flag in the Makefile. In this case the test program evaluates the
-selected subset case for each set of input parameters, comparing the
-results to values taken from the full data files.
+Users should not need to do this to insure correct functionality, but
+the test program can be configured to evaluate subset cases (STU or ST
+functions) by uncommenting the appropriate flag in the Makefile. In
+this case the test program evaluates the selected subset case for each
+set of input parameters, comparing the results to values taken from
+the full data files.
 
 The make command also produces the executable
 
@@ -386,9 +386,9 @@ TSIL_Evaluate or TSIL_GetFunction. For example,
        TSIL_Manalytic (x,y,z,u,v,s,&res);
 
 will return the int value 1 and set the variable res equal to
-M(x,y,z,u,v) for the appropriate s, if it is analytically 
-available, and otherwise will return 0. Here x,y,z,u,v,qq are of type 
-TSIL_REAL, and s and res are of type TSIL_COMPLEX.  The functions
+M(x,y,z,u,v) for the appropriate s, if it is analytically available,
+and otherwise will return 0. Here x,y,z,u,v,qq are of type TSIL_REAL,
+and s and res are of type TSIL_COMPLEX.  The functions
 
        TSIL_Sanalytic
        TSIL_Tanalytic
@@ -396,14 +396,15 @@ TSIL_REAL, and s and res are of type TSIL_COMPLEX.  The functions
        TSIL_Uanalytic
        TSIL_Vanalytic
 
-have analogous behavior, except that they carry an additional argument qq
-of type TSIL_REAL for the renormalization scale squared Q^2. For example,
+have analogous behavior, except that they carry an additional argument
+qq of type TSIL_REAL for the renormalization scale squared Q^2. For
+example,
 
        TSIL_Uanalytic (x,y,z,u,s,qq,&res)}
 
-will return the int value 1 and set the variable res equal to U(x,y,z,u)
-for the appropriate s and Q^2, if it is analytically available, and
-otherwise will return 0.
+will return the int value 1 and set the variable res equal to
+U(x,y,z,u) for the appropriate s and Q^2, if it is analytically
+available, and otherwise will return 0.
 
 The other analytic functions (i.e. those that are known for arbitrary
 parameter values and values of s) assign without pointers, for example
@@ -436,20 +437,19 @@ included with the distribution.  (Detailed background on this
 calculation may be found in ref. [MR05].)  It takes parameter values
 m^2, g, lambda and Q^2 as command-line inputs, in that order.  It then
 computes the required basis functions at s=m^2, assembles the one- and
-two-loop pole mass squared values as outlined in [MR05], and prints the
-results to stdout.  Most of the basic functionality available in TSIL
-is exhibited in scalarpole.c.
+two-loop pole mass squared values as outlined in [MR05], and prints
+the results to stdout.  Most of the basic functionality available in
+TSIL is exhibited in scalarpole.c.
 
 To compile this program using gcc, assuming tsil.h and libtsil.a are
 present in the current directory, use e.g.
 
-     gcc -o spole -DTSIL_SIZE_<size> scalarpole.c -lm -L. -ltsil
+     gcc -o spole -DTSIL_SIZE_<size> scalarpole.c -L. -ltsil -lm
 
-where <size> is either LONG or DOUBLE, and matches the size chosen when 
-libtsil.a was compiled.  If you used the default size when compiling 
-libtsil.a, then you may omit this flag.  For gcc on Mac OS X, the flag 
--lmx must be supplied in addition to -lm. This command produces the 
-executable spole, which can then be run as, e.g.
+where <size> is either LONG or DOUBLE, and matches the size chosen
+when libtsil.a was compiled.  If you used the default size when
+compiling libtsil.a, then you may omit this flag.  This command
+produces the executable spole, which can then be run as, e.g.
 
      ./spole 1 2 3 1
 
@@ -460,7 +460,15 @@ In the evaluation of pi2, we arbitrarily chose to use
 
      TSIL_GetFunction(&result, "Bxz") 
 
-where TSIL_B could have been used.
+where TSIL_B could also have been used.
+
+For convenience there is also a struct of type TSIL_RESULT, which
+contains only the parameter values and the results for the B, S, T,
+Tbar, U, V, and M functions.  A function TSIL_CopyResult takes an
+evlauated TSIL_DATA struct and copies the results into a specified
+TSIL_RESULT. There is also a function TSIL_PermuteResult that can
+permute the arguments of a TSIL_RESULT to produce another
+TSIL_RESULT. See section IV below for complete details.
 
 
 ************************************************************************
@@ -495,8 +503,8 @@ to set the relevant squared mass and renormalization scale parameters.
 			       TSIL_REAL qq)
   
    Sets parameter values x, z, u, v, qq in the data object *foo, and
-   selects evaluation of the STU subset case. Return value is currently 
-   ignored.
+   selects evaluation of the STU subset case. Return value is
+   currently ignored.
 
 1c. int TSIL_SetParametersST (TSIL_DATA *foo,
                               TSIL_REAL x,
@@ -510,9 +518,10 @@ to set the relevant squared mass and renormalization scale parameters.
 
    Subsequent calls of TSIL_SetParameters, TSIL_SetParametersSTU, or
    TSIL_SetParametersST to change one or more of x, y, z, u, v, qq are
-   allowed, and to select the default (1a) or subset (1b) or (1c) 
-   evaluation modes. Each such call also resets the default values of 
-   parameters related to numerical integration (see section VII below).  
+   allowed, and to select the default (1a) or subset (1b) or (1c)
+   evaluation modes. Each such call also resets the default values of
+   parameters related to numerical integration (see section VII
+   below).
 
 ---------------------------------------------------------------------
 
@@ -648,6 +657,29 @@ to set the relevant squared mass and renormalization scale parameters.
    available, only the first character in the specification string is
    relevant.  E.g., for STU evaluation the single U-type function
    Uxzuv can be extracted using "Uxzuv" or "U".
+
+---------------------------------------------------------------------
+
+8. void TSIL_CopyResult (TSIL_DATA *foo, TSIL_RESULT *bar)
+
+   Copies the parameters and integral values from an evaluated
+   TSIL_DATA struct into a smaller TSIL_RESULT struct, for
+   convenience.
+
+---------------------------------------------------------------------
+
+9. void TSIL_PermuteResult (TSIL_RESULT *in, int perm, TSIL_RESULT *out)
+
+   Permutes the arguments of a TSIL_RESULT *in to produce a new
+   TSIL_RESULT *out. The integral functions are reorganized
+   appropriately.
+
+   Allowed values of perm are:
+
+   0 (or NOSWAP)  - No permutation, just copies the result
+   1 (or XYandZU) - Permute x <-> y and z <-> u
+   2 (or XZandYU) - Permute x <-> z and y <-> u
+   3 (or XUandYZ) - Permute x <-> u and y <-> z
 
 ---------------------------------------------------------------------
 
@@ -793,14 +825,21 @@ Analytic Cases
 
 ---------------------------------------------------------------------
 
-4. TSIL_COMPLEX TSIL_Aeps (TSIL_REAL x, TSIL_REAL qq)
+4. TSIL_REAL TSIL_Ap (TSIL_REAL x, TSIL_REAL qq)
+
+   Returns the derivative of the one-loop vacuum function A(x) with
+   respect to x, with renormalization scale squared equal to qq.
+
+---------------------------------------------------------------------
+
+5. TSIL_COMPLEX TSIL_Aeps (TSIL_REAL x, TSIL_REAL qq)
 
    Returns A_epsilon(x) with renormalization scale squared equal to
    qq.
 
 ---------------------------------------------------------------------
 
-5. TSIL_COMPLEX TSIL_B (TSIL_REAL x,
+6. TSIL_COMPLEX TSIL_B (TSIL_REAL x,
 		        TSIL_REAL y,
 			TSIL_COMPLEX s,
 			TSIL_REAL qq)
@@ -810,7 +849,7 @@ Analytic Cases
 
 ---------------------------------------------------------------------
 
-6. TSIL_COMPLEX TSIL_Bp (TSIL_REAL x,
+7. TSIL_COMPLEX TSIL_Bp (TSIL_REAL x,
 			 TSIL_REAL y,
 			 TSIL_COMPLEX s,
 			 TSIL_REAL qq)
@@ -820,7 +859,7 @@ Analytic Cases
 
 ---------------------------------------------------------------------
 
-7. TSIL_COMPLEX TSIL_dBds (TSIL_REAL x,
+8. TSIL_COMPLEX TSIL_dBds (TSIL_REAL x,
 			   TSIL_REAL y,
 			   TSIL_COMPLEX s, 
 			   TSIL_REAL qq)
@@ -830,7 +869,7 @@ Analytic Cases
 
 ---------------------------------------------------------------------
 
-8. TSIL_COMPLEX TSIL_Beps (TSIL_REAL x,
+9. TSIL_COMPLEX TSIL_Beps (TSIL_REAL x,
 			   TSIL_REAL y,
 			   TSIL_COMPLEX s, 
                            TSIL_REAL qq)
@@ -840,17 +879,17 @@ Analytic Cases
 
 ---------------------------------------------------------------------
 
-9. TSIL_COMPLEX TSIL_I2 (TSIL_REAL x,
-			 TSIL_REAL y,
-			 TSIL_REAL z,
-			 TSIL_REAL qq)
+10. TSIL_COMPLEX TSIL_I2 (TSIL_REAL x,
+     			  TSIL_REAL y,
+			  TSIL_REAL z,
+			  TSIL_REAL qq)
 
    Returns the two-loop vacuum integral I(x,y,z), with renormalization
    scale squared equal to qq.
 
 ---------------------------------------------------------------------
 
-10. TSIL_COMPLEX TSIL_I2p (TSIL_REAL x,
+11. TSIL_COMPLEX TSIL_I2p (TSIL_REAL x,
 			   TSIL_REAL y,
 			   TSIL_REAL z,
 			   TSIL_REAL qq)
@@ -860,7 +899,7 @@ Analytic Cases
 
 ---------------------------------------------------------------------
 
-11. TSIL_COMPLEX TSIL_I2p2 (TSIL_REAL x,
+12. TSIL_COMPLEX TSIL_I2p2 (TSIL_REAL x,
 			    TSIL_REAL y,
 			    TSIL_REAL z,
 			    TSIL_REAL qq)
@@ -870,7 +909,7 @@ Analytic Cases
 
 ---------------------------------------------------------------------
 
-12. TSIL_COMPLEX TSIL_I2pp (TSIL_REAL x,
+13. TSIL_COMPLEX TSIL_I2pp (TSIL_REAL x,
 			    TSIL_REAL y,
 			    TSIL_REAL z,
 			    TSIL_REAL qq)
@@ -880,7 +919,7 @@ Analytic Cases
 
 ---------------------------------------------------------------------
 
-13. TSIL_COMPLEX TSIL_I2p3 (TSIL_REAL x,
+14. TSIL_COMPLEX TSIL_I2p3 (TSIL_REAL x,
 			    TSIL_REAL y,
 			    TSIL_REAL z,
 			    TSIL_REAL qq)
@@ -890,7 +929,7 @@ Analytic Cases
 
 ---------------------------------------------------------------------
 
-14. int TSIL_Sanalytic (TSIL_REAL x,
+15. int TSIL_Sanalytic (TSIL_REAL x,
 		        TSIL_REAL y,
 			TSIL_REAL z,
 			TSIL_COMPLEX s,
@@ -906,7 +945,7 @@ Analytic Cases
 
 ---------------------------------------------------------------------
 
-15. int TSIL_Tanalytic (TSIL_REAL x,
+16. int TSIL_Tanalytic (TSIL_REAL x,
 		        TSIL_REAL y,
 			TSIL_REAL z,
 			TSIL_COMPLEX s,
@@ -922,7 +961,7 @@ Analytic Cases
 
 ---------------------------------------------------------------------
 
-16. int TSIL_Tbaranalytic (TSIL_REAL x,
+17. int TSIL_Tbaranalytic (TSIL_REAL x,
 			   TSIL_REAL y,
 			   TSIL_REAL z,
 			   TSIL_COMPLEX s,
@@ -938,7 +977,7 @@ Analytic Cases
 
 ---------------------------------------------------------------------
 
-17. int TSIL_Uanalytic (TSIL_REAL x,
+18. int TSIL_Uanalytic (TSIL_REAL x,
     			TSIL_REAL y,
 			TSIL_REAL z,
 			TSIL_REAL u,
@@ -955,7 +994,7 @@ Analytic Cases
 
 ---------------------------------------------------------------------
 
-18. int TSIL_Vanalytic (TSIL_REAL x,
+19. int TSIL_Vanalytic (TSIL_REAL x,
     			TSIL_REAL y,
 			TSIL_REAL z,
 			TSIL_REAL u,
@@ -972,7 +1011,7 @@ Analytic Cases
 
 ---------------------------------------------------------------------
 
-19. int TSIL_Manalytic (TSIL_REAL x,
+20. int TSIL_Manalytic (TSIL_REAL x,
     			TSIL_REAL y,
 			TSIL_REAL z,
 			TSIL_REAL u,

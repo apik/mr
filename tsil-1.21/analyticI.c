@@ -32,70 +32,96 @@ TSIL_COMPLEX TSIL_I2p3 (TSIL_REAL X, TSIL_REAL Y, TSIL_REAL Z, TSIL_REAL QQ)
 }
 
 /* ***************************************************************** */
+/* Modified in v1.2 to allow negative squared mass arg.              */
 
 TSIL_COMPLEX I2 (TSIL_REAL X, TSIL_REAL Y, TSIL_REAL Z, TSIL_REAL QQ)
 {
   TSIL_COMPLEX sqDeltaXYZ, rp, rm, xiXYZ;
-  TSIL_REAL lnbarX, lnbarY, lnbarZ, tmp;
-
+  TSIL_COMPLEX lnbarX, lnbarY, lnbarZ;
+  TSIL_REAL tmp, absX, absY, absZ;
+ 
   if (X < Y) {tmp = Y; Y = X; X = tmp;}
   if (Y < Z) {tmp = Z; Z = Y; Y = tmp;}
   if (X < Y) {tmp = Y; Y = X; X = tmp;}
+ 
+  absX = TSIL_FABS(X);
+  if (absX < TSIL_TOL) return I20xy (Y, Z, QQ);
 
-  if (X < TSIL_TOL) {return (0.0L + I*0.0L);}
-  if (Y < TSIL_TOL) {return I200x (X, QQ);}
-  if (Z < TSIL_TOL) {return I20xy (X,Y,QQ);}
+  absY = TSIL_FABS(Y);
+  if (absY < TSIL_TOL) return I20xy (X, Z, QQ);
 
-  lnbarX = TSIL_LOG(X/QQ);
-  lnbarY = TSIL_LOG(Y/QQ);
-  lnbarZ = TSIL_LOG(Z/QQ);
+  absZ = TSIL_FABS(Z);
+  if (absZ < TSIL_TOL) return I20xy (X, Y, QQ);
+
+  lnbarX = TSIL_LOG(absX/QQ);
+  lnbarY = TSIL_LOG(absY/QQ);
+  lnbarZ = TSIL_LOG(absZ/QQ);
+  if (X<0) lnbarX += I*PI;
+  if (Y<0) lnbarY += I*PI;
+  if (Z<0) lnbarZ += I*PI;
+
   sqDeltaXYZ = TSIL_CSQRT(X*X + Y*Y + Z*Z - 2.0L*(X*Y + X*Z + Y*Z));
   rp = (X + Z - Y - sqDeltaXYZ)/(2.0L * X);
   rm = (X + Y - Z - sqDeltaXYZ)/(2.0L * X);
-  xiXYZ = sqDeltaXYZ*(2.0L * (TSIL_CLOG(rp) * TSIL_CLOG(rm) 
-                - Dilog(rp) - Dilog(rm) + Zeta2)
+  xiXYZ = sqDeltaXYZ*(2.0L * (TSIL_CLOG(rp) * TSIL_CLOG(rm)
+                - TSIL_Dilog(rp) - TSIL_Dilog(rm) + Zeta2)
                 - (lnbarY - lnbarX) * (lnbarZ - lnbarX));
-
+  
   return (0.5L*((X - Y - Z) * lnbarY * lnbarZ +
-	        (Y - X - Z) * lnbarX * lnbarZ +
-	        (Z - X - Y) * lnbarX * lnbarY -xiXYZ)
-	  + 2.0L * (X * lnbarX + Y * lnbarY + Z * lnbarZ) 
-	  - 2.5L * (X + Y + Z));
+                (Y - X - Z) * lnbarX * lnbarZ +
+                (Z - X - Y) * lnbarX * lnbarY -xiXYZ)
+          + 2.0L * (X * lnbarX + Y * lnbarY + Z * lnbarZ)
+          - 2.5L * (X + Y + Z));
 }
 
 /* ***************************************************************** */
+/* Modified in v1.2 to allow negative squared mass arg.              */
 
 TSIL_COMPLEX I20xy (TSIL_REAL X, TSIL_REAL Y, TSIL_REAL QQ)
 {
-  TSIL_REAL lnbarX, lnbarY, tmp;
+  TSIL_COMPLEX lnbarX, lnbarY;
+  TSIL_REAL absX, absY;
+  
+  absX = TSIL_FABS(X);
+  if (absX < TSIL_TOL)
+    return I200x (Y,QQ);
 
-  if (X < Y) {tmp = Y; Y = X; X = tmp;}
+  absY = TSIL_FABS(Y);
+  if (absY < TSIL_TOL)
+    return I200x (X,QQ);
 
-  if (X < TSIL_TOL) return 0.0L + I*0.0L;
+  /* DGR This line appears to be a bug... */
+/*   if (X < Y) {tmp = Y; Y = X; X = tmp;} */
+  
+  lnbarX = TSIL_LOG(absX/QQ);
+  if (X<0)
+    lnbarX += I*PI;
 
-  if (Y < TSIL_TOL) return I200x (X,QQ);
-
-  lnbarX = TSIL_LOG(X/QQ); 
-
-  if ((X-Y) < TSIL_TOL) 
+  if (TSIL_FABS(X-Y) < TSIL_TOL)
     return (X * (-lnbarX*lnbarX + 4.0L * lnbarX - 5.0L));
+ 
+  lnbarY = TSIL_LOG(absY/QQ);
+  if (Y<0)
+    lnbarY += I*PI;
 
-  lnbarY = TSIL_LOG(Y/QQ);
-
-  return ((X - Y) * (Dilog(Y/X) + (lnbarY - lnbarX) * TSIL_LOG((X - Y)/QQ)
-         + 0.5L * lnbarX * lnbarX - Zeta2) - 2.5L * (X+Y) 
-	 + 2.0L * (X * lnbarX +  Y * lnbarY) - X * lnbarX * lnbarY);
+  return ((X - Y) * (TSIL_Dilog(Y/X) + (lnbarY - lnbarX) * TSIL_CLOG((X - Y)/QQ)
+         + 0.5L * lnbarX * lnbarX - Zeta2) - 2.5L * (X+Y)
+         + 2.0L * (X * lnbarX +  Y * lnbarY) - X * lnbarX * lnbarY);
 }
 
 /* ***************************************************************** */
+/* Modified in v1.2 to allow negative squared mass arg.              */
 
 TSIL_COMPLEX I200x (TSIL_REAL X,  TSIL_REAL QQ)
 {
-  TSIL_REAL lnbarX;
-
-  if (X < TSIL_TOL) return 0.0L + I*0.0L;
+  TSIL_COMPLEX lnbarX;
+  TSIL_REAL absX;
   
-  lnbarX = TSIL_LOG(X/QQ);
+  absX = TSIL_FABS(X);
+  if (absX < TSIL_TOL) return 0.0L + I*0.0L;
+  lnbarX = TSIL_LOG(absX/QQ);
+  if (X < 0) lnbarX += I*PI;
+
   return (X * (-0.5L*lnbarX*lnbarX + 2.0L * lnbarX - 2.5L - Zeta2));
 }
 
@@ -154,10 +180,8 @@ TSIL_COMPLEX I2p (TSIL_REAL x, TSIL_REAL y, TSIL_REAL z, TSIL_REAL QQ)
 }
 
 /* ****************************************************************** */
-/* 
-   I2p2 gives the second derivative of I2 with respect to its first
-   argument: I(x'',y,z).
-*/
+/* I2p2 gives the second derivative of I2 with respect to its first   */
+/* argument: I(x'',y,z).                                              */
 
 TSIL_COMPLEX I2p2 (TSIL_REAL x, TSIL_REAL y, TSIL_REAL z, TSIL_REAL QQ)
 {
@@ -240,10 +264,8 @@ TSIL_COMPLEX xI2p2 (TSIL_REAL x, TSIL_REAL y, TSIL_REAL z, TSIL_REAL QQ)
 }
 
 /* ****************************************************************** */
-/*
-   I2pp is the derivative of I2p with respect to its second argument:
-   I(x',y',z)
-*/
+/* I2pp is the derivative of I2p with respect to its second argument: */
+/* I(x',y',z)                                                         */
 
 TSIL_COMPLEX I2pp (TSIL_REAL x, TSIL_REAL y, TSIL_REAL z, TSIL_REAL QQ)
 {
@@ -304,10 +326,8 @@ TSIL_COMPLEX I2pp (TSIL_REAL x, TSIL_REAL y, TSIL_REAL z, TSIL_REAL QQ)
 
 
 /* ****************************************************************** */
-/* 
-   Third derivative of I2 with respect to its first argument:
-   I(x''',y,z) 
-*/
+/* Third derivative of I2 with respect to its first argument:         */
+/*   I(x''',y,z)                                                      */
 
 TSIL_COMPLEX I2p3 (TSIL_REAL x, TSIL_REAL y, TSIL_REAL z, TSIL_REAL QQ)
 {

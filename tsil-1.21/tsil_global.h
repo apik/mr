@@ -26,9 +26,13 @@ enum {Bxz, Byu};
 enum { xz,  yu};
 
 enum {Svyz, Suxv};
+/* enum {Tvyz, Tyzv, Tzyv, Tuxv, Txuv, Tvxu}; */
+/* enum { vyz,  yzv,  zyv,  uxv,  xuv,  vxu}; */
 
+/* Original: */
 enum {Tvyz, Tuxv, Tyzv, Txuv, Tzyv, Tvxu};
 enum { vyz,  uxv,  yzv,  xuv,  zyv,  vxu};
+
 
 enum {Uzxyv, Uuyxv, Uxzuv, Uyuzv};
 enum {Vzxyv, Vuyxv, Vxzuv, Vyuzv};

@@ -45,7 +45,8 @@ void         Permuteresults (TSIL_DATA *, int p);
 void         CheckConsistent (TSIL_COMPLEX, TSIL_COMPLEX);
 
 /* Analytic special cases */
-TSIL_REAL    A         (TSIL_REAL, TSIL_REAL); 
+TSIL_COMPLEX A         (TSIL_REAL, TSIL_REAL); 
+TSIL_COMPLEX Ap        (TSIL_REAL, TSIL_REAL); 
 TSIL_COMPLEX Aeps      (TSIL_REAL, TSIL_REAL);
 
 TSIL_COMPLEX B    (TSIL_REAL, TSIL_REAL, TSIL_COMPLEX, TSIL_REAL);

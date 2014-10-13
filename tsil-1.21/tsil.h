@@ -1,8 +1,14 @@
+/* TSIL v1.21 */
+
 /* General header file for the user API and all TSIL types.  This file
    must be included in all applications of TSIL.  */
 
 #ifndef TSIL_H
 #define TSIL_H
+
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -15,7 +21,7 @@
 #if defined(TSIL_SIZE_DOUBLE)
 
 typedef double         TSIL_REAL;
-typedef double _Complex TSIL_COMPLEX;
+typedef double complex TSIL_COMPLEX;
 #define TSIL_EXP       exp
 #define TSIL_CEXP      cexp
 #define TSIL_LOG       log
@@ -37,7 +43,7 @@ typedef double _Complex TSIL_COMPLEX;
 #else   /* Assume LONG if we get here: */
 
 typedef long double         TSIL_REAL;
-typedef long double _Complex TSIL_COMPLEX;
+typedef long double complex TSIL_COMPLEX;
 #define TSIL_EXP            expl
 #define TSIL_CEXP           cexpl
 #define TSIL_LOG            logl
@@ -259,15 +265,33 @@ struct TSIL_Data
   /* Pointers to RK stepper functions: */
   int  (*RKstepper6) ();
   void (*RKstepper5) ();
-
-  /* Note full prototypes not possible as TSIL_DATA has not yet been
-     defined! */
-/*   int (*RKstepper6) (TSIL_DATA *, TSIL_COMPLEX *, TSIL_COMPLEX *, TSIL_REAL, */
-/* 		     int, TSIL_REAL, int); */
-/*   int (*RKstepper5) (TSIL_DATA *, TSIL_COMPLEX *, TSIL_COMPLEX, TSIL_REAL, int); */
 };
 
 typedef struct TSIL_Data TSIL_DATA;
+
+
+/* ======================================== */
+/*          Results Data Structure          */
+/* ======================================== */
+struct TSIL_Result {
+
+  TSIL_REAL    x, y, z, u, v, s, qq;
+  TSIL_COMPLEX M;
+  TSIL_COMPLEX U[4];
+  TSIL_COMPLEX V[4];
+  TSIL_COMPLEX T[6];
+  TSIL_COMPLEX S[2];
+  TSIL_COMPLEX B[2];
+  TSIL_COMPLEX TBAR[6];
+};
+
+typedef struct TSIL_Result TSIL_RESULT;
+
+/* For permutations of TSIL_RESULTs (see function TSIL_PermuteResult) */
+enum {NOSWAP, XYandZU, XZandYU, XUandYZ};
+
+/* Toggle to control printing of warning messages */
+int printWarns;
 
 /* === Prototypes for functions in the user API: === */
 
@@ -280,8 +304,8 @@ int TSIL_SetParametersST (TSIL_DATA *, TSIL_REAL, TSIL_REAL,
 			  TSIL_REAL, TSIL_REAL);
 int TSIL_Evaluate (TSIL_DATA *, TSIL_REAL);
 int TSIL_GetStatus (TSIL_DATA *);
-void TSIL_GetData (TSIL_DATA *, const char *, TSIL_COMPLEX *);
-void TSIL_GetBoldData (TSIL_DATA *, const char *, TSIL_COMPLEX [][3]);
+int TSIL_GetData (TSIL_DATA *, const char *, TSIL_COMPLEX *);
+int TSIL_GetBoldData (TSIL_DATA *, const char *, TSIL_COMPLEX [][3]);
 TSIL_COMPLEX TSIL_GetFunction (TSIL_DATA *, const char *);
 TSIL_COMPLEX TSIL_GetBoldFunction (TSIL_DATA *, const char *, int);
 
@@ -299,6 +323,8 @@ void TSIL_PrintInfo   (void);
 void TSIL_Info        (char *);
 
 /* Utilities: */
+int  TSIL_CopyResult (TSIL_DATA *, TSIL_RESULT *);
+void TSIL_PermuteResult (TSIL_RESULT *, int, TSIL_RESULT *);
 void TSIL_ResetStepSizeParams (TSIL_DATA *,TSIL_REAL, int, int, int, int);
 int  TSIL_IsInfinite (TSIL_COMPLEX);
 int  TSIL_DataSize (void);
@@ -307,7 +333,8 @@ void TSIL_PrintVersion (void);
 /* Analytic cases: */
 TSIL_COMPLEX TSIL_Dilog  (TSIL_COMPLEX);
 TSIL_COMPLEX TSIL_Trilog (TSIL_COMPLEX);
-TSIL_REAL    TSIL_A      (TSIL_REAL, TSIL_REAL);
+TSIL_COMPLEX TSIL_A      (TSIL_REAL, TSIL_REAL);
+TSIL_COMPLEX TSIL_Ap     (TSIL_REAL, TSIL_REAL);
 TSIL_COMPLEX TSIL_Aeps   (TSIL_REAL, TSIL_REAL);
 TSIL_COMPLEX TSIL_B      (TSIL_REAL, TSIL_REAL, TSIL_COMPLEX, TSIL_REAL);
 TSIL_COMPLEX TSIL_Bp     (TSIL_REAL, TSIL_REAL, TSIL_COMPLEX, TSIL_REAL);
@@ -330,5 +357,9 @@ int TSIL_Vanalytic    (TSIL_REAL, TSIL_REAL, TSIL_REAL, TSIL_REAL,
 		       TSIL_COMPLEX, TSIL_REAL, TSIL_COMPLEX *);
 int TSIL_Manalytic    (TSIL_REAL, TSIL_REAL, TSIL_REAL, TSIL_REAL,
 		       TSIL_REAL, TSIL_COMPLEX, TSIL_COMPLEX *);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* tsil.h */

@@ -48,10 +48,10 @@ int Uanalytic (TSIL_REAL X,
 
 TSIL_COMPLEX U0xyz (TSIL_REAL X, TSIL_REAL Y, TSIL_REAL Z, TSIL_COMPLEX S, TSIL_REAL QQ)
 {
-  TSIL_REAL temp, lnbarX, lnbarY, lnbarZ;
+  TSIL_REAL temp, lnbarX, lnbarY, lnbarZ, DeltaXYZ;
   TSIL_COMPLEX log1mSoX, sqDeltaSYZ, sqDeltaXYZ;
   TSIL_COMPLEX Tp, Tm, logTp, logTm, log1mTp, log1mTm;
-  TSIL_COMPLEX Rp, Rm, logRp, logRm, log1mRp, log1mRm;
+  TSIL_COMPLEX Rp, Rm, logRp, logRm, log1mRp, log1mRm, log1m1oRp, log1m1oRm;
   TSIL_COMPLEX part1, part2, part3;
 
   if (Y < Z) {temp=Z; Z=Y; Y=temp;}
@@ -63,13 +63,26 @@ TSIL_COMPLEX U0xyz (TSIL_REAL X, TSIL_REAL Y, TSIL_REAL Z, TSIL_COMPLEX S, TSIL_
   lnbarX = TSIL_LOG(X/QQ);
   lnbarY = TSIL_LOG(Y/QQ);
   lnbarZ = TSIL_LOG(Z/QQ);
-  sqDeltaXYZ = TSIL_CSQRT(X*X + Y*Y + Z*Z -2.0L*X*Y -2.0L*X*Z -2.0L*Y*Z);
+  DeltaXYZ = X*X + Y*Y + Z*Z -2.0L*X*Y -2.0L*X*Z -2.0L*Y*Z;
+  sqDeltaXYZ = TSIL_CSQRT(DeltaXYZ);
   Rp = (Y+Z-X + sqDeltaXYZ)/(2.0L*Y);
   Rm = (Y+Z-X - sqDeltaXYZ)/(2.0L*Y);
   logRp = TSIL_CLOG(Rp);
   logRm = TSIL_CLOG(Rm);
   log1mRp = TSIL_CLOG(1.0L - Rp);
   log1mRm = TSIL_CLOG(1.0L - Rm);
+
+  /* DGR added in v1.2 to avoid branch problems if 1-1/Rp and/or
+     1-1/Rm is real and negative */
+  if (DeltaXYZ >= 0.0 && TSIL_CABS(Rp) < 1.0L)
+    log1m1oRp = TSIL_CLOG (1.0L/Rp - 1.0L) + I*PI;
+  else
+    log1m1oRp = TSIL_CLOG (1.0L - 1.0L/Rp);
+
+  if (DeltaXYZ >= 0.0 && TSIL_CABS(Rm) < 1.0L)
+    log1m1oRm = TSIL_CLOG (1.0L/Rm - 1.0L) + I*PI;
+  else
+    log1m1oRm = TSIL_CLOG (1.0L - 1.0L/Rm);
 
   S = AddIeps(S);
   sqDeltaSYZ = TSIL_CSQRT(S*S + Y*Y + Z*Z -2.0L*S*Y -2.0L*S*Z -2.0L*Y*Z);
@@ -83,26 +96,27 @@ TSIL_COMPLEX U0xyz (TSIL_REAL X, TSIL_REAL Y, TSIL_REAL Z, TSIL_COMPLEX S, TSIL_
   part1 = (Z-Y)*(Dilog(Tp) + Dilog(Tm))/X -Z*log1mTp*log1mTm/S;
 
   if (TSIL_CABS(1-S/X) < 10.0L*TSIL_TOL)
-/*    part2 = 0.0L + 0.0L*I; This was a bug before? */
     part2 = sqDeltaXYZ*(logRp - logRm)/(2.0L*X);
   else {
     log1mSoX = TSIL_CLOG(1.0L - S/X);
+
     part2 = (1.0L - X/S)*(
-         ((Y-Z+sqDeltaXYZ)/(2.0L*X))*(Dilog(Rm) + Dilog(1.0L/Rp) 
-          + Dilog((Rp+Tp-1.0L)/Rp) + Dilog((Rp+Tm-1.0L)/Rp) -logRp*log1mSoX 
-          - TSIL_CLOG(1.0L/Rm)*log1mRm - logRp*TSIL_CLOG(1.0L-1.0L/Rp) 
-          - (log1mTp -logRp -TSIL_CLOG((1.0L-Tp)/Rp))*TSIL_CLOG((Rp+Tp-1.0L)/Rp) 
-          - (log1mTm -logRp -TSIL_CLOG((1.0L-Tm)/Rp))*TSIL_CLOG((Rp+Tm-1.0L)/Rp)) 
-       + ((Y-Z-sqDeltaXYZ)/(2.0L*X))*(Dilog(Rp) + Dilog(1.0L/Rm) 
-          + Dilog((Rm+Tp-1.0L)/Rm) + Dilog((Rm+Tm-1.0L)/Rm) -logRm*log1mSoX 
-          - TSIL_CLOG(1.0L/Rp)*log1mRp - logRm*TSIL_CLOG(1.0L-1.0L/Rm) 
-          - (log1mTp -logRm -TSIL_CLOG((1.0L-Tp)/Rm))*TSIL_CLOG((Rm+Tp-1.0L)/Rm) 
-          - (log1mTm -logRm -TSIL_CLOG((1.0L-Tm)/Rm))*TSIL_CLOG((Rm+Tm-1.0L)/Rm)) 
+         ((Y-Z+sqDeltaXYZ)/(2.0L*X))*
+	 (Dilog(Rm) + Dilog(1.0L/Rp) + Dilog((Rp+Tp-1.0L)/Rp) + Dilog((Rp+Tm-1.0L)/Rp)
+	  -logRp*log1mSoX
+	  - TSIL_CLOG(1.0L/Rm)*log1mRm - logRp*log1m1oRp
+          - (log1mTp -logRp -TSIL_CLOG((1.0L-Tp)/Rp))*TSIL_CLOG((Rp+Tp-1.0L)/Rp)
+	  - (log1mTm -logRp -TSIL_CLOG((1.0L-Tm)/Rp))*TSIL_CLOG((Rp+Tm-1.0L)/Rp))
+	 + ((Y-Z-sqDeltaXYZ)/(2.0L*X))*(Dilog(Rp) + Dilog(1.0L/Rm)
+          + Dilog((Rm+Tp-1.0L)/Rm) + Dilog((Rm+Tm-1.0L)/Rm) -logRm*log1mSoX
+         - TSIL_CLOG(1.0L/Rp)*log1mRp - logRm*log1m1oRm
+          - (log1mTp -logRm -TSIL_CLOG((1.0L-Tp)/Rm))*TSIL_CLOG((Rm+Tp-1.0L)/Rm)
+	  - (log1mTm -logRm -TSIL_CLOG((1.0L-Tm)/Rm))*TSIL_CLOG((Rm+Tm-1.0L)/Rm))
        + (0.5L*lnbarY + 0.5L*lnbarZ -2.0L)*log1mSoX 
        + 0.25L*log1mTp*log1mTp + 0.25L*log1mTm*log1mTm 
        + ( 0.5L*sqDeltaSYZ/(X-S) - 0.5L)*log1mTp  
        + (-0.5L*sqDeltaSYZ/(X-S) - 0.5L)*log1mTm  
-       + 2.0L*Zeta2*(Z-Y)/X ); 
+	 + 2.0L*Zeta2*(Z-Y)/X );
   }
 
   part3 = -I2(X,Y,Z,QQ)/X 

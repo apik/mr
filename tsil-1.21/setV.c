@@ -17,8 +17,9 @@ TSIL_COMPLEX kUU (TSIL_REAL a,
   if ((1 == vcase) || (2 == vcase) || (3 == vcase))
     return 0.L + I*0.L;
 
-  TSIL_Warn("kUU", "The function V(x,y,z,u) is not implemented in the special case");  
-  TSIL_Warn("kUU", "s = (sqrt(x) - sqrt(y)^2) and Delta(y,z,u) = 0.");  
+  /* DGR commented out in v1.2 */
+/*   TSIL_Warn("kUU", "The function V(x,y,z,u) is not implemented in the special case");   */
+/*   TSIL_Warn("kUU", "s = (sqrt(x) - sqrt(y)^2) and Delta(y,z,u) = 0.");   */
   return TSIL_Infinity;
 }
 

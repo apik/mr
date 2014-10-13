@@ -5,7 +5,12 @@
 /* **************************************************************** */
 /* Wrappers for the user API functions:                             */
 
-TSIL_REAL TSIL_A (TSIL_REAL X, TSIL_REAL QQ)
+TSIL_COMPLEX TSIL_A (TSIL_REAL X, TSIL_REAL QQ)
+{
+  return A(X, QQ);
+}
+
+TSIL_COMPLEX TSIL_Ap (TSIL_REAL X, TSIL_REAL QQ)
 {
   return A(X, QQ);
 }
@@ -37,20 +42,34 @@ TSIL_COMPLEX TSIL_Beps (TSIL_REAL X, TSIL_REAL Y, TSIL_COMPLEX S, TSIL_REAL QQ)
 
 /* ******************************************************************* */
 /* Implements Eq. 2.10 of hep-ph/0307101                               */
+/* Modified in v1.2 to accept negative squared mass arg                */
 
-TSIL_REAL A (TSIL_REAL arg, TSIL_REAL qq)
+TSIL_COMPLEX A (TSIL_REAL x, TSIL_REAL qq)
 {
-  if (arg > 0.0)
-    return arg*(TSIL_LOG(arg/qq) - 1.);
-  else
+  if (TSIL_FABS(x) < TSIL_TOL) 
     return 0.0;
+  if (x > 0) 
+    return (x * (TSIL_LOG(x/qq) - 1.));  
+  return (x * (TSIL_LOG(-x/qq) - 1. + I*PI));
+}
+
+/* ******************************************************************* */
+/* A'(x), added to TSIL API in v1.2                                    */
+
+TSIL_COMPLEX Ap (TSIL_REAL x, TSIL_REAL qq)
+{
+  if (TSIL_FABS(x) < TSIL_TOL) 
+    return 0.0;
+  if (x > 0) 
+    return (TSIL_LOG(x/qq));  
+  return (TSIL_LOG(-x/qq) + I*PI);
 }
 
 /* ******************************************************************** */
 
 TSIL_COMPLEX Aeps (TSIL_REAL x, TSIL_REAL qq)
 {
-  TSIL_COMPLEX lnbarx = TSIL_LOG(x/qq);
+  TSIL_COMPLEX lnbarx = Ap (x, qq);
   
   if (TSIL_FABS(x) < TSIL_TOL) return 0.0L;
   else return x * (-1.0L - 0.5L*Zeta2 + lnbarx - 0.5L*lnbarx*lnbarx);

@@ -32,15 +32,15 @@ USA
 
 TSIL is available from
 
-       http://zippy.physics.niu.edu/TSIL
-       http://www.otterbein.edu/home/fac/dvdgrbrt/TSIL
+       http://www.niu.edu/spmartin/TSIL
+       http://faculty.otterbein.edu/DRobertson/tsil
 
 To cite this program, please reference the paper:
 
 "TSIL: a program for the calculation of two-loop self-energy integrals",
 by S.P. Martin and D.G. Robertson, [hep-ph/0501132].
 
-Also, please reference the paper containing some of the results
+Also, please reference the paper containing most of the results
 on which it is based:
 
 ``Evaluation of two-loop self-energy basis integrals using differential
