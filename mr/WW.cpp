@@ -77,4 +77,3 @@ void WW::init()
 
 }
 
-const long double WW::EPAIR2;

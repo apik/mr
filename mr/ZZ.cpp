@@ -69,4 +69,3 @@ void ZZ::init()
 
 }
 
-const long double ZZ::EPAIR2;

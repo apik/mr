@@ -48,7 +48,7 @@ TsilSTU* prottZ0Z;
 
 TsilST* protos[28];
 
-static const long double EPAIR2 = -1.; 
+// static const long double EPAIR2 = -1.; 
 
 public:
 tt()

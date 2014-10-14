@@ -125,5 +125,5 @@ std::pair<long double,long double> tt::test2(long double epsabs,long double epsr
 
 
 
-const long double tt::EPAIR2;
+// const long double tt::EPAIR2;
 

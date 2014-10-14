@@ -8,17 +8,15 @@ int main (int argc, char *argv[])
     {
       // Disable TSIL warnings output
       fclose(stderr);
-      long double MMt,MMW,MMZ,MMH,alphaMt,alphaS,alphaSMt;
+      long double MMt,MMW,MMZ,MMH,alphaMt,alphaSMt;
 
       // Compare with:
       SMinput KVPhys(4.40, 80.385, 91.1876, 125.6, 173.5);
       
 
-      alphaS   = 0.1184;
-
       long double alphaSMZ = 0.1184;
       // \mu = Mt
-      // alphaMt  = 0.00779305;
+      alphaMt  = 0.00779305;
       // From Degrassi
       alphaMt  = 0.00780216;
       alphaSMt   = 0.1079;
@@ -32,32 +30,80 @@ int main (int argc, char *argv[])
 
       AlphaS as;
       
-      long double alphaMZ = 1./137.035999;
+      long double alphaMZ = 1./127.944;
 
 
-      // Yukawa W
-      WW dMW  = WW(KVPhys, KVPhys.MMt());
-      std::cout << "[ W ]" << std::endl;
-      std::cout << "Mh= " << KVPhys.MH()  << std::endl;
-      std::cout << "as(MMt) = " << as(KVPhys.MMt()) << std::endl;          
-      std::cout << "\t1-loop \\alpha         " << alphaMZ/4./Pi*dMW.my10() << std::endl;
-      // std::cout << "\t1-loop \\alpha_S       " << alphaSMZ/4./Pi*dMW.my01() << std::endl;
-      std::cout << "\t2-loop \\alpha*\\alpha_S" << alphaMZ/4./Pi*alphaSMZ/4./Pi*dMW.my11() << std::endl;
-      std::cout << "\t2-loop \\alpha^2       " << pow(alphaMZ/4./Pi,2)*dMW.my20() << std::endl;
+      // 
+      // 
+      // Test relation betwee alpha and G Fermi
+      // 
+      // 
+      
+      
+      WW dW  = WW(KVPhys, KVPhys.MMt());
+      ZZ dZ  = ZZ(KVPhys, KVPhys.MMt());
 
-      long double toLam =1.+0*KVPhys.MMH()*0.0000116637/sqrt(2);
+      long double alpha    = alphaMZ;
+      long double alphaS   = alphaSMZ;
+
+      long double aHat,Gf;
+      
+      Gf = 1.16637e-5;
+
+      std::complex<long double> dMyW,dMyZ;
+      dMyW = 1;
+      dMyZ = 1;
+
+      std::cout << " Input:  1/" << 1./alpha << std::endl;
+
+      // Tree level
+      aHat = real(sqrt(2)*Gf*KVPhys.MMW()/Pi*(1-KVPhys.MMW()/KVPhys.MMZ()*dMyW/dMyZ)*dMyW);
+      std::cout << " Tree:   1/" << 1./aHat << std::endl;
+
+      // 1-loop level
+      dMyW += alpha/4./Pi*dW.my10();
+      dMyZ += alpha/4./Pi*dZ.my10();
+
+      aHat = real(sqrt(2)*Gf*KVPhys.MMW()/Pi*(1-KVPhys.MMW()/KVPhys.MMZ()*dMyW/dMyZ)*dMyW);
+      std::cout << " 1-loop: 1/" << 1./aHat << std::endl;
+
+      // 2-loop level EW QCD
+      dMyW += alpha/4./Pi*alphaS/4./Pi*dW.my11();
+      dMyZ += alpha/4./Pi*alphaS/4./Pi*dZ.my11();
+
+      aHat = real(sqrt(2)*Gf*KVPhys.MMW()/Pi*(1-KVPhys.MMW()/KVPhys.MMZ()*dMyW/dMyZ)*dMyW);
+      std::cout << " EW*QCD: 1/" << 1./aHat << std::endl;
+
+      // 2-loop level EW
+      dMyW += pow(alpha/4./Pi,2)*dW.my20();
+      dMyZ += pow(alpha/4./Pi,2)*dZ.my20();
+
+      aHat = real(sqrt(2)*Gf*KVPhys.MMW()/Pi*(1-KVPhys.MMW()/KVPhys.MMZ()*dMyW/dMyZ)*dMyW);
+      std::cout << " EW*EW:  1/" << 1./aHat << std::endl;
+
+      // // Yukawa W
+      // WW dMW  = WW(KVPhys, KVPhys.MMt());
+      // std::cout << "[ W ]" << std::endl;
+      // std::cout << "Mh= " << KVPhys.MH()  << std::endl;
+      // std::cout << "as(MMt) = " << as(KVPhys.MMt()) << std::endl;          
+      // std::cout << "\t1-loop \\alpha         " << alphaMZ/4./Pi*dMW.my10() << std::endl;
+      // // std::cout << "\t1-loop \\alpha_S       " << alphaSMZ/4./Pi*dMW.my01() << std::endl;
+      // std::cout << "\t2-loop \\alpha*\\alpha_S" << alphaMZ/4./Pi*alphaSMZ/4./Pi*dMW.my11() << std::endl;
+      // std::cout << "\t2-loop \\alpha^2       " << pow(alphaMZ/4./Pi,2)*dMW.my20() << std::endl;
+
+      // long double toLam =1.+0*KVPhys.MMH()*0.0000116637/sqrt(2);
 
 
-      SMinput degr(4.40, 80.384, 91.1876, 125.66, 173.10);
+      // SMinput degr(4.40, 80.384, 91.1876, 125.66, 173.10);
 
-      HH dMH  = HH(degr, degr.MMt());
-      std::cout << "[ H ]" << std::endl;
-      std::cout << "Mh= " << degr.MH()  << std::endl;
-      std::cout << "as(MMt) = " << as(degr.MMt()) << std::endl;          
-      std::cout << "\t1-loop \\alpha         " << toLam*alphaMt/4./Pi*dMH.lam10() << std::endl;
-      // std::cout << "\t1-loop \\alpha_S       " << alphaSMZ/4./Pi*dMW.my01() << std::endl;
-      std::cout << "\t2-loop \\alpha*\\alpha_S" << toLam*alphaMt/4./Pi*alphaSMt/4./Pi*dMH.lam11() << std::endl;
-      std::cout << "\t2-loop \\alpha^2       " << toLam*pow(alphaMt/4./Pi,2)*dMH.lam20() << std::endl;
+      // HH dMH  = HH(degr, degr.MMt());
+      // std::cout << "[ H ]" << std::endl;
+      // std::cout << "Mh= " << degr.MH()  << std::endl;
+      // std::cout << "as(MMt) = " << as(degr.MMt()) << std::endl;          
+      // std::cout << "\t1-loop \\alpha         " << toLam*alphaMt/4./Pi*dMH.lam10() << std::endl;
+      // // std::cout << "\t1-loop \\alpha_S       " << alphaSMZ/4./Pi*dMW.my01() << std::endl;
+      // std::cout << "\t2-loop \\alpha*\\alpha_S" << toLam*alphaMt/4./Pi*alphaSMt/4./Pi*dMH.lam11() << std::endl;
+      // std::cout << "\t2-loop \\alpha^2       " << toLam*pow(alphaMt/4./Pi,2)*dMH.lam20() << std::endl;
 
 
       // Yukawa bottom
