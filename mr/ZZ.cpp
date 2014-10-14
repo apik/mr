@@ -68,3 +68,5 @@ void ZZ::init()
   t2.elapsed();
 
 }
+
+const long double ZZ::EPAIR2;

@@ -76,3 +76,5 @@ void WW::init()
   t2.elapsed();
 
 }
+
+const long double WW::EPAIR2;

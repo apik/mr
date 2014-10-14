@@ -39,6 +39,8 @@ int main (int argc, char *argv[])
         {
           tt dMt  = tt(*it, 2*it->MMt());
 
+          dr dDR  = dr(*it, 2*it->MMt());
+
           std::cout << "Test B      : " <<   Tsil::Beps
             (0,it->MMW(),it->MMt(),it->MMt()) << std::endl;
           std::cout << "Test B rhs  : " <<  
@@ -60,13 +62,13 @@ int main (int argc, char *argv[])
           // std::cout << "\tB2        top     1 1  " << pow(it->MMW()*it->SSW()/it->MMt(),1)*dMt.m11() << std::endl;
           
           std::cout << "Delta-r check:" << std::endl;
-          std::cout << "\t *****Delta-r   1-loop   top Y   g.l. " << pow(it->MMW()*it->SSW()/it->MMt(),0)*dMt.mygl10() - dMt.mgl10()+1./2.*dMt.drgl10()
+          std::cout << "\t *****Delta-r   1-loop   top Y   g.l. " << pow(it->MMW()*it->SSW()/it->MMt(),0)*dMt.mygl10() - dMt.mgl10()+1./2.*dDR.drgl10()
                     << std::endl;
-          std::cout << "\t *****Delta-r   2-loop   top Y   g.l. " << pow(it->MMW()*it->SSW()/it->MMt(),0)*dMt.mygl20() - dMt.mgl20() + 1./2.*dMt.drgl10()*dMt.mgl10() - 3./8.*pow(dMt.drgl10(),2)+1./2.*dMt.drgl20()
+          std::cout << "\t *****Delta-r   2-loop   top Y   g.l. " << pow(it->MMW()*it->SSW()/it->MMt(),0)*dMt.mygl20() - dMt.mgl20() + 1./2.*dDR.drgl10()*dMt.mgl10() - 3./8.*pow(dDR.drgl10(),2)+1./2.*dDR.drgl20()
                     << std::endl;
 
-          std::cout << "\n\n\tDelta-r   1-loop   top Y   g.l. " << pow(it->MMW()*it->SSW()/it->MMt(),0)*dMt.drgl10() << std::endl;
-          std::cout << "\n\n\tDelta-r   2-loop   top Y   g.l. " << pow(it->MMW()*it->SSW()/it->MMt(),0)*dMt.drgl20() << std::endl;
+          std::cout << "\n\n\tDelta-r   1-loop   top Y   g.l. " << pow(it->MMW()*it->SSW()/it->MMt(),0)*dDR.drgl10() << std::endl;
+          std::cout << "\n\n\tDelta-r   2-loop   top Y   g.l. " << pow(it->MMW()*it->SSW()/it->MMt(),0)*dDR.drgl20() << std::endl;
           
           // dMt.test();
 

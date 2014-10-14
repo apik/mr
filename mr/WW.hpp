@@ -4,6 +4,8 @@
 #include "tsil.hpp"
 #include "sminput.hpp"
 #include "operators.hpp"
+#include "constants.hpp"
+
 class WW
 {
 
@@ -157,6 +159,8 @@ public:
   {
     return 0;
   }
+
+  const static long double  EPAIR2 = -1.;
   
 };
 

@@ -1,9 +1,9 @@
-#include <tt.hpp>
-std::complex<long double> tt::drgl11(size_t nL, size_t nH)
+#include <dr.hpp>
+std::complex<long double> dr::drgl11(size_t nL, size_t nH)
 {     
       
       
-    std::complex<long double> mdrgl[8];
+    std::complex<long double> mdrgl[8], mdrglret;
 
     mdrgl[1]=pow(SW,-1);
     mdrgl[2]=pow(MMH,-1);
@@ -20,5 +20,6 @@ std::complex<long double> tt::drgl11(size_t nL, size_t nH)
    mdrgl[7]=mdrgl[4]*mdrgl[7];
    mdrgl[6]=mdrgl[6] + 6*mdrgl[7];
 
-      return mdrgl[6]*mdrgl[3]*pow(mdrgl[1],2);
+      mdrglret = mdrgl[6]*mdrgl[3]*pow(mdrgl[1],2);
+      return mdrglret;
 }

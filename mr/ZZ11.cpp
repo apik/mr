@@ -3,7 +3,7 @@ std::complex<long double> ZZ::m11(size_t nL, size_t nH)
 {     
       
       
-    std::complex<long double> mZZ[16];
+    std::complex<long double> mZZ[16], mZZret;
 
     mZZ[1]=pow(CW,-1);
     mZZ[2]=pow(MMH,-1);
@@ -46,5 +46,6 @@ std::complex<long double> ZZ::m11(size_t nL, size_t nH)
    mZZ[9]=mZZ[9] - mZZ[5] + 1;
    mZZ[8]=mZZ[8]*mZZ[9];
 
-      return mZZ[8] + 2*mZZ[10];
+      mZZret = mZZ[8] + 2*mZZ[10];
+      return mZZret;
 }
