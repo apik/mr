@@ -10,10 +10,10 @@ int main (int argc, char *argv[])
       long double MMt,MMW,MMZ,MMH,alphaMt,alphaS;
 
       // Compare with:
-      SMinput* KV[3];
-      KV[0] = new SMinput(4.4, 80.385, 91.1876, 124, 173.5);
-      KV[1] = new SMinput(4.4, 80.385, 91.1876, 125, 173.5);
-      KV[2] = new SMinput(4.4, 80.385, 91.1876, 125.6, 173.5);
+      OSinput* KV[3];
+      KV[0] = new OSinput(4.4, 80.385, 91.1876, 124, 173.5);
+      KV[1] = new OSinput(4.4, 80.385, 91.1876, 125, 173.5);
+      KV[2] = new OSinput(4.4, 80.385, 91.1876, 125.6, 173.5);
       
       alphaMt  = 0.00779305;
       alphaS   = 0.1184;

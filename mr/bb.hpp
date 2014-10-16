@@ -21,7 +21,7 @@ public:
 
   bb(long double,long double,long double,long double,long double,long double);
   
-  bb(SMinput, long double);
+  bb(OSinput, long double);
   
   void init(long double,long double,long double,long double,long double,long double);
 

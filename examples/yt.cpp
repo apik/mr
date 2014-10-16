@@ -32,9 +32,9 @@ int main (int argc, char *argv[])
       long double mHstep  = 10; // GeV
       long double mHstart = 110; // GeV
       
-      SMinput BKKS(4.40, 80.384, 91.1876, mHstart, 173.10);
-      // SMinput BKKS(4.40, 80.385, 91.1876, mHstart, 173.5);   // Bezrukov
-      // SMinput BKKS(4.40, 80.385, 91.1876, mHstart, 173.5);   // Kalmykov
+      OSinput BKKS(4.40, 80.384, 91.1876, mHstart, 173.10);
+      // OSinput BKKS(4.40, 80.385, 91.1876, mHstart, 173.5);   // Bezrukov
+      // OSinput BKKS(4.40, 80.385, 91.1876, mHstart, 173.5);   // Kalmykov
       for (int mHi = 0; mHi < 4; mHi++)
         {
       

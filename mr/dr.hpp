@@ -13,42 +13,6 @@ class dr
 long double MMb,MMt, MMH, MMW, MMZ, mu2;
 long double SW, CW;
 
-// alpha*alphaS
-// Tsil* protWt000;
-// Tsil* prot0ttHt;
-// Tsil* prot0ttZt;
-// Tsil* prot0tt0t;
-// TsilSTU* prottH0H;
-// TsilSTU* prottZ0Z;
-//   // alpha^2
-//   Tsil* protHHttH;
-//   Tsil* protHZttZ;
-//   Tsil* protHWt0W;
-//   Tsil* protHttHt;
-//   Tsil* protHttZt;
-//   Tsil* protZZttH;
-//   Tsil* protZWt0W;
-//   Tsil* protZttZt;
-//   Tsil* protZ0tW0;
-//   Tsil* protWW00Z;
-//   Tsil* protW00tW;
-//   Tsil* prot00WW0;
-//   TsilSTU* prot0W00;
-//   TsilST* prot000;
-
-//   // Gaugeless limit
-//   Tsil* protH0tt0;
-//   Tsil* protH0t00;
-//   Tsil* prot0Htt0;
-//   Tsil* prot0H0t0;
-//   Tsil* prot00ttH;
-//   Tsil* protHtt0t;
-//   Tsil* prot00t00;
-//   Tsil* prot000t0;
-
-// TsilST* protos[28];
-
-static const long double EPAIR2 = -1.; 
 
 public:
 dr()
@@ -57,7 +21,7 @@ dr()
 
   dr(long double,long double,long double,long double,long double);
   
-  dr(SMinput, long double);
+  dr(OSinput, long double);
   
   void init();
 

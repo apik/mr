@@ -44,11 +44,19 @@ public:
 
   HH(long double,long double,long double,long double,long double);
   
-  HH(SMinput, long double);
+  HH(OSinput, long double);
   
   void init();
 
+  long double Q()
+  {
+    return sqrt(mu2);
+  }
 
+  long double QQ()
+  {
+    return mu2;
+  }
   
   std::complex<long double> Mfin1(TSIL_REAL x, TSIL_REAL y, TSIL_REAL z, TSIL_REAL u, TSIL_REAL v)
   {
@@ -168,6 +176,90 @@ public:
   std::complex<long double> lamgl20(size_t nL = 2, size_t nH = 1);
   
 };
+
+
+class hh
+{
+
+  long double mmb, mmt, mmH, mmW, mmZ, mu2;
+  long double s, c;
+  
+  Tsil* protHHHHH;
+  Tsil* protHZHZZ;
+  Tsil* protHWHWW;
+  Tsil* protHtHtt;
+  Tsil* protZZZZH;
+  Tsil* protZWZWW;
+  Tsil* protZtZtt;
+  Tsil* protWWWWH;
+  Tsil* protWWWWZ;
+  Tsil* protWWWW0;
+  Tsil* protWtWt0;
+  Tsil* protttttH;
+  Tsil* protttttZ;
+  Tsil* prottttt0;
+  TsilSTU* protZZ00;
+  TsilSTU* protWW00;
+  
+  // Gaugeless limit
+  Tsil* prot0H0H0;
+  Tsil* prot0t0tt;
+  Tsil* prot0t0t0;
+  Tsil* prot0000H;
+
+  TsilST* protos[20];
+public:
+  hh()
+  {
+  }
+
+
+  hh(long double,long double,long double,long double,long double);
+  
+  hh(MSinput, long double);
+  
+  void init();
+
+  std::complex<long double> m01(size_t nL = 2, size_t nH = 1);
+
+  
+  std::complex<long double> m10(size_t nL = 2, size_t nH = 1);
+
+  
+  std::complex<long double> m11(size_t nL = 2, size_t nH = 1);
+  
+
+  std::complex<long double> m20(size_t nL = 2, size_t nH = 1);
+
+
+  // Gaugeless limit
+  std::complex<long double> mgl10(size_t nL = 2, size_t nH = 1);
+  
+  std::complex<long double> mgl11(size_t nL = 2, size_t nH = 1);
+
+  std::complex<long double> mgl20(size_t nL = 2, size_t nH = 1);
+
+
+    
+  // 
+  // \lambda/sqrt(2)/GF/MMH
+  // 
+  std::complex<long double> lam10(size_t nL = 2, size_t nH = 1);
+
+  std::complex<long double> lam11(size_t nL = 2, size_t nH = 1);
+  
+  std::complex<long double> lam20(size_t nL = 2, size_t nH = 1);
+
+  // Gaugeless limit
+
+  std::complex<long double> lamgl10(size_t nL = 2, size_t nH = 1);
+
+  std::complex<long double> lamgl11(size_t nL = 2, size_t nH = 1);
+
+  std::complex<long double> lamgl20(size_t nL = 2, size_t nH = 1);
+  
+};
+
 
 
 #endif  //  __HH_HPP__

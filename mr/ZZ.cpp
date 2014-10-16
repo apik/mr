@@ -8,7 +8,7 @@
 //   init(MMW, MMZ, MMH, MMt, mu2);
 // }
 
-ZZ::ZZ(SMinput sm, long double mu2_)
+ZZ::ZZ(OSinput sm, long double mu2_)
 {
   MMb = sm.MMb();
   MMW = sm.MMW();
@@ -65,6 +65,68 @@ void ZZ::init()
   Timer t2;
   for(int i = 0 ; i < 19; i++)
     protos[i]->evaluate(MMZ);
+  t2.elapsed();
+
+}
+
+
+zz::zz(MSinput sm, long double mu2_)
+{
+  mmb = sm.mmb();
+  mmW = sm.mmW();
+  mmZ = sm.mmZ();
+  mmH = sm.mmH();
+  mmt = sm.mmt();
+  mu2 = mu2_;
+
+  init();
+}
+
+
+void zz::init()
+{
+
+  c = sqrt(mmW/mmZ);
+  s = sqrt(1-mmW/mmZ);
+
+  protos[0] = protZHHZZ = new Tsil(mmZ, mmH, mmH, mmZ, mmZ, mu2);
+  protos[1] = protZZHHH = new Tsil(mmZ, mmZ, mmH, mmH, mmH, mu2);
+  protos[2] = protZWHWW = new Tsil(mmZ, mmW, mmH, mmW, mmW, mu2);
+  protos[3] = prottZtHt = new Tsil(mmt, mmZ, mmt, mmH, mmt, mu2);
+  protos[4] = protWWWWH = new Tsil(mmW, mmW, mmW, mmW, mmH, mu2);
+  protos[5] = protWWWWZ = new Tsil(mmW, mmW, mmW, mmW, mmZ, mu2);
+  protos[6] = protWWWW0 = new Tsil(mmW, mmW, mmW, mmW,   0, mu2);
+  protos[7] = protWtWt0 = new Tsil(mmW, mmt, mmW, mmt,   0, mu2);
+  protos[8] = protW0W0t = new Tsil(mmW,   0, mmW,   0, mmt, mu2);
+  protos[9] = protW0W00 = new Tsil(mmW,   0, mmW,   0,   0, mu2);
+  protos[10] = protttttH = new Tsil(mmt, mmt, mmt, mmt, mmH, mu2);
+  protos[11] = protttttZ = new Tsil(mmt, mmt, mmt, mmt, mmZ, mu2);
+  protos[12] = prottttt0 = new Tsil(mmt, mmt, mmt, mmt,   0, mu2);
+  protos[13] = prott0t0W = new Tsil(mmt,   0, mmt,   0, mmW, mu2);
+  protos[14] = prot0000Z = new Tsil(  0,   0,   0,   0, mmZ, mu2);
+  protos[15] = prot0000W = new Tsil(  0,   0,   0,   0, mmW, mu2);
+  protos[16] = prot00000 = new Tsil(  0,   0,   0,   0,   0, mu2);
+  protos[17] = protWZWHW = new Tsil(mmW, mmZ, mmW, mmH, mmW, mu2);
+  protos[18] = protHZ00  = new TsilSTU(mmH, mmZ,   0,  0, mu2);
+
+
+//   Timer t1;
+
+//   int TID = 0;
+//   omp_set_num_threads(10);
+// #pragma omp parallel private(TID)
+//   {
+//     TID = omp_get_thread_num();
+//     std::cout << "Evaluating proto [" << TID << "]" <<  std::endl;
+//     protos[TID]->evaluate(MMt);
+    
+//   }
+  
+//   t1.elapsed();
+
+  Timer t2;
+  for(int i = 0 ; i < 19; i++)
+    protos[i]->evaluate(mmZ);
   t2.elapsed();
 
 }

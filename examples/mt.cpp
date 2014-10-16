@@ -12,13 +12,13 @@ int main (int argc, char *argv[])
       long double xxx=1.;
 
       // Compare with:
-      std::vector<SMinput> KV;
-      KV.push_back(SMinput(0, xxx*80.385, xxx*91.1876, 124, 173.5));
-      KV.push_back(SMinput(0, xxx*80.385, xxx*91.1876, 125, 173.5));
-      KV.push_back(SMinput(0, xxx*80.385, xxx*91.1876, 126, 173.5));
-      KV.push_back(SMinput(0, xxx*80.385, xxx*91.1876, 126, 173.5));
-      KV.push_back(SMinput(0, xxx*80.385, xxx*91.1876, 126, 183.5));
-      KV.push_back(SMinput(0, xxx*80.385, xxx*91.1876, 126, 193.5));
+      std::vector<OSinput> KV;
+      KV.push_back(OSinput(0, xxx*80.385, xxx*91.1876, 124, 173.5));
+      KV.push_back(OSinput(0, xxx*80.385, xxx*91.1876, 125, 173.5));
+      KV.push_back(OSinput(0, xxx*80.385, xxx*91.1876, 126, 173.5));
+      KV.push_back(OSinput(0, xxx*80.385, xxx*91.1876, 126, 173.5));
+      KV.push_back(OSinput(0, xxx*80.385, xxx*91.1876, 126, 183.5));
+      KV.push_back(OSinput(0, xxx*80.385, xxx*91.1876, 126, 193.5));
       
       alphaMt  = 0.00779305;
       alphaS   = 0.1184;
@@ -28,7 +28,7 @@ int main (int argc, char *argv[])
       long double alphaMZ = 1./137.035999;
 
 
-      for (std::vector<SMinput>::iterator it = KV.begin(); it != KV.end(); ++it)
+      for (std::vector<OSinput>::iterator it = KV.begin(); it != KV.end(); ++it)
         {
           tt dMt  = tt(*it, it->MMZ());
           std::cout << "Mh= " << it->MH()  << std::endl;

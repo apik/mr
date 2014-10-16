@@ -66,7 +66,7 @@ int main (int argc, char *argv[])
       long double MMt,MMW,MMZ,MMH,alphaMt,alphaS,alphaSMt;
 
       // Compare with:
-      SMinput KVPhys(4.40, 80.385, 91.1876, 125.66, 173.5);
+      OSinput KVPhys(4.40, 80.385, 91.1876, 125.66, 173.5);
       
 
 
@@ -118,7 +118,7 @@ int main (int argc, char *argv[])
    //    // Test Jegerlehner input
    //    // using 1-loop matching
 
-   //    SMinput inFJ(0,80.385,91.1876,125.5,173.5);
+   //    OSinput inFJ(0,80.385,91.1876,125.5,173.5);
 
    //    tt topFJ(inFJ, inFJ.MMt());
 
@@ -140,7 +140,7 @@ int main (int argc, char *argv[])
       
    for (int mHi = 0; mHi < 19; mHi++)
      {
-       SMinput DS2l(4.40, 80.385, 91.1876, 125.66, 173.5);
+       OSinput DS2l(4.40, 80.385, 91.1876, 125.66, 173.5);
        long double mu = mHstart + mHi*mHstep;
        tt dtY  = tt(DS2l, mu*mu);          
        
@@ -161,7 +161,7 @@ int main (int argc, char *argv[])
    
    for (int mHi = 0; mHi < 100; mHi++)
      {
-       SMinput DS2l(4.40, 80.385, 91.1876, 125.6, 173.5);
+       OSinput DS2l(4.40, 80.385, 91.1876, 125.6, 173.5);
        long double mu = mHstart + mHi*mHstep;
        bb dbY  = bb(DS2l, mu*mu);          
        

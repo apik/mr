@@ -8,5 +8,8 @@ const long double Zeta5 = 1.0369277551433699263313654864570341680570809195019128
 
 const long double S1    = Pi/sqrt(3.);
 const long double S2    = 0.26043413763216209895572914320803078545504477884842847340736668765;
-const long double EPAIR2 = 1.;
+
+// g5 = -i/24*EPAIR*eps(mu1,mu2,mu3,mu4)*g(mu1)*g(mu2)*g(mu3)*g(mu4)
+// Sp[g5*g5] = 4
+const long double EPAIR2 = -1.;
 #endif  // __CONSTANTS_HPP__

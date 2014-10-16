@@ -11,8 +11,10 @@ int main (int argc, char *argv[])
       long double MMt,MMW,MMZ,MMH,alphaMt,alphaSMt;
 
       // Compare with:
-      SMinput KVPhys(4.40, 80.385, 91.1876, 125.6, 173.5);
+      OSinput KVPhys(4.40, 80.385, 91.1876, 125.6, 173.5);
       
+
+      long double alphaTree = 1./132.234;
 
       long double alphaSMZ = 0.1184;
       // \mu = Mt
@@ -40,46 +42,96 @@ int main (int argc, char *argv[])
       // 
       
       
-      WW dW  = WW(KVPhys, KVPhys.MMt());
-      ZZ dZ  = ZZ(KVPhys, KVPhys.MMt());
+      WW dW    = WW(KVPhys, KVPhys.MMZ());
+      ZZ dZ    = ZZ(KVPhys, KVPhys.MMZ());
+      dr drOS  = dr(KVPhys, KVPhys.MMZ());
 
-      long double alpha    = alphaMZ;
+      long double alpha    = alphaTree;
       long double alphaS   = alphaSMZ;
 
-      long double aHat,Gf;
+      long double aHat,Gf,ait[3];
       
       Gf = 1.16637e-5;
 
-      std::complex<long double> dMyW,dMyZ;
+      std::complex<long double> dMyW,dMyZ,dR;
       dMyW = 1;
       dMyZ = 1;
 
-      std::cout << " Input:  1/" << 1./alpha << std::endl;
+      // std::cout << " Input:  1/" << 1./alpha << std::endl;
 
       // Tree level
-      aHat = real(sqrt(2)*Gf*KVPhys.MMW()/Pi*(1-KVPhys.MMW()/KVPhys.MMZ()*dMyW/dMyZ)*dMyW);
-      std::cout << " Tree:   1/" << 1./aHat << std::endl;
+      alpha = real(sqrt(2)*Gf*KVPhys.MMW()/Pi*(1-KVPhys.MMW()/KVPhys.MMZ()*dMyW/dMyZ)*dMyW);
+
+      ait[0] = aHat;            // First iteration
+      dR   = 1;      
+      std::cout << "\n Tree:   \\alpha   = 1/" << 1./alpha << std::endl;
+      std::cout << " Tree:   \\delta-r = " << dR << std::endl;
 
       // 1-loop level
       dMyW += alpha/4./Pi*dW.my10();
       dMyZ += alpha/4./Pi*dZ.my10();
+      dR   += alpha/4./Pi*drOS.dr10();
 
-      aHat = real(sqrt(2)*Gf*KVPhys.MMW()/Pi*(1-KVPhys.MMW()/KVPhys.MMZ()*dMyW/dMyZ)*dMyW);
-      std::cout << " 1-loop: 1/" << 1./aHat << std::endl;
+      alpha = real(sqrt(2)*Gf*KVPhys.MMW()/Pi*(1-KVPhys.MMW()/KVPhys.MMZ()*dMyW/dMyZ)*dMyW);
+      std::cout << "\n 1-loop: 1/" << 1./alpha << std::endl;
+      std::cout << " \\delta-r = " << dR << std::endl;
+
+      std::cout << " dMW = " << alpha/4./Pi*dW.m10().real() << std::endl;
+      std::cout << " dMZ = " << alpha/4./Pi*dZ.m10().real() << std::endl;
+      
+      std::cout << " dMyW = " << alpha/4./Pi*dW.my10().real() << std::endl;
+      std::cout << " dMyZ = " << alpha/4./Pi*dZ.my10().real() << std::endl;
+
+      
 
       // 2-loop level EW QCD
+      dMyW = 1;
+      dMyZ = 1;
+
+      dMyW += alpha/4./Pi*dW.my10();
+      dMyZ += alpha/4./Pi*dZ.my10();
+      dR   += alpha/4./Pi*drOS.dr10();
+
       dMyW += alpha/4./Pi*alphaS/4./Pi*dW.my11();
       dMyZ += alpha/4./Pi*alphaS/4./Pi*dZ.my11();
+      dR   += alpha/4./Pi*alphaS/4./Pi*drOS.dr11();
+      
+      
+      alpha = real(sqrt(2)*Gf*KVPhys.MMW()/Pi*(1-KVPhys.MMW()/KVPhys.MMZ()*dMyW/dMyZ)*dMyW);
+      std::cout << "\n EW*QCD: 1/" << 1./alpha << std::endl;
+      std::cout << " \\delta-r = " << dR << std::endl;
 
-      aHat = real(sqrt(2)*Gf*KVPhys.MMW()/Pi*(1-KVPhys.MMW()/KVPhys.MMZ()*dMyW/dMyZ)*dMyW);
-      std::cout << " EW*QCD: 1/" << 1./aHat << std::endl;
+      std::cout << " dMyW = " << alpha/4./Pi*alphaS/4./Pi*dW.my11().real() << std::endl;
+      std::cout << " dMyZ = " << alpha/4./Pi*alphaS/4./Pi*dZ.my11().real() << std::endl;
 
       // 2-loop level EW
+      dMyW = 1;
+      dMyZ = 1;
+      
+      dMyW += alpha/4./Pi*dW.my10();
+      dMyZ += alpha/4./Pi*dZ.my10();
+      dR   += alpha/4./Pi*drOS.dr10();
+      
+      dMyW += alpha/4./Pi*alphaS/4./Pi*dW.my11();
+      dMyZ += alpha/4./Pi*alphaS/4./Pi*dZ.my11();
+      dR   += alpha/4./Pi*alphaS/4./Pi*drOS.dr11();
+      
       dMyW += pow(alpha/4./Pi,2)*dW.my20();
       dMyZ += pow(alpha/4./Pi,2)*dZ.my20();
+      dR   += pow(alpha/4./Pi,2)*drOS.dr20();
 
-      aHat = real(sqrt(2)*Gf*KVPhys.MMW()/Pi*(1-KVPhys.MMW()/KVPhys.MMZ()*dMyW/dMyZ)*dMyW);
-      std::cout << " EW*EW:  1/" << 1./aHat << std::endl;
+      alpha = real(sqrt(2)*Gf*KVPhys.MMW()/Pi*(1-KVPhys.MMW()/KVPhys.MMZ()*dMyW/dMyZ)*dMyW);
+      std::cout << "\n EW*EW:  1/" << 1./alpha << std::endl;
+      std::cout << " \\delta-r = " << dR << std::endl;
+
+      std::cout << " dMyW = " << pow(alpha/4./Pi,2)*dW.my20().real() << std::endl;
+      std::cout << " dMyZ = " << pow(alpha/4./Pi,2)*dZ.my20().real() << std::endl;
+
+
+      
+
+      
+
 
       // // Yukawa W
       // WW dMW  = WW(KVPhys, KVPhys.MMt());
@@ -94,7 +146,7 @@ int main (int argc, char *argv[])
       // long double toLam =1.+0*KVPhys.MMH()*0.0000116637/sqrt(2);
 
 
-      // SMinput degr(4.40, 80.384, 91.1876, 125.66, 173.10);
+      // OSinput degr(4.40, 80.384, 91.1876, 125.66, 173.10);
 
       // HH dMH  = HH(degr, degr.MMt());
       // std::cout << "[ H ]" << std::endl;
@@ -126,7 +178,7 @@ int main (int argc, char *argv[])
    //    // Test Jegerlehner input
    //    // using 1-loop matching
 
-   //    SMinput inFJ(0,80.385,91.1876,125.5,173.5);
+   //    OSinput inFJ(0,80.385,91.1876,125.5,173.5);
 
    //    tt topFJ(inFJ, inFJ.MMt());
 
@@ -148,7 +200,7 @@ int main (int argc, char *argv[])
    
    // for (int mHi = 0; mHi < 13; mHi++)
    //   {
-   //     SMinput DS2l(4.40, 80.385, 91.1876, mHstart + mHi*mHstep, 173.5);
+   //     OSinput DS2l(4.40, 80.385, 91.1876, mHstart + mHi*mHstep, 173.5);
    //     tt dtY  = tt(DS2l, DS2l.MMt());          
        
    //     plotYt.add(DS2l.MH(),alphaMt/4./Pi*alphaSMt/4./Pi*dtY.my11().real());
@@ -162,7 +214,7 @@ int main (int argc, char *argv[])
    
    // for (int mHi = 0; mHi < 100; mHi++)
    //   {
-   //     SMinput DS2l(4.40, 80.385, 91.1876, 125.6, 173.5);
+   //     OSinput DS2l(4.40, 80.385, 91.1876, 125.6, 173.5);
    //     bb dbY  = bb(DS2l, mHstart + mHi*mHstep);          
        
    //     plotYb.add(mHstart + mHi*mHstep,alphaMb/4./Pi*alphaSMb/4./Pi*dbY.my11().real());

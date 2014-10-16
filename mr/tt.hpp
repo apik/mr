@@ -57,7 +57,7 @@ tt()
 
   tt(long double,long double,long double,long double,long double);
   
-  tt(SMinput, long double);
+  tt(OSinput, long double);
   
   void init();
 

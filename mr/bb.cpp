@@ -9,7 +9,7 @@ bb::bb(long double MMb_, long double MMW_,long double MMZ_,long double MMH_,long
   init(MMb, MMW, MMZ, MMH, MMt, mu2);
 }
 
-bb::bb(SMinput sm, long double mu2_)
+bb::bb(OSinput sm, long double mu2_)
 {
   MMb = sm.MMb();
   MMW = sm.MMW();

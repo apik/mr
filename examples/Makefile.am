@@ -6,7 +6,7 @@ EX_CFLAGS = $(MR_CFLAGS) -I$(top_srcdir)/tsil-1.21 -I$(top_srcdir)/mr
 
 noinst_PROGRAMS = mW mZ mH mt runAlpha runSM mb yukawa lambda yt gauge plotyukawa mtgl bezrukovFit
 if HAVE_ROOT
-noinst_PROGRAMS += mHroot
+noinst_PROGRAMS += mHroot interpolation
 endif 
 
 mW_SOURCES =  mW.cpp
@@ -24,8 +24,12 @@ mH_LDADD = $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.21 -ltsil -
 
 if HAVE_ROOT
 mHroot_SOURCES =  mHroot.cpp
-mHroot_CPPFLAGS = $(EX_CFLAGS)
-mHroot_LDADD = $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.21 -ltsil -lm -L$(ROOTLIBDIR) -lGui -lCore -lCint -lRIO -lNet -lHist -lGraf -lGraf3d -lGpad -lTree -lRint -lPostscript -lMatrix -lPhysics -lMathCore -lThread
+mHroot_CPPFLAGS = $(EX_CFLAGS) -I$(ROOTINCDIR)
+mHroot_LDADD = $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.21 -ltsil -lm -L$(ROOTLIBDIR) $(ROOTLIBS)
+
+interpolation_SOURCES =  interpolation.cpp
+interpolation_CPPFLAGS = $(EX_CFLAGS) -I$(ROOTINCDIR)
+interpolation_LDADD = $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.21 -ltsil -lm -L$(ROOTLIBDIR) $(ROOTLIBS)
 endif
 
 mt_SOURCES =  mt.cpp
@@ -71,6 +75,7 @@ runAlpha_LDADD = $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.21 -l
 runSM_SOURCES =  runSM.cpp
 runSM_CPPFLAGS = $(EX_CFLAGS)
 runSM_LDADD = $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.21 -ltsil -lm
+
 
 # mratio_SOURCES =  mratio.cpp
 # mratio_CPPFLAGS = $(EX_CFLAGS) -I$(top_srcdir)/tsil-1.21 -I$(top_srcdir)/mr

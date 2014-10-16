@@ -8,7 +8,7 @@
 //   init(MMB, MMW, MMZ, MMH, MMt, mu2);
 // }
 
-WW::WW(SMinput sm, long double mu2_)
+WW::WW(OSinput sm, long double mu2_)
 {
   MMb = sm.MMb();
   MMW = sm.MMW();
@@ -73,6 +73,76 @@ void WW::init()
   Timer t2;
   for(int i = 0 ; i < 24; i++)
     protos[i]->evaluate(MMW);
+  t2.elapsed();
+
+}
+
+
+ww::ww(MSinput sm, long double mu2_)
+{
+  mmb = sm.mmb();
+  mmW = sm.mmW();
+  mmZ = sm.mmZ();
+  mmH = sm.mmH();
+  mmt = sm.mmt();
+  mu2 = mu2_;
+
+  init();
+}
+
+
+void ww::init()
+{
+
+  c = sqrt(mmW/mmZ);
+  s = sqrt(1-mmW/mmZ);
+
+  protos[0] =  protWHHWW = new Tsil(mmW, mmH, mmH, mmW, mmW, mu2);
+  protos[1] =  protWHZWW = new Tsil(mmW, mmH, mmZ, mmW, mmW, mu2);
+  protos[2] =  protWZZWW = new Tsil(mmW, mmZ, mmZ, mmW, mmW, mu2);
+  protos[3] =  protWWHHH = new Tsil(mmW, mmW, mmH, mmH, mmH, mu2);
+  protos[4] =  protWWHZZ = new Tsil(mmW, mmW, mmH, mmZ, mmZ, mu2);
+  protos[5] =  protWWZZH = new Tsil(mmW, mmW, mmZ, mmZ, mmH, mu2);
+  protos[6] =  protWtZ00 = new Tsil(mmW, mmt, mmZ,   0,   0, mu2);
+  protos[7] =  protW0HWW = new Tsil(mmW,   0, mmH, mmW, mmW, mu2);
+  protos[8] =  protW0Htt = new Tsil(mmW,   0, mmH, mmt, mmt, mu2);
+  protos[9] =  protW0ZWW = new Tsil(mmW,   0, mmZ, mmW, mmW, mu2);
+  protos[10] =  protW0Ztt = new Tsil(mmW,   0, mmZ, mmt, mmt, mu2);
+  protos[11] =  protW0Z00 = new Tsil(mmW,   0, mmZ,   0,   0, mu2);
+  protos[12] =  prot0WW0W = new Tsil(  0, mmW, mmW,   0, mmW, mu2);
+  protos[13] =  prot0Wt0t = new Tsil(  0, mmW, mmt,   0, mmt, mu2);
+  protos[14] =  prot0W0Z0 = new Tsil(  0, mmW,   0, mmZ,   0, mu2);
+  protos[15] =  prot00Wt0 = new Tsil(  0,   0, mmW, mmt,   0, mu2);
+  protos[16] =  prot00W00 = new Tsil(  0,   0, mmW,   0,   0, mu2);
+  protos[17] =  prot00ttZ = new Tsil(  0,   0, mmt, mmt, mmZ, mu2);
+  protos[18] =  prot00tt0 = new Tsil(  0,   0, mmt, mmt,   0, mu2);
+  protos[19] =  prot0000Z = new Tsil(  0,   0,   0,  0, mmZ, mu2);
+  protos[20] =  prot00000 = new Tsil(  0,   0,   0,   0,  0, mu2);
+  protos[21] =  protWH0H = new TsilSTU(mmW, mmH,   0, mmH, mu2);
+  protos[22] =  protWZ0Z = new TsilSTU(mmW, mmZ,   0, mmZ, mu2);
+  protos[23] =  protHW00 = new TsilSTU(mmH, mmW,   0,   0, mu2);
+
+
+
+  // protos[19] = prot0W00  = new TsilSTU(0,     MMW,   0,   0, mu2);
+
+//   Timer t1;
+
+//   int TID = 0;
+//   omp_set_num_threads(10);
+// #pragma omp parallel private(TID)
+//   {
+//     TID = omp_get_thread_num();
+//     std::cout << "Evaluating proto [" << TID << "]" <<  std::endl;
+//     protos[TID]->evaluate(MMt);
+    
+//   }
+  
+//   t1.elapsed();
+
+  Timer t2;
+  for(int i = 0 ; i < 24; i++)
+    protos[i]->evaluate(mmW);
   t2.elapsed();
 
 }

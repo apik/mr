@@ -8,7 +8,7 @@
 //   init(MMW, MMZ, MMH, MMt, mu2);
 // }
 
-tt::tt(SMinput sm, long double mu2_)
+tt::tt(OSinput sm, long double mu2_)
 {
   MMb = sm.MMb();
   MMW = sm.MMW();

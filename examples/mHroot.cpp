@@ -5,7 +5,7 @@
 // #include <TH1F.h>
 #include <TGraph.h>
 #include <TApplication.h>
-
+#include <TFitResult.h>
 int main (int argc, char *argv[])
 {
   try
@@ -17,8 +17,8 @@ int main (int argc, char *argv[])
       // Comare with:
       // bosonic only part (nH = nL = 0)    : arXiv:hep-ph/0209084
 
-      SMinput ACOVH80(0, 80.419, 91.188, 80, 174.3);
-      SMinput ACOVH200(0, 80.419, 91.188, 200, 174.3);
+      OSinput ACOVH80(0, 80.419, 91.188, 80, 174.3);
+      OSinput ACOVH200(0, 80.419, 91.188, 200, 174.3);
       
       alphaMt  = 0.00779305;
       alphaS   = 0.1184;
@@ -36,36 +36,69 @@ int main (int argc, char *argv[])
       // Two-loop comaprison with Degrassi and Strumia and root-plot
       TApplication* rootapp = new TApplication("mH compare with ",&argc, argv);
 
-      const Int_t n = 10;
+      const Int_t n = 20;
       Double_t x[n];
       Double_t y[n];
-      long double mHstep  = 10; // GeV
-      long double mHstart = 80; // GeV
+      long double mustep  = 10; // GeV
+      long double mustart = 80; // GeV
 
       AlphaS as;
             
-      for (int mHi = 0; mHi < n; mHi++)
+      for (int mui = 0; mui < n; mui++)
         {
-          SMinput DS2l(0, 80.384, 91.1876, mHstart + mHi*mHstep, 173.10);
-          HH dH  = HH(DS2l, DS2l.MMt());          
-
-          std::cout << "2-loop \\alpha^2      Mh= " << DS2l.MH() << ", [mH/MH -1] = " << DS2l.MMH()*pow(alphaMt/4./Pi,2)*dH.m20() << std::endl;     
+          OSinput DS2l(0, 80.384, 91.1876, 125.6, 173.10);
+          HH dH  = HH(DS2l, pow(mustart + mui*mustep,2));          
           
-          x[mHi] = DS2l.MH();
-          y[mHi] = DS2l.MMH()*(
-                               // alpha^2
-                               // pow(alphaMt/4./Pi,2)*dH.m20().real() +
-                               // alpha*lpha_S
-                               alphaMt/4./Pi*as(DS2l.MMt())/4./Pi*dH.m11().real()
-                               );
-                               
+          std::cout << "2-loop \\alpha^2      Mh= " << DS2l.MH() << ", [mH/MH -1] = " << dH.m20() << std::endl;     
+          
+          x[mui] = dH.Q();
+          y[mui] = dH.m20().real();
 
         }
 
       TGraph* gr = new TGraph(n,x,y);
+
+      // Trying to fit in mu=[80,180] range
+      TFitResultPtr r = gr->Fit("pol2","S");
       
+      std::cout << " b -: " << r->Value(0) << std::endl;
       gr->Draw();
       rootapp->Run();
+
+
+      // // Two-loop comaprison with Degrassi and Strumia and root-plot
+      // TApplication* rootapp = new TApplication("mH compare with ",&argc, argv);
+
+      // const Int_t n = 10;
+      // Double_t x[n];
+      // Double_t y[n];
+      // long double mHstep  = 10; // GeV
+      // long double mHstart = 80; // GeV
+
+      // AlphaS as;
+            
+      // for (int mHi = 0; mHi < n; mHi++)
+      //   {
+      //     OSinput DS2l(0, 80.384, 91.1876, mHstart + mHi*mHstep, 173.10);
+      //     HH dH  = HH(DS2l, DS2l.MMt());          
+
+      //     std::cout << "2-loop \\alpha^2      Mh= " << DS2l.MH() << ", [mH/MH -1] = " << DS2l.MMH()*pow(alphaMt/4./Pi,2)*dH.m20() << std::endl;     
+          
+      //     x[mHi] = DS2l.MH();
+      //     y[mHi] = DS2l.MMH()*(
+      //                          // alpha^2
+      //                          // pow(alphaMt/4./Pi,2)*dH.m20().real() +
+      //                          // alpha*lpha_S
+      //                          alphaMt/4./Pi*as(DS2l.MMt())/4./Pi*dH.m11().real()
+      //                          );
+                               
+
+      //   }
+
+      // TGraph* gr = new TGraph(n,x,y);
+      
+      // gr->Draw();
+      // rootapp->Run();
       
  
     }

@@ -3,7 +3,7 @@
 
 
 
-dr::dr(SMinput sm, long double mu2_)
+dr::dr(OSinput sm, long double mu2_)
 {
   MMb = sm.MMb();
   MMW = sm.MMW();
@@ -79,5 +79,5 @@ void dr::init()
 
 
 
-// const long double tt::EPAIR2;
+
 

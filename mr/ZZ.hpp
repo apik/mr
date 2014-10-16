@@ -39,7 +39,7 @@ public:
 
   ZZ(long double,long double,long double,long double,long double);
 
-  ZZ(SMinput, long double);
+  ZZ(OSinput, long double);
 
   void init();
   
@@ -147,5 +147,57 @@ public:
     
 };
 
+class zz
+{
+
+  long double mmb, mmt, mmH, mmW, mmZ, mu2;
+  long double s, c;
+
+  Tsil* protZHHZZ;
+  Tsil* protZZHHH;
+  Tsil* protZWHWW;
+  Tsil* prottZtHt;
+  Tsil* protWWWWH;
+  Tsil* protWWWWZ;
+  Tsil* protWWWW0;
+  Tsil* protWtWt0;
+  Tsil* protW0W0t;
+  Tsil* protW0W00;
+  Tsil* protttttH;
+  Tsil* protttttZ;
+  Tsil* prottttt0;
+  Tsil* prott0t0W;
+  Tsil* prot0000Z;
+  Tsil* prot0000W;
+  Tsil* prot00000;
+  Tsil* protWZWHW;
+  TsilSTU* protHZ00;
+  
+  TsilST* protos[19];
+public:
+  zz()
+  {
+  }
+
+  zz(long double,long double,long double,long double,long double);
+
+  zz(MSinput, long double);
+
+  void init();
+
+
+  std::complex<long double> m01(size_t nL = 2, size_t nH = 1);
+
+  
+  std::complex<long double> m10(size_t nL = 2, size_t nH = 1);
+
+  
+  std::complex<long double> m11(size_t nL = 2, size_t nH = 1);
+  
+
+  std::complex<long double> m20(size_t nL = 2, size_t nH = 1);
+
+    
+};
 
 #endif  //  __ZZ_HPP__
