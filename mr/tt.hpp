@@ -5,9 +5,9 @@
 #include "sminput.hpp"
 #include "operators.hpp"
 #include "constants.hpp"
+#include "base.hpp"
 
-
-class tt
+class tt : public PoleMass
 {
 
 long double MMb,MMt, MMH, MMW, MMZ, mu2;
@@ -168,11 +168,11 @@ std::pair<long double,long double> test2(long double epsabs = 1.E-5,long double 
   // 
   // Delta-r
   // 
-  std::complex<long double> drgl10(size_t nL = 2, size_t nH = 1);
+  // std::complex<long double> drgl10(size_t nL = 2, size_t nH = 1);
   
-  std::complex<long double> drgl11(size_t nL = 2, size_t nH = 1);
+  // std::complex<long double> drgl11(size_t nL = 2, size_t nH = 1);
 
-  std::complex<long double> drgl20(size_t nL = 2, size_t nH = 1);
+  // std::complex<long double> drgl20(size_t nL = 2, size_t nH = 1);
 
 
   // Gaugeless limit

@@ -1,5 +1,5 @@
 #include <HH.hpp>
-std::complex<long double> HH::lamgl10(size_t nL, size_t nH)
+std::complex<long double> HH::mygl10(size_t nL, size_t nH)
 {     
       
       

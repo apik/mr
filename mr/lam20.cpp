@@ -1,5 +1,5 @@
 #include <HH.hpp>
-std::complex<long double> HH::lam20(size_t nL, size_t nH)
+std::complex<long double> HH::my20(size_t nL, size_t nH)
 {     
       
       

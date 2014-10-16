@@ -5,8 +5,9 @@
 #include "sminput.hpp"
 #include "operators.hpp"
 #include "constants.hpp"
+#include "base.hpp"
 
-class HH
+class HH : public PoleMass
 {
 
   long double MMb, MMt, MMH, MMW, MMZ, mu2;
@@ -161,19 +162,19 @@ public:
   // 
   // \lambda/sqrt(2)/GF/MMH
   // 
-  std::complex<long double> lam10(size_t nL = 2, size_t nH = 1);
+  std::complex<long double> my10(size_t nL = 2, size_t nH = 1);
 
-  std::complex<long double> lam11(size_t nL = 2, size_t nH = 1);
+  std::complex<long double> my11(size_t nL = 2, size_t nH = 1);
   
-  std::complex<long double> lam20(size_t nL = 2, size_t nH = 1);
+  std::complex<long double> my20(size_t nL = 2, size_t nH = 1);
 
   // Gaugeless limit
 
-  std::complex<long double> lamgl10(size_t nL = 2, size_t nH = 1);
+  std::complex<long double> mygl10(size_t nL = 2, size_t nH = 1);
 
-  std::complex<long double> lamgl11(size_t nL = 2, size_t nH = 1);
+  std::complex<long double> mygl11(size_t nL = 2, size_t nH = 1);
 
-  std::complex<long double> lamgl20(size_t nL = 2, size_t nH = 1);
+  std::complex<long double> mygl20(size_t nL = 2, size_t nH = 1);
   
 };
 

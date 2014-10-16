@@ -5,7 +5,9 @@
 #include "sminput.hpp"
 #include "operators.hpp"
 #include "constants.hpp"
-class ZZ
+#include "base.hpp"
+
+class ZZ : public PoleMass
 {
 
   long double MMb, MMt, MMH, MMW, MMZ, mu2;

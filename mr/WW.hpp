@@ -5,8 +5,9 @@
 #include "sminput.hpp"
 #include "operators.hpp"
 #include "constants.hpp"
+#include "base.hpp"
 
-class WW
+class WW : public PoleMass
 {
 
   long double MMb, MMt, MMH, MMW, MMZ, mu2;
@@ -155,9 +156,6 @@ public:
 
 
   // Yukawa
-  std::complex<long double> my01(size_t nL = 2, size_t nH = 1);
-
-  
   std::complex<long double> my10(size_t nL = 2, size_t nH = 1);
 
   

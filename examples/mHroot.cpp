@@ -47,11 +47,12 @@ int main (int argc, char *argv[])
       for (int mui = 0; mui < n; mui++)
         {
           OSinput DS2l(0, 80.384, 91.1876, 125.6, 173.10);
-          HH dH  = HH(DS2l, pow(mustart + mui*mustep,2));          
+          ZZ dH  = ZZ(DS2l, pow(mustart + mui*mustep,2));          
           
           std::cout << "2-loop \\alpha^2      Mh= " << DS2l.MH() << ", [mH/MH -1] = " << dH.m20() << std::endl;     
           
-          x[mui] = dH.Q();
+          x[mui] = mustart + mui*mustep// dH.Q()
+            ;
           y[mui] = dH.m20().real();
 
         }

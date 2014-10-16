@@ -2,6 +2,9 @@
 #include <iostream>
 #include "mr.hpp"
 
+#include <map>
+#include <utility>
+
 // Fit staff
 #include <TGraph.h>
 #include <TApplication.h>
@@ -44,12 +47,58 @@ int main (int argc, char *argv[])
       OSinput divMH = OSinput(4.4, 80.385, 91.1876, 125.7 + dMHStep, 173.2);
       OSinput divMW = OSinput(4.4, 80.385 + dMWStep, 91.1876, 125.7, 173.2);
 
+      PoleMass* xMbase0      = new tt(KPV  , KPV.MMZ());
+      // tt xMttdivMt  = tt(divMt, KPV.MMZ());
+      // tt xMttdivMH  = tt(divMH, KPV.MMZ());
+      // tt xMttdivMW  = tt(divMW, KPV.MMZ());
+
+
+      // Loop over energy scale points:
 
       long double mu[2] = {KPV.MMZ(), KPV.MMt()};
+      
+      std::map<std::pair<std::string,long double>, std::vector<PoleMass*> > mMap;
+        
       for (int i = 0; i < 2; i++)
         {
+           
+          std::vector<PoleMass*> pmvWW(4);
+          pmvWW[0] = new WW(KPV, mu[i]);
+          pmvWW[1] = new WW(divMt, mu[i]);
+          pmvWW[2] = new WW(divMH, mu[i]);
+          pmvWW[3] = new WW(divMW, mu[i]);
+          
+          mMap[std::make_pair("WW",mu[i])] = pmvWW;
+
+          std::vector<PoleMass*> pmvZZ(4);
+          pmvZZ[0] = new ZZ(KPV, mu[i]);
+          pmvZZ[1] = new ZZ(divMt, mu[i]);
+          pmvZZ[2] = new ZZ(divMH, mu[i]);
+          pmvZZ[3] = new ZZ(divMW, mu[i]);
+          
+          mMap[std::make_pair("ZZ",mu[i])] = pmvZZ;
+
+          std::vector<PoleMass*> pmvHH(4);
+          pmvHH[0] = new HH(KPV, mu[i]);
+          pmvHH[1] = new HH(divMt, mu[i]);
+          pmvHH[2] = new HH(divMH, mu[i]);
+          pmvHH[3] = new HH(divMW, mu[i]);
+          
+          mMap[std::make_pair("HH",mu[i])] = pmvHH;
+
+          std::vector<PoleMass*> pmvtt(4);
+          pmvtt[0] = new tt(KPV, mu[i]);
+          pmvtt[1] = new tt(divMt, mu[i]);
+          pmvtt[2] = new tt(divMH, mu[i]);
+          pmvtt[3] = new tt(divMW, mu[i]);
+          
+          mMap[std::make_pair("tt",mu[i])] = pmvtt;
           
         }
+
+      std::cout << " Terms = " << mMap.size() << std::endl;
+      
+      // return(0);
 
       // 
       //            TT
