@@ -95,7 +95,7 @@ std::pair<long double,long double> tt::test2(long double epsabs,long double epsr
   std::vector<std::complex<long double> > rexact(139);
   std::vector<std::complex<long double> > rexpan(139);
 
-#include "dump.hpp"
+// #include "dump.hpp"
 
   long double accEX = 0;
   long double accEP = 0;

@@ -5,57 +5,6 @@
 
 
 // CRunDec  input
-#define asMz 0.1184
-#define Mz 91.1876
-#define Mt 173.5
-#define Mb 4.4
-#define Mc 1.5
-#define muc 1.279
-#define mub 4.163
-#define Mtau 1.777
-
-long double as(long double mu2)
-{
-  long double mu = sqrt(mu2);
-  CRunDec crundec;
-  crundec.nfMmu[0].nf = 5;
-  crundec.nfMmu[0].Mth = Mb;
-  crundec.nfMmu[0].muth = Mb;
-  crundec.nfMmu[1].nf = 6;
-  crundec.nfMmu[1].Mth = Mt;
-  crundec.nfMmu[1].muth = Mt;
-  
-  if (mu < Mz) 
-    return crundec.AlH2AlL(asMz, Mz,crundec.nfMmu,mu,4);
-  else
-    return crundec.AlL2AlH(asMz, Mz,crundec.nfMmu,mu,4);
-}
-
-long double a(long double mm)
-{
-
-  long double alphaMZ = 1./127.916;
-  long double mme1,mme2,mme3,mmW,mmu3;
-
-  mme1 = pow(0.51/1000.,2);
-  mme2 =pow(105.6583/1000.,2);
-  mme3 =pow(1777.03/1000.,2);
-  mmu3 =pow(173.5,2);
-  mmW = pow(80.385,2);
-  long double mZpole = 91.1876;
-  long double HADRONS = 0.027690;
-  // return alpha0*(7.*log(mmW/mm)-2./3. - 4./3.*( log(mme1/mm) + log(mme2/mm) + log(mme3/mm) )
-  //                        - 16/9*log(mmu3/mm)
-  //                        - 44/9*(log(mmW/mm) - 5/3)
-  //                        )
-  //   + HADRONS ;
-
-  long double b1=-22./3+4./3.*3.+1./6;
-  long double b1p=(4./3*3.+1./10)*5./3.;
-  return alphaMZ/(1-(b1+b1p)/(2*Pi) * alphaMZ * log(sqrt(mm)/mZpole));
-
-
-}
 
 int main (int argc, char *argv[])
 {
@@ -66,7 +15,7 @@ int main (int argc, char *argv[])
       long double MMt,MMW,MMZ,MMH,alphaMt,alphaS,alphaSMt;
 
       // Compare with:
-      OSinput KVPhys(4.40, 80.385, 91.1876, 125.66, 173.5);
+      OSinput KPV = OSinput(4.4, 80.385, 91.1876, 125.7, 173.2);
       
 
 
@@ -145,11 +94,11 @@ int main (int argc, char *argv[])
        tt dtY  = tt(DS2l, mu*mu);          
        
        std::cout << "mu= " << mu << ",  as = " << as(mu) << ",  dyt = " << dtY.my11().real() << std::endl;
-       plotYt.add(mu,a(mu)/4./Pi*dtY.my10().real(),
-                  // a(mu)/4./Pi*as(mu)/4./Pi*
-                  dtY.my11().real(),
-                  // pow(a(mu)/4./Pi,2)*
-                  dtY.my20().real());
+       // plotYt.add(mu,a(mu)/4./Pi*dtY.my10().real(),
+       //            // a(mu)/4./Pi*as(mu)/4./Pi*
+       //            dtY.my11().real(),
+       //            // pow(a(mu)/4./Pi,2)*
+       //            dtY.my20().real());
 
      }
 
@@ -165,9 +114,10 @@ int main (int argc, char *argv[])
        long double mu = mHstart + mHi*mHstep;
        bb dbY  = bb(DS2l, mu*mu);          
        
-       plotYb.add(mu,a(mu)/4./Pi*dbY.my10().real(),
-                  a(mu)/4./Pi*as(mu)/4./Pi*dbY.my11().real(),
-                  pow(a(mu)/4./Pi,2)*dbY.my20().real());
+       // plotYb.add(mu,a(mu)/4./Pi*dbY.my10().real(),
+       //            a(mu)/4./Pi*as(mu)/4./Pi*dbY.my11().real(),
+       //            pow(a(mu)/4./Pi,2)*dbY.my20().real());
+
      }
 
     }

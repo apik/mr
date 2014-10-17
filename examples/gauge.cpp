@@ -14,7 +14,7 @@ int main (int argc, char *argv[])
       OSinput KVPhys(4.40, 80.385, 91.1876, 125.6, 173.5);
       
 
-      long double alphaTree = 1./132.234;
+      long double alphaTree = 1./137.234;
 
       long double alphaSMZ = 0.1184;
       // \mu = Mt
@@ -44,6 +44,7 @@ int main (int argc, char *argv[])
       
       WW dW    = WW(KVPhys, KVPhys.MMZ());
       ZZ dZ    = ZZ(KVPhys, KVPhys.MMZ());
+      tt dt    = tt(KVPhys, KVPhys.MMZ());
       dr drOS  = dr(KVPhys, KVPhys.MMZ());
 
       long double alpha    = alphaTree;
@@ -67,20 +68,28 @@ int main (int argc, char *argv[])
       std::cout << "\n Tree:   \\alpha   = 1/" << 1./alpha << std::endl;
       std::cout << " Tree:   \\delta-r = " << dR << std::endl;
 
+      // Initial input !!!
+      // alpha = 1./137.03599;
+      std::cout << "\n \\alpha   = 1/" << 1./alpha << std::endl;
+
+
       // 1-loop level
       dMyW += alpha/4./Pi*dW.my10();
       dMyZ += alpha/4./Pi*dZ.my10();
       dR   += alpha/4./Pi*drOS.dr10();
 
       alpha = real(sqrt(2)*Gf*KVPhys.MMW()/Pi*(1-KVPhys.MMW()/KVPhys.MMZ()*dMyW/dMyZ)*dMyW);
+
       std::cout << "\n 1-loop: 1/" << 1./alpha << std::endl;
       std::cout << " \\delta-r = " << dR << std::endl;
 
-      std::cout << " dMW = " << alpha/4./Pi*dW.m10().real() << std::endl;
-      std::cout << " dMZ = " << alpha/4./Pi*dZ.m10().real() << std::endl;
+      std::cout << " dMW = " << dW.m10().real() << std::endl;
+      std::cout << " dMZ = " << dZ.m10().real() << std::endl;
+      std::cout << " dMt = " << dt.m10().real() << std::endl;
+
       
-      std::cout << " dMyW = " << alpha/4./Pi*dW.my10().real() << std::endl;
-      std::cout << " dMyZ = " << alpha/4./Pi*dZ.my10().real() << std::endl;
+      std::cout << " dMyW = " << dW.my10().real() << std::endl;
+      std::cout << " dMyZ = " << dZ.my10().real() << std::endl;
 
       
 
@@ -101,9 +110,13 @@ int main (int argc, char *argv[])
       std::cout << "\n EW*QCD: 1/" << 1./alpha << std::endl;
       std::cout << " \\delta-r = " << dR << std::endl;
 
-      std::cout << " dMyW = " << alpha/4./Pi*alphaS/4./Pi*dW.my11().real() << std::endl;
-      std::cout << " dMyZ = " << alpha/4./Pi*alphaS/4./Pi*dZ.my11().real() << std::endl;
+      std::cout << " dMW = " << dW.m11().real() << std::endl;
+      std::cout << " dMZ = " << dZ.m11().real() << std::endl;
+      std::cout << " dMyW = " <<dW.my11().real() << std::endl;
+      std::cout << " dMyZ = " <<dZ.my11().real() << std::endl;
 
+      std::cout << " dMt = " << dt.m11().real() << std::endl;
+      std::cout << " dMyt = " <<dt.my11().real() << std::endl;
       // 2-loop level EW
       dMyW = 1;
       dMyZ = 1;
@@ -124,8 +137,14 @@ int main (int argc, char *argv[])
       std::cout << "\n EW*EW:  1/" << 1./alpha << std::endl;
       std::cout << " \\delta-r = " << dR << std::endl;
 
-      std::cout << " dMyW = " << pow(alpha/4./Pi,2)*dW.my20().real() << std::endl;
-      std::cout << " dMyZ = " << pow(alpha/4./Pi,2)*dZ.my20().real() << std::endl;
+      std::cout << " dMW = " << dW.m20().real() << std::endl;
+      std::cout << " dMZ = " << dZ.m20().real() << std::endl;
+
+      std::cout << " dMyW = " << dW.my20().real() << std::endl;
+      std::cout << " dMyZ = " << dZ.my20().real() << std::endl;
+
+      std::cout << " dMt = " << dt.m20().real() << std::endl;
+      std::cout << " dMyt = " << dt.my20().real() << std::endl;
 
 
       
