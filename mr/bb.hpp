@@ -2,7 +2,13 @@
 #define __BB_HPP__
 
 #include "tsil.hpp"
-#include "mr.hpp"
+#include "sminput.hpp"
+#include "operators.hpp"
+#include "constants.hpp"
+#include "base.hpp"
+
+// #include "tsil.hpp"
+// #include "mr.hpp"
 
 class bb
 {

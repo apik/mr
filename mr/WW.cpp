@@ -54,7 +54,6 @@ void WW::init()
 
 
 
-  // protos[19] = prot0W00  = new TsilSTU(0,     MMW,   0,   0, mu2);
 
 //   Timer t1;
 
@@ -147,3 +146,44 @@ void ww::init()
 
 }
 
+
+std::pair<long double,long double> WW::test2(long double epsabs,long double epsrel)
+{ 
+
+  std::cout << "Test 2" << std::endl;
+
+  long double DH = 1-MMH/MMt;
+  std::vector<std::complex<long double> > rexact(139);
+  std::vector<std::complex<long double> > rexpan(139);
+
+  size_t nH = 1;
+
+  size_t nL = 1;
+
+#include "test.hpp"
+
+  long double accEX = 0;
+  long double accEP = 0;
+
+  for(int i = 1; i < 4; i++)
+    {
+      const size_t fw = 25;
+
+      long double diff  = fabs((rexact[i] - rexpan[i]).real());
+      long double exact = fabs(rexact[i].real());
+
+      // if (true ||diff > epsabs || diff/exact > epsrel)
+      //   {
+      std::cout << std::scientific << std::setprecision(fw-10);
+      std::cout << "Dia(" << i << ") ";
+      std::cout << "   " << std::setw(fw) <<  rexact[i].real()
+                << "   " << std::setw(fw) <<  rexpan[i].real()
+                << "   " << std::setw(fw) << diff <<std::endl; 
+      // }
+
+      accEX += rexact[i].real();
+      accEP += rexpan[i].real();
+
+    }
+  return std::make_pair(accEX,accEP);
+}

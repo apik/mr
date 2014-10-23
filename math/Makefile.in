@@ -1,0 +1,14 @@
+MATH_ROOT = /opt/mathematica/8.0/SystemFiles/Links/MathLink/DeveloperKit/Linux-x86-64/CompilerAdditions
+MPREP = $(MATH_ROOT)/mprep
+CXX = g++
+CXXFLAGS = -I$(MATH_ROOT) -L$(MATH_ROOT)
+
+BINARIES = mr
+
+all : $(BINARIES)
+
+mr : mrtm.c mr.cpp 
+	${CXX}  $(CXXFLAGS) mrtm.c mr.cpp  -lML64i3 -lm -lpthread -lrt -lstdc++ -o $@
+
+mrtm.c : mr.tm
+	${MPREP} mr.tm -o mrtm.c

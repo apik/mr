@@ -16,11 +16,11 @@ class PoleMass
   // Mass corrections
   // 
 public:
-  virtual std::complex<long double> m10(size_t nL = 2, size_t nH = 1) = 0;
+  // virtual std::complex<long double> m10(size_t nL = 2, size_t nH = 1) = 0;
   
-  virtual std::complex<long double> m11(size_t nL = 2, size_t nH = 1) = 0;
+  //virtual std::complex<long double> m11(size_t nL = 2, size_t nH = 1) = 0;
 
-  virtual std::complex<long double> m20(size_t nL = 2, size_t nH = 1) = 0;
+  // virtual std::complex<long double> m20(size_t nL = 2, size_t nH = 1) = 0;
 
 
   // Gaugeless limit

@@ -230,9 +230,10 @@ public:
   {
     imZ = mZ;
   }
-  void setmH(long double mH)
+  MSinput& setmH(long double mH)
   {
     imH = mH;
+    return *this;
   }
   void setmt(long double mt)
   {

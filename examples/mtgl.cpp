@@ -41,6 +41,15 @@ int main (int argc, char *argv[])
 
           dr dDR  = dr(*it, 2*it->MMt());
 
+          std::cout << "Test B      : " <<   pow(Tsil::B(0,80.*80.,173.*173.,1.),2) << std::endl;
+          std::cout << "Test B      : " <<   pow(Tsil::B(0,80.*80.,173.*173.,1.).real(),2) - Pi*Pi*pow((173.*173. - 80.*80.)/173./173.,2) << std::endl;
+
+          return 0;
+          // std::cout << "Test B rhs  : " <<  
+          //   Re(Tsil::Beps(0,it->MMW(),it->MMt(),it->MMt()))
+          //   + std::complex<long double>(0,1)*Pi*(it->MMt()-it->MMW())/it->MMt()*( -2 + 2*log((it->MMt()-it->MMW())/it->MMt()) - log(it->MMt()/it->MMt()) ) << std::endl;
+
+
           std::cout << "Test B      : " <<   Tsil::Beps
             (0,it->MMW(),it->MMt(),it->MMt()) << std::endl;
           std::cout << "Test B rhs  : " <<  

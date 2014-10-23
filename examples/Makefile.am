@@ -4,7 +4,7 @@ ACLOCAL_AMFLAGS = ${ACLOCAL_FLAGS} -I m4
 LDADD = ../mr/libmr.a
 EX_CFLAGS = $(MR_CFLAGS) -I$(top_srcdir)/tsil-1.21 -I$(top_srcdir)/mr
 
-noinst_PROGRAMS = mW mZ mH mt runAlpha runSM mb yukawa lambda yt gauge plotyukawa mtgl bezrukovFit
+noinst_PROGRAMS = mW mZ mH mt runAlpha runSM mb yukawa lambda yt gauge plotyukawa mtgl bezrukovFit GFermi
 if HAVE_ROOT
 noinst_PROGRAMS += mHroot interpolation
 endif 
@@ -12,6 +12,10 @@ endif
 mW_SOURCES =  mW.cpp
 mW_CPPFLAGS = $(EX_CFLAGS)
 mW_LDADD = $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.21 -ltsil -lm
+
+GFermi_SOURCES =  GFermi.cpp
+GFermi_CPPFLAGS = $(EX_CFLAGS)
+GFermi_LDADD = $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.21 -ltsil -lm
 
 mZ_SOURCES =  mZ.cpp
 mZ_CPPFLAGS = $(EX_CFLAGS)

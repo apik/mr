@@ -9,6 +9,7 @@
 #include "tt.hpp"
 #include "bb.hpp"
 #include "dr.hpp"
+#include "alphaGF.hpp"
 #include "betaQCD.hpp"
 #include "betaSM.hpp"
 

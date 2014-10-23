@@ -95,7 +95,9 @@ public:
     return 0*TSIL_GetBoldFunction(&result, "Sxuv",0);
   }
 
-  
+
+  std::pair<long double,long double> test2(long double epsabs = 1.E-5,long double epsrel=0.001);  
+
   void test()
   {
     std::vector<std::complex<long double> > diffMfin;
@@ -131,16 +133,16 @@ public:
   }
 
   // Pole -> MS
-  std::complex<long double> m01(size_t nL = 2, size_t nH = 1);
+  std::complex<long double> m01(size_t nL = 2, size_t nH = 1, int boson = 1);
 
   
-  std::complex<long double> m10(size_t nL = 2, size_t nH = 1);
+  std::complex<long double> m10(size_t nL = 2, size_t nH = 1, int boson = 1);
 
   
-  std::complex<long double> m11(size_t nL = 2, size_t nH = 1);
+  std::complex<long double> m11(size_t nL = 2, size_t nH = 1, int boson = 1);
   
 
-  std::complex<long double> m20(size_t nL = 2, size_t nH = 1);
+  std::complex<long double> m20(size_t nL = 2, size_t nH = 1, int boson = 1);
 
   // MS -> Pole
   std::complex<long double> m2MS01(size_t nL = 2, size_t nH = 1);
@@ -291,16 +293,16 @@ public:
 //   }
 
   // Pole -> MS
-  std::complex<long double> m01(size_t nL = 2, size_t nH = 1);
+  std::complex<long double> m01(size_t nL = 2, size_t nH = 1, int boson = 1);
 
   
-  std::complex<long double> m10(size_t nL = 2, size_t nH = 1);
+  std::complex<long double> m10(size_t nL = 2, size_t nH = 1, int boson = 1);
 
   
-  std::complex<long double> m11(size_t nL = 2, size_t nH = 1);
+  std::complex<long double> m11(size_t nL = 2, size_t nH = 1, int boson = 1);
   
 
-  std::complex<long double> m20(size_t nL = 2, size_t nH = 1);
+  std::complex<long double> m20(size_t nL = 2, size_t nH = 1, int boson = 1);
 
 
 };

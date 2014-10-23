@@ -9,13 +9,18 @@ MAINSRC = mr.hpp tsil.hpp tsil.cpp base.hpp
 # Running
 RUNSRC = betaSM.hpp betaSM.cpp betaQCD.hpp CRunDec.cpp CRunDec.h
 
+
+# alpha from G-Fermi and pole masses
+ALPHAGF = alphaGF.hpp alphaGF.cpp alphaGF10.cpp alphaGF11.cpp alphaGF20.cpp
+
+
 # 
 # MS-bar masses and constants
 #
 BBMS = bb.hpp bb.cpp bb01.cpp bb10.cpp bb11.cpp bb20.cpp yb01.cpp yb10.cpp yb11.cpp yb20.cpp
 WWMS = WW.hpp WW.cpp WW10.cpp WW11.cpp WW20.cpp yW10.cpp yW11.cpp yW20.cpp
 ZZMS = ZZ.hpp ZZ.cpp ZZ10.cpp ZZ11.cpp ZZ20.cpp yZ10.cpp yZ11.cpp yZ20.cpp
-HHMS = HH.hpp HH.cpp HH10.cpp HH11.cpp HH20.cpp lam10.cpp lam11.cpp lam20.cpp
+HHMS = HH.hpp HH.cpp HH10.cpp HH11.cpp HH20.cpp yH10.cpp yH11.cpp yH20.cpp
 TTMS = tt.hpp tt.cpp tt01.cpp tt02.cpp tt03.cpp tt10.cpp tt11.cpp tt20.cpp yt01.cpp yt10.cpp yt11.cpp yt20.cpp
 
 # 
@@ -38,7 +43,7 @@ ZZMS2OS = ZZ2MS10.cpp ZZ2MS11.cpp ZZ2MS20.cpp
 HHMS2OS = HH2MS10.cpp HH2MS11.cpp HH2MS20.cpp
 
 
-libmr_a_SOURCES =    $(MAINSRC) $(RUNSRC) $(BBMS) $(WWMS) $(ZZMS) $(HHMS) $(TTMS)\
+libmr_a_SOURCES =    $(MAINSRC) $(ALPHAGF) $(RUNSRC) $(BBMS) $(WWMS) $(ZZMS) $(HHMS) $(TTMS)\
  $(HHMSGL) $(BBMSGL) $(TTMSGL) $(DRMSOS)\
  $(WWMS2OS) $(ZZMS2OS) $(HHMS2OS)
 
