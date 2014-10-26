@@ -1,0 +1,138 @@
+#include <alphaGF.hpp>
+std::complex<long double> alphaGF::a10(size_t nL, size_t nH)
+{     
+      
+      
+    std::complex<long double> malphaGF[38], malphaGFret;
+
+    malphaGF[1]=pow(CW,-1);
+    malphaGF[2]=pow(MMZ,-1);
+    malphaGF[3]=pow(SW,-1);
+    malphaGF[4]=double(nL + nH);
+    malphaGF[5]=std::real(Tsil::B(0,0,MMZ,mu2));
+    malphaGF[6]=std::real(Tsil::B(0,0,MMW,mu2));
+    malphaGF[7]=double(nH);
+    malphaGF[8]=Tsil::B(MMt,MMt,MMZ,mu2);
+    malphaGF[9]=Tsil::B(0,MMt,MMW,mu2);
+    malphaGF[10]=Tsil::A(MMt,mu2);
+    malphaGF[11]=double(nL);
+    malphaGF[12]=Tsil::B(MMZ,MMH,MMZ,mu2);
+    malphaGF[13]=Tsil::B(MMW,MMH,MMW,mu2);
+    malphaGF[14]=Tsil::B(MMW,MMZ,MMW,mu2);
+    malphaGF[15]=Tsil::B(MMW,MMW,MMZ,mu2);
+    malphaGF[16]=Tsil::A(MMH,mu2);
+    malphaGF[17]=Tsil::A(MMZ,mu2);
+    malphaGF[18]=Tsil::A(MMW,mu2);
+    malphaGF[19]=1/( - MMW + MMH);
+   malphaGF[20]=pow(malphaGF[3],2);
+   malphaGF[21]=1./2.*malphaGF[20];
+   malphaGF[22]= - 4./3. + malphaGF[21];
+   malphaGF[22]=malphaGF[22]*malphaGF[20];
+   malphaGF[23]= - 8./3. - malphaGF[21];
+   malphaGF[23]=malphaGF[23]*malphaGF[20];
+   malphaGF[23]=32./9. + malphaGF[23];
+   malphaGF[24]=MMt*malphaGF[2];
+   malphaGF[23]=malphaGF[23]*malphaGF[24];
+   malphaGF[22]=malphaGF[23] + 16./9. + malphaGF[22];
+   malphaGF[22]=malphaGF[8]*malphaGF[22];
+   malphaGF[23]=pow(malphaGF[1],2);
+   malphaGF[25]=1./2.*malphaGF[23];
+   malphaGF[26]= - 19./6.*malphaGF[20] + 32./9. - malphaGF[25];
+   malphaGF[26]=malphaGF[2]*malphaGF[26];
+   malphaGF[27]=pow(malphaGF[1],4);
+   malphaGF[28]=pow(malphaGF[3],4);
+   malphaGF[29]=malphaGF[27] - malphaGF[28];
+   malphaGF[30]=pow(malphaGF[2],2);
+   malphaGF[31]=malphaGF[29]*malphaGF[30];
+   malphaGF[32]=1./2.*MMt;
+   malphaGF[33]= - malphaGF[32]*malphaGF[31];
+   malphaGF[26]=malphaGF[26] + malphaGF[33];
+   malphaGF[26]=malphaGF[10]*malphaGF[26];
+   malphaGF[33]=malphaGF[20] - 1;
+   malphaGF[33]=malphaGF[33]*malphaGF[20];
+   malphaGF[33]=malphaGF[33] - malphaGF[23];
+   malphaGF[34]=malphaGF[2]*malphaGF[33];
+   malphaGF[35]= - MMt*malphaGF[31];
+   malphaGF[34]=malphaGF[34] + malphaGF[35];
+   malphaGF[32]=malphaGF[34]*malphaGF[32];
+   malphaGF[34]=malphaGF[20] - 2;
+   malphaGF[35]=malphaGF[34]*malphaGF[20];
+   malphaGF[32]= - malphaGF[35] + malphaGF[32];
+   malphaGF[32]=malphaGF[9]*malphaGF[32];
+   malphaGF[21]= - 2./3. + malphaGF[21];
+   malphaGF[21]=malphaGF[21]*malphaGF[20];
+   malphaGF[21]=4./9. + malphaGF[21];
+   malphaGF[21]=malphaGF[5]*malphaGF[21];
+   malphaGF[36]=1./4.*malphaGF[23];
+   malphaGF[37]= - 29./12.*malphaGF[20] + 32./9. + malphaGF[36];
+   malphaGF[24]=malphaGF[37]*malphaGF[24];
+   malphaGF[21]=malphaGF[32] + malphaGF[26] + malphaGF[22] + 
+   malphaGF[24] - 20./27. + malphaGF[21];
+   malphaGF[21]=malphaGF[7]*malphaGF[21];
+   malphaGF[22]=malphaGF[23] + malphaGF[20];
+   malphaGF[24]= - malphaGF[17]*malphaGF[28];
+   malphaGF[26]=malphaGF[16]*malphaGF[27];
+   malphaGF[24]=malphaGF[24] + malphaGF[26];
+   malphaGF[24]=malphaGF[2]*malphaGF[24];
+   malphaGF[26]=malphaGF[13]*malphaGF[33];
+   malphaGF[27]=malphaGF[28]*malphaGF[12];
+   malphaGF[24]=malphaGF[26] + 1./4.*malphaGF[24] - 1./8.*malphaGF[22]
+    - malphaGF[27];
+   malphaGF[24]=malphaGF[2]*malphaGF[24];
+   malphaGF[26]=malphaGF[18]*malphaGF[31];
+   malphaGF[28]=malphaGF[13]*malphaGF[29];
+   malphaGF[28]=malphaGF[27] + malphaGF[28];
+   malphaGF[28]=MMH*malphaGF[30]*malphaGF[28];
+   malphaGF[26]=malphaGF[26] - malphaGF[28];
+   malphaGF[24]=malphaGF[24] - 1./4.*malphaGF[26];
+   malphaGF[24]=MMH*malphaGF[24];
+   malphaGF[24]=malphaGF[24] - 44 - 1./8.*malphaGF[23];
+   malphaGF[26]=17 + malphaGF[23];
+   malphaGF[26]=malphaGF[26]*malphaGF[36];
+   malphaGF[28]=2*malphaGF[20];
+   malphaGF[29]= - 31./4. + malphaGF[28];
+   malphaGF[29]=malphaGF[29]*malphaGF[20];
+   malphaGF[26]=malphaGF[26] + malphaGF[29];
+   malphaGF[26]=malphaGF[17]*malphaGF[26];
+   malphaGF[29]=9 - 1./6.*malphaGF[23];
+   malphaGF[25]=malphaGF[29]*malphaGF[25];
+   malphaGF[28]=19./2. - malphaGF[28];
+   malphaGF[28]=malphaGF[28]*malphaGF[20];
+   malphaGF[25]=1./3.*malphaGF[28] - 4 + malphaGF[25];
+   malphaGF[25]=malphaGF[18]*malphaGF[25];
+   malphaGF[22]=malphaGF[16]*malphaGF[22];
+   malphaGF[22]=malphaGF[25] + 1./3.*malphaGF[26] - 1./4.*malphaGF[22];
+   malphaGF[22]=malphaGF[2]*malphaGF[22];
+   malphaGF[25]= - 2 + 3./4.*malphaGF[20];
+   malphaGF[26]=11*malphaGF[20];
+   malphaGF[25]=malphaGF[25]*malphaGF[26];
+   malphaGF[26]=4 + malphaGF[36];
+   malphaGF[23]=malphaGF[26]*malphaGF[23];
+   malphaGF[23]=malphaGF[25] + 8 + 1./3.*malphaGF[23];
+   malphaGF[23]=malphaGF[14]*malphaGF[23];
+   malphaGF[26]=malphaGF[16] - malphaGF[18];
+   malphaGF[26]=malphaGF[19]*malphaGF[26];
+   malphaGF[28]= - malphaGF[13]*malphaGF[34];
+   malphaGF[26]=3./4.*malphaGF[26] + malphaGF[28] + 63./8.;
+   malphaGF[20]=malphaGF[20]*malphaGF[26];
+   malphaGF[26]=20./9. + malphaGF[35];
+   malphaGF[26]=malphaGF[5]*malphaGF[26];
+   malphaGF[26]=malphaGF[26] - 20./27.;
+   malphaGF[26]=malphaGF[11]*malphaGF[26];
+   malphaGF[28]=4 + malphaGF[35];
+   malphaGF[28]=malphaGF[5]*malphaGF[28];
+   malphaGF[28]= - 4./3. + malphaGF[28];
+   malphaGF[29]=1./3.*malphaGF[4];
+   malphaGF[28]=malphaGF[28]*malphaGF[29];
+   malphaGF[30]=pow(CW,2);
+   malphaGF[30]=4*malphaGF[30];
+   malphaGF[25]= - malphaGF[30] - 41./3. - malphaGF[25];
+   malphaGF[25]=malphaGF[15]*malphaGF[25];
+   malphaGF[29]= - malphaGF[11] - malphaGF[29];
+   malphaGF[29]=malphaGF[6]*malphaGF[29]*malphaGF[35];
+
+      malphaGFret = malphaGF[20] + malphaGF[21] + malphaGF[22] + 
+      malphaGF[23] + 1./3.*malphaGF[24] + malphaGF[25] + malphaGF[26]
+       + malphaGF[27] + malphaGF[28] + malphaGF[29] - malphaGF[30];
+      return malphaGFret;
+}
