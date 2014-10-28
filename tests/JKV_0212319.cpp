@@ -20,13 +20,13 @@ TEST_CASE
       SECTION( "W,\\mu=MW" ) 
         {
           
-          ww dMW_at_mu_eq_MW  = ww(mi, mi.mmW());
+          WW<MS> dMW_at_mu_eq_MW  = WW<MS>(mi, mi.mmW());
 
-          ww dMZ_at_mu_eq_MZ  = ww(mi, mi.mmZ());
+          WW<MS> dMZ_at_mu_eq_MZ  = WW<MS>(mi, mi.mmZ());
           
           tt dMt  = tt(oi, mi.mmW());
-          WW dMW  = WW(oi, mi.mmW());
-          ZZ dMZ  = ZZ(oi, mi.mmZ());
+          WW<OS> dMW  = WW<OS>(oi, mi.mmW());
+          ZZ<OS> dMZ  = ZZ<OS>(oi, mi.mmZ());
           // mi.setmt(0);
           
           std::cout << dMW_at_mu_eq_MW.m10(1,0,0).real() << "   --   " <<  dMW_at_mu_eq_MW.m10(0,1,0).real() << std::endl;
@@ -58,7 +58,7 @@ TEST_CASE
         }
       SECTION( "Z,\\mu=MZ" ) 
         {
-          zz dMZ_at_mu_eq_MZ  = zz(mi, mi.mmZ());
+          ZZ<MS> dMZ_at_mu_eq_MZ  = ZZ<MS>(mi, mi.mmZ());
           // mi.setmt(0.1);
           REQUIRE( dMZ_at_mu_eq_MZ.m20(1,0).real() == Approx( 1.95306e+09 ).epsilon(0.00001) );
 

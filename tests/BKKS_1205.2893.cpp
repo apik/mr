@@ -34,14 +34,14 @@ TEST_CASE
     }
   SECTION( "Higgs,\\mu=Mz" ) 
     {
-      HH dMHZ  = HH(oi, oi.MMZ());
+      HH<OS> dMHZ  = HH<OS>(oi, oi.MMZ());
             
       REQUIRE( dMHZ.my10().real() == Approx(  203.31 ) );
       REQUIRE( dMHZ.my11().real() == Approx( -3805.1 ) );
     }
   SECTION( "Higgs,\\mu=Mt" ) 
     {
-      HH dMHt  = HH(oi, oi.MMt());
+      HH<OS> dMHt  = HH<OS>(oi, oi.MMt());
             
       REQUIRE( dMHt.my10().real() == Approx( -18.4183 ) );
       REQUIRE( dMHt.my11().real() == Approx( -1953.91 ) );

@@ -4,7 +4,7 @@ bb::mgl11(size_t nL, size_t nH, size_t boson)
 {     
       
       
-    std::complex<long double> armbbbarGL[17], mbbbarGLret;
+    std::complex<long double> armbbbarGL[18], mbbbarGLret;
 
     armbbbarGL[1]=double(boson);
     armbbbarGL[2]=pow(SW,-1);
@@ -18,25 +18,26 @@ bb::mgl11(size_t nL, size_t nH, size_t boson)
     armbbbarGL[10]=pow(MMt,-1);
     armbbbarGL[11]=Tsil::Aeps(MMt,mu2);
     armbbbarGL[12]=Tsil::Aeps(MMb,mu2);
-   armbbbarGL[13]=MMt*armbbbarGL[3];
-   armbbbarGL[14]= - MMt*armbbbarGL[3];
-   armbbbarGL[14]=1./2. + 4*armbbbarGL[14];
-   armbbbarGL[14]=armbbbarGL[7]*armbbbarGL[8]*armbbbarGL[14];
-   armbbbarGL[15]= - 1./2.*armbbbarGL[10] - 24*armbbbarGL[3];
+   armbbbarGL[13]=pow(MMt,2);
+   armbbbarGL[14]=armbbbarGL[8]*armbbbarGL[7];
+   armbbbarGL[15]=3*armbbbarGL[14];
+   armbbbarGL[16]=armbbbarGL[15] - 1;
+   armbbbarGL[17]= - MMt*armbbbarGL[16];
+   armbbbarGL[17]=armbbbarGL[17] - 6*armbbbarGL[9];
+   armbbbarGL[17]=armbbbarGL[9]*armbbbarGL[17];
+   armbbbarGL[13]=8*armbbbarGL[13] + armbbbarGL[17];
+   armbbbarGL[13]=armbbbarGL[3]*armbbbarGL[13];
+   armbbbarGL[13]= - armbbbarGL[5] + armbbbarGL[13] + armbbbarGL[11];
+   armbbbarGL[17]= - armbbbarGL[9]*armbbbarGL[10];
+   armbbbarGL[15]=armbbbarGL[17] + 13 + armbbbarGL[15];
    armbbbarGL[15]=armbbbarGL[9]*armbbbarGL[15];
-   armbbbarGL[14]=armbbbarGL[15] + 3*armbbbarGL[14] + 13./2. + 4*
-   armbbbarGL[13];
-   armbbbarGL[14]=armbbbarGL[9]*armbbbarGL[14];
-   armbbbarGL[15]=3*armbbbarGL[6] + 1./2.*MMt;
-   armbbbarGL[15]=armbbbarGL[8]*armbbbarGL[15];
-   armbbbarGL[16]= - armbbbarGL[7]*armbbbarGL[8];
-   armbbbarGL[15]=armbbbarGL[15] + 5*armbbbarGL[16];
-   armbbbarGL[15]=armbbbarGL[7]*armbbbarGL[15];
-   armbbbarGL[13]= - 103./12. + 32*armbbbarGL[13];
-   armbbbarGL[13]=MMt*armbbbarGL[13];
-   armbbbarGL[13]=armbbbarGL[14] + 1./2.*armbbbarGL[15] + 
-   armbbbarGL[13] - 1./2.*armbbbarGL[6] - 4*armbbbarGL[5] + 5*
-   armbbbarGL[12] + 4*armbbbarGL[11];
+   armbbbarGL[16]=armbbbarGL[6]*armbbbarGL[16];
+   armbbbarGL[15]=armbbbarGL[15] + armbbbarGL[16];
+   armbbbarGL[16]=armbbbarGL[8]*pow(armbbbarGL[7],2);
+   armbbbarGL[14]= - 103./3. + armbbbarGL[14];
+   armbbbarGL[14]=MMt*armbbbarGL[14];
+   armbbbarGL[13]=1./4.*armbbbarGL[14] - 5./2.*armbbbarGL[16] + 5*
+   armbbbarGL[12] + 1./2.*armbbbarGL[15] + 4*armbbbarGL[13];
 
       mbbbarGLret = armbbbarGL[13]*armbbbarGL[4]*pow(armbbbarGL[2],2)*
       armbbbarGL[1];

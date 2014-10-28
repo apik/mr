@@ -14,12 +14,13 @@ tt::mgl10(size_t nL, size_t nH, size_t boson)
     armttbarGL[6]=Tsil::A(MMt,mu2);
     armttbarGL[7]=pow(MMH,-1);
     armttbarGL[8]=std::real(Tsil::B(0,0,MMt,mu2));
-   armttbarGL[9]= - armttbarGL[2]*MMH;
-   armttbarGL[9]=1./2.*armttbarGL[9] + armttbarGL[5] + armttbarGL[6];
-   armttbarGL[10]= - armttbarGL[6]*armttbarGL[7];
-   armttbarGL[10]=1./2.*armttbarGL[2] + 1./8.*armttbarGL[8] + 3*
+   armttbarGL[9]=1./2.*armttbarGL[2];
+   armttbarGL[10]=armttbarGL[6]*armttbarGL[7];
+   armttbarGL[10]=1./8.*armttbarGL[8] + armttbarGL[9] - 3*
    armttbarGL[10];
    armttbarGL[10]=MMt*armttbarGL[10];
+   armttbarGL[9]= - MMH*armttbarGL[9];
+   armttbarGL[9]=armttbarGL[9] + armttbarGL[5] + armttbarGL[6];
    armttbarGL[9]=1./4.*armttbarGL[9] + armttbarGL[10];
 
       mttbarGLret = armttbarGL[9]*armttbarGL[4]*pow(armttbarGL[3],2)*

@@ -12,9 +12,9 @@ dr::drgl11(size_t nL, size_t nH, size_t boson)
     ardrgl[4]=pow(MMW,-1);
     ardrgl[5]=Tsil::A(MMt,mu2);
     ardrgl[6]=pow(MMt,-1);
-   ardrgl[7]=MMt*ardrgl[3];
-   ardrgl[8]=pow(Pi,2);
-   ardrgl[7]=64*ardrgl[7] - 29./2. + 2./3.*ardrgl[8];
+   ardrgl[7]=pow(Pi,2);
+   ardrgl[8]=MMt*ardrgl[3];
+   ardrgl[7]=64*ardrgl[8] - 29./2. + 2./3.*ardrgl[7];
    ardrgl[7]=MMt*ardrgl[7];
    ardrgl[8]=ardrgl[6] - 8*ardrgl[3];
    ardrgl[8]=ardrgl[5]*ardrgl[8];

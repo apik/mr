@@ -4,7 +4,7 @@ tt::m20(size_t nL, size_t nH, size_t boson)
 {     
       
       
-    std::complex<long double> armttbar[311], mttbarret;
+    std::complex<long double> armttbar[469], mttbarret;
 
     armttbar[1]=double(nL + nH);
     armttbar[2]=pow(CW,-1);
@@ -107,4509 +107,5092 @@ tt::m20(size_t nL, size_t nH, size_t boson)
     armttbar[99]=1/(4*MMt - MMZ);
     armttbar[100]=1/( - 4*MMW + MMH);
     armttbar[101]=1/( - 4*MMZ + MMH);
-   armttbar[102]=55*armttbar[39];
-   armttbar[103]= - 209./2.*armttbar[41] - 367./6. + armttbar[102];
-   armttbar[104]=armttbar[14]*armttbar[101];
-   armttbar[105]=1./2.*armttbar[104];
-   armttbar[106]=5./16.*armttbar[12];
-   armttbar[107]=1./2.*armttbar[36];
-   armttbar[103]=armttbar[106] - 15./16.*armttbar[8] - 23./64.*
-   armttbar[21] + armttbar[105] + armttbar[107] + 1./4.*armttbar[103]
-    - armttbar[38];
-   armttbar[103]=armttbar[12]*armttbar[103];
-   armttbar[108]= - 33*armttbar[41];
-   armttbar[109]= - 133./8. + armttbar[108];
-   armttbar[110]=27./32.*armttbar[21];
-   armttbar[109]=armttbar[110] + 1./4.*armttbar[109] + armttbar[36];
-   armttbar[109]=armttbar[99]*armttbar[109];
-   armttbar[111]=1./2.*armttbar[98] + armttbar[101];
-   armttbar[112]=armttbar[8]*armttbar[101];
-   armttbar[113]=3*armttbar[112];
-   armttbar[114]= - armttbar[12]*armttbar[101];
-   armttbar[109]=3*armttbar[109] + armttbar[114] + 7*armttbar[111] + 
-   armttbar[113];
-   armttbar[109]=armttbar[15]*armttbar[109];
-   armttbar[111]= - 3*armttbar[93];
-   armttbar[115]=1./2.*armttbar[42];
-   armttbar[116]=3*armttbar[20];
-   armttbar[117]=armttbar[116] + 5*armttbar[18] + armttbar[111] + 
-   armttbar[115];
-   armttbar[117]=armttbar[101]*armttbar[117];
-   armttbar[118]= - 11*armttbar[41];
-   armttbar[119]=11*armttbar[39];
-   armttbar[120]=armttbar[14]*armttbar[100];
-   armttbar[121]= - 25./32.*armttbar[21] + 1./4.*armttbar[120] - 
-   armttbar[38] + armttbar[118] - 2099./384. + armttbar[119];
-   armttbar[121]=armttbar[21]*armttbar[121];
-   armttbar[122]=3./2.*armttbar[50] + armttbar[94];
-   armttbar[123]=5*armttbar[92];
-   armttbar[122]=armttbar[123] + 3*armttbar[93] + 11*armttbar[122] - 27.
-   /4.*armttbar[96];
-   armttbar[124]= - 5./2.*armttbar[14];
-   armttbar[125]= - 1./4.*armttbar[32];
-   armttbar[122]= - 237./8.*armttbar[16] + armttbar[124] - 207./16.*
-   armttbar[20] - 337./32.*armttbar[18] - 55./2.*armttbar[19] + 9./8.*
-   armttbar[33] + 27./16.*armttbar[34] + armttbar[125] + 1./2.*
-   armttbar[122] - armttbar[48];
-   armttbar[122]=armttbar[99]*armttbar[122];
-   armttbar[126]=9./2.*armttbar[19];
-   armttbar[127]=1./2.*armttbar[49];
-   armttbar[128]=armttbar[126] - 1./4.*armttbar[42] + armttbar[127] - 3
-   *armttbar[94];
-   armttbar[128]=armttbar[100]*armttbar[128];
-   armttbar[129]= - 1./2.*armttbar[37];
-   armttbar[130]= - 1./4.*armttbar[21];
-   armttbar[131]=armttbar[130] + armttbar[129] - 1 - armttbar[40];
+   armttbar[102]=pow(armttbar[2],2);
+   armttbar[103]=7./6.*armttbar[102];
+   armttbar[104]=armttbar[103] - 11;
+   armttbar[105]=1./3.*armttbar[102];
+   armttbar[106]=armttbar[104]*armttbar[105];
+   armttbar[107]=pow(armttbar[4],2);
+   armttbar[108]=1./2.*armttbar[107];
+   armttbar[109]=armttbar[108] + 11./3.;
+   armttbar[110]=armttbar[109]*armttbar[107];
+   armttbar[106]=armttbar[106] - armttbar[110];
+   armttbar[110]=armttbar[106]*armttbar[84];
+   armttbar[111]=101./96. - armttbar[72];
+   armttbar[111]=armttbar[111]*armttbar[108];
+   armttbar[112]= - 8185./96. + 11*armttbar[72];
+   armttbar[112]=1./3.*armttbar[112];
+   armttbar[111]= - armttbar[112] + armttbar[111];
+   armttbar[111]=armttbar[111]*armttbar[107];
+   armttbar[113]=1./8.*armttbar[102];
+   armttbar[114]=7*armttbar[72];
+   armttbar[115]=691./32. + armttbar[114];
+   armttbar[115]=1./9.*armttbar[115] + armttbar[113];
+   armttbar[116]=1./2.*armttbar[102];
+   armttbar[115]=armttbar[115]*armttbar[116];
+   armttbar[112]= - armttbar[112] + armttbar[115];
+   armttbar[112]=armttbar[112]*armttbar[102];
+   armttbar[111]=armttbar[111] + armttbar[112];
+   armttbar[112]=armttbar[107] + 1;
+   armttbar[115]=armttbar[112]*armttbar[107];
+   armttbar[117]=armttbar[115] + armttbar[102];
+   armttbar[118]=armttbar[117]*armttbar[40];
+   armttbar[111]=armttbar[118] + 1./2.*armttbar[111] - armttbar[110];
+   armttbar[119]=armttbar[108] + 1;
+   armttbar[120]=armttbar[119]*armttbar[107];
+   armttbar[121]=armttbar[116] + 1;
+   armttbar[122]=armttbar[121]*armttbar[102];
+   armttbar[123]=armttbar[120] + armttbar[122];
+   armttbar[124]=armttbar[123]*armttbar[37];
+   armttbar[125]=1./2.*armttbar[124];
+   armttbar[126]=25./3. + armttbar[107];
+   armttbar[126]=armttbar[126]*armttbar[108];
+   armttbar[127]=25./2. - armttbar[105];
+   armttbar[127]=armttbar[127]*armttbar[105];
+   armttbar[126]=armttbar[126] + armttbar[127];
+   armttbar[126]=armttbar[25]*armttbar[126];
+   armttbar[127]=armttbar[107]*armttbar[100];
+   armttbar[128]=armttbar[127]*armttbar[112];
+   armttbar[129]=armttbar[102]*armttbar[100];
+   armttbar[128]=armttbar[129] + armttbar[128];
+   armttbar[129]=armttbar[128]*armttbar[16];
+   armttbar[130]=1./4.*armttbar[19];
+   armttbar[131]= - armttbar[128]*armttbar[130];
+   armttbar[111]=armttbar[131] + 7./4.*armttbar[129] + armttbar[125] + 
+   armttbar[126] + 1./2.*armttbar[111];
+   armttbar[126]=armttbar[118] + armttbar[124];
+   armttbar[131]=367./9. - 51./4.*armttbar[107];
+   armttbar[131]=armttbar[131]*armttbar[107];
+   armttbar[132]=77./4.*armttbar[102];
+   armttbar[133]=295./3. + armttbar[132];
+   armttbar[133]=armttbar[133]*armttbar[105];
+   armttbar[131]= - 3*armttbar[129] + armttbar[131] + armttbar[133] - 
+   armttbar[126];
    armttbar[131]=armttbar[8]*armttbar[131];
-   armttbar[132]= - 9./4.*armttbar[98] - armttbar[100];
-   armttbar[132]=armttbar[21]*armttbar[132];
-   armttbar[132]=armttbar[132] - 171./2.*armttbar[98] + 11*
-   armttbar[100];
-   armttbar[133]=armttbar[8]*armttbar[100];
-   armttbar[132]=1./2.*armttbar[132] + 3*armttbar[133];
-   armttbar[132]=armttbar[16]*armttbar[132];
-   armttbar[133]=1./2.*armttbar[24];
-   armttbar[134]=7./8.*armttbar[5] + 9./8.*armttbar[34] + 15*
-   armttbar[94] - 7./4.*armttbar[96];
-   armttbar[134]=armttbar[98]*armttbar[134];
-   armttbar[135]= - armttbar[19]*armttbar[98];
-   armttbar[136]=armttbar[18]*armttbar[98];
-   armttbar[137]= - 43./8.*armttbar[98] + armttbar[100];
-   armttbar[137]=armttbar[20]*armttbar[137];
-   armttbar[138]= - 3*armttbar[100] - armttbar[101];
-   armttbar[138]=1./8.*armttbar[14]*armttbar[138];
-   armttbar[139]=3./2.*armttbar[40];
-   armttbar[140]=3./4.*armttbar[37];
-   armttbar[141]=pow(Pi,2);
-   armttbar[103]=1./4.*armttbar[109] + 3./4.*armttbar[122] + 1./2.*
-   armttbar[132] + 1./4.*armttbar[103] + 3./2.*armttbar[131] + 1./2.*
-   armttbar[121] + armttbar[138] - 13./8.*armttbar[36] + 1./4.*
-   armttbar[38] + 1./4.*armttbar[117] + 561./32.*armttbar[41] + 
-   armttbar[140] + 3./2.*armttbar[137] + 3./16.*armttbar[136] - 231./16.
-   *armttbar[39] + 1./2.*armttbar[128] - 347./256.*armttbar[13] + 
-   armttbar[139] + 123./8.*armttbar[135] + 1./2.*armttbar[134] + 
-   armttbar[133] - 1./2.*armttbar[25] + 9./4.*armttbar[23] - 63./64.*
-   armttbar[51] - armttbar[45] - 1./8.*armttbar[79] - 59./96.*
-   armttbar[88] - 27./8.*armttbar[35] + 365./128.*armttbar[87] + 7./64.
-   *armttbar[72] + 7./64.*armttbar[74] + 1./16.*armttbar[75] + 1./4.*
-   armttbar[77] + 195./64.*armttbar[90] + 3./32.*armttbar[141] + 1./4.*
-   armttbar[82] - 73./96.*armttbar[89] + 31./32.*armttbar[80] + 1./2.*
-   armttbar[43] - 41./256.*armttbar[76] + 1./2.*armttbar[78] + 1./8.*
-   armttbar[73] + 28655./3072. - 3*armttbar[83];
-   armttbar[109]=1./2. - armttbar[40];
-   armttbar[117]=armttbar[109] + armttbar[129];
-   armttbar[121]=armttbar[16]*armttbar[117];
-   armttbar[117]=armttbar[15]*armttbar[117];
-   armttbar[117]=armttbar[121] + 1./2.*armttbar[117];
-   armttbar[117]=armttbar[3]*armttbar[117];
-   armttbar[121]=3*armttbar[40];
-   armttbar[122]=3./2.*armttbar[37];
-   armttbar[128]=9./2.*armttbar[36];
-   armttbar[131]=3./8.*armttbar[12];
-   armttbar[117]=9*armttbar[117] + armttbar[131] + 3./8.*armttbar[21]
-    + armttbar[128] - 825./8.*armttbar[41] + armttbar[122] + 33./2.*
-   armttbar[39] + 331./12. + armttbar[121];
-   armttbar[117]=armttbar[3]*armttbar[117];
-   armttbar[132]=3*armttbar[78];
-   armttbar[134]=1./2.*armttbar[82];
-   armttbar[135]= - 1./2.*armttbar[23];
-   armttbar[137]= - 1./2.*armttbar[89];
-   armttbar[142]=armttbar[135] - 3*armttbar[51] + armttbar[85] + 
-   armttbar[134] + armttbar[137] - 13./2. + armttbar[132];
-   armttbar[142]=armttbar[100]*armttbar[142];
-   armttbar[143]=3./2.*armttbar[77];
-   armttbar[144]= - 3./2.*armttbar[51];
-   armttbar[145]= - 1./2.*armttbar[13];
-   armttbar[146]=1./2.*armttbar[79];
-   armttbar[147]=armttbar[145] + armttbar[84] + armttbar[144] + 
-   armttbar[146] - 1./2.*armttbar[88] - 5 + armttbar[143];
-   armttbar[147]=armttbar[101]*armttbar[147];
-   armttbar[148]= - 1./8.*armttbar[8];
-   armttbar[110]=armttbar[131] + armttbar[148] + armttbar[110] - 33./4.
-   *armttbar[41] + armttbar[36];
-   armttbar[110]=armttbar[12]*armttbar[110];
-   armttbar[131]=4879./4. - 27*armttbar[76];
-   armttbar[131]= - 81./4.*armttbar[87] + 1./2.*armttbar[72] + 1./2.*
-   armttbar[74] - 3*armttbar[75] - 27./2.*armttbar[90] + 1./8.*
-   armttbar[131] + 33*armttbar[80];
-   armttbar[149]= - 1./8.*armttbar[51];
-   armttbar[150]= - 27./32.*armttbar[21];
-   armttbar[110]=armttbar[110] + armttbar[150] - armttbar[36] + 33./4.*
-   armttbar[41] - 185./32.*armttbar[13] + armttbar[149] - armttbar[79]
-    + 1./4.*armttbar[131] + 3*armttbar[88];
-   armttbar[110]=armttbar[99]*armttbar[110];
-   armttbar[131]=1./2.*armttbar[87] + 7./8. + armttbar[90];
-   armttbar[151]=pow(armttbar[98],2);
-   armttbar[131]=armttbar[151]*armttbar[131];
-   armttbar[152]=armttbar[129] + 3./4. - armttbar[40];
-   armttbar[153]=pow(armttbar[3],2);
-   armttbar[152]=armttbar[153]*armttbar[152];
-   armttbar[131]=1./8.*armttbar[131] + 3*armttbar[152];
-   armttbar[131]=MMZ*armttbar[131];
-   armttbar[152]=25 - 11./2.*armttbar[90];
-   armttbar[154]= - 1./2.*armttbar[5];
-   armttbar[155]=armttbar[96] + armttbar[154];
-   armttbar[155]=armttbar[98]*armttbar[155];
-   armttbar[152]=3./2.*armttbar[155] + 1./2.*armttbar[152] - 
-   armttbar[87];
-   armttbar[152]=armttbar[98]*armttbar[152];
-   armttbar[156]= - armttbar[61] - 7./2.*armttbar[65] - 7./8.*
-   armttbar[68] + armttbar[66];
-   armttbar[157]= - 1./2.*armttbar[101];
-   armttbar[158]= - armttbar[100] + armttbar[157];
-   armttbar[158]=armttbar[8]*armttbar[158];
-   armttbar[159]= - armttbar[16]*armttbar[151];
-   armttbar[160]= - armttbar[15]*armttbar[151];
-   armttbar[161]= - armttbar[21]*armttbar[100];
-   armttbar[110]=3./2.*armttbar[131] + 1./2.*armttbar[117] + 3./16.*
-   armttbar[160] + 3./16.*armttbar[110] + 9./32.*armttbar[159] + 1./8.*
-   armttbar[114] + 3./4.*armttbar[158] + 1./8.*armttbar[161] + 1./4.*
-   armttbar[147] + 1./4.*armttbar[142] + 1./8.*armttbar[152] - 1./4.*
-   armttbar[60] - 1./8.*armttbar[64] + 1./2.*armttbar[156] - 
-   armttbar[67];
-   armttbar[110]=MMZ*armttbar[110];
-   armttbar[117]= - armttbar[42] + armttbar[14];
-   armttbar[131]= - 1./2.*armttbar[12];
-   armttbar[142]=armttbar[131] - 1 - armttbar[21];
-   armttbar[147]=armttbar[16]*armttbar[142];
-   armttbar[142]=armttbar[15]*armttbar[142];
-   armttbar[152]= - armttbar[21]*armttbar[14];
-   armttbar[156]= - armttbar[12]*armttbar[14];
-   armttbar[142]=3./2.*armttbar[142] + 3*armttbar[147] + 1./2.*
-   armttbar[156] + 3./2.*armttbar[117] + armttbar[152];
-   armttbar[142]=armttbar[3]*armttbar[142];
-   armttbar[147]= - 55*armttbar[39];
-   armttbar[158]=457./6. + armttbar[147];
-   armttbar[162]=77*armttbar[41];
-   armttbar[158]=1./2.*armttbar[158] + armttbar[162];
-   armttbar[158]=1./2.*armttbar[158] + armttbar[38];
-   armttbar[163]= - armttbar[14]*armttbar[101];
-   armttbar[158]=armttbar[131] - 27./16.*armttbar[21] + 1./4.*
-   armttbar[163] + 1./2.*armttbar[158] - armttbar[36];
-   armttbar[158]=armttbar[12]*armttbar[158];
-   armttbar[164]= - 11*armttbar[39];
-   armttbar[165]=121./2.*armttbar[41] + 131./6. + armttbar[164];
-   armttbar[166]= - armttbar[14]*armttbar[100];
-   armttbar[167]=1./2.*armttbar[166];
-   armttbar[165]= - 11./8.*armttbar[21] + armttbar[167] + 1./2.*
-   armttbar[165] - armttbar[36];
-   armttbar[165]=armttbar[21]*armttbar[165];
-   armttbar[168]= - 3./2.*armttbar[76] - 229./8. - 11*armttbar[83];
-   armttbar[168]= - 13./12.*armttbar[89] - 33./4.*armttbar[80] + 3./2.*
-   armttbar[168] - 5*armttbar[43];
-   armttbar[169]=3*armttbar[19] - armttbar[49] + armttbar[115];
-   armttbar[169]=armttbar[100]*armttbar[169];
-   armttbar[170]= - armttbar[48] + armttbar[115];
-   armttbar[171]=armttbar[170] + 3*armttbar[18];
-   armttbar[171]=armttbar[101]*armttbar[171];
-   armttbar[172]=armttbar[100] + 1./2.*armttbar[101];
-   armttbar[173]=armttbar[14]*armttbar[172];
-   armttbar[174]=armttbar[21]*armttbar[100];
-   armttbar[175]=armttbar[100] + armttbar[174];
-   armttbar[175]=armttbar[16]*armttbar[175];
-   armttbar[176]=armttbar[12]*armttbar[101];
-   armttbar[177]=armttbar[101] + armttbar[176];
-   armttbar[177]=armttbar[15]*armttbar[177];
-   armttbar[178]=armttbar[17]*armttbar[3];
-   armttbar[142]=3./4.*armttbar[178] + 1./2.*armttbar[142] + 1./2.*
-   armttbar[177] + armttbar[175] + armttbar[158] + armttbar[165] + 3./2.
-   *armttbar[173] + 1./2.*armttbar[171] + armttbar[169] + 63./8.*
-   armttbar[13] - 5./2.*armttbar[24] + 39./4.*armttbar[23] - 1./2.*
-   armttbar[84] + 3*armttbar[45] + armttbar[146] - 13./48.*armttbar[88]
-    - armttbar[85] + 61./4.*armttbar[87] - 5./8.*armttbar[75] + 15*
-   armttbar[90] - 1./8.*armttbar[141] + 1./2.*armttbar[168] + 
-   armttbar[82];
-   armttbar[146]=3*armttbar[68];
-   armttbar[158]=armttbar[146] - armttbar[66];
-   armttbar[165]=3*armttbar[65];
-   armttbar[158]=1./2.*armttbar[158] + armttbar[165];
-   armttbar[168]= - armttbar[82] - 5 + armttbar[89];
-   armttbar[169]=1./2.*armttbar[23];
-   armttbar[168]=armttbar[169] + 1./2.*armttbar[168] - armttbar[85];
-   armttbar[168]=1./2.*armttbar[100]*armttbar[168];
-   armttbar[171]= - armttbar[79] - 5 + armttbar[88];
-   armttbar[173]=1./2.*armttbar[13];
-   armttbar[171]=armttbar[173] + 1./2.*armttbar[171] - armttbar[84];
-   armttbar[171]=armttbar[101]*armttbar[171];
-   armttbar[175]=1./4.*armttbar[174];
-   armttbar[179]= - armttbar[21] + armttbar[131];
-   armttbar[179]=armttbar[3]*armttbar[179];
-   armttbar[158]=3./8.*armttbar[179] + 1./8.*armttbar[176] + 
-   armttbar[175] + 1./4.*armttbar[171] + armttbar[168] + 1./2.*
-   armttbar[158] + armttbar[67];
-   armttbar[158]=MMZ*armttbar[158];
-   armttbar[142]=1./4.*armttbar[142] + armttbar[158];
-   armttbar[142]=MMZ*armttbar[142];
-   armttbar[119]=191./2. + armttbar[119];
-   armttbar[158]=armttbar[16]*armttbar[100];
-   armttbar[179]=11*armttbar[41];
-   armttbar[180]= - 1./2.*armttbar[38];
-   armttbar[119]=1./2.*armttbar[158] + 61./32.*armttbar[12] + 109./24.*
-   armttbar[21] + armttbar[167] + armttbar[180] + 1./8.*armttbar[119]
-    + armttbar[179];
-   armttbar[119]=armttbar[16]*armttbar[119];
-   armttbar[147]= - 233./2. + armttbar[147];
-   armttbar[147]=1./2.*armttbar[147] + armttbar[162];
-   armttbar[147]=1./2.*armttbar[147] + armttbar[38];
-   armttbar[158]= - 1./16.*armttbar[21];
-   armttbar[162]=armttbar[15]*armttbar[101];
-   armttbar[147]=1./2.*armttbar[162] - 67./48.*armttbar[12] + 
-   armttbar[158] + 1./2.*armttbar[163] + 1./2.*armttbar[147] - 
-   armttbar[36];
-   armttbar[147]=armttbar[15]*armttbar[147];
-   armttbar[167]=1./2.*armttbar[48];
-   armttbar[181]=armttbar[21]*armttbar[14];
-   armttbar[182]=1./8.*armttbar[181];
-   armttbar[183]=armttbar[12]*armttbar[14];
-   armttbar[184]=1./4.*armttbar[183] + armttbar[182] + 5./8.*
-   armttbar[14] + 281./24.*armttbar[20] + 37./2.*armttbar[18] + 413./8.
-   *armttbar[19] + 7./16.*armttbar[42] - 3./2.*armttbar[5] - 1./16.*
-   armttbar[33] - 17./4.*armttbar[34] + armttbar[167] - 7./12.*
-   armttbar[92] - 5./8.*armttbar[93] + 93./4.*armttbar[96] - 57./8.*
-   armttbar[94] - 171./8.*armttbar[50] - 7./6.*armttbar[95] + 
-   armttbar[49];
-   armttbar[185]= - armttbar[16] - 1./4.*armttbar[15];
-   armttbar[185]=armttbar[15]*armttbar[185];
-   armttbar[186]=pow(armttbar[16],2);
-   armttbar[185]= - armttbar[186] + armttbar[185];
-   armttbar[185]=armttbar[3]*armttbar[185];
-   armttbar[187]= - 17 + 5*armttbar[39];
-   armttbar[187]=1./2.*armttbar[187] - 7*armttbar[41];
-   armttbar[187]=11./2.*armttbar[187] - armttbar[38];
-   armttbar[188]=1./2.*armttbar[15];
-   armttbar[189]=armttbar[16] + armttbar[188];
-   armttbar[190]=armttbar[3]*armttbar[189];
-   armttbar[187]=3./4.*armttbar[190] + 11./16.*armttbar[12] - 45./16.*
-   armttbar[21] + 1./2.*armttbar[187] + armttbar[36];
-   armttbar[187]=armttbar[17]*armttbar[187];
-   armttbar[119]=1./2.*armttbar[187] + 3./4.*armttbar[185] + 1./2.*
-   armttbar[147] + 1./2.*armttbar[184] + armttbar[119];
-   armttbar[147]= - 77./8.*armttbar[141] - 7./2. + armttbar[76];
-   armttbar[184]= - 1./4.*armttbar[12];
-   armttbar[187]=armttbar[184] - 5 - armttbar[21];
-   armttbar[187]=armttbar[12]*armttbar[187];
-   armttbar[191]=1./4.*armttbar[75];
-   armttbar[192]=pow(armttbar[21],2);
-   armttbar[147]=1./4.*armttbar[187] - 1./4.*armttbar[192] - 3./4.*
-   armttbar[13] - 5./4.*armttbar[45] + armttbar[87] + armttbar[191] + 1.
-   /2.*armttbar[147] + armttbar[90];
-   armttbar[147]=MMZ*armttbar[147];
-   armttbar[187]=1./2.*armttbar[19];
-   armttbar[192]= - 1./2.*armttbar[34];
-   armttbar[193]=5./4.*armttbar[18] + armttbar[187] - 3./2.*
-   armttbar[33] + armttbar[192] + armttbar[96] - 1./2.*armttbar[93];
-   armttbar[194]=1./2.*armttbar[12];
-   armttbar[195]=armttbar[194] - 3 - armttbar[21];
-   armttbar[195]=armttbar[16]*armttbar[195];
-   armttbar[196]=armttbar[194] + 5 - armttbar[21];
-   armttbar[196]=armttbar[15]*armttbar[196];
-   armttbar[197]= - 21./2.*armttbar[12] + 7 + armttbar[21];
-   armttbar[197]=armttbar[17]*armttbar[197];
-   armttbar[147]=1./4.*armttbar[147] + 1./16.*armttbar[197] + 1./16.*
-   armttbar[196] + 1./8.*armttbar[195] + 1./4.*armttbar[193] + 
-   armttbar[20];
-   armttbar[147]=MMZ*armttbar[147];
-   armttbar[193]= - armttbar[16] - 9./4.*armttbar[15];
-   armttbar[193]=armttbar[15]*armttbar[193];
-   armttbar[195]= - 49./2.*armttbar[15];
-   armttbar[196]=15./4.*armttbar[17] - armttbar[16] + armttbar[195];
-   armttbar[196]=armttbar[17]*armttbar[196];
-   armttbar[193]=armttbar[196] - armttbar[186] + armttbar[193];
-   armttbar[196]=pow(MMZ,4);
-   armttbar[197]= - armttbar[6]*armttbar[196]*armttbar[141];
-   armttbar[198]=armttbar[141]*pow(MMZ,3);
-   armttbar[197]=21*armttbar[198] + 5*armttbar[197];
-   armttbar[197]=armttbar[6]*armttbar[197];
-   armttbar[147]=1./16.*armttbar[197] + 1./16.*armttbar[193] + 
-   armttbar[147];
-   armttbar[147]=armttbar[6]*armttbar[147];
-   armttbar[193]= - 1./4.*armttbar[79];
-   armttbar[197]= - 1./2.*armttbar[82];
-   armttbar[198]= - 1./8.*armttbar[13] + armttbar[169] + 3./8.*
-   armttbar[84] - 9./8.*armttbar[51] + armttbar[193] + 11./8.*
-   armttbar[88] + 3./8.*armttbar[72] + 3./8.*armttbar[74] + 
-   armttbar[197] + 5./4.*armttbar[89] - 1 + 3./4.*armttbar[73];
-   armttbar[199]=1./8. + armttbar[36];
-   armttbar[200]=1./8.*armttbar[8];
-   armttbar[199]=1./3.*armttbar[199] + armttbar[200];
-   armttbar[199]=armttbar[12]*armttbar[199];
-   armttbar[201]=armttbar[36] + 1./4. + armttbar[38];
-   armttbar[201]=armttbar[21]*armttbar[201];
-   armttbar[202]=armttbar[8]*armttbar[21];
-   armttbar[198]=armttbar[199] + 1./4.*armttbar[202] + 1./2.*
-   armttbar[198] + 1./3.*armttbar[201];
-   armttbar[198]=MMH*armttbar[198];
-   armttbar[119]=1./2.*armttbar[147] + 1./4.*armttbar[198] + 1./2.*
-   armttbar[119] + armttbar[142];
-   armttbar[119]=armttbar[6]*armttbar[119];
-   armttbar[142]=3*armttbar[51];
-   armttbar[147]= - 3*armttbar[78];
-   armttbar[198]=armttbar[135] + armttbar[142] + armttbar[85] + 
-   armttbar[134] + armttbar[137] + 59./8. + armttbar[147];
-   armttbar[198]=armttbar[100]*armttbar[198];
-   armttbar[199]=1./2.*armttbar[37];
-   armttbar[201]=armttbar[199] + 5./2. + armttbar[40];
-   armttbar[201]=armttbar[8]*armttbar[201];
-   armttbar[202]=1./4.*armttbar[21];
-   armttbar[201]=armttbar[201] + armttbar[202] + armttbar[129] - 3./2.
-    - armttbar[40];
-   armttbar[201]=armttbar[3]*armttbar[201];
-   armttbar[146]=armttbar[146] - 5./2.*armttbar[66];
-   armttbar[146]=1./2.*armttbar[146] + armttbar[165];
-   armttbar[165]=1./2.*armttbar[64];
-   armttbar[203]=armttbar[51] + 21./8. - armttbar[77];
-   armttbar[203]=armttbar[101]*armttbar[203];
-   armttbar[204]=3./2.*armttbar[203];
-   armttbar[205]=1./2.*armttbar[161];
-   armttbar[172]=armttbar[8]*armttbar[172];
-   armttbar[146]=3*armttbar[201] + 3*armttbar[172] + armttbar[205] + 
-   armttbar[204] + armttbar[198] + armttbar[60] + armttbar[165] + 3./2.
-   *armttbar[67] - armttbar[63] + 1./2.*armttbar[146] + armttbar[61];
-   armttbar[146]=MMt*armttbar[146];
-   armttbar[172]=7*armttbar[36];
-   armttbar[198]= - armttbar[39] + armttbar[41];
-   armttbar[198]= - armttbar[36] + 33./4.*armttbar[198] + armttbar[38];
-   armttbar[201]=armttbar[12]*armttbar[198];
-   armttbar[206]= - 7*armttbar[38];
-   armttbar[207]=armttbar[39] - armttbar[41];
-   armttbar[208]=armttbar[21]*armttbar[198];
-   armttbar[201]=armttbar[201] + armttbar[208] + armttbar[172] + 99./4.
-   *armttbar[207] + armttbar[206];
-   armttbar[209]= - 17./24.*armttbar[12];
-   armttbar[207]=armttbar[36] + 33./4.*armttbar[207] - armttbar[38];
-   armttbar[210]=armttbar[209] + armttbar[207] - 17./12.*armttbar[21];
-   armttbar[210]=armttbar[16]*armttbar[210];
-   armttbar[211]=17./12.*armttbar[12];
-   armttbar[212]=armttbar[211] + armttbar[207] + 17./6.*armttbar[21];
-   armttbar[212]=armttbar[15]*armttbar[212];
-   armttbar[213]=armttbar[21]*armttbar[207];
-   armttbar[214]=armttbar[12]*armttbar[207];
-   armttbar[213]=armttbar[213] + 1./2.*armttbar[214];
-   armttbar[213]=MMZ*armttbar[213];
-   armttbar[214]=armttbar[38] - armttbar[36];
-   armttbar[215]=armttbar[12]*armttbar[214];
-   armttbar[216]=armttbar[21]*armttbar[214];
-   armttbar[217]=armttbar[216] + 1./2.*armttbar[215];
-   armttbar[217]=MMH*armttbar[217];
-   armttbar[218]=armttbar[17]*armttbar[198];
-   armttbar[210]=1./3.*armttbar[217] + armttbar[213] + 1./2.*
-   armttbar[218] + armttbar[210] + 1./2.*armttbar[212];
-   armttbar[210]=armttbar[6]*armttbar[210];
-   armttbar[212]=99*armttbar[41] + 17 - 99*armttbar[39];
-   armttbar[213]=3*armttbar[38];
-   armttbar[217]= - 3*armttbar[36];
-   armttbar[212]=armttbar[217] + 1./4.*armttbar[212] + armttbar[213];
-   armttbar[212]=armttbar[16]*armttbar[212];
-   armttbar[219]=99./2.*armttbar[41] - 17 - 99./2.*armttbar[39];
-   armttbar[219]=armttbar[217] + 1./2.*armttbar[219] + armttbar[213];
-   armttbar[219]=armttbar[15]*armttbar[219];
-   armttbar[212]=armttbar[212] + 1./2.*armttbar[219];
-   armttbar[212]=armttbar[3]*armttbar[212];
-   armttbar[219]=MMZ*armttbar[3]*armttbar[198];
-   armttbar[201]=1./2.*armttbar[210] + 3*armttbar[219] + 1./4.*
-   armttbar[201] + armttbar[212];
-   armttbar[210]=pow(armttbar[4],2);
-   armttbar[201]=armttbar[210]*armttbar[201];
-   armttbar[212]=armttbar[140] + 5 + armttbar[139];
-   armttbar[212]=armttbar[14]*armttbar[212];
-   armttbar[219]= - 1./2.*armttbar[48];
-   armttbar[220]=armttbar[219] - armttbar[49] + 11*armttbar[50];
-   armttbar[220]=9*armttbar[220] + 25./2.*armttbar[42];
-   armttbar[221]=1./8.*armttbar[156];
-   armttbar[212]=armttbar[221] + 1./8.*armttbar[152] + 1./2.*
-   armttbar[212] - 45./2.*armttbar[18] + 1./4.*armttbar[220] - 45*
-   armttbar[19];
-   armttbar[220]=armttbar[199] + 11./2.*armttbar[39] - 85./4. + 
-   armttbar[40];
-   armttbar[222]=1./16.*armttbar[21];
-   armttbar[118]=1./16.*armttbar[12] + armttbar[222] + 1./2.*
-   armttbar[220] + armttbar[118];
-   armttbar[118]=armttbar[16]*armttbar[118];
-   armttbar[220]=55./4.*armttbar[39];
-   armttbar[223]=1./8.*armttbar[12];
-   armttbar[224]=armttbar[223] + 1./8.*armttbar[21] + armttbar[36] - 
-   armttbar[38] - 121./4.*armttbar[41] + armttbar[199] + armttbar[220]
-    - 93./8. + armttbar[40];
-   armttbar[224]=armttbar[15]*armttbar[224];
-   armttbar[118]=9./8.*armttbar[185] + 3./4.*armttbar[224] + 1./2.*
-   armttbar[212] + 3*armttbar[118];
-   armttbar[118]=armttbar[3]*armttbar[118];
-   armttbar[185]=7./2.*armttbar[98];
-   armttbar[212]=armttbar[21]*armttbar[98];
-   armttbar[157]=3./4.*armttbar[212] + armttbar[157] + armttbar[185] - 
-   armttbar[100];
-   armttbar[212]=13 + armttbar[179];
-   armttbar[150]=armttbar[150] + 3./4.*armttbar[212] - armttbar[36];
-   armttbar[150]=armttbar[99]*armttbar[150];
-   armttbar[150]=1./2.*armttbar[157] + armttbar[150];
-   armttbar[157]=1./2.*armttbar[40];
-   armttbar[212]=1./4.*armttbar[37];
-   armttbar[224]=armttbar[212] + 1 + armttbar[157];
-   armttbar[224]=armttbar[3]*armttbar[224];
-   armttbar[150]=1./2.*armttbar[150] + armttbar[224];
-   armttbar[150]=armttbar[17]*armttbar[150];
-   armttbar[224]= - 3*armttbar[72] + 119./4. - 3*armttbar[74];
-   armttbar[225]= - armttbar[36] + 3./8.*armttbar[8];
-   armttbar[225]=armttbar[12]*armttbar[225];
-   armttbar[224]=armttbar[225] + armttbar[36] - 5./8.*armttbar[13] + 15.
-   /2.*armttbar[84] + 3./8.*armttbar[51] + armttbar[79] + 1./8.*
-   armttbar[224] - 5*armttbar[88];
-   armttbar[224]=armttbar[99]*armttbar[224];
-   armttbar[225]=1./4.*armttbar[64];
-   armttbar[226]=1./2.*armttbar[60];
-   armttbar[224]=1./4.*armttbar[224] + armttbar[226] + armttbar[61] + 
-   armttbar[225];
-   armttbar[224]=MMH*armttbar[224];
-   armttbar[103]=1./2.*armttbar[201] + 1./4.*armttbar[146] + 
-   armttbar[119] + 1./4.*armttbar[224] + armttbar[110] + 3./2.*
-   armttbar[150] + 1./2.*armttbar[103] + armttbar[118];
-   armttbar[103]=armttbar[210]*armttbar[103];
-   armttbar[110]=armttbar[169] + armttbar[142] - armttbar[85] + 
-   armttbar[197] + 1./2.*armttbar[89] + 13./2. + armttbar[147];
-   armttbar[110]=armttbar[100]*armttbar[110];
-   armttbar[118]= - 3./2.*armttbar[37];
-   armttbar[119]=armttbar[118] - 1./2. + armttbar[121];
-   armttbar[119]=armttbar[16]*armttbar[119];
-   armttbar[142]= - 3*armttbar[37];
-   armttbar[146]=1 + armttbar[142];
-   armttbar[150]=armttbar[15]*armttbar[146];
-   armttbar[119]=armttbar[119] + 1./2.*armttbar[150];
-   armttbar[119]=armttbar[3]*armttbar[119];
-   armttbar[169]=205./2.*armttbar[41] + armttbar[37] + 151./4.*
-   armttbar[39] - 877./18. - armttbar[40];
-   armttbar[201]=3*armttbar[36];
-   armttbar[119]=3./2.*armttbar[119] + 9./8.*armttbar[12] + 
-   armttbar[158] + armttbar[201] + 1./2.*armttbar[169] - 2*armttbar[38]
-   ;
-   armttbar[119]=armttbar[3]*armttbar[119];
-   armttbar[169]= - 11./6.*armttbar[88];
-   armttbar[224]= - 11./6.*armttbar[13] + 11./3.*armttbar[84] + 
-   armttbar[144] + 11./6.*armttbar[79] + armttbar[169] - 19./3. + 
-   armttbar[143];
-   armttbar[224]=1./2.*armttbar[101]*armttbar[224];
-   armttbar[227]= - 148303./12. + 225*armttbar[76];
-   armttbar[227]=675./4.*armttbar[87] - 5./2.*armttbar[72] - 5./2.*
-   armttbar[74] + 39*armttbar[75] + 531./4.*armttbar[90] + 1./8.*
-   armttbar[227] - 297*armttbar[80];
-   armttbar[228]=5*armttbar[36];
-   armttbar[229]=225./32.*armttbar[21];
-   armttbar[227]=armttbar[229] + armttbar[228] - 297./4.*armttbar[41]
-    + 4585./96.*armttbar[13] + 5./8.*armttbar[51] + 5*armttbar[79] + 1./
-   4.*armttbar[227] - 15*armttbar[88];
-   armttbar[230]= - 5./8.*armttbar[36];
-   armttbar[231]= - 39./64.*armttbar[12] + 5./64.*armttbar[8] - 225./
-   256.*armttbar[21] + armttbar[230] + 2./3. + 297./32.*armttbar[41];
-   armttbar[231]=armttbar[12]*armttbar[231];
-   armttbar[227]=1./8.*armttbar[227] + armttbar[231];
-   armttbar[227]=armttbar[99]*armttbar[227];
-   armttbar[231]= - 1./8.*armttbar[87] - 1./2. - armttbar[90];
-   armttbar[231]=armttbar[151]*armttbar[231];
-   armttbar[232]=armttbar[129] - 3./4. + 2*armttbar[40];
-   armttbar[232]=armttbar[153]*armttbar[232];
-   armttbar[231]=1./4.*armttbar[231] + 3*armttbar[232];
-   armttbar[231]=MMZ*armttbar[231];
-   armttbar[232]= - 17*armttbar[87] - 197 + 11*armttbar[90];
-   armttbar[233]=1./2.*armttbar[5];
-   armttbar[234]= - armttbar[96] + armttbar[233];
-   armttbar[234]=armttbar[98]*armttbar[234];
-   armttbar[232]=1./6.*armttbar[232] + armttbar[234];
-   armttbar[232]=armttbar[98]*armttbar[232];
-   armttbar[235]=armttbar[100] - armttbar[101];
-   armttbar[235]=armttbar[8]*armttbar[235];
-   armttbar[236]=11./12.*armttbar[114];
-   armttbar[237]=armttbar[16]*armttbar[151];
-   armttbar[238]=armttbar[15]*armttbar[151];
-   armttbar[239]=1./2.*armttbar[61];
-   armttbar[110]=armttbar[231] + armttbar[119] + 1./16.*armttbar[238]
-    + armttbar[227] + 3./32.*armttbar[237] + armttbar[236] + 3./4.*
-   armttbar[235] + 1./8.*armttbar[174] + armttbar[224] + 1./4.*
-   armttbar[110] + 1./16.*armttbar[232] + 1./6.*armttbar[60] + 1./12.*
-   armttbar[64] + armttbar[67] + armttbar[239] + armttbar[65] - 7./6.*
-   armttbar[66] + 11./12.*armttbar[68] + 2./3.*armttbar[54] + 1./3.*
-   armttbar[69] - 1./3.*armttbar[52] - 4./9.*armttbar[57] - 1./4.*
-   armttbar[70];
-   armttbar[110]=MMZ*armttbar[110];
-   armttbar[119]=armttbar[82] + 5 - armttbar[89];
-   armttbar[119]=armttbar[135] + 1./2.*armttbar[119] + armttbar[85];
-   armttbar[119]=armttbar[100]*armttbar[119];
-   armttbar[174]=armttbar[79] + 5 - armttbar[88];
-   armttbar[174]=armttbar[145] + 1./2.*armttbar[174] + armttbar[84];
-   armttbar[174]=armttbar[101]*armttbar[174];
-   armttbar[227]= - 2./3.*armttbar[54];
-   armttbar[231]=armttbar[227] + 2*armttbar[69] + 2./3.*armttbar[52] + 
-   4./3.*armttbar[57] + 1./2.*armttbar[70];
-   armttbar[232]=3./4.*armttbar[12];
-   armttbar[235]=armttbar[21] + armttbar[232];
-   armttbar[235]=armttbar[3]*armttbar[235];
-   armttbar[119]=1./2.*armttbar[235] + 1./12.*armttbar[114] + 
-   armttbar[205] + 1./6.*armttbar[174] + armttbar[119] - 2*armttbar[67]
-    - 4*armttbar[65] + 5./6.*armttbar[66] + 1./3.*armttbar[231] - 3./2.
-   *armttbar[68];
-   armttbar[119]=MMZ*armttbar[119];
-   armttbar[205]=armttbar[42] - armttbar[14];
-   armttbar[231]=3*armttbar[21];
-   armttbar[235]=5./2.*armttbar[12] + 1 + armttbar[231];
-   armttbar[235]=armttbar[16]*armttbar[235];
-   armttbar[237]=3 + armttbar[194];
-   armttbar[237]=armttbar[15]*armttbar[237];
-   armttbar[238]=1./4.*armttbar[181];
-   armttbar[235]=1./4.*armttbar[237] + 1./4.*armttbar[235] + 1./12.*
-   armttbar[183] + 1./3.*armttbar[205] + armttbar[238];
-   armttbar[235]=armttbar[3]*armttbar[235];
-   armttbar[237]=17./3.*armttbar[38];
-   armttbar[240]= - 5./3.*armttbar[36];
-   armttbar[241]=151./8.*armttbar[21] + armttbar[104] + armttbar[240]
-    + armttbar[237] - 685./4.*armttbar[41] - 367./2. - 35*armttbar[39];
-   armttbar[241]=1./8.*armttbar[241] + armttbar[12];
-   armttbar[241]=armttbar[12]*armttbar[241];
-   armttbar[242]= - 3*armttbar[19];
-   armttbar[243]= - 1./2.*armttbar[42];
-   armttbar[244]=armttbar[242] + armttbar[49] + armttbar[243];
-   armttbar[244]=armttbar[100]*armttbar[244];
-   armttbar[245]= - 119*armttbar[41] - 361./3. - 59./2.*armttbar[39];
-   armttbar[246]=1./2.*armttbar[120];
-   armttbar[245]=11./8.*armttbar[21] + armttbar[246] + 1./3.*
-   armttbar[245] + armttbar[38];
-   armttbar[245]=armttbar[21]*armttbar[245];
-   armttbar[247]= - 25./6.*armttbar[58] + 2393./64. + 2*armttbar[81];
-   armttbar[243]=armttbar[48] + armttbar[243];
-   armttbar[243]=1./3.*armttbar[243] - armttbar[18];
-   armttbar[243]=1./4.*armttbar[101]*armttbar[243];
-   armttbar[248]= - armttbar[100] + armttbar[161];
-   armttbar[248]=armttbar[16]*armttbar[248];
-   armttbar[249]= - armttbar[101] + armttbar[114];
-   armttbar[249]=1./12.*armttbar[15]*armttbar[249];
-   armttbar[119]=armttbar[119] + 13./8.*armttbar[178] + 1./2.*
-   armttbar[235] + armttbar[249] + 1./4.*armttbar[248] + 1./3.*
-   armttbar[241] + 1./4.*armttbar[245] + armttbar[138] + armttbar[243]
-    + 1./4.*armttbar[244] - 317./144.*armttbar[13] + 7./8.*armttbar[24]
-    - 2./3.*armttbar[25] - 47./12.*armttbar[23] + 1./12.*armttbar[84]
-    - 11./6.*armttbar[45] - 1./12.*armttbar[79] + 13./288.*armttbar[88]
-    + 1./4.*armttbar[85] - 29./6.*armttbar[87] + 5./48.*armttbar[75] - 
-   631./96.*armttbar[90] + 101./96.*armttbar[141] - 1./4.*armttbar[82]
-    + 13./96.*armttbar[89] + 37./24.*armttbar[80] + 2./3.*armttbar[43]
-    + 5./24.*armttbar[76] + 1./3.*armttbar[247] + 7./2.*armttbar[83];
-   armttbar[119]=MMZ*armttbar[119];
-   armttbar[138]=armttbar[104] - 5./6.*armttbar[36] + 17./6.*
-   armttbar[38] - 685./8.*armttbar[41] - 41./3. - 35./2.*armttbar[39];
-   armttbar[235]= - armttbar[15]*armttbar[101];
-   armttbar[138]=1./3.*armttbar[235] - 655./216.*armttbar[12] + 1./3.*
-   armttbar[138] - 75./16.*armttbar[21];
-   armttbar[138]=armttbar[15]*armttbar[138];
-   armttbar[241]= - 17./3.*armttbar[38];
-   armttbar[244]=5./3.*armttbar[36];
-   armttbar[245]=7./12.*armttbar[12] - 365./24.*armttbar[21] + 
-   armttbar[244] + armttbar[241] + 685./4.*armttbar[41] + 3593./12. + 
-   35*armttbar[39];
-   armttbar[247]=9*armttbar[16];
-   armttbar[248]=armttbar[247] + 5*armttbar[15];
-   armttbar[248]=armttbar[3]*armttbar[248];
-   armttbar[245]=1./3.*armttbar[245] + 3./2.*armttbar[248];
-   armttbar[245]=armttbar[17]*armttbar[245];
-   armttbar[248]=65*armttbar[93] - 239*armttbar[96] + 263*armttbar[50]
-    + 197./3.*armttbar[94];
-   armttbar[248]=1./2.*armttbar[248] + 7./3.*armttbar[92];
-   armttbar[248]=1./2.*armttbar[248] - armttbar[48];
-   armttbar[248]=35./48.*armttbar[33] + 1./2.*armttbar[248] + 5./3.*
-   armttbar[34];
-   armttbar[250]= - 1./4.*armttbar[5];
-   armttbar[251]= - 13./144.*armttbar[42];
-   armttbar[252]= - 1./36.*armttbar[14];
-   armttbar[253]=1./12.*armttbar[156];
-   armttbar[254]= - 943./2. - 85*armttbar[39];
-   armttbar[254]= - 1303./36.*armttbar[12] - 113./6.*armttbar[21] + 1./
-   4.*armttbar[254] - 53*armttbar[41];
-   armttbar[254]=armttbar[16]*armttbar[254];
-   armttbar[255]=armttbar[3]*armttbar[15]*armttbar[189];
-   armttbar[138]=1./4.*armttbar[245] + 1./4.*armttbar[255] + 1./2.*
-   armttbar[138] + 1./6.*armttbar[254] + armttbar[253] + armttbar[252]
-    - 253./72.*armttbar[20] - 149./8.*armttbar[18] - 3803./144.*
-   armttbar[19] + armttbar[251] + 1./3.*armttbar[248] + armttbar[250];
-   armttbar[245]=1./9. + armttbar[222];
-   armttbar[245]=armttbar[21]*armttbar[245];
-   armttbar[106]=armttbar[106] + 59./12. + armttbar[21];
-   armttbar[106]=armttbar[12]*armttbar[106];
-   armttbar[106]=1./12.*armttbar[106] + armttbar[245] + 13./48.*
-   armttbar[13] + 59./144.*armttbar[45] - 1./3.*armttbar[87] - 5./48.*
-   armttbar[75] - 19./48.*armttbar[90] + 277./576.*armttbar[141] - 1./6.
-   *armttbar[76] + 3./4. + 1./9.*armttbar[58];
-   armttbar[106]=MMZ*armttbar[106];
-   armttbar[245]= - 109./24.*armttbar[20] - 25./16.*armttbar[18] - 5./
-   16.*armttbar[19] + 37./24.*armttbar[33] + 5./6.*armttbar[34] - 
-   armttbar[96] + 5./8.*armttbar[93];
-   armttbar[248]= - 5./6.*armttbar[12];
-   armttbar[254]=armttbar[248] + 47./9. + armttbar[21];
-   armttbar[254]=armttbar[16]*armttbar[254];
-   armttbar[255]= - 5./8.*armttbar[12] - 77./12. + armttbar[21];
-   armttbar[255]=armttbar[15]*armttbar[255];
-   armttbar[256]=203./8.*armttbar[12] + 119./4. - 11*armttbar[21];
-   armttbar[256]=armttbar[17]*armttbar[256];
-   armttbar[106]=armttbar[106] + 1./36.*armttbar[256] + 1./12.*
-   armttbar[255] + 1./3.*armttbar[245] + 1./16.*armttbar[254];
-   armttbar[106]=MMZ*armttbar[106];
-   armttbar[245]=pow(MMZ,2);
-   armttbar[254]= - armttbar[245]*armttbar[141];
-   armttbar[255]=pow(armttbar[17],2);
-   armttbar[254]=1./3.*armttbar[255] + 63./32.*armttbar[254];
-   armttbar[254]=MMZ*armttbar[254];
-   armttbar[256]=armttbar[6]*armttbar[196]*armttbar[141];
-   armttbar[254]=armttbar[254] + 5./8.*armttbar[256];
-   armttbar[254]=armttbar[6]*armttbar[254];
-   armttbar[256]=1./3.*armttbar[16];
-   armttbar[257]=armttbar[256] + 3./2.*armttbar[15];
-   armttbar[257]=armttbar[15]*armttbar[257];
-   armttbar[258]= - 29./9.*armttbar[16] + 11*armttbar[15];
-   armttbar[258]=5*armttbar[258] - 11./6.*armttbar[17];
-   armttbar[258]=armttbar[17]*armttbar[258];
-   armttbar[257]=5*armttbar[257] + armttbar[258];
-   armttbar[106]=armttbar[254] + 1./32.*armttbar[257] + armttbar[106];
-   armttbar[106]=armttbar[6]*armttbar[106];
-   armttbar[254]= - 1./2.*armttbar[74];
-   armttbar[257]= - 1./2.*armttbar[72];
-   armttbar[258]=1./3.*armttbar[79];
-   armttbar[169]=armttbar[258] + armttbar[169] + armttbar[257] + 13./9.
-    + armttbar[254];
-   armttbar[241]=armttbar[244] + 11./2. + armttbar[241];
-   armttbar[244]= - 1./2.*armttbar[8];
-   armttbar[241]=1./3.*armttbar[241] + armttbar[244];
-   armttbar[241]=armttbar[12]*armttbar[241];
-   armttbar[259]=1./8.*armttbar[51];
-   armttbar[169]=1./6.*armttbar[241] + 1./24.*armttbar[13] - 1./8.*
-   armttbar[84] + armttbar[259] + 1./4.*armttbar[169] + 1./3.*
-   armttbar[45];
-   armttbar[169]=1./4.*MMH*armttbar[169];
-   armttbar[106]=armttbar[106] + armttbar[169] + 1./2.*armttbar[138] + 
-   armttbar[119];
-   armttbar[106]=armttbar[6]*armttbar[106];
-   armttbar[119]=13./2.*armttbar[39];
-   armttbar[138]= - 3./2.*armttbar[38];
-   armttbar[241]=3./16.*armttbar[21];
-   armttbar[260]=11./8.*armttbar[12];
-   armttbar[261]=armttbar[260] + armttbar[241] + armttbar[128] + 
-   armttbar[138] + 179./8.*armttbar[41] + armttbar[122] + armttbar[119]
-    + 79./3. + armttbar[139];
-   armttbar[261]=armttbar[15]*armttbar[261];
-   armttbar[262]=19*armttbar[39];
-   armttbar[263]=759./2. + armttbar[262];
-   armttbar[264]=3*armttbar[37];
-   armttbar[263]=1./2.*armttbar[263] + armttbar[264];
-   armttbar[265]=53*armttbar[41];
-   armttbar[263]=19./8.*armttbar[12] + 1./2.*armttbar[263] + 
-   armttbar[265];
-   armttbar[263]=armttbar[16]*armttbar[263];
-   armttbar[266]= - 11*armttbar[50] - 3./2.*armttbar[48];
-   armttbar[267]=5./3.*armttbar[42];
-   armttbar[268]=5./3. + armttbar[264];
-   armttbar[268]=1./8.*armttbar[14]*armttbar[268];
-   armttbar[269]=13./24.*armttbar[183];
-   armttbar[270]= - 1./2.*armttbar[15];
-   armttbar[271]= - armttbar[16] + armttbar[270];
-   armttbar[272]=9./8.*armttbar[3]*armttbar[15]*armttbar[271];
-   armttbar[261]=armttbar[272] + 1./2.*armttbar[261] + 1./2.*
-   armttbar[263] + armttbar[269] + armttbar[268] + 21./2.*armttbar[18]
-    + 33./2.*armttbar[19] + 3./4.*armttbar[266] + armttbar[267];
-   armttbar[261]=armttbar[3]*armttbar[261];
-   armttbar[263]=1./3.*armttbar[36];
-   armttbar[266]=armttbar[263] + armttbar[148];
-   armttbar[266]=armttbar[12]*armttbar[266];
-   armttbar[273]=armttbar[72] - 119./12. + armttbar[74];
-   armttbar[274]= - 1./3.*armttbar[79];
-   armttbar[275]= - 1./3.*armttbar[36];
-   armttbar[149]=armttbar[266] + armttbar[275] + 5./24.*armttbar[13] - 
-   5./2.*armttbar[84] + armttbar[149] + armttbar[274] + 1./8.*
-   armttbar[273] + 5./3.*armttbar[88];
-   armttbar[149]=armttbar[99]*armttbar[149];
-   armttbar[266]= - 1./2.*armttbar[64] - armttbar[60];
-   armttbar[149]=1./3.*armttbar[266] + 1./2.*armttbar[149];
-   armttbar[149]=5./4.*MMH*armttbar[149];
-   armttbar[227]= - armttbar[69] + armttbar[227];
-   armttbar[266]=1./4.*armttbar[67];
-   armttbar[273]=11./4.*armttbar[64];
-   armttbar[276]=11./2.*armttbar[60];
-   armttbar[277]=1./2.*armttbar[63];
-   armttbar[227]=armttbar[276] + armttbar[273] + armttbar[266] + 
-   armttbar[277] + 35./8.*armttbar[65] + 2*armttbar[227] + 1./16.*
-   armttbar[66];
-   armttbar[278]= - 1 - armttbar[37];
-   armttbar[279]=1./2.*armttbar[21];
-   armttbar[280]=5 + armttbar[264];
-   armttbar[280]=armttbar[8]*armttbar[280];
-   armttbar[278]=armttbar[280] + 3*armttbar[278] + armttbar[279];
-   armttbar[278]=armttbar[3]*armttbar[278];
-   armttbar[280]=1./4.*armttbar[278];
-   armttbar[203]=3./4.*armttbar[203];
-   armttbar[281]=3./4.*armttbar[112];
-   armttbar[227]=armttbar[280] + armttbar[281] + 1./3.*armttbar[227] + 
-   armttbar[203];
-   armttbar[227]=MMt*armttbar[227];
-   armttbar[282]=armttbar[185] + 29*armttbar[101];
-   armttbar[282]=11./3.*armttbar[114] + 1./3.*armttbar[282] + 
-   armttbar[113];
-   armttbar[282]=1./4.*armttbar[282];
-   armttbar[283]=4133./24. + 297*armttbar[41];
-   armttbar[284]= - 5*armttbar[36];
-   armttbar[283]= - 225./32.*armttbar[21] + 1./4.*armttbar[283] + 
-   armttbar[284];
-   armttbar[283]=1./4.*armttbar[283] + 2./3.*armttbar[12];
-   armttbar[283]=armttbar[99]*armttbar[283];
-   armttbar[283]=armttbar[282] + armttbar[283];
-   armttbar[283]=armttbar[15]*armttbar[283];
-   armttbar[285]= - 193 - 297./2.*armttbar[41];
-   armttbar[229]=armttbar[229] + 1./2.*armttbar[285] + armttbar[228];
-   armttbar[229]=armttbar[99]*armttbar[229];
-   armttbar[285]= - 3./4.*armttbar[101];
-   armttbar[229]=armttbar[285] + armttbar[229];
-   armttbar[286]=1 + armttbar[140];
-   armttbar[286]=armttbar[3]*armttbar[286];
-   armttbar[229]=1./2.*armttbar[229] + armttbar[286];
-   armttbar[229]=armttbar[17]*armttbar[229];
-   armttbar[287]=armttbar[116] + 7./3.*armttbar[18] + armttbar[111] + 
-   11./6.*armttbar[42];
-   armttbar[287]=1./4.*armttbar[101]*armttbar[287];
-   armttbar[288]=4913./24. - 113*armttbar[39];
-   armttbar[265]=1./4.*armttbar[288] + armttbar[265];
-   armttbar[265]=1./4.*armttbar[265] + 13./3.*armttbar[21];
-   armttbar[265]=armttbar[21]*armttbar[265];
-   armttbar[288]= - 337./32.*armttbar[80] + 1./4.*armttbar[43] - 113./
-   256.*armttbar[76] + 43./32.*armttbar[83] - 31./12.*armttbar[58] - 
-   13183./1024. + 17./3.*armttbar[81];
-   armttbar[289]= - 157./192.*armttbar[51];
-   armttbar[290]=7./24.*armttbar[234];
-   armttbar[291]=armttbar[19]*armttbar[98];
-   armttbar[292]=1./16.*armttbar[291];
-   armttbar[293]= - armttbar[18]*armttbar[98];
-   armttbar[294]=13./72.*armttbar[38];
-   armttbar[295]= - 53./36.*armttbar[36];
-   armttbar[296]=11./24.*armttbar[163];
-   armttbar[297]= - 1 + armttbar[118];
-   armttbar[297]=armttbar[8]*armttbar[297];
-   armttbar[298]=1./2.*armttbar[297];
-   armttbar[299]=397./64.*armttbar[21] + 11./2.*armttbar[104] + 13./3.*
-   armttbar[36] + 7./6.*armttbar[38] + 29./4.*armttbar[41] + 35./3. - 
-   31./2.*armttbar[39];
-   armttbar[299]=79./48.*armttbar[12] + 1./3.*armttbar[299] + 9./16.*
-   armttbar[8];
-   armttbar[299]=armttbar[12]*armttbar[299];
-   armttbar[300]=armttbar[16]*armttbar[98];
-   armttbar[301]=3./8.*armttbar[300];
-   armttbar[302]= - 27./2.*armttbar[50] - 7*armttbar[94];
-   armttbar[302]= - 25*armttbar[92] - 39*armttbar[93] + 11*
-   armttbar[302] + 225./4.*armttbar[96];
-   armttbar[302]=1887./8.*armttbar[16] + 25./2.*armttbar[14] + 5279./48.
-   *armttbar[20] + 10033./96.*armttbar[18] + 451./2.*armttbar[19] - 69./
-   8.*armttbar[33] - 225./16.*armttbar[34] + 5./4.*armttbar[32] + 1./2.
-   *armttbar[302] + 5*armttbar[48];
-   armttbar[302]=armttbar[99]*armttbar[302];
-   armttbar[303]= - 1./6.*armttbar[24];
-   armttbar[304]= - 9./8.*armttbar[35];
-   armttbar[305]= - 1./4.*armttbar[40];
-   armttbar[103]=armttbar[103] + armttbar[227] + armttbar[106] + 
-   armttbar[149] + armttbar[110] + armttbar[229] + armttbar[261] + 
-   armttbar[283] + 1./4.*armttbar[302] + armttbar[301] + 1./4.*
-   armttbar[299] + armttbar[298] + 1./6.*armttbar[265] + armttbar[296]
-    + armttbar[295] + armttbar[294] + armttbar[287] - 197./48.*
-   armttbar[41] + armttbar[37] + 1./32.*armttbar[293] + 131./48.*
-   armttbar[39] + 9055./2304.*armttbar[13] + armttbar[305] + 
-   armttbar[292] + armttbar[290] + armttbar[303] + 7./12.*armttbar[25]
-    - 17./32.*armttbar[23] + armttbar[84] + armttbar[289] + 7./9.*
-   armttbar[45] - 11./24.*armttbar[79] - 145./288.*armttbar[88] + 
-   armttbar[304] + 301./384.*armttbar[87] - 19./192.*armttbar[72] - 19./
-   192.*armttbar[74] + 11./48.*armttbar[75] + 11./12.*armttbar[77] - 79.
-   /128.*armttbar[90] + 1./3.*armttbar[288] + 1./8.*armttbar[141];
-   armttbar[103]=armttbar[210]*armttbar[103];
-   armttbar[106]=17041./6. + 289*armttbar[39];
-   armttbar[110]= - 17*armttbar[41];
-   armttbar[106]=1./3.*armttbar[106] + armttbar[110];
-   armttbar[227]= - 17*armttbar[36];
-   armttbar[106]= - 239./27.*armttbar[12] + 17./6.*armttbar[163] + 1./
-   12.*armttbar[106] + armttbar[227];
-   armttbar[106]=armttbar[12]*armttbar[106];
-   armttbar[229]= - armttbar[3]*armttbar[12];
-   armttbar[171]=17./4.*armttbar[229] + 17./2.*armttbar[176] - 257./9.*
-   armttbar[66] + 17*armttbar[171];
-   armttbar[171]=MMZ*armttbar[171];
-   armttbar[117]=armttbar[117] + armttbar[156];
-   armttbar[229]= - 1./3. + armttbar[131];
-   armttbar[229]=armttbar[15]*armttbar[229];
-   armttbar[117]=1./3.*armttbar[117] + armttbar[229];
-   armttbar[117]=armttbar[3]*armttbar[117];
-   armttbar[229]= - 637./9.*armttbar[75] - 7027./12. + 17*armttbar[80];
-   armttbar[229]= - 17./2.*armttbar[84] + 721./9.*armttbar[45] + 17./2.
-   *armttbar[79] - 221./48.*armttbar[88] + 1./8.*armttbar[229] + 
-   armttbar[87];
-   armttbar[229]=1./4.*armttbar[229] - 4./9.*armttbar[13];
-   armttbar[170]=1./3.*armttbar[170] + armttbar[18];
-   armttbar[170]=armttbar[101]*armttbar[170];
-   armttbar[106]=1./12.*armttbar[171] + 17./48.*armttbar[178] + 17./16.
-   *armttbar[117] + 17./24.*armttbar[177] + 1./8.*armttbar[106] + 17./
-   16.*armttbar[104] + 1./3.*armttbar[229] + 17./8.*armttbar[170];
-   armttbar[106]=MMZ*armttbar[106];
-   armttbar[110]=armttbar[110] + 2507./2. + 289./3.*armttbar[39];
-   armttbar[110]=17./3.*armttbar[162] + 221./72.*armttbar[12] + 17./3.*
-   armttbar[163] + 1./12.*armttbar[110] + armttbar[227];
-   armttbar[110]=armttbar[15]*armttbar[110];
-   armttbar[117]=armttbar[50] - armttbar[94];
-   armttbar[117]=17./8.*armttbar[183] + 17./24.*armttbar[14] + 6065./
-   144.*armttbar[20] + 977./12.*armttbar[18] + armttbar[19] + 221./96.*
-   armttbar[42] + armttbar[154] - 2297./288.*armttbar[33] + 17./4.*
-   armttbar[48] - 119./24.*armttbar[92] - 967./48.*armttbar[93] + 17./
-   16.*armttbar[117] + armttbar[96];
-   armttbar[162]= - 839./3. - 289./8.*armttbar[39];
-   armttbar[162]=1./3.*armttbar[162] + 17./8.*armttbar[41];
-   armttbar[170]=armttbar[3]*armttbar[15];
-   armttbar[162]=17./8.*armttbar[170] + 1475./432.*armttbar[12] + 1./3.
-   *armttbar[162] + 17./2.*armttbar[36];
-   armttbar[162]=armttbar[17]*armttbar[162];
-   armttbar[171]= - 1./2.*armttbar[39];
-   armttbar[177]=1253./144.*armttbar[12] - 5./3. + armttbar[171];
-   armttbar[177]=armttbar[16]*armttbar[177];
-   armttbar[229]=pow(armttbar[15],2);
-   armttbar[261]= - armttbar[3]*armttbar[229];
-   armttbar[110]=1./2.*armttbar[162] + 17./16.*armttbar[261] + 1./4.*
-   armttbar[110] + 1./3.*armttbar[117] + 1./2.*armttbar[177];
-   armttbar[117]= - 17./3.*armttbar[79] + 187./6.*armttbar[88] + 17./2.
-   *armttbar[72] - 41./9. + 17./2.*armttbar[74];
-   armttbar[162]= - 17*armttbar[38];
-   armttbar[177]= - 7./4. + armttbar[162];
-   armttbar[177]=17./4.*armttbar[8] + 1./3.*armttbar[177] + 17*
-   armttbar[36];
-   armttbar[177]=armttbar[12]*armttbar[177];
-   armttbar[265]= - 1./3.*armttbar[45];
-   armttbar[117]=1./6.*armttbar[177] - 17./48.*armttbar[13] + 17./16.*
-   armttbar[84] - 17./16.*armttbar[51] + 1./8.*armttbar[117] + 
-   armttbar[265];
-   armttbar[117]=MMH*armttbar[117];
-   armttbar[177]=3211./3. + 139./2.*armttbar[12];
-   armttbar[177]=armttbar[15]*armttbar[177];
-   armttbar[283]=1607 - 5557./2.*armttbar[12];
-   armttbar[283]=armttbar[17]*armttbar[283];
-   armttbar[177]=1./6.*armttbar[283] + 1./2.*armttbar[177] + 1927./3.*
-   armttbar[20] + 535./2.*armttbar[18] - 107*armttbar[93] - 803./3.*
-   armttbar[33];
-   armttbar[283]= - 107*armttbar[13] - 1285./3.*armttbar[45] - 3211./3.
-    + 107*armttbar[75];
-   armttbar[288]= - 257./9. - 5./4.*armttbar[12];
-   armttbar[288]=armttbar[12]*armttbar[288];
-   armttbar[283]=1./3.*armttbar[283] + 5*armttbar[288];
-   armttbar[283]=MMZ*armttbar[283];
-   armttbar[177]=1./3.*armttbar[177] + 1./2.*armttbar[283];
-   armttbar[177]=MMZ*armttbar[177];
-   armttbar[283]= - 13265./3.*armttbar[15] + 1381./2.*armttbar[17];
-   armttbar[283]=armttbar[17]*armttbar[283];
-   armttbar[283]= - 931./2.*armttbar[229] + armttbar[283];
-   armttbar[177]=1./12.*armttbar[283] + armttbar[177];
-   armttbar[177]=armttbar[6]*armttbar[177];
-   armttbar[106]=1./48.*armttbar[177] + 1./4.*armttbar[117] + 1./2.*
-   armttbar[110] + armttbar[106];
-   armttbar[106]=armttbar[6]*armttbar[106];
-   armttbar[110]= - 17*armttbar[39];
-   armttbar[117]=7./2. + armttbar[110];
-   armttbar[117]=armttbar[41] + 1./2.*armttbar[117] + armttbar[264];
-   armttbar[117]= - 7./48.*armttbar[12] + 1./4.*armttbar[117] + 
-   armttbar[201];
-   armttbar[117]=armttbar[15]*armttbar[117];
-   armttbar[177]= - armttbar[50] - 9./2.*armttbar[48];
-   armttbar[283]=95./9. + armttbar[264];
-   armttbar[283]=armttbar[14]*armttbar[283];
-   armttbar[288]= - 65./6. + armttbar[39];
-   armttbar[288]=armttbar[16]*armttbar[288];
-   armttbar[117]=9./16.*armttbar[261] + armttbar[117] + 1./4.*
-   armttbar[288] + 41./72.*armttbar[156] + 1./8.*armttbar[283] + 5./2.*
-   armttbar[18] + armttbar[187] + 1./4.*armttbar[177] + 5./9.*
-   armttbar[42];
-   armttbar[117]=armttbar[3]*armttbar[117];
-   armttbar[177]= - 1./32.*armttbar[21];
-   armttbar[148]=25./24.*armttbar[12] + armttbar[148] + armttbar[177]
-    + 1./12.*armttbar[41] + armttbar[36];
-   armttbar[148]=armttbar[12]*armttbar[148];
-   armttbar[187]=993./4. + 1./3.*armttbar[76];
-   armttbar[187]=1./4.*armttbar[87] + 1./6.*armttbar[72] + 1./6.*
-   armttbar[74] - 25./9.*armttbar[75] + 1./8.*armttbar[187] - 1./9.*
-   armttbar[80];
-   armttbar[148]=1./3.*armttbar[148] + 1./96.*armttbar[21] + 
-   armttbar[275] - 1./36.*armttbar[41] + 289./288.*armttbar[13] - 1./24.
-   *armttbar[51] + armttbar[274] + 1./4.*armttbar[187] + armttbar[88];
-   armttbar[148]=armttbar[99]*armttbar[148];
-   armttbar[187]= - 11 - 17./2.*armttbar[39];
-   armttbar[261]=armttbar[3]*armttbar[150];
-   armttbar[172]=3./2.*armttbar[261] - 7./36.*armttbar[12] + 
-   armttbar[172] + 7./12.*armttbar[41] + 1./3.*armttbar[187] + 
-   armttbar[37];
-   armttbar[172]=armttbar[3]*armttbar[172];
-   armttbar[143]=7./18.*armttbar[13] - 7./9.*armttbar[84] + 
-   armttbar[144] - 7./18.*armttbar[79] + 7./18.*armttbar[88] - 37./9.
-    + armttbar[143];
-   armttbar[143]=armttbar[101]*armttbar[143];
-   armttbar[144]=1./2. - armttbar[37];
-   armttbar[144]=armttbar[153]*armttbar[144];
-   armttbar[187]=MMZ*armttbar[144];
-   armttbar[261]= - 1 - armttbar[87];
-   armttbar[274]=armttbar[98]*armttbar[261];
-   armttbar[274]=7./32.*armttbar[274] - 17./4.*armttbar[60] + 11*
-   armttbar[66] - 17./8.*armttbar[64];
-   armttbar[283]= - armttbar[8]*armttbar[101];
-   armttbar[143]=3./4.*armttbar[187] + 1./4.*armttbar[172] + 25./16.*
-   armttbar[148] + 7./72.*armttbar[176] + 3./8.*armttbar[283] + 1./9.*
-   armttbar[274] + 1./4.*armttbar[143];
-   armttbar[143]=MMZ*armttbar[143];
-   armttbar[148]=armttbar[275] + armttbar[200];
-   armttbar[148]=armttbar[12]*armttbar[148];
-   armttbar[172]= - armttbar[72] + 119./12. - armttbar[74];
-   armttbar[148]=armttbar[148] + armttbar[263] - 5./24.*armttbar[13] + 
-   5./2.*armttbar[84] + armttbar[259] + armttbar[258] + 1./8.*
-   armttbar[172] - 5./3.*armttbar[88];
-   armttbar[148]=armttbar[99]*armttbar[148];
-   armttbar[165]=armttbar[165] + armttbar[60];
-   armttbar[148]=1./3.*armttbar[165] + 1./2.*armttbar[148];
-   armttbar[148]=MMH*armttbar[148];
-   armttbar[165]= - 5209./24. + armttbar[41];
-   armttbar[165]=armttbar[177] + 1./12.*armttbar[165] + armttbar[36];
-   armttbar[165]=armttbar[99]*armttbar[165];
-   armttbar[172]=armttbar[185] + 47*armttbar[101];
-   armttbar[113]=25./3.*armttbar[165] + 7./9.*armttbar[176] + 1./9.*
-   armttbar[172] + armttbar[113];
-   armttbar[113]=armttbar[15]*armttbar[113];
-   armttbar[165]= - armttbar[68] - 437./54.*armttbar[66];
-   armttbar[172]= - 1./6.*armttbar[67];
-   armttbar[165]= - 7./3.*armttbar[60] - 7./6.*armttbar[64] + 
-   armttbar[172] + 1./4.*armttbar[165] - 17./3.*armttbar[63];
-   armttbar[112]=1./2.*armttbar[278] + 3./2.*armttbar[112] + 1./3.*
-   armttbar[165] + armttbar[204];
-   armttbar[112]=MMt*armttbar[112];
-   armttbar[165]=armttbar[39] + armttbar[12];
-   armttbar[165]=armttbar[15]*armttbar[165];
-   armttbar[176]=armttbar[12]*armttbar[39];
-   armttbar[185]=MMZ*armttbar[176];
-   armttbar[187]= - armttbar[17]*armttbar[39];
-   armttbar[200]= - armttbar[16]*armttbar[12];
-   armttbar[165]=armttbar[185] + armttbar[187] + armttbar[200] + 
-   armttbar[165];
-   armttbar[165]=armttbar[6]*armttbar[165];
-   armttbar[176]=7./27.*armttbar[176] + armttbar[261] + 1./27.*
-   armttbar[39];
-   armttbar[185]= - 1./3. + armttbar[171];
-   armttbar[185]=armttbar[15]*armttbar[185];
-   armttbar[185]=armttbar[256] + armttbar[185];
-   armttbar[185]=armttbar[3]*armttbar[185];
-   armttbar[204]= - MMZ*armttbar[3]*armttbar[39];
-   armttbar[165]=17./108.*armttbar[165] + 1./3.*armttbar[204] + 1./4.*
-   armttbar[176] + armttbar[185];
-   armttbar[176]=pow(armttbar[2],2);
-   armttbar[165]=armttbar[176]*armttbar[165];
-   armttbar[185]= - 1./2.*armttbar[50] + armttbar[94];
-   armttbar[204]=1./4.*armttbar[96];
-   armttbar[123]=armttbar[123] + 25./3.*armttbar[93] + 1./3.*
-   armttbar[185] + armttbar[204];
-   armttbar[123]= - 11./24.*armttbar[16] + armttbar[124] - 1675./144.*
-   armttbar[20] - 2869./288.*armttbar[18] - 1./6.*armttbar[19] + 193./
-   72.*armttbar[33] - 1./16.*armttbar[34] + armttbar[125] + 1./2.*
-   armttbar[123] - armttbar[48];
-   armttbar[123]=armttbar[99]*armttbar[123];
-   armttbar[124]= - armttbar[90] - 41./18.*armttbar[80] + 331./144.*
-   armttbar[76] - 56965./1728. + armttbar[83];
-   armttbar[185]= - 9./2.*armttbar[35];
-   armttbar[124]=7./18.*armttbar[79] - 595./216.*armttbar[88] + 
-   armttbar[185] - 967./288.*armttbar[87] + 143./144.*armttbar[72] + 
-   143./144.*armttbar[74] - 191./324.*armttbar[75] + 1./4.*
-   armttbar[124] - 7./9.*armttbar[77];
-   armttbar[124]= - 31./576.*armttbar[51] + 1./4.*armttbar[124] - 139./
-   81.*armttbar[45];
-   armttbar[111]=armttbar[116] + 61./9.*armttbar[18] + armttbar[111] - 
-   7./18.*armttbar[42];
-   armttbar[111]=armttbar[101]*armttbar[111];
-   armttbar[258]= - 3329./2. + 119*armttbar[39];
-   armttbar[258]=1./3.*armttbar[258] - 7./2.*armttbar[41];
-   armttbar[258]= - 227./96.*armttbar[21] + 7./3.*armttbar[163] + 1./6.
-   *armttbar[258] - 7*armttbar[36];
-   armttbar[258]= - 235./648.*armttbar[12] + 1./3.*armttbar[258] - 31./
-   8.*armttbar[8];
-   armttbar[258]=armttbar[12]*armttbar[258];
-   armttbar[261]=67./3. - armttbar[41];
-   armttbar[261]=1./32.*armttbar[21] + 1./12.*armttbar[261] - 
-   armttbar[36];
-   armttbar[261]=armttbar[99]*armttbar[261];
-   armttbar[261]=armttbar[285] + 25./3.*armttbar[261];
-   armttbar[261]=1./2.*armttbar[261] + armttbar[286];
-   armttbar[261]=armttbar[17]*armttbar[261];
-   armttbar[274]=25./16. - armttbar[39];
-   armttbar[274]=armttbar[21]*armttbar[274];
-   armttbar[278]=1./6.*armttbar[38];
-   armttbar[106]=1./8.*armttbar[165] + 1./4.*armttbar[112] + 1./3.*
-   armttbar[106] + 25./24.*armttbar[148] + armttbar[143] + 1./2.*
-   armttbar[261] + 1./2.*armttbar[117] + 1./8.*armttbar[113] + 25./24.*
-   armttbar[123] + 1./16.*armttbar[300] + 1./16.*armttbar[258] + 1./4.*
-   armttbar[297] + 1./96.*armttbar[274] + 7./144.*armttbar[104] - 79./
-   144.*armttbar[36] + armttbar[278] + 1./8.*armttbar[111] + 5./1728.*
-   armttbar[41] + armttbar[199] + 35./864.*armttbar[39] - 2983./41472.*
-   armttbar[13] - 1./8.*armttbar[40] + 1./96.*armttbar[291] + 7./144.*
-   armttbar[234] - 1./36.*armttbar[24] - 1./32.*armttbar[23] + 1./2.*
-   armttbar[124] - 1./3.*armttbar[84];
-   armttbar[106]=armttbar[176]*armttbar[106];
-   armttbar[111]=14./27.*armttbar[57] + armttbar[54];
-   armttbar[112]=1./8.*armttbar[155] - 13./16.*armttbar[87] - 1 - 11./
-   48.*armttbar[90];
-   armttbar[112]=armttbar[98]*armttbar[112];
-   armttbar[111]=1./2.*armttbar[112] + armttbar[226] + armttbar[225] + 
-   armttbar[172] - 7./2.*armttbar[66] + 2*armttbar[111] + 1./4.*
-   armttbar[68];
-   armttbar[112]=armttbar[16]*armttbar[146];
-   armttbar[112]=armttbar[112] + armttbar[150];
-   armttbar[112]=armttbar[3]*armttbar[112];
-   armttbar[113]= - armttbar[38] + 31./6.*armttbar[41] + armttbar[37]
-    + 19./4.*armttbar[39] - 59./18. + armttbar[40];
-   armttbar[112]=3./4.*armttbar[112] + 11./24.*armttbar[12] + 
-   armttbar[222] + 1./2.*armttbar[113] + armttbar[201];
-   armttbar[112]=armttbar[3]*armttbar[112];
-   armttbar[113]= - 224603./36. + 7*armttbar[76];
-   armttbar[113]=275./3.*armttbar[75] + 5./4.*armttbar[90] + 1./8.*
-   armttbar[113] - 37./3.*armttbar[80];
-   armttbar[113]=7./4.*armttbar[87] + armttbar[257] + 1./3.*
-   armttbar[113] + armttbar[254];
-   armttbar[117]=7./96.*armttbar[21];
-   armttbar[113]=armttbar[117] + armttbar[36] - 37./36.*armttbar[41] - 
-   9091./864.*armttbar[13] + armttbar[259] + armttbar[79] + 1./4.*
-   armttbar[113] - 3*armttbar[88];
-   armttbar[123]=10./3. + 37./32.*armttbar[41];
-   armttbar[123]= - 275./576.*armttbar[12] + 1./64.*armttbar[8] - 7./
-   768.*armttbar[21] + 1./9.*armttbar[123] - 1./8.*armttbar[36];
-   armttbar[123]=armttbar[12]*armttbar[123];
-   armttbar[113]=1./8.*armttbar[113] + armttbar[123];
-   armttbar[113]=armttbar[99]*armttbar[113];
-   armttbar[123]=1 + armttbar[87];
-   armttbar[123]=armttbar[151]*armttbar[123];
-   armttbar[123]=1./48.*armttbar[123] + 3*armttbar[144];
-   armttbar[123]=MMZ*armttbar[123];
-   armttbar[111]=1./2.*armttbar[123] + armttbar[112] + 1./48.*
-   armttbar[160] + 5*armttbar[113] + 1./32.*armttbar[159] + 
-   armttbar[236] + 3./4.*armttbar[283] + 1./3.*armttbar[111] + 
-   armttbar[224];
-   armttbar[111]=MMZ*armttbar[111];
-   armttbar[112]=46471./216. + armttbar[76];
-   armttbar[112]=143./18.*armttbar[80] + 1./2.*armttbar[112] + 1./3.*
-   armttbar[43];
-   armttbar[113]=1./3.*armttbar[90];
-   armttbar[123]=1./4.*armttbar[84];
-   armttbar[112]=607./432.*armttbar[13] + 1./8.*armttbar[24] - 68./27.*
-   armttbar[25] - 1./12.*armttbar[23] + armttbar[123] - 457./54.*
-   armttbar[45] + armttbar[193] + 13./96.*armttbar[88] + 1./12.*
-   armttbar[87] - 377./432.*armttbar[75] + 1./4.*armttbar[112] + 
-   armttbar[113];
-   armttbar[124]=2*armttbar[57] - armttbar[54];
-   armttbar[124]=34*armttbar[124] + 263./2.*armttbar[66];
-   armttbar[124]=1./9.*armttbar[124] - 1./4.*armttbar[67];
-   armttbar[143]=armttbar[3]*armttbar[12];
-   armttbar[114]=1./8.*armttbar[143] + 1./4.*armttbar[114] + 1./3.*
-   armttbar[124] + 1./2.*armttbar[174];
-   armttbar[114]=MMZ*armttbar[114];
-   armttbar[124]=armttbar[205] + armttbar[183];
-   armttbar[143]= - 1 - 17./6.*armttbar[12];
-   armttbar[143]=armttbar[16]*armttbar[143];
-   armttbar[144]=1./3. + armttbar[194];
-   armttbar[144]=armttbar[15]*armttbar[144];
-   armttbar[124]=armttbar[144] + 1./3.*armttbar[124] + armttbar[143];
-   armttbar[124]=armttbar[3]*armttbar[124];
-   armttbar[143]=17*armttbar[38];
-   armttbar[144]=armttbar[284] + armttbar[143] - 821./12.*armttbar[41]
-    - 3659./6. - 73*armttbar[39];
-   armttbar[144]=1./3.*armttbar[144] + armttbar[104];
-   armttbar[144]=1./3.*armttbar[144] - 3./8.*armttbar[21];
-   armttbar[144]=1./8.*armttbar[144] + 59./81.*armttbar[12];
-   armttbar[144]=armttbar[12]*armttbar[144];
-   armttbar[146]= - armttbar[21]*armttbar[39];
-   armttbar[112]=1./3.*armttbar[114] + 5./8.*armttbar[178] + 1./8.*
-   armttbar[124] + armttbar[249] + armttbar[144] + 1./24.*armttbar[146]
-    + 1./8.*armttbar[163] + 1./3.*armttbar[112] + armttbar[243];
-   armttbar[112]=MMZ*armttbar[112];
-   armttbar[114]= - 5./4.*armttbar[36] + 17./4.*armttbar[38] - 821./48.
-   *armttbar[41] - 917./3. - 73./4.*armttbar[39];
-   armttbar[105]=1./2.*armttbar[235] - 4013./432.*armttbar[12] - 35./96.
-   *armttbar[21] + 1./3.*armttbar[114] + armttbar[105];
-   armttbar[105]=armttbar[15]*armttbar[105];
-   armttbar[114]=277./12.*armttbar[12] + 19./8.*armttbar[21] + 
-   armttbar[228] + armttbar[162] + 821./12.*armttbar[41] + 25201./36.
-    + 73*armttbar[39];
-   armttbar[124]=17./3.*armttbar[16] + 15*armttbar[15];
-   armttbar[124]=armttbar[3]*armttbar[124];
-   armttbar[114]=1./9.*armttbar[114] + 1./2.*armttbar[124];
-   armttbar[114]=armttbar[17]*armttbar[114];
-   armttbar[124]=295*armttbar[50] - 337*armttbar[94];
-   armttbar[124]=1993./27.*armttbar[93] + 1./27.*armttbar[124] + 3*
-   armttbar[96];
-   armttbar[124]=1./2.*armttbar[124] + 7./9.*armttbar[92];
-   armttbar[124]=1./2.*armttbar[124] - 1./3.*armttbar[48];
-   armttbar[144]=43./6. - 37*armttbar[39];
-   armttbar[144]= - 151./18.*armttbar[12] + 1./2.*armttbar[144] + 
-   armttbar[21];
-   armttbar[144]=armttbar[16]*armttbar[144];
-   armttbar[148]= - 13./3.*armttbar[16] + armttbar[188];
-   armttbar[148]=armttbar[3]*armttbar[15]*armttbar[148];
-   armttbar[105]=1./4.*armttbar[114] + 1./4.*armttbar[148] + 1./3.*
-   armttbar[105] + 1./12.*armttbar[144] + armttbar[253] + armttbar[252]
-    - 12533./648.*armttbar[20] - 5899./216.*armttbar[18] + 23./48.*
-   armttbar[19] + armttbar[251] - 13./36.*armttbar[5] + 547./144.*
-   armttbar[33] + 1./2.*armttbar[124] - 1./9.*armttbar[34];
-   armttbar[114]=173*armttbar[13] + 1043./3.*armttbar[45] + 4157./3. - 
-   173*armttbar[75];
-   armttbar[124]=1043./27. + 5./4.*armttbar[12];
-   armttbar[124]=armttbar[12]*armttbar[124];
-   armttbar[114]=1./9.*armttbar[114] + armttbar[124];
-   armttbar[114]=MMZ*armttbar[114];
-   armttbar[124]=173*armttbar[93] + 781./3.*armttbar[33];
-   armttbar[124]= - 875./9.*armttbar[20] - 865./18.*armttbar[18] + 1./9.
-   *armttbar[124] + 11./2.*armttbar[19];
-   armttbar[144]= - 11./3. + 9./2.*armttbar[12];
-   armttbar[144]=armttbar[16]*armttbar[144];
-   armttbar[148]= - 4157./3. - 301./2.*armttbar[12];
-   armttbar[148]=armttbar[15]*armttbar[148];
-   armttbar[150]= - 529 + 4259./2.*armttbar[12];
-   armttbar[150]=armttbar[17]*armttbar[150];
-   armttbar[114]=1./6.*armttbar[114] + 1./162.*armttbar[150] + 1./54.*
-   armttbar[148] + 1./3.*armttbar[124] + 1./2.*armttbar[144];
-   armttbar[114]=MMZ*armttbar[114];
-   armttbar[124]=5*armttbar[16];
-   armttbar[144]=armttbar[124] + 1429./18.*armttbar[15];
-   armttbar[144]=armttbar[15]*armttbar[144];
-   armttbar[148]=925./54.*armttbar[17] - 9*armttbar[16] + 11495./81.*
-   armttbar[15];
-   armttbar[148]=armttbar[17]*armttbar[148];
-   armttbar[144]=1./3.*armttbar[144] + armttbar[148];
-   armttbar[114]=1./4.*armttbar[144] + armttbar[114];
-   armttbar[144]=armttbar[6]*MMZ*armttbar[255];
-   armttbar[114]=1./8.*armttbar[114] + 17./27.*armttbar[144];
-   armttbar[114]=armttbar[6]*armttbar[114];
-   armttbar[105]=armttbar[114] + armttbar[169] + 1./2.*armttbar[105] + 
-   armttbar[112];
-   armttbar[105]=armttbar[6]*armttbar[105];
-   armttbar[112]=armttbar[260] + armttbar[241] + armttbar[128] + 
-   armttbar[138] + 35./8.*armttbar[41] + armttbar[122] + armttbar[119]
-    + 43./3. + armttbar[139];
-   armttbar[112]=armttbar[15]*armttbar[112];
-   armttbar[114]=197./6. + armttbar[262];
-   armttbar[114]= - 7./12.*armttbar[12] + 1./2.*armttbar[114] + 
-   armttbar[264];
-   armttbar[114]=armttbar[16]*armttbar[114];
-   armttbar[119]= - armttbar[50] + armttbar[219];
-   armttbar[112]=armttbar[272] + 1./2.*armttbar[112] + 1./4.*
-   armttbar[114] + armttbar[269] + armttbar[268] + 9./2.*armttbar[18]
-    + armttbar[126] + 9./4.*armttbar[119] + armttbar[267];
-   armttbar[112]=armttbar[3]*armttbar[112];
-   armttbar[114]=28*armttbar[54] - 997./16.*armttbar[66];
-   armttbar[114]=armttbar[276] + armttbar[273] + armttbar[266] + 
-   armttbar[277] + 1./27.*armttbar[114] + 19./8.*armttbar[65];
-   armttbar[114]=armttbar[280] + armttbar[281] + 1./3.*armttbar[114] + 
-   armttbar[203];
-   armttbar[114]=MMt*armttbar[114];
-   armttbar[119]=271./8.*armttbar[76] - 253733./864. + 7*armttbar[83];
-   armttbar[119]= - 473./72.*armttbar[80] + 1./8.*armttbar[119] + 
-   armttbar[43];
-   armttbar[119]= - 11./6.*armttbar[79] - 145./72.*armttbar[88] + 
-   armttbar[185] + 439./288.*armttbar[87] - 19./48.*armttbar[72] - 19./
-   48.*armttbar[74] + 809./324.*armttbar[75] + 11./3.*armttbar[77] - 
-   109./96.*armttbar[90] + 1./3.*armttbar[119] + 1./2.*armttbar[141];
-   armttbar[126]=5153./8. + 37./3.*armttbar[41];
-   armttbar[126]= - 7./96.*armttbar[21] + 1./12.*armttbar[126] - 
-   armttbar[36];
-   armttbar[126]=1./4.*armttbar[126] + 10./27.*armttbar[12];
-   armttbar[126]=armttbar[99]*armttbar[126];
-   armttbar[126]=armttbar[282] + 5*armttbar[126];
-   armttbar[126]=armttbar[15]*armttbar[126];
-   armttbar[128]=13./2.*armttbar[36] + 7./4.*armttbar[38] - 71./24.*
-   armttbar[41] - 173./9. - 29./4.*armttbar[39];
-   armttbar[104]=269./128.*armttbar[21] + 1./3.*armttbar[128] + 11./4.*
-   armttbar[104];
-   armttbar[104]=85./2592.*armttbar[12] + 1./3.*armttbar[104] + 9./32.*
-   armttbar[8];
-   armttbar[104]=armttbar[12]*armttbar[104];
-   armttbar[128]= - 37./2.*armttbar[50] + 47*armttbar[94];
-   armttbar[128]= - 275./3.*armttbar[93] + 1./3.*armttbar[128] + 7./4.*
-   armttbar[96];
-   armttbar[128]=1./3.*armttbar[128] - 5*armttbar[92];
-   armttbar[138]=1./4.*armttbar[32];
-   armttbar[128]= - 437./72.*armttbar[16] + 5./2.*armttbar[14] + 4985./
-   144.*armttbar[20] + 29797./864.*armttbar[18] - 19./6.*armttbar[19]
-    - 1499./216.*armttbar[33] - 7./48.*armttbar[34] + armttbar[138] + 1.
-   /2.*armttbar[128] + armttbar[48];
-   armttbar[128]=armttbar[99]*armttbar[128];
-   armttbar[144]= - 643./3. - 37./2.*armttbar[41];
-   armttbar[117]=armttbar[117] + 1./18.*armttbar[144] + armttbar[36];
-   armttbar[117]=armttbar[99]*armttbar[117];
-   armttbar[117]=armttbar[285] + 5*armttbar[117];
-   armttbar[117]=1./2.*armttbar[117] + armttbar[286];
-   armttbar[117]=armttbar[17]*armttbar[117];
-   armttbar[144]=49./24. + armttbar[110];
-   armttbar[144]=1./8.*armttbar[144] - armttbar[21];
-   armttbar[144]=armttbar[21]*armttbar[144];
-   armttbar[148]= - 1./18.*armttbar[24];
-   armttbar[104]=armttbar[106] + armttbar[114] + armttbar[105] + 
-   armttbar[149] + armttbar[111] + armttbar[117] + armttbar[112] + 
-   armttbar[126] + 5./4.*armttbar[128] + armttbar[301] + 1./2.*
-   armttbar[104] + armttbar[298] + 1./12.*armttbar[144] + armttbar[296]
-    + armttbar[295] + armttbar[294] + armttbar[287] + 1./144.*
-   armttbar[41] + armttbar[37] + 1./96.*armttbar[136] + 41./144.*
-   armttbar[39] + 2461./6912.*armttbar[13] + armttbar[305] + 
-   armttbar[292] + armttbar[290] + armttbar[148] - 103./324.*
-   armttbar[25] - 5./32.*armttbar[23] + armttbar[84] + armttbar[289] + 
-   1./4.*armttbar[119] - 1./9.*armttbar[45];
-   armttbar[104]=armttbar[176]*armttbar[104];
-   armttbar[105]=3*armttbar[97];
-   armttbar[106]=3./4.*armttbar[71];
-   armttbar[111]= - 3*armttbar[86];
-   armttbar[112]=1./2.*armttbar[77];
-   armttbar[114]=1./2.*armttbar[85];
-   armttbar[117]=27./4.*armttbar[35];
-   armttbar[119]=1./4.*armttbar[79];
-   armttbar[126]= - 21./4.*armttbar[51];
-   armttbar[128]= - 1./4.*armttbar[13];
-   armttbar[136]= - 1./4.*armttbar[84];
-   armttbar[144]= - 1./6.*armttbar[38];
-   armttbar[149]= - 1./12.*armttbar[36] + armttbar[144] + armttbar[140]
-    + armttbar[128] + armttbar[139] + armttbar[135] + armttbar[136] + 
-   armttbar[126] + armttbar[119] + armttbar[117] + armttbar[114] + 
-   armttbar[112] + armttbar[134] + armttbar[137] + armttbar[78] + 
-   armttbar[111] + armttbar[106] - 293./32. + armttbar[105];
-   armttbar[150]= - 11./3. - 9*armttbar[35];
-   armttbar[150]=armttbar[129] + 1./2.*armttbar[150] - armttbar[40];
-   armttbar[155]=1./2.*armttbar[150];
-   armttbar[159]=1./4.*armttbar[8];
-   armttbar[160]=armttbar[159] + armttbar[155] + armttbar[275];
-   armttbar[160]=armttbar[8]*armttbar[160];
-   armttbar[162]=1./2.*armttbar[18];
-   armttbar[163]= - armttbar[14] - armttbar[20] + armttbar[162] + 
-   armttbar[92] + armttbar[219];
-   armttbar[163]=armttbar[99]*armttbar[163];
-   armttbar[165]=armttbar[38] + armttbar[107];
-   armttbar[165]=armttbar[12]*armttbar[165];
-   armttbar[169]= - 1 + armttbar[107];
-   armttbar[169]=armttbar[15]*armttbar[99]*armttbar[169];
-   armttbar[174]= - 1./2. - armttbar[36];
-   armttbar[178]=armttbar[17]*armttbar[99]*armttbar[174];
-   armttbar[185]=1 + armttbar[84];
-   armttbar[193]=MMH*armttbar[99]*armttbar[185];
-   armttbar[149]=1./4.*armttbar[193] + 1./2.*armttbar[178] + 1./2.*
-   armttbar[169] + 1./2.*armttbar[163] + 1./12.*armttbar[165] + 1./2.*
-   armttbar[149] + armttbar[160];
-   armttbar[149]=MMH*armttbar[149];
-   armttbar[160]= - 1./4.*armttbar[47] - armttbar[91];
-   armttbar[165]= - 1./2.*armttbar[32];
-   armttbar[160]=armttbar[165] - 3./8.*armttbar[48] + 1./4.*
-   armttbar[92] - 1./4.*armttbar[93] - 1./2.*armttbar[94] - 
-   armttbar[49] + 3./2.*armttbar[160] + armttbar[95];
-   armttbar[203]=25./8.*armttbar[19];
-   armttbar[205]=armttbar[116] + 11./8.*armttbar[18] + armttbar[203] + 
-   armttbar[160] + 27./8.*armttbar[42];
-   armttbar[219]= - 1./8.*armttbar[21];
-   armttbar[222]=1./6.*armttbar[36];
-   armttbar[224]= - 1./24.*armttbar[12];
-   armttbar[225]=armttbar[224] + 7./16.*armttbar[8] + armttbar[219] + 
-   armttbar[222] + 1./16. + armttbar[38];
-   armttbar[225]=armttbar[16]*armttbar[225];
-   armttbar[226]=armttbar[199] + armttbar[40] + 55./3. + 9./2.*
-   armttbar[35];
-   armttbar[226]=1./8.*armttbar[226] + armttbar[263];
-   armttbar[226]=armttbar[14]*armttbar[226];
-   armttbar[228]= - armttbar[8]*armttbar[14];
-   armttbar[234]=1./4.*armttbar[228];
-   armttbar[235]=armttbar[36] + 5./6. + armttbar[38];
-   armttbar[235]= - 1./6.*armttbar[12] + 1./2.*armttbar[235] - 5./3.*
-   armttbar[8];
-   armttbar[235]=armttbar[15]*armttbar[235];
-   armttbar[182]=1./2.*armttbar[235] + armttbar[225] + 1./8.*
-   armttbar[183] + armttbar[234] + armttbar[182] + 1./2.*armttbar[205]
-    + armttbar[226];
-   armttbar[205]=1./16.*armttbar[37] + 1./8.*armttbar[40] + 1./3. + 9./
-   16.*armttbar[35];
-   armttbar[225]= - 7./16.*armttbar[8];
-   armttbar[226]=armttbar[225] + armttbar[205] + armttbar[222];
-   armttbar[226]=armttbar[17]*armttbar[226];
-   armttbar[149]=1./4.*armttbar[149] + 1./2.*armttbar[182] + 
-   armttbar[226];
-   armttbar[149]=MMH*armttbar[149];
-   armttbar[182]= - armttbar[16]*armttbar[38];
-   armttbar[180]=armttbar[180] - armttbar[36];
-   armttbar[226]=armttbar[15]*armttbar[180];
-   armttbar[235]=1./2.*armttbar[38];
-   armttbar[236]=armttbar[235] + armttbar[36];
-   armttbar[236]=armttbar[17]*armttbar[236];
-   armttbar[226]=1./3.*armttbar[236] + armttbar[182] + 1./3.*
-   armttbar[226];
-   armttbar[226]=MMH*armttbar[226];
-   armttbar[236]= - armttbar[14] + armttbar[256];
-   armttbar[241]=1./3.*armttbar[15];
-   armttbar[236]=1./2.*armttbar[236] + armttbar[241];
-   armttbar[236]=armttbar[15]*armttbar[236];
-   armttbar[243]= - 1./3.*armttbar[16];
-   armttbar[249]=armttbar[14] + armttbar[243];
-   armttbar[251]= - 1./3.*armttbar[15];
-   armttbar[249]=1./2.*armttbar[249] + armttbar[251];
-   armttbar[249]=armttbar[17]*armttbar[249];
-   armttbar[252]= - armttbar[14] + armttbar[16];
-   armttbar[253]=armttbar[16]*armttbar[252];
-   armttbar[226]=armttbar[226] + armttbar[249] + armttbar[253] + 
-   armttbar[236];
-   armttbar[226]=armttbar[6]*MMH*armttbar[226];
-   armttbar[236]=pow(armttbar[14],2);
-   armttbar[249]= - 3./2.*armttbar[236];
-   armttbar[254]=11*armttbar[14] - 137./2.*armttbar[16];
-   armttbar[254]=armttbar[16]*armttbar[254];
-   armttbar[257]=107*armttbar[14] + 151*armttbar[16];
-   armttbar[257]=1./3.*armttbar[257] - 11./2.*armttbar[15];
-   armttbar[257]=armttbar[15]*armttbar[257];
-   armttbar[254]=armttbar[257] + armttbar[249] + armttbar[254];
-   armttbar[257]=11./3.*armttbar[15] - armttbar[14] - 17./2.*
-   armttbar[16];
-   armttbar[257]=1./4.*armttbar[257] + armttbar[17];
-   armttbar[257]=armttbar[17]*armttbar[257];
-   armttbar[254]=1./16.*armttbar[254] + armttbar[257];
-   armttbar[149]=1./8.*armttbar[226] + 1./2.*armttbar[254] + 
-   armttbar[149];
-   armttbar[226]=101./64. - armttbar[71];
-   armttbar[226]=3./64.*armttbar[141] - 5./16.*armttbar[73] + 1./2.*
-   armttbar[226] + armttbar[86];
-   armttbar[254]=15 + 11./4.*armttbar[21];
-   armttbar[257]=3*armttbar[8];
-   armttbar[254]=1./2.*armttbar[254] + armttbar[257];
-   armttbar[254]=armttbar[8]*armttbar[254];
-   armttbar[258]=armttbar[181] + 25*armttbar[42] - 9*armttbar[14];
-   armttbar[259]=armttbar[8]*armttbar[14];
-   armttbar[258]=1./8.*armttbar[258] + armttbar[259];
-   armttbar[258]=armttbar[3]*armttbar[258];
-   armttbar[260]=3./2.*armttbar[21];
-   armttbar[261]=1 + armttbar[260];
-   armttbar[261]=armttbar[21]*armttbar[261];
-   armttbar[239]=armttbar[239] + 3*armttbar[59] - armttbar[62];
-   armttbar[239]=MMH*armttbar[239];
-   armttbar[262]=MMt*armttbar[62];
-   armttbar[266]=1./2.*armttbar[262] + 1./4.*armttbar[239] + 1./2.*
-   armttbar[258] + 1./4.*armttbar[254] + 1./64.*armttbar[261] + 13./32.
-   *armttbar[51] + 1./16.*armttbar[85] + 1./2.*armttbar[226] + 
-   armttbar[44];
-   armttbar[266]=MMt*armttbar[266];
-   armttbar[267]= - 5*armttbar[91] - armttbar[95];
-   armttbar[268]=1./4.*armttbar[93];
-   armttbar[192]=7./4.*armttbar[42] + armttbar[192] - 3*armttbar[32] - 
-   3./2.*armttbar[92] + armttbar[268] + armttbar[204] + 3./4.*
-   armttbar[267] - armttbar[94];
-   armttbar[204]=25./2.*armttbar[20];
-   armttbar[267]=35./2.*armttbar[14];
-   armttbar[269]=armttbar[238] + armttbar[267] + armttbar[204] - 7*
-   armttbar[18] + armttbar[192] - 21./2.*armttbar[19];
-   armttbar[272]=11 - 5*armttbar[21];
-   armttbar[273]= - 7*armttbar[8];
-   armttbar[272]=9./4.*armttbar[272] + armttbar[273];
-   armttbar[272]=armttbar[16]*armttbar[272];
-   armttbar[269]=1./2.*armttbar[272] + 1./2.*armttbar[269] + 
-   armttbar[259];
-   armttbar[272]=47./2. - 31./3.*armttbar[21];
-   armttbar[272]=1./16.*armttbar[272] + 5./3.*armttbar[8];
-   armttbar[272]=armttbar[15]*armttbar[272];
-   armttbar[269]=1./4.*armttbar[269] + armttbar[272];
-   armttbar[272]= - 31./2. - 9*armttbar[97];
-   armttbar[272]=armttbar[72] + armttbar[74] - armttbar[75] - 5./2.*
-   armttbar[77] - 3./2.*armttbar[82] + armttbar[137] + armttbar[147] + 
-   5./4.*armttbar[73] + 1./2.*armttbar[272] - 5*armttbar[86];
-   armttbar[136]= - 1./8.*armttbar[37] + armttbar[305] + 3./8.*
-   armttbar[23] + armttbar[136] + 31./16.*armttbar[51] + armttbar[304]
-    - 1./4.*armttbar[85] + 1./4.*armttbar[272] - armttbar[44];
-   armttbar[272]= - 1./4. + armttbar[36];
-   armttbar[272]=armttbar[21]*armttbar[272];
-   armttbar[272]=armttbar[136] + 1./6.*armttbar[272];
-   armttbar[274]=9*armttbar[35];
-   armttbar[276]=11./3. + armttbar[274];
-   armttbar[276]=armttbar[199] + 1./2.*armttbar[276] + armttbar[40];
-   armttbar[280]=1./8.*armttbar[276];
-   armttbar[281]=armttbar[244] + armttbar[280] + armttbar[263];
-   armttbar[281]=armttbar[8]*armttbar[281];
-   armttbar[282]=armttbar[8] + armttbar[131];
-   armttbar[282]=armttbar[12]*armttbar[282];
-   armttbar[284]=1./8.*armttbar[282];
-   armttbar[285]=armttbar[64] - 9*armttbar[59] - armttbar[62];
-   armttbar[285]=1./2.*armttbar[285] + armttbar[60];
-   armttbar[285]=MMH*armttbar[285];
-   armttbar[286]=1./8.*armttbar[285];
-   armttbar[272]=armttbar[286] + armttbar[284] + 1./2.*armttbar[272] + 
-   armttbar[281];
-   armttbar[272]=MMH*armttbar[272];
-   armttbar[257]=armttbar[257] + 7 + armttbar[260];
-   armttbar[260]= - armttbar[3]*armttbar[14];
-   armttbar[281]=1./8.*armttbar[257] + armttbar[260];
-   armttbar[281]=armttbar[17]*armttbar[281];
-   armttbar[269]=armttbar[266] + 1./2.*armttbar[272] + 1./2.*
-   armttbar[269] + armttbar[281];
-   armttbar[269]=MMt*armttbar[269];
-   armttbar[272]=1./3.*armttbar[38];
-   armttbar[224]=armttbar[224] - 17./24.*armttbar[8] - 1./24.*
-   armttbar[21] + armttbar[275] + 1./8. + armttbar[272];
-   armttbar[224]=armttbar[16]*armttbar[224];
-   armttbar[287]=1./3.*armttbar[216];
-   armttbar[288]= - armttbar[38] + armttbar[36];
-   armttbar[289]=armttbar[288] + armttbar[287];
-   armttbar[290]=armttbar[8]*armttbar[214];
-   armttbar[291]=1./3.*armttbar[290];
-   armttbar[215]=1./12.*armttbar[215] + 1./4.*armttbar[289] + 
-   armttbar[291];
-   armttbar[215]=MMH*armttbar[215];
-   armttbar[289]=armttbar[14]*armttbar[288];
-   armttbar[292]= - 1./2. + armttbar[38];
-   armttbar[293]=1./6.*armttbar[12] + 17./6.*armttbar[8] + 1./6.*
-   armttbar[21] + armttbar[292] - armttbar[36];
-   armttbar[293]=armttbar[15]*armttbar[293];
-   armttbar[294]=armttbar[17]*armttbar[288];
-   armttbar[215]=1./2.*armttbar[215] + 1./3.*armttbar[294] + 1./4.*
-   armttbar[293] + 1./3.*armttbar[289] + armttbar[224];
-   armttbar[215]=MMH*armttbar[215];
-   armttbar[224]=17*armttbar[14] + 5./2.*armttbar[16];
-   armttbar[224]=armttbar[16]*armttbar[224];
-   armttbar[289]= - 17*armttbar[14];
-   armttbar[293]=armttbar[289] - 11./2.*armttbar[16];
-   armttbar[293]=1./3.*armttbar[293] + armttbar[15];
-   armttbar[293]=armttbar[15]*armttbar[293];
-   armttbar[295]=armttbar[16] - armttbar[15];
-   armttbar[296]=armttbar[17]*armttbar[295];
-   armttbar[224]=17./3.*armttbar[296] + 1./3.*armttbar[224] + 
-   armttbar[293];
-   armttbar[293]=armttbar[16]*armttbar[288];
-   armttbar[297]=armttbar[15]*armttbar[288];
-   armttbar[298]=armttbar[17]*armttbar[214];
-   armttbar[293]=1./2.*armttbar[298] + armttbar[293] + 1./2.*
-   armttbar[297];
-   armttbar[293]=MMH*armttbar[293];
-   armttbar[297]= - armttbar[16] - armttbar[15];
-   armttbar[297]=armttbar[15]*armttbar[297];
-   armttbar[297]=armttbar[186] + 1./2.*armttbar[297];
-   armttbar[299]= - armttbar[16] + armttbar[15];
-   armttbar[300]=armttbar[17]*armttbar[299];
-   armttbar[301]=1./2.*armttbar[300];
-   armttbar[293]=armttbar[293] + armttbar[297] + armttbar[301];
-   armttbar[293]=armttbar[6]*MMH*armttbar[293];
-   armttbar[215]=1./12.*armttbar[293] + 1./4.*armttbar[224] + 
-   armttbar[215];
-   armttbar[224]=armttbar[202] + armttbar[8];
-   armttbar[293]=armttbar[16]*armttbar[224];
-   armttbar[302]=armttbar[130] - armttbar[8];
-   armttbar[304]=armttbar[15]*armttbar[302];
-   armttbar[293]=armttbar[293] + armttbar[304];
-   armttbar[304]=armttbar[21]*armttbar[288];
-   armttbar[305]=armttbar[8]*armttbar[288];
-   armttbar[306]=1./4.*armttbar[304] + armttbar[305];
-   armttbar[306]=MMH*armttbar[306];
-   armttbar[293]=17./4.*armttbar[293] + armttbar[306];
-   armttbar[293]=MMt*armttbar[293];
-   armttbar[215]=1./2.*armttbar[215] + 1./3.*armttbar[293];
-   armttbar[215]=armttbar[210]*armttbar[215];
-   armttbar[149]=1./2.*armttbar[215] + 1./2.*armttbar[149] + 
-   armttbar[269];
-   armttbar[149]=armttbar[210]*armttbar[149];
-   armttbar[215]= - 1./3.*armttbar[38];
-   armttbar[150]=1./2.*armttbar[8] + armttbar[275] + armttbar[150] + 
-   armttbar[215];
-   armttbar[150]=armttbar[8]*armttbar[150];
-   armttbar[269]= - armttbar[21]*armttbar[38];
-   armttbar[150]=armttbar[150] + 1./12.*armttbar[269] - 17./54.*
-   armttbar[36] + 5./54.*armttbar[38] + armttbar[140] - 11./12.*
-   armttbar[13] + armttbar[139] + armttbar[135] + 13./12.*armttbar[84]
-    + armttbar[126] + 11./12.*armttbar[79] + armttbar[117] + 
-   armttbar[114] + armttbar[112] + armttbar[134] + armttbar[137] + 
-   armttbar[78] + armttbar[111] + armttbar[106] - 301./32. + 
-   armttbar[105];
-   armttbar[293]= - 1./2.*armttbar[18];
-   armttbar[167]=armttbar[14] + armttbar[20] + armttbar[293] - 
-   armttbar[92] + armttbar[167];
-   armttbar[167]=armttbar[99]*armttbar[167];
-   armttbar[306]=armttbar[38] + 13./8.*armttbar[36];
-   armttbar[306]=armttbar[12]*armttbar[306];
-   armttbar[307]= - 1./2.*armttbar[36];
-   armttbar[308]=1 + armttbar[307];
-   armttbar[308]=armttbar[15]*armttbar[99]*armttbar[308];
-   armttbar[309]=1./2. + armttbar[36];
-   armttbar[309]=armttbar[17]*armttbar[99]*armttbar[309];
-   armttbar[310]= - 1 - armttbar[84];
-   armttbar[310]=MMH*armttbar[99]*armttbar[310];
-   armttbar[150]=5./24.*armttbar[310] + 5./12.*armttbar[309] + 5./12.*
-   armttbar[308] + 5./12.*armttbar[167] + 1./4.*armttbar[150] + 1./27.*
-   armttbar[306];
-   armttbar[150]=MMH*armttbar[150];
-   armttbar[167]=307./9. + armttbar[274];
-   armttbar[167]=armttbar[199] + 1./2.*armttbar[167] + armttbar[40];
-   armttbar[167]=armttbar[263] + 1./4.*armttbar[167] + armttbar[272];
-   armttbar[167]=armttbar[14]*armttbar[167];
-   armttbar[167]=47./72.*armttbar[183] + 1./2.*armttbar[228] + 5./24.*
-   armttbar[181] + armttbar[167] + armttbar[116] - 31./24.*armttbar[18]
-    + armttbar[203] + armttbar[160] + 97./24.*armttbar[42];
-   armttbar[274]=5./8.*armttbar[8] - 5./8.*armttbar[21] + armttbar[107]
-    - 1./72. + 5*armttbar[38];
-   armttbar[306]= - 1./9.*armttbar[12];
-   armttbar[274]=1./2.*armttbar[274] + armttbar[306];
-   armttbar[274]=armttbar[16]*armttbar[274];
-   armttbar[308]=331./54. + armttbar[201];
-   armttbar[308]= - 125./216.*armttbar[12] + 1./4.*armttbar[308] - 
-   armttbar[8];
-   armttbar[308]=armttbar[15]*armttbar[308];
-   armttbar[167]=1./2.*armttbar[308] + 1./2.*armttbar[167] + 1./3.*
-   armttbar[274];
-   armttbar[274]=armttbar[225] + 1./12.*armttbar[36] + armttbar[205] + 
-   1./12.*armttbar[38];
-   armttbar[274]=armttbar[17]*armttbar[274];
-   armttbar[150]=1./2.*armttbar[150] + 1./2.*armttbar[167] + 
-   armttbar[274];
-   armttbar[150]=MMH*armttbar[150];
-   armttbar[167]=1./8.*armttbar[85];
-   armttbar[226]=armttbar[262] + 1./2.*armttbar[239] + armttbar[258] + 
-   1./2.*armttbar[254] + 1./32.*armttbar[261] + 13./16.*armttbar[51] + 
-   armttbar[167] + armttbar[226] + 2*armttbar[44];
-   armttbar[226]=MMt*armttbar[226];
-   armttbar[239]= - armttbar[8] + armttbar[263] + 1./4.*armttbar[276]
-    + armttbar[272];
-   armttbar[239]=armttbar[8]*armttbar[239];
-   armttbar[254]=armttbar[292] + armttbar[36];
-   armttbar[254]=armttbar[21]*armttbar[254];
-   armttbar[239]=1./4.*armttbar[285] + 1./4.*armttbar[282] + 
-   armttbar[239] + armttbar[136] + 1./12.*armttbar[254];
-   armttbar[239]=MMH*armttbar[239];
-   armttbar[254]=armttbar[238] + armttbar[267] + armttbar[204] + 69./4.
-   *armttbar[18] + armttbar[192] - 307./36.*armttbar[19];
-   armttbar[258]=205 - 143./2.*armttbar[21];
-   armttbar[258]=1./3.*armttbar[258] - 5*armttbar[8];
-   armttbar[258]=armttbar[16]*armttbar[258];
-   armttbar[254]=1./6.*armttbar[258] + 1./2.*armttbar[254] + 
-   armttbar[259];
-   armttbar[257]=1./4.*armttbar[257] + 2*armttbar[260];
-   armttbar[257]=armttbar[17]*armttbar[257];
-   armttbar[258]= - 9 + 37./6.*armttbar[21];
-   armttbar[258]=1./16.*armttbar[258] + armttbar[8];
-   armttbar[258]=armttbar[15]*armttbar[258];
-   armttbar[226]=armttbar[226] + 1./2.*armttbar[239] + armttbar[257] + 
-   1./4.*armttbar[254] + armttbar[258];
-   armttbar[226]=MMt*armttbar[226];
-   armttbar[230]=armttbar[38] + armttbar[230];
-   armttbar[239]=armttbar[15]*armttbar[230];
-   armttbar[254]= - armttbar[38] + 5./8.*armttbar[36];
-   armttbar[254]=armttbar[17]*armttbar[254];
-   armttbar[239]=1./9.*armttbar[254] + 5./4.*armttbar[182] + 1./9.*
-   armttbar[239];
-   armttbar[239]=MMH*armttbar[239];
-   armttbar[243]=5./24.*armttbar[15] + 1./8.*armttbar[14] + 
-   armttbar[243];
-   armttbar[243]=armttbar[15]*armttbar[243];
-   armttbar[254]=283./24.*armttbar[15] - 1./8.*armttbar[14] + 
-   armttbar[256];
-   armttbar[254]=armttbar[17]*armttbar[254];
-   armttbar[239]=armttbar[239] + 1./3.*armttbar[254] + 5./4.*
-   armttbar[253] + 1./3.*armttbar[243];
-   armttbar[239]=armttbar[6]*MMH*armttbar[239];
-   armttbar[243]=53*armttbar[14] - 779./6.*armttbar[16];
-   armttbar[243]=armttbar[16]*armttbar[243];
-   armttbar[243]=armttbar[249] + 1./3.*armttbar[243];
-   armttbar[254]=37./2.*armttbar[14] + 61*armttbar[16];
-   armttbar[254]=1./3.*armttbar[254] - 15./4.*armttbar[15];
-   armttbar[254]=armttbar[15]*armttbar[254];
-   armttbar[243]=1./2.*armttbar[243] + armttbar[254];
-   armttbar[254]= - 29./3.*armttbar[15] - armttbar[14] - 35./6.*
-   armttbar[16];
-   armttbar[254]=1./4.*armttbar[254] + armttbar[17];
-   armttbar[254]=armttbar[17]*armttbar[254];
-   armttbar[243]=1./8.*armttbar[243] + armttbar[254];
-   armttbar[150]=armttbar[226] + 1./12.*armttbar[239] + 1./2.*
-   armttbar[243] + armttbar[150];
-   armttbar[149]=armttbar[150] + armttbar[149];
-   armttbar[149]=armttbar[210]*armttbar[149];
-   armttbar[226]=1./6.*armttbar[269];
-   armttbar[105]=armttbar[226] + 5./108.*armttbar[36] + 19./54.*
-   armttbar[38] + armttbar[140] + 7./36.*armttbar[13] + armttbar[139]
-    + armttbar[135] - 41./36.*armttbar[84] + armttbar[126] - 7./36.*
-   armttbar[79] + armttbar[117] + armttbar[114] + armttbar[112] + 
-   armttbar[134] + armttbar[137] + armttbar[78] + armttbar[111] + 
-   armttbar[106] - 863./96. + armttbar[105];
-   armttbar[106]=armttbar[159] + armttbar[155] + armttbar[215];
-   armttbar[106]=armttbar[8]*armttbar[106];
-   armttbar[111]=armttbar[272] + armttbar[307];
-   armttbar[111]=armttbar[12]*armttbar[111];
-   armttbar[105]=25./36.*armttbar[193] + 25./18.*armttbar[178] + 25./18.
-   *armttbar[169] + 25./18.*armttbar[163] + 7./36.*armttbar[111] + 1./2.
-   *armttbar[105] + armttbar[106];
-   armttbar[105]=MMH*armttbar[105];
-   armttbar[106]=armttbar[116] + 227./72.*armttbar[18] + armttbar[203]
-    + armttbar[160] + 211./72.*armttbar[42];
-   armttbar[111]=armttbar[212] + armttbar[157] + 277./27. + 9./4.*
-   armttbar[35];
-   armttbar[111]=1./4.*armttbar[111] + armttbar[272];
-   armttbar[111]=armttbar[14]*armttbar[111];
-   armttbar[106]=7./108.*armttbar[156] + armttbar[234] + 1./12.*
-   armttbar[181] + 1./2.*armttbar[106] + armttbar[111];
-   armttbar[111]=armttbar[225] + armttbar[205] + armttbar[278];
-   armttbar[111]=armttbar[17]*armttbar[111];
-   armttbar[114]= - 7./144.*armttbar[12];
-   armttbar[116]=armttbar[114] + 85./32.*armttbar[8] + armttbar[219] - 
-   29./288. + armttbar[38];
-   armttbar[116]=armttbar[16]*armttbar[116];
-   armttbar[117]= - 17./27. - armttbar[38];
-   armttbar[117]=7./36.*armttbar[12] + 13./9.*armttbar[8] + 1./2.*
-   armttbar[117] + armttbar[36];
-   armttbar[117]=armttbar[15]*armttbar[117];
-   armttbar[105]=1./4.*armttbar[105] + armttbar[111] + 1./4.*
-   armttbar[117] + 1./2.*armttbar[106] + 1./3.*armttbar[116];
-   armttbar[105]=MMH*armttbar[105];
-   armttbar[106]=armttbar[272] - armttbar[36];
-   armttbar[111]=armttbar[15]*armttbar[106];
-   armttbar[116]=armttbar[215] + armttbar[36];
-   armttbar[116]=armttbar[17]*armttbar[116];
-   armttbar[111]=17./12.*armttbar[116] + armttbar[182] + 17./12.*
-   armttbar[111];
-   armttbar[111]=MMH*armttbar[111];
-   armttbar[116]= - 1./2.*armttbar[16];
-   armttbar[117]= - armttbar[14] + armttbar[116];
-   armttbar[126]=1./3.*armttbar[117] + armttbar[188];
-   armttbar[126]=armttbar[15]*armttbar[126];
-   armttbar[134]=armttbar[14] + 1./2.*armttbar[16];
-   armttbar[135]=17./3.*armttbar[134] + armttbar[195];
-   armttbar[135]=armttbar[17]*armttbar[135];
-   armttbar[111]=armttbar[111] + 1./6.*armttbar[135] + armttbar[253] + 
-   17./6.*armttbar[126];
-   armttbar[111]=armttbar[6]*MMH*armttbar[111];
-   armttbar[126]= - 7*armttbar[14] - 53./6.*armttbar[16];
-   armttbar[126]=armttbar[16]*armttbar[126];
-   armttbar[135]= - 11*armttbar[14];
-   armttbar[137]= - 19./2.*armttbar[15] + armttbar[135] + 31*
-   armttbar[16];
-   armttbar[137]=armttbar[15]*armttbar[137];
-   armttbar[126]=armttbar[137] + armttbar[249] + 17./3.*armttbar[126];
-   armttbar[137]=1./9.*armttbar[15] - armttbar[14] - 115./6.*
-   armttbar[16];
-   armttbar[137]=1./4.*armttbar[137] + armttbar[17];
-   armttbar[137]=armttbar[17]*armttbar[137];
-   armttbar[126]=1./16.*armttbar[126] + armttbar[137];
-   armttbar[105]=1./12.*armttbar[111] + 1./2.*armttbar[126] + 
-   armttbar[105];
-   armttbar[111]=armttbar[238] + armttbar[267] + armttbar[204] - 41./18.
-   *armttbar[18] + armttbar[192] - 59./9.*armttbar[19];
-   armttbar[126]=107 - 65*armttbar[21];
-   armttbar[126]=7./12.*armttbar[126] - 85*armttbar[8];
-   armttbar[126]=armttbar[16]*armttbar[126];
-   armttbar[111]=1./6.*armttbar[126] + 1./2.*armttbar[111] + 
-   armttbar[259];
-   armttbar[126]= - 1./16. + 11./3.*armttbar[21];
-   armttbar[126]=1./2.*armttbar[126] - 13./3.*armttbar[8];
-   armttbar[126]=armttbar[15]*armttbar[126];
-   armttbar[111]=1./4.*armttbar[111] + 1./3.*armttbar[126];
-   armttbar[126]= - 1./4. + armttbar[38];
-   armttbar[126]=armttbar[21]*armttbar[126];
-   armttbar[136]=armttbar[136] + 1./6.*armttbar[126];
-   armttbar[137]=armttbar[244] + armttbar[280] + armttbar[272];
-   armttbar[137]=armttbar[8]*armttbar[137];
-   armttbar[136]=armttbar[286] + armttbar[284] + 1./2.*armttbar[136] + 
-   armttbar[137];
-   armttbar[136]=MMH*armttbar[136];
-   armttbar[111]=armttbar[266] + 1./2.*armttbar[136] + 1./2.*
-   armttbar[111] + armttbar[281];
-   armttbar[111]=MMt*armttbar[111];
-   armttbar[136]=armttbar[14] - armttbar[16];
-   armttbar[137]=armttbar[16]*armttbar[136];
-   armttbar[139]=armttbar[15]*armttbar[252];
-   armttbar[137]=1./4.*armttbar[296] + 1./4.*armttbar[137] + 
-   armttbar[139];
-   armttbar[139]=armttbar[14] + 7*armttbar[183];
-   armttbar[140]= - 7./9.*armttbar[12];
-   armttbar[155]=armttbar[140] - 1./9. - armttbar[8];
-   armttbar[155]=armttbar[16]*armttbar[155];
-   armttbar[139]=1./9.*armttbar[139] + armttbar[155];
-   armttbar[155]=1./6.*armttbar[8];
-   armttbar[160]= - armttbar[38] + armttbar[155];
-   armttbar[160]=armttbar[15]*armttbar[160];
-   armttbar[163]=armttbar[12]*armttbar[38];
-   armttbar[169]=armttbar[38] + 7*armttbar[163];
-   armttbar[169]=MMH*armttbar[169];
-   armttbar[139]=1./54.*armttbar[169] + 1./6.*armttbar[139] + 
-   armttbar[160];
-   armttbar[139]=MMH*armttbar[139];
-   armttbar[160]=armttbar[15]*armttbar[38];
-   armttbar[169]= - armttbar[17]*armttbar[38];
-   armttbar[160]=armttbar[160] + armttbar[169];
-   armttbar[160]=MMH*armttbar[160];
-   armttbar[178]=armttbar[15]*armttbar[136];
-   armttbar[182]=armttbar[17]*armttbar[252];
-   armttbar[160]=armttbar[160] + armttbar[178] + armttbar[182];
-   armttbar[160]=armttbar[6]*MMH*armttbar[160];
-   armttbar[178]=1./3.*armttbar[21];
-   armttbar[192]= - 1./2. + armttbar[178];
-   armttbar[193]= - 1./3.*armttbar[8];
-   armttbar[192]=1./2.*armttbar[192] + armttbar[193];
-   armttbar[192]=armttbar[15]*armttbar[192];
-   armttbar[195]= - 1./3.*armttbar[21];
-   armttbar[203]=1./2. + armttbar[195];
-   armttbar[204]=1./3.*armttbar[8];
-   armttbar[203]=1./2.*armttbar[203] + armttbar[204];
-   armttbar[203]=armttbar[16]*armttbar[203];
-   armttbar[205]= - armttbar[19] + armttbar[18];
-   armttbar[192]=armttbar[192] + 1./4.*armttbar[205] + armttbar[203];
-   armttbar[192]=MMt*armttbar[192];
-   armttbar[137]=1./2.*armttbar[192] + 17./216.*armttbar[160] + 1./3.*
-   armttbar[137] + 1./4.*armttbar[139];
-   armttbar[137]=armttbar[176]*armttbar[137];
-   armttbar[105]=1./4.*armttbar[137] + 1./2.*armttbar[105] + 
-   armttbar[111];
-   armttbar[105]=armttbar[176]*armttbar[105];
-   armttbar[105]=armttbar[150] + armttbar[105];
-   armttbar[105]=armttbar[176]*armttbar[105];
-   armttbar[111]=armttbar[8]*armttbar[38];
-   armttbar[137]= - 1 - armttbar[85];
-   armttbar[139]=armttbar[137] + 1./6.*armttbar[111];
-   armttbar[139]=MMH*armttbar[139];
-   armttbar[150]= - 1./2.*armttbar[19];
-   armttbar[127]=armttbar[150] - armttbar[95] + armttbar[127];
-   armttbar[144]=1 + armttbar[144];
-   armttbar[160]=armttbar[14]*armttbar[144];
-   armttbar[192]= - 1./12.*armttbar[8] + 1 - 1./12.*armttbar[38];
-   armttbar[192]=armttbar[16]*armttbar[192];
-   armttbar[139]=1./2.*armttbar[139] + 1./6.*armttbar[169] + 
-   armttbar[192] + 1./12.*armttbar[259] + armttbar[127] + armttbar[160]
-   ;
-   armttbar[139]=MMH*armttbar[139];
-   armttbar[160]=7*armttbar[14];
-   armttbar[192]= - 5*armttbar[16];
-   armttbar[205]=armttbar[160] + armttbar[192];
-   armttbar[205]=armttbar[16]*armttbar[205];
-   armttbar[205]=armttbar[182] - armttbar[236] + 1./2.*armttbar[205];
-   armttbar[139]=1./6.*armttbar[205] + armttbar[139];
-   armttbar[139]=MMH*armttbar[139];
-   armttbar[111]=armttbar[137] + 1./3.*armttbar[111];
-   armttbar[111]=MMH*armttbar[111];
-   armttbar[205]=1 + armttbar[215];
-   armttbar[205]=armttbar[14]*armttbar[205];
-   armttbar[144]=armttbar[144] - 1./6.*armttbar[8];
-   armttbar[144]=armttbar[16]*armttbar[144];
-   armttbar[215]=1./6.*armttbar[259];
-   armttbar[111]=1./2.*armttbar[111] + 1./3.*armttbar[169] + 
-   armttbar[144] + armttbar[215] + armttbar[127] + armttbar[205];
-   armttbar[111]=MMH*armttbar[111];
-   armttbar[116]=armttbar[14] + armttbar[116];
-   armttbar[116]=armttbar[16]*armttbar[116];
-   armttbar[116]=1./2.*armttbar[182] - 1./2.*armttbar[236] + 
-   armttbar[116];
-   armttbar[111]=1./3.*armttbar[116] + 1./2.*armttbar[111];
-   armttbar[111]=MMH*armttbar[111];
-   armttbar[116]=1./3.*armttbar[181];
-   armttbar[144]= - armttbar[14] + armttbar[42] - armttbar[19];
-   armttbar[169]=1./2.*armttbar[144] + armttbar[116];
-   armttbar[182]= - armttbar[23] + armttbar[85] + 1./4. + armttbar[82];
-   armttbar[205]=armttbar[182] + 1./3.*armttbar[269];
-   armttbar[225]= - 1./3.*armttbar[8]*armttbar[38];
-   armttbar[205]=1./4.*armttbar[205] + armttbar[225];
-   armttbar[205]=MMH*armttbar[205];
-   armttbar[234]=1./3.*armttbar[228];
-   armttbar[169]=armttbar[205] + armttbar[203] + 1./2.*armttbar[169] + 
-   armttbar[234];
-   armttbar[169]=MMt*MMH*armttbar[169];
-   armttbar[111]=armttbar[111] + armttbar[169];
-   armttbar[111]=armttbar[176]*armttbar[111];
-   armttbar[169]=armttbar[144] + 5./6.*armttbar[181];
-   armttbar[203]=1 - 5./6.*armttbar[21];
-   armttbar[203]=1./2.*armttbar[203] + armttbar[204];
-   armttbar[203]=armttbar[16]*armttbar[203];
-   armttbar[205]=armttbar[182] + armttbar[226];
-   armttbar[205]=1./2.*armttbar[205] + armttbar[225];
-   armttbar[205]=MMH*armttbar[205];
-   armttbar[169]=armttbar[205] + armttbar[203] + 1./2.*armttbar[169] + 
-   armttbar[234];
-   armttbar[169]=MMt*MMH*armttbar[169];
-   armttbar[111]=armttbar[111] + armttbar[139] + armttbar[169];
-   armttbar[111]=armttbar[176]*armttbar[111];
-   armttbar[139]=armttbar[8]*armttbar[36];
-   armttbar[139]=3*armttbar[137] + 1./3.*armttbar[139];
-   armttbar[139]=MMH*armttbar[139];
-   armttbar[169]=3 + armttbar[275];
-   armttbar[169]=armttbar[14]*armttbar[169];
-   armttbar[203]= - 1./6.*armttbar[36];
-   armttbar[205]=3 + armttbar[203];
-   armttbar[205]=armttbar[16]*armttbar[205];
-   armttbar[225]= - armttbar[17]*armttbar[36];
-   armttbar[226]= - armttbar[15]*armttbar[8];
-   armttbar[234]=1./6.*armttbar[226];
-   armttbar[139]=1./2.*armttbar[139] + 1./3.*armttbar[225] + 
-   armttbar[234] + armttbar[205] + armttbar[215] + 3*armttbar[127] + 
-   armttbar[169];
-   armttbar[139]=MMH*armttbar[139];
-   armttbar[169]=1./3.*armttbar[14] - 3./8.*armttbar[16];
-   armttbar[169]=armttbar[16]*armttbar[169];
-   armttbar[205]= - armttbar[14] + armttbar[15];
-   armttbar[205]=armttbar[17]*armttbar[205];
-   armttbar[134]=armttbar[15]*armttbar[134];
-   armttbar[139]=1./4.*armttbar[139] + 1./12.*armttbar[205] + 1./12.*
-   armttbar[134] - 1./12.*armttbar[236] + armttbar[169];
-   armttbar[139]=MMH*armttbar[139];
-   armttbar[169]= - armttbar[21]*armttbar[36];
-   armttbar[169]=3*armttbar[182] + 1./3.*armttbar[169];
-   armttbar[205]= - armttbar[8]*armttbar[36];
-   armttbar[169]=1./4.*armttbar[169] + 1./3.*armttbar[205];
-   armttbar[169]=MMH*armttbar[169];
-   armttbar[205]=1 - armttbar[21];
-   armttbar[205]=armttbar[16]*armttbar[205];
-   armttbar[215]=armttbar[15]*armttbar[224];
-   armttbar[116]=1./2.*armttbar[169] + 1./6.*armttbar[215] + 3./8.*
-   armttbar[205] + 1./6.*armttbar[228] + 3./8.*armttbar[144] + 
-   armttbar[116];
-   armttbar[116]=MMt*MMH*armttbar[116];
-   armttbar[116]=armttbar[139] + armttbar[116];
-   armttbar[111]=armttbar[116] + 1./2.*armttbar[111];
-   armttbar[111]=armttbar[176]*armttbar[111];
-   armttbar[139]=armttbar[155] + armttbar[203] + 1 + armttbar[278];
-   armttbar[139]=armttbar[16]*armttbar[139];
-   armttbar[155]=armttbar[275] + 1 + armttbar[272];
-   armttbar[155]=armttbar[14]*armttbar[155];
-   armttbar[137]=armttbar[137] + 1./3.*armttbar[305];
-   armttbar[137]=MMH*armttbar[137];
-   armttbar[127]=1./2.*armttbar[137] + 1./3.*armttbar[298] + 
-   armttbar[234] + armttbar[139] + armttbar[127] + armttbar[155];
-   armttbar[127]=MMH*armttbar[127];
-   armttbar[137]=1./4.*armttbar[14];
-   armttbar[139]=armttbar[137] - armttbar[16];
-   armttbar[139]=armttbar[16]*armttbar[139];
-   armttbar[139]=armttbar[301] + armttbar[139] + 1./2.*armttbar[134];
-   armttbar[127]=1./3.*armttbar[139] + 1./2.*armttbar[127];
-   armttbar[127]=MMH*armttbar[127];
-   armttbar[139]=armttbar[14]*armttbar[214];
-   armttbar[155]=armttbar[214] + armttbar[8];
-   armttbar[155]=armttbar[16]*armttbar[155];
-   armttbar[169]=MMH*armttbar[305];
-   armttbar[139]=1./2.*armttbar[169] + armttbar[298] + 1./2.*
-   armttbar[226] + armttbar[139] + 1./2.*armttbar[155];
-   armttbar[139]=MMH*armttbar[139];
-   armttbar[117]=armttbar[16]*armttbar[117];
-   armttbar[117]=armttbar[139] + armttbar[300] + armttbar[117] + 
+   armttbar[133]=1./2.*armttbar[106];
+   armttbar[134]= - armttbar[63]*armttbar[133];
+   armttbar[135]=armttbar[108] - 1./3.;
+   armttbar[135]=armttbar[135]*armttbar[107];
+   armttbar[136]= - armttbar[121]*armttbar[105];
+   armttbar[136]=armttbar[135] + armttbar[136];
+   armttbar[136]=armttbar[68]*armttbar[136];
+   armttbar[137]=armttbar[102] + armttbar[107];
+   armttbar[138]= - armttbar[69]*armttbar[137];
+   armttbar[134]=1./8.*armttbar[136] + 1./3.*armttbar[138] + 
    armttbar[134];
-   armttbar[117]=MMH*armttbar[117];
-   armttbar[134]=1./4.*armttbar[216] + armttbar[290];
-   armttbar[134]=MMH*armttbar[134];
-   armttbar[139]=armttbar[16]*armttbar[302];
-   armttbar[134]=armttbar[134] + armttbar[139] + armttbar[215];
-   armttbar[134]=MMt*MMH*armttbar[134];
-   armttbar[117]=1./2.*armttbar[117] + armttbar[134];
-   armttbar[117]=armttbar[210]*armttbar[117];
-   armttbar[134]=armttbar[144] + armttbar[181];
-   armttbar[139]=armttbar[193] + 1./4. + armttbar[195];
-   armttbar[139]=armttbar[16]*armttbar[139];
-   armttbar[144]=armttbar[182] + armttbar[287];
-   armttbar[144]=1./4.*armttbar[144] + armttbar[291];
-   armttbar[144]=MMH*armttbar[144];
-   armttbar[134]=armttbar[144] + 1./3.*armttbar[215] + 1./4.*
-   armttbar[134] + armttbar[139];
-   armttbar[134]=MMt*MMH*armttbar[134];
-   armttbar[117]=1./3.*armttbar[117] + armttbar[127] + armttbar[134];
-   armttbar[117]=armttbar[210]*armttbar[117];
-   armttbar[116]=armttbar[116] + 1./2.*armttbar[117];
-   armttbar[116]=armttbar[210]*armttbar[116];
-   armttbar[111]=armttbar[111] + armttbar[116];
-   armttbar[111]=armttbar[9]*armttbar[111];
-   armttbar[105]=1./4.*armttbar[111] + armttbar[105] + armttbar[149];
-   armttbar[105]=armttbar[9]*armttbar[105];
-   armttbar[111]=77./36.*armttbar[76] + 691./144. + 15*armttbar[83];
-   armttbar[111]= - 1./4.*armttbar[90] - 1./6.*armttbar[141] + 1./4.*
-   armttbar[111] - 1./3.*armttbar[80];
-   armttbar[116]=1./2.*armttbar[75];
-   armttbar[111]=239./144.*armttbar[87] + 7./36.*armttbar[72] + 7./36.*
-   armttbar[74] + armttbar[116] + 1./2.*armttbar[111] + armttbar[77];
-   armttbar[111]= - 23./72.*armttbar[88] + 1./2.*armttbar[111] + 17./9.
-   *armttbar[44];
-   armttbar[117]= - 17./3.*armttbar[39];
-   armttbar[127]=7./4. + armttbar[117];
-   armttbar[127]=1./2.*armttbar[127] + armttbar[178];
-   armttbar[127]=armttbar[21]*armttbar[127];
-   armttbar[134]= - 9 - 7./36.*armttbar[21];
-   armttbar[139]=1./4.*armttbar[12];
-   armttbar[134]=armttbar[139] + 1./8.*armttbar[134] - 7./9.*
-   armttbar[8];
-   armttbar[134]=armttbar[12]*armttbar[134];
-   armttbar[144]=7*armttbar[156] + 61*armttbar[42] + armttbar[160];
-   armttbar[149]= - 1 + armttbar[202];
-   armttbar[149]=1./2.*armttbar[149] + armttbar[8];
-   armttbar[155]=armttbar[15]*armttbar[149];
-   armttbar[160]=3*armttbar[155];
-   armttbar[144]=1./18.*armttbar[144] + armttbar[160];
-   armttbar[144]=armttbar[3]*armttbar[144];
-   armttbar[169]= - 1./2.*armttbar[68] - armttbar[65];
-   armttbar[169]=1./2.*armttbar[169] - 7./3.*armttbar[63];
-   armttbar[178]= - 1./3.*armttbar[67];
-   armttbar[169]=1./2.*armttbar[169] + armttbar[178];
-   armttbar[169]=MMt*armttbar[169];
-   armttbar[182]=77./2. + armttbar[110];
-   armttbar[182]=1./3.*armttbar[182] - armttbar[37];
-   armttbar[182]=armttbar[8]*armttbar[182];
-   armttbar[193]=13./6.*armttbar[63] - armttbar[64];
-   armttbar[193]=1./2.*armttbar[193] - armttbar[60];
-   armttbar[193]=MMH*armttbar[193];
-   armttbar[195]=armttbar[101] + armttbar[283];
-   armttbar[195]=armttbar[15]*armttbar[195];
-   armttbar[111]=1./6.*armttbar[169] + 1./4.*armttbar[193] + 1./4.*
-   armttbar[144] + 3./8.*armttbar[195] + 1./4.*armttbar[134] + 1./8.*
-   armttbar[182] + 1./16.*armttbar[127] + 1./8.*armttbar[37] - 55./384.
-   *armttbar[13] + armttbar[148] - 1./18.*armttbar[25] - 15./32.*
-   armttbar[23] - 7./72.*armttbar[84] - 43./144.*armttbar[51] + 1./2.*
-   armttbar[111] - 4./9.*armttbar[45];
-   armttbar[111]=MMt*armttbar[111];
-   armttbar[127]=MMH*armttbar[163];
-   armttbar[127]=armttbar[127] + armttbar[183] + armttbar[200];
-   armttbar[127]=MMH*armttbar[127];
-   armttbar[134]=armttbar[15]*armttbar[299];
-   armttbar[127]=armttbar[127] + armttbar[134] + armttbar[296];
-   armttbar[127]=armttbar[6]*armttbar[127];
-   armttbar[134]=1./3.*armttbar[146] - armttbar[23] + armttbar[87] + 1./
-   4. + armttbar[83];
-   armttbar[144]= - armttbar[8]*armttbar[39];
-   armttbar[134]=1./4.*armttbar[134] + 1./3.*armttbar[144];
    armttbar[134]=MMt*armttbar[134];
-   armttbar[144]=armttbar[150] + 1./2.*armttbar[50] - armttbar[96];
-   armttbar[146]= - 1 + armttbar[171];
-   armttbar[146]=armttbar[14]*armttbar[146];
-   armttbar[140]=armttbar[140] + 89./9. - armttbar[39];
-   armttbar[140]=armttbar[16]*armttbar[140];
-   armttbar[148]=55 + 7*armttbar[12];
-   armttbar[148]=armttbar[15]*armttbar[148];
-   armttbar[150]=armttbar[3]*armttbar[15]*armttbar[295];
-   armttbar[163]=armttbar[8]*armttbar[39];
-   armttbar[163]= - armttbar[38] + 1./4.*armttbar[163];
-   armttbar[163]=MMH*armttbar[163];
-   armttbar[127]=armttbar[134] + 17./108.*armttbar[127] + 1./3.*
-   armttbar[163] + 1./6.*armttbar[187] + 1./2.*armttbar[150] + 1./108.*
-   armttbar[148] + 1./12.*armttbar[140] + 1./2.*armttbar[144] + 1./3.*
-   armttbar[146];
-   armttbar[127]=armttbar[176]*armttbar[127];
-   armttbar[134]= - 7./2.*armttbar[92] + armttbar[48];
-   armttbar[138]= - 1./3.*armttbar[18] + 1./3.*armttbar[134] + 
-   armttbar[138];
-   armttbar[138]=7./12.*armttbar[14] + 1./2.*armttbar[138] + 1./3.*
-   armttbar[20];
-   armttbar[138]=armttbar[99]*armttbar[138];
-   armttbar[140]=armttbar[12]*armttbar[36];
-   armttbar[144]=1./6.*armttbar[140] + armttbar[203] + 1./6.*
-   armttbar[13] - 7./3.*armttbar[84] - 1./6.*armttbar[79] - 31./16. + 1.
-   /3.*armttbar[88];
-   armttbar[144]=armttbar[99]*armttbar[144];
-   armttbar[144]= - 1./3.*armttbar[63] + 25./16.*armttbar[144];
-   armttbar[144]=MMH*armttbar[144];
-   armttbar[146]= - 3*armttbar[77];
-   armttbar[148]= - 97./36.*armttbar[72] - 97./36.*armttbar[74] - 2213./
-   432. + armttbar[146];
-   armttbar[148]=25./36.*armttbar[79] + 91./72.*armttbar[88] + 1./4.*
-   armttbar[148] - 17./9.*armttbar[44];
-   armttbar[150]=17*armttbar[39];
-   armttbar[163]= - 163./6. + armttbar[150];
-   armttbar[163]=1./12.*armttbar[163] + armttbar[37];
-   armttbar[163]=armttbar[8]*armttbar[163];
-   armttbar[169]=151./4. + armttbar[206];
-   armttbar[169]=1./3.*armttbar[169] + 7./2.*armttbar[36];
-   armttbar[169]=1./3.*armttbar[169] - 23./16.*armttbar[8];
-   armttbar[169]=armttbar[12]*armttbar[169];
-   armttbar[171]=17./4. - armttbar[36];
-   armttbar[171]=armttbar[15]*armttbar[99]*armttbar[171];
-   armttbar[182]=7./8. + armttbar[36];
-   armttbar[182]=armttbar[17]*armttbar[99]*armttbar[182];
-   armttbar[138]=1./6.*armttbar[144] + 25./36.*armttbar[182] + 25./72.*
-   armttbar[171] + 25./12.*armttbar[138] + 1./24.*armttbar[169] + 1./8.
-   *armttbar[163] + 29./216.*armttbar[36] - 5./108.*armttbar[38] - 3./
-   16.*armttbar[37] - 1./384.*armttbar[13] + 209./1728.*armttbar[84] + 
-   205./1152.*armttbar[51] + 1./8.*armttbar[148] + 1./9.*armttbar[45];
-   armttbar[138]=MMH*armttbar[138];
-   armttbar[144]=47./6. + armttbar[110];
-   armttbar[144]=1./3.*armttbar[144] - armttbar[37];
-   armttbar[144]=armttbar[14]*armttbar[144];
-   armttbar[110]=661./9. + armttbar[110];
-   armttbar[110]=403./36.*armttbar[12] + 1./2.*armttbar[110] - 
-   armttbar[21];
-   armttbar[110]=armttbar[16]*armttbar[110];
-   armttbar[148]=3./4.*armttbar[48];
-   armttbar[163]=armttbar[99]*armttbar[186];
-   armttbar[110]=25./18.*armttbar[163] + 1./12.*armttbar[110] + 11./72.
-   *armttbar[156] + 1./4.*armttbar[144] + 383./288.*armttbar[20] - 
-   35507./5184.*armttbar[18] - 103./48.*armttbar[19] - 103./432.*
-   armttbar[42] - 1./36.*armttbar[5] + 107./144.*armttbar[33] - 155./
-   288.*armttbar[34] - 23./18.*armttbar[32] + armttbar[148] + 11./36.*
-   armttbar[92] - 7./12.*armttbar[93] - 413./144.*armttbar[96] + 15./8.
-   *armttbar[50] + 1./3.*armttbar[94];
-   armttbar[144]= - 27*armttbar[35];
-   armttbar[169]=29653./648. + armttbar[144];
-   armttbar[187]= - 3*armttbar[40];
-   armttbar[169]=armttbar[118] + 1./2.*armttbar[169] + armttbar[187];
-   armttbar[169]=1./4.*armttbar[169] + armttbar[38];
-   armttbar[193]= - 3*armttbar[101];
-   armttbar[203]=armttbar[193] + 625./9.*armttbar[99];
-   armttbar[203]=armttbar[15]*armttbar[203];
-   armttbar[205]= - armttbar[16]*armttbar[98];
-   armttbar[169]=1./8.*armttbar[203] + 1./48.*armttbar[205] + 13./1296.
-   *armttbar[12] - 197./144.*armttbar[8] - 103./1152.*armttbar[21] + 1./
-   2.*armttbar[169] - armttbar[36];
-   armttbar[169]=armttbar[15]*armttbar[169];
-   armttbar[117]=19./2. + armttbar[117];
-   armttbar[117]=79./36.*armttbar[12] + 17./18.*armttbar[8] + 97./144.*
-   armttbar[21] + 1./2.*armttbar[117] - armttbar[37];
-   armttbar[203]=armttbar[193] + 4825./54.*armttbar[99];
-   armttbar[203]=armttbar[15]*armttbar[203];
-   armttbar[206]=armttbar[99]*armttbar[16];
-   armttbar[117]=1./2.*armttbar[203] + 1./2.*armttbar[117] + 25./9.*
-   armttbar[206];
-   armttbar[203]=9./8.*armttbar[15];
-   armttbar[215]= - 17./9.*armttbar[14] + armttbar[203];
-   armttbar[215]=armttbar[3]*armttbar[215];
-   armttbar[216]= - armttbar[17]*armttbar[99];
-   armttbar[117]=1075./216.*armttbar[216] + 1./2.*armttbar[117] + 
-   armttbar[215];
-   armttbar[117]=armttbar[17]*armttbar[117];
-   armttbar[215]= - armttbar[14] - 25./4.*armttbar[16];
-   armttbar[215]=3*armttbar[215] - 7./2.*armttbar[15];
-   armttbar[215]=armttbar[3]*armttbar[15]*armttbar[215];
-   armttbar[110]=armttbar[117] + 1./4.*armttbar[215] + 1./2.*
-   armttbar[110] + armttbar[169];
-   armttbar[117]=13./3.*armttbar[92] - armttbar[48];
-   armttbar[117]=1./3.*armttbar[117] + armttbar[165];
-   armttbar[169]=armttbar[211] + 85./24.*armttbar[8] + 17./3.*
-   armttbar[36] - 37./4. - 17./9.*armttbar[38];
-   armttbar[169]=armttbar[15]*armttbar[169];
-   armttbar[117]=1./2.*armttbar[169] + 17./72.*armttbar[200] + 17./36.*
-   armttbar[156] - 187./72.*armttbar[14] - 5./18.*armttbar[20] + 323./
-   144.*armttbar[18] + 17./8.*armttbar[117] - 1./3.*armttbar[33];
-   armttbar[143]= - 125./8. + armttbar[143];
-   armttbar[143]= - 85./8.*armttbar[8] + 1./3.*armttbar[143] + 
-   armttbar[227];
-   armttbar[143]=1./4.*armttbar[143] - armttbar[12];
-   armttbar[143]=armttbar[17]*armttbar[143];
-   armttbar[106]=armttbar[12]*armttbar[106];
-   armttbar[106]=11./6.*armttbar[185] + armttbar[106];
-   armttbar[106]=MMH*armttbar[106];
-   armttbar[106]=17./48.*armttbar[106] + 1./2.*armttbar[117] + 1./3.*
-   armttbar[143];
-   armttbar[106]=MMH*armttbar[106];
-   armttbar[117]= - 5423./3.*armttbar[15] + armttbar[289] + 1085*
-   armttbar[16];
-   armttbar[117]=armttbar[15]*armttbar[117];
-   armttbar[117]= - 11*armttbar[186] + 1./12.*armttbar[117];
-   armttbar[143]= - 85*armttbar[14] - 1481./2.*armttbar[16];
-   armttbar[143]=355./2.*armttbar[17] + 1./4.*armttbar[143] - 1531./3.*
-   armttbar[15];
-   armttbar[143]=armttbar[17]*armttbar[143];
-   armttbar[117]=1./2.*armttbar[117] + 1./3.*armttbar[143];
-   armttbar[106]=1./12.*armttbar[117] + armttbar[106];
-   armttbar[106]=armttbar[6]*armttbar[106];
-   armttbar[106]=1./8.*armttbar[127] + armttbar[111] + 1./6.*
-   armttbar[106] + 1./2.*armttbar[110] + armttbar[138];
-   armttbar[106]=armttbar[176]*armttbar[106];
-   armttbar[110]=11./24.*armttbar[58] + 8185./768. - armttbar[81];
-   armttbar[111]=11./12.*armttbar[84];
-   armttbar[115]=armttbar[115] - armttbar[19];
-   armttbar[115]=armttbar[100]*armttbar[115];
-   armttbar[110]=1./16.*armttbar[166] + armttbar[212] + 1./8.*
-   armttbar[115] + 73./192.*armttbar[13] + 1./4.*armttbar[40] + 
-   armttbar[303] + 25./12.*armttbar[25] + 15./32.*armttbar[23] + 
-   armttbar[111] - 403./288.*armttbar[51] + armttbar[45] + 19./24.*
-   armttbar[88] + 3./16.*armttbar[85] + 10./9.*armttbar[44] + 13./48.*
-   armttbar[87] - 11./24.*armttbar[72] - 11./24.*armttbar[74] + 
-   armttbar[191] + armttbar[112] - 33./64.*armttbar[90] - 13./36.*
-   armttbar[141] - 15./64.*armttbar[89] + 1./6.*armttbar[80] - 11./64.*
-   armttbar[76] + 3./4.*armttbar[78] - 9./32.*armttbar[73] + 1./3.*
-   armttbar[110] - 15./32.*armttbar[83];
-   armttbar[112]=295./9. - armttbar[40];
-   armttbar[117]= - 1./12.*armttbar[41];
-   armttbar[127]=13./3.*armttbar[39];
-   armttbar[138]=7./16.*armttbar[21];
-   armttbar[112]=armttbar[138] - armttbar[36] - armttbar[38] + 
-   armttbar[117] + armttbar[129] + 1./2.*armttbar[112] + armttbar[127];
-   armttbar[112]=armttbar[8]*armttbar[112];
-   armttbar[143]=13*armttbar[39];
-   armttbar[169]= - 1./4.*armttbar[41] + 329./12. + armttbar[143];
-   armttbar[185]=235./72.*armttbar[21];
-   armttbar[169]=armttbar[185] + armttbar[246] - armttbar[36] + 1./3.*
-   armttbar[169] - armttbar[38];
-   armttbar[169]=armttbar[21]*armttbar[169];
-   armttbar[191]=31./3.*armttbar[42] - 5*armttbar[14];
-   armttbar[191]=5./3.*armttbar[191] + armttbar[181];
-   armttbar[191]=1./2.*armttbar[191] + 11./3.*armttbar[183];
-   armttbar[149]=3*armttbar[16]*armttbar[149];
-   armttbar[160]=armttbar[160] + 1./2.*armttbar[191] + armttbar[149];
-   armttbar[160]=1./2.*armttbar[3]*armttbar[160];
-   armttbar[191]=125./3. + 33./4.*armttbar[21];
-   armttbar[191]=armttbar[139] + 1./8.*armttbar[191] + 11./3.*
-   armttbar[8];
-   armttbar[191]=1./2.*armttbar[12]*armttbar[191];
-   armttbar[161]=7*armttbar[100] + armttbar[161];
-   armttbar[200]= - armttbar[8]*armttbar[100];
-   armttbar[161]=1./2.*armttbar[161] + 3*armttbar[200];
-   armttbar[161]=armttbar[16]*armttbar[161];
-   armttbar[200]=1./4.*armttbar[161];
-   armttbar[215]=1./4.*armttbar[70];
-   armttbar[224]=1./3.*armttbar[52];
-   armttbar[225]=1./2.*armttbar[65] - 1./8.*armttbar[68] - armttbar[69]
-    + armttbar[224] - 16./3.*armttbar[53] + armttbar[215];
-   armttbar[172]=armttbar[172] + 11./6.*armttbar[63] + 1./3.*
-   armttbar[225] + 1./4.*armttbar[61];
-   armttbar[172]=MMt*armttbar[172];
-   armttbar[225]= - 4./3.*armttbar[56] + armttbar[53];
-   armttbar[225]= - 1./2.*armttbar[60] - 1./4.*armttbar[64] - 9./8.*
-   armttbar[63] + 4./3.*armttbar[225] - 3./8.*armttbar[61];
-   armttbar[225]=MMH*armttbar[225];
-   armttbar[195]=3./4.*armttbar[195];
-   armttbar[112]=armttbar[172] + armttbar[225] + armttbar[160] + 
-   armttbar[195] + armttbar[200] + armttbar[191] + 1./2.*armttbar[112]
-    + armttbar[110] + 1./8.*armttbar[169];
-   armttbar[112]=MMt*armttbar[112];
-   armttbar[169]= - 541./54. + armttbar[144];
-   armttbar[226]= - 5*armttbar[38];
-   armttbar[227]= - 13./2.*armttbar[8];
-   armttbar[169]= - 925./108.*armttbar[12] + armttbar[227] + 45./8.*
-   armttbar[21] + armttbar[120] - armttbar[36] + armttbar[226] + 
-   armttbar[117] + armttbar[118] + armttbar[127] + 1./2.*armttbar[169]
-    + armttbar[187];
-   armttbar[234]=51./16.*armttbar[98] - armttbar[100];
-   armttbar[234]=armttbar[16]*armttbar[234];
-   armttbar[169]=1./4.*armttbar[169] + armttbar[234];
-   armttbar[169]=armttbar[16]*armttbar[169];
-   armttbar[238]= - 3*armttbar[73];
-   armttbar[239]= - 1289./12. + armttbar[238];
-   armttbar[243]=9./4.*armttbar[89];
-   armttbar[146]= - 19./12.*armttbar[72] - 19./12.*armttbar[74] + 
-   armttbar[146] + armttbar[197] + armttbar[243] + 1./4.*armttbar[239]
-    + armttbar[147];
-   armttbar[146]= - 5./12.*armttbar[79] - 23./24.*armttbar[88] - 5./24.
-   *armttbar[85] + 1./4.*armttbar[146] - 7./3.*armttbar[44];
-   armttbar[146]=1./24.*armttbar[126] + 11./27.*armttbar[36] + 13./108.
-   *armttbar[38] - 3./8.*armttbar[37] + 13./64.*armttbar[13] - 3./8.*
-   armttbar[40] - 4./9.*armttbar[25] + 1./32.*armttbar[23] - 277./288.*
-   armttbar[84] + 139./144.*armttbar[51] + 1./4.*armttbar[146] + 
-   armttbar[265];
-   armttbar[239]= - 13./6.*armttbar[39];
-   armttbar[244]= - 1./2.*armttbar[21];
-   armttbar[249]=armttbar[244] + armttbar[107] + armttbar[235] + 1./24.
-   *armttbar[41] + armttbar[37] + armttbar[239] - 365./36. + 
-   armttbar[40];
-   armttbar[249]=armttbar[8]*armttbar[249];
-   armttbar[252]=7./2.*armttbar[92] - armttbar[48];
-   armttbar[253]=1./3.*armttbar[18];
-   armttbar[252]=armttbar[253] + 1./3.*armttbar[252] + armttbar[125];
-   armttbar[252]= - 7./12.*armttbar[14] + 1./2.*armttbar[252] - 1./3.*
-   armttbar[20];
-   armttbar[252]=5./2.*armttbar[99]*armttbar[252];
-   armttbar[254]=2*armttbar[56] - armttbar[53];
-   armttbar[254]=2./3.*armttbar[254] + armttbar[277];
-   armttbar[256]= - armttbar[12]*armttbar[36];
-   armttbar[222]=1./6.*armttbar[256] + armttbar[222] - 1./6.*
-   armttbar[13] + 7./3.*armttbar[84] + 1./6.*armttbar[79] + 31./16. - 1.
-   /3.*armttbar[88];
-   armttbar[222]=armttbar[99]*armttbar[222];
-   armttbar[222]=1./3.*armttbar[254] + 5./16.*armttbar[222];
-   armttbar[222]=MMH*armttbar[222];
-   armttbar[254]= - 83./2. - 7./3.*armttbar[38];
-   armttbar[254]=1./2.*armttbar[254] - 13./3.*armttbar[36];
-   armttbar[254]=1./9.*armttbar[254] - 21./16.*armttbar[8];
-   armttbar[254]=1./4.*armttbar[12]*armttbar[254];
-   armttbar[256]= - 17./4. + armttbar[36];
-   armttbar[256]=5./12.*armttbar[15]*armttbar[99]*armttbar[256];
-   armttbar[257]= - 7./8. - armttbar[36];
-   armttbar[257]=5./6.*armttbar[17]*armttbar[99]*armttbar[257];
-   armttbar[249]=armttbar[222] + armttbar[257] + armttbar[256] + 
-   armttbar[252] + armttbar[254] + armttbar[146] + 1./4.*armttbar[249];
-   armttbar[249]=MMH*armttbar[249];
-   armttbar[258]=349./144.*armttbar[21];
-   armttbar[259]=109./18.*armttbar[8];
-   armttbar[260]=13./12.*armttbar[12];
-   armttbar[261]=23./4.*armttbar[98] - armttbar[100];
-   armttbar[261]=3*armttbar[16]*armttbar[261];
-   armttbar[262]=armttbar[261] + armttbar[260] + armttbar[259] + 
-   armttbar[258] - armttbar[36] - armttbar[38] + armttbar[117] - 
-   armttbar[37] + armttbar[127] + 157./12. - armttbar[40];
-   armttbar[265]=armttbar[193] - 9095./54.*armttbar[99];
-   armttbar[265]=armttbar[15]*armttbar[265];
-   armttbar[262]=1./2.*armttbar[265] + 1./2.*armttbar[262] + 235./9.*
-   armttbar[206];
-   armttbar[265]=armttbar[203] - 10./9.*armttbar[14] + 9./8.*
-   armttbar[16];
-   armttbar[265]=armttbar[3]*armttbar[265];
-   armttbar[262]=755./216.*armttbar[216] + 1./2.*armttbar[262] + 
-   armttbar[265];
-   armttbar[262]=armttbar[17]*armttbar[262];
-   armttbar[266]= - 5935./648. + armttbar[144];
-   armttbar[266]=armttbar[118] + 1./2.*armttbar[266] + armttbar[187];
-   armttbar[267]=armttbar[193] - 3325./27.*armttbar[99];
-   armttbar[267]=armttbar[15]*armttbar[267];
-   armttbar[274]=1./12.*armttbar[8];
-   armttbar[275]=1./4.*armttbar[205];
-   armttbar[266]=1./2.*armttbar[267] + armttbar[275] - 739./324.*
-   armttbar[12] + armttbar[274] + 169./288.*armttbar[21] + 
-   armttbar[217] + 1./2.*armttbar[266] + armttbar[38];
-   armttbar[266]=armttbar[15]*armttbar[266];
-   armttbar[267]=11./16. + armttbar[44];
-   armttbar[230]=armttbar[12]*armttbar[230];
-   armttbar[167]=1./18.*armttbar[230] + armttbar[204] + 1./4.*
-   armttbar[269] - 11./48.*armttbar[84] + 1./3.*armttbar[267] + 
-   armttbar[167];
-   armttbar[167]=MMH*armttbar[167];
-   armttbar[204]=1./3.*armttbar[95] - 1./4.*armttbar[49];
-   armttbar[230]=19./24.*armttbar[19];
-   armttbar[267]=1./72.*armttbar[183] + 1./6.*armttbar[152] - 1./12.*
-   armttbar[14] - 25./9.*armttbar[20] - 19./72.*armttbar[18] + 
-   armttbar[230] + 1./3.*armttbar[33] + 25./72.*armttbar[32] + 1./12.*
-   armttbar[48] + armttbar[204] - 13./36.*armttbar[92];
-   armttbar[269]=1./12.*armttbar[21];
-   armttbar[276]=5./16.*armttbar[8];
-   armttbar[277]=armttbar[276] + armttbar[269] - 5./16. + armttbar[272]
-   ;
-   armttbar[278]=armttbar[277] - 1./54.*armttbar[12];
-   armttbar[278]=armttbar[16]*armttbar[278];
-   armttbar[237]= - 97./4.*armttbar[8] + armttbar[240] - 67./4. + 
-   armttbar[237];
-   armttbar[237]=1./12.*armttbar[237] + armttbar[12];
-   armttbar[237]=armttbar[17]*armttbar[237];
-   armttbar[240]=5./108.*armttbar[12] - 5./12.*armttbar[8] + 5./27.*
-   armttbar[36] + 1./2. - 17./27.*armttbar[38];
-   armttbar[240]=armttbar[15]*armttbar[240];
-   armttbar[167]=1./3.*armttbar[167] + 1./3.*armttbar[237] + 1./4.*
-   armttbar[240] + 1./2.*armttbar[267] + armttbar[278];
-   armttbar[167]=MMH*armttbar[167];
-   armttbar[237]= - armttbar[14] + 121./9.*armttbar[16];
-   armttbar[237]=armttbar[16]*armttbar[237];
-   armttbar[240]=8893./36.*armttbar[15] + armttbar[137] - 209./3.*
-   armttbar[16];
-   armttbar[240]=armttbar[15]*armttbar[240];
-   armttbar[237]=1./4.*armttbar[237] + 1./3.*armttbar[240];
-   armttbar[240]=5*armttbar[14];
-   armttbar[267]=armttbar[240] - 5971./6.*armttbar[16];
-   armttbar[267]=101./6.*armttbar[17] + 1./4.*armttbar[267] + 3335./9.*
-   armttbar[15];
-   armttbar[267]=armttbar[17]*armttbar[267];
-   armttbar[237]=1./2.*armttbar[237] + 1./3.*armttbar[267];
-   armttbar[237]=1./6.*armttbar[237] + armttbar[167];
-   armttbar[267]=1./3.*armttbar[6]*MMH*armttbar[255];
-   armttbar[237]=1./2.*armttbar[237] + armttbar[267];
-   armttbar[237]=armttbar[6]*armttbar[237];
-   armttbar[278]=745./24. - armttbar[40];
-   armttbar[117]= - armttbar[36] - armttbar[38] + armttbar[117] + 
-   armttbar[129] + 1./2.*armttbar[278] + armttbar[127];
-   armttbar[117]=armttbar[14]*armttbar[117];
-   armttbar[278]= - 3*armttbar[14];
-   armttbar[280]=armttbar[278] - 5./4.*armttbar[16];
-   armttbar[280]=armttbar[16]*armttbar[280];
-   armttbar[236]= - 4./9.*armttbar[236];
-   armttbar[281]=9./2.*armttbar[15] + armttbar[278] + 17./4.*
-   armttbar[16];
-   armttbar[281]=1./4.*armttbar[15]*armttbar[281];
-   armttbar[280]=armttbar[281] + armttbar[236] + 1./4.*armttbar[280];
-   armttbar[280]=armttbar[3]*armttbar[280];
-   armttbar[282]= - 1./24.*armttbar[95] + armttbar[49];
-   armttbar[148]=armttbar[148] - 13./12.*armttbar[92] + armttbar[268]
-    + 139./48.*armttbar[96] + 7./6.*armttbar[94] + armttbar[282] - 11./
-   16.*armttbar[50];
-   armttbar[148]= - 763./288.*armttbar[19] - 83./144.*armttbar[42] - 1./
-   24.*armttbar[5] - 31./96.*armttbar[33] - 341./576.*armttbar[34] + 1./
-   2.*armttbar[148] - 8./9.*armttbar[32];
-   armttbar[268]=2137./576.*armttbar[20];
-   armttbar[283]=3./64.*armttbar[152];
-   armttbar[228]=2./9.*armttbar[228];
-   armttbar[284]=17./48.*armttbar[156];
-   armttbar[106]=armttbar[106] + armttbar[112] + armttbar[237] + 
-   armttbar[249] + armttbar[262] + armttbar[280] + 1./4.*armttbar[266]
-    + 235./36.*armttbar[163] + 1./2.*armttbar[169] + armttbar[284] + 
-   armttbar[228] + armttbar[283] + 1./4.*armttbar[117] + armttbar[268]
-    + armttbar[148] - 1649./1152.*armttbar[18];
-   armttbar[106]=armttbar[176]*armttbar[106];
-   armttbar[112]= - 9./2.*armttbar[73] + 101./96. - 13*armttbar[83];
-   armttbar[112]= - 35./16.*armttbar[87] - 1./4.*armttbar[72] - 1./4.*
-   armttbar[74] + armttbar[116] + armttbar[77] - 39./16.*armttbar[90]
-    + 1./4.*armttbar[141] - 15./16.*armttbar[89] - 1./2.*armttbar[80]
-    + 5./32.*armttbar[76] + 1./4.*armttbar[112] + armttbar[132];
-   armttbar[102]= - 55*armttbar[41] - 617./12. + armttbar[102];
-   armttbar[102]=armttbar[219] + armttbar[246] - armttbar[36] + 1./4.*
-   armttbar[102] - armttbar[38];
-   armttbar[102]=armttbar[21]*armttbar[102];
-   armttbar[116]=55./2.*armttbar[39];
-   armttbar[117]= - 55./2.*armttbar[41];
-   armttbar[132]=armttbar[117] + armttbar[129] + armttbar[116] - 51./4.
-    - armttbar[40];
-   armttbar[132]=armttbar[138] - armttbar[36] + 1./2.*armttbar[132] - 
-   armttbar[38];
-   armttbar[132]=armttbar[8]*armttbar[132];
-   armttbar[169]=1./2.*armttbar[183] + 1./2.*armttbar[181] + 3*
-   armttbar[42] - armttbar[14];
-   armttbar[149]=3./2.*armttbar[155] + 1./2.*armttbar[169] + 
-   armttbar[149];
-   armttbar[149]=armttbar[3]*armttbar[149];
-   armttbar[155]=7 + 17./4.*armttbar[21];
-   armttbar[139]=armttbar[139] + 1./8.*armttbar[155] + armttbar[8];
-   armttbar[139]=armttbar[12]*armttbar[139];
-   armttbar[155]=1./2.*armttbar[25];
-   armttbar[169]= - armttbar[64] - 3*armttbar[61] - 1./2.*armttbar[63];
-   armttbar[169]=1./2.*armttbar[169] - armttbar[60];
-   armttbar[169]=MMH*armttbar[169];
-   armttbar[181]=1./2.*armttbar[68];
-   armttbar[183]=armttbar[181] - armttbar[65];
-   armttbar[183]=armttbar[63] + 1./2.*armttbar[183] + armttbar[61];
-   armttbar[183]=MMt*armttbar[183];
-   armttbar[102]=1./2.*armttbar[183] + 1./2.*armttbar[169] + 
-   armttbar[149] + armttbar[195] + 1./2.*armttbar[161] + 1./2.*
-   armttbar[139] + armttbar[132] + 1./4.*armttbar[102] + 1./8.*
-   armttbar[166] + armttbar[212] + 1./4.*armttbar[115] + 3./64.*
-   armttbar[13] + armttbar[157] + armttbar[155] + 13./8.*armttbar[23]
-    + armttbar[123] - 21./16.*armttbar[51] + 1./8.*armttbar[88] + 3./8.
-   *armttbar[85] + 1./2.*armttbar[112] + armttbar[44];
-   armttbar[102]=MMt*armttbar[102];
-   armttbar[112]= - 85./24. + armttbar[238];
-   armttbar[112]= - 9./8.*armttbar[72] - 9./8.*armttbar[74] - 3./2.*
-   armttbar[77] + armttbar[197] + armttbar[243] + 1./4.*armttbar[112]
-    + armttbar[147];
-   armttbar[115]=1./4.*armttbar[23];
-   armttbar[112]=armttbar[118] + 5./16.*armttbar[13] + armttbar[187] + 
-   armttbar[115] - 23./24.*armttbar[84] + 51./16.*armttbar[51] + 
-   armttbar[119] + 3./8.*armttbar[88] - 5./12.*armttbar[85] + 1./2.*
-   armttbar[112] - armttbar[44];
-   armttbar[119]=armttbar[244] + armttbar[107] + armttbar[235] + 55./8.
-   *armttbar[41] + armttbar[199] - 55./8.*armttbar[39] + 55./16. + 
-   armttbar[40];
-   armttbar[119]=armttbar[8]*armttbar[119];
-   armttbar[123]=1./2.*armttbar[140] + armttbar[307] + armttbar[173] - 
-   7*armttbar[84] - 1./2.*armttbar[79] - 93./16. + armttbar[88];
-   armttbar[123]=MMH*armttbar[99]*armttbar[123];
-   armttbar[132]= - 13./8.*armttbar[8];
-   armttbar[139]=1./3.*armttbar[174] + armttbar[132];
-   armttbar[139]=armttbar[12]*armttbar[139];
-   armttbar[134]= - armttbar[18] + armttbar[134] + 3./4.*armttbar[32];
-   armttbar[134]=7./4.*armttbar[14] + 1./2.*armttbar[134] + 
-   armttbar[20];
-   armttbar[134]=armttbar[99]*armttbar[134];
-   armttbar[112]=1./16.*armttbar[123] + 1./2.*armttbar[182] + 1./4.*
-   armttbar[171] + 1./2.*armttbar[134] + 1./8.*armttbar[139] + 1./2.*
-   armttbar[119] + 1./12.*armttbar[126] + 5./12.*armttbar[36] + 1./4.*
-   armttbar[112] + armttbar[272];
-   armttbar[112]=MMH*armttbar[112];
-   armttbar[119]= - 199./3. + armttbar[144];
-   armttbar[123]= - 55./4.*armttbar[41];
-   armttbar[119]= - 71./8.*armttbar[12] + armttbar[227] - 133./24.*
-   armttbar[21] + armttbar[120] - armttbar[36] + armttbar[226] + 
-   armttbar[123] + armttbar[118] + armttbar[220] + 1./2.*armttbar[119]
-    + armttbar[187];
-   armttbar[119]=1./4.*armttbar[119] + armttbar[234];
-   armttbar[119]=armttbar[16]*armttbar[119];
-   armttbar[126]= - armttbar[101] + 9./2.*armttbar[99];
-   armttbar[126]=armttbar[15]*armttbar[126];
-   armttbar[123]=3./2.*armttbar[126] + 33*armttbar[206] + armttbar[261]
-    + 7./8.*armttbar[12] + armttbar[159] + 17./32.*armttbar[21] - 
-   armttbar[36] - armttbar[38] + armttbar[123] + armttbar[129] + 
-   armttbar[220] - 85./8. - armttbar[40];
-   armttbar[126]=armttbar[203] - armttbar[14] + 9./4.*armttbar[16];
-   armttbar[126]=armttbar[3]*armttbar[126];
-   armttbar[134]=9./8.*armttbar[216];
-   armttbar[123]=armttbar[134] + 1./2.*armttbar[123] + armttbar[126];
-   armttbar[123]=armttbar[17]*armttbar[123];
-   armttbar[126]=armttbar[8]*armttbar[207];
-   armttbar[139]=armttbar[12]*armttbar[288];
-   armttbar[126]=1./6.*armttbar[139] + 1./2.*armttbar[126] + 
-   armttbar[214] + 1./6.*armttbar[304];
-   armttbar[126]=MMH*armttbar[126];
-   armttbar[140]=armttbar[223] + armttbar[214] + armttbar[202];
-   armttbar[140]=armttbar[16]*armttbar[140];
-   armttbar[147]=armttbar[184] + armttbar[214] + armttbar[244];
-   armttbar[147]=armttbar[15]*armttbar[147];
-   armttbar[139]=armttbar[304] + 1./2.*armttbar[139];
-   armttbar[139]=MMH*armttbar[139];
-   armttbar[139]=1./4.*armttbar[139] + 1./2.*armttbar[294] + 
-   armttbar[140] + 1./2.*armttbar[147];
-   armttbar[139]=MMH*armttbar[139];
-   armttbar[140]=armttbar[16] + armttbar[15];
-   armttbar[147]=armttbar[15]*armttbar[140];
-   armttbar[147]=1./2.*armttbar[296] - armttbar[186] + 1./2.*
-   armttbar[147];
-   armttbar[139]=17./4.*armttbar[147] + armttbar[139];
-   armttbar[139]=armttbar[6]*armttbar[139];
-   armttbar[147]=armttbar[179] - 7 + armttbar[164];
-   armttbar[147]=armttbar[36] + 1./4.*armttbar[147] - armttbar[38];
-   armttbar[147]=armttbar[211] + 3*armttbar[147] + 17./12.*armttbar[21]
-   ;
-   armttbar[147]=armttbar[16]*armttbar[147];
-   armttbar[149]=armttbar[3]*armttbar[297];
-   armttbar[157]=armttbar[14]*armttbar[198];
-   armttbar[161]=armttbar[209] - 17./24.*armttbar[21] + armttbar[36] + 
-   21./8. - armttbar[38];
-   armttbar[161]=armttbar[15]*armttbar[161];
-   armttbar[126]=1./3.*armttbar[139] + armttbar[126] + armttbar[218] + 
-   17./2.*armttbar[149] + armttbar[161] + armttbar[157] + 1./2.*
-   armttbar[147];
-   armttbar[139]=armttbar[8]*armttbar[198];
-   armttbar[139]=1./4.*armttbar[208] + armttbar[139];
-   armttbar[139]=MMt*armttbar[139];
-   armttbar[126]=1./2.*armttbar[126] + armttbar[139];
-   armttbar[126]=armttbar[210]*armttbar[126];
-   armttbar[139]=armttbar[221] + 1./4.*armttbar[152] - 5./8.*
-   armttbar[14] - 1./6.*armttbar[20] + 19./48.*armttbar[18] + 
-   armttbar[230] - 3./16.*armttbar[32] - 1./8.*armttbar[48] + 
-   armttbar[204] + 13./24.*armttbar[92];
-   armttbar[147]=armttbar[277] + 1./48.*armttbar[12];
-   armttbar[147]=armttbar[16]*armttbar[147];
-   armttbar[149]=1./12.*armttbar[12] + armttbar[276] + armttbar[269] - 
-   7./8. + armttbar[263];
-   armttbar[149]=armttbar[15]*armttbar[149];
-   armttbar[111]=armttbar[111] + 5./4. + 1./3.*armttbar[85];
-   armttbar[157]= - armttbar[38] + armttbar[307];
-   armttbar[157]=armttbar[21]*armttbar[157];
-   armttbar[161]=armttbar[12]*armttbar[180];
-   armttbar[111]=1./6.*armttbar[161] + 1./2.*armttbar[111] + 1./3.*
-   armttbar[157];
-   armttbar[111]=MMH*armttbar[111];
-   armttbar[157]= - 13./16. - armttbar[36];
-   armttbar[157]=1./3.*armttbar[157] - 5./16.*armttbar[8];
-   armttbar[157]=armttbar[17]*armttbar[157];
-   armttbar[111]=1./4.*armttbar[111] + 1./2.*armttbar[157] + 1./2.*
-   armttbar[149] + 1./2.*armttbar[139] + armttbar[147];
-   armttbar[111]=MMH*armttbar[111];
-   armttbar[139]= - armttbar[14] - 197*armttbar[16];
-   armttbar[139]=armttbar[16]*armttbar[139];
-   armttbar[147]= - 85*armttbar[15] - armttbar[14] - 13*armttbar[16];
-   armttbar[147]=armttbar[15]*armttbar[147];
-   armttbar[139]=armttbar[139] + 1./2.*armttbar[147];
-   armttbar[147]= - 5./3.*armttbar[14] - 423./2.*armttbar[16];
-   armttbar[147]=5./2.*armttbar[17] + 1./4.*armttbar[147] + 
-   armttbar[15];
-   armttbar[147]=armttbar[17]*armttbar[147];
-   armttbar[139]=1./12.*armttbar[139] + armttbar[147];
-   armttbar[111]=1./4.*armttbar[139] + armttbar[111];
-   armttbar[111]=armttbar[6]*armttbar[111];
-   armttbar[139]= - 3113./24. + armttbar[144];
-   armttbar[139]=armttbar[118] + 1./2.*armttbar[139] + armttbar[187];
-   armttbar[147]= - armttbar[101] + 3*armttbar[99];
-   armttbar[147]=armttbar[15]*armttbar[147];
-   armttbar[132]=3./4.*armttbar[147] + 3./8.*armttbar[205] + 23./24.*
-   armttbar[12] + armttbar[132] - 205./192.*armttbar[21] + 1./4.*
-   armttbar[139] - armttbar[36];
-   armttbar[132]=armttbar[15]*armttbar[132];
-   armttbar[116]=armttbar[117] + armttbar[129] + armttbar[116] - 305./
-   24. - armttbar[40];
-   armttbar[116]= - armttbar[36] + 1./2.*armttbar[116] - armttbar[38];
-   armttbar[116]=armttbar[14]*armttbar[116];
-   armttbar[117]= - armttbar[14] - 23./4.*armttbar[16];
-   armttbar[117]=armttbar[16]*armttbar[117];
-   armttbar[139]=25./2.*armttbar[15] + armttbar[278] + 13./4.*
-   armttbar[16];
-   armttbar[139]=armttbar[15]*armttbar[139];
-   armttbar[117]=3*armttbar[117] + 1./2.*armttbar[139];
-   armttbar[117]=armttbar[3]*armttbar[117];
-   armttbar[102]=armttbar[126] + armttbar[102] + armttbar[111] + 
-   armttbar[112] + armttbar[123] + 1./2.*armttbar[117] + 1./2.*
-   armttbar[132] + 33./4.*armttbar[163] + armttbar[119] + 3./16.*
-   armttbar[156] + 3./32.*armttbar[152] + 1./2.*armttbar[116] + 27./64.
-   *armttbar[20] - 1901./384.*armttbar[18] - 169./32.*armttbar[19] - 
-   149./96.*armttbar[42] - 1./8.*armttbar[5] + 3./32.*armttbar[33] - 23.
-   /64.*armttbar[34] + armttbar[125] + 3./8.*armttbar[48] - 1./8.*
-   armttbar[92] - 1./8.*armttbar[93] + 247./32.*armttbar[96] + 
-   armttbar[94] + armttbar[282] - 15./8.*armttbar[50];
-   armttbar[102]=armttbar[210]*armttbar[102];
-   armttbar[111]=367./9. - armttbar[40];
-   armttbar[112]=47./12.*armttbar[41];
-   armttbar[111]=armttbar[138] - armttbar[36] - armttbar[38] + 
-   armttbar[112] + armttbar[129] + 1./2.*armttbar[111] + armttbar[127];
-   armttbar[111]=armttbar[8]*armttbar[111];
-   armttbar[116]=47./4.*armttbar[41] + 473./12. + armttbar[143];
-   armttbar[116]=armttbar[185] + armttbar[246] - armttbar[36] + 1./3.*
-   armttbar[116] - armttbar[38];
-   armttbar[116]=armttbar[21]*armttbar[116];
-   armttbar[110]=armttbar[172] + armttbar[225] + armttbar[160] + 
-   armttbar[195] + armttbar[200] + armttbar[191] + 1./2.*armttbar[111]
-    + armttbar[110] + 1./8.*armttbar[116];
-   armttbar[110]=MMt*armttbar[110];
-   armttbar[111]=3635./54. + armttbar[144];
-   armttbar[111]= - 5149./108.*armttbar[12] + armttbar[227] + 77./8.*
-   armttbar[21] + armttbar[120] - armttbar[36] + armttbar[226] + 
-   armttbar[112] + armttbar[118] + armttbar[127] + 1./2.*armttbar[111]
-    + armttbar[187];
-   armttbar[111]=1./4.*armttbar[111] + armttbar[234];
-   armttbar[111]=armttbar[16]*armttbar[111];
-   armttbar[107]=armttbar[244] + armttbar[107] + armttbar[235] - 47./24.
-   *armttbar[41] + armttbar[37] + armttbar[239] - 437./36. + 
-   armttbar[40];
-   armttbar[107]=armttbar[8]*armttbar[107];
-   armttbar[107]=armttbar[222] + armttbar[257] + armttbar[256] + 
-   armttbar[252] + armttbar[254] + armttbar[146] + 1./4.*armttbar[107];
-   armttbar[107]=MMH*armttbar[107];
-   armttbar[116]=armttbar[261] + armttbar[260] + armttbar[259] + 
-   armttbar[258] - armttbar[36] - armttbar[38] + armttbar[112] - 
-   armttbar[37] + armttbar[127] + 205./12. - armttbar[40];
-   armttbar[117]= - armttbar[99]*armttbar[16];
-   armttbar[119]=armttbar[193] - 271./6.*armttbar[99];
-   armttbar[119]=armttbar[15]*armttbar[119];
-   armttbar[116]=1./2.*armttbar[119] + 1./2.*armttbar[116] + 77*
-   armttbar[117];
-   armttbar[116]=armttbar[134] + 1./2.*armttbar[116] + armttbar[265];
-   armttbar[116]=armttbar[17]*armttbar[116];
-   armttbar[117]= - 6101./216. + armttbar[144];
-   armttbar[117]=armttbar[118] + 1./2.*armttbar[117] + armttbar[187];
-   armttbar[118]=armttbar[193] - 85./3.*armttbar[99];
-   armttbar[118]=armttbar[15]*armttbar[118];
-   armttbar[117]=1./2.*armttbar[118] + armttbar[275] + 95./108.*
-   armttbar[12] + armttbar[274] + 211./96.*armttbar[21] + armttbar[217]
-    + 1./2.*armttbar[117] + armttbar[38];
-   armttbar[117]=armttbar[15]*armttbar[117];
-   armttbar[118]= - armttbar[14] + 563./3.*armttbar[16];
-   armttbar[118]=armttbar[16]*armttbar[118];
-   armttbar[119]=575./12.*armttbar[15] + armttbar[137] - 737./3.*
-   armttbar[16];
-   armttbar[119]=armttbar[15]*armttbar[119];
-   armttbar[118]=1./4.*armttbar[118] + 1./3.*armttbar[119];
-   armttbar[119]=armttbar[240] - 211./6.*armttbar[16];
-   armttbar[119]=1./4.*armttbar[119] + 269./3.*armttbar[15];
-   armttbar[120]= - 1./2.*armttbar[17];
-   armttbar[119]=1./9.*armttbar[119] + armttbar[120];
-   armttbar[119]=armttbar[17]*armttbar[119];
-   armttbar[118]=1./6.*armttbar[118] + armttbar[119];
-   armttbar[118]=1./2.*armttbar[118] + armttbar[167];
-   armttbar[118]=1./2.*armttbar[118] + armttbar[267];
-   armttbar[118]=armttbar[6]*armttbar[118];
-   armttbar[119]=937./24. - armttbar[40];
-   armttbar[112]= - armttbar[36] - armttbar[38] + armttbar[112] + 
-   armttbar[129] + 1./2.*armttbar[119] + armttbar[127];
-   armttbar[112]=armttbar[14]*armttbar[112];
-   armttbar[119]=armttbar[278] + 91./4.*armttbar[16];
-   armttbar[119]=armttbar[16]*armttbar[119];
-   armttbar[119]=armttbar[281] + armttbar[236] + 1./4.*armttbar[119];
-   armttbar[119]=armttbar[3]*armttbar[119];
-   armttbar[123]= - armttbar[99]*armttbar[186];
-   armttbar[102]=1./2.*armttbar[102] + armttbar[110] + armttbar[118] + 
-   armttbar[107] + armttbar[116] + armttbar[119] + 1./4.*armttbar[117]
-    + 77./4.*armttbar[123] + 1./2.*armttbar[111] + armttbar[284] + 
-   armttbar[228] + armttbar[283] + 1./4.*armttbar[112] + armttbar[268]
-    + armttbar[148] - 161./1152.*armttbar[18];
-   armttbar[102]=armttbar[210]*armttbar[102];
-   armttbar[107]=armttbar[15]*armttbar[99];
-   armttbar[110]=armttbar[17]*armttbar[99];
-   armttbar[110]=8./9.*armttbar[110] + armttbar[206] + 8./3.*
-   armttbar[107];
-   armttbar[110]=armttbar[17]*armttbar[110];
-   armttbar[111]= - 1 + armttbar[12];
-   armttbar[112]=1./3.*armttbar[111] + 4*armttbar[107];
-   armttbar[112]=armttbar[15]*armttbar[112];
-   armttbar[116]=armttbar[16]*armttbar[111];
-   armttbar[116]=2./9.*armttbar[18] + 5*armttbar[116];
-   armttbar[110]=4*armttbar[110] + 8./9.*armttbar[112] + 1./3.*
-   armttbar[116] + 2*armttbar[163];
-   armttbar[112]=armttbar[124] - 16./3.*armttbar[15];
-   armttbar[112]=armttbar[15]*armttbar[112];
-   armttbar[116]= - 4./3.*armttbar[17] + armttbar[16] - 11./3.*
-   armttbar[15];
-   armttbar[116]=armttbar[17]*armttbar[116];
-   armttbar[112]=4*armttbar[116] + armttbar[186] + armttbar[112];
-   armttbar[112]=armttbar[6]*armttbar[112];
-   armttbar[110]=2*armttbar[110] + 1./3.*armttbar[112];
-   armttbar[102]=armttbar[105] + armttbar[102] + 8./3.*armttbar[110] + 
-   armttbar[106];
-   armttbar[102]=armttbar[9]*armttbar[102];
-   armttbar[105]= - 1./2.*armttbar[70];
-   armttbar[106]= - 2./3.*armttbar[52];
-   armttbar[110]= - 2*armttbar[69];
-   armttbar[112]=2./3.*armttbar[67] + 2*armttbar[65] + armttbar[181] + 
-   armttbar[110] + armttbar[105] + armttbar[106];
-   armttbar[116]=pow(CW,2);
-   armttbar[112]=armttbar[116]*armttbar[112];
-   armttbar[105]=64./27.*armttbar[54] + armttbar[110] + armttbar[106]
-    - 128./27.*armttbar[57] + armttbar[105];
-   armttbar[106]=armttbar[130] - 4./9.*armttbar[12];
-   armttbar[106]=armttbar[3]*armttbar[106];
-   armttbar[105]=armttbar[106] + armttbar[175] + armttbar[168] + 1./3.*
-   armttbar[112] + 17./18.*armttbar[67] + 5./2.*armttbar[65] - 128./81.
-   *armttbar[66] + 1./3.*armttbar[105] + 3./4.*armttbar[68];
-   armttbar[105]=MMZ*armttbar[105];
-   armttbar[106]=20*armttbar[116];
-   armttbar[110]=8*armttbar[116];
-   armttbar[112]=49./3. + armttbar[110];
-   armttbar[112]=armttbar[41]*armttbar[112];
-   armttbar[117]= - 2*armttbar[21];
-   armttbar[118]= - 32./9.*armttbar[12] + armttbar[117] + 2*
-   armttbar[112] + 313./9. + armttbar[106];
-   armttbar[118]=armttbar[12]*armttbar[118];
-   armttbar[119]=4./3.*armttbar[116] + armttbar[90] + 2./3.*
-   armttbar[80] - 38./9. - armttbar[81];
-   armttbar[119]=armttbar[116]*armttbar[119];
-   armttbar[123]=53./12. + armttbar[116];
-   armttbar[123]=armttbar[41]*armttbar[123];
-   armttbar[123]=armttbar[123] + armttbar[39] + 22./3. + armttbar[116];
-   armttbar[123]=armttbar[21]*armttbar[123];
-   armttbar[124]= - 701./27. - armttbar[81];
-   armttbar[124]=2*armttbar[124] + 25./6.*armttbar[58];
-   armttbar[125]= - 2./9.*armttbar[24];
-   armttbar[126]= - 1 - 2./3.*armttbar[116];
-   armttbar[126]=armttbar[13]*armttbar[126];
-   armttbar[127]= - armttbar[3]*armttbar[15];
-   armttbar[132]= - armttbar[17]*armttbar[3];
-   armttbar[105]=armttbar[105] + 8./9.*armttbar[132] + 4./9.*
-   armttbar[127] + 2./9.*armttbar[118] + armttbar[123] + 4./3.*
-   armttbar[126] + 4./3.*armttbar[119] + armttbar[125] + 146./81.*
-   armttbar[25] + 5./4.*armttbar[23] + 64./81.*armttbar[45] + 101./36.*
-   armttbar[87] + 64./81.*armttbar[75] + 3*armttbar[90] - 29./24.*
-   armttbar[141] - 28./27.*armttbar[80] + 2./9.*armttbar[76] + 1./3.*
-   armttbar[124] - 5./4.*armttbar[83];
-   armttbar[105]=MMZ*armttbar[105];
-   armttbar[118]= - 203./6. - armttbar[58];
-   armttbar[118]=139./384.*armttbar[141] + 1./3.*armttbar[118] + 
-   armttbar[76];
-   armttbar[119]=29./4.*armttbar[141] + 2 - armttbar[58];
-   armttbar[119]=1./3.*armttbar[119] + armttbar[90];
-   armttbar[119]=armttbar[116]*armttbar[119];
-   armttbar[123]= - 1 - armttbar[116];
-   armttbar[123]=1./9.*armttbar[123] + armttbar[177];
-   armttbar[123]=armttbar[21]*armttbar[123];
-   armttbar[118]= - 16./27.*armttbar[12] + armttbar[123] - 25./27.*
-   armttbar[13] + 1./3.*armttbar[119] - 16./27.*armttbar[45] + 2./3.*
-   armttbar[87] + 16./27.*armttbar[75] + 1./3.*armttbar[118] + 1./2.*
-   armttbar[90];
-   armttbar[118]=MMZ*armttbar[118];
-   armttbar[119]=104./27. - armttbar[116];
-   armttbar[119]=armttbar[20]*armttbar[119];
-   armttbar[119]=2*armttbar[119] + 40./9.*armttbar[18] - 16./9.*
-   armttbar[33] - 2./3.*armttbar[34] + armttbar[96] - 16./9.*
-   armttbar[93];
-   armttbar[123]=85 + 16*armttbar[12];
-   armttbar[123]=armttbar[15]*armttbar[123];
-   armttbar[124]= - 16./3.*armttbar[12];
-   armttbar[126]=armttbar[124] - 26./3. + armttbar[21];
-   armttbar[126]=armttbar[17]*armttbar[126];
-   armttbar[119]=2./3.*armttbar[126] + 1./9.*armttbar[123] + 2*
-   armttbar[119] - 5./3.*armttbar[16];
-   armttbar[118]=1./3.*armttbar[119] + armttbar[118];
-   armttbar[118]=MMZ*armttbar[118];
-   armttbar[119]=armttbar[116]*armttbar[141];
-   armttbar[119]=armttbar[141] + 1./2.*armttbar[119];
-   armttbar[119]=armttbar[245]*armttbar[119];
-   armttbar[119]= - 32./27.*armttbar[255] + 21./16.*armttbar[119];
-   armttbar[119]=MMZ*armttbar[119];
-   armttbar[123]= - armttbar[116]*armttbar[141];
-   armttbar[123]= - armttbar[141] + 1./2.*armttbar[123];
-   armttbar[123]=armttbar[116]*armttbar[123];
-   armttbar[123]= - 3./2.*armttbar[141] + armttbar[123];
-   armttbar[123]=armttbar[6]*armttbar[196]*armttbar[123];
-   armttbar[119]=armttbar[119] + 5./16.*armttbar[123];
-   armttbar[119]=armttbar[6]*armttbar[119];
-   armttbar[123]= - 8./9.*armttbar[17] + armttbar[16] - 80./27.*
-   armttbar[15];
-   armttbar[123]=armttbar[17]*armttbar[123];
-   armttbar[123]= - 8./9.*armttbar[229] + armttbar[123];
-   armttbar[118]=armttbar[119] + 4./3.*armttbar[123] + armttbar[118];
-   armttbar[118]=armttbar[6]*armttbar[118];
-   armttbar[119]= - 23./3.*armttbar[50] - 2*armttbar[94];
-   armttbar[123]=armttbar[116]*armttbar[50];
-   armttbar[126]= - 4*armttbar[116];
-   armttbar[127]=29./3. + armttbar[126];
-   armttbar[127]=armttbar[19]*armttbar[127];
-   armttbar[119]=2./3.*armttbar[127] + 4./3.*armttbar[123] - 128./27.*
-   armttbar[33] - 2*armttbar[34] - 88./9.*armttbar[93] + 1./3.*
-   armttbar[119] + 4*armttbar[96];
-   armttbar[112]=160./9.*armttbar[12] + 5./4.*armttbar[21] + 4*
-   armttbar[112] + 2009./12. + 40*armttbar[116];
-   armttbar[112]=armttbar[15]*armttbar[112];
-   armttbar[127]= - 16*armttbar[116];
-   armttbar[134]= - 49./3. - 8*armttbar[116];
-   armttbar[134]=armttbar[41]*armttbar[134];
-   armttbar[134]=2*armttbar[134] - 265./3. + armttbar[127];
-   armttbar[134]=32./27.*armttbar[12] + 1./3.*armttbar[134] + 2*
-   armttbar[21];
-   armttbar[134]=armttbar[17]*armttbar[134];
-   armttbar[137]=69./4. - 8./9.*armttbar[116];
-   armttbar[137]=armttbar[18]*armttbar[137];
-   armttbar[138]=217./9. + armttbar[127];
-   armttbar[138]=armttbar[20]*armttbar[138];
-   armttbar[139]= - 37./3. + armttbar[127];
-   armttbar[139]=40./9.*armttbar[12] + armttbar[21] + 1./9.*
-   armttbar[139] + armttbar[41];
-   armttbar[139]=armttbar[16]*armttbar[139];
-   armttbar[105]=armttbar[118] + armttbar[105] + 2./3.*armttbar[134] + 
-   1./9.*armttbar[112] + armttbar[139] + 4./9.*armttbar[138] + 2./3.*
-   armttbar[119] + armttbar[137];
-   armttbar[105]=armttbar[6]*armttbar[105];
-   armttbar[112]=4*armttbar[116] - armttbar[90] + 23./3. + armttbar[80]
-   ;
-   armttbar[112]=armttbar[116]*armttbar[112];
-   armttbar[118]= - 64./3.*armttbar[75] - 10*armttbar[90] + 104./3.*
-   armttbar[80] + 4211./18. - 4*armttbar[76];
-   armttbar[119]=11./9. + armttbar[126];
-   armttbar[119]=armttbar[13]*armttbar[119];
-   armttbar[134]=13./3. + 2*armttbar[116];
-   armttbar[134]=armttbar[41]*armttbar[134];
-   armttbar[137]= - 2*armttbar[116];
-   armttbar[138]= - 13./3. + armttbar[137];
-   armttbar[138]=armttbar[41]*armttbar[138];
-   armttbar[139]= - 16./9. + armttbar[138];
-   armttbar[139]=8./3.*armttbar[12] + 2*armttbar[139] + armttbar[21];
-   armttbar[139]=armttbar[12]*armttbar[139];
-   armttbar[112]=4./3.*armttbar[139] - 4./3.*armttbar[21] + 8./3.*
-   armttbar[134] + 4./3.*armttbar[119] + 16./3.*armttbar[112] + 1./3.*
-   armttbar[118] - 8*armttbar[87];
-   armttbar[112]=armttbar[99]*armttbar[112];
-   armttbar[113]=1./8. + armttbar[113];
-   armttbar[113]=armttbar[151]*armttbar[113];
-   armttbar[109]=armttbar[153]*armttbar[109];
-   armttbar[109]=1./4.*armttbar[113] + 3*armttbar[109];
-   armttbar[109]=MMZ*armttbar[109];
-   armttbar[113]= - 3*armttbar[39] + 37./9. + armttbar[137];
-   armttbar[118]= - 53./3. + armttbar[126];
-   armttbar[118]=armttbar[41]*armttbar[118];
-   armttbar[113]= - 8./9.*armttbar[12] + 2*armttbar[113] + 
-   armttbar[118];
-   armttbar[113]=armttbar[3]*armttbar[113];
-   armttbar[109]=armttbar[109] + armttbar[113] + armttbar[112] + 
-   armttbar[178] + 1./3.*armttbar[65] - 1./4.*armttbar[68] - 1./3.*
-   armttbar[69] + armttbar[224] - 256./81.*armttbar[57] + armttbar[215]
-   ;
-   armttbar[109]=MMZ*armttbar[109];
-   armttbar[112]= - 8./3. - armttbar[116];
-   armttbar[112]=armttbar[19]*armttbar[112];
-   armttbar[112]=4*armttbar[112] + 2*armttbar[123] + 16./9.*
-   armttbar[33] + armttbar[34] + 16./3.*armttbar[93] - 2*armttbar[96]
-    + 13./3.*armttbar[50] + armttbar[94];
-   armttbar[113]= - 29 + armttbar[126];
-   armttbar[113]=armttbar[18]*armttbar[113];
-   armttbar[118]= - 29./3. + armttbar[126];
-   armttbar[118]=armttbar[16]*armttbar[118];
-   armttbar[112]=2*armttbar[118] - 260./9.*armttbar[20] + 2*
-   armttbar[112] + armttbar[113];
-   armttbar[112]=armttbar[99]*armttbar[112];
-   armttbar[110]=armttbar[117] + 4*armttbar[134] + 341./9. + 
-   armttbar[110];
-   armttbar[110]=armttbar[17]*armttbar[99]*armttbar[110];
-   armttbar[113]=4./3.*armttbar[80] + 1 - 4./3.*armttbar[81];
-   armttbar[113]=armttbar[116]*armttbar[113];
-   armttbar[117]= - 181./9. + armttbar[127];
-   armttbar[117]=armttbar[13]*armttbar[117];
-   armttbar[113]=2./3.*armttbar[117] + 8*armttbar[113] + 8./27.*
-   armttbar[25] + 16./27.*armttbar[45] - 32./27.*armttbar[75] + 110./9.
-   *armttbar[80] + 5 - 98./9.*armttbar[81];
-   armttbar[117]= - 65./3. + armttbar[127];
-   armttbar[117]=armttbar[41]*armttbar[117];
-   armttbar[113]=2*armttbar[113] + 1./3.*armttbar[117];
-   armttbar[116]=5./3. + armttbar[116];
-   armttbar[116]=armttbar[41]*armttbar[116];
-   armttbar[106]=16./9.*armttbar[12] + 4*armttbar[116] + 241./9. + 
-   armttbar[106];
-   armttbar[106]=armttbar[12]*armttbar[106];
-   armttbar[116]= - 1 - armttbar[41];
-   armttbar[116]=armttbar[21]*armttbar[116];
-   armttbar[117]= - 16./9.*armttbar[12] + armttbar[21] - 259./9. + 2*
-   armttbar[138];
-   armttbar[117]=armttbar[15]*armttbar[99]*armttbar[117];
-   armttbar[118]= - 5 - 3*armttbar[41];
-   armttbar[118]=armttbar[3]*armttbar[16]*armttbar[118];
-   armttbar[119]=armttbar[66] + armttbar[55] - 2*armttbar[54];
-   armttbar[119]=MMt*armttbar[119];
-   armttbar[102]=armttbar[102] + armttbar[103] + armttbar[104] + 128./
-   81.*armttbar[119] + armttbar[105] + armttbar[109] + 8./3.*
-   armttbar[110] + 2*armttbar[118] + 8./3.*armttbar[117] + 8./3.*
-   armttbar[112] + 4./9.*armttbar[106] + 1./3.*armttbar[113] + 1./2.*
-   armttbar[116];
-   armttbar[102]=armttbar[46]*armttbar[102];
-   armttbar[103]=3./2.*armttbar[20] + armttbar[162] + armttbar[19] + 
-   armttbar[250] - armttbar[34] - 1./4.*armttbar[33];
-   armttbar[104]=7./2.*armttbar[10];
-   armttbar[105]= - 3*armttbar[30];
-   armttbar[106]=armttbar[104] + armttbar[105] + 3 + 11./2.*
-   armttbar[29];
-   armttbar[106]=armttbar[15]*armttbar[106];
-   armttbar[109]=armttbar[10] + 3./2. + 2*armttbar[29];
-   armttbar[109]=armttbar[16]*armttbar[109];
-   armttbar[103]=1./4.*armttbar[106] + 3*armttbar[103] + armttbar[109];
-   armttbar[103]=armttbar[3]*armttbar[103];
-   armttbar[106]= - 1 + armttbar[29];
-   armttbar[109]=3./4.*armttbar[106] + armttbar[10];
-   armttbar[109]=armttbar[12]*armttbar[109];
-   armttbar[110]= - 3./4.*armttbar[29];
-   armttbar[109]=armttbar[109] - armttbar[10] + armttbar[110] + 
-   armttbar[13] - armttbar[24] + 3./2. - armttbar[25];
-   armttbar[109]=armttbar[99]*armttbar[109];
-   armttbar[112]=25./4.*armttbar[29];
-   armttbar[113]=17./4.*armttbar[10];
-   armttbar[116]=armttbar[113] - 11 + armttbar[112];
-   armttbar[116]=armttbar[3]*armttbar[116];
-   armttbar[109]=3./16.*armttbar[109] + armttbar[116];
-   armttbar[109]=MMZ*armttbar[109];
-   armttbar[116]=1 - armttbar[29];
-   armttbar[117]=armttbar[232] + 3./4.*armttbar[116] - armttbar[10];
-   armttbar[117]=armttbar[99]*armttbar[117];
-   armttbar[118]=15./2.*armttbar[12] + 31 + 15*armttbar[21];
-   armttbar[118]=armttbar[3]*armttbar[118];
-   armttbar[117]=3./2.*armttbar[117] + armttbar[118];
-   armttbar[117]=armttbar[17]*armttbar[117];
-   armttbar[118]=1./8.*armttbar[13] - 1./8.*armttbar[24] + 9./8.*
-   armttbar[25] + 1 - 3./8.*armttbar[45];
-   armttbar[118]= - 9./8.*armttbar[10] + 5./2.*armttbar[30] + 3*
-   armttbar[118] - 65./32.*armttbar[29];
-   armttbar[119]= - 1./8.*armttbar[30];
-   armttbar[123]=1./12.*armttbar[10] + armttbar[119] - 2./3. - 3./8.*
-   armttbar[29];
-   armttbar[123]=armttbar[21]*armttbar[123];
-   armttbar[126]= - 239 - 13*armttbar[29];
-   armttbar[126]=11./12.*armttbar[10] + 1./48.*armttbar[126] - 
-   armttbar[30];
-   armttbar[126]=armttbar[12]*armttbar[126];
-   armttbar[127]=1./4.*armttbar[33];
-   armttbar[134]= - 5./2.*armttbar[20] + 3./4.*armttbar[18] + 
-   armttbar[127] - armttbar[5];
-   armttbar[134]=armttbar[99]*armttbar[134];
-   armttbar[137]=armttbar[10] - 1 + 3./4.*armttbar[29];
-   armttbar[137]=armttbar[15]*armttbar[99]*armttbar[137];
-   armttbar[103]=1./2.*armttbar[109] + 1./4.*armttbar[117] + 
-   armttbar[103] + 3./16.*armttbar[137] + 3./16.*armttbar[134] + 1./8.*
-   armttbar[126] + 1./4.*armttbar[118] + armttbar[123];
-   armttbar[103]=armttbar[27]*armttbar[103];
-   armttbar[109]=armttbar[173] - 1./2.*armttbar[24] + armttbar[155] + 3.
-   /8. - armttbar[22];
-   armttbar[117]= - 13./2.*armttbar[10] + 3*armttbar[109] + 5*
-   armttbar[11];
-   armttbar[117]=armttbar[31]*armttbar[117];
-   armttbar[109]= - 13./6.*armttbar[10] + armttbar[109] + 5./3.*
-   armttbar[11];
-   armttbar[109]=armttbar[1]*armttbar[109];
-   armttbar[109]=armttbar[117] + armttbar[109];
-   armttbar[117]=armttbar[10] + 1./2. - armttbar[11];
-   armttbar[118]=armttbar[31]*armttbar[117];
-   armttbar[117]=armttbar[1]*armttbar[117];
-   armttbar[117]=armttbar[118] + 1./3.*armttbar[117];
-   armttbar[117]=armttbar[21]*armttbar[117];
-   armttbar[118]=1 - armttbar[11];
-   armttbar[123]=armttbar[118] + 5./2.*armttbar[10];
-   armttbar[126]=armttbar[31]*armttbar[123];
-   armttbar[123]=armttbar[1]*armttbar[123];
-   armttbar[123]=armttbar[126] + 1./3.*armttbar[123];
-   armttbar[123]=armttbar[12]*armttbar[123];
-   armttbar[126]= - armttbar[5] + armttbar[18];
-   armttbar[134]=1./2.*armttbar[126] - armttbar[20];
-   armttbar[137]=armttbar[31]*armttbar[134];
-   armttbar[134]=armttbar[1]*armttbar[134];
-   armttbar[138]=3*armttbar[137] + armttbar[134];
-   armttbar[138]=armttbar[99]*armttbar[138];
-   armttbar[139]=armttbar[31]*armttbar[10];
-   armttbar[141]=armttbar[1]*armttbar[10];
-   armttbar[143]=3*armttbar[139] + armttbar[141];
-   armttbar[144]=armttbar[15]*armttbar[99]*armttbar[143];
-   armttbar[109]=1./2.*armttbar[144] + armttbar[138] + 1./2.*
-   armttbar[123] + 1./2.*armttbar[109] + armttbar[117];
-   armttbar[117]=armttbar[145] + armttbar[133] + armttbar[26] - 
-   armttbar[23];
-   armttbar[123]=armttbar[31]*armttbar[117];
-   armttbar[117]=armttbar[1]*armttbar[117];
-   armttbar[133]= - 1 - 3*armttbar[10];
-   armttbar[133]=armttbar[31]*armttbar[133];
-   armttbar[138]= - 1./3. - armttbar[10];
-   armttbar[144]=armttbar[1]*armttbar[138];
-   armttbar[133]=armttbar[133] + armttbar[144];
-   armttbar[133]=armttbar[21]*armttbar[133];
-   armttbar[117]=armttbar[133] + 3*armttbar[123] + armttbar[117];
-   armttbar[123]= - 1 + armttbar[11];
-   armttbar[123]=1./4.*armttbar[123] - armttbar[10];
-   armttbar[133]=armttbar[31]*armttbar[123];
-   armttbar[123]=armttbar[1]*armttbar[123];
-   armttbar[123]=armttbar[133] + 1./3.*armttbar[123];
-   armttbar[133]=armttbar[12]*armttbar[123];
-   armttbar[117]=1./2.*armttbar[117] + armttbar[133];
-   armttbar[117]=MMZ*armttbar[117];
-   armttbar[133]=1./2.*armttbar[20] + armttbar[293] - armttbar[19] + 
-   armttbar[7] + armttbar[233];
-   armttbar[145]=armttbar[31]*armttbar[133];
-   armttbar[133]=armttbar[1]*armttbar[133];
-   armttbar[133]=3*armttbar[145] + armttbar[133];
-   armttbar[145]= - 1 - armttbar[11];
-   armttbar[145]=1./2.*armttbar[145] - armttbar[10];
-   armttbar[146]=armttbar[31]*armttbar[145];
-   armttbar[145]=armttbar[1]*armttbar[145];
-   armttbar[145]=armttbar[146] + 1./3.*armttbar[145];
-   armttbar[145]=armttbar[16]*armttbar[145];
-   armttbar[123]=armttbar[15]*armttbar[123];
-   armttbar[146]= - 7./2. - armttbar[11];
-   armttbar[146]=1./4.*armttbar[146] + armttbar[10];
-   armttbar[147]=armttbar[31]*armttbar[146];
-   armttbar[146]=armttbar[1]*armttbar[146];
-   armttbar[146]=armttbar[147] + 1./3.*armttbar[146];
-   armttbar[146]=armttbar[17]*armttbar[146];
-   armttbar[117]=armttbar[117] + armttbar[146] + armttbar[123] + 1./2.*
-   armttbar[133] + armttbar[145];
-   armttbar[123]= - 1 + 1./6.*armttbar[29];
-   armttbar[133]=5./6.*armttbar[10];
-   armttbar[145]= - 1./2.*armttbar[30];
-   armttbar[123]=armttbar[248] - 5./3.*armttbar[21] + armttbar[133] + 7
-   *armttbar[123] + armttbar[145];
-   armttbar[123]=armttbar[17]*armttbar[123];
-   armttbar[146]= - 1./3.*armttbar[29];
-   armttbar[147]= - 1./6.*armttbar[10];
-   armttbar[148]= - 1./4.*armttbar[30];
-   armttbar[149]=armttbar[147] + armttbar[148] - 1./4. + armttbar[146];
-   armttbar[149]=armttbar[16]*armttbar[149];
-   armttbar[146]=1./2. + armttbar[146];
-   armttbar[151]= - 5./3.*armttbar[10];
-   armttbar[146]=armttbar[151] + 7*armttbar[146] + armttbar[30];
-   armttbar[146]=armttbar[12]*armttbar[146];
-   armttbar[128]=armttbar[128] + 1./4.*armttbar[24] - armttbar[23] + 1./
-   2.*armttbar[45] + 1./4. + armttbar[43];
-   armttbar[152]= - 7./6.*armttbar[10] - 1 - 11./6.*armttbar[29];
-   armttbar[152]=armttbar[21]*armttbar[152];
-   armttbar[128]=1./2.*armttbar[146] + 3*armttbar[128] + armttbar[152];
-   armttbar[128]=MMZ*armttbar[128];
-   armttbar[127]= - 1./4.*armttbar[20] - armttbar[19] + 1./4.*
-   armttbar[5] + armttbar[34] + armttbar[127];
-   armttbar[146]=armttbar[151] + armttbar[30] - 1 - 7./3.*armttbar[29];
-   armttbar[146]=armttbar[15]*armttbar[146];
-   armttbar[123]=1./4.*armttbar[128] + 1./4.*armttbar[123] + 1./8.*
-   armttbar[146] + 3./4.*armttbar[127] + armttbar[149];
-   armttbar[123]=armttbar[27]*armttbar[123];
-   armttbar[127]=1 - armttbar[12];
-   armttbar[127]=armttbar[17]*armttbar[127];
-   armttbar[128]= - armttbar[12] - 1 - armttbar[45];
-   armttbar[128]=MMZ*armttbar[128];
-   armttbar[146]=1./2.*armttbar[128] + armttbar[127] + armttbar[188] - 
-   1./2.*armttbar[33] + armttbar[20];
-   armttbar[146]=MMZ*armttbar[146];
-   armttbar[149]= - armttbar[15] + 3./4.*armttbar[17];
-   armttbar[149]=armttbar[17]*armttbar[149];
-   armttbar[149]=armttbar[149] + 1./2.*armttbar[146];
-   armttbar[149]=armttbar[6]*armttbar[27]*armttbar[149];
-   armttbar[117]=3./8.*armttbar[149] + 1./2.*armttbar[117] + 
-   armttbar[123];
-   armttbar[117]=armttbar[6]*armttbar[117];
-   armttbar[123]=1./2.*armttbar[29] - armttbar[30];
-   armttbar[149]=armttbar[123] + 1./2.*armttbar[10];
-   armttbar[152]=armttbar[21]*armttbar[149];
-   armttbar[155]=armttbar[12]*armttbar[149];
-   armttbar[152]=armttbar[152] + 1./2.*armttbar[155];
-   armttbar[152]=MMZ*armttbar[152];
-   armttbar[155]=armttbar[16]*armttbar[149];
-   armttbar[156]=armttbar[15]*armttbar[149];
-   armttbar[157]= - 1./2.*armttbar[10];
-   armttbar[160]=armttbar[157] - 1./2.*armttbar[29] + armttbar[30];
-   armttbar[161]=armttbar[17]*armttbar[160];
-   armttbar[152]=armttbar[152] + 1./2.*armttbar[161] + armttbar[155] + 
-   1./2.*armttbar[156];
-   armttbar[152]=armttbar[27]*armttbar[152];
-   armttbar[155]= - armttbar[11] + armttbar[10];
-   armttbar[156]=armttbar[31]*armttbar[155];
-   armttbar[155]=armttbar[1]*armttbar[155];
-   armttbar[161]=armttbar[156] + 1./3.*armttbar[155];
-   armttbar[163]=armttbar[21]*armttbar[161];
-   armttbar[164]=armttbar[12]*armttbar[161];
-   armttbar[163]=armttbar[163] + 1./2.*armttbar[164];
-   armttbar[163]=MMZ*armttbar[163];
-   armttbar[164]=armttbar[16]*armttbar[161];
-   armttbar[166]=armttbar[15]*armttbar[161];
-   armttbar[167]=armttbar[11] - armttbar[10];
-   armttbar[168]=armttbar[31]*armttbar[167];
-   armttbar[167]=armttbar[1]*armttbar[167];
-   armttbar[169]=armttbar[168] + 1./3.*armttbar[167];
-   armttbar[171]=armttbar[17]*armttbar[169];
-   armttbar[152]=armttbar[152] + armttbar[163] + 1./2.*armttbar[171] + 
-   armttbar[164] + 1./2.*armttbar[166];
-   armttbar[152]=armttbar[6]*armttbar[152];
-   armttbar[163]=armttbar[12]*armttbar[169];
-   armttbar[164]=armttbar[21]*armttbar[169];
-   armttbar[163]=armttbar[163] + armttbar[164] + 3*armttbar[156] + 
-   armttbar[155];
-   armttbar[166]=3*armttbar[168] + armttbar[167];
-   armttbar[172]=armttbar[16]*armttbar[166];
-   armttbar[173]=armttbar[15]*armttbar[166];
-   armttbar[172]=armttbar[172] + 1./2.*armttbar[173];
-   armttbar[172]=armttbar[3]*armttbar[172];
-   armttbar[173]= - 1./4.*armttbar[10];
-   armttbar[110]=armttbar[173] + armttbar[110] + armttbar[30];
-   armttbar[174]=armttbar[21]*armttbar[110];
-   armttbar[175]=3./2.*armttbar[30];
-   armttbar[177]=armttbar[157] - armttbar[29] + armttbar[175];
-   armttbar[177]=armttbar[12]*armttbar[177];
-   armttbar[174]=1./2.*armttbar[177] + 3./2.*armttbar[149] + 
-   armttbar[174];
-   armttbar[177]=armttbar[16]*armttbar[160];
-   armttbar[178]=armttbar[15]*armttbar[160];
-   armttbar[177]=armttbar[177] + 1./2.*armttbar[178];
-   armttbar[177]=armttbar[3]*armttbar[177];
-   armttbar[178]=MMZ*armttbar[3]*armttbar[160];
-   armttbar[174]=3*armttbar[178] + 1./2.*armttbar[174] + 3*
-   armttbar[177];
-   armttbar[174]=armttbar[27]*armttbar[174];
-   armttbar[166]=MMZ*armttbar[3]*armttbar[166];
-   armttbar[177]=armttbar[29] - armttbar[30];
-   armttbar[178]=MMt*armttbar[27]*armttbar[3]*armttbar[177];
-   armttbar[152]=3./2.*armttbar[178] + 1./2.*armttbar[152] + 
-   armttbar[174] + armttbar[166] + 1./4.*armttbar[163] + armttbar[172];
-   armttbar[152]=armttbar[210]*armttbar[152];
-   armttbar[163]=3*armttbar[10];
-   armttbar[166]=armttbar[118] + armttbar[163];
-   armttbar[172]=armttbar[31]*armttbar[166];
-   armttbar[166]=armttbar[1]*armttbar[166];
-   armttbar[166]=3*armttbar[172] + armttbar[166];
-   armttbar[166]=armttbar[15]*armttbar[166];
-   armttbar[154]=armttbar[162] + armttbar[19] - armttbar[7] + 
-   armttbar[154];
-   armttbar[162]=armttbar[31]*armttbar[154];
-   armttbar[154]=armttbar[1]*armttbar[154];
-   armttbar[172]=1./2. + armttbar[10];
-   armttbar[174]=armttbar[31]*armttbar[172];
-   armttbar[172]=armttbar[1]*armttbar[172];
-   armttbar[178]=3*armttbar[174] + armttbar[172];
-   armttbar[178]=armttbar[16]*armttbar[178];
-   armttbar[154]=1./4.*armttbar[166] + armttbar[178] + 3*armttbar[162]
-    + armttbar[154];
-   armttbar[154]=armttbar[3]*armttbar[154];
-   armttbar[143]=armttbar[12]*armttbar[143];
-   armttbar[162]= - armttbar[10] + armttbar[13] - armttbar[25] - 
-   armttbar[24];
-   armttbar[166]=armttbar[31]*armttbar[162];
-   armttbar[162]=armttbar[1]*armttbar[162];
-   armttbar[143]=armttbar[143] + 3*armttbar[166] + armttbar[162];
-   armttbar[143]=armttbar[99]*armttbar[143];
-   armttbar[178]= - 11 + 21./2.*armttbar[10];
-   armttbar[178]=armttbar[31]*armttbar[178];
-   armttbar[104]= - 11./3. + armttbar[104];
-   armttbar[179]=armttbar[1]*armttbar[104];
-   armttbar[178]=armttbar[178] + armttbar[179];
-   armttbar[178]=armttbar[3]*armttbar[178];
-   armttbar[143]=1./8.*armttbar[143] + armttbar[178];
-   armttbar[143]=MMZ*armttbar[143];
-   armttbar[178]= - 9*armttbar[28];
-   armttbar[105]=armttbar[105] + 23./2.*armttbar[29] + 35./2. + 
-   armttbar[178];
-   armttbar[105]=3./2.*armttbar[12] + 1./2.*armttbar[105] + 
-   armttbar[231];
-   armttbar[105]=armttbar[3]*armttbar[105];
-   armttbar[180]=armttbar[199] - 1./2. + armttbar[40];
-   armttbar[180]=armttbar[17]*armttbar[153]*armttbar[180];
-   armttbar[105]=1./2.*armttbar[105] + 9*armttbar[180];
-   armttbar[105]=armttbar[27]*armttbar[105];
-   armttbar[180]=MMt*armttbar[27]*armttbar[153]*armttbar[28];
-   armttbar[105]=armttbar[105] + 9*armttbar[180];
-   armttbar[105]=MMt*armttbar[105];
-   armttbar[181]=1 - armttbar[10];
-   armttbar[182]=armttbar[31]*armttbar[181];
-   armttbar[181]=armttbar[1]*armttbar[181];
-   armttbar[183]=3*armttbar[182] + armttbar[181];
-   armttbar[183]=armttbar[17]*armttbar[99]*armttbar[183];
-   armttbar[103]=1./2.*armttbar[152] + armttbar[105] + armttbar[117] + 
-   armttbar[103] + 1./2.*armttbar[143] + 1./4.*armttbar[183] + 1./4.*
-   armttbar[109] + armttbar[154];
-   armttbar[103]=armttbar[210]*armttbar[103];
-   armttbar[105]=armttbar[126] - armttbar[20];
-   armttbar[109]=armttbar[31]*armttbar[105];
-   armttbar[105]=armttbar[1]*armttbar[105];
-   armttbar[117]=armttbar[109] + 1./3.*armttbar[105];
-   armttbar[143]= - 1./3. + armttbar[10];
-   armttbar[152]=armttbar[31]*armttbar[143];
-   armttbar[143]=armttbar[1]*armttbar[143];
-   armttbar[143]=5./3.*armttbar[152] + armttbar[143];
-   armttbar[152]=armttbar[16]*armttbar[143];
-   armttbar[154]=17./4.*armttbar[11];
-   armttbar[183]=13./3. + armttbar[154];
-   armttbar[113]=1./3.*armttbar[183] + armttbar[113];
-   armttbar[113]=armttbar[31]*armttbar[113];
-   armttbar[183]=67./12.*armttbar[10] + 1 + 17./12.*armttbar[11];
-   armttbar[183]=armttbar[1]*armttbar[183];
-   armttbar[113]=armttbar[113] + 1./3.*armttbar[183];
-   armttbar[183]=armttbar[15]*armttbar[113];
-   armttbar[184]= - 17./4.*armttbar[11];
-   armttbar[185]=41./3. + armttbar[184];
-   armttbar[185]=1./3.*armttbar[185] - 17./4.*armttbar[10];
-   armttbar[185]=armttbar[31]*armttbar[185];
-   armttbar[186]= - 67./12.*armttbar[10] + 5 - 17./12.*armttbar[11];
-   armttbar[186]=armttbar[1]*armttbar[186];
-   armttbar[185]=armttbar[185] + 1./3.*armttbar[186];
-   armttbar[185]=armttbar[17]*armttbar[185];
-   armttbar[117]=1./2.*armttbar[185] + 1./2.*armttbar[183] + 2*
-   armttbar[117] + armttbar[152];
-   armttbar[152]= - armttbar[26] + armttbar[23];
-   armttbar[125]=2./9.*armttbar[13] + 1./4.*armttbar[152] + 
-   armttbar[125];
-   armttbar[125]=armttbar[1]*armttbar[125];
-   armttbar[183]=7./27. + armttbar[11];
-   armttbar[183]=1./2.*armttbar[183] + 19./9.*armttbar[10];
-   armttbar[183]=armttbar[31]*armttbar[183];
-   armttbar[185]= - 1./3. + armttbar[11];
-   armttbar[185]=1./6.*armttbar[185] + armttbar[10];
-   armttbar[185]=armttbar[1]*armttbar[185];
-   armttbar[183]=armttbar[183] + armttbar[185];
-   armttbar[183]=armttbar[21]*armttbar[183];
-   armttbar[113]=armttbar[12]*armttbar[113];
-   armttbar[152]=2./3.*armttbar[13] + 3./4.*armttbar[152] - 2./3.*
-   armttbar[24];
-   armttbar[152]=armttbar[31]*armttbar[152];
-   armttbar[113]=1./6.*armttbar[113] + 1./2.*armttbar[183] + 
-   armttbar[152] + armttbar[125];
-   armttbar[113]=MMZ*armttbar[113];
-   armttbar[125]=1./12. + armttbar[29];
-   armttbar[152]=1./4.*armttbar[30];
-   armttbar[125]=5./18.*armttbar[10] + 7./9.*armttbar[125] + 
-   armttbar[152];
-   armttbar[125]=armttbar[21]*armttbar[125];
-   armttbar[183]=19./18.*armttbar[13] - 19./18.*armttbar[24] + 3*
-   armttbar[23] - armttbar[45] + 11./18. - 3*armttbar[43];
-   armttbar[185]=17./3.*armttbar[30];
-   armttbar[186]=armttbar[185] - 89./9. + 25./2.*armttbar[29];
-   armttbar[186]=1./3.*armttbar[186] + 3./2.*armttbar[10];
-   armttbar[186]=armttbar[12]*armttbar[186];
-   armttbar[125]=1./8.*armttbar[186] + 1./4.*armttbar[183] + 
-   armttbar[125];
-   armttbar[125]=MMZ*armttbar[125];
-   armttbar[183]=11*armttbar[33];
-   armttbar[186]=armttbar[183] - 19*armttbar[5];
-   armttbar[188]= - 5*armttbar[18];
-   armttbar[186]= - 41./2.*armttbar[20] + 1./2.*armttbar[186] + 
-   armttbar[188];
-   armttbar[191]=4*armttbar[29];
-   armttbar[193]=armttbar[10] - 5./3. + armttbar[191];
-   armttbar[195]=armttbar[16]*armttbar[193];
-   armttbar[186]=1./4.*armttbar[186] + armttbar[195];
-   armttbar[195]= - 25./2.*armttbar[29];
-   armttbar[196]= - 17./3.*armttbar[30];
-   armttbar[197]=armttbar[196] + 11./9. + armttbar[195];
-   armttbar[197]=1./3.*armttbar[197] - 3./2.*armttbar[10];
-   armttbar[197]=19./12.*armttbar[12] + 1./8.*armttbar[197] + 14./9.*
-   armttbar[21];
-   armttbar[197]=armttbar[17]*armttbar[197];
-   armttbar[198]=17./12.*armttbar[30] - 17./9. + 25./8.*armttbar[29];
-   armttbar[198]=1./3.*armttbar[198] + 3./8.*armttbar[10];
-   armttbar[198]=armttbar[15]*armttbar[198];
-   armttbar[125]=armttbar[125] + armttbar[197] + 1./9.*armttbar[186] + 
-   1./2.*armttbar[198];
-   armttbar[125]=armttbar[27]*armttbar[125];
-   armttbar[111]=armttbar[17]*armttbar[111];
-   armttbar[186]=armttbar[12] + 1 + armttbar[45];
-   armttbar[186]=MMZ*armttbar[186];
-   armttbar[197]=1./2.*armttbar[33];
-   armttbar[111]=1./2.*armttbar[186] + armttbar[111] + armttbar[270] + 
-   armttbar[197] - armttbar[20];
-   armttbar[111]=MMZ*armttbar[111];
-   armttbar[186]=armttbar[241] - 1./4.*armttbar[17];
-   armttbar[186]=armttbar[17]*armttbar[186];
-   armttbar[111]=armttbar[186] + 1./6.*armttbar[111];
-   armttbar[111]=armttbar[6]*armttbar[27]*armttbar[111];
-   armttbar[113]=29./12.*armttbar[111] + armttbar[125] + 1./3.*
-   armttbar[117] + armttbar[113];
-   armttbar[113]=armttbar[6]*armttbar[113];
-   armttbar[117]= - 11*armttbar[45];
-   armttbar[125]=323./12.*armttbar[29] + 49./3.*armttbar[13] - 49./3.*
-   armttbar[24] + 25./3.*armttbar[25] - 31./2. + armttbar[117];
-   armttbar[186]=1./3.*armttbar[30];
-   armttbar[125]=1./2.*armttbar[125] + armttbar[186];
-   armttbar[198]= - 1./3.*armttbar[10];
-   armttbar[125]=1./2.*armttbar[125] + armttbar[198];
-   armttbar[199]=armttbar[147] + 89./18. + armttbar[191];
-   armttbar[199]=armttbar[21]*armttbar[199];
-   armttbar[200]=2809./9. + 187*armttbar[29];
-   armttbar[200]=1./4.*armttbar[200] - armttbar[30];
-   armttbar[200]=1./4.*armttbar[200] + armttbar[10];
-   armttbar[200]=armttbar[12]*armttbar[200];
-   armttbar[125]=1./4.*armttbar[200] + 1./4.*armttbar[125] + 
-   armttbar[199];
-   armttbar[199]=5./3. - 29./8.*armttbar[29];
-   armttbar[200]= - 3./4.*armttbar[30];
-   armttbar[199]=7./24.*armttbar[10] + 1./3.*armttbar[199] + 
-   armttbar[200];
-   armttbar[199]=armttbar[15]*armttbar[199];
-   armttbar[202]=armttbar[33] - armttbar[5];
-   armttbar[202]=1./2.*armttbar[202] - armttbar[20];
-   armttbar[203]= - 4*armttbar[29];
-   armttbar[204]= - armttbar[10] + 5./3. + armttbar[203];
-   armttbar[205]=armttbar[16]*armttbar[204];
-   armttbar[205]=armttbar[199] + armttbar[202] + 2./3.*armttbar[205];
-   armttbar[205]=armttbar[3]*armttbar[205];
-   armttbar[206]=5 - 13./4.*armttbar[29];
-   armttbar[207]= - 7*armttbar[10];
-   armttbar[206]=3*armttbar[206] + armttbar[207];
-   armttbar[206]=armttbar[15]*armttbar[99]*armttbar[206];
-   armttbar[208]= - 7 + 39*armttbar[29];
-   armttbar[209]=7*armttbar[10];
-   armttbar[208]= - 39./4.*armttbar[12] + 1./4.*armttbar[208] + 
-   armttbar[209];
-   armttbar[208]=armttbar[99]*armttbar[208];
-   armttbar[211]= - 5./2.*armttbar[12];
-   armttbar[212]= - 53./3. + armttbar[211];
-   armttbar[212]=armttbar[3]*armttbar[212];
-   armttbar[208]=1./2.*armttbar[208] + armttbar[212];
-   armttbar[208]=armttbar[17]*armttbar[208];
-   armttbar[207]=39./4.*armttbar[116] + armttbar[207];
-   armttbar[207]=armttbar[12]*armttbar[207];
-   armttbar[207]=armttbar[207] + armttbar[209] + 39./4.*armttbar[29] - 
-   7*armttbar[13] + 7*armttbar[24] - 51./2. + 7*armttbar[25];
-   armttbar[207]=armttbar[99]*armttbar[207];
-   armttbar[195]=43./3. + armttbar[195];
-   armttbar[195]= - 2./3.*armttbar[10] + 1./3.*armttbar[195] - 2*
-   armttbar[30];
-   armttbar[195]=armttbar[3]*armttbar[195];
-   armttbar[195]=1./16.*armttbar[207] + armttbar[195];
-   armttbar[195]=MMZ*armttbar[195];
-   armttbar[207]=7./2.*armttbar[20] - 1./4.*armttbar[18] - 3./4.*
-   armttbar[33] + armttbar[5];
-   armttbar[207]=armttbar[99]*armttbar[207];
-   armttbar[125]=armttbar[195] + 1./2.*armttbar[208] + armttbar[205] + 
-   1./8.*armttbar[206] + 1./3.*armttbar[125] + 7./8.*armttbar[207];
-   armttbar[125]=armttbar[27]*armttbar[125];
-   armttbar[195]=1./3. - armttbar[10];
-   armttbar[205]=armttbar[31]*armttbar[195];
-   armttbar[195]=armttbar[1]*armttbar[195];
-   armttbar[195]=5./3.*armttbar[205] + armttbar[195];
-   armttbar[205]=armttbar[21]*armttbar[195];
-   armttbar[206]=7./4.*armttbar[11];
-   armttbar[207]=41./3. + armttbar[206];
-   armttbar[207]=1./3.*armttbar[207] + armttbar[173];
-   armttbar[207]=armttbar[31]*armttbar[207];
-   armttbar[208]= - 19./12.*armttbar[10] + 5 + 7./12.*armttbar[11];
-   armttbar[208]=armttbar[1]*armttbar[208];
-   armttbar[207]=armttbar[207] + 1./3.*armttbar[208];
-   armttbar[207]=armttbar[12]*armttbar[207];
-   armttbar[208]=1./24.*armttbar[11];
-   armttbar[209]=35./24.*armttbar[10] + armttbar[208] + armttbar[13] - 
-   armttbar[24] + 7./6. + armttbar[25];
-   armttbar[209]=armttbar[31]*armttbar[209];
-   armttbar[212]=83./24.*armttbar[10] + armttbar[208] + armttbar[13] - 
-   armttbar[24] + 1./2. + armttbar[25];
-   armttbar[212]=armttbar[1]*armttbar[212];
-   armttbar[207]=1./2.*armttbar[207] + 1./2.*armttbar[205] + 
-   armttbar[209] + 1./3.*armttbar[212];
-   armttbar[209]=armttbar[5] - armttbar[18];
-   armttbar[212]=2*armttbar[20];
-   armttbar[214]=armttbar[209] + armttbar[212];
-   armttbar[215]=armttbar[31]*armttbar[214];
-   armttbar[214]=armttbar[1]*armttbar[214];
-   armttbar[217]=armttbar[215] + 1./3.*armttbar[214];
-   armttbar[217]=armttbar[99]*armttbar[217];
-   armttbar[195]=armttbar[16]*armttbar[195];
-   armttbar[218]= - 11./12.*armttbar[10] + 5./9. - 3./4.*armttbar[11];
-   armttbar[218]=armttbar[31]*armttbar[218];
-   armttbar[219]= - 1./4.*armttbar[11];
-   armttbar[220]=1./3. + armttbar[219];
-   armttbar[221]=armttbar[220] - 3./4.*armttbar[10];
-   armttbar[221]=armttbar[1]*armttbar[221];
-   armttbar[218]=armttbar[218] + armttbar[221];
-   armttbar[218]=armttbar[15]*armttbar[218];
-   armttbar[195]=2*armttbar[195] + armttbar[218];
-   armttbar[195]=armttbar[3]*armttbar[195];
-   armttbar[221]= - armttbar[31]*armttbar[10];
-   armttbar[222]= - armttbar[1]*armttbar[10];
-   armttbar[223]=armttbar[221] + 1./3.*armttbar[222];
-   armttbar[224]=armttbar[12]*armttbar[223];
-   armttbar[225]=armttbar[10] - armttbar[13] + armttbar[25] + 
-   armttbar[24];
-   armttbar[226]=armttbar[31]*armttbar[225];
-   armttbar[225]=armttbar[1]*armttbar[225];
-   armttbar[224]=armttbar[224] + armttbar[226] + 1./3.*armttbar[225];
-   armttbar[224]=armttbar[99]*armttbar[224];
-   armttbar[227]= - 2*armttbar[11];
-   armttbar[228]=17./3. + armttbar[227];
-   armttbar[229]= - 5./2.*armttbar[10];
-   armttbar[228]=1./3.*armttbar[228] + armttbar[229];
-   armttbar[228]=armttbar[1]*armttbar[228];
-   armttbar[227]= - 29./6.*armttbar[10] + 43./9. + armttbar[227];
-   armttbar[227]=armttbar[31]*armttbar[227];
-   armttbar[227]=armttbar[227] + armttbar[228];
-   armttbar[227]=armttbar[3]*armttbar[227];
-   armttbar[224]=armttbar[224] + armttbar[227];
-   armttbar[224]=MMZ*armttbar[224];
-   armttbar[227]= - 3*armttbar[28];
-   armttbar[228]=1./2.*armttbar[30];
-   armttbar[230]= - armttbar[12] + armttbar[228] - 77./3.*armttbar[29]
-    - 37./6. + armttbar[227];
-   armttbar[230]=armttbar[3]*armttbar[230];
-   armttbar[231]= - 1 + armttbar[264];
-   armttbar[231]=3*armttbar[17]*armttbar[153]*armttbar[231];
-   armttbar[230]=1./2.*armttbar[230] + armttbar[231];
-   armttbar[230]=armttbar[27]*armttbar[230];
-   armttbar[232]=6*armttbar[180];
-   armttbar[230]=armttbar[230] + armttbar[232];
-   armttbar[230]=MMt*armttbar[230];
-   armttbar[223]=armttbar[15]*armttbar[99]*armttbar[223];
-   armttbar[233]= - 1 + armttbar[10];
-   armttbar[234]=armttbar[31]*armttbar[233];
-   armttbar[233]=armttbar[1]*armttbar[233];
-   armttbar[235]=armttbar[234] + 1./3.*armttbar[233];
-   armttbar[235]=armttbar[17]*armttbar[99]*armttbar[235];
-   armttbar[103]=armttbar[103] + armttbar[230] + armttbar[113] + 
-   armttbar[125] + armttbar[224] + 4*armttbar[235] + armttbar[195] + 2*
-   armttbar[223] + 1./3.*armttbar[207] + 2*armttbar[217];
-   armttbar[103]=armttbar[210]*armttbar[103];
-   armttbar[113]= - 13*armttbar[39];
-   armttbar[125]=11./3.*armttbar[10] - 20./9. + 3*armttbar[11];
-   armttbar[125]=armttbar[31]*armttbar[125];
-   armttbar[163]=armttbar[163] - 4./3. + armttbar[11];
-   armttbar[163]=armttbar[1]*armttbar[163];
-   armttbar[195]= - 55./4.*armttbar[12];
-   armttbar[140]=9./2.*armttbar[3]*armttbar[140];
-   armttbar[207]= - 15./8.*armttbar[21];
-   armttbar[217]=armttbar[140] + armttbar[195] + armttbar[207] + 
-   armttbar[163] + armttbar[125] + armttbar[201] + armttbar[213] + 1./4.
-   *armttbar[41] + armttbar[142] + armttbar[113] - 299./12. + 
-   armttbar[187];
-   armttbar[217]=armttbar[17]*armttbar[3]*armttbar[217];
-   armttbar[223]= - 17*armttbar[29];
-   armttbar[224]=121./3. + armttbar[223];
-   armttbar[230]= - 5./9.*armttbar[10];
-   armttbar[235]=3*armttbar[30];
-   armttbar[224]=armttbar[230] + 1./9.*armttbar[224] + armttbar[235];
-   armttbar[224]=armttbar[21]*armttbar[224];
-   armttbar[183]= - 25*armttbar[20] - 11*armttbar[18] + armttbar[242]
-    + 3*armttbar[34] + armttbar[183];
-   armttbar[236]=armttbar[175] - 139./6.*armttbar[29] - 59./3. + 
-   armttbar[178];
-   armttbar[236]=armttbar[15]*armttbar[236];
-   armttbar[237]= - 1 - armttbar[28];
-   armttbar[237]=3*armttbar[237] - armttbar[30];
-   armttbar[237]=armttbar[16]*armttbar[237];
-   armttbar[237]=1./2.*armttbar[236] + armttbar[183] + 3./2.*
-   armttbar[237];
-   armttbar[237]=armttbar[3]*armttbar[237];
-   armttbar[238]= - 20./3. + 17./2.*armttbar[29];
-   armttbar[133]=armttbar[133] + 1./3.*armttbar[238] + armttbar[235];
-   armttbar[133]=armttbar[27]*armttbar[17]*armttbar[3]*armttbar[133];
-   armttbar[238]=13759./2. + 511*armttbar[29];
-   armttbar[239]= - 5./2.*armttbar[30];
-   armttbar[238]=1./27.*armttbar[238] + armttbar[239];
-   armttbar[238]=armttbar[12]*armttbar[238];
-   armttbar[240]=10./3. - 17./4.*armttbar[29];
-   armttbar[240]= - 5./36.*armttbar[10] + 1./9.*armttbar[240] + 
-   armttbar[145];
-   armttbar[240]=armttbar[8]*armttbar[240];
-   armttbar[241]= - 3./8.*armttbar[43];
-   armttbar[242]= - 49./27. + armttbar[241];
-   armttbar[243]=3./16.*armttbar[23];
-   armttbar[245]= - 19./144.*armttbar[30];
-   armttbar[217]=armttbar[133] + armttbar[217] + 1./2.*armttbar[237] + 
-   1./24.*armttbar[238] + armttbar[240] + 1./16.*armttbar[224] + 
-   armttbar[245] - 73./216.*armttbar[29] + 400./81.*armttbar[25] + 
-   armttbar[243] + 1./2.*armttbar[242] + 400./81.*armttbar[45];
-   armttbar[217]=armttbar[27]*armttbar[217];
-   armttbar[224]= - 11./9.*armttbar[10] + 47./27. - armttbar[11];
-   armttbar[224]=armttbar[31]*armttbar[224];
-   armttbar[237]=7./3. - armttbar[11];
-   armttbar[237]=1./3.*armttbar[237] - armttbar[10];
-   armttbar[237]=armttbar[1]*armttbar[237];
-   armttbar[224]=armttbar[224] + armttbar[237];
-   armttbar[237]=armttbar[21]*armttbar[224];
-   armttbar[238]= - armttbar[31]*armttbar[22];
-   armttbar[242]= - armttbar[1]*armttbar[22];
-   armttbar[238]=armttbar[238] + 1./3.*armttbar[242];
-   armttbar[237]=armttbar[238] + armttbar[237];
-   armttbar[242]= - 1./2.*armttbar[11];
-   armttbar[246]=2./3. + armttbar[242];
-   armttbar[246]=1./3.*armttbar[246] + armttbar[157];
-   armttbar[246]=armttbar[1]*armttbar[246];
-   armttbar[242]= - 11./18.*armttbar[10] + 10./27. + armttbar[242];
-   armttbar[242]=armttbar[31]*armttbar[242];
-   armttbar[242]=armttbar[242] + armttbar[246];
-   armttbar[246]=armttbar[8]*armttbar[242];
-   armttbar[237]=1./8.*armttbar[237] + armttbar[246];
-   armttbar[246]=armttbar[16]*armttbar[28];
-   armttbar[248]=armttbar[15]*armttbar[28];
-   armttbar[249]=armttbar[246] + armttbar[248];
-   armttbar[249]=armttbar[3]*armttbar[249];
-   armttbar[250]= - 11*armttbar[12] - 3./2.*armttbar[21] + 133./3. + 
-   armttbar[239];
-   armttbar[249]=1./2.*armttbar[250] + 9*armttbar[249];
-   armttbar[249]=MMt*armttbar[27]*armttbar[3]*armttbar[249];
-   armttbar[217]=armttbar[249] + armttbar[237] + armttbar[217];
-   armttbar[217]=MMt*armttbar[217];
-   armttbar[250]=107./4. - 259*armttbar[29];
-   armttbar[252]= - 19./4.*armttbar[30];
-   armttbar[250]=armttbar[229] + 1./9.*armttbar[250] + armttbar[252];
-   armttbar[250]=887./324.*armttbar[12] + 1./9.*armttbar[250] + 
-   armttbar[279];
-   armttbar[247]=armttbar[247] - 41./3.*armttbar[15];
-   armttbar[247]=armttbar[3]*armttbar[247];
-   armttbar[254]=2173./54.*armttbar[99] - 9*armttbar[3];
-   armttbar[254]=armttbar[17]*armttbar[254];
-   armttbar[256]= - armttbar[15]*armttbar[99];
-   armttbar[247]=5./2.*armttbar[254] + 1./2.*armttbar[247] + 1./2.*
-   armttbar[250] + 1685./27.*armttbar[256];
-   armttbar[247]=armttbar[17]*armttbar[247];
-   armttbar[250]=5./3. - 17./8.*armttbar[29];
-   armttbar[250]=1./9.*armttbar[250];
-   armttbar[254]= - 5./72.*armttbar[10];
-   armttbar[257]=armttbar[254] + armttbar[250] + armttbar[152];
-   armttbar[257]=armttbar[16]*armttbar[257];
-   armttbar[250]=armttbar[254] + armttbar[250] + armttbar[148];
-   armttbar[250]=armttbar[14]*armttbar[250];
-   armttbar[258]=1663 + 4775./6.*armttbar[29];
-   armttbar[259]= - 17*armttbar[30];
-   armttbar[258]=1./3.*armttbar[258] + armttbar[259];
-   armttbar[258]=armttbar[15]*armttbar[258];
-   armttbar[253]= - armttbar[33] + armttbar[253];
-   armttbar[253]=11./2.*armttbar[253];
-   armttbar[260]=armttbar[253] + 7291./81.*armttbar[20];
-   armttbar[247]=1./2.*armttbar[247] + 1./144.*armttbar[258] + 1./2.*
-   armttbar[257] + 1./16.*armttbar[260] + armttbar[250];
-   armttbar[247]=armttbar[27]*armttbar[247];
-   armttbar[150]=3./2. + armttbar[150];
-   armttbar[150]=9./2.*armttbar[170] + 35./12.*armttbar[12] + 1./2.*
-   armttbar[150] + armttbar[142];
-   armttbar[150]=armttbar[17]*armttbar[3]*armttbar[150];
-   armttbar[257]=103 + 35./2.*armttbar[29];
-   armttbar[257]=1./9.*armttbar[257] - armttbar[30];
-   armttbar[258]= - 7*armttbar[29];
-   armttbar[260]= - 13 + armttbar[258];
-   armttbar[260]=7./144.*armttbar[260] - armttbar[30];
-   armttbar[260]=armttbar[12]*armttbar[260];
-   armttbar[257]=1./24.*armttbar[257] + armttbar[260];
-   armttbar[260]= - 11./3. + armttbar[178];
-   armttbar[260]=armttbar[175] + 1./2.*armttbar[260] + 7./3.*
-   armttbar[29];
-   armttbar[260]=armttbar[15]*armttbar[260];
-   armttbar[261]= - armttbar[33] + armttbar[18];
-   armttbar[261]=1./2.*armttbar[261] + armttbar[20];
-   armttbar[260]=7./3.*armttbar[261] + 1./2.*armttbar[260];
-   armttbar[260]=armttbar[3]*armttbar[260];
-   armttbar[150]=armttbar[150] + 1./3.*armttbar[257] + armttbar[260];
-   armttbar[150]=armttbar[27]*armttbar[150];
-   armttbar[257]=7./3.*armttbar[12] + 11./3. + armttbar[30];
-   armttbar[260]=armttbar[3]*armttbar[248];
-   armttbar[257]=1./2.*armttbar[257] + 9*armttbar[260];
-   armttbar[257]=MMt*armttbar[27]*armttbar[3]*armttbar[257];
-   armttbar[150]=armttbar[150] + armttbar[257];
-   armttbar[150]=MMt*armttbar[150];
-   armttbar[257]=7*armttbar[29];
-   armttbar[260]=323./27. + armttbar[257];
-   armttbar[185]= - 193./18.*armttbar[12] + 1./2.*armttbar[260] + 
-   armttbar[185];
-   armttbar[170]=67./2.*armttbar[170] + 1./4.*armttbar[185] + 725./9.*
-   armttbar[107];
-   armttbar[185]= - 4775./54.*armttbar[99] - 17*armttbar[3];
-   armttbar[185]=armttbar[17]*armttbar[185];
-   armttbar[170]=1./3.*armttbar[170] + 1./2.*armttbar[185];
-   armttbar[170]=armttbar[17]*armttbar[170];
-   armttbar[185]= - 221 - 301./2.*armttbar[29];
-   armttbar[185]=1./6.*armttbar[185] + armttbar[259];
-   armttbar[185]=armttbar[15]*armttbar[185];
-   armttbar[260]=armttbar[33] + 77./9.*armttbar[18];
-   armttbar[260]=1./2.*armttbar[260] - armttbar[20];
-   armttbar[185]=7./2.*armttbar[260] + 1./3.*armttbar[185];
-   armttbar[170]=1./12.*armttbar[185] + armttbar[170];
-   armttbar[170]=armttbar[27]*armttbar[170];
-   armttbar[185]= - 29./2.*armttbar[15] + 19*armttbar[17];
-   armttbar[185]=armttbar[6]*armttbar[27]*armttbar[17]*armttbar[185];
-   armttbar[170]=armttbar[170] + 17./27.*armttbar[185];
-   armttbar[185]=1 + armttbar[39];
-   armttbar[185]=armttbar[17]*armttbar[3]*armttbar[185];
-   armttbar[260]= - armttbar[12]*armttbar[30];
-   armttbar[185]=17./36.*armttbar[260] + armttbar[185];
-   armttbar[185]=armttbar[27]*armttbar[185];
-   armttbar[261]=armttbar[3]*armttbar[30];
-   armttbar[262]=MMt*armttbar[27]*armttbar[261];
-   armttbar[185]=armttbar[185] + armttbar[262];
-   armttbar[185]=MMt*armttbar[185];
-   armttbar[262]= - armttbar[27]*armttbar[17]*armttbar[12];
-   armttbar[185]=17./36.*armttbar[262] + armttbar[185];
-   armttbar[185]=armttbar[176]*armttbar[185];
-   armttbar[150]=1./2.*armttbar[185] + 1./2.*armttbar[170] + 
-   armttbar[150];
-   armttbar[150]=armttbar[176]*armttbar[150];
-   armttbar[170]=1./3.*armttbar[220] + armttbar[173];
-   armttbar[170]=armttbar[1]*armttbar[170];
-   armttbar[173]= - 11./36.*armttbar[10] + 5./27. + armttbar[219];
-   armttbar[173]=armttbar[31]*armttbar[173];
-   armttbar[170]=armttbar[173] + armttbar[170];
-   armttbar[173]=armttbar[14]*armttbar[170];
-   armttbar[185]=armttbar[16]*armttbar[224];
-   armttbar[170]=armttbar[17]*armttbar[170];
-   armttbar[170]=armttbar[170] + armttbar[173] + 1./8.*armttbar[185];
-   armttbar[173]=1./4.*armttbar[11];
-   armttbar[185]=11./36.*armttbar[10] - 5./27. + armttbar[173];
-   armttbar[185]=armttbar[31]*armttbar[185];
-   armttbar[173]= - 1./3. + armttbar[173];
-   armttbar[173]=1./3.*armttbar[173] + 1./4.*armttbar[10];
-   armttbar[173]=armttbar[1]*armttbar[173];
-   armttbar[173]=armttbar[185] + armttbar[173];
-   armttbar[173]=armttbar[8]*armttbar[173];
-   armttbar[185]= - 5./3. + 17./8.*armttbar[29];
-   armttbar[185]=5./72.*armttbar[10] + 1./9.*armttbar[185] + 
-   armttbar[152];
-   armttbar[185]=armttbar[27]*armttbar[8]*armttbar[185];
-   armttbar[173]=armttbar[173] + armttbar[185];
-   armttbar[173]=1./2.*MMH*armttbar[173];
-   armttbar[185]=armttbar[16] + 3049./81.*armttbar[15];
-   armttbar[185]=1./2.*armttbar[185] - 2165./81.*armttbar[17];
-   armttbar[185]=armttbar[6]*armttbar[27]*armttbar[17]*armttbar[185];
-   armttbar[150]=1./2.*armttbar[150] + armttbar[217] + 1./2.*
-   armttbar[185] + armttbar[173] + armttbar[170] + armttbar[247];
-   armttbar[150]=armttbar[176]*armttbar[150];
-   armttbar[113]=armttbar[140] + armttbar[195] + armttbar[207] + 
-   armttbar[163] + armttbar[125] + armttbar[201] + armttbar[213] - 47./
-   4.*armttbar[41] + armttbar[142] + armttbar[113] - 443./12. + 
-   armttbar[187];
-   armttbar[113]=armttbar[17]*armttbar[3]*armttbar[113];
-   armttbar[125]= - 91./3. + armttbar[178];
-   armttbar[125]=armttbar[200] + 1./4.*armttbar[125] - 16./3.*
-   armttbar[29];
-   armttbar[125]=armttbar[16]*armttbar[125];
-   armttbar[125]=1./4.*armttbar[236] + 1./2.*armttbar[183] + 
-   armttbar[125];
-   armttbar[125]=armttbar[3]*armttbar[125];
-   armttbar[140]=armttbar[230] + armttbar[235] - 71./27. - 9*
-   armttbar[29];
-   armttbar[140]=armttbar[21]*armttbar[140];
-   armttbar[142]=7./3. + armttbar[241];
-   armttbar[163]=armttbar[239] + 391./6. - 19*armttbar[29];
-   armttbar[163]=armttbar[12]*armttbar[163];
-   armttbar[113]=armttbar[133] + armttbar[113] + armttbar[125] + 1./24.
-   *armttbar[163] + armttbar[240] + 1./16.*armttbar[140] + 
-   armttbar[245] + 125./72.*armttbar[29] + 16./9.*armttbar[25] + 
-   armttbar[243] + 1./2.*armttbar[142] + 16./9.*armttbar[45];
-   armttbar[113]=armttbar[27]*armttbar[113];
-   armttbar[113]=armttbar[249] + armttbar[237] + armttbar[113];
-   armttbar[113]=MMt*armttbar[113];
-   armttbar[110]=armttbar[16]*armttbar[110];
-   armttbar[125]= - armttbar[29] + armttbar[235];
-   armttbar[125]=armttbar[194] + armttbar[21] + 1./2.*armttbar[125] - 
-   armttbar[10];
-   armttbar[125]=armttbar[17]*armttbar[125];
-   armttbar[133]=armttbar[14]*armttbar[160];
-   armttbar[140]= - armttbar[29] + armttbar[30];
-   armttbar[142]=armttbar[15]*armttbar[140];
-   armttbar[110]=1./2.*armttbar[125] + 1./4.*armttbar[142] + 
-   armttbar[133] + armttbar[110];
-   armttbar[110]=armttbar[27]*armttbar[110];
-   armttbar[125]=armttbar[14]*armttbar[169];
-   armttbar[133]=armttbar[16]*armttbar[169];
-   armttbar[142]=armttbar[8]*armttbar[161];
-   armttbar[163]=armttbar[27]*armttbar[8]*armttbar[149];
-   armttbar[163]=armttbar[142] + armttbar[163];
-   armttbar[163]=MMH*armttbar[163];
-   armttbar[110]=1./2.*armttbar[163] + armttbar[110] + armttbar[171] + 
-   armttbar[125] + 1./2.*armttbar[133];
-   armttbar[125]=armttbar[235] - armttbar[10];
-   armttbar[125]=armttbar[21]*armttbar[125];
-   armttbar[125]=3*armttbar[140] + armttbar[125];
-   armttbar[133]=armttbar[16]*armttbar[177];
-   armttbar[163]=armttbar[15]*armttbar[177];
-   armttbar[133]=armttbar[133] + 1./2.*armttbar[163];
-   armttbar[133]=armttbar[3]*armttbar[133];
-   armttbar[160]=armttbar[8]*armttbar[160];
-   armttbar[163]=armttbar[12]*armttbar[29];
-   armttbar[125]=3./2.*armttbar[133] + 1./8.*armttbar[163] + 1./8.*
-   armttbar[125] + armttbar[160];
-   armttbar[108]=armttbar[108] - 1 + 33*armttbar[39];
-   armttbar[108]=armttbar[156] + armttbar[36] + 1./4.*armttbar[108] - 
-   armttbar[38];
-   armttbar[108]=3*armttbar[108] + armttbar[155];
-   armttbar[108]=armttbar[17]*armttbar[3]*armttbar[108];
-   armttbar[133]=armttbar[27]*armttbar[17]*armttbar[3]*armttbar[149];
-   armttbar[108]=3*armttbar[133] + 1./2.*armttbar[125] + armttbar[108];
-   armttbar[108]=armttbar[27]*armttbar[108];
-   armttbar[125]=armttbar[8]*armttbar[169];
-   armttbar[133]=1./4.*armttbar[164] + armttbar[125];
-   armttbar[149]= - armttbar[3]*armttbar[30];
-   armttbar[155]=MMt*armttbar[27]*armttbar[149];
-   armttbar[108]=3./4.*armttbar[155] + 1./2.*armttbar[133] + 
-   armttbar[108];
-   armttbar[108]=MMt*armttbar[108];
-   armttbar[108]=1./4.*armttbar[110] + armttbar[108];
-   armttbar[108]=armttbar[210]*armttbar[108];
-   armttbar[110]= - 55 + 49*armttbar[29];
-   armttbar[133]= - 7./2.*armttbar[99] - 3*armttbar[3];
-   armttbar[133]=armttbar[17]*armttbar[133];
-   armttbar[155]=1./6.*armttbar[10];
-   armttbar[110]=3./2.*armttbar[133] + 25*armttbar[190] + 3*
-   armttbar[107] + 35./24.*armttbar[12] + 11./6.*armttbar[21] + 
-   armttbar[155] + 1./24.*armttbar[110] - armttbar[30];
-   armttbar[110]=armttbar[17]*armttbar[110];
-   armttbar[133]= - armttbar[33] + armttbar[188];
-   armttbar[133]=1./2.*armttbar[133] + armttbar[20];
-   armttbar[155]=armttbar[155] + 5./6.*armttbar[29] - armttbar[30];
-   armttbar[156]=armttbar[14]*armttbar[155];
-   armttbar[133]=3./8.*armttbar[133] + armttbar[156];
-   armttbar[156]=1./8.*armttbar[30];
-   armttbar[160]=1./48.*armttbar[10] + armttbar[156] - 2./3. - 9./16.*
-   armttbar[29];
-   armttbar[160]=armttbar[16]*armttbar[160];
-   armttbar[163]= - 29 - 49./2.*armttbar[29];
-   armttbar[163]=armttbar[15]*armttbar[163];
-   armttbar[110]=1./4.*armttbar[110] + 1./96.*armttbar[163] + 1./4.*
-   armttbar[133] + armttbar[160];
-   armttbar[110]=armttbar[27]*armttbar[110];
-   armttbar[129]=armttbar[168] + armttbar[36] + armttbar[38] + 55./4.*
-   armttbar[41] + armttbar[129] - 55./4.*armttbar[39] + 57./8. - 
-   armttbar[40];
-   armttbar[129]=9./2.*armttbar[190] - 15./8.*armttbar[12] + 
-   armttbar[207] + 3*armttbar[129] + armttbar[167];
-   armttbar[129]=armttbar[17]*armttbar[3]*armttbar[129];
-   armttbar[133]=1./3.*armttbar[10];
-   armttbar[160]=armttbar[133] + armttbar[235] + 25./3. + armttbar[257]
-   ;
-   armttbar[160]=armttbar[21]*armttbar[160];
-   armttbar[163]=armttbar[23] - 5 - armttbar[43];
-   armttbar[163]=3*armttbar[163] - 31./2.*armttbar[29];
-   armttbar[160]=1./2.*armttbar[160] + 1./2.*armttbar[163] - 
-   armttbar[30];
-   armttbar[155]=armttbar[8]*armttbar[155];
-   armttbar[163]=1 + armttbar[29];
-   armttbar[164]=29./6.*armttbar[163] + armttbar[30];
-   armttbar[164]=armttbar[12]*armttbar[164];
-   armttbar[155]=1./8.*armttbar[164] + 1./4.*armttbar[160] + 
-   armttbar[155];
-   armttbar[160]=7 + armttbar[178];
-   armttbar[164]=armttbar[200] + 1./4.*armttbar[160] + armttbar[191];
-   armttbar[164]=armttbar[16]*armttbar[164];
-   armttbar[167]=armttbar[293] - armttbar[19] + armttbar[34] + 
-   armttbar[197];
-   armttbar[167]=1./2.*armttbar[167] - armttbar[20];
-   armttbar[160]=armttbar[160] + 13*armttbar[29];
-   armttbar[160]=armttbar[15]*armttbar[160];
-   armttbar[160]=1./8.*armttbar[160] + 3*armttbar[167] + armttbar[164];
-   armttbar[160]=armttbar[3]*armttbar[160];
-   armttbar[164]=armttbar[157] - 5./2.*armttbar[29] + armttbar[235];
-   armttbar[164]=armttbar[27]*armttbar[17]*armttbar[3]*armttbar[164];
-   armttbar[129]=armttbar[164] + armttbar[129] + 1./2.*armttbar[155] + 
-   armttbar[160];
-   armttbar[129]=armttbar[27]*armttbar[129];
-   armttbar[118]=armttbar[118] + armttbar[10];
-   armttbar[155]=armttbar[31]*armttbar[118];
-   armttbar[118]=armttbar[1]*armttbar[118];
-   armttbar[118]=armttbar[155] + 1./3.*armttbar[118];
-   armttbar[155]=armttbar[21]*armttbar[118];
-   armttbar[155]=armttbar[238] + armttbar[155];
-   armttbar[142]=1./4.*armttbar[155] + armttbar[142];
-   armttbar[131]=armttbar[131] + armttbar[244] + 7./2. - armttbar[30];
-   armttbar[155]=armttbar[246] + 1./2.*armttbar[248];
-   armttbar[155]=armttbar[3]*armttbar[155];
-   armttbar[131]=1./2.*armttbar[131] + 3*armttbar[155];
-   armttbar[131]=MMt*armttbar[27]*armttbar[3]*armttbar[131];
-   armttbar[129]=3*armttbar[131] + 1./2.*armttbar[142] + armttbar[129];
-   armttbar[129]=MMt*armttbar[129];
-   armttbar[131]=armttbar[14]*armttbar[161];
-   armttbar[118]=armttbar[16]*armttbar[118];
-   armttbar[142]=armttbar[17]*armttbar[161];
-   armttbar[118]=armttbar[142] + armttbar[131] + 1./2.*armttbar[118];
-   armttbar[131]=armttbar[147] - 5./6.*armttbar[29] + armttbar[30];
-   armttbar[131]=armttbar[27]*armttbar[8]*armttbar[131];
-   armttbar[125]=armttbar[125] + armttbar[131];
-   armttbar[125]=MMH*armttbar[125];
-   armttbar[131]=5*armttbar[271] + 7*armttbar[17];
-   armttbar[131]=armttbar[6]*armttbar[27]*armttbar[17]*armttbar[131];
-   armttbar[108]=armttbar[108] + armttbar[129] + 1./12.*armttbar[131]
-    + 1./8.*armttbar[125] + 1./4.*armttbar[118] + armttbar[110];
-   armttbar[108]=armttbar[210]*armttbar[108];
-   armttbar[110]= - 23./2.*armttbar[21] + armttbar[229] + armttbar[252]
-    + 761./12. - 43*armttbar[29];
-   armttbar[110]=1./3.*armttbar[110] - 43./4.*armttbar[12];
-   armttbar[118]= - 37*armttbar[16] - 41*armttbar[15];
-   armttbar[118]=armttbar[3]*armttbar[118];
-   armttbar[125]=11./2.*armttbar[99] - 5*armttbar[3];
-   armttbar[125]=armttbar[17]*armttbar[125];
-   armttbar[110]=9./2.*armttbar[125] + 1./6.*armttbar[118] + 1./6.*
-   armttbar[110] + 15*armttbar[256];
-   armttbar[110]=armttbar[17]*armttbar[110];
-   armttbar[118]=53./9. + 37./8.*armttbar[29];
-   armttbar[118]=armttbar[254] + 1./3.*armttbar[118] + armttbar[152];
-   armttbar[118]=armttbar[16]*armttbar[118];
-   armttbar[125]=armttbar[253] + 355./9.*armttbar[20];
-   armttbar[129]=armttbar[196] + 71 + 101./2.*armttbar[29];
-   armttbar[129]=armttbar[15]*armttbar[129];
-   armttbar[110]=1./2.*armttbar[110] + 1./48.*armttbar[129] + 1./2.*
-   armttbar[118] + 1./16.*armttbar[125] + armttbar[250];
-   armttbar[110]=armttbar[27]*armttbar[110];
-   armttbar[118]=41*armttbar[16] + 97*armttbar[15];
-   armttbar[118]=1./2.*armttbar[118] - 77*armttbar[17];
-   armttbar[118]=armttbar[6]*armttbar[27]*armttbar[17]*armttbar[118];
-   armttbar[108]=armttbar[108] + armttbar[113] + 1./18.*armttbar[118]
-    + armttbar[173] + armttbar[170] + armttbar[110];
-   armttbar[108]=armttbar[210]*armttbar[108];
-   armttbar[110]=27*armttbar[35];
-   armttbar[113]=3*armttbar[28];
-   armttbar[118]=armttbar[113] - 365./12. + armttbar[110];
-   armttbar[118]=13./36.*armttbar[30] - 7./36.*armttbar[29] + 
-   armttbar[122] + 1./2.*armttbar[118] + armttbar[121];
-   armttbar[125]= - 2*armttbar[15] + 12*armttbar[14] - 5./2.*
-   armttbar[16];
-   armttbar[125]=armttbar[3]*armttbar[125];
-   armttbar[118]=9*armttbar[132] + armttbar[125] + armttbar[306] + 68./
-   9.*armttbar[8] - 97./144.*armttbar[21] - armttbar[36] + 1./2.*
-   armttbar[118] - armttbar[38];
-   armttbar[118]=armttbar[17]*armttbar[118];
-   armttbar[125]=armttbar[19] + 9*armttbar[42] + 3*armttbar[32] - 
-   armttbar[34];
-   armttbar[129]=3./8.*armttbar[125];
-   armttbar[131]= - 3./4.*armttbar[20];
-   armttbar[142]=armttbar[156] - 7./72.*armttbar[29] - 20./9. + 3./8.*
-   armttbar[28];
-   armttbar[142]=armttbar[14]*armttbar[142];
-   armttbar[147]=1 - 7./2.*armttbar[29];
-   armttbar[147]=1./9.*armttbar[147];
-   armttbar[152]=armttbar[147] + 11./2.*armttbar[30];
-   armttbar[152]=1./8.*armttbar[16]*armttbar[152];
-   armttbar[155]= - armttbar[15]*armttbar[30];
-   armttbar[160]=1./18.*armttbar[155];
-   armttbar[161]=armttbar[27]*armttbar[255]*armttbar[3];
-   armttbar[164]=26./3.*armttbar[161];
-   armttbar[167]=armttbar[164] + armttbar[118] + armttbar[160] + 
-   armttbar[152] + armttbar[142] + armttbar[131] + armttbar[129] + 400./
-   81.*armttbar[18];
-   armttbar[167]=armttbar[27]*armttbar[167];
-   armttbar[168]= - 4*armttbar[20];
-   armttbar[169]= - 3./2.*armttbar[30];
-   armttbar[170]= - 1 + armttbar[169];
-   armttbar[170]=armttbar[16]*armttbar[170];
-   armttbar[171]= - armttbar[19] - 9./2.*armttbar[42] + 3./2.*
-   armttbar[32] + armttbar[34];
-   armttbar[173]= - 1 - 1./2.*armttbar[28];
-   armttbar[173]=armttbar[14]*armttbar[173];
-   armttbar[170]=1./2.*armttbar[170] + armttbar[173] + armttbar[171] + 
-   armttbar[168];
-   armttbar[170]=armttbar[3]*armttbar[170];
-   armttbar[178]=armttbar[169] + 7./6.*armttbar[29] + 26./3. + 9*
-   armttbar[28];
-   armttbar[178]=armttbar[3]*armttbar[178];
-   armttbar[183]= - armttbar[17]*armttbar[153];
-   armttbar[178]=armttbar[178] + 9*armttbar[183];
-   armttbar[178]=armttbar[27]*armttbar[17]*armttbar[178];
-   armttbar[185]= - 23./16. - armttbar[43];
-   armttbar[115]= - 7./4.*armttbar[28] + 3./8.*armttbar[25] + 
-   armttbar[115] + 1./4.*armttbar[185] - 3*armttbar[44];
-   armttbar[115]=3*armttbar[115];
-   armttbar[147]=armttbar[147] + armttbar[30];
-   armttbar[147]=armttbar[21]*armttbar[147];
-   armttbar[185]=15*armttbar[28];
-   armttbar[187]=armttbar[30] - 7./9.*armttbar[29] - 403./9. + 
-   armttbar[185];
-   armttbar[187]=armttbar[8]*armttbar[187];
-   armttbar[188]= - 5./4.*armttbar[21];
-   armttbar[190]=armttbar[188] - 3./2. - armttbar[28];
-   armttbar[194]=armttbar[190] - 6*armttbar[8];
-   armttbar[194]=armttbar[17]*armttbar[3]*armttbar[194];
-   armttbar[147]=armttbar[178] + 3*armttbar[194] + 3*armttbar[170] + 1./
-   9.*armttbar[260] + 1./4.*armttbar[187] + 1./8.*armttbar[147] + 
-   armttbar[115] - 5./72.*armttbar[30];
-   armttbar[147]=armttbar[27]*armttbar[147];
-   armttbar[170]= - 3 - armttbar[28];
-   armttbar[170]=armttbar[8]*armttbar[170];
-   armttbar[170]=armttbar[170] + armttbar[244] + 5./2. + armttbar[28];
-   armttbar[170]=armttbar[3]*armttbar[170];
-   armttbar[153]= - armttbar[27]*armttbar[17]*armttbar[153]*
-   armttbar[28];
-   armttbar[178]=armttbar[170] + 12*armttbar[153];
-   armttbar[178]=MMt*armttbar[27]*armttbar[178];
-   armttbar[147]=armttbar[147] + 3*armttbar[178];
-   armttbar[147]=MMt*armttbar[147];
-   armttbar[178]= - 3./2.*armttbar[28];
-   armttbar[119]=armttbar[119] + 7./72.*armttbar[29] + 101./9. + 
-   armttbar[178];
-   armttbar[119]=armttbar[8]*armttbar[119];
-   armttbar[187]=1./4.*armttbar[28] + 1./2. + armttbar[44];
-   armttbar[187]=9*armttbar[187];
-   armttbar[119]=armttbar[187] + armttbar[119];
-   armttbar[119]=1./2.*MMH*armttbar[27]*armttbar[119];
-   armttbar[167]=armttbar[147] + armttbar[167] + armttbar[119];
-   armttbar[167]=MMt*armttbar[167];
-   armttbar[194]=armttbar[113] - 1091./36. + armttbar[110];
-   armttbar[194]=35./36.*armttbar[30] + armttbar[122] + 1./2.*
-   armttbar[194] + armttbar[121];
-   armttbar[195]=27./8.*armttbar[15] + 6*armttbar[14] + 73./8.*
-   armttbar[16];
-   armttbar[195]=armttbar[3]*armttbar[195];
-   armttbar[132]=9./2.*armttbar[132];
-   armttbar[114]=armttbar[132] + armttbar[195] + armttbar[114] + 4*
-   armttbar[8] + armttbar[130] + 1./4.*armttbar[194] - armttbar[38];
-   armttbar[114]=armttbar[17]*armttbar[114];
-   armttbar[130]=3./16.*armttbar[28];
-   armttbar[194]=armttbar[156] - 1 + armttbar[130];
-   armttbar[194]=armttbar[14]*armttbar[194];
-   armttbar[195]=1 + 5*armttbar[30];
-   armttbar[195]=armttbar[16]*armttbar[195];
-   armttbar[125]=1./2.*armttbar[125] - armttbar[20];
-   armttbar[125]=3./8.*armttbar[125];
-   armttbar[161]=3*armttbar[161];
-   armttbar[114]=armttbar[161] + armttbar[114] + 17./144.*armttbar[155]
-    + 1./16.*armttbar[195] + armttbar[125] + armttbar[194];
-   armttbar[114]=armttbar[27]*armttbar[114];
-   armttbar[194]=1./2. + armttbar[30];
-   armttbar[194]=armttbar[21]*armttbar[194];
-   armttbar[195]= - 43 + armttbar[185];
-   armttbar[195]=1./2.*armttbar[195] + armttbar[30];
-   armttbar[195]=armttbar[8]*armttbar[195];
-   armttbar[194]=7./72.*armttbar[260] + 1./2.*armttbar[195] + 1./4.*
-   armttbar[194] + armttbar[115] - 19./72.*armttbar[30];
-   armttbar[195]= - 2*armttbar[20];
-   armttbar[171]=1./2.*armttbar[173] + 1./2.*armttbar[171] + 
-   armttbar[195];
-   armttbar[173]= - 1 - armttbar[30];
-   armttbar[173]=armttbar[16]*armttbar[173];
-   armttbar[196]=armttbar[15]*armttbar[30];
-   armttbar[173]=1./8.*armttbar[196] + armttbar[171] + 1./4.*
-   armttbar[173];
-   armttbar[173]=armttbar[3]*armttbar[173];
-   armttbar[197]=armttbar[145] + 1 + 3./2.*armttbar[28];
-   armttbar[197]=armttbar[3]*armttbar[197];
-   armttbar[197]=armttbar[197] + 3./2.*armttbar[183];
-   armttbar[197]=armttbar[27]*armttbar[17]*armttbar[197];
-   armttbar[190]=1./2.*armttbar[190] - 3*armttbar[8];
-   armttbar[190]=3*armttbar[17]*armttbar[3]*armttbar[190];
-   armttbar[173]=3*armttbar[197] + armttbar[190] + 1./2.*armttbar[194]
-    + 3*armttbar[173];
-   armttbar[173]=armttbar[27]*armttbar[173];
-   armttbar[153]=1./2.*armttbar[170] + 6*armttbar[153];
-   armttbar[153]=3*MMt*armttbar[27]*armttbar[153];
-   armttbar[170]=armttbar[173] + armttbar[153];
-   armttbar[170]=MMt*armttbar[170];
-   armttbar[173]=armttbar[148] + 11 + armttbar[178];
-   armttbar[173]=armttbar[8]*armttbar[173];
-   armttbar[173]=armttbar[187] + armttbar[173];
-   armttbar[173]=MMH*armttbar[27]*armttbar[173];
-   armttbar[114]=armttbar[170] + armttbar[114] + 1./4.*armttbar[173];
-   armttbar[114]=MMt*armttbar[114];
-   armttbar[170]=17*armttbar[30];
-   armttbar[173]= - 7*armttbar[12] - 1 + armttbar[170];
-   armttbar[194]= - armttbar[16] + 5./2.*armttbar[15];
-   armttbar[194]=armttbar[3]*armttbar[194];
-   armttbar[173]=1./36.*armttbar[173] + armttbar[194];
-   armttbar[173]=armttbar[17]*armttbar[173];
-   armttbar[173]=17./36.*armttbar[155] + armttbar[173];
-   armttbar[173]=armttbar[27]*armttbar[173];
-   armttbar[194]= - armttbar[30] + 7*armttbar[260];
-   armttbar[197]=armttbar[3]*armttbar[196];
-   armttbar[194]=1./18.*armttbar[194] + 3*armttbar[197];
-   armttbar[194]=MMt*armttbar[27]*armttbar[194];
-   armttbar[173]=armttbar[173] + 1./2.*armttbar[194];
-   armttbar[173]=MMt*armttbar[173];
-   armttbar[194]= - armttbar[15] + armttbar[17];
-   armttbar[194]=armttbar[27]*armttbar[17]*armttbar[194];
-   armttbar[173]=17./36.*armttbar[194] + armttbar[173];
-   armttbar[173]=armttbar[176]*armttbar[173];
-   armttbar[194]=9 + armttbar[273];
-   armttbar[194]=armttbar[17]*armttbar[194];
-   armttbar[165]=1./2.*armttbar[14] + armttbar[165] + armttbar[20];
-   armttbar[165]=9*armttbar[165];
-   armttbar[194]=armttbar[165] + armttbar[194];
-   armttbar[194]=armttbar[27]*armttbar[194];
-   armttbar[197]= - armttbar[8] - 1 - armttbar[44];
-   armttbar[197]=9./2.*MMH*armttbar[27]*armttbar[197];
-   armttbar[194]=armttbar[194] + armttbar[197];
-   armttbar[194]=MMH*armttbar[194];
-   armttbar[135]=143./18.*armttbar[17] - 17./18.*armttbar[15] + 
-   armttbar[135] + armttbar[16];
-   armttbar[135]=armttbar[27]*armttbar[17]*armttbar[135];
-   armttbar[135]=armttbar[135] + 1./2.*armttbar[194];
-   armttbar[114]=1./4.*armttbar[173] + 1./8.*armttbar[135] + 
-   armttbar[114];
-   armttbar[114]=armttbar[176]*armttbar[114];
-   armttbar[135]= - 107*armttbar[14] + 19./2.*armttbar[16];
-   armttbar[173]=1./2.*armttbar[135] - 809./9.*armttbar[15];
-   armttbar[194]=19./2.*armttbar[17];
-   armttbar[173]=1./3.*armttbar[173] + armttbar[194];
-   armttbar[173]=armttbar[27]*armttbar[17]*armttbar[173];
-   armttbar[200]=9 - 55./9.*armttbar[8];
-   armttbar[200]=armttbar[17]*armttbar[200];
-   armttbar[200]=armttbar[165] + armttbar[200];
-   armttbar[200]=armttbar[27]*armttbar[200];
-   armttbar[200]=armttbar[200] + armttbar[197];
-   armttbar[200]=1./4.*MMH*armttbar[200];
-   armttbar[173]=1./3.*armttbar[173] + armttbar[200];
-   armttbar[114]=armttbar[114] + 1./2.*armttbar[173] + armttbar[167];
-   armttbar[114]=armttbar[176]*armttbar[114];
-   armttbar[118]=armttbar[164] + armttbar[118] + armttbar[160] + 
-   armttbar[152] + armttbar[142] + armttbar[131] + armttbar[129] + 16./
-   9.*armttbar[18];
-   armttbar[118]=armttbar[27]*armttbar[118];
-   armttbar[118]=armttbar[147] + armttbar[118] + armttbar[119];
-   armttbar[118]=MMt*armttbar[118];
-   armttbar[110]=armttbar[113] - 281./12. + armttbar[110];
-   armttbar[110]=armttbar[148] + 19./6.*armttbar[29] + armttbar[122] + 
-   1./2.*armttbar[110] + armttbar[121];
-   armttbar[113]=2*armttbar[14] + 1./8.*armttbar[16];
-   armttbar[113]=3*armttbar[113] - 43./8.*armttbar[15];
-   armttbar[113]=armttbar[3]*armttbar[113];
-   armttbar[119]= - 1./16.*armttbar[12];
-   armttbar[110]=armttbar[132] + armttbar[113] + armttbar[119] + 16./3.
-   *armttbar[8] + 1./48.*armttbar[21] + 1./4.*armttbar[110] - 
-   armttbar[36];
-   armttbar[110]=armttbar[17]*armttbar[110];
-   armttbar[113]=19./6.*armttbar[163] + armttbar[235];
-   armttbar[113]=armttbar[16]*armttbar[113];
-   armttbar[121]=19./24.*armttbar[29] - 1./3. + armttbar[130];
-   armttbar[121]=armttbar[14]*armttbar[121];
-   armttbar[122]= - armttbar[27]*armttbar[255]*armttbar[3];
-   armttbar[110]=5*armttbar[122] + armttbar[110] + 1./16.*armttbar[196]
-    + 1./8.*armttbar[113] + armttbar[125] + armttbar[121];
-   armttbar[110]=armttbar[27]*armttbar[110];
-   armttbar[113]=armttbar[21]*armttbar[163];
-   armttbar[121]= - 97./3. + armttbar[185];
-   armttbar[121]=1./2.*armttbar[121] + 19./3.*armttbar[29];
-   armttbar[121]=armttbar[8]*armttbar[121];
-   armttbar[113]=1./8.*armttbar[260] + 1./2.*armttbar[121] + 19./24.*
-   armttbar[113] + armttbar[115] + armttbar[156];
-   armttbar[115]= - 1./2. - armttbar[30];
-   armttbar[115]=armttbar[16]*armttbar[115];
-   armttbar[115]=1./8.*armttbar[155] + armttbar[171] + 1./2.*
-   armttbar[115];
-   armttbar[115]=armttbar[3]*armttbar[115];
-   armttbar[121]= - 19./2.*armttbar[29];
-   armttbar[125]=armttbar[121] - 5 + 9./2.*armttbar[28];
-   armttbar[125]=armttbar[3]*armttbar[125];
-   armttbar[125]=armttbar[125] + 9./2.*armttbar[183];
-   armttbar[125]=armttbar[27]*armttbar[17]*armttbar[125];
-   armttbar[113]=armttbar[125] + armttbar[190] + 1./2.*armttbar[113] + 
-   3*armttbar[115];
-   armttbar[113]=armttbar[27]*armttbar[113];
-   armttbar[113]=armttbar[113] + armttbar[153];
-   armttbar[113]=MMt*armttbar[113];
-   armttbar[115]= - 19./12.*armttbar[29] + 29./3. + armttbar[178];
-   armttbar[115]=armttbar[8]*armttbar[115];
-   armttbar[115]=armttbar[187] + armttbar[115];
-   armttbar[115]=MMH*armttbar[27]*armttbar[115];
-   armttbar[110]=armttbar[113] + armttbar[110] + 1./4.*armttbar[115];
-   armttbar[110]=MMt*armttbar[110];
-   armttbar[113]=armttbar[169] + 3./2. + armttbar[29];
-   armttbar[115]=armttbar[192] + 31./8.*armttbar[15];
-   armttbar[115]=armttbar[3]*armttbar[115];
-   armttbar[113]=armttbar[115] + armttbar[119] + armttbar[158] - 
-   armttbar[36] + 1./8.*armttbar[113] + armttbar[38];
-   armttbar[113]=armttbar[17]*armttbar[113];
-   armttbar[115]=armttbar[14]*armttbar[177];
-   armttbar[119]=armttbar[29] + armttbar[30];
-   armttbar[119]=armttbar[16]*armttbar[119];
-   armttbar[115]=1./2.*armttbar[196] + armttbar[115] + 1./2.*
-   armttbar[119];
-   armttbar[113]=1./8.*armttbar[115] + armttbar[113];
-   armttbar[113]=armttbar[27]*armttbar[113];
-   armttbar[115]=armttbar[21]*armttbar[123];
-   armttbar[115]=armttbar[175] + armttbar[115];
-   armttbar[119]= - armttbar[16]*armttbar[30];
-   armttbar[123]=armttbar[119] + 1./2.*armttbar[155];
-   armttbar[123]=armttbar[3]*armttbar[123];
-   armttbar[125]=armttbar[8]*armttbar[177];
-   armttbar[115]=3*armttbar[123] + 1./4.*armttbar[260] + 1./2.*
-   armttbar[115] + armttbar[125];
-   armttbar[123]=armttbar[27]*armttbar[17]*armttbar[3]*armttbar[140];
-   armttbar[115]=1./2.*armttbar[115] + 3*armttbar[123];
-   armttbar[115]=MMt*armttbar[27]*armttbar[115];
-   armttbar[123]=MMH*armttbar[27]*armttbar[8]*armttbar[140];
-   armttbar[113]=1./2.*armttbar[115] + armttbar[113] + 1./16.*
-   armttbar[123];
-   armttbar[113]=MMt*armttbar[113];
-   armttbar[115]=armttbar[189] + armttbar[120];
-   armttbar[115]=armttbar[27]*armttbar[17]*armttbar[115];
-   armttbar[113]=1./8.*armttbar[115] + armttbar[113];
-   armttbar[113]=armttbar[210]*armttbar[113];
-   armttbar[115]=9 - 37./3.*armttbar[8];
-   armttbar[115]=armttbar[17]*armttbar[115];
-   armttbar[115]=armttbar[165] + armttbar[115];
-   armttbar[115]=armttbar[27]*armttbar[115];
-   armttbar[115]=armttbar[115] + armttbar[197];
-   armttbar[115]=MMH*armttbar[115];
-   armttbar[123]= - 17./2.*armttbar[14] + 7*armttbar[16];
-   armttbar[123]=71./12.*armttbar[17] + 1./3.*armttbar[123] + 1./4.*
-   armttbar[15];
-   armttbar[123]=armttbar[27]*armttbar[17]*armttbar[123];
-   armttbar[115]=armttbar[123] + 1./4.*armttbar[115];
-   armttbar[110]=armttbar[113] + 1./4.*armttbar[115] + armttbar[110];
-   armttbar[110]=armttbar[210]*armttbar[110];
-   armttbar[113]=armttbar[194] + 1./6.*armttbar[135] - 11*armttbar[15];
-   armttbar[113]=armttbar[27]*armttbar[17]*armttbar[113];
-   armttbar[113]=1./3.*armttbar[113] + armttbar[200];
-   armttbar[110]=armttbar[110] + 1./2.*armttbar[113] + armttbar[118];
-   armttbar[110]=armttbar[210]*armttbar[110];
-   armttbar[113]=armttbar[14]*armttbar[30];
-   armttbar[115]=1./2.*armttbar[16]*armttbar[30];
-   armttbar[118]= - armttbar[20] - armttbar[34] + armttbar[19];
-   armttbar[123]=armttbar[115] + 3*armttbar[118] + armttbar[113];
-   armttbar[125]=armttbar[8] + armttbar[188] + 3 + armttbar[228];
-   armttbar[125]=armttbar[17]*armttbar[125];
-   armttbar[123]=1./2.*armttbar[123] + armttbar[125];
-   armttbar[122]=3*armttbar[122];
-   armttbar[123]=1./2.*armttbar[123] + armttbar[122];
-   armttbar[123]=armttbar[27]*armttbar[123];
-   armttbar[125]=armttbar[21]*armttbar[30];
-   armttbar[129]= - armttbar[43] + armttbar[23];
-   armttbar[129]=1./2.*armttbar[129] - armttbar[25];
-   armttbar[130]=3*armttbar[129];
-   armttbar[131]=armttbar[8]*armttbar[30];
-   armttbar[132]=armttbar[131] + armttbar[130] + 1./4.*armttbar[125];
-   armttbar[135]=3*armttbar[27]*armttbar[17]*armttbar[149];
-   armttbar[132]=1./2.*armttbar[132] + armttbar[135];
-   armttbar[132]=MMt*armttbar[27]*armttbar[132];
-   armttbar[140]= - armttbar[8]*armttbar[30];
-   armttbar[142]=1./8.*MMH*armttbar[27]*armttbar[140];
-   armttbar[123]=armttbar[132] + armttbar[123] + armttbar[142];
-   armttbar[123]=MMt*armttbar[123];
-   armttbar[132]=armttbar[14] - 3./2.*armttbar[16];
-   armttbar[132]=3*armttbar[132] + armttbar[17];
-   armttbar[132]=armttbar[27]*armttbar[17]*armttbar[132];
-   armttbar[147]=armttbar[38] - 1./4.*armttbar[8];
-   armttbar[147]=MMH*armttbar[27]*armttbar[17]*armttbar[147];
-   armttbar[132]=1./2.*armttbar[132] + armttbar[147];
-   armttbar[123]=1./2.*armttbar[132] + armttbar[123];
-   armttbar[123]=MMt*armttbar[123];
-   armttbar[132]=3./2.*armttbar[118];
-   armttbar[113]=armttbar[115] + armttbar[132] + armttbar[113];
-   armttbar[115]= - armttbar[21] + 3 + armttbar[30];
-   armttbar[115]=1./2.*armttbar[115] + armttbar[8];
-   armttbar[115]=armttbar[17]*armttbar[115];
-   armttbar[113]=1./2.*armttbar[113] + armttbar[115];
-   armttbar[113]=1./2.*armttbar[113] + armttbar[122];
-   armttbar[113]=armttbar[27]*armttbar[113];
-   armttbar[115]=armttbar[130] + 1./2.*armttbar[125];
-   armttbar[115]=1./2.*armttbar[115] + armttbar[131];
-   armttbar[115]=1./2.*armttbar[115] + armttbar[135];
-   armttbar[115]=MMt*armttbar[27]*armttbar[115];
-   armttbar[113]=armttbar[115] + armttbar[113] + armttbar[142];
-   armttbar[113]=MMt*armttbar[113];
-   armttbar[115]=3*armttbar[136] + armttbar[17];
-   armttbar[115]=armttbar[27]*armttbar[17]*armttbar[115];
-   armttbar[115]=1./2.*armttbar[115] + armttbar[147];
-   armttbar[113]=1./2.*armttbar[115] + armttbar[113];
-   armttbar[113]=armttbar[176]*MMt*armttbar[113];
-   armttbar[113]=armttbar[123] + armttbar[113];
-   armttbar[113]=armttbar[176]*armttbar[113];
-   armttbar[115]=1 + armttbar[244];
-   armttbar[115]=armttbar[17]*armttbar[115];
-   armttbar[115]=1./2.*armttbar[118] + armttbar[115];
-   armttbar[115]=armttbar[27]*armttbar[115];
-   armttbar[118]=MMt*armttbar[27]*armttbar[129];
-   armttbar[115]=armttbar[115] + armttbar[118];
-   armttbar[115]=MMt*armttbar[115];
-   armttbar[118]= - armttbar[15] + armttbar[14] - 9./4.*armttbar[16];
-   armttbar[118]=armttbar[27]*armttbar[17]*armttbar[118];
-   armttbar[122]=MMH*armttbar[27]*armttbar[17]*armttbar[36];
-   armttbar[115]=9./2.*armttbar[115] + armttbar[118] + armttbar[122];
-   armttbar[115]=1./2.*MMt*armttbar[115];
-   armttbar[113]=armttbar[115] + armttbar[113];
-   armttbar[113]=armttbar[176]*armttbar[113];
-   armttbar[118]= - armttbar[14] + 3./2.*armttbar[16];
-   armttbar[118]=armttbar[120] + 1./2.*armttbar[118] - armttbar[15];
-   armttbar[118]=armttbar[27]*armttbar[17]*armttbar[118];
-   armttbar[122]=armttbar[288] + armttbar[159];
-   armttbar[122]=MMH*armttbar[27]*armttbar[17]*armttbar[122];
-   armttbar[118]=armttbar[118] + armttbar[122];
-   armttbar[123]= - armttbar[14]*armttbar[30];
-   armttbar[119]=1./2.*armttbar[119];
-   armttbar[125]=armttbar[123] + armttbar[119];
-   armttbar[129]= - armttbar[30] + armttbar[244];
-   armttbar[129]=1./2.*armttbar[129] - armttbar[8];
-   armttbar[129]=armttbar[17]*armttbar[129];
-   armttbar[125]=1./2.*armttbar[125] + armttbar[129];
-   armttbar[125]=1./2.*armttbar[125] + armttbar[161];
-   armttbar[125]=armttbar[27]*armttbar[125];
-   armttbar[129]= - armttbar[21]*armttbar[30];
-   armttbar[135]=1./4.*armttbar[129] + armttbar[140];
-   armttbar[136]=3*armttbar[27]*armttbar[17]*armttbar[261];
-   armttbar[135]=1./2.*armttbar[135] + armttbar[136];
-   armttbar[135]=MMt*armttbar[27]*armttbar[135];
-   armttbar[131]=1./8.*MMH*armttbar[27]*armttbar[131];
-   armttbar[125]=armttbar[135] + armttbar[125] + armttbar[131];
-   armttbar[125]=MMt*armttbar[125];
-   armttbar[118]=1./2.*armttbar[118] + armttbar[125];
-   armttbar[118]=armttbar[210]*MMt*armttbar[118];
-   armttbar[119]=armttbar[119] + armttbar[132] + armttbar[123];
-   armttbar[123]=3 - armttbar[30];
-   armttbar[123]= - armttbar[8] + 1./2.*armttbar[123] - armttbar[21];
-   armttbar[123]=armttbar[17]*armttbar[123];
-   armttbar[119]=1./2.*armttbar[119] + armttbar[123];
-   armttbar[119]=1./2.*armttbar[119] + armttbar[161];
-   armttbar[119]=armttbar[27]*armttbar[119];
-   armttbar[123]=armttbar[130] + 1./2.*armttbar[129];
-   armttbar[123]=1./2.*armttbar[123] + armttbar[140];
-   armttbar[123]=1./2.*armttbar[123] + armttbar[136];
-   armttbar[123]=MMt*armttbar[27]*armttbar[123];
-   armttbar[119]=armttbar[123] + armttbar[119] + armttbar[131];
-   armttbar[119]=MMt*armttbar[119];
-   armttbar[120]=armttbar[120] - 1./2.*armttbar[14] - armttbar[15];
-   armttbar[120]=armttbar[27]*armttbar[17]*armttbar[120];
-   armttbar[120]=armttbar[120] + armttbar[122];
-   armttbar[119]=1./2.*armttbar[120] + armttbar[119];
-   armttbar[119]=MMt*armttbar[119];
-   armttbar[118]=armttbar[119] + armttbar[118];
-   armttbar[118]=armttbar[210]*armttbar[118];
-   armttbar[115]=armttbar[115] + armttbar[118];
-   armttbar[115]=armttbar[210]*armttbar[115];
-   armttbar[113]=armttbar[113] + armttbar[115];
-   armttbar[113]=armttbar[9]*armttbar[113];
-   armttbar[115]=armttbar[27]*armttbar[17]*armttbar[15];
-   armttbar[118]= - MMt*armttbar[27]*armttbar[18];
-   armttbar[115]=armttbar[115] + armttbar[118];
-   armttbar[110]=1./2.*armttbar[113] + armttbar[110] + 1024./81.*
-   armttbar[115] + armttbar[114];
-   armttbar[110]=armttbar[9]*armttbar[110];
-   armttbar[113]= - armttbar[29] - armttbar[12];
-   armttbar[107]=16*armttbar[216] + 1./3.*armttbar[113] + 10*
-   armttbar[107];
-   armttbar[107]=armttbar[17]*armttbar[107];
-   armttbar[113]= - armttbar[18] - 8./3.*armttbar[20];
-   armttbar[114]= - 1 - 1./9.*armttbar[29];
-   armttbar[114]=armttbar[15]*armttbar[114];
-   armttbar[107]=2./3.*armttbar[107] + 2./3.*armttbar[113] + 
-   armttbar[114];
-   armttbar[107]=armttbar[27]*armttbar[107];
-   armttbar[113]= - 5*armttbar[15] + 11*armttbar[17];
-   armttbar[113]=armttbar[6]*armttbar[27]*armttbar[17]*armttbar[113];
-   armttbar[114]= - 17 - armttbar[29];
-   armttbar[114]=armttbar[12]*armttbar[114];
-   armttbar[114]=armttbar[114] + armttbar[29] - 8*armttbar[25] + 1 - 8*
-   armttbar[45];
-   armttbar[114]=MMt*armttbar[27]*armttbar[114];
-   armttbar[107]=2./9.*armttbar[114] + armttbar[107] + 2./9.*
-   armttbar[113];
-   armttbar[107]=armttbar[110] + armttbar[108] + 64./9.*armttbar[107]
-    + armttbar[150];
-   armttbar[107]=armttbar[9]*armttbar[107];
-   armttbar[108]=2059./3. - 1253*armttbar[29];
-   armttbar[108]= - 35./6.*armttbar[10] + 1./24.*armttbar[108] + 
-   armttbar[259];
-   armttbar[108]=armttbar[12]*armttbar[108];
-   armttbar[110]=491./9. + 301./8.*armttbar[45];
-   armttbar[113]= - 5*armttbar[5];
-   armttbar[114]=41./4.*armttbar[33] + armttbar[113];
-   armttbar[114]= - 61./6.*armttbar[20] + 1./3.*armttbar[114] - 7./4.*
-   armttbar[18];
-   armttbar[114]=armttbar[99]*armttbar[114];
-   armttbar[112]=5./3.*armttbar[10] - 29./3. + armttbar[112];
-   armttbar[112]=armttbar[15]*armttbar[99]*armttbar[112];
-   armttbar[108]=25./12.*armttbar[112] + 25./12.*armttbar[114] + 1./12.
-   *armttbar[108] + 25./216.*armttbar[10] - 185./864.*armttbar[29] - 35.
-   /72.*armttbar[13] + 35./72.*armttbar[24] + 1./9.*armttbar[110] + 5./
-   8.*armttbar[25];
-   armttbar[110]= - 17*armttbar[33] + armttbar[113];
-   armttbar[112]=5*armttbar[10] + 11 + 17*armttbar[29];
-   armttbar[112]=armttbar[15]*armttbar[112];
-   armttbar[110]=1./2.*armttbar[112] + 17*armttbar[20] + 1./2.*
-   armttbar[110] + 11*armttbar[18];
-   armttbar[110]=armttbar[3]*armttbar[110];
-   armttbar[112]= - 7 - 25*armttbar[29];
-   armttbar[112]=25./4.*armttbar[12] + 1./4.*armttbar[112] + 
-   armttbar[151];
-   armttbar[112]=armttbar[99]*armttbar[112];
-   armttbar[113]=101./3. + 85./2.*armttbar[12];
-   armttbar[113]=armttbar[3]*armttbar[113];
-   armttbar[112]=25./6.*armttbar[112] + armttbar[113];
-   armttbar[112]=armttbar[17]*armttbar[112];
-   armttbar[113]=5./4.*armttbar[106] + armttbar[133];
-   armttbar[113]=armttbar[12]*armttbar[113];
-   armttbar[113]=5./3.*armttbar[113] + armttbar[230] - 25./12.*
-   armttbar[29] + 5./9.*armttbar[13] - 5./9.*armttbar[24] + 11./2. - 5./
-   9.*armttbar[25];
-   armttbar[113]=armttbar[99]*armttbar[113];
-   armttbar[114]=35./4.*armttbar[10] - 121./3. + 119./4.*armttbar[29];
-   armttbar[114]=armttbar[3]*armttbar[114];
-   armttbar[113]=25./16.*armttbar[113] + 1./3.*armttbar[114];
-   armttbar[113]=MMZ*armttbar[113];
-   armttbar[108]=armttbar[113] + 1./2.*armttbar[112] + 1./2.*
-   armttbar[108] + armttbar[110];
-   armttbar[108]=armttbar[27]*armttbar[108];
-   armttbar[110]=5./27.*armttbar[10] - 7./9.*armttbar[13] + 7./9.*
-   armttbar[24] - 23./324. + armttbar[25];
-   armttbar[110]=armttbar[31]*armttbar[110];
-   armttbar[112]=5./9.*armttbar[10] - 7./3.*armttbar[13] + 7./3.*
-   armttbar[24] - 23./108. + 3*armttbar[25];
-   armttbar[112]=armttbar[1]*armttbar[112];
-   armttbar[110]=11./3.*armttbar[110] + armttbar[112];
-   armttbar[112]= - 1./3. + armttbar[157];
-   armttbar[113]=armttbar[31]*armttbar[112];
-   armttbar[112]=armttbar[1]*armttbar[112];
-   armttbar[112]=11./9.*armttbar[113] + armttbar[112];
-   armttbar[112]=armttbar[12]*armttbar[112];
-   armttbar[110]=1./2.*armttbar[110] + 7./3.*armttbar[112];
-   armttbar[112]=11./9.*armttbar[137] + armttbar[134];
-   armttbar[112]=armttbar[99]*armttbar[112];
-   armttbar[113]=11./9.*armttbar[139] + armttbar[141];
-   armttbar[114]=armttbar[15]*armttbar[99]*armttbar[113];
-   armttbar[110]=25./6.*armttbar[114] + 1./2.*armttbar[110] + 25./3.*
-   armttbar[112];
-   armttbar[112]=11./3.*armttbar[174] + 3*armttbar[172];
-   armttbar[112]=armttbar[15]*armttbar[112];
-   armttbar[114]=armttbar[31]*armttbar[126];
-   armttbar[115]=armttbar[1]*armttbar[126];
-   armttbar[112]=armttbar[112] + 11./3.*armttbar[114] + 3*armttbar[115]
-   ;
-   armttbar[112]=armttbar[3]*armttbar[112];
-   armttbar[113]=armttbar[12]*armttbar[113];
-   armttbar[113]=armttbar[113] + 11./9.*armttbar[166] + armttbar[162];
-   armttbar[113]=armttbar[99]*armttbar[113];
-   armttbar[104]=armttbar[31]*armttbar[104];
-   armttbar[104]=11./9.*armttbar[104] + armttbar[179];
-   armttbar[104]=armttbar[3]*armttbar[104];
-   armttbar[104]=25./24.*armttbar[113] + armttbar[104];
-   armttbar[104]=MMZ*armttbar[104];
-   armttbar[113]=11./9.*armttbar[182] + armttbar[181];
-   armttbar[113]=armttbar[17]*armttbar[99]*armttbar[113];
-   armttbar[104]=1./3.*armttbar[108] + armttbar[104] + 25./6.*
-   armttbar[113] + 1./2.*armttbar[110] + armttbar[112];
-   armttbar[108]=armttbar[31]*armttbar[138];
-   armttbar[110]=11./9.*armttbar[108] + armttbar[144];
-   armttbar[112]=armttbar[12]*armttbar[110];
-   armttbar[113]=armttbar[24] - armttbar[13];
-   armttbar[114]=armttbar[31]*armttbar[113];
-   armttbar[113]=armttbar[1]*armttbar[113];
-   armttbar[112]=armttbar[112] + 11./9.*armttbar[114] + armttbar[113];
-   armttbar[112]=MMZ*armttbar[112];
-   armttbar[110]=armttbar[15]*armttbar[110];
-   armttbar[115]= - 7./6. + armttbar[10];
-   armttbar[118]=armttbar[31]*armttbar[115];
-   armttbar[115]=armttbar[1]*armttbar[115];
-   armttbar[115]=11./9.*armttbar[118] + armttbar[115];
-   armttbar[115]=armttbar[17]*armttbar[115];
-   armttbar[118]=armttbar[209] + armttbar[20];
-   armttbar[119]=armttbar[31]*armttbar[118];
-   armttbar[118]=armttbar[1]*armttbar[118];
-   armttbar[110]=armttbar[112] + armttbar[115] + armttbar[110] + 11./9.
-   *armttbar[119] + armttbar[118];
-   armttbar[112]=armttbar[251] + 1./4.*armttbar[17];
-   armttbar[112]=armttbar[17]*armttbar[112];
-   armttbar[112]=armttbar[112] + 1./6.*armttbar[146];
-   armttbar[112]=armttbar[6]*armttbar[27]*armttbar[112];
-   armttbar[115]=armttbar[33] + 5*armttbar[5];
-   armttbar[118]=armttbar[229] + 13./3. - 17./2.*armttbar[29];
-   armttbar[118]=armttbar[15]*armttbar[118];
-   armttbar[115]=1./6.*armttbar[118] + 1./4.*armttbar[20] + 1./12.*
-   armttbar[115] + armttbar[18];
-   armttbar[118]= - 13./8.*armttbar[12] + 5./16.*armttbar[10] - 2./3.
-    + 17./16.*armttbar[29];
-   armttbar[118]=armttbar[17]*armttbar[118];
-   armttbar[115]=1./4.*armttbar[115] + 1./3.*armttbar[118];
-   armttbar[118]= - 5*armttbar[10] + 83./3. + armttbar[223];
-   armttbar[118]=armttbar[12]*armttbar[118];
-   armttbar[118]=1./18.*armttbar[118] - 5./18.*armttbar[13] + 5./18.*
-   armttbar[24] + 1./18. + armttbar[45];
-   armttbar[118]=MMZ*armttbar[118];
-   armttbar[115]=1./3.*armttbar[115] + 1./8.*armttbar[118];
-   armttbar[115]=armttbar[27]*armttbar[115];
-   armttbar[110]=17./24.*armttbar[112] + 1./8.*armttbar[110] + 
-   armttbar[115];
-   armttbar[110]=armttbar[6]*armttbar[110];
-   armttbar[112]=17./3.*armttbar[12] + armttbar[30] + 49./18.*
-   armttbar[29] - 71./18. + armttbar[227];
-   armttbar[112]=armttbar[3]*armttbar[112];
-   armttbar[112]=1./2.*armttbar[112] + armttbar[231];
-   armttbar[112]=armttbar[27]*armttbar[112];
-   armttbar[112]=1./2.*armttbar[112] + 3*armttbar[180];
-   armttbar[112]=MMt*armttbar[112];
-   armttbar[104]=armttbar[112] + 1./2.*armttbar[104] + 17./3.*
-   armttbar[110];
-   armttbar[104]=armttbar[176]*armttbar[104];
-   armttbar[110]=11./9.*armttbar[215] + armttbar[214];
-   armttbar[110]=armttbar[99]*armttbar[110];
-   armttbar[112]=517./36.*armttbar[10] + 625./27. + armttbar[206];
-   armttbar[112]=armttbar[31]*armttbar[112];
-   armttbar[115]=173./3. + armttbar[206];
-   armttbar[115]=1./3.*armttbar[115] + 47./4.*armttbar[10];
-   armttbar[115]=armttbar[1]*armttbar[115];
-   armttbar[112]=armttbar[112] + armttbar[115];
-   armttbar[112]=armttbar[12]*armttbar[112];
-   armttbar[115]=11./9.*armttbar[221] + armttbar[222];
-   armttbar[118]=armttbar[15]*armttbar[99]*armttbar[115];
-   armttbar[119]=11*armttbar[13] - 11*armttbar[24] + 131./6. + 11*
-   armttbar[25];
-   armttbar[119]= - 143./24.*armttbar[10] + 5./9.*armttbar[119] + 1./8.
-   *armttbar[11];
-   armttbar[119]=armttbar[31]*armttbar[119];
-   armttbar[120]=armttbar[208] + 5*armttbar[13] - 5*armttbar[24] + 179./
-   18. + 5*armttbar[25];
-   armttbar[120]=1./3.*armttbar[120] - 13./8.*armttbar[10];
-   armttbar[120]=armttbar[1]*armttbar[120];
-   armttbar[110]=10*armttbar[118] + 10*armttbar[110] + 1./6.*
-   armttbar[112] + 1./3.*armttbar[119] + armttbar[120];
-   armttbar[112]=67./12.*armttbar[29] + 377./27.*armttbar[13] - 377./27.
-   *armttbar[24] + 161./27.*armttbar[25] - 11951./162. + armttbar[117];
-   armttbar[112]=1./2.*armttbar[112] + armttbar[186];
-   armttbar[117]=54977./3. + 16313*armttbar[29];
-   armttbar[117]=1./108.*armttbar[117] - armttbar[30];
-   armttbar[117]=1./4.*armttbar[117] + 43./27.*armttbar[10];
-   armttbar[117]=armttbar[12]*armttbar[117];
-   armttbar[118]= - 523./4.*armttbar[33] + 25*armttbar[5];
-   armttbar[118]=623./18.*armttbar[20] + 1./9.*armttbar[118] + 47./4.*
-   armttbar[18];
-   armttbar[118]=armttbar[99]*armttbar[118];
-   armttbar[119]= - 25./3.*armttbar[10] + 337./3. - 275./4.*
-   armttbar[29];
-   armttbar[119]=armttbar[15]*armttbar[99]*armttbar[119];
-   armttbar[112]=5./6.*armttbar[119] + 5./2.*armttbar[118] + 
-   armttbar[117] + 1./2.*armttbar[112] + armttbar[151];
-   armttbar[116]=11./4.*armttbar[116] + armttbar[198];
-   armttbar[116]=armttbar[12]*armttbar[116];
-   armttbar[117]=25./9.*armttbar[10];
-   armttbar[116]=25./3.*armttbar[116] + armttbar[117] + 275./12.*
-   armttbar[29] - 25./9.*armttbar[13] + 25./9.*armttbar[24] - 133./2.
-    + 25./9.*armttbar[25];
-   armttbar[116]=armttbar[99]*armttbar[116];
-   armttbar[118]=10./3. + armttbar[121];
-   armttbar[118]=4./9.*armttbar[10] + 1./9.*armttbar[118] + 
-   armttbar[145];
-   armttbar[118]=armttbar[3]*armttbar[118];
-   armttbar[116]=5./48.*armttbar[116] + armttbar[118];
-   armttbar[116]=MMZ*armttbar[116];
-   armttbar[118]=armttbar[202] + armttbar[199];
-   armttbar[118]=armttbar[3]*armttbar[118];
-   armttbar[119]=47 + 275./3.*armttbar[29];
-   armttbar[117]= - 275./12.*armttbar[12] + 1./4.*armttbar[119] + 
-   armttbar[117];
-   armttbar[117]=armttbar[99]*armttbar[117];
-   armttbar[119]= - 47./9. + armttbar[211];
-   armttbar[119]=armttbar[3]*armttbar[119];
-   armttbar[117]=5./6.*armttbar[117] + armttbar[119];
-   armttbar[117]=armttbar[17]*armttbar[117];
-   armttbar[112]=armttbar[116] + 1./2.*armttbar[117] + 1./12.*
-   armttbar[112] + armttbar[118];
-   armttbar[112]=armttbar[27]*armttbar[112];
-   armttbar[116]= - armttbar[24] + armttbar[13];
-   armttbar[117]=armttbar[31]*armttbar[116];
-   armttbar[116]=armttbar[1]*armttbar[116];
-   armttbar[116]=11./9.*armttbar[117] + armttbar[116];
-   armttbar[117]=1067./36.*armttbar[10] + 245./27. + armttbar[154];
-   armttbar[117]=armttbar[31]*armttbar[117];
-   armttbar[118]=73./3. + armttbar[154];
-   armttbar[118]=1./3.*armttbar[118] + 97./4.*armttbar[10];
-   armttbar[118]=armttbar[1]*armttbar[118];
-   armttbar[117]=armttbar[117] + armttbar[118];
-   armttbar[118]=armttbar[12]*armttbar[117];
-   armttbar[116]=10*armttbar[116] + 1./2.*armttbar[118];
-   armttbar[116]=MMZ*armttbar[116];
-   armttbar[105]=11./9.*armttbar[109] + armttbar[105];
-   armttbar[109]=armttbar[15]*armttbar[117];
-   armttbar[117]= - 1067./36.*armttbar[10] + 745./27. + armttbar[184];
-   armttbar[117]=armttbar[31]*armttbar[117];
-   armttbar[118]=197./3. + armttbar[184];
-   armttbar[118]=1./3.*armttbar[118] - 97./4.*armttbar[10];
-   armttbar[118]=armttbar[1]*armttbar[118];
-   armttbar[117]=armttbar[117] + armttbar[118];
-   armttbar[117]=armttbar[17]*armttbar[117];
-   armttbar[105]=armttbar[116] + 1./2.*armttbar[117] + 10*armttbar[105]
-    + 1./2.*armttbar[109];
-   armttbar[109]= - 601./3. - 391./2.*armttbar[29];
-   armttbar[109]= - 179./18.*armttbar[10] + 5./9.*armttbar[109] + 
-   armttbar[259];
-   armttbar[109]=1./2.*armttbar[109] + 185*armttbar[12];
-   armttbar[109]=armttbar[17]*armttbar[109];
-   armttbar[116]=611*armttbar[33] - 107*armttbar[5];
-   armttbar[116]= - 443./6.*armttbar[20] + 1./18.*armttbar[116] - 37*
-   armttbar[18];
-   armttbar[117]= - 793./3. + 1955./8.*armttbar[29];
-   armttbar[117]=179./72.*armttbar[10] + 1./9.*armttbar[117] + 17./4.*
-   armttbar[30];
-   armttbar[117]=armttbar[15]*armttbar[117];
-   armttbar[109]=1./2.*armttbar[109] + 1./2.*armttbar[116] + 
-   armttbar[117];
-   armttbar[116]= - 365./3. + 391./2.*armttbar[29];
-   armttbar[116]=179./18.*armttbar[10] + 5./9.*armttbar[116] + 
-   armttbar[170];
-   armttbar[116]=armttbar[12]*armttbar[116];
-   armttbar[116]=1./18.*armttbar[116] + 107./162.*armttbar[13] - 107./
-   162.*armttbar[24] + 611./162. - armttbar[45];
-   armttbar[116]=MMZ*armttbar[116];
-   armttbar[109]=1./9.*armttbar[109] + 1./2.*armttbar[116];
-   armttbar[109]=armttbar[27]*armttbar[109];
-   armttbar[105]=773./108.*armttbar[111] + 1./9.*armttbar[105] + 1./2.*
-   armttbar[109];
-   armttbar[105]=armttbar[6]*armttbar[105];
-   armttbar[109]=armttbar[12]*armttbar[115];
-   armttbar[109]=armttbar[109] + 11./9.*armttbar[226] + armttbar[225];
-   armttbar[109]=armttbar[99]*armttbar[109];
-   armttbar[111]=armttbar[3]*armttbar[242];
-   armttbar[109]=5./3.*armttbar[109] + armttbar[111];
-   armttbar[109]=MMZ*armttbar[109];
-   armttbar[111]= - armttbar[12] + armttbar[228] - 119./9.*armttbar[29]
-    + 113./18. + armttbar[227];
-   armttbar[111]=armttbar[3]*armttbar[111];
-   armttbar[111]=1./2.*armttbar[111] + armttbar[231];
-   armttbar[111]=armttbar[27]*armttbar[111];
-   armttbar[111]=armttbar[111] + armttbar[232];
+   armttbar[136]=1./2.*armttbar[123];
+   armttbar[138]=armttbar[77]*armttbar[136];
+   armttbar[139]=armttbar[102] + 15;
+   armttbar[139]=armttbar[139]*armttbar[102];
+   armttbar[140]=armttbar[139] - 15;
+   armttbar[140]=armttbar[140]*armttbar[116];
+   armttbar[141]=13*armttbar[107];
+   armttbar[142]=armttbar[141] + 15./2.;
+   armttbar[142]=armttbar[142]*armttbar[107];
+   armttbar[140]=armttbar[140] - armttbar[142];
+   armttbar[142]=armttbar[23]*armttbar[140];
+   armttbar[143]=1 - 4./9.*armttbar[102];
+   armttbar[143]=armttbar[143]*armttbar[102];
+   armttbar[143]=armttbar[107] + armttbar[143];
+   armttbar[143]=armttbar[45]*armttbar[143];
+   armttbar[111]= - 1./16.*armttbar[142] + armttbar[134] + 1./4.*
+   armttbar[131] + armttbar[138] + 1./2.*armttbar[111] + armttbar[143];
    armttbar[111]=MMt*armttbar[111];
-   armttbar[115]=armttbar[3]*armttbar[218];
-   armttbar[116]=11./9.*armttbar[234] + armttbar[233];
-   armttbar[116]=armttbar[17]*armttbar[99]*armttbar[116];
-   armttbar[104]=armttbar[104] + armttbar[111] + armttbar[105] + 
-   armttbar[112] + armttbar[109] + 20./3.*armttbar[116] + 1./3.*
-   armttbar[110] + armttbar[115];
-   armttbar[104]=armttbar[176]*armttbar[104];
-   armttbar[105]=61./9. - 4*armttbar[45];
-   armttbar[109]= - 2./3.*armttbar[29];
-   armttbar[105]=armttbar[133] + armttbar[109] + 1./3.*armttbar[13] - 1.
-   /3.*armttbar[24] + 2*armttbar[105] - 23./3.*armttbar[25];
-   armttbar[110]= - 5./3. + armttbar[29];
-   armttbar[110]=2*armttbar[110] + armttbar[133];
-   armttbar[110]=armttbar[15]*armttbar[99]*armttbar[110];
-   armttbar[111]= - 1 - armttbar[29];
-   armttbar[111]=armttbar[21]*armttbar[111];
-   armttbar[112]= - 97./3. + armttbar[258];
-   armttbar[112]=2*armttbar[112] - armttbar[10];
-   armttbar[112]=armttbar[12]*armttbar[112];
-   armttbar[115]=4*armttbar[33] - armttbar[5];
-   armttbar[115]= - 10./3.*armttbar[20] + 1./3.*armttbar[115] - 
-   armttbar[18];
-   armttbar[115]=armttbar[99]*armttbar[115];
-   armttbar[116]=2*armttbar[12] + armttbar[198] - 1 - 2*armttbar[29];
-   armttbar[116]=armttbar[99]*armttbar[116];
-   armttbar[116]=2*armttbar[116] + armttbar[3];
-   armttbar[116]=armttbar[17]*armttbar[116];
-   armttbar[105]=4*armttbar[116] + 4*armttbar[110] + 4*armttbar[115] + 
-   2./9.*armttbar[112] + 2./3.*armttbar[105] + armttbar[111];
-   armttbar[106]=2*armttbar[106] + armttbar[133];
-   armttbar[106]=armttbar[12]*armttbar[106];
-   armttbar[106]=1./3.*armttbar[106] - 1./9.*armttbar[10] + 
-   armttbar[109] + 1./9.*armttbar[13] - 1./9.*armttbar[24] + 2 - 1./9.*
-   armttbar[25];
-   armttbar[106]=armttbar[99]*armttbar[106];
-   armttbar[109]=armttbar[3]*armttbar[193];
-   armttbar[106]=4*armttbar[106] + 1./3.*armttbar[109];
-   armttbar[106]=MMZ*armttbar[106];
-   armttbar[105]=2./3.*armttbar[105] + armttbar[106];
-   armttbar[105]=armttbar[27]*armttbar[105];
-   armttbar[106]= - 4./3. - armttbar[10];
-   armttbar[109]=armttbar[31]*armttbar[106];
-   armttbar[106]=armttbar[1]*armttbar[106];
-   armttbar[106]=5./3.*armttbar[109] + armttbar[106];
-   armttbar[106]=armttbar[12]*armttbar[106];
-   armttbar[109]=armttbar[10] + armttbar[13] - armttbar[24] + 16./3. + 
-   armttbar[25];
-   armttbar[110]=armttbar[31]*armttbar[109];
-   armttbar[109]=armttbar[1]*armttbar[109];
-   armttbar[106]=armttbar[106] + 5./3.*armttbar[110] + armttbar[109];
-   armttbar[109]=armttbar[126] + armttbar[195];
-   armttbar[110]=armttbar[31]*armttbar[109];
-   armttbar[109]=armttbar[1]*armttbar[109];
-   armttbar[109]=5./3.*armttbar[110] + armttbar[109];
-   armttbar[109]=armttbar[99]*armttbar[109];
-   armttbar[110]=5./3.*armttbar[139] + armttbar[141];
-   armttbar[111]=armttbar[15]*armttbar[99]*armttbar[110];
-   armttbar[112]=5./3.*armttbar[182] + armttbar[181];
-   armttbar[112]=armttbar[17]*armttbar[99]*armttbar[112];
-   armttbar[106]=4*armttbar[112] + 2*armttbar[111] + 1./3.*
-   armttbar[106] + 2*armttbar[109];
-   armttbar[109]=armttbar[12]*armttbar[110];
-   armttbar[109]=armttbar[109] + 5./3.*armttbar[166] + armttbar[162];
-   armttbar[109]=armttbar[99]*armttbar[109];
-   armttbar[110]=armttbar[3]*armttbar[143];
-   armttbar[109]=4./3.*armttbar[109] + armttbar[110];
-   armttbar[109]=MMZ*armttbar[109];
-   armttbar[105]=armttbar[105] + 4./3.*armttbar[106] + armttbar[109];
-   armttbar[106]=5./3.*armttbar[108] + armttbar[144];
-   armttbar[108]=armttbar[15]*armttbar[106];
-   armttbar[109]= - 11./3. + armttbar[10];
-   armttbar[110]=armttbar[31]*armttbar[109];
-   armttbar[109]=armttbar[1]*armttbar[109];
-   armttbar[109]=5./3.*armttbar[110] + armttbar[109];
-   armttbar[109]=armttbar[17]*armttbar[109];
-   armttbar[110]=armttbar[209] + 4*armttbar[20];
-   armttbar[111]=armttbar[31]*armttbar[110];
-   armttbar[110]=armttbar[1]*armttbar[110];
-   armttbar[108]=2*armttbar[109] + 2*armttbar[108] + 5./3.*
-   armttbar[111] + armttbar[110];
-   armttbar[109]=5./3.*armttbar[114] + armttbar[113];
-   armttbar[106]=armttbar[12]*armttbar[106];
-   armttbar[106]=32./9.*armttbar[106] + 16./9.*armttbar[109] + 
-   armttbar[205];
-   armttbar[106]=MMZ*armttbar[106];
-   armttbar[109]= - 4*armttbar[33] + armttbar[5];
-   armttbar[110]= - armttbar[10] + 7./3. + armttbar[203];
-   armttbar[110]=armttbar[15]*armttbar[110];
-   armttbar[109]=2./3.*armttbar[110] + armttbar[168] + 1./3.*
-   armttbar[109] + armttbar[18];
-   armttbar[110]=armttbar[10] + 17./3. + armttbar[191];
-   armttbar[110]=armttbar[124] + 4./9.*armttbar[110] - armttbar[21];
-   armttbar[110]=armttbar[17]*armttbar[110];
-   armttbar[109]=2./3.*armttbar[109] + armttbar[110];
-   armttbar[110]= - armttbar[13] - 4 + armttbar[24];
-   armttbar[111]=armttbar[21]*armttbar[204];
-   armttbar[112]= - armttbar[10] + 1./3. + armttbar[203];
-   armttbar[112]=armttbar[12]*armttbar[112];
-   armttbar[110]=32./9.*armttbar[112] + 16./9.*armttbar[110] + 
-   armttbar[111];
-   armttbar[110]=MMZ*armttbar[110];
-   armttbar[109]=8*armttbar[109] + armttbar[110];
-   armttbar[109]=armttbar[27]*armttbar[109];
-   armttbar[110]=armttbar[128] + 2*armttbar[127] + armttbar[15] - 
-   armttbar[33] + armttbar[212];
-   armttbar[110]=MMZ*armttbar[110];
-   armttbar[111]=armttbar[251] + armttbar[17];
-   armttbar[111]=armttbar[17]*armttbar[111];
-   armttbar[110]=4*armttbar[111] + 1./3.*armttbar[110];
-   armttbar[110]=armttbar[6]*armttbar[27]*armttbar[110];
-   armttbar[106]=32./9.*armttbar[110] + 1./3.*armttbar[109] + 16./9.*
-   armttbar[108] + armttbar[106];
-   armttbar[106]=armttbar[6]*armttbar[106];
-   armttbar[108]=MMt*armttbar[27]*armttbar[3]*armttbar[163];
-   armttbar[105]=32./3.*armttbar[108] + 4*armttbar[105] + armttbar[106]
+   armttbar[131]=armttbar[120]*armttbar[34];
+   armttbar[134]=armttbar[34]*armttbar[122];
+   armttbar[131]=armttbar[131] + armttbar[134];
+   armttbar[138]=7*armttbar[107];
+   armttbar[142]=69./2. - armttbar[138];
+   armttbar[142]=armttbar[142]*armttbar[107];
+   armttbar[143]= - 41./9. + armttbar[102];
+   armttbar[143]=armttbar[143]*armttbar[102];
+   armttbar[143]=69 + armttbar[143];
+   armttbar[143]=armttbar[143]*armttbar[116];
+   armttbar[142]=armttbar[142] + armttbar[143];
+   armttbar[142]=armttbar[18]*armttbar[142];
+   armttbar[143]=3./2.*armttbar[123];
+   armttbar[144]= - armttbar[95]*armttbar[143];
+   armttbar[142]=armttbar[144] + armttbar[142] - armttbar[131];
+   armttbar[144]= - armttbar[94] - 15./4.*armttbar[91];
+   armttbar[144]=armttbar[123]*armttbar[144];
+   armttbar[145]=205./9. + 99./8.*armttbar[107];
+   armttbar[145]=armttbar[145]*armttbar[107];
+   armttbar[146]=1./4.*armttbar[102];
+   armttbar[147]=749./18. + armttbar[102];
+   armttbar[147]=armttbar[147]*armttbar[146];
+   armttbar[147]=205./9. + armttbar[147];
+   armttbar[147]=armttbar[147]*armttbar[102];
+   armttbar[145]=armttbar[145] + armttbar[147];
+   armttbar[145]=armttbar[16]*armttbar[145];
+   armttbar[142]=1./2.*armttbar[142] + armttbar[145] + armttbar[144];
+   armttbar[144]=17./3.*armttbar[107];
+   armttbar[145]=armttbar[144] - 7./2.;
+   armttbar[145]=armttbar[145]*armttbar[107];
+   armttbar[145]=armttbar[145] - 5./3.;
+   armttbar[145]=armttbar[145]*armttbar[107];
+   armttbar[147]=armttbar[102] - 85./2.;
+   armttbar[147]=armttbar[147]*armttbar[102];
+   armttbar[147]=armttbar[147] - 5;
+   armttbar[147]=armttbar[147]*armttbar[105];
+   armttbar[145]=armttbar[145] + armttbar[147];
+   armttbar[147]=1./2.*armttbar[16];
+   armttbar[145]=armttbar[145]*armttbar[147];
+   armttbar[148]=3*armttbar[123];
+   armttbar[149]=armttbar[148]*armttbar[17];
+   armttbar[150]=armttbar[145] + armttbar[149];
+   armttbar[150]=armttbar[8]*armttbar[150];
+   armttbar[151]=armttbar[123]*armttbar[17];
+   armttbar[152]=7*armttbar[151];
+   armttbar[153]=armttbar[123]*armttbar[92];
+   armttbar[154]=21*armttbar[107];
+   armttbar[155]= - 307./9. - armttbar[154];
+   armttbar[155]=armttbar[155]*armttbar[108];
+   armttbar[156]= - 59./9. - armttbar[116];
+   armttbar[156]=armttbar[156]*armttbar[102];
+   armttbar[156]= - 307./18. + armttbar[156];
+   armttbar[156]=armttbar[156]*armttbar[102];
+   armttbar[155]=armttbar[155] + armttbar[156];
+   armttbar[155]=armttbar[155]*armttbar[130];
+   armttbar[142]=armttbar[150] - 3./4.*armttbar[153] + armttbar[155] + 
+   1./2.*armttbar[142] + armttbar[152];
+   armttbar[150]=armttbar[123]*armttbar[8];
+   armttbar[155]=5./2.*armttbar[123] + armttbar[150];
+   armttbar[155]=armttbar[8]*armttbar[155];
+   armttbar[156]=armttbar[71] - 101./64.;
+   armttbar[156]= - armttbar[156]*armttbar[123];
+   armttbar[155]=3*armttbar[155] + armttbar[156];
+   armttbar[156]=armttbar[123]*MMt;
+   armttbar[157]=armttbar[156]*armttbar[62];
+   armttbar[155]=1./2.*armttbar[155] + armttbar[157];
+   armttbar[155]=MMt*armttbar[155];
+   armttbar[142]=1./4.*armttbar[142] + armttbar[155];
+   armttbar[142]=MMt*armttbar[142];
+   armttbar[155]=17*armttbar[107];
+   armttbar[158]=1./3.*armttbar[107];
+   armttbar[159]= - 1./2. + armttbar[158];
+   armttbar[159]=armttbar[159]*armttbar[155];
+   armttbar[159]= - 35./3. + armttbar[159];
+   armttbar[159]=armttbar[159]*armttbar[107];
+   armttbar[160]= - 115./2. + armttbar[102];
+   armttbar[160]=armttbar[160]*armttbar[102];
+   armttbar[160]= - 35 + armttbar[160];
+   armttbar[160]=armttbar[160]*armttbar[105];
+   armttbar[159]=armttbar[159] + armttbar[160];
+   armttbar[160]=1./8.*armttbar[16];
+   armttbar[159]=armttbar[159]*armttbar[160];
+   armttbar[159]=armttbar[159] + armttbar[151];
+   armttbar[159]=armttbar[17]*armttbar[159];
+   armttbar[161]= - 137./4. + 5./3.*armttbar[107];
+   armttbar[161]=armttbar[161]*armttbar[107];
+   armttbar[161]= - 779./18. + armttbar[161];
+   armttbar[161]=armttbar[161]*armttbar[108];
+   armttbar[162]= - 901./24. - armttbar[102];
+   armttbar[162]=armttbar[162]*armttbar[102];
+   armttbar[162]= - 779./12. + armttbar[162];
+   armttbar[162]=armttbar[162]*armttbar[105];
+   armttbar[161]=armttbar[161] + armttbar[162];
+   armttbar[162]=pow(armttbar[16],2);
+   armttbar[161]=armttbar[161]*armttbar[162];
+   armttbar[159]=1./8.*armttbar[161] + armttbar[159];
+   armttbar[142]=1./2.*armttbar[159] + armttbar[142];
+   armttbar[142]=armttbar[9]*armttbar[142];
+   armttbar[159]= - 763./9. - 169./2.*armttbar[107];
+   armttbar[159]=armttbar[159]*armttbar[107];
+   armttbar[161]= - 103./6. - armttbar[102];
+   armttbar[161]=armttbar[161]*armttbar[102];
+   armttbar[161]= - 763./9. + armttbar[161];
+   armttbar[161]=armttbar[161]*armttbar[102];
+   armttbar[159]=armttbar[159] + armttbar[161];
+   armttbar[159]=armttbar[19]*armttbar[159];
+   armttbar[161]=3./2.*armttbar[107];
+   armttbar[163]=armttbar[161]*armttbar[33];
+   armttbar[164]= - 31./3.*armttbar[33] + armttbar[163];
+   armttbar[164]=armttbar[164]*armttbar[107];
+   armttbar[165]=23./2.*armttbar[107];
+   armttbar[166]= - 341./9. - armttbar[165];
+   armttbar[166]=armttbar[34]*armttbar[166]*armttbar[108];
+   armttbar[167]=1./6.*armttbar[102];
+   armttbar[168]=107*armttbar[33] - 155./2.*armttbar[34];
+   armttbar[168]=armttbar[168]*armttbar[167];
+   armttbar[169]= - armttbar[33] - 11./6.*armttbar[34];
+   armttbar[168]=31*armttbar[169] + armttbar[168];
+   armttbar[168]=armttbar[168]*armttbar[105];
+   armttbar[159]=armttbar[159] + armttbar[168] + armttbar[164] + 
+   armttbar[166];
+   armttbar[164]=armttbar[167] + 1;
+   armttbar[166]=armttbar[164]*armttbar[105];
+   armttbar[168]=armttbar[108] + 1./3.;
+   armttbar[168]=armttbar[168]*armttbar[107];
+   armttbar[169]=armttbar[166] + armttbar[168];
+   armttbar[170]=armttbar[169]*armttbar[5];
+   armttbar[171]= - 13./3. - armttbar[108];
+   armttbar[171]=armttbar[171]*armttbar[107];
+   armttbar[172]=11./6.*armttbar[102];
+   armttbar[173]= - 13 + armttbar[172];
+   armttbar[173]=armttbar[173]*armttbar[105];
+   armttbar[171]=armttbar[171] + armttbar[173];
+   armttbar[171]=armttbar[92]*armttbar[171];
+   armttbar[173]=109./9. + armttbar[108];
+   armttbar[173]=armttbar[173]*armttbar[107];
+   armttbar[174]=1./9.*armttbar[102];
+   armttbar[175]=17./2.*armttbar[102];
+   armttbar[176]=109 + armttbar[175];
+   armttbar[176]=armttbar[176]*armttbar[174];
+   armttbar[173]=armttbar[173] + armttbar[176];
+   armttbar[173]=armttbar[17]*armttbar[173];
+   armttbar[176]=armttbar[117]*armttbar[16];
+   armttbar[173]= - 13./2.*armttbar[176] + armttbar[173];
+   armttbar[173]=armttbar[8]*armttbar[173];
+   armttbar[171]= - armttbar[173] + armttbar[170] - armttbar[171];
+   armttbar[173]= - 197./2. - armttbar[155];
+   armttbar[173]=armttbar[173]*armttbar[107];
+   armttbar[173]=563./6. + armttbar[173];
+   armttbar[177]=1./16.*armttbar[107];
+   armttbar[173]=armttbar[173]*armttbar[177];
+   armttbar[178]=11./48.*armttbar[102];
+   armttbar[179]=11./6. - armttbar[102];
+   armttbar[179]=armttbar[179]*armttbar[178];
+   armttbar[173]=armttbar[179] + 8./3. + armttbar[173];
+   armttbar[179]=1./3.*armttbar[6];
+   armttbar[173]=armttbar[173]*armttbar[179];
+   armttbar[173]= - 1./2.*armttbar[128] + armttbar[173];
+   armttbar[173]=armttbar[16]*armttbar[173];
+   armttbar[180]=armttbar[117]*armttbar[37];
+   armttbar[181]= - 199./3. - 21./2.*armttbar[107];
+   armttbar[181]=armttbar[181]*armttbar[107];
+   armttbar[181]=3635./54. + armttbar[181];
+   armttbar[181]=armttbar[181]*armttbar[177];
+   armttbar[182]=661 + 89*armttbar[102];
+   armttbar[182]=armttbar[182]*armttbar[102];
+   armttbar[182]= - 541 + armttbar[182];
+   armttbar[183]=1./864.*armttbar[102];
+   armttbar[182]=armttbar[182]*armttbar[183];
+   armttbar[173]=armttbar[173] - 3./16.*armttbar[180] + armttbar[182]
+    - 80./9. + armttbar[181];
+   armttbar[173]=armttbar[16]*armttbar[173];
+   armttbar[181]=5*armttbar[107];
+   armttbar[182]=17./2.*armttbar[107];
+   armttbar[184]=41./3. - armttbar[182];
+   armttbar[184]=armttbar[184]*armttbar[181];
+   armttbar[185]=19./2.*armttbar[102];
+   armttbar[186]=157./3. + armttbar[185];
+   armttbar[186]=armttbar[186]*armttbar[102];
+   armttbar[184]=armttbar[184] + armttbar[186];
+   armttbar[184]=armttbar[118] - 1./4.*armttbar[184] + armttbar[124];
+   armttbar[186]= - 423./2. + armttbar[144];
+   armttbar[186]=armttbar[186]*armttbar[107];
+   armttbar[186]= - 211./27. + armttbar[186];
+   armttbar[187]=1./32.*armttbar[107];
+   armttbar[186]=armttbar[186]*armttbar[187];
+   armttbar[188]=17*armttbar[102];
+   armttbar[189]= - 1481./2. + armttbar[188];
+   armttbar[189]=armttbar[189]*armttbar[102];
+   armttbar[189]= - 5971 + armttbar[189];
+   armttbar[189]=armttbar[189]*armttbar[183];
+   armttbar[186]=armttbar[189] + 32./9. + armttbar[186];
+   armttbar[186]=armttbar[6]*armttbar[186];
+   armttbar[186]= - 3./4.*armttbar[128] + armttbar[186];
+   armttbar[186]=armttbar[16]*armttbar[186];
+   armttbar[189]=1./8.*armttbar[107];
+   armttbar[190]=5./2.*armttbar[107];
+   armttbar[191]= - 1 + armttbar[190];
+   armttbar[191]=armttbar[191]*armttbar[189];
+   armttbar[192]=1./216.*armttbar[102];
+   armttbar[193]=101 + 355./2.*armttbar[102];
+   armttbar[193]=armttbar[193]*armttbar[192];
+   armttbar[191]=armttbar[193] - 128./27. + armttbar[191];
+   armttbar[193]=armttbar[17]*armttbar[6];
+   armttbar[191]=armttbar[191]*armttbar[193];
+   armttbar[184]=armttbar[191] + armttbar[186] - 1./4.*armttbar[184];
+   armttbar[184]=armttbar[17]*armttbar[184];
+   armttbar[186]=7./6. + armttbar[107];
+   armttbar[186]=armttbar[186]*armttbar[107];
+   armttbar[191]=armttbar[102] + 7;
+   armttbar[194]=armttbar[191]*armttbar[167];
+   armttbar[186]=armttbar[186] + armttbar[194];
+   armttbar[186]=armttbar[94]*armttbar[186];
+   armttbar[194]=3*armttbar[107];
+   armttbar[195]=armttbar[194] - 5;
+   armttbar[195]=armttbar[195]*armttbar[107];
+   armttbar[196]=11./4.*armttbar[195];
+   armttbar[197]=armttbar[196] - 13./3.;
+   armttbar[197]=armttbar[197]*armttbar[107];
+   armttbar[198]=armttbar[102] + 17;
+   armttbar[199]=armttbar[198]*armttbar[146];
+   armttbar[199]=armttbar[199] - 13;
+   armttbar[200]=armttbar[199]*armttbar[105];
+   armttbar[197]=armttbar[197] + armttbar[200];
+   armttbar[200]=armttbar[147] + armttbar[17];
+   armttbar[201]=MMt*armttbar[8];
+   armttbar[202]=armttbar[201] + 1./2.*armttbar[200];
+   armttbar[203]= - armttbar[39]*armttbar[197]*armttbar[202];
+   armttbar[186]=armttbar[186] + armttbar[203];
+   armttbar[203]=armttbar[176]*armttbar[17];
+   armttbar[204]= - 69./2. + armttbar[155];
+   armttbar[204]=armttbar[204]*armttbar[107];
+   armttbar[204]=91./2. + armttbar[204];
+   armttbar[204]=armttbar[204]*armttbar[107];
+   armttbar[205]=5./2.*armttbar[102];
+   armttbar[204]=armttbar[204] - armttbar[205];
+   armttbar[204]=armttbar[204]*armttbar[162];
+   armttbar[204]=armttbar[204] + 9*armttbar[203];
+   armttbar[206]= - armttbar[117]*armttbar[147];
+   armttbar[207]=armttbar[8]*armttbar[176];
+   armttbar[206]=armttbar[206] + armttbar[207];
+   armttbar[207]=3*MMt;
+   armttbar[206]=armttbar[206]*armttbar[207];
+   armttbar[204]=1./4.*armttbar[204] + armttbar[206];
+   armttbar[206]=1./2.*armttbar[3];
+   armttbar[204]=armttbar[204]*armttbar[206];
+   armttbar[208]=1./128.*armttbar[107];
+   armttbar[209]= - 161./3. - 1901./2.*armttbar[107];
+   armttbar[209]=armttbar[209]*armttbar[208];
+   armttbar[210]=1./384.*armttbar[102];
+   armttbar[211]= - 1649 - 35507./18.*armttbar[102];
+   armttbar[211]=armttbar[211]*armttbar[210];
+   armttbar[209]=armttbar[211] + 32./27. + armttbar[209];
+   armttbar[209]=armttbar[18]*armttbar[209];
+   armttbar[211]=15*armttbar[107];
+   armttbar[212]= - 11./2. - armttbar[211];
+   armttbar[212]=armttbar[212]*armttbar[107];
+   armttbar[139]= - 11 + armttbar[139];
+   armttbar[139]=armttbar[139]*armttbar[116];
+   armttbar[139]=armttbar[212] + armttbar[139];
+   armttbar[139]=armttbar[50]*armttbar[139];
+   armttbar[212]=armttbar[117]*armttbar[95];
+   armttbar[213]= - 27./16.*armttbar[35] - 3./8.*armttbar[40];
+   armttbar[213]=armttbar[176]*armttbar[213];
+   armttbar[111]=armttbar[142] + armttbar[204] + armttbar[184] + 
+   armttbar[173] + 1./16.*armttbar[139] - 1./48.*armttbar[212] + 1./3.*
+   armttbar[209] + armttbar[213] + armttbar[111] - 1./8.*armttbar[171]
+    + 1./32.*armttbar[159] + 1./2.*armttbar[186];
+   armttbar[111]=armttbar[9]*armttbar[111];
+   armttbar[139]=9*armttbar[151];
+   armttbar[142]=armttbar[155] - 13./2.;
+   armttbar[159]= - armttbar[142]*armttbar[107];
+   armttbar[159]=17 + armttbar[159];
+   armttbar[159]=armttbar[159]*armttbar[107];
+   armttbar[171]= - 75./2. + armttbar[102];
+   armttbar[171]=armttbar[171]*armttbar[102];
+   armttbar[171]=17 + armttbar[171];
+   armttbar[171]=armttbar[171]*armttbar[102];
+   armttbar[159]=armttbar[159] + armttbar[171];
+   armttbar[159]=armttbar[159]*armttbar[147];
+   armttbar[159]=armttbar[159] + armttbar[139];
+   armttbar[171]= - armttbar[136] + armttbar[150];
+   armttbar[171]=armttbar[171]*armttbar[207];
+   armttbar[159]=1./4.*armttbar[159] + armttbar[171];
+   armttbar[159]=armttbar[159]*armttbar[206];
+   armttbar[171]=11*armttbar[107];
+   armttbar[173]=151./2. - armttbar[171];
+   armttbar[173]=armttbar[173]*armttbar[108];
+   armttbar[173]=61 + armttbar[173];
+   armttbar[184]=1./12.*armttbar[107];
+   armttbar[173]=armttbar[173]*armttbar[184];
+   armttbar[186]=31./16. + armttbar[105];
+   armttbar[186]=armttbar[186]*armttbar[102];
+   armttbar[186]=61./12. + armttbar[186];
+   armttbar[186]=armttbar[186]*armttbar[102];
+   armttbar[173]=armttbar[173] + armttbar[186];
+   armttbar[173]=armttbar[16]*armttbar[173];
+   armttbar[186]=11 - armttbar[155];
+   armttbar[186]=armttbar[186]*armttbar[108];
+   armttbar[186]= - 29 + armttbar[186];
+   armttbar[186]=armttbar[186]*armttbar[107];
+   armttbar[204]=1./3. - armttbar[102];
+   armttbar[204]=armttbar[204]*armttbar[116];
+   armttbar[204]= - 29 + armttbar[204];
+   armttbar[204]=armttbar[204]*armttbar[102];
+   armttbar[186]=armttbar[186] + armttbar[204];
+   armttbar[204]=1./6.*armttbar[17];
+   armttbar[186]=armttbar[186]*armttbar[204];
+   armttbar[173]=armttbar[173] + armttbar[186];
+   armttbar[186]= - 5 + 17./4.*armttbar[107];
+   armttbar[209]=1./6.*armttbar[107];
+   armttbar[186]=armttbar[186]*armttbar[209];
+   armttbar[186]=armttbar[186] - 1;
+   armttbar[186]=armttbar[186]*armttbar[107];
+   armttbar[209]=armttbar[146] + 13./3.;
+   armttbar[213]=armttbar[209]*armttbar[167];
+   armttbar[213]=armttbar[213] - 1;
+   armttbar[213]=armttbar[213]*armttbar[102];
+   armttbar[186]=armttbar[186] + armttbar[213];
+   armttbar[186]=armttbar[186]*armttbar[8];
+   armttbar[213]= - 9 + 47./4.*armttbar[107];
+   armttbar[213]=armttbar[213]*armttbar[107];
+   armttbar[214]= - 1./6. - armttbar[102];
+   armttbar[214]=armttbar[214]*armttbar[116];
+   armttbar[214]= - 9 + armttbar[214];
+   armttbar[214]=armttbar[214]*armttbar[102];
+   armttbar[213]=armttbar[213] + armttbar[214];
+   armttbar[213]=1./16.*armttbar[213] - armttbar[186];
+   armttbar[213]=MMt*armttbar[213];
+   armttbar[173]=1./4.*armttbar[173] + armttbar[213];
+   armttbar[173]=armttbar[9]*armttbar[173];
+   armttbar[213]=armttbar[123]*armttbar[40];
+   armttbar[214]=armttbar[123]*armttbar[35];
+   armttbar[215]=1./4.*armttbar[107];
+   armttbar[142]=armttbar[142]*armttbar[215];
+   armttbar[142]= - 737./9. + armttbar[142];
+   armttbar[142]=armttbar[142]*armttbar[189];
+   armttbar[216]=1085./2. - armttbar[188];
+   armttbar[216]=armttbar[216]*armttbar[146];
+   armttbar[216]= - 209 + armttbar[216];
+   armttbar[217]=1./72.*armttbar[102];
+   armttbar[216]=armttbar[216]*armttbar[217];
+   armttbar[142]=armttbar[216] + 40./3. + armttbar[142];
+   armttbar[216]=armttbar[16]*armttbar[6];
+   armttbar[218]=1./3.*armttbar[216];
+   armttbar[142]=armttbar[142]*armttbar[218];
+   armttbar[219]=1 - 17./12.*armttbar[107];
+   armttbar[219]=armttbar[219]*armttbar[108];
+   armttbar[219]=269./27. + armttbar[219];
+   armttbar[219]=armttbar[219]*armttbar[215];
+   armttbar[220]=17./4.*armttbar[102];
+   armttbar[221]= - 1531./3. - armttbar[220];
+   armttbar[221]=armttbar[221]*armttbar[116];
+   armttbar[221]=3335./3. + armttbar[221];
+   armttbar[222]=1./108.*armttbar[102];
+   armttbar[221]=armttbar[221]*armttbar[222];
+   armttbar[219]=armttbar[221] - 352./27. + armttbar[219];
+   armttbar[219]=armttbar[219]*armttbar[193];
+   armttbar[221]=13./2.*armttbar[107];
+   armttbar[223]=1./3. - armttbar[221];
+   armttbar[223]=armttbar[223]*armttbar[107];
+   armttbar[224]=1 - 197./6.*armttbar[102];
+   armttbar[224]=armttbar[224]*armttbar[105];
+   armttbar[223]=armttbar[223] + armttbar[224];
+   armttbar[224]=1./16.*armttbar[8];
+   armttbar[223]=armttbar[223]*armttbar[224];
+   armttbar[225]= - 3113./24. + armttbar[154];
+   armttbar[225]=armttbar[225]*armttbar[107];
+   armttbar[225]= - 6101./108. + armttbar[225];
+   armttbar[225]=armttbar[225]*armttbar[187];
+   armttbar[226]=29653./24. + 55*armttbar[102];
+   armttbar[226]=armttbar[226]*armttbar[102];
+   armttbar[226]= - 5935./12. + armttbar[226];
+   armttbar[226]=armttbar[226]*armttbar[183];
+   armttbar[142]=armttbar[173] + armttbar[159] + armttbar[223] + 
+   armttbar[219] - 27./16.*armttbar[214] - 3./8.*armttbar[213] + 
+   armttbar[142] - 3./16.*armttbar[124] + armttbar[226] - 128./81. + 
+   armttbar[225];
+   armttbar[142]=armttbar[9]*armttbar[142];
+   armttbar[159]=3./2.*armttbar[124];
+   armttbar[173]=armttbar[108] + 5;
+   armttbar[219]=armttbar[173]*armttbar[194];
+   armttbar[223]=17./6.*armttbar[102];
+   armttbar[225]=15 + armttbar[223];
+   armttbar[225]=armttbar[225]*armttbar[102];
+   armttbar[219]=armttbar[219] + armttbar[225];
+   armttbar[225]=1./8.*armttbar[193];
+   armttbar[219]=armttbar[219]*armttbar[225];
+   armttbar[226]= - 279./4. - armttbar[155];
+   armttbar[226]=armttbar[226]*armttbar[215];
+   armttbar[226]=79./3. + armttbar[226];
+   armttbar[226]=armttbar[226]*armttbar[107];
+   armttbar[227]=7./4. - armttbar[105];
+   armttbar[227]=armttbar[227]*armttbar[146];
+   armttbar[227]=43./3. + armttbar[227];
+   armttbar[227]=armttbar[227]*armttbar[102];
+   armttbar[228]=armttbar[194] - 1;
+   armttbar[229]=armttbar[228]*armttbar[107];
+   armttbar[230]= - armttbar[229] - 13./3.*armttbar[102];
+   armttbar[231]=1./4.*armttbar[216];
+   armttbar[230]=armttbar[230]*armttbar[231];
+   armttbar[232]=armttbar[3]*armttbar[176];
+   armttbar[219]= - 9./4.*armttbar[232] + armttbar[219] + 3./2.*
+   armttbar[118] + armttbar[230] + armttbar[159] + armttbar[226] + 
+   armttbar[227];
+   armttbar[219]=armttbar[219]*armttbar[206];
+   armttbar[226]=armttbar[107] - 5./3.;
+   armttbar[227]=armttbar[226]*armttbar[107];
+   armttbar[230]=331./27. - armttbar[227];
+   armttbar[230]=armttbar[230]*armttbar[108];
+   armttbar[232]=1./27.*armttbar[102];
+   armttbar[233]=331./2. - armttbar[188];
+   armttbar[233]=armttbar[233]*armttbar[232];
+   armttbar[230]=armttbar[230] + armttbar[233];
+   armttbar[233]=armttbar[102] + 1;
+   armttbar[234]=armttbar[233]*armttbar[102];
+   armttbar[235]=17./8.*armttbar[234];
+   armttbar[236]=armttbar[235] + 1;
+   armttbar[236]=armttbar[236]*armttbar[174];
+   armttbar[237]=armttbar[107] - 1;
+   armttbar[238]= - armttbar[237]*armttbar[189];
+   armttbar[238]= - 1./9. + armttbar[238];
+   armttbar[238]=armttbar[238]*armttbar[107];
+   armttbar[238]=armttbar[238] - armttbar[236];
+   armttbar[238]=armttbar[238]*armttbar[218];
+   armttbar[239]=armttbar[108] - 1;
+   armttbar[240]=armttbar[239]*armttbar[107];
+   armttbar[241]=283./18. + armttbar[240];
+   armttbar[241]=armttbar[241]*armttbar[107];
+   armttbar[242]=283./3. - 49*armttbar[102];
+   armttbar[242]=armttbar[242]*armttbar[167];
+   armttbar[241]=armttbar[241] + armttbar[242];
+   armttbar[242]=1./12.*armttbar[193];
+   armttbar[241]=armttbar[241]*armttbar[242];
+   armttbar[115]=armttbar[115] + 1;
+   armttbar[115]=armttbar[115]*armttbar[107];
+   armttbar[115]=armttbar[115] + armttbar[102];
+   armttbar[243]=armttbar[115]*armttbar[147];
+   armttbar[244]=armttbar[115]*armttbar[17];
+   armttbar[243]=armttbar[243] + armttbar[244];
+   armttbar[245]=armttbar[115]*armttbar[201];
+   armttbar[243]=armttbar[245] + 1./2.*armttbar[243];
+   armttbar[246]=1./6.*armttbar[9];
+   armttbar[247]=armttbar[243]*armttbar[246];
+   armttbar[186]=armttbar[247] + armttbar[186] + armttbar[241] + 1./4.*
+   armttbar[230] + armttbar[238];
+   armttbar[186]=armttbar[9]*armttbar[186];
+   armttbar[230]=armttbar[223] - 1;
+   armttbar[238]=armttbar[230]*armttbar[105];
+   armttbar[238]=armttbar[238] + armttbar[135];
+   armttbar[241]=armttbar[238]*armttbar[6];
+   armttbar[247]=armttbar[241]*armttbar[8];
+   armttbar[248]=7./2.*armttbar[107];
+   armttbar[249]=1 - armttbar[248];
+   armttbar[249]=armttbar[249]*armttbar[107];
+   armttbar[250]=37./6.*armttbar[102];
+   armttbar[251]=1 - armttbar[250];
+   armttbar[251]=armttbar[251]*armttbar[102];
+   armttbar[249]=armttbar[249] + armttbar[251];
+   armttbar[249]=armttbar[6]*armttbar[249];
+   armttbar[249]=armttbar[249] + 5./2.*armttbar[247];
+   armttbar[186]=1./4.*armttbar[249] + armttbar[186];
+   armttbar[186]=armttbar[9]*armttbar[186];
+   armttbar[249]=pow(armttbar[9],3);
+   armttbar[251]=armttbar[249]*MMH;
+   armttbar[252]=armttbar[115]*armttbar[251];
+   armttbar[253]=armttbar[252]*armttbar[8];
+   armttbar[186]=armttbar[186] - 1./24.*armttbar[253];
+   armttbar[254]=1./4.*MMH;
+   armttbar[186]=armttbar[186]*armttbar[254];
+   armttbar[255]=armttbar[107] - 5./2.;
+   armttbar[256]=armttbar[255]*armttbar[155];
+   armttbar[256]=575./9. + armttbar[256];
+   armttbar[256]=armttbar[256]*armttbar[187];
+   armttbar[257]= - 319./6. + armttbar[102];
+   armttbar[257]=armttbar[257]*armttbar[188];
+   armttbar[257]=8893./3. + armttbar[257];
+   armttbar[258]=1./288.*armttbar[102];
+   armttbar[257]=armttbar[257]*armttbar[258];
+   armttbar[256]=armttbar[257] - 128./9. + armttbar[256];
+   armttbar[256]=armttbar[256]*armttbar[179];
+   armttbar[257]=25 - armttbar[155];
+   armttbar[257]=armttbar[257]*armttbar[108];
+   armttbar[257]=9 + armttbar[257];
+   armttbar[257]=armttbar[257]*armttbar[107];
+   armttbar[191]= - armttbar[191]*armttbar[116];
+   armttbar[191]=9 + armttbar[191];
+   armttbar[191]=armttbar[191]*armttbar[102];
+   armttbar[191]=armttbar[257] + armttbar[191];
+   armttbar[257]=1./8.*armttbar[3];
+   armttbar[191]=armttbar[191]*armttbar[257];
+   armttbar[259]= - 11./8. + armttbar[107];
+   armttbar[259]=armttbar[259]*armttbar[107];
+   armttbar[259]= - 15./4. + armttbar[259];
+   armttbar[259]=armttbar[259]*armttbar[107];
+   armttbar[185]= - 15 - armttbar[185];
+   armttbar[185]=armttbar[185]*armttbar[146];
+   armttbar[185]=armttbar[259] + armttbar[185];
+   armttbar[259]=1./16.*armttbar[9];
+   armttbar[185]=armttbar[185]*armttbar[259];
+   armttbar[185]=armttbar[185] + armttbar[256] + armttbar[191];
+   armttbar[185]=armttbar[9]*armttbar[185];
+   armttbar[191]=armttbar[161] - 1;
+   armttbar[256]=armttbar[191]*armttbar[107];
+   armttbar[260]=armttbar[230]*armttbar[102];
+   armttbar[261]=armttbar[256] + armttbar[260];
+   armttbar[262]= - armttbar[6]*armttbar[261];
+   armttbar[263]=9*armttbar[123];
+   armttbar[264]= - armttbar[3]*armttbar[263];
+   armttbar[262]=armttbar[262] + armttbar[264];
+   armttbar[264]=1./16.*armttbar[3];
+   armttbar[262]=armttbar[262]*armttbar[264];
+   armttbar[265]=armttbar[240] - 5./18.;
+   armttbar[265]=armttbar[265]*armttbar[107];
+   armttbar[266]=armttbar[188] + 5./3.;
+   armttbar[266]=armttbar[266]*armttbar[167];
+   armttbar[265]=armttbar[265] - armttbar[266];
+   armttbar[266]=armttbar[265]*armttbar[6];
+   armttbar[267]=pow(armttbar[9],2);
+   armttbar[268]=armttbar[267]*MMH;
+   armttbar[269]=armttbar[266]*armttbar[268];
+   armttbar[270]=armttbar[161] - 5;
+   armttbar[271]=armttbar[270]*armttbar[107];
+   armttbar[272]=1./1728.*armttbar[102];
+   armttbar[273]=1429 - 931./2.*armttbar[102];
+   armttbar[273]=armttbar[273]*armttbar[272];
+   armttbar[273]=armttbar[273] - 32./27. - 3./64.*armttbar[271];
+   armttbar[274]=pow(armttbar[6],2);
+   armttbar[273]=armttbar[273]*armttbar[274];
+   armttbar[185]= - 1./48.*armttbar[269] + armttbar[185] + 
+   armttbar[273] + armttbar[262];
+   armttbar[185]=armttbar[15]*armttbar[185];
+   armttbar[262]= - armttbar[265]*armttbar[179];
+   armttbar[273]=armttbar[237]*armttbar[107];
+   armttbar[275]=armttbar[273] - 3;
+   armttbar[275]=armttbar[275]*armttbar[108];
+   armttbar[276]=armttbar[102] + 3./2.;
+   armttbar[276]=armttbar[276]*armttbar[102];
+   armttbar[275]=armttbar[275] - armttbar[276];
+   armttbar[277]=1./2.*armttbar[9];
+   armttbar[278]= - armttbar[275]*armttbar[277];
+   armttbar[262]=armttbar[262] + armttbar[278];
+   armttbar[262]=armttbar[9]*armttbar[262];
+   armttbar[262]=armttbar[262] + 1./12.*armttbar[269];
+   armttbar[269]=1./2.*MMH;
+   armttbar[262]=armttbar[262]*armttbar[269];
+   armttbar[278]=3*armttbar[3];
+   armttbar[279]=armttbar[9] - armttbar[278];
+   armttbar[275]=armttbar[275]*armttbar[279];
+   armttbar[279]=1./2.*armttbar[6];
+   armttbar[280]=armttbar[265]*armttbar[279];
+   armttbar[262]=armttbar[262] + armttbar[280] + armttbar[275];
+   armttbar[275]=1./2.*armttbar[36];
+   armttbar[262]=armttbar[262]*armttbar[275];
+   armttbar[280]=pow(armttbar[4],4);
+   armttbar[281]=armttbar[280] - 17./9.;
+   armttbar[281]=armttbar[281]*armttbar[107];
+   armttbar[282]=17./9.*armttbar[102];
+   armttbar[283]=armttbar[282]*armttbar[233];
+   armttbar[281]=armttbar[281] - armttbar[283];
+   armttbar[283]=armttbar[281]*armttbar[179];
+   armttbar[284]=pow(armttbar[2],4);
+   armttbar[233]=armttbar[233]*armttbar[284];
+   armttbar[285]=armttbar[112]*armttbar[280];
+   armttbar[233]=armttbar[233] - armttbar[285];
+   armttbar[286]= - armttbar[233]*armttbar[277];
+   armttbar[283]=armttbar[283] + armttbar[286];
+   armttbar[283]=armttbar[283]*armttbar[277];
+   armttbar[286]=armttbar[189]*armttbar[112];
+   armttbar[287]=armttbar[286] - 1./9.;
+   armttbar[287]=armttbar[287]*armttbar[107];
+   armttbar[236]=armttbar[287] - armttbar[236];
+   armttbar[287]= - armttbar[236]*armttbar[179]*armttbar[268];
+   armttbar[283]=armttbar[283] + armttbar[287];
+   armttbar[283]=MMH*armttbar[283];
+   armttbar[287]=armttbar[280] - 1;
+   armttbar[287]=armttbar[287]*armttbar[107];
+   armttbar[288]=armttbar[287] - armttbar[234];
+   armttbar[289]= - armttbar[9]*armttbar[288];
+   armttbar[290]=armttbar[273] - 17./9.;
+   armttbar[290]=armttbar[290]*armttbar[107];
+   armttbar[290]=armttbar[290] - armttbar[282];
+   armttbar[291]= - armttbar[290]*armttbar[279];
+   armttbar[292]=armttbar[273] - 1;
+   armttbar[292]=armttbar[292]*armttbar[107];
+   armttbar[292]=armttbar[292] - armttbar[102];
+   armttbar[293]=armttbar[292]*armttbar[278];
+   armttbar[283]=armttbar[283] + armttbar[289] + armttbar[291] + 
+   armttbar[293];
+   armttbar[289]=1./4.*armttbar[38];
+   armttbar[283]=armttbar[283]*armttbar[289];
+   armttbar[291]= - 205./8. - armttbar[155];
+   armttbar[291]=armttbar[291]*armttbar[107];
+   armttbar[291]=211./4. + armttbar[291];
+   armttbar[291]=armttbar[291]*armttbar[107];
+   armttbar[293]=1./12.*armttbar[102];
+   armttbar[294]=169 - 103./2.*armttbar[102];
+   armttbar[294]=armttbar[294]*armttbar[293];
+   armttbar[291]=armttbar[291] + armttbar[294];
+   armttbar[294]=armttbar[3]*MMt;
+   armttbar[295]=armttbar[294]*armttbar[148];
+   armttbar[291]=1./6.*armttbar[291] + armttbar[295];
+   armttbar[295]= - 31 - armttbar[155];
+   armttbar[295]=armttbar[295]*armttbar[107];
+   armttbar[295]=37 + armttbar[295];
+   armttbar[295]=armttbar[295]*armttbar[189];
+   armttbar[296]=11./3. + armttbar[146];
+   armttbar[296]=armttbar[296]*armttbar[102];
+   armttbar[296]=37./8. + armttbar[296];
+   armttbar[296]=armttbar[296]*armttbar[102];
+   armttbar[295]=armttbar[295] + armttbar[296];
+   armttbar[296]=armttbar[9]*MMt;
+   armttbar[297]=1./3.*armttbar[296];
+   armttbar[295]=armttbar[295]*armttbar[297];
+   armttbar[291]=1./4.*armttbar[291] + armttbar[295];
+   armttbar[291]=armttbar[9]*armttbar[291];
+   armttbar[295]=armttbar[237]*armttbar[6];
+   armttbar[298]=armttbar[295]*armttbar[280];
+   armttbar[299]=armttbar[115]*armttbar[296];
+   armttbar[300]=pow(armttbar[4],6);
+   armttbar[301]=armttbar[299] + armttbar[300];
+   armttbar[302]=armttbar[301]*armttbar[277];
+   armttbar[298]=armttbar[298] - armttbar[302];
+   armttbar[302]=MMH*armttbar[9];
+   armttbar[303]=armttbar[298]*armttbar[302];
+   armttbar[304]= - 1./4. + armttbar[144];
+   armttbar[304]=armttbar[304]*armttbar[107];
+   armttbar[304]= - 75./4. + armttbar[304];
+   armttbar[304]=armttbar[304]*armttbar[215];
+   armttbar[304]= - 35./144.*armttbar[102] + 5./9. + armttbar[304];
+   armttbar[304]=armttbar[6]*armttbar[304];
+   armttbar[305]=armttbar[3]*armttbar[117];
+   armttbar[291]= - 1./12.*armttbar[303] + armttbar[291] + 
+   armttbar[304] + 3./8.*armttbar[305];
+   armttbar[303]=1./4.*armttbar[21];
+   armttbar[291]=armttbar[291]*armttbar[303];
+   armttbar[304]=armttbar[196] - 35./3.;
+   armttbar[304]=armttbar[304]*armttbar[107];
+   armttbar[305]=armttbar[198]*armttbar[102];
+   armttbar[306]= - 73 + 17./12.*armttbar[305];
+   armttbar[306]=armttbar[306]*armttbar[174];
+   armttbar[304]=armttbar[304] + armttbar[306];
+   armttbar[306]=armttbar[304]*armttbar[279];
+   armttbar[307]= - 13 + 33./4.*armttbar[195];
+   armttbar[307]=armttbar[307]*armttbar[107];
+   armttbar[199]=armttbar[199]*armttbar[102];
+   armttbar[199]=armttbar[307] + armttbar[199];
+   armttbar[307]= - armttbar[3]*armttbar[199];
+   armttbar[306]=armttbar[306] + armttbar[307];
+   armttbar[307]=1./4.*armttbar[39];
+   armttbar[306]=armttbar[306]*armttbar[307];
+   armttbar[164]=armttbar[164]*armttbar[102];
+   armttbar[308]=armttbar[161] + 1;
+   armttbar[308]=armttbar[308]*armttbar[107];
+   armttbar[309]= - armttbar[308] - armttbar[164];
+   armttbar[309]=armttbar[9]*armttbar[309]*armttbar[147];
+   armttbar[309]=7*armttbar[169] + armttbar[309];
+   armttbar[310]=1./8.*armttbar[98];
+   armttbar[309]=armttbar[309]*armttbar[310];
+   armttbar[311]= - 41./9. - 233./16.*armttbar[107];
+   armttbar[311]=armttbar[311]*armttbar[107];
+   armttbar[311]=2009./27. + armttbar[311];
+   armttbar[312]= - 917./3. + 2507./32.*armttbar[102];
+   armttbar[312]=armttbar[312]*armttbar[174];
+   armttbar[311]=1./2.*armttbar[311] + armttbar[312];
+   armttbar[311]=armttbar[311]*armttbar[279];
+   armttbar[312]=55 - 49./2.*armttbar[107];
+   armttbar[312]=armttbar[312]*armttbar[187];
+   armttbar[313]=2299 - 2653./2.*armttbar[102];
+   armttbar[313]=armttbar[313]*armttbar[102];
+   armttbar[312]=5./2592.*armttbar[313] - 320./81. + armttbar[312];
+   armttbar[313]=armttbar[274]*armttbar[17];
+   armttbar[312]=armttbar[312]*armttbar[313];
+   armttbar[314]=5./3.*armttbar[102];
+   armttbar[315]= - armttbar[227] + armttbar[314];
+   armttbar[316]=armttbar[274]*armttbar[16];
+   armttbar[317]=1./32.*armttbar[316];
+   armttbar[315]=armttbar[315]*armttbar[317];
+   armttbar[318]=pow(CW,2);
+   armttbar[319]=armttbar[318]*armttbar[6];
+   armttbar[142]=armttbar[185] + armttbar[291] + armttbar[309] + 
+   armttbar[283] + armttbar[262] + armttbar[186] + armttbar[142] + 
+   armttbar[306] + armttbar[219] + armttbar[312] + armttbar[315] + 
+   armttbar[311] + 40./9.*armttbar[319];
+   armttbar[142]=armttbar[15]*armttbar[142];
+   armttbar[185]=armttbar[158] + 1;
+   armttbar[185]=armttbar[185]*armttbar[107];
+   armttbar[185]=armttbar[185] + 5./3.;
+   armttbar[185]=armttbar[185]*armttbar[108];
+   armttbar[186]=armttbar[102] + 5./2.;
+   armttbar[219]=armttbar[186]*armttbar[105];
+   armttbar[185]=armttbar[185] + armttbar[219];
+   armttbar[262]=armttbar[185]*armttbar[216];
+   armttbar[283]=armttbar[107] + 1./2.;
+   armttbar[283]=armttbar[283]*armttbar[107];
+   armttbar[291]= - 1./27. + armttbar[283];
+   armttbar[291]=armttbar[291]*armttbar[107];
+   armttbar[306]= - 29./2. - armttbar[102];
+   armttbar[306]=armttbar[306]*armttbar[102];
+   armttbar[306]= - 1 + armttbar[306];
+   armttbar[306]=armttbar[306]*armttbar[232];
+   armttbar[291]=armttbar[291] + armttbar[306];
+   armttbar[291]=1./4.*armttbar[291] + armttbar[262];
+   armttbar[291]=armttbar[291]*armttbar[147];
+   armttbar[306]=11./2.*armttbar[107];
+   armttbar[309]= - 31./3. + armttbar[306];
+   armttbar[309]=armttbar[309]*armttbar[107];
+   armttbar[311]=227./6.*armttbar[102];
+   armttbar[312]= - 31 + armttbar[311];
+   armttbar[312]=armttbar[312]*armttbar[105];
+   armttbar[309]=armttbar[309] + armttbar[312];
+   armttbar[309]=armttbar[18]*armttbar[309];
+   armttbar[312]=armttbar[95]*armttbar[123];
+   armttbar[315]= - armttbar[91]*armttbar[143];
+   armttbar[320]= - armttbar[94]*armttbar[136];
+   armttbar[291]=armttbar[320] + armttbar[315] + armttbar[291] + 1./8.*
+   armttbar[309] + armttbar[312];
+   armttbar[309]=armttbar[236]*armttbar[216];
+   armttbar[312]=9./16.*armttbar[214] + 1./8.*armttbar[213] - 1./12.*
+   armttbar[309] + 1./3.*armttbar[123] + 1./16.*armttbar[124];
+   armttbar[312]=armttbar[17]*armttbar[312];
+   armttbar[213]=armttbar[213] + 9./2.*armttbar[214];
+   armttbar[315]= - armttbar[84] + armttbar[72] - 31./4.;
+   armttbar[315]=armttbar[123]*armttbar[315];
+   armttbar[320]=armttbar[123]*armttbar[77];
+   armttbar[315]= - 5./2.*armttbar[320] - armttbar[125] - armttbar[213]
+    + armttbar[315];
+   armttbar[321]=armttbar[124] + 11./3.*armttbar[123];
+   armttbar[213]=armttbar[213] + 1./2.*armttbar[321];
+   armttbar[321]=1./4.*armttbar[213] - armttbar[150];
+   armttbar[321]=armttbar[8]*armttbar[321];
+   armttbar[157]= - armttbar[157] + 1./4.*armttbar[315] + armttbar[321]
    ;
+   armttbar[315]=1./2.*MMt;
+   armttbar[157]=armttbar[157]*armttbar[315];
+   armttbar[321]=armttbar[122] + 3./2.;
+   armttbar[321]=armttbar[321]*armttbar[102];
+   armttbar[322]=armttbar[107] + 3;
+   armttbar[323]=armttbar[322]*armttbar[108];
+   armttbar[321]=armttbar[321] + armttbar[323];
+   armttbar[324]=armttbar[16] - armttbar[19];
+   armttbar[324]=armttbar[321]*armttbar[324];
+   armttbar[325]=armttbar[233]*armttbar[8];
+   armttbar[326]=1./3.*armttbar[16];
+   armttbar[327]=armttbar[325]*armttbar[326];
+   armttbar[324]=1./2.*armttbar[324] + armttbar[327];
+   armttbar[324]=MMt*armttbar[324];
+   armttbar[327]=armttbar[215] + 1;
+   armttbar[328]=armttbar[327]*armttbar[158];
+   armttbar[328]=armttbar[328] + 3./4.;
+   armttbar[328]=armttbar[328]*armttbar[107];
+   armttbar[329]=armttbar[219] + 3./2.;
+   armttbar[329]=armttbar[329]*armttbar[116];
+   armttbar[328]=armttbar[328] + armttbar[329];
+   armttbar[329]= - armttbar[328]*armttbar[162];
+   armttbar[330]=armttbar[233]*armttbar[17];
+   armttbar[331]=armttbar[16]*armttbar[330];
+   armttbar[324]=armttbar[324] + armttbar[329] + 1./6.*armttbar[331];
+   armttbar[329]=1./8.*armttbar[9];
+   armttbar[324]=armttbar[324]*armttbar[329];
+   armttbar[145]= - armttbar[145] - armttbar[152];
+   armttbar[145]=armttbar[145]*armttbar[224];
+   armttbar[152]=armttbar[123]*armttbar[19];
+   armttbar[224]=3./16.*armttbar[23];
+   armttbar[224]=armttbar[156]*armttbar[224];
+   armttbar[145]=armttbar[324] + armttbar[224] + armttbar[157] + 
+   armttbar[145] + 1./16.*armttbar[153] + 25./32.*armttbar[152] + 1./4.
+   *armttbar[291] + armttbar[312];
+   armttbar[145]=armttbar[9]*armttbar[145];
+   armttbar[153]=armttbar[18]*armttbar[238];
+   armttbar[157]=armttbar[105] - 1;
+   armttbar[224]=armttbar[157]*armttbar[102];
+   armttbar[224]=armttbar[224] - armttbar[107];
+   armttbar[291]= - armttbar[33]*armttbar[224];
+   armttbar[153]=armttbar[212] + 19./8.*armttbar[153] + armttbar[291];
+   armttbar[153]=armttbar[179]*armttbar[153];
+   armttbar[212]= - 85./12. - 9*armttbar[72];
+   armttbar[212]=armttbar[212]*armttbar[108];
+   armttbar[291]=19*armttbar[72];
+   armttbar[312]=armttbar[291] + 1289./4.;
+   armttbar[212]= - 1./3.*armttbar[312] + armttbar[212];
+   armttbar[212]=armttbar[212]*armttbar[107];
+   armttbar[324]= - 2213./12. - 97*armttbar[72];
+   armttbar[324]=armttbar[324]*armttbar[167];
+   armttbar[312]=armttbar[324] - armttbar[312];
+   armttbar[312]=armttbar[312]*armttbar[105];
+   armttbar[212]=armttbar[212] + armttbar[312];
+   armttbar[312]= - 277./3. - armttbar[165];
+   armttbar[312]=armttbar[312]*armttbar[107];
+   armttbar[324]= - 277 + 209./6.*armttbar[102];
+   armttbar[324]=armttbar[324]*armttbar[105];
+   armttbar[312]=armttbar[312] + armttbar[324];
+   armttbar[312]=armttbar[84]*armttbar[312];
+   armttbar[324]=5./6.*armttbar[102];
+   armttbar[331]=armttbar[324] - 1;
+   armttbar[332]=armttbar[331]*armttbar[314];
+   armttbar[333]=armttbar[108] - 5./3.;
+   armttbar[334]=armttbar[333]*armttbar[107];
+   armttbar[332]=armttbar[332] + armttbar[334];
+   armttbar[335]=1./4.*armttbar[332];
+   armttbar[336]=armttbar[79]*armttbar[335];
+   armttbar[153]=armttbar[336] + 1./24.*armttbar[312] + 1./16.*
+   armttbar[212] + armttbar[153];
+   armttbar[212]= - 437./9. + 55./4.*armttbar[107];
+   armttbar[212]=armttbar[212]*armttbar[107];
+   armttbar[312]= - 365 - 163./4.*armttbar[102];
+   armttbar[312]=armttbar[312]*armttbar[174];
+   armttbar[212]=armttbar[212] + armttbar[312];
+   armttbar[312]= - 97./9. - armttbar[190];
+   armttbar[312]=armttbar[312]*armttbar[107];
+   armttbar[336]=85./2.*armttbar[102];
+   armttbar[337]= - 97 - armttbar[336];
+   armttbar[337]=armttbar[337]*armttbar[174];
+   armttbar[312]=armttbar[312] + armttbar[337];
+   armttbar[225]=armttbar[312]*armttbar[225];
+   armttbar[312]=armttbar[117]*armttbar[216];
+   armttbar[212]=armttbar[225] + 5./8.*armttbar[312] + 1./4.*
+   armttbar[212] + armttbar[126];
+   armttbar[225]=armttbar[197]*armttbar[39];
+   armttbar[212]=1./8.*armttbar[225] + 1./4.*armttbar[212];
+   armttbar[212]=armttbar[8]*armttbar[212];
+   armttbar[312]= - 9 - armttbar[108];
+   armttbar[312]=armttbar[312]*armttbar[107];
+   armttbar[337]= - 9 + 13./6.*armttbar[102];
+   armttbar[337]=armttbar[337]*armttbar[102];
+   armttbar[312]=armttbar[312] + armttbar[337];
+   armttbar[337]=1./2.*armttbar[63];
+   armttbar[312]=armttbar[312]*armttbar[337];
+   armttbar[338]= - armttbar[64]*armttbar[123];
+   armttbar[312]=armttbar[312] + armttbar[338];
+   armttbar[338]=1./4.*MMt;
+   armttbar[312]=armttbar[312]*armttbar[338];
+   armttbar[339]=armttbar[241]*armttbar[92];
+   armttbar[340]=armttbar[19]*armttbar[6];
+   armttbar[340]=1./32.*armttbar[23] + 19./96.*armttbar[340] - 5./32.*
+   armttbar[216];
+   armttbar[340]=armttbar[117]*armttbar[340];
+   armttbar[341]= - 67./3. - armttbar[221];
+   armttbar[341]=armttbar[341]*armttbar[107];
+   armttbar[342]= - 67 - 125./6.*armttbar[102];
+   armttbar[342]=armttbar[342]*armttbar[105];
+   armttbar[341]=armttbar[341] + armttbar[342];
+   armttbar[341]=armttbar[6]*armttbar[341];
+   armttbar[342]=armttbar[137]*armttbar[313];
+   armttbar[341]=1./32.*armttbar[341] + armttbar[342];
+   armttbar[342]=1./3.*armttbar[17];
+   armttbar[341]=armttbar[341]*armttbar[342];
+   armttbar[343]=armttbar[224]*armttbar[45];
+   armttbar[344]=4./9.*armttbar[137];
+   armttbar[345]= - armttbar[25]*armttbar[344];
+   armttbar[145]=armttbar[145] + armttbar[312] - 3./16.*armttbar[320]
+    + 13./48.*armttbar[339] + 1./3.*armttbar[343] + armttbar[341] + 1./
+   4.*armttbar[153] + armttbar[345] + armttbar[340] + armttbar[212] - 3.
+   /8.*armttbar[126];
+   armttbar[145]=armttbar[9]*armttbar[145];
+   armttbar[153]=3*armttbar[124];
+   armttbar[212]= - 13 + 41./6.*armttbar[102];
+   armttbar[212]=armttbar[212]*armttbar[105];
+   armttbar[312]=armttbar[108] - 13./3.;
+   armttbar[312]=armttbar[312]*armttbar[107];
+   armttbar[212]=armttbar[212] + armttbar[312];
+   armttbar[340]= - armttbar[84]*armttbar[212];
+   armttbar[341]= - armttbar[79]*armttbar[106];
+   armttbar[345]= - 301 - 293./2.*armttbar[107];
+   armttbar[345]=armttbar[345]*armttbar[189];
+   armttbar[346]=armttbar[119]*armttbar[194];
+   armttbar[347]=armttbar[71]*armttbar[346];
+   armttbar[348]=3*armttbar[71];
+   armttbar[349]= - 863./24. + armttbar[348];
+   armttbar[349]=armttbar[349]*armttbar[116];
+   armttbar[348]=armttbar[349] - 301./8. + armttbar[348];
+   armttbar[348]=armttbar[348]*armttbar[102];
+   armttbar[340]=armttbar[153] + armttbar[341] + armttbar[340] + 
+   armttbar[348] + armttbar[345] + armttbar[347];
+   armttbar[341]=armttbar[148]*armttbar[40];
+   armttbar[341]=armttbar[341] + 27./2.*armttbar[214];
+   armttbar[340]=armttbar[320] + 1./2.*armttbar[340] + armttbar[341];
+   armttbar[213]=1./2.*armttbar[150] - armttbar[213];
+   armttbar[213]=armttbar[8]*armttbar[213];
+   armttbar[345]=1./2.*armttbar[19];
+   armttbar[347]= - armttbar[23]*armttbar[315];
+   armttbar[347]=armttbar[347] + 1./8.*MMt - armttbar[345] - 
+   armttbar[95] + armttbar[16];
+   armttbar[347]=armttbar[321]*armttbar[347];
+   armttbar[348]=armttbar[16]*armttbar[325];
+   armttbar[347]= - 1./12.*armttbar[348] + armttbar[347];
+   armttbar[347]=armttbar[9]*armttbar[347];
+   armttbar[348]= - armttbar[62] + armttbar[64];
+   armttbar[348]=armttbar[315]*armttbar[123]*armttbar[348];
+   armttbar[349]= - armttbar[23]*armttbar[136];
+   armttbar[213]=armttbar[347] + armttbar[349] + armttbar[348] + 1./2.*
+   armttbar[340] + armttbar[213];
+   armttbar[340]=1./4.*armttbar[9];
+   armttbar[213]=armttbar[213]*armttbar[340];
+   armttbar[347]=11./9. + armttbar[190];
+   armttbar[347]=armttbar[347]*armttbar[107];
+   armttbar[348]=11./9.*armttbar[102];
+   armttbar[349]=1 + armttbar[223];
+   armttbar[349]=armttbar[349]*armttbar[348];
+   armttbar[347]=armttbar[347] + armttbar[349];
+   armttbar[347]=armttbar[6]*armttbar[347];
+   armttbar[349]=armttbar[84]*armttbar[241];
+   armttbar[347]=armttbar[347] + 11./3.*armttbar[349];
+   armttbar[349]=1./3.*armttbar[224];
+   armttbar[349]= - armttbar[63]*armttbar[349];
+   armttbar[350]=armttbar[137]*armttbar[8];
+   armttbar[351]=1./9.*armttbar[6];
+   armttbar[352]=armttbar[350]*armttbar[351];
+   armttbar[213]=armttbar[213] + armttbar[352] + 1./16.*armttbar[347]
+    + armttbar[349];
+   armttbar[213]=armttbar[9]*armttbar[213];
+   armttbar[347]=armttbar[321]*armttbar[251];
+   armttbar[213]=armttbar[213] - 1./8.*armttbar[347];
+   armttbar[213]=armttbar[213]*armttbar[269];
+   armttbar[349]= - 1 + 3./8.*armttbar[72];
+   armttbar[349]=armttbar[349]*armttbar[107];
+   armttbar[352]= - 13./9. + 1./2.*armttbar[72];
+   armttbar[349]= - 1./2.*armttbar[352] + armttbar[349];
+   armttbar[349]=armttbar[349]*armttbar[107];
+   armttbar[353]= - 41./9. + 17./2.*armttbar[72];
+   armttbar[353]=armttbar[353]*armttbar[167];
+   armttbar[352]=armttbar[353] - armttbar[352];
+   armttbar[352]=armttbar[352]*armttbar[116];
+   armttbar[349]=armttbar[349] + armttbar[352];
+   armttbar[349]=armttbar[6]*armttbar[349];
+   armttbar[352]=1./4.*armttbar[6];
+   armttbar[353]=armttbar[261]*armttbar[352];
+   armttbar[354]=armttbar[84]*armttbar[353];
+   armttbar[355]=armttbar[238]*armttbar[279];
+   armttbar[356]= - armttbar[79]*armttbar[355];
+   armttbar[349]=armttbar[356] + armttbar[349] + armttbar[354];
+   armttbar[354]=1./2.*armttbar[332];
+   armttbar[356]=armttbar[64]*armttbar[354];
+   armttbar[343]= - armttbar[179]*armttbar[343];
+   armttbar[357]=armttbar[352]*armttbar[280];
+   armttbar[358]=armttbar[23]*armttbar[357];
+   armttbar[343]=armttbar[358] + armttbar[356] + 1./2.*armttbar[349] + 
+   armttbar[343];
+   armttbar[349]= - 25./3. - armttbar[108];
+   armttbar[349]=armttbar[349]*armttbar[107];
+   armttbar[356]= - 5 - armttbar[167];
+   armttbar[356]=armttbar[356]*armttbar[314];
+   armttbar[349]=armttbar[349] + armttbar[356];
+   armttbar[349]=armttbar[349]*armttbar[179];
+   armttbar[356]=armttbar[9]*armttbar[148];
+   armttbar[349]=armttbar[349] + armttbar[356];
+   armttbar[349]=armttbar[20]*armttbar[349]*armttbar[340];
+   armttbar[356]=armttbar[123]*armttbar[268];
+   armttbar[358]= - MMt*armttbar[267]*armttbar[143];
+   armttbar[358]=armttbar[358] + armttbar[356];
+   armttbar[358]=armttbar[97]*armttbar[358];
+   armttbar[359]=pow(armttbar[296],2);
+   armttbar[360]=armttbar[359]*armttbar[123];
+   armttbar[361]=armttbar[356]*MMt;
+   armttbar[362]=armttbar[360] - 3./8.*armttbar[361];
+   armttbar[362]=armttbar[59]*armttbar[362];
+   armttbar[363]=armttbar[302]*armttbar[137];
+   armttbar[364]=armttbar[137]*armttbar[296];
+   armttbar[365]= - 4*armttbar[364] + armttbar[363];
+   armttbar[365]=armttbar[56]*armttbar[365];
+   armttbar[145]=3./2.*armttbar[362] + 3./8.*armttbar[358] + 4./9.*
+   armttbar[365] + armttbar[213] + armttbar[349] + 1./4.*armttbar[343]
+    + armttbar[145];
+   armttbar[145]=MMH*armttbar[145];
+   armttbar[213]=473./3. - 617./4.*armttbar[107];
+   armttbar[213]=armttbar[213]*armttbar[158];
+   armttbar[343]=7*armttbar[102];
+   armttbar[349]=47./9. + armttbar[146];
+   armttbar[349]=armttbar[349]*armttbar[343];
+   armttbar[213]=armttbar[213] + armttbar[349];
+   armttbar[349]=armttbar[117]*armttbar[8];
+   armttbar[129]= - armttbar[225] + 7./4.*armttbar[349] + 1./4.*
+   armttbar[213] - armttbar[129];
+   armttbar[129]=MMt*armttbar[129];
+   armttbar[213]=armttbar[136] + 11*armttbar[150];
+   armttbar[213]=armttbar[213]*armttbar[315];
+   armttbar[225]= - 45./2. + armttbar[144];
+   armttbar[225]=armttbar[225]*armttbar[108];
+   armttbar[225]= - 143./9. + armttbar[225];
+   armttbar[225]=armttbar[225]*armttbar[107];
+   armttbar[358]= - 455./12. - armttbar[102];
+   armttbar[358]=armttbar[358]*armttbar[102];
+   armttbar[358]= - 143./3. + armttbar[358];
+   armttbar[358]=armttbar[358]*armttbar[105];
+   armttbar[225]=armttbar[225] + armttbar[358];
+   armttbar[225]=armttbar[225]*armttbar[147];
+   armttbar[149]=armttbar[213] + armttbar[225] + armttbar[149];
+   armttbar[149]=armttbar[149]*armttbar[296];
+   armttbar[213]= - 133./2. + armttbar[155];
+   armttbar[213]=armttbar[213]*armttbar[158];
+   armttbar[213]=77./2. + armttbar[213];
+   armttbar[213]=armttbar[213]*armttbar[108];
+   armttbar[225]=45./4. - armttbar[105];
+   armttbar[225]=armttbar[225]*armttbar[102];
+   armttbar[213]=armttbar[213] + armttbar[225];
+   armttbar[213]=armttbar[16]*armttbar[213];
+   armttbar[225]=349./9. + armttbar[182];
+   armttbar[225]=armttbar[225]*armttbar[107];
+   armttbar[358]=349 + 97./2.*armttbar[102];
+   armttbar[358]=armttbar[358]*armttbar[174];
+   armttbar[225]=armttbar[225] + armttbar[358];
+   armttbar[358]=1./4.*armttbar[17];
+   armttbar[225]=armttbar[225]*armttbar[358];
+   armttbar[213]=armttbar[213] + armttbar[225];
+   armttbar[225]=armttbar[294]*armttbar[176];
+   armttbar[129]=armttbar[149] + 3./2.*armttbar[225] + 1./2.*
+   armttbar[213] + armttbar[129];
+   armttbar[129]=armttbar[129]*armttbar[329];
+   armttbar[149]=armttbar[185]*armttbar[16];
+   armttbar[185]= - armttbar[149] - 1./3.*armttbar[156];
+   armttbar[213]= - armttbar[16]*armttbar[328]*armttbar[296];
+   armttbar[185]=1./2.*armttbar[185] + armttbar[213];
+   armttbar[185]=armttbar[9]*armttbar[185];
+   armttbar[213]=armttbar[120] + 1;
+   armttbar[213]=armttbar[213]*armttbar[107];
+   armttbar[213]=armttbar[213] + armttbar[102];
+   armttbar[225]=armttbar[213]*armttbar[216];
+   armttbar[225]= - 1./4.*armttbar[117] + armttbar[225];
+   armttbar[185]=armttbar[185] + 1./3.*armttbar[225] - armttbar[349];
+   armttbar[185]=armttbar[9]*armttbar[185];
+   armttbar[225]=armttbar[280]*armttbar[179];
+   armttbar[328]=armttbar[280]*armttbar[6];
+   armttbar[349]=armttbar[8]*armttbar[328];
+   armttbar[225]=armttbar[225] + armttbar[349];
+   armttbar[185]=1./2.*armttbar[225] + armttbar[185];
+   armttbar[225]=1./8.*MMH;
+   armttbar[185]=armttbar[185]*armttbar[225];
+   armttbar[349]= - armttbar[233]*armttbar[296];
+   armttbar[349]=armttbar[349] + armttbar[288];
+   armttbar[349]=armttbar[349]*armttbar[340];
+   armttbar[362]= - armttbar[6]*armttbar[213];
+   armttbar[349]=armttbar[362] + armttbar[349];
+   armttbar[349]=armttbar[349]*armttbar[302];
+   armttbar[362]=armttbar[288]*armttbar[296];
+   armttbar[365]= - armttbar[362] - armttbar[292];
+   armttbar[365]=armttbar[365]*armttbar[277];
+   armttbar[366]=armttbar[6]*armttbar[285];
+   armttbar[349]=1./2.*armttbar[349] + armttbar[366] + armttbar[365];
+   armttbar[365]=1./3.*MMH;
+   armttbar[349]=armttbar[349]*armttbar[365];
+   armttbar[366]=armttbar[239]*armttbar[280];
+   armttbar[367]=1./2.*armttbar[296];
+   armttbar[368]=armttbar[292]*armttbar[367];
+   armttbar[349]=armttbar[349] + armttbar[366] + armttbar[368];
+   armttbar[349]=armttbar[349]*armttbar[289];
+   armttbar[368]=pow(MMt,2);
+   armttbar[369]=armttbar[368]*armttbar[9];
+   armttbar[370]=armttbar[123]*armttbar[369];
+   armttbar[371]=235./9. - armttbar[107];
+   armttbar[371]=armttbar[371]*armttbar[215];
+   armttbar[372]=235./12. + armttbar[102];
+   armttbar[372]=armttbar[372]*armttbar[105];
+   armttbar[371]=armttbar[371] + armttbar[372];
+   armttbar[371]=MMt*armttbar[371];
+   armttbar[371]=armttbar[371] + 3./4.*armttbar[370];
+   armttbar[371]=armttbar[371]*armttbar[329];
+   armttbar[372]=13./9. - 25./64.*armttbar[107];
+   armttbar[372]=armttbar[372]*armttbar[107];
+   armttbar[371]=armttbar[371] + armttbar[372] - armttbar[167];
+   armttbar[372]=1./2.*armttbar[21];
+   armttbar[371]=armttbar[371]*armttbar[372];
+   armttbar[373]=4913./3. - 2099./2.*armttbar[107];
+   armttbar[373]=armttbar[373]*armttbar[107];
+   armttbar[374]=25./2.*armttbar[102];
+   armttbar[375]=49./3. + armttbar[374];
+   armttbar[210]=armttbar[375]*armttbar[210];
+   armttbar[210]=armttbar[210] - 1 + 1./384.*armttbar[373];
+   armttbar[373]=armttbar[308] + armttbar[122];
+   armttbar[375]=MMt*armttbar[373];
+   armttbar[376]=3./2.*armttbar[280];
+   armttbar[377]=armttbar[16]*armttbar[376];
+   armttbar[375]=armttbar[377] + armttbar[375];
+   armttbar[375]=armttbar[375]*armttbar[257];
+   armttbar[377]=3./8.*armttbar[107];
+   armttbar[378]=armttbar[377] - 1;
+   armttbar[379]=armttbar[378]*armttbar[171];
+   armttbar[380]= - 113./24. - armttbar[379];
+   armttbar[380]=armttbar[380]*armttbar[107];
+   armttbar[381]=1./24.*armttbar[102];
+   armttbar[382]= - armttbar[198]*armttbar[381];
+   armttbar[380]=armttbar[380] + armttbar[382];
+   armttbar[380]=armttbar[380]*armttbar[307];
+   armttbar[382]=1./4.*armttbar[302];
+   armttbar[383]=armttbar[382] - 1;
+   armttbar[384]=armttbar[383]*armttbar[365];
+   armttbar[298]=armttbar[298]*armttbar[384];
+   armttbar[298]= - 1./2.*armttbar[301] + armttbar[298];
+   armttbar[301]=1./4.*armttbar[36];
+   armttbar[298]=armttbar[298]*armttbar[301];
+   armttbar[385]= - armttbar[16] + armttbar[17];
+   armttbar[385]=armttbar[98]*armttbar[385];
+   armttbar[385]=9./32.*armttbar[385] - 3./16.*armttbar[8];
+   armttbar[385]=armttbar[280]*armttbar[385];
+   armttbar[386]=109 - armttbar[155];
+   armttbar[386]=armttbar[386]*armttbar[108];
+   armttbar[386]= - 113./3. + armttbar[386];
+   armttbar[386]=armttbar[386]*armttbar[107];
+   armttbar[386]=armttbar[381] + 1 + 1./24.*armttbar[386];
+   armttbar[386]=armttbar[6]*armttbar[386];
+   armttbar[387]=armttbar[280]*armttbar[100];
+   armttbar[386]= - 1./8.*armttbar[387] + armttbar[386];
+   armttbar[386]=armttbar[16]*armttbar[386];
+   armttbar[388]=9*armttbar[107];
+   armttbar[389]= - 73./9. - armttbar[388];
+   armttbar[389]=armttbar[389]*armttbar[107];
+   armttbar[389]=19./576.*armttbar[102] + 4./3. + 5./64.*armttbar[389];
+   armttbar[389]=armttbar[389]*armttbar[193];
+   armttbar[390]=armttbar[387]*MMt;
+   armttbar[129]=armttbar[371] + armttbar[349] + armttbar[298] + 
+   armttbar[185] + armttbar[129] + armttbar[380] + armttbar[375] - 1./8.
+   *armttbar[390] + armttbar[389] + 1./2.*armttbar[210] + armttbar[386]
+    + armttbar[385];
+   armttbar[129]=armttbar[21]*armttbar[129];
+   armttbar[185]= - armttbar[238]*armttbar[337];
+   armttbar[210]=1./4.*armttbar[64];
+   armttbar[298]= - armttbar[106]*armttbar[210];
+   armttbar[337]=1./3. - armttbar[190];
+   armttbar[337]=armttbar[337]*armttbar[177];
+   armttbar[349]=1./1296.*armttbar[102];
+   armttbar[371]= - 997 - 437./2.*armttbar[102];
+   armttbar[371]=armttbar[371]*armttbar[349];
+   armttbar[337]=armttbar[371] + 128./81. + armttbar[337];
+   armttbar[337]=armttbar[66]*armttbar[337];
+   armttbar[371]=2./3.*armttbar[69];
+   armttbar[375]= - armttbar[107]*armttbar[371];
+   armttbar[380]=3*armttbar[280];
+   armttbar[385]=armttbar[380] - 1./3.*armttbar[284];
+   armttbar[385]=armttbar[68]*armttbar[385];
+   armttbar[386]=7./9.*armttbar[102];
+   armttbar[389]= - armttbar[107] + armttbar[386] - 64./9.;
+   armttbar[391]=armttbar[54]*armttbar[389];
+   armttbar[392]=3./4.*armttbar[387];
+   armttbar[393]=armttbar[8]*armttbar[392];
+   armttbar[185]=4./9.*armttbar[391] + armttbar[337] + armttbar[298] + 
+   armttbar[393] + 1./16.*armttbar[385] + 128./81.*armttbar[55] + 
+   armttbar[185] + armttbar[375] + 59./32.*armttbar[387];
+   armttbar[185]=MMt*armttbar[185];
+   armttbar[204]= - 1./3.*armttbar[201] - armttbar[204];
+   armttbar[204]=armttbar[288]*armttbar[204];
+   armttbar[149]=armttbar[149] + armttbar[204];
+   armttbar[149]=armttbar[9]*armttbar[149];
+   armttbar[204]= - armttbar[281]*armttbar[242];
+   armttbar[298]=13./54. + armttbar[168];
+   armttbar[298]=armttbar[298]*armttbar[107];
+   armttbar[337]= - 5./9. - armttbar[116];
+   armttbar[337]=armttbar[337]*armttbar[102];
+   armttbar[337]=13./9. + armttbar[337];
+   armttbar[337]=armttbar[337]*armttbar[167];
+   armttbar[213]=armttbar[213]*armttbar[218];
+   armttbar[375]=1./4.*armttbar[292];
+   armttbar[385]= - armttbar[8]*armttbar[375];
+   armttbar[149]=armttbar[149] + armttbar[385] + armttbar[204] + 
+   armttbar[213] + armttbar[298] + armttbar[337];
+   armttbar[149]=armttbar[9]*armttbar[149];
+   armttbar[204]=armttbar[107] + 1./3.;
+   armttbar[213]= - armttbar[204]*armttbar[108];
+   armttbar[213]=5./27. + armttbar[213];
+   armttbar[213]=armttbar[213]*armttbar[107];
+   armttbar[298]=armttbar[102] + 19;
+   armttbar[337]=armttbar[298]*armttbar[116];
+   armttbar[385]=armttbar[337] + 5;
+   armttbar[391]=armttbar[385]*armttbar[232];
+   armttbar[213]=armttbar[213] + armttbar[391];
+   armttbar[213]=1./2.*armttbar[213] - armttbar[262];
+   armttbar[262]=armttbar[233]*armttbar[147];
+   armttbar[262]=armttbar[262] + armttbar[330];
+   armttbar[391]= - armttbar[233]*armttbar[201];
+   armttbar[391]= - 1./2.*armttbar[262] + armttbar[391];
+   armttbar[391]=armttbar[391]*armttbar[246];
+   armttbar[393]=armttbar[179]*armttbar[17];
+   armttbar[394]=armttbar[236]*armttbar[393];
+   armttbar[395]=armttbar[8]*armttbar[288];
+   armttbar[213]=armttbar[391] + 1./6.*armttbar[395] + 1./2.*
+   armttbar[213] + armttbar[394];
+   armttbar[213]=armttbar[213]*armttbar[267];
+   armttbar[391]=armttbar[251]*armttbar[325];
+   armttbar[213]=armttbar[213] + 1./24.*armttbar[391];
+   armttbar[213]=armttbar[213]*armttbar[269];
+   armttbar[149]=armttbar[149] + armttbar[213];
+   armttbar[149]=MMH*armttbar[149];
+   armttbar[213]= - 5 - armttbar[194];
+   armttbar[213]=armttbar[213]*armttbar[107];
+   armttbar[213]= - 5 + armttbar[213];
+   armttbar[213]=armttbar[213]*armttbar[107];
+   armttbar[391]=5*armttbar[102];
+   armttbar[213]=armttbar[213] - armttbar[391];
+   armttbar[213]=armttbar[213]*armttbar[147];
+   armttbar[394]=armttbar[17]*armttbar[292];
+   armttbar[213]=armttbar[213] + armttbar[394];
+   armttbar[394]=armttbar[292]*armttbar[201];
+   armttbar[213]=1./2.*armttbar[213] + armttbar[394];
+   armttbar[213]=armttbar[9]*armttbar[213];
+   armttbar[394]=armttbar[3]*armttbar[16];
+   armttbar[395]=armttbar[394]*armttbar[300];
+   armttbar[395]=3*armttbar[395];
+   armttbar[396]=armttbar[285]*armttbar[216];
+   armttbar[397]=1 - armttbar[138];
+   armttbar[397]=armttbar[397]*armttbar[107];
+   armttbar[397]=13./9. + armttbar[397];
+   armttbar[397]=armttbar[397]*armttbar[215];
+   armttbar[398]=13./12. + armttbar[102];
+   armttbar[398]=armttbar[398]*armttbar[105];
+   armttbar[399]=armttbar[17]*armttbar[290]*armttbar[352];
+   armttbar[149]=armttbar[149] + armttbar[213] + armttbar[395] + 
+   armttbar[399] - 1./2.*armttbar[396] + armttbar[397] + armttbar[398];
+   armttbar[213]=1./2.*armttbar[38];
+   armttbar[149]=armttbar[149]*armttbar[213];
+   armttbar[397]=armttbar[376]*armttbar[40];
+   armttbar[159]=armttbar[159] + armttbar[397];
+   armttbar[398]=3./2.*armttbar[387];
+   armttbar[399]=armttbar[16]*armttbar[398];
+   armttbar[399]=armttbar[399] - armttbar[373] - armttbar[159];
+   armttbar[399]=armttbar[8]*armttbar[399];
+   armttbar[400]=1./8.*armttbar[296];
+   armttbar[140]=armttbar[140]*armttbar[400];
+   armttbar[401]=43./48. - armttbar[194];
+   armttbar[401]=armttbar[401]*armttbar[107];
+   armttbar[402]=1./16.*armttbar[102];
+   armttbar[403]=7./3. + armttbar[102];
+   armttbar[403]=armttbar[403]*armttbar[402];
+   armttbar[140]=armttbar[140] + armttbar[401] + armttbar[403];
+   armttbar[140]=armttbar[83]*armttbar[140];
+   armttbar[401]=armttbar[123]*armttbar[9];
+   armttbar[403]= - armttbar[117]*armttbar[352];
+   armttbar[403]=armttbar[403] - armttbar[401];
+   armttbar[403]=armttbar[9]*armttbar[403];
+   armttbar[403]=armttbar[403] + 1./4.*armttbar[347];
+   armttbar[403]=armttbar[403]*armttbar[269];
+   armttbar[404]=armttbar[280]*armttbar[3];
+   armttbar[405]= - 9./2.*armttbar[404] + 1./2.*armttbar[387] + 
+   armttbar[328];
+   armttbar[406]=armttbar[9]*armttbar[117];
+   armttbar[403]=armttbar[403] + 1./2.*armttbar[405] + armttbar[406];
+   armttbar[403]=armttbar[49]*armttbar[403];
+   armttbar[405]=1./3. + armttbar[161];
+   armttbar[405]=armttbar[405]*armttbar[107];
+   armttbar[406]=1 - armttbar[167];
+   armttbar[406]=armttbar[406]*armttbar[105];
+   armttbar[405]=armttbar[405] + armttbar[406];
+   armttbar[405]=armttbar[405]*armttbar[315];
+   armttbar[406]=armttbar[105] + 1;
+   armttbar[406]=armttbar[406]*armttbar[102];
+   armttbar[406]=armttbar[406] + armttbar[107];
+   armttbar[407]=armttbar[406]*armttbar[369];
+   armttbar[405]=armttbar[405] - 1./3.*armttbar[407];
+   armttbar[405]=armttbar[67]*armttbar[405];
+   armttbar[407]=armttbar[146] - 1;
+   armttbar[407]=armttbar[407]*armttbar[105];
+   armttbar[408]=armttbar[215] - 1./3.;
+   armttbar[409]=armttbar[408]*armttbar[107];
+   armttbar[407]=armttbar[407] + armttbar[409];
+   armttbar[409]= - armttbar[407]*armttbar[369];
+   armttbar[410]=35./3. + armttbar[194];
+   armttbar[410]=armttbar[410]*armttbar[107];
+   armttbar[410]=armttbar[410] + 19./3.*armttbar[102];
+   armttbar[410]=armttbar[410]*armttbar[338];
+   armttbar[409]=armttbar[410] + armttbar[409];
+   armttbar[409]=armttbar[65]*armttbar[409];
+   armttbar[140]=armttbar[409] + armttbar[399] + armttbar[140] + 
+   armttbar[405] + armttbar[403];
+   armttbar[399]=57./2.*armttbar[107];
+   armttbar[403]=1 - armttbar[399];
+   armttbar[403]=armttbar[403]*armttbar[194];
+   armttbar[405]=3 + armttbar[116];
+   armttbar[405]=armttbar[405]*armttbar[102];
+   armttbar[403]=armttbar[403] + armttbar[405];
+   armttbar[403]=armttbar[16]*armttbar[403];
+   armttbar[405]=armttbar[229] + armttbar[105];
+   armttbar[409]=armttbar[18]*armttbar[405];
+   armttbar[410]=armttbar[280]*armttbar[34];
+   armttbar[409]=9*armttbar[410] + armttbar[409];
+   armttbar[170]=7./2.*armttbar[170] + 1./4.*armttbar[409] + 
+   armttbar[403];
+   armttbar[403]=1 - 123*armttbar[107];
+   armttbar[403]=armttbar[403]*armttbar[107];
+   armttbar[164]=armttbar[403] + armttbar[164];
+   armttbar[130]=armttbar[164]*armttbar[130];
+   armttbar[164]=armttbar[117]*armttbar[162];
+   armttbar[164]=17./2.*armttbar[164] + 23*armttbar[203];
+   armttbar[164]=armttbar[9]*armttbar[164];
+   armttbar[169]=7./2.*armttbar[169];
+   armttbar[169]= - armttbar[96]*armttbar[169];
+   armttbar[203]= - 129./8.*armttbar[20] + 21./4.*armttbar[17] + 15*
+   armttbar[94];
+   armttbar[203]=armttbar[280]*armttbar[203];
+   armttbar[130]=armttbar[169] + 3./4.*armttbar[164] + armttbar[130] + 
+   1./2.*armttbar[170] + armttbar[203];
+   armttbar[130]=armttbar[98]*armttbar[130];
+   armttbar[164]=armttbar[123]*armttbar[296];
+   armttbar[169]=139./9. + 51./8.*armttbar[107];
+   armttbar[169]=armttbar[169]*armttbar[107];
+   armttbar[170]=139 + 205./8.*armttbar[102];
+   armttbar[170]=armttbar[170]*armttbar[174];
+   armttbar[169]=31./2.*armttbar[164] + armttbar[169] + armttbar[170];
+   armttbar[169]=armttbar[9]*armttbar[169];
+   armttbar[170]=9./2.*armttbar[107];
+   armttbar[203]=armttbar[170] - 1;
+   armttbar[203]=armttbar[203]*armttbar[107];
+   armttbar[203]=armttbar[203] + armttbar[260];
+   armttbar[403]= - armttbar[203]*armttbar[279];
+   armttbar[169]= - 21./2.*armttbar[356] + armttbar[403] + 
+   armttbar[169];
+   armttbar[169]=armttbar[169]*armttbar[254];
+   armttbar[154]= - 403./9. - armttbar[154];
+   armttbar[154]=armttbar[154]*armttbar[108];
+   armttbar[403]= - 403./2. - 43*armttbar[102];
+   armttbar[403]=armttbar[403]*armttbar[174];
+   armttbar[154]=armttbar[154] + armttbar[403];
+   armttbar[154]=MMt*armttbar[154];
+   armttbar[154]=armttbar[154] + 13*armttbar[370];
+   armttbar[154]=armttbar[154]*armttbar[340];
+   armttbar[403]=63./2.*armttbar[107];
+   armttbar[409]= - 157./3. - armttbar[403];
+   armttbar[409]=armttbar[409]*armttbar[107];
+   armttbar[411]= - 157 - 31./6.*armttbar[102];
+   armttbar[411]=armttbar[411]*armttbar[105];
+   armttbar[409]=armttbar[409] + armttbar[411];
+   armttbar[411]=3*armttbar[390];
+   armttbar[154]=armttbar[169] + armttbar[154] + 1./16.*armttbar[409]
+    + armttbar[411];
+   armttbar[154]=armttbar[51]*armttbar[154];
+   armttbar[169]=1./2.*armttbar[117];
+   armttbar[409]= - armttbar[169] - armttbar[164];
+   armttbar[412]=3*armttbar[9];
+   armttbar[409]=armttbar[409]*armttbar[412];
+   armttbar[409]=armttbar[409] + armttbar[356];
+   armttbar[409]=armttbar[409]*armttbar[269];
+   armttbar[413]=armttbar[117]*armttbar[296];
+   armttbar[409]=armttbar[409] + 3*armttbar[413] + armttbar[280] - 
+   armttbar[411];
+   armttbar[409]=armttbar[78]*armttbar[409];
+   armttbar[411]=armttbar[229] - armttbar[122];
+   armttbar[411]=armttbar[40]*armttbar[411];
+   armttbar[414]=3./2.*armttbar[117];
+   armttbar[415]=armttbar[414]*MMt;
+   armttbar[416]= - armttbar[415] + armttbar[370];
+   armttbar[416]=armttbar[9]*armttbar[416];
+   armttbar[416]=armttbar[280] + armttbar[416];
+   armttbar[416]=MMH*armttbar[416];
+   armttbar[417]=armttbar[117]*armttbar[369];
+   armttbar[418]=MMt*armttbar[280];
+   armttbar[416]=armttbar[416] + armttbar[418] + armttbar[417];
+   armttbar[416]=armttbar[61]*armttbar[416];
+   armttbar[417]=armttbar[204]*armttbar[107];
+   armttbar[417]=armttbar[417] + armttbar[105];
+   armttbar[417]=armttbar[43]*armttbar[417];
+   armttbar[130]=armttbar[411] + armttbar[417] + armttbar[154] + 
+   armttbar[130] + armttbar[416] + armttbar[409];
+   armttbar[154]= - 15 + armttbar[107];
+   armttbar[154]=armttbar[154]*armttbar[155];
+   armttbar[154]=759./2. + armttbar[154];
+   armttbar[154]=armttbar[154]*armttbar[189];
+   armttbar[409]= - 65./2. + armttbar[102];
+   armttbar[409]=armttbar[409]*armttbar[102];
+   armttbar[409]=197./2. + armttbar[409];
+   armttbar[409]=armttbar[409]*armttbar[381];
+   armttbar[411]=armttbar[280]*armttbar[216];
+   armttbar[154]=armttbar[397] - 3./8.*armttbar[411] + 3./4.*
+   armttbar[180] + armttbar[409] - 10 + armttbar[154];
+   armttbar[154]=armttbar[16]*armttbar[154];
+   armttbar[397]=armttbar[280]*armttbar[40];
+   armttbar[124]=armttbar[397] + armttbar[124];
+   armttbar[397]= - armttbar[373] - armttbar[124];
+   armttbar[409]=armttbar[380]*armttbar[40];
+   armttbar[409]=armttbar[409] + armttbar[153];
+   armttbar[411]=5*armttbar[373] + armttbar[409];
+   armttbar[411]=armttbar[8]*armttbar[411];
+   armttbar[397]=3*armttbar[397] + armttbar[411];
+   armttbar[397]=armttbar[397]*armttbar[338];
+   armttbar[411]=15./2.*armttbar[107];
+   armttbar[416]=7 - armttbar[411];
+   armttbar[416]=armttbar[416]*armttbar[194];
+   armttbar[417]=9 + armttbar[205];
+   armttbar[417]=armttbar[417]*armttbar[102];
+   armttbar[416]=armttbar[416] + armttbar[417];
+   armttbar[416]=armttbar[18]*armttbar[416];
+   armttbar[417]=armttbar[116] + 9;
+   armttbar[417]=armttbar[417]*armttbar[102];
+   armttbar[418]=33*armttbar[256];
+   armttbar[419]=armttbar[418] - armttbar[417];
+   armttbar[419]=armttbar[50]*armttbar[419];
+   armttbar[416]=armttbar[416] + 1./2.*armttbar[419];
+   armttbar[419]=9 + armttbar[107];
+   armttbar[419]=armttbar[419]*armttbar[194];
+   armttbar[420]=17./3.*armttbar[102];
+   armttbar[419]=armttbar[419] + armttbar[420];
+   armttbar[421]=1./16.*armttbar[216];
+   armttbar[419]=armttbar[419]*armttbar[421];
+   armttbar[124]=armttbar[419] + armttbar[373] + 3./4.*armttbar[124];
+   armttbar[124]=armttbar[17]*armttbar[124];
+   armttbar[419]=11 - armttbar[211];
+   armttbar[419]=armttbar[419]*armttbar[194];
+   armttbar[417]=armttbar[419] + armttbar[417];
+   armttbar[345]=armttbar[417]*armttbar[345];
+   armttbar[417]=armttbar[162]*armttbar[404];
+   armttbar[124]= - 9./8.*armttbar[417] + armttbar[397] + armttbar[345]
+    + armttbar[124] + 1./2.*armttbar[416] + armttbar[154];
+   armttbar[124]=armttbar[3]*armttbar[124];
+   armttbar[154]=armttbar[265]*armttbar[242];
+   armttbar[242]=armttbar[107] - 1./2.;
+   armttbar[345]= - armttbar[242]*armttbar[107];
+   armttbar[345]=1./2. + armttbar[345];
+   armttbar[345]=armttbar[345]*armttbar[107];
+   armttbar[345]=armttbar[345] + armttbar[116];
+   armttbar[345]=armttbar[16]*armttbar[345];
+   armttbar[345]=armttbar[345] + armttbar[244];
+   armttbar[345]=1./2.*armttbar[345] + armttbar[245];
+   armttbar[246]=armttbar[345]*armttbar[246];
+   armttbar[345]=armttbar[300]*armttbar[216];
+   armttbar[397]=armttbar[115]*armttbar[8];
+   armttbar[416]=5./6. - armttbar[107];
+   armttbar[416]=armttbar[416]*armttbar[215];
+   armttbar[416]=11./27. + armttbar[416];
+   armttbar[416]=armttbar[416]*armttbar[107];
+   armttbar[417]=11 + 29./8.*armttbar[102];
+   armttbar[417]=armttbar[417]*armttbar[232];
+   armttbar[154]=armttbar[246] + 1./8.*armttbar[397] + armttbar[154] - 
+   1./12.*armttbar[345] + armttbar[416] + armttbar[417];
+   armttbar[154]=armttbar[9]*armttbar[154];
+   armttbar[246]= - armttbar[265]*armttbar[393];
+   armttbar[416]= - 1./6. + armttbar[107];
+   armttbar[416]=armttbar[416]*armttbar[108];
+   armttbar[416]= - 17./27. + armttbar[416];
+   armttbar[416]=armttbar[416]*armttbar[107];
+   armttbar[417]=5./4.*armttbar[102];
+   armttbar[419]= - 17 + armttbar[417];
+   armttbar[419]=armttbar[419]*armttbar[232];
+   armttbar[218]=armttbar[300]*armttbar[218];
+   armttbar[218]=armttbar[246] + armttbar[218] + armttbar[416] + 
+   armttbar[419];
+   armttbar[246]=1./3.*armttbar[9];
+   armttbar[243]= - armttbar[243]*armttbar[246];
+   armttbar[218]=armttbar[243] + 1./2.*armttbar[218] - 1./3.*
+   armttbar[397];
+   armttbar[218]=armttbar[218]*armttbar[267];
+   armttbar[218]=armttbar[218] + 1./12.*armttbar[253];
+   armttbar[218]=armttbar[218]*armttbar[225];
+   armttbar[154]=armttbar[154] + armttbar[218];
+   armttbar[154]=MMH*armttbar[154];
+   armttbar[218]= - armttbar[265]*armttbar[193];
+   armttbar[243]= - 13./2. + armttbar[138];
+   armttbar[243]=armttbar[243]*armttbar[108];
+   armttbar[243]= - 53./9. + armttbar[243];
+   armttbar[243]=armttbar[243]*armttbar[107];
+   armttbar[253]= - 53 - 79./4.*armttbar[102];
+   armttbar[253]=armttbar[253]*armttbar[174];
+   armttbar[218]=armttbar[218] + armttbar[345] + armttbar[243] + 
+   armttbar[253];
+   armttbar[243]= - 1 + armttbar[229];
+   armttbar[243]=armttbar[243]*armttbar[107];
+   armttbar[243]=armttbar[243] - armttbar[102];
+   armttbar[243]=armttbar[243]*armttbar[147];
+   armttbar[243]=armttbar[243] - armttbar[244];
+   armttbar[243]=1./2.*armttbar[243] - armttbar[245];
+   armttbar[243]=armttbar[9]*armttbar[243];
+   armttbar[218]=armttbar[243] + 1./2.*armttbar[218] - armttbar[395];
+   armttbar[154]=1./2.*armttbar[218] + armttbar[154];
+   armttbar[154]=armttbar[36]*armttbar[154];
+   armttbar[218]=301./3. + 365./2.*armttbar[107];
+   armttbar[218]=armttbar[218]*armttbar[215];
+   armttbar[243]= - 967./72. - armttbar[102];
+   armttbar[243]=armttbar[243]*armttbar[102];
+   armttbar[243]=439./36. + armttbar[243];
+   armttbar[243]=armttbar[243]*armttbar[102];
+   armttbar[218]=armttbar[218] + armttbar[243];
+   armttbar[243]=13./3. - 35./4.*armttbar[107];
+   armttbar[243]=armttbar[243]*armttbar[107];
+   armttbar[244]=239./18. + armttbar[102];
+   armttbar[244]=armttbar[244]*armttbar[116];
+   armttbar[244]=13./3. + armttbar[244];
+   armttbar[244]=armttbar[244]*armttbar[102];
+   armttbar[243]=armttbar[243] + armttbar[244];
+   armttbar[243]=armttbar[243]*armttbar[296];
+   armttbar[218]=1./2.*armttbar[218] + armttbar[243];
+   armttbar[218]=armttbar[87]*armttbar[218];
+   armttbar[243]=MMt*armttbar[117];
+   armttbar[243]= - 9./2.*armttbar[243] - 5*armttbar[370];
+   armttbar[243]=armttbar[9]*armttbar[243];
+   armttbar[244]= - armttbar[414] + 5*armttbar[164];
+   armttbar[244]=armttbar[9]*armttbar[244];
+   armttbar[244]=3*armttbar[328] + armttbar[244];
+   armttbar[244]=armttbar[244]*armttbar[269];
+   armttbar[243]=armttbar[244] + armttbar[280] + armttbar[243];
+   armttbar[243]=armttbar[73]*armttbar[243];
+   armttbar[218]=armttbar[218] + armttbar[243];
+   armttbar[243]= - 149./2. + 37*armttbar[107];
+   armttbar[243]=armttbar[243]*armttbar[108];
+   armttbar[244]=1./54.*armttbar[102];
+   armttbar[245]= - 5899./2. + 977*armttbar[102];
+   armttbar[245]=armttbar[245]*armttbar[244];
+   armttbar[243]=armttbar[245] + 69 + armttbar[243];
+   armttbar[243]=armttbar[18]*armttbar[243];
+   armttbar[245]=35./9. - armttbar[108];
+   armttbar[245]=armttbar[187]*armttbar[245];
+   armttbar[245]= - 256./81. + armttbar[245];
+   armttbar[245]=armttbar[33]*armttbar[245];
+   armttbar[253]=5./9. - 17./8.*armttbar[107];
+   armttbar[253]=armttbar[253]*armttbar[108];
+   armttbar[253]= - 4./3. + armttbar[253];
+   armttbar[253]=armttbar[34]*armttbar[253];
+   armttbar[345]=1./18.*armttbar[102];
+   armttbar[395]=armttbar[102]*armttbar[33];
+   armttbar[397]= - 2297./288.*armttbar[395] + 547./16.*armttbar[33] - 
+   armttbar[34];
+   armttbar[397]=armttbar[397]*armttbar[345];
+   armttbar[243]=1./4.*armttbar[243] + armttbar[397] + armttbar[253] + 
+   armttbar[245];
+   armttbar[243]=armttbar[6]*armttbar[243];
+   armttbar[245]=3593./9. - 187*armttbar[107];
+   armttbar[245]=armttbar[245]*armttbar[187];
+   armttbar[253]=25201./8. - 839*armttbar[102];
+   armttbar[253]=armttbar[253]*armttbar[102];
+   armttbar[245]=1./324.*armttbar[253] - 530./27. + armttbar[245];
+   armttbar[245]=armttbar[6]*armttbar[245];
+   armttbar[253]=armttbar[411] - 11./3.;
+   armttbar[397]=1./64.*armttbar[107];
+   armttbar[416]=armttbar[253]*armttbar[397];
+   armttbar[419]=925 + 1381./2.*armttbar[102];
+   armttbar[419]=armttbar[419]*armttbar[272];
+   armttbar[416]=armttbar[419] - 32./27. + armttbar[416];
+   armttbar[416]=armttbar[416]*armttbar[313];
+   armttbar[419]= - 145./9. - armttbar[107];
+   armttbar[419]=armttbar[419]*armttbar[187];
+   armttbar[419]= - 9./32.*armttbar[102] + 4./3. + armttbar[419];
+   armttbar[316]=armttbar[419]*armttbar[316];
+   armttbar[419]=32./9.*armttbar[319];
+   armttbar[245]=armttbar[416] + armttbar[316] - armttbar[419] - 3./8.*
+   armttbar[387] + armttbar[245];
+   armttbar[245]=armttbar[17]*armttbar[245];
+   armttbar[316]=armttbar[194] - 7;
+   armttbar[416]=33./2.*armttbar[107];
+   armttbar[422]=armttbar[316]*armttbar[416];
+   armttbar[422]=131./3. + armttbar[422];
+   armttbar[422]=armttbar[422]*armttbar[107];
+   armttbar[423]=35 + armttbar[102];
+   armttbar[423]=armttbar[423]*armttbar[167];
+   armttbar[423]=41 + armttbar[423];
+   armttbar[423]=armttbar[423]*armttbar[174];
+   armttbar[422]=armttbar[422] + armttbar[423];
+   armttbar[423]=armttbar[194] + 1;
+   armttbar[424]=armttbar[423]*armttbar[171];
+   armttbar[424]= - 85./3. + armttbar[424];
+   armttbar[424]=armttbar[424]*armttbar[108];
+   armttbar[425]= - 37./2. - armttbar[102];
+   armttbar[425]=armttbar[425]*armttbar[105];
+   armttbar[424]=armttbar[424] + armttbar[425];
+   armttbar[424]=armttbar[424]*armttbar[216];
+   armttbar[425]= - armttbar[304]*armttbar[193];
+   armttbar[422]=armttbar[425] + 1./2.*armttbar[422] + armttbar[424];
+   armttbar[424]=19./2. - armttbar[418];
+   armttbar[424]=armttbar[424]*armttbar[107];
+   armttbar[337]=armttbar[424] + armttbar[337];
+   armttbar[337]=armttbar[337]*armttbar[394];
+   armttbar[337]=1./2.*armttbar[422] + armttbar[337];
+   armttbar[337]=armttbar[337]*armttbar[307];
+   armttbar[422]=armttbar[338]*armttbar[356];
+   armttbar[422]=armttbar[422] + armttbar[354] - armttbar[164];
+   armttbar[422]=MMH*armttbar[422];
+   armttbar[424]= - MMt*armttbar[106];
+   armttbar[422]=armttbar[424] + armttbar[422];
+   armttbar[424]=1./2.*armttbar[60];
+   armttbar[422]=armttbar[422]*armttbar[424];
+   armttbar[425]=1./4.*armttbar[164];
+   armttbar[109]=armttbar[109]*armttbar[177];
+   armttbar[426]=809 - 191./2.*armttbar[102];
+   armttbar[426]=armttbar[426]*armttbar[349];
+   armttbar[109]= - 1./8.*armttbar[361] + armttbar[425] + armttbar[426]
+    - 64./81. + armttbar[109];
+   armttbar[109]=armttbar[75]*armttbar[109];
+   armttbar[426]=1 - armttbar[103];
+   armttbar[426]=armttbar[426]*armttbar[102];
+   armttbar[425]=armttbar[425] - armttbar[240] + armttbar[426];
+   armttbar[425]=armttbar[425]*armttbar[329];
+   armttbar[426]=1./432.*armttbar[102];
+   armttbar[427]=1993 - 967./2.*armttbar[102];
+   armttbar[427]=armttbar[427]*armttbar[426];
+   armttbar[312]=armttbar[427] - 176./27. - 5./16.*armttbar[312];
+   armttbar[312]=armttbar[6]*armttbar[312];
+   armttbar[312]= - 1./16.*armttbar[356] + armttbar[312] + 
+   armttbar[425];
+   armttbar[312]=armttbar[93]*armttbar[312];
+   armttbar[425]= - 23./3. + armttbar[161];
+   armttbar[425]=armttbar[425]*armttbar[107];
+   armttbar[427]= - 23 + 91./6.*armttbar[102];
+   armttbar[427]=armttbar[427]*armttbar[105];
+   armttbar[425]=armttbar[425] + armttbar[427];
+   armttbar[425]=armttbar[9]*armttbar[425];
+   armttbar[425]=11*armttbar[241] + armttbar[425];
+   armttbar[425]=armttbar[425]*armttbar[254];
+   armttbar[427]= - 145./3. - 59./2.*armttbar[107];
+   armttbar[427]=armttbar[427]*armttbar[107];
+   armttbar[428]= - 29 - 119./6.*armttbar[102];
+   armttbar[428]=armttbar[428]*armttbar[314];
+   armttbar[427]=armttbar[427] + armttbar[428];
+   armttbar[428]=19./3. + armttbar[108];
+   armttbar[428]=armttbar[428]*armttbar[107];
+   armttbar[429]=23./6.*armttbar[102];
+   armttbar[430]=19 - armttbar[429];
+   armttbar[430]=armttbar[430]*armttbar[105];
+   armttbar[428]=armttbar[428] + armttbar[430];
+   armttbar[428]=armttbar[428]*armttbar[296];
+   armttbar[425]=armttbar[425] + 1./12.*armttbar[427] + armttbar[428];
+   armttbar[427]=1./8.*armttbar[88];
+   armttbar[425]=armttbar[425]*armttbar[427];
+   armttbar[428]=armttbar[321]*armttbar[296];
+   armttbar[430]=armttbar[428] + armttbar[123];
+   armttbar[431]=armttbar[430]*armttbar[268];
+   armttbar[432]= - armttbar[296]*armttbar[148];
+   armttbar[169]= - armttbar[169] + armttbar[432];
+   armttbar[169]=armttbar[9]*armttbar[169];
+   armttbar[169]=armttbar[431] - armttbar[328] + armttbar[169];
+   armttbar[169]=armttbar[169]*armttbar[269];
+   armttbar[169]=armttbar[169] + armttbar[280] + armttbar[390];
+   armttbar[169]=armttbar[82]*armttbar[169];
+   armttbar[431]= - 17./4. + armttbar[388];
+   armttbar[431]=armttbar[431]*armttbar[107];
+   armttbar[432]= - 5 - armttbar[102];
+   armttbar[432]=armttbar[432]*armttbar[146];
+   armttbar[431]= - armttbar[390] + armttbar[431] + armttbar[432];
+   armttbar[431]=armttbar[23]*armttbar[431];
+   armttbar[169]=armttbar[431] + armttbar[169];
+   armttbar[141]= - 11 - armttbar[141];
+   armttbar[141]=armttbar[141]*armttbar[161];
+   armttbar[431]= - 33./2. - armttbar[102];
+   armttbar[431]=armttbar[431]*armttbar[102];
+   armttbar[141]=armttbar[141] + armttbar[431];
+   armttbar[141]=armttbar[141]*armttbar[296];
+   armttbar[431]= - 79 + 195*armttbar[107];
+   armttbar[431]=armttbar[431]*armttbar[215];
+   armttbar[432]= - 109./12. - armttbar[102];
+   armttbar[432]=armttbar[432]*armttbar[102];
+   armttbar[141]=armttbar[141] + armttbar[431] + armttbar[432];
+   armttbar[141]=armttbar[90]*armttbar[141];
+   armttbar[431]= - 56965./48. + 143*armttbar[72];
+   armttbar[431]=1./36.*armttbar[431] - armttbar[102];
+   armttbar[431]=armttbar[431]*armttbar[102];
+   armttbar[432]= - 253733./432. - armttbar[291];
+   armttbar[431]=1./6.*armttbar[432] + armttbar[431];
+   armttbar[431]=armttbar[431]*armttbar[102];
+   armttbar[141]=armttbar[431] + armttbar[141];
+   armttbar[431]= - 943./3. + 191*armttbar[107];
+   armttbar[431]=armttbar[431]*armttbar[187];
+   armttbar[432]=1./36.*armttbar[102];
+   armttbar[433]=43./8. - armttbar[391];
+   armttbar[433]=armttbar[433]*armttbar[432];
+   armttbar[431]=armttbar[433] - 37./27. + armttbar[431];
+   armttbar[431]=armttbar[6]*armttbar[431];
+   armttbar[433]=armttbar[387] - 1./8.*armttbar[328];
+   armttbar[433]=armttbar[433]*armttbar[231];
+   armttbar[434]=16./9.*armttbar[319];
+   armttbar[431]=armttbar[433] - armttbar[434] + 11./8.*armttbar[387]
+    + armttbar[431];
+   armttbar[431]=armttbar[16]*armttbar[431];
+   armttbar[433]=27./2.*armttbar[107];
+   armttbar[435]=2137./9. + armttbar[433];
+   armttbar[435]=armttbar[435]*armttbar[107];
+   armttbar[436]=2137 + 383./2.*armttbar[102];
+   armttbar[436]=armttbar[436]*armttbar[174];
+   armttbar[435]=armttbar[435] + armttbar[436];
+   armttbar[435]=1./4.*armttbar[435] + 25*armttbar[164];
+   armttbar[435]=armttbar[435]*armttbar[259];
+   armttbar[436]= - 253./3. + 281./2.*armttbar[107];
+   armttbar[436]=armttbar[436]*armttbar[177];
+   armttbar[437]= - 12533 + 6065./2.*armttbar[102];
+   armttbar[437]=armttbar[437]*armttbar[426];
+   armttbar[436]=armttbar[437] + 868./27. + armttbar[436];
+   armttbar[436]=armttbar[436]*armttbar[179];
+   armttbar[435]=armttbar[435] - 64./9.*armttbar[319] + armttbar[392]
+    + armttbar[436];
+   armttbar[435]=armttbar[20]*armttbar[435];
+   armttbar[436]=139./3. + 247./2.*armttbar[107];
+   armttbar[436]=armttbar[436]*armttbar[108];
+   armttbar[437]= - 413./36. - armttbar[102];
+   armttbar[437]=armttbar[437]*armttbar[102];
+   armttbar[437]=139./6. + armttbar[437];
+   armttbar[437]=armttbar[437]*armttbar[102];
+   armttbar[436]=1./2.*armttbar[164] + armttbar[436] + armttbar[437];
+   armttbar[436]=armttbar[436]*armttbar[259];
+   armttbar[437]= - 239./3. + 93*armttbar[107];
+   armttbar[437]=armttbar[437]*armttbar[177];
+   armttbar[438]=3./8. + armttbar[174];
+   armttbar[438]=armttbar[438]*armttbar[116];
+   armttbar[437]=armttbar[438] + 8./3. + armttbar[437];
+   armttbar[437]=armttbar[6]*armttbar[437];
+   armttbar[436]=armttbar[437] + armttbar[436];
+   armttbar[436]=armttbar[96]*armttbar[436];
+   armttbar[437]=armttbar[267]*armttbar[156];
+   armttbar[438]= - armttbar[268]*armttbar[148];
+   armttbar[437]= - 5*armttbar[437] + armttbar[438];
+   armttbar[437]=armttbar[437]*armttbar[225];
+   armttbar[360]=armttbar[360] + armttbar[437];
+   armttbar[360]=armttbar[86]*armttbar[360];
+   armttbar[437]=9./4.*armttbar[117] - armttbar[164];
+   armttbar[437]=armttbar[9]*armttbar[437];
+   armttbar[437]= - armttbar[356] + 5./2.*armttbar[328] + armttbar[437]
+   ;
+   armttbar[437]=armttbar[437]*armttbar[269];
+   armttbar[437]=armttbar[437] - 15./8.*armttbar[413] - 73./24.*
+   armttbar[280] - armttbar[390];
+   armttbar[438]=1./8.*armttbar[89];
+   armttbar[437]=armttbar[437]*armttbar[438];
+   armttbar[430]=armttbar[9]*armttbar[430];
+   armttbar[439]=armttbar[117]*armttbar[179];
+   armttbar[430]=armttbar[439] + armttbar[430];
+   armttbar[430]=armttbar[9]*armttbar[430];
+   armttbar[347]=armttbar[430] - armttbar[347];
+   armttbar[347]=armttbar[347]*armttbar[269];
+   armttbar[430]= - 5./12.*armttbar[117] - armttbar[164];
+   armttbar[430]=armttbar[9]*armttbar[430];
+   armttbar[347]=armttbar[430] + armttbar[347];
+   armttbar[347]=armttbar[347]*armttbar[269];
+   armttbar[415]=armttbar[415] + armttbar[370];
+   armttbar[415]=armttbar[415]*armttbar[277];
+   armttbar[347]=armttbar[347] + armttbar[390] + armttbar[415];
+   armttbar[390]=1./4.*armttbar[85];
+   armttbar[347]=armttbar[347]*armttbar[390];
+   armttbar[415]= - 13./9. + armttbar[215];
+   armttbar[415]=armttbar[415]*armttbar[107];
+   armttbar[209]= - armttbar[209]*armttbar[105];
+   armttbar[209]=armttbar[415] + armttbar[209];
+   armttbar[209]=MMt*armttbar[209];
+   armttbar[209]=armttbar[209] + 3./16.*armttbar[370];
+   armttbar[209]=armttbar[9]*armttbar[209];
+   armttbar[370]=armttbar[377] + 1;
+   armttbar[370]=armttbar[370]*armttbar[107];
+   armttbar[415]=armttbar[370] + armttbar[102];
+   armttbar[209]=1./2.*armttbar[415] + armttbar[209];
+   armttbar[415]=pow(Pi,2);
+   armttbar[430]=1./4.*armttbar[415];
+   armttbar[209]=armttbar[209]*armttbar[430];
+   armttbar[367]= - armttbar[407]*armttbar[367];
+   armttbar[407]=31./2.*armttbar[107];
+   armttbar[439]= - 337./3. + armttbar[407];
+   armttbar[439]=armttbar[439]*armttbar[187];
+   armttbar[440]= - 473./3. - 41./2.*armttbar[102];
+   armttbar[440]=armttbar[440]*armttbar[258];
+   armttbar[441]=64./9.*armttbar[318];
+   armttbar[367]=armttbar[367] + armttbar[441] + armttbar[440] + 220./
+   27. + armttbar[439];
+   armttbar[367]=armttbar[80]*armttbar[367];
+   armttbar[439]= - 113./3. - 41./2.*armttbar[107];
+   armttbar[439]=armttbar[439]*armttbar[107];
+   armttbar[440]=271 + 331./6.*armttbar[102];
+   armttbar[440]=armttbar[440]*armttbar[105];
+   armttbar[439]=armttbar[439] + armttbar[440];
+   armttbar[440]= - 11 + armttbar[190];
+   armttbar[440]=armttbar[440]*armttbar[107];
+   armttbar[442]=11*armttbar[102];
+   armttbar[443]=7./18.*armttbar[102];
+   armttbar[444]= - 1 + armttbar[443];
+   armttbar[444]=armttbar[444]*armttbar[442];
+   armttbar[440]=armttbar[440] + armttbar[444];
+   armttbar[440]=armttbar[440]*armttbar[296];
+   armttbar[439]=1./4.*armttbar[439] + armttbar[440];
+   armttbar[439]=armttbar[76]*armttbar[439];
+   armttbar[440]=armttbar[95]*armttbar[328];
+   armttbar[339]=armttbar[339] + armttbar[440];
+   armttbar[440]= - 1./4.*armttbar[77] + 1./8.*armttbar[79];
+   armttbar[440]=armttbar[106]*armttbar[440];
+   armttbar[122]=armttbar[370] + armttbar[122];
+   armttbar[122]=armttbar[37]*armttbar[122];
+   armttbar[370]=263./3. - 171./2.*armttbar[107];
+   armttbar[370]=armttbar[370]*armttbar[177];
+   armttbar[444]=1./144.*armttbar[102];
+   armttbar[445]=295./3. + armttbar[175];
+   armttbar[445]=armttbar[445]*armttbar[444];
+   armttbar[370]=armttbar[445] - 46./27. + armttbar[370];
+   armttbar[370]=armttbar[6]*armttbar[370];
+   armttbar[445]=8./9.*armttbar[319];
+   armttbar[370]=armttbar[370] + armttbar[445];
+   armttbar[370]=armttbar[50]*armttbar[370];
+   armttbar[423]=armttbar[423]*armttbar[108];
+   armttbar[446]=armttbar[102] + 13./2.;
+   armttbar[447]= - armttbar[446]*armttbar[174];
+   armttbar[447]= - armttbar[423] + armttbar[447];
+   armttbar[447]=armttbar[5]*armttbar[447]*armttbar[352];
+   armttbar[448]=armttbar[35]*armttbar[373];
+   armttbar[399]=197./9. - armttbar[399];
+   armttbar[399]=armttbar[399]*armttbar[177];
+   armttbar[449]= - 337./3. - armttbar[175];
+   armttbar[449]=armttbar[449]*armttbar[444];
+   armttbar[399]=armttbar[449] - 4./9. + armttbar[399];
+   armttbar[399]=armttbar[6]*armttbar[399];
+   armttbar[392]= - armttbar[392] + armttbar[399];
+   armttbar[392]=armttbar[94]*armttbar[392];
+   armttbar[399]= - 3803./9. + 413*armttbar[107];
+   armttbar[399]=armttbar[399]*armttbar[187];
+   armttbar[449]=23./16. + armttbar[105];
+   armttbar[449]=armttbar[449]*armttbar[167];
+   armttbar[399]=armttbar[449] + 116./27. + armttbar[399];
+   armttbar[399]=armttbar[6]*armttbar[399];
+   armttbar[399]= - armttbar[434] + 9./8.*armttbar[387] + armttbar[399]
+   ;
+   armttbar[399]=armttbar[19]*armttbar[399];
+   armttbar[434]=7./9. - armttbar[108];
+   armttbar[434]=armttbar[434]*armttbar[107];
+   armttbar[449]= - 1 - 139./18.*armttbar[102];
+   armttbar[449]=armttbar[449]*armttbar[174];
+   armttbar[434]=armttbar[449] + 32./81. + armttbar[434];
+   armttbar[434]=armttbar[45]*armttbar[434];
+   armttbar[449]= - 64*armttbar[318] - 196./3. + armttbar[155];
+   armttbar[449]=1./3.*armttbar[449] - armttbar[364];
+   armttbar[449]=armttbar[81]*armttbar[449];
+   armttbar[356]=armttbar[47]*armttbar[356];
+   armttbar[450]=1./3.*armttbar[137];
+   armttbar[451]= - armttbar[302]*armttbar[450];
+   armttbar[451]=2*armttbar[364] + armttbar[451];
+   armttbar[451]=MMH*armttbar[451];
+   armttbar[452]=armttbar[369]*armttbar[137];
+   armttbar[451]= - 8./3.*armttbar[452] + armttbar[451];
+   armttbar[451]=armttbar[53]*armttbar[451];
+   armttbar[453]=1./9.*armttbar[52] + 1./12.*armttbar[70];
+   armttbar[452]=armttbar[452]*armttbar[453];
+   armttbar[114]=28655./48. + armttbar[114];
+   armttbar[114]=armttbar[114]*armttbar[108];
+   armttbar[291]= - 13183./16. - armttbar[291];
+   armttbar[114]=1./3.*armttbar[291] + armttbar[114];
+   armttbar[114]=armttbar[114]*armttbar[397];
+   armttbar[291]= - armttbar[84]*armttbar[224];
+   armttbar[453]= - armttbar[18]*armttbar[179];
+   armttbar[453]=2 + armttbar[453];
+   armttbar[453]=armttbar[453]*armttbar[318];
+   armttbar[454]=armttbar[107] - 7./3.;
+   armttbar[455]=armttbar[454]*armttbar[215];
+   armttbar[456]= - 103./324.*armttbar[102] + 16./81. - armttbar[455];
+   armttbar[456]=armttbar[25]*armttbar[456];
+   armttbar[457]=31*armttbar[107];
+   armttbar[364]= - armttbar[457] + 11./2.*armttbar[364];
+   armttbar[364]=armttbar[58]*armttbar[364];
+   armttbar[109]=1./64.*armttbar[439] + armttbar[367] + 1./36.*
+   armttbar[364] + armttbar[209] + armttbar[347] + armttbar[437] + 2./3.
+   *armttbar[451] + armttbar[142] - 3./32.*armttbar[356] + 
+   armttbar[425] + armttbar[312] + armttbar[360] + armttbar[129] + 
+   armttbar[149] + armttbar[109] + armttbar[436] + armttbar[422] + 1./3.
+   *armttbar[449] + armttbar[154] + armttbar[435] + armttbar[111] + 
+   armttbar[337] + armttbar[124] + armttbar[434] + armttbar[399] + 
+   armttbar[245] + armttbar[392] - 9./8.*armttbar[448] + armttbar[447]
+    + armttbar[431] + armttbar[370] + armttbar[122] + armttbar[456] + 8.
+   /3.*armttbar[453] + armttbar[291] + armttbar[243] + 10./3. + 
+   armttbar[114] + armttbar[440] + armttbar[452] + armttbar[145] + 
+   armttbar[185] - 7./24.*armttbar[339] + 1./32.*armttbar[141] + 1./8.*
+   armttbar[169] + 1./16.*armttbar[218] + 1./4.*armttbar[130] + 1./2.*
+   armttbar[140];
+   armttbar[109]=armttbar[46]*armttbar[109];
+   armttbar[111]=armttbar[127]*armttbar[237];
+   armttbar[114]= - armttbar[352]*armttbar[273];
+   armttbar[114]=armttbar[111] + armttbar[114];
+   armttbar[114]=armttbar[114]*armttbar[231];
+   armttbar[122]=armttbar[229] + armttbar[102];
+   armttbar[124]=armttbar[194]*armttbar[237];
+   armttbar[129]= - armttbar[216]*armttbar[124];
+   armttbar[129]=1./2.*armttbar[122] + armttbar[129];
+   armttbar[129]=armttbar[129]*armttbar[257];
+   armttbar[130]=armttbar[237]*armttbar[100];
+   armttbar[140]= - armttbar[189]*armttbar[130];
+   armttbar[141]= - 361./3. + 131./4.*armttbar[107];
+   armttbar[141]=armttbar[141]*armttbar[215];
+   armttbar[141]=22 + armttbar[141];
+   armttbar[141]=armttbar[141]*armttbar[179];
+   armttbar[142]= - 11./9. + armttbar[189];
+   armttbar[142]=armttbar[142]*armttbar[215];
+   armttbar[142]=2./9. + armttbar[142];
+   armttbar[142]=armttbar[142]*armttbar[313];
+   armttbar[145]= - 59./3. + 11*armttbar[256];
+   armttbar[145]=armttbar[145]*armttbar[189];
+   armttbar[145]= - armttbar[381] + 1 + armttbar[145];
+   armttbar[145]=armttbar[39]*armttbar[6]*armttbar[145];
+   armttbar[149]=armttbar[36]*armttbar[237]*armttbar[357];
+   armttbar[154]=armttbar[287]*armttbar[352];
+   armttbar[169]= - armttbar[38]*armttbar[154];
+   armttbar[185]=armttbar[273]*armttbar[6];
+   armttbar[209]=armttbar[21]*armttbar[185];
+   armttbar[114]= - 11./32.*armttbar[209] + armttbar[169] + 
+   armttbar[149] + armttbar[145] + armttbar[129] + armttbar[142] + 
+   armttbar[114] + armttbar[319] + armttbar[140] + armttbar[141];
+   armttbar[114]=armttbar[21]*armttbar[114];
+   armttbar[129]=armttbar[373]*armttbar[37];
+   armttbar[140]= - 877./3. + 331./2.*armttbar[107];
+   armttbar[140]=armttbar[140]*armttbar[215];
+   armttbar[141]= - 59./3. - armttbar[442];
+   armttbar[141]=armttbar[141]*armttbar[146];
+   armttbar[140]=armttbar[141] + 74./3. + armttbar[140];
+   armttbar[141]=13 + armttbar[161];
+   armttbar[141]=armttbar[141]*armttbar[189];
+   armttbar[142]=5 + 17./18.*armttbar[102];
+   armttbar[142]=armttbar[142]*armttbar[113];
+   armttbar[141]=armttbar[142] - 8./9. + armttbar[141];
+   armttbar[141]=armttbar[141]*armttbar[193];
+   armttbar[142]= - 3*armttbar[180] + armttbar[122];
+   armttbar[142]=armttbar[142]*armttbar[147];
+   armttbar[145]= - armttbar[40]*armttbar[16]*armttbar[124];
+   armttbar[142]=armttbar[142] + armttbar[145];
+   armttbar[145]=3./2.*armttbar[3];
+   armttbar[142]=armttbar[142]*armttbar[145];
+   armttbar[149]=151./2. - armttbar[418];
+   armttbar[149]=armttbar[149]*armttbar[215];
+   armttbar[169]= - armttbar[198]*armttbar[105];
+   armttbar[169]=19 + armttbar[169];
+   armttbar[169]=armttbar[169]*armttbar[113];
+   armttbar[149]=armttbar[169] - 6 + armttbar[149];
+   armttbar[149]=armttbar[39]*armttbar[149];
+   armttbar[169]=armttbar[107] - 3./2.;
+   armttbar[180]= - armttbar[169]*armttbar[108];
+   armttbar[180]=1 + armttbar[180];
+   armttbar[180]=armttbar[180]*armttbar[194];
+   armttbar[198]=7./4.*armttbar[102];
+   armttbar[209]=3 + armttbar[198];
+   armttbar[209]=armttbar[209]*armttbar[102];
+   armttbar[180]=armttbar[180] + armttbar[209];
+   armttbar[180]=armttbar[36]*armttbar[180];
+   armttbar[209]=1./2.*armttbar[40] - 1./8.*armttbar[216];
+   armttbar[122]=armttbar[122]*armttbar[209];
+   armttbar[209]=armttbar[376] - 2;
+   armttbar[209]=armttbar[209]*armttbar[107];
+   armttbar[209]=armttbar[209] - armttbar[116];
+   armttbar[218]=armttbar[38]*armttbar[209];
+   armttbar[231]=4*armttbar[318];
+   armttbar[122]=armttbar[218] + armttbar[180] + armttbar[149] + 
+   armttbar[142] + armttbar[141] + 1./2.*armttbar[129] + 1./3.*
+   armttbar[140] - armttbar[231] + armttbar[122];
+   armttbar[122]=armttbar[3]*armttbar[122];
+   armttbar[140]=armttbar[333]*armttbar[177];
+   armttbar[141]= - 173 + 107./2.*armttbar[102];
+   armttbar[142]=armttbar[141]*armttbar[426];
+   armttbar[140]=armttbar[140] + armttbar[142] + 16./27.;
+   armttbar[149]=armttbar[18]*armttbar[140];
+   armttbar[180]=37./9.*armttbar[33] - armttbar[163];
+   armttbar[180]=armttbar[180]*armttbar[189];
+   armttbar[218]=5./9. - armttbar[189];
+   armttbar[218]=armttbar[218]*armttbar[108];
+   armttbar[218]= - 4./9. + armttbar[218];
+   armttbar[218]=armttbar[34]*armttbar[218];
+   armttbar[243]=71*armttbar[33] - 73./2.*armttbar[395];
+   armttbar[243]=armttbar[243]*armttbar[102];
+   armttbar[149]=5*armttbar[149] + 11./648.*armttbar[243] + 
+   armttbar[218] - 32./27.*armttbar[33] + armttbar[180];
+   armttbar[149]=armttbar[6]*armttbar[149];
+   armttbar[180]= - 11./3. + armttbar[161];
+   armttbar[180]=armttbar[180]*armttbar[108];
+   armttbar[218]=1./162.*armttbar[102];
+   armttbar[243]= - 457 + 721./2.*armttbar[102];
+   armttbar[243]=armttbar[243]*armttbar[218];
+   armttbar[180]=armttbar[243] + 64./81. + armttbar[180];
+   armttbar[180]=armttbar[45]*armttbar[180];
+   armttbar[243]= - 29 - 49./2.*armttbar[102];
+   armttbar[243]=armttbar[243]*armttbar[102];
+   armttbar[243]=13./1296.*armttbar[243] + 64./81. - 5./16.*
+   armttbar[135];
+   armttbar[243]=armttbar[75]*armttbar[243];
+   armttbar[245]=2393./3. - 687./2.*armttbar[107];
+   armttbar[245]=armttbar[245]*armttbar[397];
+   armttbar[287]=46471./3. - 7027./2.*armttbar[102];
+   armttbar[287]=armttbar[287]*armttbar[272];
+   armttbar[291]= - 34./27.*armttbar[102] + 73./27. - armttbar[107];
+   armttbar[291]=armttbar[25]*armttbar[291];
+   armttbar[312]=2./3. - 5./8.*armttbar[107];
+   armttbar[312]=armttbar[312]*armttbar[107];
+   armttbar[312]=armttbar[312] + armttbar[432];
+   armttbar[312]=armttbar[43]*armttbar[312];
+   armttbar[149]=armttbar[243] + armttbar[180] + armttbar[312] + 2./3.*
+   armttbar[291] + armttbar[149] + armttbar[287] - 1402./81. + 
+   armttbar[245];
+   armttbar[149]=armttbar[6]*armttbar[149];
+   armttbar[180]= - 17./12. - armttbar[107];
+   armttbar[180]=armttbar[180]*armttbar[107];
+   armttbar[243]=7./3.*armttbar[102];
+   armttbar[245]= - 13 - armttbar[243];
+   armttbar[245]=armttbar[245]*armttbar[293];
+   armttbar[180]=armttbar[180] + armttbar[245];
+   armttbar[245]=1./4.*armttbar[87];
+   armttbar[180]=armttbar[180]*armttbar[245];
+   armttbar[228]= - armttbar[228]*armttbar[194];
+   armttbar[228]=armttbar[228] - armttbar[102];
+   armttbar[228]=armttbar[16]*armttbar[228];
+   armttbar[287]= - armttbar[5]*armttbar[405];
+   armttbar[228]=armttbar[228] + armttbar[287];
+   armttbar[287]=armttbar[96]*armttbar[405];
+   armttbar[228]=1./2.*armttbar[228] + armttbar[287];
+   armttbar[228]=armttbar[228]*armttbar[310];
+   armttbar[287]=25*armttbar[107];
+   armttbar[291]= - 197./6. + armttbar[287];
+   armttbar[291]=armttbar[291]*armttbar[189];
+   armttbar[310]= - 1 - 7./48.*armttbar[102];
+   armttbar[310]=armttbar[310]*armttbar[105];
+   armttbar[180]=armttbar[228] + armttbar[180] + armttbar[291] + 
+   armttbar[310];
+   armttbar[180]=armttbar[98]*armttbar[180];
+   armttbar[228]=armttbar[377] - 1./3.;
+   armttbar[228]=armttbar[228]*armttbar[107];
+   armttbar[228]=armttbar[228] + 1./12.*armttbar[260];
+   armttbar[291]=armttbar[3]*armttbar[6];
+   armttbar[228]=armttbar[228]*armttbar[291];
+   armttbar[310]=armttbar[111]*armttbar[352];
+   armttbar[312]=armttbar[310] - armttbar[228];
+   armttbar[312]=armttbar[42]*armttbar[312];
+   armttbar[180]=armttbar[180] + armttbar[312];
+   armttbar[312]=armttbar[409] - armttbar[373];
+   armttbar[337]=armttbar[3]*armttbar[312];
+   armttbar[339]=armttbar[239]*armttbar[377];
+   armttbar[339]=armttbar[339] + 4./9. + 1./24.*armttbar[260];
+   armttbar[347]= - armttbar[6]*armttbar[339];
+   armttbar[337]=armttbar[347] - 3./4.*armttbar[337];
+   armttbar[337]=armttbar[3]*armttbar[337];
+   armttbar[347]= - 77./9. + armttbar[190];
+   armttbar[347]=armttbar[347]*armttbar[177];
+   armttbar[356]= - 4157 + 3211./2.*armttbar[102];
+   armttbar[357]=armttbar[356]*armttbar[349];
+   armttbar[347]=armttbar[357] + 85./27. + armttbar[347];
+   armttbar[347]=armttbar[347]*armttbar[274];
+   armttbar[357]=pow(armttbar[98],2);
+   armttbar[360]=armttbar[405]*armttbar[357];
+   armttbar[364]=armttbar[189] - 1./3.;
+   armttbar[367]=armttbar[364]*armttbar[107];
+   armttbar[370]= - armttbar[274]*armttbar[367];
+   armttbar[328]=3./4.*armttbar[328];
+   armttbar[376]= - armttbar[3]*armttbar[328];
+   armttbar[370]=armttbar[370] + armttbar[376];
+   armttbar[370]=armttbar[370]*armttbar[303];
+   armttbar[337]=armttbar[370] - 1./16.*armttbar[360] + armttbar[347]
+    + armttbar[337];
+   armttbar[337]=armttbar[15]*armttbar[337];
+   armttbar[347]=17./9. + armttbar[108];
+   armttbar[347]=armttbar[347]*armttbar[107];
+   armttbar[360]= - 529 + 1607./2.*armttbar[102];
+   armttbar[360]=armttbar[360]*armttbar[349];
+   armttbar[347]=armttbar[360] - 52./27. + 7./16.*armttbar[347];
+   armttbar[347]=armttbar[347]*armttbar[274];
+   armttbar[360]=armttbar[107] + armttbar[282] - 32./9.;
+   armttbar[370]=pow(armttbar[6],3);
+   armttbar[342]=armttbar[360]*armttbar[370]*armttbar[342];
+   armttbar[342]=armttbar[347] + armttbar[342];
+   armttbar[342]=armttbar[17]*armttbar[342];
+   armttbar[347]=armttbar[130]*armttbar[108];
+   armttbar[376]=armttbar[347] + armttbar[185];
+   armttbar[376]=armttbar[82]*armttbar[376];
+   armttbar[392]=7./4.*armttbar[107];
+   armttbar[399]=11./3. - armttbar[392];
+   armttbar[399]=armttbar[399]*armttbar[107];
+   armttbar[157]=armttbar[399] + armttbar[157];
+   armttbar[157]=armttbar[68]*armttbar[157];
+   armttbar[157]=armttbar[157] + armttbar[376];
+   armttbar[376]= - armttbar[333]*armttbar[189];
+   armttbar[141]= - armttbar[141]*armttbar[192];
+   armttbar[141]=armttbar[141] - 32./27. + armttbar[376];
+   armttbar[141]=armttbar[93]*armttbar[141];
+   armttbar[376]=armttbar[367] + 2./3.;
+   armttbar[399]=armttbar[96]*armttbar[376];
+   armttbar[141]=armttbar[141] + armttbar[399];
+   armttbar[141]=armttbar[274]*armttbar[141];
+   armttbar[399]= - 29./3. + 61./8.*armttbar[107];
+   armttbar[399]=armttbar[399]*armttbar[107];
+   armttbar[399]=1./18.*armttbar[234] + 101./18. + armttbar[399];
+   armttbar[399]=armttbar[87]*armttbar[399];
+   armttbar[409]=7 - 33./8.*armttbar[107];
+   armttbar[409]=armttbar[409]*armttbar[107];
+   armttbar[409]= - 5./2. + armttbar[409];
+   armttbar[409]=armttbar[83]*armttbar[409];
+   armttbar[399]=armttbar[409] + armttbar[399];
+   armttbar[399]=armttbar[279]*armttbar[399];
+   armttbar[210]= - armttbar[424] - armttbar[210];
+   armttbar[210]=armttbar[238]*armttbar[210];
+   armttbar[409]=armttbar[238]*armttbar[352];
+   armttbar[418]=armttbar[79] - armttbar[84];
+   armttbar[418]=armttbar[409]*armttbar[418];
+   armttbar[422]=armttbar[215]*armttbar[130];
+   armttbar[424]=47./9. - armttbar[194];
+   armttbar[424]=armttbar[424]*armttbar[177];
+   armttbar[178]= - armttbar[178] - 5./9. + armttbar[424];
+   armttbar[178]=armttbar[6]*armttbar[178];
+   armttbar[178]=armttbar[422] + armttbar[178];
+   armttbar[178]=armttbar[178]*armttbar[216];
+   armttbar[130]=armttbar[194]*armttbar[130];
+   armttbar[422]=11./3.*armttbar[102];
+   armttbar[424]=armttbar[227] + armttbar[422];
+   armttbar[424]=armttbar[424]*armttbar[352];
+   armttbar[130]=armttbar[130] + armttbar[424];
+   armttbar[130]=armttbar[19]*armttbar[130]*armttbar[352];
+   armttbar[424]= - 47./3. + 39./4.*armttbar[107];
+   armttbar[424]=armttbar[424]*armttbar[107];
+   armttbar[424]= - armttbar[174] + 5 + armttbar[424];
+   armttbar[424]=armttbar[6]*armttbar[424];
+   armttbar[347]= - armttbar[347] + armttbar[424];
+   armttbar[424]=1./4.*armttbar[23];
+   armttbar[347]=armttbar[347]*armttbar[424];
+   armttbar[425]=armttbar[454]*armttbar[108];
+   armttbar[431]= - 7./2. + armttbar[422];
+   armttbar[431]=armttbar[431]*armttbar[105];
+   armttbar[425]=armttbar[425] + armttbar[431];
+   armttbar[425]=armttbar[66]*armttbar[425];
+   armttbar[431]= - 109./36. + armttbar[107];
+   armttbar[431]=armttbar[431]*armttbar[108];
+   armttbar[434]= - 875 + 1927./6.*armttbar[102];
+   armttbar[434]=armttbar[434]*armttbar[192];
+   armttbar[431]=armttbar[434] + 416./81. + armttbar[431];
+   armttbar[431]=armttbar[431]*armttbar[274];
+   armttbar[434]=armttbar[274]*armttbar[318];
+   armttbar[431]=armttbar[431] - 4./3.*armttbar[434];
+   armttbar[431]=armttbar[20]*armttbar[431];
+   armttbar[435]=armttbar[88]*armttbar[241];
+   armttbar[436]= - armttbar[111] - 13./12.*armttbar[185];
+   armttbar[436]=armttbar[436]*armttbar[438];
+   armttbar[437]=armttbar[111] - armttbar[185];
+   armttbar[390]=armttbar[437]*armttbar[390];
+   armttbar[437]=101./3. - armttbar[107];
+   armttbar[437]=armttbar[437]*armttbar[215];
+   armttbar[437]= - 29./3. + armttbar[437];
+   armttbar[438]=1./8.*armttbar[6];
+   armttbar[437]=armttbar[437]*armttbar[415]*armttbar[438];
+   armttbar[439]=armttbar[409]*armttbar[101];
+   armttbar[440]= - armttbar[48]*armttbar[439];
+   armttbar[442]= - armttbar[61]*armttbar[108];
+   armttbar[442]= - 1./3.*armttbar[52] - 1./4.*armttbar[70] + 
+   armttbar[442] + 1./3.*armttbar[69];
+   armttbar[442]=armttbar[237]*armttbar[442];
+   armttbar[447]= - armttbar[8] + armttbar[78] - armttbar[51];
+   armttbar[447]= - 13./8. + 3./4.*armttbar[447];
+   armttbar[111]=armttbar[111]*armttbar[447];
+   armttbar[447]=2*armttbar[319];
+   armttbar[448]= - 19./3.*armttbar[6] + armttbar[447];
+   armttbar[448]=armttbar[448]*armttbar[318];
+   armttbar[447]=armttbar[295] - armttbar[447];
+   armttbar[447]=armttbar[81]*armttbar[447];
+   armttbar[449]= - armttbar[345] - 1./3. - armttbar[273];
+   armttbar[449]=armttbar[67]*armttbar[449];
+   armttbar[310]= - armttbar[49]*armttbar[310];
+   armttbar[451]=2./3.*armttbar[137];
+   armttbar[452]=armttbar[54]*armttbar[451];
+   armttbar[453]=4./9.*armttbar[57];
+   armttbar[389]=armttbar[389]*armttbar[453];
+   armttbar[392]=1 - armttbar[392];
+   armttbar[392]=armttbar[392]*armttbar[107];
+   armttbar[392]=1./3. + armttbar[392];
+   armttbar[392]=armttbar[65]*armttbar[392];
+   armttbar[454]=armttbar[58]*armttbar[295];
+   armttbar[111]=armttbar[440] - 25./18.*armttbar[454] + armttbar[392]
+    + armttbar[437] + armttbar[390] + armttbar[436] + armttbar[389] + 
+   armttbar[452] + armttbar[310] + armttbar[337] - 13./96.*
+   armttbar[435] + armttbar[449] + armttbar[114] + 2./3.*armttbar[447]
+    + armttbar[431] + armttbar[425] + armttbar[347] + armttbar[130] + 
+   armttbar[342] + armttbar[178] + 8./9.*armttbar[448] + armttbar[149]
+    + armttbar[111] + armttbar[122] + armttbar[418] + armttbar[210] + 
+   armttbar[399] + armttbar[141] + armttbar[442] + 1./4.*armttbar[157]
+    + 1./2.*armttbar[180];
+   armttbar[111]=armttbar[46]*armttbar[111];
+   armttbar[114]=7./8.*armttbar[107];
+   armttbar[122]=3 - armttbar[114];
+   armttbar[122]=armttbar[122]*armttbar[108];
+   armttbar[130]=1./648.*armttbar[102];
+   armttbar[141]= - armttbar[356]*armttbar[130];
+   armttbar[122]=armttbar[141] - 203./27. + armttbar[122];
+   armttbar[122]=armttbar[122]*armttbar[279];
+   armttbar[141]= - armttbar[333]*armttbar[108];
+   armttbar[149]=263 - 257./2.*armttbar[102];
+   armttbar[149]=armttbar[149]*armttbar[218];
+   armttbar[141]=armttbar[149] - 128./81. + armttbar[141];
+   armttbar[141]=armttbar[66]*armttbar[141];
+   armttbar[149]=armttbar[453] - 2./9.*armttbar[54];
+   armttbar[149]=armttbar[360]*armttbar[149];
+   armttbar[157]=armttbar[240] + 1./2.;
+   armttbar[178]=armttbar[157]*armttbar[100];
+   armttbar[180]=armttbar[237]*armttbar[371];
+   armttbar[210]= - armttbar[85]*armttbar[178];
+   armttbar[122]=armttbar[141] + armttbar[122] + armttbar[180] - 5./2.*
+   armttbar[178] + armttbar[210] + armttbar[149];
+   armttbar[122]=armttbar[6]*armttbar[122];
+   armttbar[141]= - 1043 + 1285./2.*armttbar[102];
+   armttbar[141]=armttbar[141]*armttbar[349];
+   armttbar[149]=armttbar[190] - 59./9.;
+   armttbar[149]=armttbar[149]*armttbar[177];
+   armttbar[141]=armttbar[141] + armttbar[149] + 16./27.;
+   armttbar[149]= - armttbar[45]*armttbar[141];
+   armttbar[140]=armttbar[75]*armttbar[140];
+   armttbar[180]=armttbar[87]*armttbar[376];
+   armttbar[210]=armttbar[364]*armttbar[108];
+   armttbar[210]=1./3. + armttbar[210];
+   armttbar[210]=armttbar[76]*armttbar[210];
+   armttbar[140]=armttbar[210] + armttbar[140] + armttbar[180] + 
+   armttbar[149];
+   armttbar[140]=armttbar[274]*armttbar[140];
+   armttbar[149]=1./2.*armttbar[178] + 1./9.*armttbar[295];
+   armttbar[149]=armttbar[6]*armttbar[149];
+   armttbar[180]=3./4.*armttbar[107];
+   armttbar[210]=armttbar[180] - 1;
+   armttbar[210]=armttbar[210]*armttbar[107];
+   armttbar[310]= - 1./2. - armttbar[210];
+   armttbar[310]=armttbar[3]*armttbar[310]*armttbar[279];
+   armttbar[337]=1./16.*armttbar[274];
+   armttbar[342]= - armttbar[21]*armttbar[157]*armttbar[337];
+   armttbar[149]=armttbar[342] + armttbar[310] + armttbar[149] - 1./9.*
+   armttbar[434];
+   armttbar[149]=armttbar[21]*armttbar[149];
+   armttbar[191]=armttbar[191]*armttbar[161];
+   armttbar[310]=armttbar[121]*armttbar[116];
+   armttbar[129]= - armttbar[129] + armttbar[310] + 1 + armttbar[191];
+   armttbar[191]=2 - armttbar[161];
+   armttbar[191]=armttbar[191]*armttbar[107];
+   armttbar[191]= - 1 + armttbar[191];
+   armttbar[191]=armttbar[40]*armttbar[191];
+   armttbar[129]=1./2.*armttbar[129] + armttbar[191];
+   armttbar[129]=armttbar[129]*pow(armttbar[3],2);
+   armttbar[191]=13./3. - armttbar[161];
+   armttbar[191]=armttbar[191]*armttbar[177];
+   armttbar[142]= - armttbar[142] - 25./27. + armttbar[191];
+   armttbar[142]=armttbar[142]*armttbar[274];
+   armttbar[142]=armttbar[142] + armttbar[439];
+   armttbar[142]=armttbar[13]*armttbar[142];
+   armttbar[191]= - 19./6. + armttbar[107];
+   armttbar[191]=armttbar[191]*armttbar[215];
+   armttbar[191]=1 + armttbar[191];
+   armttbar[191]=armttbar[191]*armttbar[274];
+   armttbar[310]=1./3. + armttbar[210];
+   armttbar[310]=armttbar[310]*armttbar[357];
+   armttbar[191]=1./4.*armttbar[310] + 1./2.*armttbar[191] + 1./3.*
+   armttbar[434];
+   armttbar[191]=armttbar[90]*armttbar[191];
+   armttbar[310]=armttbar[89] - armttbar[82] + armttbar[23];
+   armttbar[178]=armttbar[310]*armttbar[178]*armttbar[279];
+   armttbar[157]=armttbar[6]*armttbar[157];
+   armttbar[310]=armttbar[318]*armttbar[179];
+   armttbar[157]=3*armttbar[157] + armttbar[310];
+   armttbar[157]=armttbar[68]*armttbar[157];
+   armttbar[310]= - 1 + 21./16.*armttbar[107];
+   armttbar[310]=armttbar[310]*armttbar[107];
+   armttbar[245]=armttbar[405]*armttbar[245];
+   armttbar[245]=armttbar[245] + armttbar[293] + 1./4. + armttbar[310];
+   armttbar[245]=armttbar[245]*armttbar[357];
+   armttbar[310]=277./9. - 77./2.*armttbar[107];
+   armttbar[310]=armttbar[310]*armttbar[107];
+   armttbar[310]=139./18. + armttbar[310];
+   armttbar[310]=armttbar[310]*armttbar[337];
+   armttbar[310]=armttbar[310] + 29./9.*armttbar[434];
+   armttbar[310]=armttbar[310]*armttbar[430];
+   armttbar[337]=armttbar[237]*armttbar[274];
+   armttbar[337]=armttbar[337] - armttbar[434];
+   armttbar[337]=armttbar[58]*armttbar[337];
+   armttbar[342]=armttbar[215] - 1;
+   armttbar[342]=armttbar[342]*armttbar[107];
+   armttbar[347]=1./2.*armttbar[318];
+   armttbar[349]=armttbar[347] + 1;
+   armttbar[347]= - armttbar[347]*armttbar[349];
+   armttbar[347]=armttbar[347] - 3./4. - armttbar[342];
+   armttbar[347]=MMZ*armttbar[347]*pow(armttbar[6],4);
+   armttbar[356]=armttbar[107] - 3;
+   armttbar[357]=armttbar[356]*armttbar[108];
+   armttbar[349]=armttbar[357] + armttbar[349];
+   armttbar[349]=armttbar[370]*armttbar[349];
+   armttbar[347]=21./2.*armttbar[349] + 5*armttbar[347];
+   armttbar[347]=MMZ*armttbar[415]*armttbar[347];
+   armttbar[349]=armttbar[295] - armttbar[319];
+   armttbar[360]=2./9.*armttbar[52] + 1./6.*armttbar[70];
+   armttbar[349]=armttbar[349]*armttbar[360];
+   armttbar[360]=2./3.*armttbar[319];
+   armttbar[370]= - armttbar[69] + armttbar[179];
+   armttbar[370]=armttbar[370]*armttbar[360];
+   armttbar[371]= - 2 + armttbar[107];
+   armttbar[371]=armttbar[371]*armttbar[107];
+   armttbar[371]= - armttbar[432] + 17./18. + armttbar[371];
+   armttbar[371]=armttbar[6]*armttbar[371];
+   armttbar[371]=armttbar[371] + 2./9.*armttbar[319];
+   armttbar[371]=armttbar[67]*armttbar[371];
+   armttbar[376]= - 4 + armttbar[161];
+   armttbar[376]=armttbar[376]*armttbar[107];
+   armttbar[376]=5./2. + armttbar[376];
+   armttbar[376]=armttbar[6]*armttbar[376];
+   armttbar[360]=armttbar[376] + armttbar[360];
+   armttbar[360]=armttbar[65]*armttbar[360];
+   armttbar[122]=1./8.*armttbar[347] + armttbar[142] + armttbar[191] + 
+   1./9.*armttbar[337] + armttbar[360] + armttbar[310] + armttbar[371]
+    + armttbar[149] + 1./8.*armttbar[245] + 3*armttbar[129] + 1./2.*
+   armttbar[157] + armttbar[370] + armttbar[349] + armttbar[178] + 
+   armttbar[140] + armttbar[122];
+   armttbar[122]=armttbar[46]*armttbar[122];
+   armttbar[129]= - armttbar[21]*armttbar[364]*armttbar[215];
+   armttbar[129]=armttbar[129] - armttbar[141];
+   armttbar[129]=armttbar[274]*armttbar[129];
+   armttbar[140]= - armttbar[339]*armttbar[291];
+   armttbar[129]=armttbar[140] + armttbar[129];
+   armttbar[129]=armttbar[46]*armttbar[129];
+   armttbar[140]= - 773./3. + 289./2.*armttbar[102];
+   armttbar[141]=armttbar[140]*armttbar[426];
+   armttbar[141]=armttbar[141] + 32./81.;
+   armttbar[142]=armttbar[161] - 29./9.;
+   armttbar[149]=armttbar[142]*armttbar[177];
+   armttbar[149]=armttbar[149] + armttbar[141];
+   armttbar[149]=armttbar[149]*armttbar[274];
+   armttbar[157]=armttbar[149]*armttbar[27];
+   armttbar[178]=armttbar[12]*armttbar[46];
+   armttbar[191]=armttbar[332]*armttbar[274]*armttbar[178];
+   armttbar[129]= - 1./64.*armttbar[191] - armttbar[157] + 
+   armttbar[129];
+   armttbar[129]=armttbar[12]*armttbar[129];
+   armttbar[191]= - 5./2. - armttbar[84];
+   armttbar[191]=armttbar[241]*armttbar[191];
+   armttbar[245]=armttbar[88] - armttbar[79];
+   armttbar[310]=armttbar[355]*armttbar[245];
+   armttbar[191]=armttbar[310] + armttbar[191];
+   armttbar[191]=armttbar[46]*armttbar[191];
+   armttbar[310]=armttbar[178]*armttbar[355];
+   armttbar[191]=armttbar[191] + armttbar[310];
+   armttbar[310]=1./2.*armttbar[101];
+   armttbar[191]=armttbar[191]*armttbar[310];
+   armttbar[337]= - 1 - armttbar[45];
+   armttbar[157]=armttbar[337]*armttbar[157];
+   armttbar[122]=armttbar[191] + armttbar[129] + armttbar[157] + 
+   armttbar[122];
+   armttbar[122]=MMZ*armttbar[122];
+   armttbar[129]=armttbar[108] + 3;
+   armttbar[157]=armttbar[129]*armttbar[377];
+   armttbar[191]= - armttbar[104]*armttbar[381];
+   armttbar[337]= - armttbar[195] - armttbar[420];
+   armttbar[337]=armttbar[337]*armttbar[421];
+   armttbar[157]=armttbar[337] + armttbar[191] - 8./9. + armttbar[157];
+   armttbar[157]=armttbar[3]*armttbar[157];
+   armttbar[191]=armttbar[333]*armttbar[187];
+   armttbar[333]= - 301 + 139./2.*armttbar[102];
+   armttbar[333]=armttbar[333]*armttbar[183];
+   armttbar[191]=armttbar[333] + 16./27. + armttbar[191];
+   armttbar[191]=armttbar[191]*armttbar[274];
+   armttbar[291]=armttbar[261]*armttbar[291];
+   armttbar[191]=armttbar[191] - 1./16.*armttbar[291];
+   armttbar[191]=armttbar[15]*armttbar[191];
+   armttbar[291]= - 367 + 457./4.*armttbar[107];
+   armttbar[291]=armttbar[291]*armttbar[177];
+   armttbar[333]= - 3659 + 17041./12.*armttbar[102];
+   armttbar[333]=armttbar[333]*armttbar[444];
+   armttbar[291]=armttbar[333] + 626./27. + armttbar[291];
+   armttbar[291]=armttbar[6]*armttbar[291];
+   armttbar[291]=armttbar[291] + 40./3.*armttbar[319];
+   armttbar[333]=armttbar[142]*armttbar[107];
+   armttbar[337]=4259 - 5557./2.*armttbar[102];
+   armttbar[337]=armttbar[337]*armttbar[102];
+   armttbar[333]=1./2592.*armttbar[337] - 32./27. - 7./32.*
+   armttbar[333];
+   armttbar[333]=armttbar[333]*armttbar[313];
+   armttbar[304]=armttbar[39]*armttbar[304]*armttbar[438];
+   armttbar[265]=armttbar[265]*armttbar[352]*armttbar[36];
+   armttbar[337]=9*armttbar[102];
+   armttbar[339]=armttbar[227] + armttbar[337];
+   armttbar[317]=armttbar[339]*armttbar[317];
+   armttbar[339]=armttbar[290]*armttbar[438];
+   armttbar[347]= - armttbar[38]*armttbar[339];
+   armttbar[349]=151./3. - 27*armttbar[107];
+   armttbar[349]=armttbar[349]*armttbar[397];
+   armttbar[349]= - 3./64.*armttbar[102] - 4./9. + armttbar[349];
+   armttbar[349]=armttbar[21]*armttbar[6]*armttbar[349];
+   armttbar[157]=armttbar[191] + armttbar[349] + armttbar[347] + 
+   armttbar[265] + armttbar[304] + armttbar[157] + armttbar[333] + 1./3.
+   *armttbar[291] + armttbar[317];
+   armttbar[157]=armttbar[46]*armttbar[157];
+   armttbar[191]=armttbar[108] - 7./3.;
+   armttbar[191]=armttbar[191]*armttbar[107];
+   armttbar[191]=armttbar[191] + 25./6.;
+   armttbar[191]=armttbar[191]*armttbar[189];
+   armttbar[265]=armttbar[188] - 115./3.;
+   armttbar[291]=17./432.*armttbar[102];
+   armttbar[265]=armttbar[265]*armttbar[291];
+   armttbar[191]=armttbar[191] - armttbar[265] - 128./81.;
+   armttbar[265]=armttbar[29]*armttbar[6];
+   armttbar[291]=armttbar[191]*armttbar[265];
+   armttbar[304]=armttbar[339]*armttbar[30];
+   armttbar[291]=armttbar[304] - armttbar[291];
+   armttbar[304]=armttbar[140]*armttbar[192];
+   armttbar[317]=armttbar[142]*armttbar[189];
+   armttbar[304]=armttbar[317] + armttbar[304] + 64./81.;
+   armttbar[317]=armttbar[304]*armttbar[313];
+   armttbar[333]= - 89./27. + armttbar[248];
+   armttbar[333]=armttbar[333]*armttbar[189];
+   armttbar[347]= - 1825./3. + 1411./2.*armttbar[102];
+   armttbar[130]=armttbar[347]*armttbar[130];
+   armttbar[130]=armttbar[130] + 32./243. + armttbar[333];
+   armttbar[130]=armttbar[6]*armttbar[130];
+   armttbar[130]=armttbar[130] - armttbar[317] - armttbar[291];
+   armttbar[130]=armttbar[27]*armttbar[130];
+   armttbar[333]=armttbar[177] - 1./3.;
+   armttbar[333]=armttbar[333]*armttbar[107];
+   armttbar[347]= - 1 + 5./16.*armttbar[102];
+   armttbar[349]=armttbar[347]*armttbar[314];
+   armttbar[333]=armttbar[333] + armttbar[349] + 16./9.;
+   armttbar[333]=armttbar[333]*armttbar[1];
+   armttbar[349]=armttbar[161] - 7;
+   armttbar[360]=armttbar[349]*armttbar[177];
+   armttbar[364]=armttbar[116] - 1;
+   armttbar[364]=armttbar[364]*armttbar[102];
+   armttbar[360]=armttbar[360] + 16./27. + 125./432.*armttbar[364];
+   armttbar[370]=armttbar[360]*armttbar[27];
+   armttbar[370]=armttbar[333] + armttbar[370];
+   armttbar[371]=3./16.*armttbar[107];
+   armttbar[376]=armttbar[371] - 1;
+   armttbar[376]=armttbar[376]*armttbar[107];
+   armttbar[389]=55./27.*armttbar[102];
+   armttbar[347]=armttbar[347]*armttbar[389];
+   armttbar[347]=armttbar[376] + armttbar[347] + 80./27.;
+   armttbar[347]=armttbar[347]*armttbar[31];
+   armttbar[376]=armttbar[347] + armttbar[370];
+   armttbar[390]=armttbar[10]*armttbar[376];
+   armttbar[331]=armttbar[331]*armttbar[391];
+   armttbar[271]=armttbar[331] + armttbar[271];
+   armttbar[392]=armttbar[271]*armttbar[36];
+   armttbar[399]=armttbar[205] + 7;
+   armttbar[399]=armttbar[399]*armttbar[102];
+   armttbar[405]=armttbar[170] - 25;
+   armttbar[405]=armttbar[405]*armttbar[107];
+   armttbar[415]= - 5./768.*armttbar[399] + 4./3. + 9./256.*
+   armttbar[405];
+   armttbar[418]=armttbar[415]*armttbar[21];
+   armttbar[392]=armttbar[418] + 1./8.*armttbar[392];
+   armttbar[418]=1./64.*armttbar[271];
+   armttbar[421]= - armttbar[8]*armttbar[418];
+   armttbar[425]=25./9.*armttbar[102] + armttbar[107] - 64./9.;
+   armttbar[430]=2./3.*armttbar[425];
+   armttbar[421]=armttbar[430] + armttbar[421] + armttbar[392];
+   armttbar[421]=armttbar[46]*armttbar[421];
+   armttbar[431]=armttbar[161] - 13;
+   armttbar[434]=armttbar[431]*armttbar[107];
+   armttbar[435]=armttbar[205] - 11;
+   armttbar[435]=armttbar[435]*armttbar[102];
+   armttbar[434]=3./64.*armttbar[434] + 32./9. + 125./576.*
+   armttbar[435];
+   armttbar[436]=armttbar[29] - 1;
+   armttbar[436]=armttbar[27]*armttbar[434]*armttbar[436];
+   armttbar[390]=armttbar[421] + armttbar[436] + armttbar[390];
+   armttbar[390]=armttbar[99]*armttbar[390];
+   armttbar[334]=armttbar[334] + 3./2.;
+   armttbar[334]=armttbar[334]*armttbar[189];
+   armttbar[421]= - 179./3. + 85*armttbar[102];
+   armttbar[421]=armttbar[421]*armttbar[426];
+   armttbar[334]= - armttbar[334] + armttbar[421] + 32./81.;
+   armttbar[421]=armttbar[27]*armttbar[6];
+   armttbar[436]=armttbar[334]*armttbar[421];
+   armttbar[437]=armttbar[342] + 67./36.;
+   armttbar[437]=armttbar[437]*armttbar[108];
+   armttbar[438]=armttbar[188] - 97./3.;
+   armttbar[439]=armttbar[438]*armttbar[113];
+   armttbar[437]=armttbar[437] - armttbar[439] - 32./9.;
+   armttbar[437]=armttbar[437]*armttbar[179];
+   armttbar[439]=armttbar[437]*armttbar[1];
+   armttbar[436]=armttbar[436] - armttbar[439];
+   armttbar[439]= - armttbar[10]*armttbar[436];
+   armttbar[440]= - 245./3. + 187./4.*armttbar[102];
+   armttbar[440]=armttbar[440]*armttbar[218];
+   armttbar[442]=armttbar[215] - 13./27.;
+   armttbar[442]=armttbar[442]*armttbar[108];
+   armttbar[440]=armttbar[440] + armttbar[442] + 160./243.;
+   armttbar[342]=armttbar[342] + 17./12.;
+   armttbar[342]=armttbar[342]*armttbar[108];
+   armttbar[442]=11./216.*armttbar[102];
+   armttbar[438]=armttbar[442]*armttbar[438];
+   armttbar[342]=armttbar[342] - armttbar[438] - 160./81.;
+   armttbar[438]=armttbar[10]*armttbar[342];
+   armttbar[438]=armttbar[438] - armttbar[440];
+   armttbar[438]=armttbar[6]*armttbar[438];
+   armttbar[339]=armttbar[339]*armttbar[11];
+   armttbar[438]= - armttbar[339] + armttbar[438];
+   armttbar[438]=armttbar[31]*armttbar[438];
+   armttbar[447]=1./81.*armttbar[102];
+   armttbar[448]=59 - 239./8.*armttbar[102];
+   armttbar[448]=armttbar[448]*armttbar[447];
+   armttbar[448]=armttbar[448] - 64./81. - armttbar[367];
+   armttbar[449]=armttbar[46]*armttbar[6];
+   armttbar[448]=armttbar[448]*armttbar[449];
+   armttbar[452]=armttbar[99]*armttbar[46];
+   armttbar[453]=armttbar[434]*armttbar[452];
+   armttbar[448]=armttbar[448] + armttbar[453];
+   armttbar[448]=armttbar[12]*armttbar[448];
+   armttbar[453]=armttbar[220] - 73./9.;
+   armttbar[453]=armttbar[453]*armttbar[167];
+   armttbar[408]=armttbar[408]*armttbar[108];
+   armttbar[453]=armttbar[453] + armttbar[408] + 32./27.;
+   armttbar[453]=armttbar[453]*armttbar[6];
+   armttbar[453]=armttbar[453] + armttbar[339];
+   armttbar[454]=1./3.*armttbar[1];
+   armttbar[453]=armttbar[453]*armttbar[454];
+   armttbar[130]=armttbar[448] + armttbar[390] + armttbar[157] + 
+   armttbar[438] + armttbar[439] - armttbar[453] + armttbar[130];
+   armttbar[130]=armttbar[12]*armttbar[130];
+   armttbar[157]= - armttbar[51] + armttbar[77];
+   armttbar[157]=armttbar[143]*armttbar[157];
+   armttbar[245]=armttbar[133]*armttbar[245];
+   armttbar[390]=armttbar[18]*armttbar[261]*armttbar[279];
+   armttbar[355]=armttbar[15]*armttbar[355];
+   armttbar[438]=armttbar[42]*armttbar[409];
+   armttbar[439]= - 19./3. - armttbar[190];
+   armttbar[439]=armttbar[439]*armttbar[107];
+   armttbar[250]= - 19 - armttbar[250];
+   armttbar[250]=armttbar[250]*armttbar[105];
+   armttbar[110]=armttbar[438] + armttbar[355] - 3./2.*armttbar[150] - 
+   armttbar[110] + armttbar[390] + armttbar[439] + armttbar[250] + 
+   armttbar[245] + armttbar[157];
+   armttbar[110]=armttbar[46]*armttbar[110];
+   armttbar[157]=armttbar[241]*armttbar[15];
+   armttbar[245]=armttbar[157] + armttbar[106];
+   armttbar[245]=armttbar[245]*armttbar[178];
+   armttbar[110]=1./2.*armttbar[245] + armttbar[110];
+   armttbar[110]=armttbar[110]*armttbar[310];
+   armttbar[245]=armttbar[79]*armttbar[271];
+   armttbar[250]=4879./16. + armttbar[72];
+   armttbar[250]=armttbar[250]*armttbar[161];
+   armttbar[250]=armttbar[250] - 148303./48. - 5*armttbar[72];
+   armttbar[250]=armttbar[250]*armttbar[187];
+   armttbar[310]=993./16. + 1./3.*armttbar[72];
+   armttbar[310]=armttbar[310]*armttbar[205];
+   armttbar[310]=armttbar[310] - 224603./432. - armttbar[72];
+   armttbar[310]=armttbar[310]*armttbar[102];
+   armttbar[245]= - 1./4.*armttbar[245] + 5./32.*armttbar[310] + 4211./
+   27. + armttbar[250];
+   armttbar[250]=armttbar[418]*armttbar[51];
+   armttbar[310]=5./128.*armttbar[399] - 8 - 27./128.*armttbar[405];
+   armttbar[310]=armttbar[87]*armttbar[310];
+   armttbar[355]=3./32.*armttbar[107];
+   armttbar[390]=armttbar[355]*armttbar[431];
+   armttbar[390]=armttbar[390] + 64./9. + 125./288.*armttbar[435];
+   armttbar[438]= - armttbar[75]*armttbar[390];
+   armttbar[270]=armttbar[270]*armttbar[194];
+   armttbar[439]= - 3 + armttbar[205];
+   armttbar[439]=armttbar[439]*armttbar[391];
+   armttbar[270]=armttbar[270] + armttbar[439];
+   armttbar[270]=armttbar[270]*armttbar[427];
+   armttbar[427]=16./3.*armttbar[318];
+   armttbar[439]=23./3. + armttbar[231];
+   armttbar[439]=armttbar[439]*armttbar[427];
+   armttbar[245]=armttbar[270] + armttbar[438] - armttbar[250] + 
+   armttbar[310] + 1./2.*armttbar[245] + armttbar[439] - armttbar[392];
+   armttbar[245]=armttbar[46]*armttbar[245];
+   armttbar[270]= - armttbar[25]*armttbar[360];
+   armttbar[310]= - armttbar[29]*armttbar[434];
+   armttbar[360]= - 17 + armttbar[161];
+   armttbar[360]=armttbar[360]*armttbar[355];
+   armttbar[392]=5./96.*armttbar[102];
+   armttbar[434]=55./2.*armttbar[102];
+   armttbar[438]= - 133 + armttbar[434];
+   armttbar[438]=armttbar[438]*armttbar[392];
+   armttbar[270]=armttbar[310] + armttbar[270] + armttbar[438] + 32./3.
+    + armttbar[360];
+   armttbar[270]=armttbar[27]*armttbar[270];
+   armttbar[310]= - armttbar[10]*armttbar[370];
+   armttbar[333]= - armttbar[25]*armttbar[333];
+   armttbar[360]= - armttbar[25] - armttbar[10];
+   armttbar[347]=armttbar[360]*armttbar[347];
+   armttbar[245]=armttbar[245] + armttbar[347] + armttbar[310] + 
+   armttbar[333] + armttbar[270];
+   armttbar[245]=armttbar[99]*armttbar[245];
+   armttbar[141]= - armttbar[33]*armttbar[141];
+   armttbar[270]=29./9.*armttbar[33] - armttbar[163];
+   armttbar[270]=armttbar[270]*armttbar[177];
+   armttbar[141]=armttbar[270] + armttbar[141];
+   armttbar[141]=armttbar[6]*armttbar[141];
+   armttbar[270]=armttbar[175] + 611./3.;
+   armttbar[270]=armttbar[270]*armttbar[192];
+   armttbar[270]=armttbar[270] - 64./81.;
+   armttbar[310]=11./9. + armttbar[161];
+   armttbar[310]=armttbar[310]*armttbar[189];
+   armttbar[141]=armttbar[141] + armttbar[310] + armttbar[270];
+   armttbar[141]=armttbar[6]*armttbar[141];
+   armttbar[310]=armttbar[45]*armttbar[353];
+   armttbar[274]=armttbar[20]*armttbar[304]*armttbar[274];
+   armttbar[149]=armttbar[15]*armttbar[149];
+   armttbar[304]=3./4.*armttbar[185];
+   armttbar[333]=armttbar[43]*armttbar[304];
+   armttbar[141]=armttbar[149] + armttbar[274] + armttbar[310] + 
+   armttbar[317] + armttbar[141] + armttbar[333];
+   armttbar[141]=armttbar[27]*armttbar[141];
+   armttbar[149]=armttbar[377] - 2./3.;
+   armttbar[149]=armttbar[149]*armttbar[107];
+   armttbar[274]=11./27.*armttbar[102];
+   armttbar[310]= - 10./3. + 17./8.*armttbar[102];
+   armttbar[317]=armttbar[274]*armttbar[310];
+   armttbar[149]=armttbar[149] + armttbar[317];
+   armttbar[317]=armttbar[149] + 80./81.;
+   armttbar[317]=armttbar[317]*armttbar[6];
+   armttbar[333]=armttbar[317]*armttbar[31];
+   armttbar[347]=armttbar[161] - 19./9.;
+   armttbar[347]=armttbar[347]*armttbar[189];
+   armttbar[336]=armttbar[336] - 107./3.;
+   armttbar[336]=armttbar[336]*armttbar[192];
+   armttbar[336]=armttbar[347] + armttbar[336] + 16./81.;
+   armttbar[347]=armttbar[336]*armttbar[421];
+   armttbar[360]=armttbar[189] - 2./9.;
+   armttbar[360]=armttbar[360]*armttbar[107];
+   armttbar[310]=armttbar[310]*armttbar[105];
+   armttbar[310]=armttbar[360] + armttbar[310];
+   armttbar[360]=armttbar[310] + 16./27.;
+   armttbar[370]=armttbar[1]*armttbar[6];
+   armttbar[438]=armttbar[360]*armttbar[370];
+   armttbar[333]=armttbar[333] + armttbar[347] + armttbar[438];
+   armttbar[347]= - 317./9. + armttbar[403];
+   armttbar[347]=armttbar[347]*armttbar[177];
+   armttbar[403]=607./16. - 4*armttbar[102];
+   armttbar[403]=armttbar[403]*armttbar[447];
+   armttbar[347]=armttbar[403] - 4./3. + armttbar[347];
+   armttbar[347]=armttbar[6]*armttbar[347];
+   armttbar[403]=1./4.*armttbar[101];
+   armttbar[439]=armttbar[106]*armttbar[403];
+   armttbar[347]=armttbar[439] + armttbar[347] - armttbar[445];
+   armttbar[347]=armttbar[46]*armttbar[347];
+   armttbar[439]=917./3. - 111./2.*armttbar[107];
+   armttbar[439]=armttbar[439]*armttbar[107];
+   armttbar[448]= - 9091./3. + 1445./2.*armttbar[102];
+   armttbar[448]=armttbar[448]*armttbar[102];
+   armttbar[439]= - armttbar[427] + 5./2304.*armttbar[448] + 44./27. + 
+   5./256.*armttbar[439];
+   armttbar[439]=armttbar[46]*armttbar[439];
+   armttbar[439]=armttbar[439] + armttbar[376];
+   armttbar[439]=armttbar[99]*armttbar[439];
+   armttbar[347]=armttbar[439] + armttbar[347] - armttbar[333];
+   armttbar[347]=armttbar[13]*armttbar[347];
+   armttbar[439]= - 10 + 121./2.*armttbar[102];
+   armttbar[439]=armttbar[439]*armttbar[232];
+   armttbar[448]=armttbar[306] - 43./9.;
+   armttbar[448]=armttbar[448]*armttbar[107];
+   armttbar[439]=armttbar[439] + armttbar[448] + 20./27.;
+   armttbar[448]=armttbar[194] - 25./2.;
+   armttbar[456]= - armttbar[448]*armttbar[108];
+   armttbar[456]= - 25./3. + armttbar[456];
+   armttbar[456]=armttbar[456]*armttbar[108];
+   armttbar[458]= - 19 + 119./4.*armttbar[102];
+   armttbar[458]=armttbar[458]*armttbar[345];
+   armttbar[456]=armttbar[458] + 16./9. + armttbar[456];
+   armttbar[456]=armttbar[29]*armttbar[456];
+   armttbar[458]=armttbar[30]*armttbar[209];
+   armttbar[456]=armttbar[458] + armttbar[456] - armttbar[439];
+   armttbar[456]=armttbar[27]*armttbar[456];
+   armttbar[458]=armttbar[107] - 7./2.;
+   armttbar[459]= - armttbar[458]*armttbar[107];
+   armttbar[459]= - 5 + armttbar[459];
+   armttbar[459]=armttbar[459]*armttbar[108];
+   armttbar[460]=7./2.*armttbar[102];
+   armttbar[461]=armttbar[460] - 1;
+   armttbar[462]=armttbar[461]*armttbar[116];
+   armttbar[459]=armttbar[462] + 4./3. + armttbar[459];
+   armttbar[459]=armttbar[1]*armttbar[459];
+   armttbar[462]=armttbar[194] - 17./2.;
+   armttbar[463]= - armttbar[462]*armttbar[215];
+   armttbar[463]= - 2./3. + armttbar[463];
+   armttbar[463]=armttbar[463]*armttbar[107];
+   armttbar[464]=35./8.*armttbar[102];
+   armttbar[465]=4 + armttbar[464];
+   armttbar[465]=armttbar[465]*armttbar[174];
+   armttbar[463]=armttbar[465] + 4./9. + armttbar[463];
+   armttbar[463]=armttbar[27]*armttbar[463];
+   armttbar[459]=armttbar[459] + armttbar[463];
+   armttbar[459]=armttbar[10]*armttbar[459];
+   armttbar[463]=17./3. - armttbar[306];
+   armttbar[463]=armttbar[463]*armttbar[107];
+   armttbar[465]=11./2.*armttbar[102];
+   armttbar[466]=2./3. - armttbar[465];
+   armttbar[466]=armttbar[466]*armttbar[102];
+   armttbar[463]=armttbar[466] - 4./3. + armttbar[463];
+   armttbar[466]= - 2./3. + 1./2.*armttbar[280];
+   armttbar[466]=armttbar[466]*armttbar[107];
+   armttbar[466]=armttbar[466] - armttbar[167];
+   armttbar[466]=armttbar[11]*armttbar[466];
+   armttbar[463]=1./3.*armttbar[463] + armttbar[466];
+   armttbar[463]=armttbar[1]*armttbar[463];
+   armttbar[456]=armttbar[459] + armttbar[463] + armttbar[456];
+   armttbar[456]=armttbar[3]*armttbar[456];
+   armttbar[459]=armttbar[107] - 7./27.;
+   armttbar[459]=armttbar[459]*armttbar[215];
+   armttbar[459]=armttbar[459] - 5./27.;
+   armttbar[463]= - armttbar[6]*armttbar[459];
+   armttbar[466]= - 11./3. + armttbar[107];
+   armttbar[466]=armttbar[466]*armttbar[189];
+   armttbar[466]=7./9. + armttbar[466];
+   armttbar[466]=armttbar[466]*armttbar[107];
+   armttbar[466]= - 4./9. + armttbar[466];
+   armttbar[265]=armttbar[466]*armttbar[265];
+   armttbar[466]= - armttbar[30]*armttbar[154];
+   armttbar[265]=armttbar[466] + armttbar[463] + armttbar[265];
+   armttbar[265]=armttbar[27]*armttbar[265];
+   armttbar[154]=armttbar[154]*armttbar[11];
+   armttbar[204]= - armttbar[204]*armttbar[215];
+   armttbar[204]=1./3. + armttbar[204];
+   armttbar[204]=armttbar[6]*armttbar[204];
+   armttbar[204]=armttbar[204] - armttbar[154];
+   armttbar[204]=armttbar[204]*armttbar[454];
+   armttbar[463]= - 1 + armttbar[158];
+   armttbar[463]=armttbar[463]*armttbar[108];
+   armttbar[463]=1 + armttbar[463];
+   armttbar[463]=armttbar[463]*armttbar[108];
+   armttbar[463]= - 1./3. + armttbar[463];
+   armttbar[463]=armttbar[463]*armttbar[370];
+   armttbar[455]=5./9. + armttbar[455];
+   armttbar[455]=armttbar[455]*armttbar[108];
+   armttbar[455]= - 1./9. + armttbar[455];
+   armttbar[455]=armttbar[455]*armttbar[421];
+   armttbar[455]=armttbar[463] + armttbar[455];
+   armttbar[455]=armttbar[10]*armttbar[455];
+   armttbar[204]=armttbar[455] + armttbar[204] + armttbar[265];
+   armttbar[204]=armttbar[21]*armttbar[204];
+   armttbar[265]= - armttbar[99]*armttbar[376];
+   armttbar[376]=7 - armttbar[181];
+   armttbar[376]=armttbar[376]*armttbar[189];
+   armttbar[376]=armttbar[381] - 2./9. + armttbar[376];
+   armttbar[376]=armttbar[376]*armttbar[449];
+   armttbar[265]=armttbar[265] + armttbar[376] + armttbar[333];
+   armttbar[265]=armttbar[24]*armttbar[265];
+   armttbar[333]=armttbar[205] + 37;
+   armttbar[333]=armttbar[333]*armttbar[102];
+   armttbar[376]=armttbar[108] - 3;
+   armttbar[376]=armttbar[376]*armttbar[107];
+   armttbar[455]=armttbar[427] - 5./288.*armttbar[333] + 104./9. + 99./
+   32.*armttbar[376];
+   armttbar[455]=armttbar[455]*armttbar[452];
+   armttbar[463]=armttbar[188] + 821./3.;
+   armttbar[463]=armttbar[463]*armttbar[258];
+   armttbar[171]=armttbar[349]*armttbar[171];
+   armttbar[171]=armttbar[171] + 685./6.;
+   armttbar[171]=armttbar[171]*armttbar[177];
+   armttbar[171]=armttbar[463] + armttbar[171] - 196./27.;
+   armttbar[171]=armttbar[171]*armttbar[6];
+   armttbar[171]=armttbar[171] - armttbar[419];
+   armttbar[419]= - armttbar[46]*armttbar[171];
+   armttbar[419]=armttbar[419] - armttbar[455];
+   armttbar[419]=armttbar[12]*armttbar[419];
+   armttbar[448]=armttbar[448]*armttbar[416];
+   armttbar[448]=205 + armttbar[448];
+   armttbar[448]=armttbar[448]*armttbar[215];
+   armttbar[463]=31 + armttbar[198];
+   armttbar[463]=armttbar[463]*armttbar[293];
+   armttbar[231]= - armttbar[231] + armttbar[463] - 53./3. + 
+   armttbar[448];
+   armttbar[231]=armttbar[3]*armttbar[231];
+   armttbar[448]=armttbar[194] - 11;
+   armttbar[448]=armttbar[448]*armttbar[107];
+   armttbar[463]= - 119./3. - 11./4.*armttbar[448];
+   armttbar[463]=armttbar[463]*armttbar[107];
+   armttbar[463]=53./3. + armttbar[463];
+   armttbar[463]=armttbar[463]*armttbar[352];
+   armttbar[463]=armttbar[463] + armttbar[319];
+   armttbar[463]=armttbar[21]*armttbar[463];
+   armttbar[231]=armttbar[231] + armttbar[463];
+   armttbar[231]=armttbar[46]*armttbar[231];
+   armttbar[231]=armttbar[419] + armttbar[231] + armttbar[455];
+   armttbar[231]=armttbar[41]*armttbar[231];
+   armttbar[419]= - armttbar[458]*armttbar[194];
+   armttbar[419]= - 29./3. + armttbar[419];
+   armttbar[419]=armttbar[419]*armttbar[108];
+   armttbar[458]=armttbar[461]*armttbar[102];
+   armttbar[419]=11./18.*armttbar[458] + 20./9. + armttbar[419];
+   armttbar[419]=armttbar[10]*armttbar[419];
+   armttbar[209]=armttbar[11]*armttbar[209];
+   armttbar[209]=armttbar[419] + armttbar[209] - armttbar[439];
+   armttbar[209]=armttbar[3]*armttbar[209];
+   armttbar[357]=19./9. + armttbar[357];
+   armttbar[357]=armttbar[357]*armttbar[108];
+   armttbar[357]= - 5./9. + armttbar[357];
+   armttbar[357]=armttbar[10]*armttbar[357];
+   armttbar[357]=armttbar[357] - armttbar[459];
+   armttbar[357]=armttbar[6]*armttbar[357];
+   armttbar[154]= - armttbar[154] + armttbar[357];
+   armttbar[154]=armttbar[21]*armttbar[154];
+   armttbar[304]= - armttbar[23]*armttbar[304];
+   armttbar[154]=armttbar[154] + armttbar[304] + armttbar[209];
+   armttbar[154]=armttbar[31]*armttbar[154];
+   armttbar[209]= - 631./24. + armttbar[211];
+   armttbar[209]=armttbar[209]*armttbar[215];
+   armttbar[209]=armttbar[174] + 3 + armttbar[209];
+   armttbar[209]=armttbar[6]*armttbar[209];
+   armttbar[211]=armttbar[107] - 1./3.;
+   armttbar[211]=armttbar[211]*armttbar[107];
+   armttbar[304]= - armttbar[211] - armttbar[174];
+   armttbar[304]=armttbar[98]*armttbar[304];
+   armttbar[209]=11./32.*armttbar[304] + armttbar[209] + 4./3.*
+   armttbar[319];
+   armttbar[209]=armttbar[46]*armttbar[209];
+   armttbar[304]=59 - armttbar[388];
+   armttbar[304]=armttbar[304]*armttbar[107];
+   armttbar[304]= - armttbar[427] + 25./384.*armttbar[102] - 10./3. + 9.
+   /128.*armttbar[304];
+   armttbar[304]=armttbar[304]*armttbar[452];
+   armttbar[209]=armttbar[209] + armttbar[304];
+   armttbar[209]=armttbar[90]*armttbar[209];
+   armttbar[304]=37./3. - 33./4.*armttbar[107];
+   armttbar[304]=armttbar[304]*armttbar[189];
+   armttbar[319]=143./3. + armttbar[220];
+   armttbar[319]=armttbar[319]*armttbar[217];
+   armttbar[304]=armttbar[319] - 28./27. + armttbar[304];
+   armttbar[304]=armttbar[6]*armttbar[304];
+   armttbar[304]=armttbar[304] + armttbar[445];
+   armttbar[304]=armttbar[46]*armttbar[304];
+   armttbar[304]=armttbar[304] + armttbar[455];
+   armttbar[304]=armttbar[80]*armttbar[304];
+   armttbar[319]=armttbar[185]*armttbar[1];
+   armttbar[357]=armttbar[295]*armttbar[194];
+   armttbar[419]= - armttbar[27]*armttbar[357];
+   armttbar[419]= - armttbar[319] + armttbar[419];
+   armttbar[419]=armttbar[419]*armttbar[424];
+   armttbar[418]=armttbar[74]*armttbar[452]*armttbar[418];
+   armttbar[357]=armttbar[31]*armttbar[357];
+   armttbar[319]=armttbar[319] + armttbar[357];
+   armttbar[319]=armttbar[26]*armttbar[319];
+   armttbar[357]= - armttbar[415]*armttbar[452];
+   armttbar[415]=5./3. - 9./4.*armttbar[107];
+   armttbar[415]=armttbar[415]*armttbar[189];
+   armttbar[415]=armttbar[381] + 2./9. + armttbar[415];
+   armttbar[415]=armttbar[415]*armttbar[449];
+   armttbar[357]=armttbar[415] + armttbar[357];
+   armttbar[357]=armttbar[76]*armttbar[357];
+   armttbar[110]=armttbar[122] + armttbar[357] + armttbar[304] + 1./4.*
+   armttbar[319] + armttbar[231] + armttbar[265] + armttbar[209] + 
+   armttbar[347] + armttbar[110] + armttbar[130] + armttbar[418] + 
+   armttbar[245] + armttbar[154] + armttbar[204] + armttbar[419] + 
+   armttbar[111] + armttbar[141] + armttbar[456];
+   armttbar[110]=MMZ*armttbar[110];
+   armttbar[111]= - 271./3. + armttbar[433];
+   armttbar[111]=armttbar[111]*armttbar[189];
+   armttbar[122]=5./216.*armttbar[102];
+   armttbar[130]= - 1819 + 965./2.*armttbar[102];
+   armttbar[130]=armttbar[130]*armttbar[122];
+   armttbar[111]=armttbar[130] + 512./9. + armttbar[111];
+   armttbar[111]=armttbar[17]*armttbar[111];
+   armttbar[130]= - 85./3. + armttbar[170];
+   armttbar[130]=armttbar[130]*armttbar[189];
+   armttbar[141]= - 133./3. + armttbar[374];
+   armttbar[141]=armttbar[141]*armttbar[102];
+   armttbar[130]=25./72.*armttbar[141] + 512./27. + armttbar[130];
+   armttbar[130]=armttbar[15]*armttbar[130];
+   armttbar[111]=armttbar[130] + armttbar[111];
+   armttbar[111]=armttbar[9]*armttbar[111];
+   armttbar[130]=armttbar[332]*armttbar[9];
+   armttbar[141]=armttbar[332]*armttbar[268];
+   armttbar[154]=17./2.*armttbar[130] - armttbar[141];
+   armttbar[154]=armttbar[154]*armttbar[225];
+   armttbar[204]=armttbar[335]*armttbar[268];
+   armttbar[204]=armttbar[204] - armttbar[130];
+   armttbar[204]=armttbar[204]*MMH;
+   armttbar[204]=armttbar[204] + armttbar[271];
+   armttbar[209]=armttbar[204]*armttbar[301];
+   armttbar[231]= - 5./384.*armttbar[399] + 8./3. + 9./128.*
+   armttbar[405];
+   armttbar[231]=armttbar[21]*armttbar[231];
+   armttbar[245]=4133./3. - 399./2.*armttbar[107];
+   armttbar[245]=armttbar[245]*armttbar[208];
+   armttbar[265]=5153 - 26045./18.*armttbar[102];
+   armttbar[265]=armttbar[265]*armttbar[102];
+   armttbar[111]=armttbar[231] + armttbar[209] + armttbar[154] + 5./384.
+   *armttbar[265] - 2072./27. + armttbar[245] + armttbar[111];
+   armttbar[111]=armttbar[15]*armttbar[111];
+   armttbar[154]=armttbar[84]*armttbar[332];
+   armttbar[209]= - armttbar[79]*armttbar[354];
+   armttbar[154]=armttbar[209] - 31./16.*armttbar[271] - 7*
+   armttbar[154];
+   armttbar[209]=armttbar[18] - armttbar[17];
+   armttbar[209]=1./2.*armttbar[209] + armttbar[92];
+   armttbar[209]=armttbar[9]*armttbar[332]*armttbar[209];
+   armttbar[154]=1./2.*armttbar[154] + armttbar[209];
+   armttbar[154]=armttbar[9]*armttbar[154];
+   armttbar[209]=armttbar[84] + 1;
+   armttbar[209]=armttbar[268]*armttbar[209];
+   armttbar[231]=armttbar[267]*armttbar[20];
+   armttbar[209]=1./2.*armttbar[209] - armttbar[231];
+   armttbar[209]=armttbar[332]*armttbar[209];
+   armttbar[154]=armttbar[154] + armttbar[209];
+   armttbar[154]=armttbar[154]*armttbar[254];
+   armttbar[209]=119./4. - 3*armttbar[72];
+   armttbar[209]=armttbar[209]*armttbar[108];
+   armttbar[245]=armttbar[72] - 119./12.;
+   armttbar[209]=5*armttbar[245] + armttbar[209];
+   armttbar[209]=armttbar[209]*armttbar[107];
+   armttbar[245]= - armttbar[245]*armttbar[331];
+   armttbar[209]=armttbar[209] + armttbar[245];
+   armttbar[245]=5*armttbar[271];
+   armttbar[265]=armttbar[84]*armttbar[245];
+   armttbar[209]=1./4.*armttbar[209] + armttbar[265];
+   armttbar[265]=armttbar[79]*armttbar[332];
+   armttbar[209]=1./2.*armttbar[209] + armttbar[265];
+   armttbar[265]= - 7./2.*armttbar[92] - armttbar[18] + 7./4.*
+   armttbar[17];
+   armttbar[265]=armttbar[265]*armttbar[130];
+   armttbar[209]=1./2.*armttbar[209] + armttbar[265];
+   armttbar[265]=armttbar[20]*armttbar[130];
+   armttbar[154]=armttbar[154] + 1./2.*armttbar[209] + armttbar[265];
+   armttbar[154]=armttbar[154]*armttbar[269];
+   armttbar[209]=16./3. + 9./64.*armttbar[405];
+   armttbar[265]=5./192.*armttbar[399] - armttbar[209];
+   armttbar[265]=armttbar[21]*armttbar[265];
+   armttbar[304]= - 193 + 117./4.*armttbar[107];
+   armttbar[304]=armttbar[304]*armttbar[215];
+   armttbar[319]= - 643 + 335./4.*armttbar[102];
+   armttbar[319]=armttbar[319]*armttbar[102];
+   armttbar[331]=64./3.*armttbar[318];
+   armttbar[265]=armttbar[265] + armttbar[331] + 5./108.*armttbar[319]
+    + 2728./27. + armttbar[304];
+   armttbar[265]=armttbar[17]*armttbar[265];
+   armttbar[304]=armttbar[205] + 47;
+   armttbar[304]=armttbar[304]*armttbar[102];
+   armttbar[319]=armttbar[349]*armttbar[306];
+   armttbar[319]=5./18.*armttbar[304] + 64./3. + armttbar[319];
+   armttbar[319]=armttbar[16]*armttbar[319];
+   armttbar[347]= - 151 - 215./2.*armttbar[102];
+   armttbar[347]=armttbar[347]*armttbar[122];
+   armttbar[347]=armttbar[347] + 512./27. - 9./8.*armttbar[120];
+   armttbar[347]=armttbar[17]*armttbar[347];
+   armttbar[319]=armttbar[319] + armttbar[347];
+   armttbar[319]=armttbar[17]*armttbar[319];
+   armttbar[347]=armttbar[349]*armttbar[107];
+   armttbar[357]=5./36.*armttbar[304] + 32./3. + 11./4.*armttbar[347];
+   armttbar[162]=armttbar[357]*armttbar[162];
+   armttbar[162]=armttbar[162] + armttbar[319];
+   armttbar[162]=armttbar[9]*armttbar[162];
+   armttbar[319]=armttbar[130]*armttbar[17];
+   armttbar[319]=armttbar[319] + armttbar[335];
+   armttbar[319]= - MMH*armttbar[319]*armttbar[383];
+   armttbar[357]= - armttbar[17]*armttbar[271];
+   armttbar[319]=armttbar[357] + armttbar[319];
+   armttbar[275]=armttbar[319]*armttbar[275];
+   armttbar[319]=armttbar[302]*armttbar[354];
+   armttbar[319]= - 5*armttbar[332] + armttbar[319];
+   armttbar[319]=armttbar[88]*armttbar[319]*armttbar[225];
+   armttbar[354]=10033./3. - 1011./2.*armttbar[107];
+   armttbar[208]=armttbar[354]*armttbar[208];
+   armttbar[354]=29797 - 14345./2.*armttbar[102];
+   armttbar[354]=armttbar[354]*armttbar[102];
+   armttbar[357]=32./3.*armttbar[318];
+   armttbar[208]= - armttbar[357] + 5./3456.*armttbar[354] - 232./3. + 
+   armttbar[208];
+   armttbar[208]=armttbar[18]*armttbar[208];
+   armttbar[354]= - 5./144.*armttbar[333] + 99./16.*armttbar[376] + 
+   armttbar[357] + 208./9.;
+   armttbar[357]=armttbar[50]*armttbar[354];
+   armttbar[374]=629 - 237./2.*armttbar[107];
+   armttbar[374]=armttbar[374]*armttbar[355];
+   armttbar[415]= - 437 - armttbar[434];
+   armttbar[415]=armttbar[415]*armttbar[102];
+   armttbar[374]= - armttbar[331] + 5./288.*armttbar[415] - 464./9. + 
+   armttbar[374];
+   armttbar[374]=armttbar[16]*armttbar[374];
+   armttbar[304]=5./72.*armttbar[304] + 16./3. + 11./8.*armttbar[347];
+   armttbar[304]=armttbar[94]*armttbar[304];
+   armttbar[347]=11./8.*armttbar[107];
+   armttbar[415]=41 - armttbar[411];
+   armttbar[347]=armttbar[415]*armttbar[347];
+   armttbar[415]= - 19 - armttbar[324];
+   armttbar[415]=armttbar[415]*armttbar[102];
+   armttbar[347]= - armttbar[331] + 5./24.*armttbar[415] - 512./9. + 
+   armttbar[347];
+   armttbar[347]=armttbar[19]*armttbar[347];
+   armttbar[415]=armttbar[92]*armttbar[271];
+   armttbar[418]=5279./3. - 621./2.*armttbar[107];
+   armttbar[418]=armttbar[418]*armttbar[397];
+   armttbar[419]=997 - 1675./6.*armttbar[102];
+   armttbar[419]=armttbar[419]*armttbar[102];
+   armttbar[418]=25./576.*armttbar[419] - 2080./27. + armttbar[418];
+   armttbar[418]=armttbar[20]*armttbar[418];
+   armttbar[399]=5./96.*armttbar[399] - 32./3. - 9./32.*armttbar[405];
+   armttbar[399]=armttbar[96]*armttbar[399];
+   armttbar[250]=MMH*armttbar[250];
+   armttbar[405]=armttbar[431]*armttbar[377];
+   armttbar[405]=125./72.*armttbar[435] + 256./9. + armttbar[405];
+   armttbar[405]=armttbar[93]*armttbar[405];
+   armttbar[419]= - 23 + armttbar[170];
+   armttbar[419]=armttbar[355]*armttbar[419];
+   armttbar[419]=256./27. + armttbar[419];
+   armttbar[419]=armttbar[33]*armttbar[419];
+   armttbar[209]=armttbar[34]*armttbar[209];
+   armttbar[424]=193./9.*armttbar[33] - 1./2.*armttbar[34];
+   armttbar[424]=armttbar[424]*armttbar[205];
+   armttbar[424]=armttbar[424] - 1499./9.*armttbar[33] - 7./2.*
+   armttbar[34];
+   armttbar[424]=armttbar[424]*armttbar[392];
+   armttbar[111]=armttbar[111] + armttbar[319] + armttbar[405] + 
+   armttbar[250] + armttbar[399] + armttbar[275] + armttbar[154] + 
+   armttbar[418] + armttbar[162] + 5./8.*armttbar[415] + armttbar[347]
+    + armttbar[304] + armttbar[374] + armttbar[357] + armttbar[424] + 
+   armttbar[209] + armttbar[265] + armttbar[208] + armttbar[419];
+   armttbar[111]=armttbar[46]*armttbar[111];
+   armttbar[154]=armttbar[431]*armttbar[371];
+   armttbar[154]=armttbar[154] + 128./9. + 125./144.*armttbar[435];
+   armttbar[162]= - armttbar[29]*armttbar[154];
+   armttbar[208]=armttbar[170] - 7;
+   armttbar[209]=armttbar[208]*armttbar[177];
+   armttbar[250]= - 47 + 35./6.*armttbar[102];
+   armttbar[265]=armttbar[250]*armttbar[102];
+   armttbar[162]=armttbar[162] - 5./48.*armttbar[265] - 64./9. + 
+   armttbar[209];
+   armttbar[162]=armttbar[17]*armttbar[162];
+   armttbar[208]=armttbar[208]*armttbar[187];
+   armttbar[209]= - armttbar[250]*armttbar[392];
+   armttbar[208]=armttbar[209] - 32./9. + armttbar[208];
+   armttbar[208]=armttbar[18]*armttbar[208];
+   armttbar[209]=armttbar[349]*armttbar[189];
+   armttbar[209]=armttbar[209] + 32./27. + 125./216.*armttbar[364];
+   armttbar[250]= - armttbar[5]*armttbar[209];
+   armttbar[265]=33 - armttbar[248];
+   armttbar[265]=armttbar[265]*armttbar[377];
+   armttbar[275]=2173 - 955./2.*armttbar[102];
+   armttbar[275]=armttbar[275]*armttbar[122];
+   armttbar[265]=armttbar[275] - 2048./27. + armttbar[265];
+   armttbar[275]=pow(armttbar[17],2);
+   armttbar[265]=armttbar[9]*armttbar[265]*armttbar[275];
+   armttbar[304]= - 7 + armttbar[108];
+   armttbar[304]=armttbar[355]*armttbar[304];
+   armttbar[304]=128./27. + armttbar[304];
+   armttbar[304]=armttbar[33]*armttbar[304];
+   armttbar[319]= - 523*armttbar[33] + 205./2.*armttbar[395];
+   armttbar[319]=armttbar[319]*armttbar[102];
+   armttbar[162]=armttbar[265] + armttbar[250] + armttbar[208] + 5./864.
+   *armttbar[319] + armttbar[162] + armttbar[304];
+   armttbar[162]=armttbar[27]*armttbar[162];
+   armttbar[208]=armttbar[189] - 2./3.;
+   armttbar[208]=armttbar[208]*armttbar[107];
+   armttbar[250]= - 2 + 5./8.*armttbar[102];
+   armttbar[265]=armttbar[250]*armttbar[314];
+   armttbar[208]=armttbar[208] + armttbar[265] + 32./9.;
+   armttbar[208]=armttbar[208]*armttbar[1];
+   armttbar[209]=armttbar[27]*armttbar[209];
+   armttbar[265]=armttbar[377] - 2;
+   armttbar[265]=armttbar[265]*armttbar[107];
+   armttbar[250]=armttbar[250]*armttbar[389];
+   armttbar[250]=armttbar[265] + armttbar[250] + 160./27.;
+   armttbar[265]=armttbar[31]*armttbar[250];
+   armttbar[209]=armttbar[265] + armttbar[208] + armttbar[209];
+   armttbar[209]=armttbar[10]*armttbar[209];
+   armttbar[265]=armttbar[29]*armttbar[390];
+   armttbar[304]=armttbar[108] - 5;
+   armttbar[319]= - armttbar[304]*armttbar[377];
+   armttbar[347]= - 337 + 145./2.*armttbar[102];
+   armttbar[122]= - armttbar[347]*armttbar[122];
+   armttbar[122]=armttbar[265] + armttbar[122] - 320./27. + 
+   armttbar[319];
+   armttbar[122]=armttbar[27]*armttbar[122];
+   armttbar[265]=armttbar[304]*armttbar[161];
+   armttbar[304]=armttbar[347]*armttbar[102];
+   armttbar[265]=5./54.*armttbar[304] + 1280./27. + armttbar[265];
+   armttbar[304]=armttbar[27]*armttbar[17];
+   armttbar[265]=armttbar[9]*armttbar[265]*armttbar[304];
+   armttbar[122]=armttbar[122] + armttbar[265] + armttbar[209];
+   armttbar[122]=armttbar[15]*armttbar[122];
+   armttbar[209]=armttbar[215] - 4./3.;
+   armttbar[209]=armttbar[209]*armttbar[107];
+   armttbar[265]=armttbar[417] - 4;
+   armttbar[319]=armttbar[265]*armttbar[314];
+   armttbar[209]=armttbar[209] + armttbar[319] + 64./9.;
+   armttbar[319]=armttbar[17]*armttbar[1];
+   armttbar[347]=armttbar[209]*armttbar[319];
+   armttbar[349]= - armttbar[349]*armttbar[215];
+   armttbar[349]= - 125./108.*armttbar[364] - 64./27. + armttbar[349];
+   armttbar[349]=armttbar[349]*armttbar[304];
+   armttbar[349]= - armttbar[347] + armttbar[349];
+   armttbar[349]=armttbar[10]*armttbar[349];
+   armttbar[209]= - armttbar[1]*armttbar[209];
+   armttbar[357]=49 - armttbar[411];
+   armttbar[357]=armttbar[357]*armttbar[177];
+   armttbar[374]=623 - 305./2.*armttbar[102];
+   armttbar[374]=armttbar[374]*armttbar[102];
+   armttbar[357]=5./432.*armttbar[374] - 320./27. + armttbar[357];
+   armttbar[357]=armttbar[27]*armttbar[357];
+   armttbar[209]=armttbar[209] + armttbar[357];
+   armttbar[209]=armttbar[20]*armttbar[209];
+   armttbar[357]=armttbar[5] - armttbar[18];
+   armttbar[250]= - armttbar[250]*armttbar[357];
+   armttbar[374]=armttbar[180] - 4;
+   armttbar[374]=armttbar[374]*armttbar[107];
+   armttbar[265]=armttbar[265]*armttbar[389];
+   armttbar[265]=armttbar[374] + armttbar[265] + 320./27.;
+   armttbar[374]= - armttbar[10] + 1;
+   armttbar[374]=armttbar[17]*armttbar[374];
+   armttbar[374]= - armttbar[20] + armttbar[374];
+   armttbar[265]=armttbar[265]*armttbar[374];
+   armttbar[250]=armttbar[265] + armttbar[250];
+   armttbar[250]=armttbar[31]*armttbar[250];
+   armttbar[208]= - armttbar[208]*armttbar[357];
+   armttbar[111]=armttbar[111] + armttbar[122] + armttbar[250] + 
+   armttbar[209] + armttbar[349] + armttbar[347] + armttbar[208] + 
+   armttbar[162];
+   armttbar[111]=armttbar[99]*armttbar[111];
+   armttbar[122]=armttbar[273] + 11./9.;
+   armttbar[122]=armttbar[122]*armttbar[107];
+   armttbar[122]=armttbar[122] + armttbar[348];
+   armttbar[162]= - armttbar[122]*armttbar[202];
+   armttbar[208]=armttbar[294]*armttbar[304];
+   armttbar[124]=11./3. + armttbar[124];
+   armttbar[124]=armttbar[124]*armttbar[107];
+   armttbar[124]=armttbar[124] + armttbar[422];
+   armttbar[124]=armttbar[124]*armttbar[208];
+   armttbar[124]=1./2.*armttbar[162] + armttbar[124];
+   armttbar[124]=armttbar[9]*armttbar[124];
+   armttbar[162]=armttbar[239]*armttbar[108];
+   armttbar[209]=armttbar[162] + 5./9.;
+   armttbar[250]=armttbar[216]*armttbar[107];
+   armttbar[265]=armttbar[209]*armttbar[250];
+   armttbar[347]= - armttbar[342]*armttbar[193];
+   armttbar[348]= - 13./2. + armttbar[194];
+   armttbar[348]=armttbar[348]*armttbar[107];
+   armttbar[348]=35./9. + armttbar[348];
+   armttbar[348]=armttbar[348]*armttbar[189];
+   armttbar[349]=armttbar[324] - 13;
+   armttbar[374]=armttbar[349]*armttbar[442];
+   armttbar[239]= - armttbar[239]*armttbar[194];
+   armttbar[239]= - 10./3. + armttbar[239];
+   armttbar[389]=armttbar[107]*armttbar[16];
+   armttbar[390]=armttbar[389]*armttbar[3];
+   armttbar[239]=armttbar[239]*armttbar[390];
+   armttbar[124]=armttbar[124] + armttbar[239] + armttbar[347] + 
+   armttbar[265] + armttbar[374] + 80./81. + armttbar[348];
+   armttbar[124]=armttbar[10]*armttbar[124];
+   armttbar[239]=armttbar[107] + 47./27.;
+   armttbar[239]=armttbar[239]*armttbar[107];
+   armttbar[265]=armttbar[292]*armttbar[11];
+   armttbar[239]=armttbar[265] + armttbar[239] + 47./27.*armttbar[102];
+   armttbar[347]=armttbar[239]*armttbar[160];
+   armttbar[348]=5./27.*armttbar[137];
+   armttbar[374]=1./4.*armttbar[265];
+   armttbar[392]=armttbar[348] + armttbar[374];
+   armttbar[395]=armttbar[17]*armttbar[392];
+   armttbar[399]=10./27.*armttbar[137];
+   armttbar[405]=1./2.*armttbar[265];
+   armttbar[411]=armttbar[399] + armttbar[405];
+   armttbar[411]=armttbar[411]*armttbar[201];
+   armttbar[415]=20./9.*armttbar[137];
+   armttbar[417]= - armttbar[415] - 3*armttbar[265];
+   armttbar[417]=armttbar[417]*armttbar[208];
+   armttbar[347]=armttbar[417] + armttbar[411] + armttbar[347] + 
+   armttbar[395];
+   armttbar[347]=armttbar[9]*armttbar[347];
+   armttbar[395]=1./4.*armttbar[296];
+   armttbar[239]=armttbar[239]*armttbar[395];
+   armttbar[209]= - armttbar[209]*armttbar[107];
+   armttbar[411]= - armttbar[122]*armttbar[395];
+   armttbar[209]=armttbar[209] + armttbar[411];
+   armttbar[209]=armttbar[10]*armttbar[209];
+   armttbar[411]=1./2.*armttbar[11];
+   armttbar[366]=armttbar[411]*armttbar[366];
+   armttbar[417]=armttbar[215] + 5./27.;
+   armttbar[418]=armttbar[417]*armttbar[107];
+   armttbar[209]=armttbar[209] + armttbar[239] + armttbar[418] + 
+   armttbar[366];
+   armttbar[209]=armttbar[209]*armttbar[372];
+   armttbar[239]=1./2.*armttbar[18];
+   armttbar[419]=1./2.*armttbar[5];
+   armttbar[424]=armttbar[239] - armttbar[419];
+   armttbar[427]=armttbar[380] + 11./3.*armttbar[284];
+   armttbar[431]=armttbar[427]*armttbar[424];
+   armttbar[435]=armttbar[7] - armttbar[19];
+   armttbar[439]= - armttbar[380]*armttbar[435];
+   armttbar[445]=armttbar[161] + 10./9.;
+   armttbar[455]=armttbar[445]*armttbar[107];
+   armttbar[456]=3./2.*armttbar[300];
+   armttbar[458]=armttbar[11]*armttbar[456];
+   armttbar[455]=armttbar[455] + armttbar[458];
+   armttbar[455]=armttbar[16]*armttbar[455];
+   armttbar[431]=armttbar[455] + armttbar[431] + armttbar[439];
+   armttbar[431]=armttbar[3]*armttbar[431];
+   armttbar[317]=armttbar[317]*armttbar[357];
+   armttbar[357]=armttbar[371] + 1./3.;
+   armttbar[357]=armttbar[357]*armttbar[107];
+   armttbar[357]=armttbar[357] + 80./81.;
+   armttbar[371]=5./27. + armttbar[402];
+   armttbar[371]=armttbar[371]*armttbar[422];
+   armttbar[371]=armttbar[371] + armttbar[357];
+   armttbar[371]=armttbar[25]*armttbar[371];
+   armttbar[285]=armttbar[11]*armttbar[285]*armttbar[352];
+   armttbar[402]= - armttbar[6]*armttbar[418];
+   armttbar[402]=armttbar[402] - armttbar[285];
+   armttbar[402]=armttbar[16]*armttbar[402];
+   armttbar[418]=41./27. - armttbar[114];
+   armttbar[418]=armttbar[418]*armttbar[108];
+   armttbar[439]=745./3. - 1309./8.*armttbar[102];
+   armttbar[439]=armttbar[439]*armttbar[218];
+   armttbar[418]=armttbar[439] - 1760./243. + armttbar[418];
+   armttbar[418]=armttbar[6]*armttbar[418];
+   armttbar[418]=armttbar[418] + armttbar[339];
+   armttbar[418]=armttbar[17]*armttbar[418];
+   armttbar[149]=320./81. + armttbar[149];
+   armttbar[149]=armttbar[20]*armttbar[6]*armttbar[149];
+   armttbar[392]=armttbar[392]*armttbar[9];
+   armttbar[439]=armttbar[340]*armttbar[10];
+   armttbar[122]=armttbar[439]*armttbar[122];
+   armttbar[122]=armttbar[122] - armttbar[392];
+   armttbar[392]=armttbar[269]*armttbar[8]*armttbar[122];
+   armttbar[455]=armttbar[328]*armttbar[435];
+   armttbar[458]=7./9. + 9./32.*armttbar[107];
+   armttbar[458]=armttbar[458]*armttbar[108];
+   armttbar[459]=655 - 253./32.*armttbar[102];
+   armttbar[459]=armttbar[459]*armttbar[102];
+   armttbar[461]=armttbar[195] - 1./9.;
+   armttbar[461]=armttbar[461]*armttbar[107];
+   armttbar[461]=armttbar[461] - armttbar[174];
+   armttbar[463]=1./8.*armttbar[11];
+   armttbar[466]= - armttbar[461]*armttbar[463];
+   armttbar[467]= - armttbar[380] - armttbar[413];
+   armttbar[468]=1./8.*armttbar[22];
+   armttbar[467]=armttbar[467]*armttbar[468];
+   armttbar[124]=armttbar[467] + armttbar[209] + armttbar[392] + 
+   armttbar[149] + armttbar[124] + armttbar[347] + armttbar[431] + 
+   armttbar[418] + armttbar[402] + armttbar[371] + armttbar[466] + 1./
+   486.*armttbar[459] + 1280./243. + armttbar[458] + armttbar[317] + 
+   armttbar[455];
+   armttbar[124]=armttbar[31]*armttbar[124];
+   armttbar[149]= - 125./18. + armttbar[240];
+   armttbar[149]=armttbar[149]*armttbar[107];
+   armttbar[209]= - 125./3. + armttbar[343];
+   armttbar[209]=armttbar[209]*armttbar[167];
+   armttbar[149]=armttbar[149] + armttbar[209];
+   armttbar[149]=armttbar[9]*armttbar[149];
+   armttbar[149]= - armttbar[266] + armttbar[149];
+   armttbar[149]=armttbar[149]*armttbar[302];
+   armttbar[209]= - 67./2. + armttbar[155];
+   armttbar[209]=armttbar[209]*armttbar[107];
+   armttbar[209]= - 655./9. + armttbar[209];
+   armttbar[209]=armttbar[209]*armttbar[187];
+   armttbar[317]=armttbar[446]*armttbar[188];
+   armttbar[317]= - 4013./3. + armttbar[317];
+   armttbar[258]=armttbar[317]*armttbar[258];
+   armttbar[209]=armttbar[258] + 160./27. + armttbar[209];
+   armttbar[209]=armttbar[209]*armttbar[179];
+   armttbar[258]=armttbar[161] + 11;
+   armttbar[258]=armttbar[258]*armttbar[107];
+   armttbar[104]=armttbar[104]*armttbar[102];
+   armttbar[104]=armttbar[258] - armttbar[104];
+   armttbar[258]=armttbar[104]*armttbar[264];
+   armttbar[264]=23 - armttbar[155];
+   armttbar[264]=armttbar[264]*armttbar[108];
+   armttbar[264]=95./9. + armttbar[264];
+   armttbar[264]=armttbar[264]*armttbar[177];
+   armttbar[317]=13./3. + armttbar[343];
+   armttbar[317]=armttbar[317]*armttbar[116];
+   armttbar[317]= - 739./3. + armttbar[317];
+   armttbar[317]=armttbar[317]*armttbar[444];
+   armttbar[264]=armttbar[317] + 128./27. + armttbar[264];
+   armttbar[264]=armttbar[264]*armttbar[246];
+   armttbar[149]=1./48.*armttbar[149] + armttbar[264] + armttbar[209]
+    + armttbar[258];
+   armttbar[149]=armttbar[15]*armttbar[149];
+   armttbar[209]=125./3. + armttbar[248];
+   armttbar[209]=armttbar[209]*armttbar[107];
+   armttbar[258]=125./3. - 9./2.*armttbar[102];
+   armttbar[258]=armttbar[258]*armttbar[102];
+   armttbar[209]=armttbar[209] + armttbar[258];
+   armttbar[258]= - armttbar[8]*armttbar[106];
+   armttbar[209]=1./8.*armttbar[209] + armttbar[258];
+   armttbar[209]=armttbar[209]*armttbar[315];
+   armttbar[258]= - 71./2. + armttbar[144];
+   armttbar[258]=armttbar[258]*armttbar[107];
+   armttbar[258]= - 5149./27. + armttbar[258];
+   armttbar[258]=armttbar[258]*armttbar[187];
+   armttbar[264]=403./2. - armttbar[343];
+   armttbar[264]=armttbar[264]*armttbar[102];
+   armttbar[264]= - 925 + armttbar[264];
+   armttbar[264]=armttbar[264]*armttbar[183];
+   armttbar[258]=armttbar[264] + 80./9. + armttbar[258];
+   armttbar[258]=armttbar[16]*armttbar[258];
+   armttbar[264]=13./3. + armttbar[248];
+   armttbar[264]=armttbar[264]*armttbar[107];
+   armttbar[317]=13 + 79./6.*armttbar[102];
+   armttbar[317]=armttbar[317]*armttbar[105];
+   armttbar[264]=armttbar[264] + armttbar[317];
+   armttbar[264]=armttbar[17]*armttbar[264];
+   armttbar[209]=armttbar[209] + armttbar[258] + 1./16.*armttbar[264];
+   armttbar[209]=armttbar[9]*armttbar[209];
+   armttbar[258]= - 83./3. - armttbar[108];
+   armttbar[258]=armttbar[258]*armttbar[107];
+   armttbar[264]= - 83 + 151./6.*armttbar[102];
+   armttbar[264]=armttbar[264]*armttbar[105];
+   armttbar[258]=armttbar[258] + armttbar[264];
+   armttbar[258]=1./4.*armttbar[258] + armttbar[309];
+   armttbar[224]= - armttbar[224]*armttbar[193];
+   armttbar[224]=1./2.*armttbar[258] + armttbar[224];
+   armttbar[258]=1 + 7./16.*armttbar[234];
+   armttbar[258]=armttbar[258]*armttbar[174];
+   armttbar[264]=armttbar[177]*armttbar[112];
+   armttbar[264]=armttbar[264] + 1./9.;
+   armttbar[264]=armttbar[264]*armttbar[107];
+   armttbar[258]=armttbar[258] + armttbar[264];
+   armttbar[264]= - armttbar[258]*armttbar[326];
+   armttbar[309]=armttbar[338]*armttbar[150];
+   armttbar[264]=armttbar[264] + armttbar[309];
+   armttbar[264]=armttbar[9]*armttbar[264];
+   armttbar[221]= - 21 - armttbar[221];
+   armttbar[221]=armttbar[221]*armttbar[107];
+   armttbar[309]= - 21 - armttbar[429];
+   armttbar[309]=armttbar[309]*armttbar[102];
+   armttbar[221]=armttbar[221] + armttbar[309];
+   armttbar[309]=1./32.*armttbar[8];
+   armttbar[221]=armttbar[221]*armttbar[309];
+   armttbar[221]=armttbar[264] + 1./3.*armttbar[224] + armttbar[221];
+   armttbar[221]=armttbar[9]*armttbar[221];
+   armttbar[179]= - armttbar[106]*armttbar[179];
+   armttbar[179]=armttbar[179] + armttbar[247];
+   armttbar[179]=1./8.*armttbar[179] + armttbar[221];
+   armttbar[179]=armttbar[179]*armttbar[269];
+   armttbar[221]=armttbar[6]*armttbar[281];
+   armttbar[224]= - 7./9. - armttbar[280];
+   armttbar[224]=armttbar[224]*armttbar[107];
+   armttbar[224]=armttbar[224] - 7./9.*armttbar[234];
+   armttbar[224]=armttbar[9]*armttbar[224];
+   armttbar[221]=armttbar[221] + armttbar[224];
+   armttbar[224]= - armttbar[236]*armttbar[279];
+   armttbar[247]=armttbar[9]*armttbar[258];
+   armttbar[224]=armttbar[224] + armttbar[247];
+   armttbar[224]=armttbar[224]*armttbar[302];
+   armttbar[221]=1./4.*armttbar[221] + armttbar[224];
+   armttbar[221]=armttbar[221]*armttbar[365];
+   armttbar[224]=armttbar[273] + 7./9.;
+   armttbar[224]=armttbar[224]*armttbar[107];
+   armttbar[224]=armttbar[224] + armttbar[386];
+   armttbar[221]=1./4.*armttbar[224] + armttbar[221];
+   armttbar[213]=armttbar[221]*armttbar[213];
+   armttbar[165]=397./3. - armttbar[165];
+   armttbar[165]=armttbar[165]*armttbar[107];
+   armttbar[221]=269 - armttbar[311];
+   armttbar[221]=armttbar[221]*armttbar[105];
+   armttbar[165]=armttbar[165] + armttbar[221];
+   armttbar[221]=33 + armttbar[182];
+   armttbar[221]=armttbar[221]*armttbar[107];
+   armttbar[247]=33 - armttbar[443];
+   armttbar[247]=armttbar[247]*armttbar[102];
+   armttbar[221]=armttbar[221] + armttbar[247];
+   armttbar[221]=armttbar[221]*armttbar[296];
+   armttbar[165]=1./4.*armttbar[165] + armttbar[221];
+   armttbar[165]=armttbar[21]*armttbar[165];
+   armttbar[221]=3 - armttbar[190];
+   armttbar[221]=armttbar[221]*armttbar[194];
+   armttbar[247]=9 - 31./2.*armttbar[102];
+   armttbar[247]=armttbar[247]*armttbar[102];
+   armttbar[221]=armttbar[221] + armttbar[247];
+   armttbar[221]=armttbar[8]*armttbar[221];
+   armttbar[165]=armttbar[221] + armttbar[165];
+   armttbar[221]=armttbar[198] - 13./3.;
+   armttbar[221]=armttbar[221]*armttbar[105];
+   armttbar[247]=armttbar[242]*armttbar[108];
+   armttbar[247]=armttbar[247] - 13./9.;
+   armttbar[247]=armttbar[247]*armttbar[107];
+   armttbar[221]=armttbar[221] + armttbar[247];
+   armttbar[247]=armttbar[221]*armttbar[9];
+   armttbar[247]=armttbar[247] - armttbar[266];
+   armttbar[247]= - armttbar[247]*armttbar[384];
+   armttbar[221]=armttbar[247] - armttbar[221];
+   armttbar[221]=armttbar[221]*armttbar[301];
+   armttbar[247]=35./3. - 367./16.*armttbar[107];
+   armttbar[247]=armttbar[247]*armttbar[215];
+   armttbar[264]= - 173./3. - 3329./32.*armttbar[102];
+   armttbar[264]=armttbar[264]*armttbar[345];
+   armttbar[247]=80./3.*armttbar[318] + armttbar[264] + 964./27. + 
+   armttbar[247];
+   armttbar[264]=61./2. - armttbar[144];
+   armttbar[264]=armttbar[264]*armttbar[108];
+   armttbar[264]= - 1303./27. + armttbar[264];
+   armttbar[264]=armttbar[264]*armttbar[177];
+   armttbar[266]=1253./2. - armttbar[188];
+   armttbar[266]=armttbar[266]*armttbar[116];
+   armttbar[266]= - 151 + armttbar[266];
+   armttbar[266]=armttbar[266]*armttbar[426];
+   armttbar[264]=armttbar[266] + 40./9. + armttbar[264];
+   armttbar[264]=armttbar[264]*armttbar[216];
+   armttbar[266]=7./9. + armttbar[306];
+   armttbar[266]=armttbar[266]*armttbar[187];
+   armttbar[311]=277 + 1475./6.*armttbar[102];
+   armttbar[311]=armttbar[311]*armttbar[183];
+   armttbar[266]=armttbar[311] + 64./81. + armttbar[266];
+   armttbar[266]=armttbar[266]*armttbar[193];
+   armttbar[196]= - 31./3. - armttbar[196];
+   armttbar[196]=armttbar[196]*armttbar[107];
+   armttbar[305]= - 29 + 7./12.*armttbar[305];
+   armttbar[305]=armttbar[305]*armttbar[174];
+   armttbar[196]=armttbar[196] + armttbar[305];
+   armttbar[305]=1./8.*armttbar[39];
+   armttbar[196]=armttbar[196]*armttbar[305];
+   armttbar[305]=armttbar[194] + 19;
+   armttbar[305]=armttbar[305]*armttbar[107];
+   armttbar[311]=armttbar[305] - armttbar[243];
+   armttbar[311]=armttbar[311]*armttbar[394];
+   armttbar[149]=armttbar[149] + armttbar[213] + armttbar[221] + 
+   armttbar[179] + armttbar[209] + armttbar[196] + 1./16.*armttbar[311]
+    + armttbar[266] + 1./3.*armttbar[247] + armttbar[264] + 1./64.*
+   armttbar[165];
+   armttbar[149]=armttbar[46]*armttbar[149];
+   armttbar[165]=29./2.*armttbar[107];
+   armttbar[179]=391./3. + armttbar[165];
+   armttbar[179]=armttbar[179]*armttbar[177];
+   armttbar[196]=13759./3. - 91./2.*armttbar[102];
+   armttbar[196]=armttbar[196]*armttbar[444];
+   armttbar[179]=armttbar[196] - 2176./27. + armttbar[179];
+   armttbar[196]=29./6. + armttbar[107];
+   armttbar[196]=armttbar[196]*armttbar[108];
+   armttbar[196]= - 19./3. + armttbar[196];
+   armttbar[196]=armttbar[196]*armttbar[189];
+   armttbar[209]=73./3. - armttbar[198];
+   armttbar[209]=armttbar[209]*armttbar[102];
+   armttbar[196]=7./216.*armttbar[209] - 128./81. + armttbar[196];
+   armttbar[196]=armttbar[29]*armttbar[196];
+   armttbar[209]=armttbar[226]*armttbar[189];
+   armttbar[213]= - 1 - 17./24.*armttbar[102];
+   armttbar[213]=armttbar[213]*armttbar[102];
+   armttbar[213]= - 5./8. + armttbar[213];
+   armttbar[213]=armttbar[213]*armttbar[105];
+   armttbar[209]=armttbar[209] + armttbar[213];
+   armttbar[213]=1./2.*armttbar[30];
+   armttbar[209]=armttbar[209]*armttbar[213];
+   armttbar[179]=armttbar[209] + 1./3.*armttbar[179] + armttbar[196];
+   armttbar[196]=MMt*armttbar[27];
+   armttbar[179]=armttbar[179]*armttbar[196];
+   armttbar[209]=35./6. + armttbar[107];
+   armttbar[209]=armttbar[209]*armttbar[107];
+   armttbar[209]= - 43./3. + armttbar[209];
+   armttbar[209]=armttbar[209]*armttbar[177];
+   armttbar[221]= - 193./6. - armttbar[188];
+   armttbar[221]=armttbar[221]*armttbar[102];
+   armttbar[221]=887./9. + armttbar[221];
+   armttbar[221]=armttbar[221]*armttbar[444];
+   armttbar[209]=armttbar[221] - 128./81. + armttbar[209];
+   armttbar[209]=armttbar[209]*armttbar[304];
+   armttbar[221]=5./2.*armttbar[304];
+   armttbar[226]=armttbar[221] + armttbar[196];
+   armttbar[247]= - armttbar[294]*armttbar[104]*armttbar[226];
+   armttbar[264]=armttbar[196]*armttbar[30];
+   armttbar[266]=armttbar[264] + armttbar[304];
+   armttbar[258]= - armttbar[296]*armttbar[258]*armttbar[266];
+   armttbar[179]=armttbar[258] + 1./2.*armttbar[247] + armttbar[209] + 
+   armttbar[179];
+   armttbar[179]=armttbar[9]*armttbar[179];
+   armttbar[209]=19 - armttbar[190];
+   armttbar[209]=armttbar[209]*armttbar[215];
+   armttbar[247]=185 - 221./6.*armttbar[102];
+   armttbar[247]=armttbar[247]*armttbar[293];
+   armttbar[209]=armttbar[247] - 128./9. + armttbar[209];
+   armttbar[209]=armttbar[209]*armttbar[193];
+   armttbar[247]=2809./9. - 239./2.*armttbar[107];
+   armttbar[247]=armttbar[247]*armttbar[397];
+   armttbar[258]=54977./3. + 2059./2.*armttbar[102];
+   armttbar[258]=armttbar[258]*armttbar[272];
+   armttbar[209]=armttbar[209] + armttbar[258] - 3104./81. + 
+   armttbar[247];
+   armttbar[247]= - 13./48. - armttbar[107];
+   armttbar[247]=armttbar[247]*armttbar[107];
+   armttbar[247]=187./24. + armttbar[247];
+   armttbar[247]=armttbar[247]*armttbar[189];
+   armttbar[258]=16313./3. - 1253./2.*armttbar[102];
+   armttbar[258]=armttbar[258]*armttbar[272];
+   armttbar[247]=armttbar[258] - 224./81. + armttbar[247];
+   armttbar[247]=armttbar[29]*armttbar[247];
+   armttbar[258]= - 1./6. + armttbar[256];
+   armttbar[258]=armttbar[258]*armttbar[107];
+   armttbar[272]= - 1 - armttbar[420];
+   armttbar[272]=armttbar[272]*armttbar[167];
+   armttbar[258]=armttbar[258] + armttbar[272];
+   armttbar[272]=1./8.*armttbar[30];
+   armttbar[258]=armttbar[258]*armttbar[272];
+   armttbar[209]=armttbar[258] + 1./3.*armttbar[209] + armttbar[247];
+   armttbar[209]=armttbar[27]*armttbar[209];
+   armttbar[247]=armttbar[255]*armttbar[107];
+   armttbar[255]= - 1./3. - armttbar[247];
+   armttbar[255]=armttbar[255]*armttbar[189];
+   armttbar[258]=armttbar[460] - 47./3.;
+   armttbar[311]= - armttbar[258]*armttbar[442];
+   armttbar[255]=armttbar[311] - 80./81. + armttbar[255];
+   armttbar[255]=armttbar[10]*armttbar[255];
+   armttbar[224]=armttbar[224]*armttbar[463];
+   armttbar[311]=41./27. + armttbar[215];
+   armttbar[311]=armttbar[311]*armttbar[108];
+   armttbar[132]=625./3. - armttbar[132];
+   armttbar[132]=armttbar[132]*armttbar[218];
+   armttbar[132]=armttbar[255] + armttbar[224] + armttbar[132] - 320./
+   243. + armttbar[311];
+   armttbar[132]=armttbar[31]*armttbar[132];
+   armttbar[218]=79./3. + armttbar[190];
+   armttbar[218]=armttbar[218]*armttbar[397];
+   armttbar[255]=17 - 47./2.*armttbar[102];
+   armttbar[255]=armttbar[255]*armttbar[102];
+   armttbar[218]= - 1./16.*armttbar[361] + 1./8.*armttbar[164] + 5./
+   5184.*armttbar[255] + 64./81. + armttbar[218];
+   armttbar[218]=armttbar[218]*armttbar[178];
+   armttbar[255]=5./3. + armttbar[215];
+   armttbar[255]=armttbar[255]*armttbar[108];
+   armttbar[311]=173./9. - armttbar[198];
+   armttbar[311]=armttbar[311]*armttbar[167];
+   armttbar[224]=armttbar[224] + armttbar[311] - 64./27. + 
+   armttbar[255];
+   armttbar[224]=armttbar[224]*armttbar[454];
+   armttbar[247]= - 19./9. - armttbar[247];
+   armttbar[247]=armttbar[247]*armttbar[189];
+   armttbar[255]= - armttbar[258]*armttbar[113];
+   armttbar[247]=armttbar[255] - 16./9. + armttbar[247];
+   armttbar[247]=armttbar[247]*armttbar[454];
+   armttbar[255]=11./6. - armttbar[107];
+   armttbar[255]=armttbar[255]*armttbar[215];
+   armttbar[255]=1./3. + armttbar[255];
+   armttbar[255]=armttbar[255]*armttbar[215];
+   armttbar[258]=43./3. - armttbar[464];
+   armttbar[258]=armttbar[258]*armttbar[222];
+   armttbar[255]=armttbar[258] - 16./81. + armttbar[255];
+   armttbar[255]=armttbar[27]*armttbar[255];
+   armttbar[247]=armttbar[247] + armttbar[255];
+   armttbar[247]=armttbar[10]*armttbar[247];
+   armttbar[255]=armttbar[302]*armttbar[335];
+   armttbar[255]=armttbar[255] - armttbar[332];
+   armttbar[255]=armttbar[36]*MMH*armttbar[255];
+   armttbar[225]=armttbar[225]*armttbar[271];
+   armttbar[258]=armttbar[8]*armttbar[225];
+   armttbar[255]=armttbar[258] + armttbar[255];
+   armttbar[258]=armttbar[15]*armttbar[430];
+   armttbar[255]=1./8.*armttbar[255] + armttbar[258];
+   armttbar[255]=armttbar[46]*armttbar[255];
+   armttbar[154]=armttbar[154]*armttbar[304];
+   armttbar[154]=armttbar[154] + armttbar[255];
+   armttbar[154]=armttbar[99]*armttbar[154];
+   armttbar[255]=armttbar[206]*armttbar[261]*armttbar[226];
+   armttbar[132]=armttbar[218] + armttbar[154] + armttbar[149] + 
+   armttbar[132] + armttbar[247] + armttbar[179] + armttbar[255] + 
+   armttbar[224] + armttbar[209];
+   armttbar[132]=armttbar[12]*armttbar[132];
+   armttbar[149]=307./3. + 55*armttbar[107];
+   armttbar[149]=armttbar[149]*armttbar[108];
+   armttbar[154]=277 + armttbar[116];
+   armttbar[154]=armttbar[154]*armttbar[105];
+   armttbar[154]=307./2. + armttbar[154];
+   armttbar[154]=armttbar[154]*armttbar[105];
+   armttbar[149]=armttbar[149] + armttbar[154];
+   armttbar[125]=1./3.*armttbar[149] + armttbar[125];
+   armttbar[149]=armttbar[107] + 5./3.;
+   armttbar[149]=armttbar[149]*armttbar[108];
+   armttbar[149]=armttbar[149] + armttbar[219];
+   armttbar[154]= - armttbar[149]*armttbar[216];
+   armttbar[136]=armttbar[40]*armttbar[136];
+   armttbar[179]=armttbar[107] - 1./9.;
+   armttbar[179]=armttbar[179]*armttbar[108];
+   armttbar[209]=1./2. + 17./3.*armttbar[364];
+   armttbar[209]=armttbar[209]*armttbar[174];
+   armttbar[179]=armttbar[179] - armttbar[209];
+   armttbar[209]=1./2.*armttbar[193];
+   armttbar[218]=armttbar[179]*armttbar[209];
+   armttbar[125]= - armttbar[150] + armttbar[218] + 9./4.*armttbar[214]
+    + armttbar[136] + 1./2.*armttbar[125] + armttbar[154];
+   armttbar[136]= - armttbar[242]*armttbar[215];
+   armttbar[136]=1 + armttbar[136];
+   armttbar[136]=armttbar[136]*armttbar[107];
+   armttbar[154]=7./4. + armttbar[102];
+   armttbar[154]=armttbar[154]*armttbar[116];
+   armttbar[154]=1 + armttbar[154];
+   armttbar[154]=armttbar[154]*armttbar[102];
+   armttbar[136]=armttbar[136] + armttbar[154];
+   armttbar[136]=armttbar[16]*armttbar[136];
+   armttbar[154]=armttbar[234] + 1;
+   armttbar[154]=armttbar[154]*armttbar[102];
+   armttbar[154]=armttbar[154] + armttbar[107];
+   armttbar[214]= - armttbar[154]*armttbar[358];
+   armttbar[136]=armttbar[136] + armttbar[214];
+   armttbar[214]=1./2.*armttbar[321];
+   armttbar[218]=armttbar[154]*armttbar[8];
+   armttbar[219]= - armttbar[214] - 1./3.*armttbar[218];
+   armttbar[219]=armttbar[219]*armttbar[315];
+   armttbar[136]=1./3.*armttbar[136] + armttbar[219];
+   armttbar[136]=armttbar[9]*armttbar[136];
+   armttbar[125]=1./2.*armttbar[125] + armttbar[136];
+   armttbar[125]=armttbar[9]*armttbar[125];
+   armttbar[136]= - 1./3. - armttbar[190];
+   armttbar[136]=armttbar[136]*armttbar[107];
+   armttbar[219]= - 1 - 187./18.*armttbar[102];
+   armttbar[219]=armttbar[219]*armttbar[105];
+   armttbar[136]=armttbar[136] + armttbar[219];
+   armttbar[136]=armttbar[136]*armttbar[352];
+   armttbar[125]=armttbar[136] + armttbar[125];
+   armttbar[125]=armttbar[9]*armttbar[125];
+   armttbar[136]=1./12.*armttbar[218] + armttbar[321];
+   armttbar[136]=armttbar[136]*armttbar[249]*armttbar[269];
+   armttbar[125]=armttbar[125] + armttbar[136];
+   armttbar[125]=armttbar[125]*armttbar[254];
+   armttbar[136]=937 - 305*armttbar[107];
+   armttbar[136]=armttbar[136]*armttbar[189];
+   armttbar[218]=47./12. - armttbar[102];
+   armttbar[218]=armttbar[218]*armttbar[102];
+   armttbar[218]=745./8. + armttbar[218];
+   armttbar[218]=armttbar[218]*armttbar[102];
+   armttbar[136]=armttbar[136] + armttbar[218];
+   armttbar[218]=armttbar[6]*armttbar[117];
+   armttbar[218]= - 1./12.*armttbar[218] + armttbar[128];
+   armttbar[218]=armttbar[16]*armttbar[218];
+   armttbar[219]=armttbar[238]*armttbar[193];
+   armttbar[126]= - 5./6.*armttbar[219] + armttbar[218] + 1./3.*
+   armttbar[136] - armttbar[126];
+   armttbar[136]=11./4. + armttbar[144];
+   armttbar[136]=armttbar[136]*armttbar[107];
+   armttbar[136]=53./6. + armttbar[136];
+   armttbar[136]=armttbar[136]*armttbar[107];
+   armttbar[144]= - 119./4. + armttbar[102];
+   armttbar[144]=armttbar[144]*armttbar[102];
+   armttbar[144]=53./2. + armttbar[144];
+   armttbar[144]=armttbar[144]*armttbar[105];
+   armttbar[136]=armttbar[136] + armttbar[144];
+   armttbar[136]=armttbar[136]*armttbar[147];
+   armttbar[136]=armttbar[136] - armttbar[151];
+   armttbar[144]=35./4.*armttbar[123] + armttbar[150];
+   armttbar[144]=MMt*armttbar[144];
+   armttbar[136]=1./2.*armttbar[136] + armttbar[144];
+   armttbar[144]= - 9./8.*armttbar[123] + armttbar[150];
+   armttbar[144]=MMt*armttbar[144];
+   armttbar[218]=armttbar[107] + 2;
+   armttbar[218]=armttbar[218]*armttbar[107];
+   armttbar[219]=armttbar[102] + 2;
+   armttbar[219]=armttbar[219]*armttbar[102];
+   armttbar[218]=armttbar[218] + armttbar[219];
+   armttbar[224]=armttbar[218]*armttbar[17];
+   armttbar[144]= - armttbar[224] + armttbar[144];
+   armttbar[144]=armttbar[144]*armttbar[294];
+   armttbar[136]=1./4.*armttbar[136] + armttbar[144];
+   armttbar[136]=armttbar[9]*armttbar[136];
+   armttbar[144]=armttbar[175] + 10;
+   armttbar[144]=armttbar[144]*armttbar[174];
+   armttbar[238]=armttbar[108] + 10./9.;
+   armttbar[238]=armttbar[238]*armttbar[107];
+   armttbar[144]=armttbar[144] + armttbar[238];
+   armttbar[238]= - armttbar[17]*armttbar[144];
+   armttbar[247]= - 25./6. - armttbar[107];
+   armttbar[247]=armttbar[247]*armttbar[107];
+   armttbar[249]=armttbar[243] - 25;
+   armttbar[254]=armttbar[249]*armttbar[167];
+   armttbar[247]=armttbar[247] + armttbar[254];
+   armttbar[247]=armttbar[247]*armttbar[338];
+   armttbar[238]=armttbar[247] - 3./4.*armttbar[176] + armttbar[238];
+   armttbar[238]=armttbar[3]*armttbar[238];
+   armttbar[197]= - armttbar[197]*armttbar[307];
+   armttbar[128]=armttbar[128]*MMt;
+   armttbar[126]=armttbar[136] + armttbar[197] + armttbar[238] - 1./16.
+   *armttbar[128] + 1./8.*armttbar[126] - 2./9.*armttbar[350];
+   armttbar[126]=armttbar[9]*armttbar[126];
+   armttbar[136]= - armttbar[3]*armttbar[148];
+   armttbar[155]=107./4. - armttbar[155];
+   armttbar[155]=armttbar[155]*armttbar[107];
+   armttbar[155]=37./2. + armttbar[155];
+   armttbar[155]=armttbar[155]*armttbar[184];
+   armttbar[184]= - 11./16. - armttbar[105];
+   armttbar[184]=armttbar[184]*armttbar[102];
+   armttbar[184]=37./24. + armttbar[184];
+   armttbar[184]=armttbar[184]*armttbar[102];
+   armttbar[155]=armttbar[155] + armttbar[184];
+   armttbar[155]=armttbar[9]*armttbar[155];
+   armttbar[136]=armttbar[155] - 1./24.*armttbar[241] + armttbar[136];
+   armttbar[136]=armttbar[9]*armttbar[136];
+   armttbar[155]=armttbar[179]*armttbar[6];
+   armttbar[179]=armttbar[115]*armttbar[246];
+   armttbar[179]= - armttbar[155] + armttbar[179];
+   armttbar[179]=armttbar[179]*armttbar[268];
+   armttbar[136]=armttbar[136] + 1./4.*armttbar[179];
+   armttbar[136]=armttbar[15]*armttbar[136];
+   armttbar[179]=1./6. + armttbar[107];
+   armttbar[179]=armttbar[179]*armttbar[107];
+   armttbar[184]=1 + 19./6.*armttbar[102];
+   armttbar[184]=armttbar[184]*armttbar[167];
+   armttbar[179]=armttbar[179] + armttbar[184];
+   armttbar[159]=5*armttbar[179] + armttbar[159];
+   armttbar[159]=armttbar[3]*armttbar[159];
+   armttbar[179]=5./4.*armttbar[107];
+   armttbar[184]= - 1./9. + armttbar[179];
+   armttbar[184]=armttbar[184]*armttbar[107];
+   armttbar[197]=armttbar[230]*armttbar[174];
+   armttbar[184]=armttbar[184] + armttbar[197];
+   armttbar[184]=armttbar[6]*armttbar[184];
+   armttbar[184]= - armttbar[398] + armttbar[184];
+   armttbar[197]= - armttbar[216]*armttbar[387];
+   armttbar[136]=armttbar[136] + armttbar[159] + 1./2.*armttbar[184] + 
+   armttbar[197];
+   armttbar[159]= - 3./4.*armttbar[117] + armttbar[128];
+   armttbar[184]=armttbar[368]*armttbar[3];
+   armttbar[197]=armttbar[338] + armttbar[184];
+   armttbar[197]=armttbar[197]*armttbar[401];
+   armttbar[238]=armttbar[117]*armttbar[294];
+   armttbar[159]=armttbar[197] + 1./2.*armttbar[159] + armttbar[238];
+   armttbar[159]=armttbar[9]*armttbar[159];
+   armttbar[197]=armttbar[280]*armttbar[279];
+   armttbar[197]= - armttbar[404] + armttbar[387] + armttbar[197];
+   armttbar[159]=1./2.*armttbar[197] + armttbar[159];
+   armttbar[197]=1./3. + armttbar[189];
+   armttbar[197]=armttbar[197]*armttbar[107];
+   armttbar[238]=armttbar[186]*armttbar[146];
+   armttbar[238]=1 + armttbar[238];
+   armttbar[238]=armttbar[238]*armttbar[105];
+   armttbar[197]=armttbar[197] + armttbar[238];
+   armttbar[197]=armttbar[197]*armttbar[296];
+   armttbar[149]=1./4.*armttbar[149] + armttbar[197];
+   armttbar[149]=armttbar[9]*armttbar[149];
+   armttbar[168]= - armttbar[168] - armttbar[105];
+   armttbar[168]=armttbar[168]*armttbar[279];
+   armttbar[149]=armttbar[168] + armttbar[149];
+   armttbar[149]=armttbar[149]*armttbar[302];
+   armttbar[149]=1./2.*armttbar[159] + armttbar[149];
+   armttbar[149]=armttbar[149]*armttbar[303];
+   armttbar[159]=armttbar[251]*armttbar[233];
+   armttbar[168]= - armttbar[288]*armttbar[267];
+   armttbar[168]=armttbar[168] - 1./4.*armttbar[159];
+   armttbar[168]=armttbar[168]*armttbar[365];
+   armttbar[197]=armttbar[9]*armttbar[292];
+   armttbar[168]=armttbar[197] + armttbar[168];
+   armttbar[168]=armttbar[168]*armttbar[289];
+   armttbar[197]=armttbar[115]*armttbar[267];
+   armttbar[197]=armttbar[197] - 1./4.*armttbar[252];
+   armttbar[197]=armttbar[197]*armttbar[365];
+   armttbar[238]= - armttbar[9]*armttbar[115];
+   armttbar[197]=armttbar[238] + armttbar[197];
+   armttbar[197]=armttbar[197]*armttbar[301];
+   armttbar[238]= - armttbar[3]*armttbar[344];
+   armttbar[238]=armttbar[238] - 3./64.*armttbar[401];
+   armttbar[238]=armttbar[9]*armttbar[238];
+   armttbar[154]=armttbar[154]*armttbar[251];
+   armttbar[154]=armttbar[238] - 1./48.*armttbar[154];
+   armttbar[154]=armttbar[14]*armttbar[154];
+   armttbar[238]=47./3. + 11*armttbar[195];
+   armttbar[238]=armttbar[238]*armttbar[107];
+   armttbar[238]=armttbar[238] - armttbar[105];
+   armttbar[246]=armttbar[41]*armttbar[238]*armttbar[259];
+   armttbar[125]=armttbar[154] + armttbar[246] + armttbar[149] + 
+   armttbar[168] + armttbar[197] + armttbar[125] + armttbar[126] + 1./4.
+   *armttbar[136];
+   armttbar[125]=armttbar[46]*armttbar[125];
+   armttbar[126]=armttbar[288]*armttbar[30];
+   armttbar[136]=armttbar[107] + 19./3.;
+   armttbar[136]=armttbar[136]*armttbar[107];
+   armttbar[136]=armttbar[136] - 7./9.;
+   armttbar[136]=armttbar[136]*armttbar[107];
+   armttbar[136]=armttbar[136] - armttbar[386];
+   armttbar[149]=1./8.*armttbar[29];
+   armttbar[154]=armttbar[136]*armttbar[149];
+   armttbar[168]= - armttbar[154] + 1./8.*armttbar[126];
+   armttbar[197]= - 20./3. - armttbar[107];
+   armttbar[197]=armttbar[197]*armttbar[158];
+   armttbar[246]= - 20./9. - armttbar[102];
+   armttbar[246]=armttbar[246]*armttbar[102];
+   armttbar[197]=armttbar[197] + armttbar[246] - armttbar[168];
+   armttbar[197]=armttbar[197]*armttbar[196];
+   armttbar[246]=armttbar[123]*armttbar[196];
+   armttbar[247]=2*armttbar[218];
+   armttbar[251]=armttbar[304]*armttbar[247];
+   armttbar[251]=armttbar[251] - armttbar[246];
+   armttbar[254]=3*armttbar[294];
+   armttbar[251]=armttbar[251]*armttbar[254];
+   armttbar[255]=armttbar[264]*armttbar[233];
+   armttbar[258]= - armttbar[112]*armttbar[108];
+   armttbar[258]=1 + armttbar[258];
+   armttbar[258]=armttbar[258]*armttbar[107];
+   armttbar[259]=1 + 3./2.*armttbar[234];
+   armttbar[259]=armttbar[259]*armttbar[102];
+   armttbar[258]=armttbar[258] + armttbar[259];
+   armttbar[258]=armttbar[258]*armttbar[304];
+   armttbar[258]=armttbar[258] + 1./2.*armttbar[255];
+   armttbar[258]=armttbar[258]*armttbar[395];
+   armttbar[182]= - 107./3. - armttbar[182];
+   armttbar[182]=armttbar[182]*armttbar[158];
+   armttbar[259]= - 107./9. - armttbar[465];
+   armttbar[259]=armttbar[259]*armttbar[102];
+   armttbar[182]=armttbar[182] + armttbar[259];
+   armttbar[259]=1./4.*armttbar[304];
+   armttbar[182]=armttbar[182]*armttbar[259];
+   armttbar[182]=armttbar[258] + armttbar[251] + armttbar[182] + 
+   armttbar[197];
+   armttbar[182]=armttbar[9]*armttbar[182];
+   armttbar[197]=armttbar[375]*armttbar[30];
+   armttbar[251]=armttbar[227] + 17./9.;
+   armttbar[251]=armttbar[251]*armttbar[107];
+   armttbar[251]=armttbar[251] + armttbar[282];
+   armttbar[149]=armttbar[251]*armttbar[149];
+   armttbar[149]= - armttbar[197] + armttbar[149] - armttbar[348];
+   armttbar[149]=armttbar[149]*armttbar[27];
+   armttbar[197]=armttbar[450] + armttbar[374];
+   armttbar[258]=armttbar[197]*armttbar[454];
+   armttbar[149]=armttbar[149] - armttbar[258];
+   armttbar[182]=armttbar[182] - armttbar[149];
+   armttbar[182]=armttbar[9]*armttbar[182];
+   armttbar[212]= - armttbar[3]*armttbar[212];
+   armttbar[212]=armttbar[241] + armttbar[212];
+   armttbar[258]= - 17./3. - armttbar[161];
+   armttbar[258]=armttbar[258]*armttbar[107];
+   armttbar[172]= - 17 - armttbar[172];
+   armttbar[172]=armttbar[172]*armttbar[105];
+   armttbar[172]=armttbar[258] + armttbar[172];
+   armttbar[258]= - armttbar[106]*armttbar[294];
+   armttbar[172]=1./4.*armttbar[172] + armttbar[258];
+   armttbar[172]=armttbar[9]*armttbar[172];
+   armttbar[258]=47./9. + armttbar[107];
+   armttbar[258]=armttbar[258]*armttbar[108];
+   armttbar[288]=47./2. + 7./3.*armttbar[364];
+   armttbar[288]=armttbar[288]*armttbar[174];
+   armttbar[258]=armttbar[258] + armttbar[288];
+   armttbar[258]=armttbar[9]*armttbar[258];
+   armttbar[155]= - armttbar[155] + armttbar[258];
+   armttbar[155]=armttbar[155]*armttbar[382];
+   armttbar[155]=armttbar[155] + 1./2.*armttbar[212] + armttbar[172];
+   armttbar[155]=armttbar[155]*armttbar[178];
+   armttbar[127]=armttbar[295]*armttbar[127];
+   armttbar[172]= - armttbar[3]*armttbar[185];
+   armttbar[172]= - armttbar[127] + armttbar[172];
+   armttbar[172]=armttbar[172]*armttbar[303];
+   armttbar[127]=armttbar[172] + 3./4.*armttbar[127] + armttbar[228];
+   armttbar[127]=armttbar[46]*armttbar[127];
+   armttbar[172]=armttbar[261]*armttbar[449];
+   armttbar[185]= - armttbar[178]*armttbar[241];
+   armttbar[172]=armttbar[172] + armttbar[185];
+   armttbar[172]=armttbar[172]*armttbar[403];
+   armttbar[185]= - armttbar[3]*armttbar[178]*armttbar[409];
+   armttbar[127]=armttbar[172] + armttbar[127] + armttbar[185];
+   armttbar[127]=MMZ*armttbar[127];
+   armttbar[130]=7*armttbar[130] - armttbar[141];
+   armttbar[130]=MMH*armttbar[130];
+   armttbar[130]= - armttbar[245] + armttbar[130];
+   armttbar[130]=armttbar[130]*armttbar[452];
+   armttbar[141]=armttbar[123]*armttbar[27];
+   armttbar[172]=armttbar[141]*armttbar[184];
+   armttbar[185]=1./4.*armttbar[246];
+   armttbar[212]=armttbar[172] - armttbar[185];
+   armttbar[228]=armttbar[212]*armttbar[267];
+   armttbar[245]=armttbar[28]*armttbar[228];
+   armttbar[157]=armttbar[133] - armttbar[157];
+   armttbar[157]=armttbar[46]*armttbar[157];
+   armttbar[258]= - armttbar[178]*armttbar[133];
+   armttbar[157]=armttbar[157] + armttbar[258];
+   armttbar[157]=armttbar[157]*armttbar[403];
+   armttbar[258]=armttbar[211] + 5./9.;
+   armttbar[258]=armttbar[258]*armttbar[107];
+   armttbar[258]=armttbar[258] + 5./9.*armttbar[102];
+   armttbar[261]=1./2.*armttbar[27];
+   armttbar[258]=armttbar[258]*armttbar[261];
+   armttbar[237]=armttbar[158]*armttbar[237];
+   armttbar[237]=armttbar[237] + 1;
+   armttbar[237]=armttbar[237]*armttbar[107];
+   armttbar[237]=armttbar[237] + armttbar[102];
+   armttbar[288]=armttbar[237]*armttbar[1];
+   armttbar[289]=armttbar[258] + armttbar[288];
+   armttbar[295]=armttbar[289]*armttbar[439];
+   armttbar[301]=armttbar[141]*armttbar[268];
+   armttbar[122]= - armttbar[31]*armttbar[122];
+   armttbar[122]=1./2.*armttbar[127] + armttbar[157] + 1./4.*
+   armttbar[155] - 3./2.*armttbar[245] + 1./8.*armttbar[130] + 
+   armttbar[122] + 9./16.*armttbar[301] + armttbar[182] - armttbar[295]
+    + armttbar[125];
+   armttbar[122]=armttbar[14]*armttbar[122];
+   armttbar[125]=armttbar[5]*armttbar[336];
+   armttbar[127]=armttbar[33]*armttbar[270];
+   armttbar[130]=11./9.*armttbar[33] + armttbar[163];
+   armttbar[130]=armttbar[130]*armttbar[189];
+   armttbar[155]= - 37 + armttbar[188];
+   armttbar[146]=armttbar[155]*armttbar[146];
+   armttbar[146]=armttbar[146] + 16./3. - armttbar[179];
+   armttbar[146]=armttbar[18]*armttbar[146];
+   armttbar[125]=armttbar[125] + 1./9.*armttbar[146] + 3./4.*
+   armttbar[410] + armttbar[130] + armttbar[127];
+   armttbar[125]=armttbar[6]*armttbar[125];
+   armttbar[127]=4./9. + armttbar[367];
+   armttbar[127]=armttbar[127]*armttbar[250];
+   armttbar[130]= - armttbar[191]*armttbar[193];
+   armttbar[146]= - 65./8. + armttbar[194];
+   armttbar[146]=armttbar[146]*armttbar[107];
+   armttbar[146]=323./36. + armttbar[146];
+   armttbar[146]=armttbar[146]*armttbar[177];
+   armttbar[155]=67 - 185./18.*armttbar[102];
+   armttbar[155]=armttbar[155]*armttbar[102];
+   armttbar[127]=armttbar[130] + armttbar[127] + 1./576.*armttbar[155]
+    - 32./81. + armttbar[146];
+   armttbar[127]=armttbar[29]*armttbar[127];
+   armttbar[130]=11./54. - armttbar[138];
+   armttbar[130]=armttbar[130]*armttbar[215];
+   armttbar[146]= - 3005./24. - 34*armttbar[102];
+   armttbar[146]=armttbar[146]*armttbar[447];
+   armttbar[130]=armttbar[146] + 544./243. + armttbar[130];
+   armttbar[130]=armttbar[6]*armttbar[130];
+   armttbar[146]= - 29./3. + armttbar[170];
+   armttbar[146]=armttbar[146]*armttbar[177];
+   armttbar[155]=armttbar[140]*armttbar[444];
+   armttbar[146]=armttbar[155] + 128./27. + armttbar[146];
+   armttbar[146]=armttbar[146]*armttbar[313];
+   armttbar[130]=armttbar[130] + armttbar[146];
+   armttbar[130]=armttbar[17]*armttbar[130];
+   armttbar[146]=armttbar[290]*armttbar[209];
+   armttbar[146]=armttbar[146] - 1./2.*armttbar[461] - armttbar[396];
+   armttbar[155]=1./4.*armttbar[30];
+   armttbar[146]=armttbar[146]*armttbar[155];
+   armttbar[157]=25./9. + armttbar[433];
+   armttbar[157]=armttbar[157]*armttbar[177];
+   armttbar[182]=1./48.*armttbar[102];
+   armttbar[191]=161./27. + armttbar[205];
+   armttbar[191]=armttbar[191]*armttbar[182];
+   armttbar[157]=armttbar[191] - 368./81. + armttbar[157];
+   armttbar[157]=armttbar[25]*armttbar[157];
+   armttbar[191]= - 11./3. - armttbar[170];
+   armttbar[191]=armttbar[191]*armttbar[177];
+   armttbar[205]= - 11 + 301./18.*armttbar[102];
+   armttbar[205]=armttbar[205]*armttbar[182];
+   armttbar[191]=armttbar[205] - 128./27. + armttbar[191];
+   armttbar[191]=armttbar[45]*armttbar[191];
+   armttbar[205]= - 31./24. + armttbar[194];
+   armttbar[205]=armttbar[205]*armttbar[215];
+   armttbar[209]= - 11951./8. + 491*armttbar[102];
+   armttbar[209]=armttbar[209]*armttbar[102];
+   armttbar[245]= - armttbar[417]*armttbar[250];
+   armttbar[270]= - armttbar[19]*armttbar[328];
+   armttbar[125]=armttbar[146] + armttbar[191] + armttbar[270] + 
+   armttbar[127] + armttbar[130] + armttbar[245] + armttbar[157] + 1./
+   972.*armttbar[209] + 1952./243. + armttbar[205] + armttbar[125];
+   armttbar[125]=armttbar[27]*armttbar[125];
+   armttbar[127]=761./9. - 55./2.*armttbar[107];
+   armttbar[127]=armttbar[127]*armttbar[107];
+   armttbar[130]=323./2.*armttbar[102];
+   armttbar[146]=107 + armttbar[130];
+   armttbar[146]=armttbar[146]*armttbar[232];
+   armttbar[127]=armttbar[127] + armttbar[146];
+   armttbar[146]=41./3. - armttbar[181];
+   armttbar[146]=armttbar[146]*armttbar[158];
+   armttbar[146]=armttbar[146] + armttbar[102];
+   armttbar[146]=armttbar[146]*armttbar[216];
+   armttbar[127]=1./12.*armttbar[127] + armttbar[146];
+   armttbar[146]= - 11./3. + armttbar[108];
+   armttbar[146]=armttbar[146]*armttbar[248];
+   armttbar[130]= - 2165./3. + armttbar[130];
+   armttbar[130]=armttbar[130]*armttbar[345];
+   armttbar[130]=armttbar[130] + 1408./27. + armttbar[146];
+   armttbar[130]=armttbar[130]*armttbar[393];
+   armttbar[127]=1./4.*armttbar[127] + armttbar[130];
+   armttbar[127]=armttbar[17]*armttbar[127];
+   armttbar[130]=11*armttbar[33];
+   armttbar[146]=armttbar[130] + armttbar[163];
+   armttbar[146]=armttbar[146]*armttbar[107];
+   armttbar[103]=armttbar[103]*armttbar[33];
+   armttbar[103]=armttbar[103] - armttbar[130];
+   armttbar[130]=armttbar[103]*armttbar[102];
+   armttbar[130]= - armttbar[146] + armttbar[130];
+   armttbar[157]= - armttbar[253]*armttbar[187];
+   armttbar[187]=1 + 49./18.*armttbar[102];
+   armttbar[187]=armttbar[187]*armttbar[102];
+   armttbar[157]=11./96.*armttbar[187] - 128./27. + armttbar[157];
+   armttbar[157]=armttbar[18]*armttbar[157];
+   armttbar[187]=49./6. - armttbar[107];
+   armttbar[187]=armttbar[187]*armttbar[215];
+   armttbar[187]= - 43./9. + armttbar[187];
+   armttbar[187]=armttbar[187]*armttbar[215];
+   armttbar[191]= - 37./27. + armttbar[113];
+   armttbar[191]=armttbar[191]*armttbar[102];
+   armttbar[187]=7./12.*armttbar[191] - 128./81. + armttbar[187];
+   armttbar[187]=armttbar[17]*armttbar[187];
+   armttbar[191]= - armttbar[322]*armttbar[194];
+   armttbar[191]=37./3. + armttbar[191];
+   armttbar[191]=armttbar[191]*armttbar[107];
+   armttbar[191]=armttbar[191] - armttbar[282];
+   armttbar[191]=armttbar[16]*armttbar[191];
+   armttbar[187]=1./16.*armttbar[191] + armttbar[187];
+   armttbar[187]=armttbar[29]*armttbar[187];
+   armttbar[191]= - 19./36. + armttbar[210];
+   armttbar[191]=armttbar[191]*armttbar[107];
+   armttbar[205]= - 19 + armttbar[188];
+   armttbar[205]=armttbar[205]*armttbar[432];
+   armttbar[191]=armttbar[191] + armttbar[205];
+   armttbar[191]=armttbar[17]*armttbar[191];
+   armttbar[205]=1./2. + armttbar[283];
+   armttbar[205]=armttbar[205]*armttbar[107];
+   armttbar[205]=armttbar[205] + armttbar[116];
+   armttbar[205]=armttbar[16]*armttbar[205];
+   armttbar[191]=armttbar[205] + armttbar[191];
+   armttbar[191]=armttbar[191]*armttbar[155];
+   armttbar[205]=2*armttbar[107];
+   armttbar[209]=53./18. - armttbar[205];
+   armttbar[209]=armttbar[209]*armttbar[107];
+   armttbar[209]=armttbar[209] + 5./18.*armttbar[102];
+   armttbar[209]=armttbar[209]*armttbar[326];
+   armttbar[127]=armttbar[191] + armttbar[187] + armttbar[127] + 
+   armttbar[209] + 1./32.*armttbar[130] + armttbar[157];
+   armttbar[127]=armttbar[27]*armttbar[127];
+   armttbar[130]= - 31./2. - armttbar[194];
+   armttbar[130]=armttbar[130]*armttbar[108];
+   armttbar[130]=125./9. + armttbar[130];
+   armttbar[130]=armttbar[130]*armttbar[189];
+   armttbar[157]= - 73 + 35./12.*armttbar[102];
+   armttbar[157]=armttbar[157]*armttbar[192];
+   armttbar[130]=armttbar[157] + 128./81. + armttbar[130];
+   armttbar[130]=armttbar[29]*armttbar[130];
+   armttbar[157]= - 19./18. + armttbar[256];
+   armttbar[157]=armttbar[157]*armttbar[107];
+   armttbar[187]= - armttbar[298]*armttbar[345];
+   armttbar[157]=armttbar[157] + armttbar[187];
+   armttbar[157]=armttbar[157]*armttbar[272];
+   armttbar[187]=16./9.*armttbar[425];
+   armttbar[191]=armttbar[45] + armttbar[25];
+   armttbar[191]=armttbar[187]*armttbar[191];
+   armttbar[192]=7./3. - 15./8.*armttbar[107];
+   armttbar[192]=armttbar[192]*armttbar[108];
+   armttbar[209]= - 49 + 103./24.*armttbar[102];
+   armttbar[209]=armttbar[209]*armttbar[244];
+   armttbar[245]=3./16.*armttbar[117];
+   armttbar[253]= - armttbar[43]*armttbar[245];
+   armttbar[130]=armttbar[157] + armttbar[130] + armttbar[253] + 
+   armttbar[209] + 128./81. + armttbar[192] + armttbar[191];
+   armttbar[130]=armttbar[27]*armttbar[130];
+   armttbar[157]=1./4.*armttbar[29];
+   armttbar[191]= - armttbar[251]*armttbar[157];
+   armttbar[192]=armttbar[292]*armttbar[213];
+   armttbar[191]=armttbar[192] + armttbar[399] + armttbar[191];
+   armttbar[191]=armttbar[27]*armttbar[191];
+   armttbar[192]=armttbar[451] + armttbar[405];
+   armttbar[192]=armttbar[192]*armttbar[454];
+   armttbar[191]=armttbar[192] + armttbar[191];
+   armttbar[191]=armttbar[8]*armttbar[191];
+   armttbar[130]=armttbar[130] + armttbar[191];
+   armttbar[130]=MMt*armttbar[130];
+   armttbar[104]= - armttbar[18]*armttbar[104];
+   armttbar[112]=armttbar[194]*armttbar[112];
+   armttbar[191]=armttbar[34]*armttbar[112];
+   armttbar[103]=3*armttbar[34] - armttbar[103];
+   armttbar[103]=armttbar[103]*armttbar[102];
+   armttbar[192]= - 13./3. + armttbar[107];
+   armttbar[192]=armttbar[192]*armttbar[138];
+   armttbar[192]=armttbar[192] - armttbar[337];
+   armttbar[192]=armttbar[192]*armttbar[147];
+   armttbar[103]=armttbar[192] + armttbar[104] + armttbar[103] + 
+   armttbar[146] + armttbar[191];
+   armttbar[104]=57./2. - armttbar[107];
+   armttbar[104]=armttbar[104]*armttbar[194];
+   armttbar[104]= - 443./3. + armttbar[104];
+   armttbar[104]=armttbar[104]*armttbar[107];
+   armttbar[146]= - 299./3. + armttbar[276];
+   armttbar[146]=armttbar[146]*armttbar[102];
+   armttbar[104]=armttbar[104] + armttbar[146];
+   armttbar[137]= - 4./3.*armttbar[137] - armttbar[265];
+   armttbar[137]=armttbar[1]*armttbar[137];
+   armttbar[104]= - 3*armttbar[118] - armttbar[153] + 1./4.*
+   armttbar[104] + armttbar[137];
+   armttbar[104]=armttbar[17]*armttbar[104];
+   armttbar[118]=armttbar[292]*armttbar[30];
+   armttbar[137]=17./3. + armttbar[195];
+   armttbar[137]=armttbar[137]*armttbar[107];
+   armttbar[137]=armttbar[137] + armttbar[420];
+   armttbar[146]=1./2.*armttbar[29];
+   armttbar[137]=armttbar[137]*armttbar[146];
+   armttbar[137]= - 3*armttbar[118] - armttbar[415] + armttbar[137];
+   armttbar[137]=armttbar[137]*armttbar[304];
+   armttbar[191]=4 + armttbar[180];
+   armttbar[191]=armttbar[191]*armttbar[107];
+   armttbar[191]= - 16./3. + armttbar[191];
+   armttbar[191]=armttbar[29]*armttbar[191]*armttbar[389];
+   armttbar[192]= - armttbar[19]*armttbar[414];
+   armttbar[209]=armttbar[115]*armttbar[30];
+   armttbar[251]=armttbar[16]*armttbar[209];
+   armttbar[103]=armttbar[137] - 3./4.*armttbar[251] + armttbar[192] + 
+   armttbar[191] + 1./2.*armttbar[103] + armttbar[104];
+   armttbar[103]=armttbar[27]*armttbar[103];
+   armttbar[104]= - 5./2. - armttbar[346];
+   armttbar[104]=armttbar[104]*armttbar[107];
+   armttbar[137]= - 5 + armttbar[234];
+   armttbar[137]=armttbar[137]*armttbar[116];
+   armttbar[104]=armttbar[104] + armttbar[137];
+   armttbar[104]=armttbar[30]*armttbar[104];
+   armttbar[137]=19./3. + armttbar[161];
+   armttbar[137]=armttbar[137]*armttbar[138];
+   armttbar[191]=133 + armttbar[465];
+   armttbar[191]=armttbar[191]*armttbar[105];
+   armttbar[104]=armttbar[104] + armttbar[137] + armttbar[191];
+   armttbar[137]=1./2.*armttbar[196];
+   armttbar[104]=armttbar[104]*armttbar[137];
+   armttbar[103]=armttbar[103] + armttbar[104];
+   armttbar[103]=MMt*armttbar[103];
+   armttbar[104]= - armttbar[173]*armttbar[388];
+   armttbar[173]= - 45 - armttbar[175];
+   armttbar[173]=armttbar[173]*armttbar[102];
+   armttbar[104]=armttbar[104] + armttbar[173];
+   armttbar[104]=armttbar[17]*armttbar[104];
+   armttbar[173]= - 37./3. + armttbar[287];
+   armttbar[173]=armttbar[173]*armttbar[107];
+   armttbar[173]=armttbar[173] + armttbar[337];
+   armttbar[173]=armttbar[16]*armttbar[173];
+   armttbar[104]=armttbar[173] + armttbar[104];
+   armttbar[104]=armttbar[104]*armttbar[259];
+   armttbar[173]=armttbar[176]*armttbar[208];
+   armttbar[103]=9./2.*armttbar[173] + armttbar[104] + armttbar[103];
+   armttbar[103]=armttbar[3]*armttbar[103];
+   armttbar[104]= - 281./6. + armttbar[194];
+   armttbar[104]=armttbar[104]*armttbar[107];
+   armttbar[104]= - 365./3. + armttbar[104];
+   armttbar[104]=armttbar[104]*armttbar[107];
+   armttbar[173]= - 1091./2. - armttbar[102];
+   armttbar[173]=armttbar[173]*armttbar[105];
+   armttbar[173]= - 365 + armttbar[173];
+   armttbar[173]=armttbar[173]*armttbar[105];
+   armttbar[104]=armttbar[104] + armttbar[173];
+   armttbar[104]=1./4.*armttbar[104] + armttbar[153];
+   armttbar[104]=1./2.*armttbar[104] + armttbar[341];
+   armttbar[104]=armttbar[17]*armttbar[104];
+   armttbar[131]=armttbar[131] - armttbar[152];
+   armttbar[129]=armttbar[129]*armttbar[107];
+   armttbar[129]=11./2. + armttbar[129];
+   armttbar[129]=armttbar[129]*armttbar[107];
+   armttbar[152]=11 + armttbar[391];
+   armttbar[152]=armttbar[152]*armttbar[116];
+   armttbar[129]=armttbar[129] + armttbar[152];
+   armttbar[129]=armttbar[16]*armttbar[129];
+   armttbar[152]=13./9. - armttbar[423];
+   armttbar[152]=armttbar[152]*armttbar[107];
+   armttbar[153]=35 + armttbar[188];
+   armttbar[153]=armttbar[153]*armttbar[116];
+   armttbar[153]=13 + armttbar[153];
+   armttbar[153]=armttbar[153]*armttbar[174];
+   armttbar[152]=armttbar[152] + armttbar[153];
+   armttbar[152]=armttbar[17]*armttbar[152];
+   armttbar[129]=armttbar[129] + armttbar[152];
+   armttbar[129]=armttbar[129]*armttbar[272];
+   armttbar[152]=1./3. + 19./2.*armttbar[107];
+   armttbar[152]=armttbar[152]*armttbar[158];
+   armttbar[153]=armttbar[116] + 1./9.;
+   armttbar[153]=armttbar[153]*armttbar[102];
+   armttbar[152]=armttbar[152] + armttbar[153];
+   armttbar[153]=armttbar[152]*armttbar[160];
+   armttbar[173]=armttbar[18]*armttbar[187];
+   armttbar[154]=armttbar[200]*armttbar[154];
+   armttbar[104]=armttbar[129] + armttbar[154] + 1./2.*armttbar[104] + 
+   armttbar[153] + armttbar[173] - 3./8.*armttbar[131];
+   armttbar[104]=armttbar[27]*armttbar[104];
+   armttbar[129]= - 403./3. - 97./2.*armttbar[107];
+   armttbar[129]=armttbar[129]*armttbar[158];
+   armttbar[153]= - 403./9. - 43./2.*armttbar[102];
+   armttbar[153]=armttbar[153]*armttbar[102];
+   armttbar[154]=armttbar[29]*armttbar[136];
+   armttbar[129]= - armttbar[126] + armttbar[154] + armttbar[129] + 
+   armttbar[153];
+   armttbar[153]=armttbar[8]*armttbar[27];
+   armttbar[129]=armttbar[129]*armttbar[153];
+   armttbar[154]=armttbar[25]*armttbar[148];
+   armttbar[154]= - 23./8.*armttbar[123] + armttbar[154];
+   armttbar[173]= - armttbar[43]*armttbar[123];
+   armttbar[154]=1./2.*armttbar[154] + armttbar[173];
+   armttbar[173]= - 5./9. + armttbar[423];
+   armttbar[173]=armttbar[173]*armttbar[107];
+   armttbar[187]= - armttbar[385]*armttbar[174];
+   armttbar[173]=armttbar[173] + armttbar[187];
+   armttbar[173]=armttbar[173]*armttbar[213];
+   armttbar[154]=3*armttbar[154] + armttbar[173];
+   armttbar[154]=armttbar[27]*armttbar[154];
+   armttbar[129]=armttbar[154] + armttbar[129];
+   armttbar[129]=armttbar[129]*armttbar[338];
+   armttbar[154]=17./3. + 4*armttbar[107];
+   armttbar[154]=armttbar[154]*armttbar[158];
+   armttbar[173]=17./9. + armttbar[102];
+   armttbar[173]=armttbar[173]*armttbar[102];
+   armttbar[154]=armttbar[154] + armttbar[173];
+   armttbar[173]=armttbar[304]*armttbar[8];
+   armttbar[154]=armttbar[154]*armttbar[173];
+   armttbar[104]=armttbar[129] + armttbar[104] + 4*armttbar[154];
+   armttbar[104]=MMt*armttbar[104];
+   armttbar[129]= - armttbar[34]*armttbar[323];
+   armttbar[134]= - 3./2.*armttbar[34] - armttbar[134];
+   armttbar[134]=armttbar[134]*armttbar[102];
+   armttbar[129]=armttbar[129] + armttbar[134];
+   armttbar[134]=armttbar[17]*armttbar[321];
+   armttbar[154]=armttbar[19]*armttbar[214];
+   armttbar[129]=armttbar[154] + 1./2.*armttbar[129] + armttbar[134];
+   armttbar[134]=armttbar[262]*armttbar[213];
+   armttbar[154]= - armttbar[25]*armttbar[321];
+   armttbar[187]= - armttbar[43]*armttbar[214];
+   armttbar[154]=armttbar[154] + armttbar[187];
+   armttbar[187]=armttbar[30]*armttbar[325];
+   armttbar[154]=3*armttbar[154] + armttbar[187];
+   armttbar[154]=MMt*armttbar[154];
+   armttbar[129]=armttbar[154] + 3*armttbar[129] + armttbar[134];
+   armttbar[129]=armttbar[27]*armttbar[129];
+   armttbar[134]=armttbar[304]*armttbar[325];
+   armttbar[129]=armttbar[134] + armttbar[129];
+   armttbar[129]=MMt*armttbar[129];
+   armttbar[134]= - 3 + armttbar[280];
+   armttbar[134]=armttbar[134]*armttbar[108];
+   armttbar[154]= - 3./2. - armttbar[276];
+   armttbar[154]=armttbar[154]*armttbar[102];
+   armttbar[134]=armttbar[134] + armttbar[154];
+   armttbar[134]=armttbar[16]*armttbar[134];
+   armttbar[134]=3*armttbar[134] + armttbar[330];
+   armttbar[154]=1./2.*armttbar[304];
+   armttbar[134]=armttbar[134]*armttbar[154];
+   armttbar[129]=armttbar[134] + armttbar[129];
+   armttbar[129]=MMt*armttbar[129];
+   armttbar[134]=armttbar[321]*armttbar[27];
+   armttbar[187]=pow(MMt,3);
+   armttbar[191]=armttbar[23]*armttbar[187]*armttbar[134];
+   armttbar[129]=armttbar[129] + 3./2.*armttbar[191];
+   armttbar[191]=pow(armttbar[304],2);
+   armttbar[192]= - armttbar[233]*armttbar[191];
+   armttbar[213]=pow(armttbar[27],2);
+   armttbar[214]= - MMt*armttbar[30]*armttbar[213]*armttbar[330];
+   armttbar[192]=armttbar[192] + armttbar[214];
+   armttbar[214]=3*armttbar[184];
+   armttbar[192]=armttbar[192]*armttbar[214];
+   armttbar[129]=1./2.*armttbar[129] + armttbar[192];
+   armttbar[129]=armttbar[129]*armttbar[277];
+   armttbar[120]= - 3./2. - armttbar[120];
+   armttbar[120]=armttbar[120]*armttbar[107];
+   armttbar[192]= - 3 - armttbar[102];
+   armttbar[192]=armttbar[192]*armttbar[116];
+   armttbar[120]=armttbar[120] + armttbar[192];
+   armttbar[120]=armttbar[30]*armttbar[120];
+   armttbar[120]=armttbar[120] - armttbar[123];
+   armttbar[120]=armttbar[147]*armttbar[120];
+   armttbar[192]=armttbar[143]*armttbar[17];
+   armttbar[120]= - armttbar[192] + armttbar[120] + armttbar[131];
+   armttbar[131]=3*armttbar[102];
+   armttbar[233]=armttbar[131] + 26./3.;
+   armttbar[233]=armttbar[233]*armttbar[102];
+   armttbar[251]=armttbar[181] - 26./3.;
+   armttbar[251]=armttbar[251]*armttbar[107];
+   armttbar[233]=armttbar[233] - armttbar[251];
+   armttbar[251]=3./2.*armttbar[126];
+   armttbar[253]=7./3. - armttbar[305];
+   armttbar[253]=armttbar[253]*armttbar[107];
+   armttbar[253]=armttbar[253] + armttbar[243];
+   armttbar[253]=armttbar[253]*armttbar[146];
+   armttbar[253]=armttbar[251] + armttbar[233] + armttbar[253];
+   armttbar[253]=armttbar[253]*armttbar[304];
+   armttbar[120]=3*armttbar[120] + armttbar[253];
+   armttbar[120]=armttbar[27]*armttbar[120];
+   armttbar[253]= - armttbar[148]*armttbar[153];
+   armttbar[253]=5./2.*armttbar[141] + armttbar[253];
+   armttbar[253]=armttbar[253]*armttbar[207];
+   armttbar[256]=armttbar[218]*armttbar[173];
+   armttbar[120]=armttbar[253] + armttbar[120] - 9*armttbar[256];
+   armttbar[120]=MMt*armttbar[120];
+   armttbar[181]=3./8. - armttbar[181];
+   armttbar[181]=armttbar[181]*armttbar[107];
+   armttbar[181]= - 5./2. + armttbar[181];
+   armttbar[181]=armttbar[181]*armttbar[107];
+   armttbar[253]=73./2. - armttbar[102];
+   armttbar[253]=armttbar[253]*armttbar[116];
+   armttbar[253]= - 5 + armttbar[253];
+   armttbar[253]=armttbar[253]*armttbar[116];
+   armttbar[181]=armttbar[181] + armttbar[253];
+   armttbar[181]=armttbar[16]*armttbar[181];
+   armttbar[139]=armttbar[181] - armttbar[139];
+   armttbar[139]=armttbar[17]*armttbar[139];
+   armttbar[181]=armttbar[27]*armttbar[233]*armttbar[275];
+   armttbar[139]=armttbar[139] + armttbar[181];
+   armttbar[139]=armttbar[27]*armttbar[139];
+   armttbar[120]=armttbar[139] + armttbar[120];
+   armttbar[120]=MMt*armttbar[120];
+   armttbar[139]= - armttbar[191]*armttbar[184]*armttbar[263];
+   armttbar[120]=armttbar[120] + armttbar[139];
+   armttbar[120]=armttbar[3]*armttbar[120];
+   armttbar[139]=armttbar[108] + 7./3.;
+   armttbar[139]=armttbar[139]*armttbar[107];
+   armttbar[181]=19./18. + armttbar[139];
+   armttbar[181]=armttbar[181]*armttbar[107];
+   armttbar[191]=19./9. + armttbar[102];
+   armttbar[191]=armttbar[191]*armttbar[116];
+   armttbar[181]=armttbar[181] + armttbar[191];
+   armttbar[181]=armttbar[16]*armttbar[181];
+   armttbar[191]=71./3. - armttbar[107];
+   armttbar[191]=armttbar[191]*armttbar[215];
+   armttbar[191]=19./3. + armttbar[191];
+   armttbar[191]=armttbar[191]*armttbar[107];
+   armttbar[233]=143 + armttbar[188];
+   armttbar[233]=armttbar[233]*armttbar[293];
+   armttbar[233]=19 + armttbar[233];
+   armttbar[233]=armttbar[233]*armttbar[105];
+   armttbar[191]=armttbar[191] + armttbar[233];
+   armttbar[191]=armttbar[17]*armttbar[191];
+   armttbar[181]=armttbar[181] + armttbar[191];
+   armttbar[181]=armttbar[181]*armttbar[259];
+   armttbar[191]=3./4.*armttbar[23];
+   armttbar[191]=armttbar[368]*armttbar[141]*armttbar[191];
+   armttbar[104]=armttbar[129] + armttbar[120] + armttbar[191] + 
+   armttbar[181] + armttbar[104];
+   armttbar[104]=armttbar[9]*armttbar[104];
+   armttbar[120]=armttbar[107] + 7./3.;
+   armttbar[120]=armttbar[120]*armttbar[107];
+   armttbar[120]=armttbar[120] + armttbar[243] + armttbar[265];
+   armttbar[129]=armttbar[1]*armttbar[120]*armttbar[160];
+   armttbar[160]=armttbar[197]*armttbar[319];
+   armttbar[129]=armttbar[129] + armttbar[160];
+   armttbar[160]=armttbar[39]*armttbar[199]*armttbar[208];
+   armttbar[181]=armttbar[23]*armttbar[196]*armttbar[245];
+   armttbar[103]=armttbar[104] + armttbar[160] + armttbar[103] + 
+   armttbar[181] + armttbar[130] + 1./3.*armttbar[129] + armttbar[127];
+   armttbar[103]=armttbar[9]*armttbar[103];
+   armttbar[104]=179 + 33*armttbar[448];
+   armttbar[104]=armttbar[104]*armttbar[108];
+   armttbar[127]=35./2. + armttbar[102];
+   armttbar[127]=armttbar[127]*armttbar[102];
+   armttbar[104]=armttbar[104] + armttbar[127];
+   armttbar[104]=armttbar[104]*armttbar[257];
+   armttbar[104]=armttbar[104] - armttbar[171];
+   armttbar[104]=armttbar[15]*armttbar[104];
+   armttbar[127]=armttbar[17]*armttbar[171];
+   armttbar[129]=armttbar[329]*armttbar[238]*armttbar[202];
+   armttbar[130]= - armttbar[238]*armttbar[302]*armttbar[309];
+   armttbar[160]=armttbar[379] + 53./6.;
+   armttbar[160]=armttbar[160]*armttbar[108];
+   armttbar[160]=armttbar[160] - 1;
+   armttbar[171]=armttbar[238]*armttbar[296];
+   armttbar[171]=1./16.*armttbar[171] + armttbar[160];
+   armttbar[171]=armttbar[171]*armttbar[372];
+   armttbar[181]= - armttbar[462]*armttbar[416];
+   armttbar[181]= - 197./3. + armttbar[181];
+   armttbar[181]=armttbar[181]*armttbar[177];
+   armttbar[191]=1 + 5./12.*armttbar[102];
+   armttbar[191]=armttbar[191]*armttbar[444];
+   armttbar[160]= - armttbar[160]*armttbar[216];
+   armttbar[197]=armttbar[378]*armttbar[107];
+   armttbar[197]=53./2. + 33*armttbar[197];
+   armttbar[197]=armttbar[197]*armttbar[107];
+   armttbar[197]= - 6 + armttbar[197];
+   armttbar[197]=armttbar[197]*armttbar[394];
+   armttbar[199]=16./9.*armttbar[318];
+   armttbar[104]=armttbar[104] + armttbar[171] + armttbar[130] + 
+   armttbar[129] + armttbar[197] + armttbar[127] + armttbar[160] - 
+   armttbar[199] + armttbar[191] - 65./27. + armttbar[181];
+   armttbar[104]=armttbar[46]*armttbar[104];
+   armttbar[127]=armttbar[331] - 5./72.*armttbar[333] + 416./9. + 99./8.
+   *armttbar[376];
+   armttbar[127]=armttbar[17]*armttbar[127];
+   armttbar[129]= - armttbar[15]*armttbar[354];
+   armttbar[127]=armttbar[127] + armttbar[129];
+   armttbar[127]=armttbar[127]*armttbar[452];
+   armttbar[129]= - 47 - 33*armttbar[195];
+   armttbar[129]=armttbar[129]*armttbar[107];
+   armttbar[129]=armttbar[129] + armttbar[102];
+   armttbar[129]=armttbar[3]*armttbar[129]*armttbar[304]*armttbar[395];
+   armttbar[130]= - 19./2. + armttbar[194];
+   armttbar[130]=armttbar[130]*armttbar[306];
+   armttbar[130]=29./3. + armttbar[130];
+   armttbar[130]=armttbar[130]*armttbar[177];
+   armttbar[160]= - 71./3. - armttbar[198];
+   armttbar[160]=armttbar[160]*armttbar[444];
+   armttbar[130]=armttbar[199] + armttbar[160] + 80./27. + 
+   armttbar[130];
+   armttbar[130]=armttbar[130]*armttbar[178];
+   armttbar[104]=armttbar[130] + armttbar[127] + armttbar[129] + 
+   armttbar[104];
+   armttbar[104]=armttbar[41]*armttbar[104];
+   armttbar[127]=97./3. - armttbar[190];
+   armttbar[127]=armttbar[127]*armttbar[215];
+   armttbar[129]=3049./3. - 493./2.*armttbar[102];
+   armttbar[129]=armttbar[129]*armttbar[432];
+   armttbar[127]=armttbar[129] - 640./27. + armttbar[127];
+   armttbar[127]=armttbar[127]*armttbar[193];
+   armttbar[129]=71 - armttbar[165];
+   armttbar[129]=armttbar[129]*armttbar[177];
+   armttbar[130]=1663 - 221./2.*armttbar[102];
+   armttbar[130]=armttbar[130]*armttbar[444];
+   armttbar[127]=armttbar[127] + armttbar[130] - 64./3. + armttbar[129]
+   ;
+   armttbar[129]= - 49./12. - armttbar[107];
+   armttbar[129]=armttbar[129]*armttbar[107];
+   armttbar[129]=101./6. + armttbar[129];
+   armttbar[129]=armttbar[129]*armttbar[177];
+   armttbar[130]=4775./3. - 301./2.*armttbar[102];
+   armttbar[130]=armttbar[130]*armttbar[183];
+   armttbar[129]=armttbar[130] - 64./81. + armttbar[129];
+   armttbar[129]=armttbar[29]*armttbar[129];
+   armttbar[130]=armttbar[30]*armttbar[281];
+   armttbar[127]=1./16.*armttbar[130] + 1./3.*armttbar[127] + 
+   armttbar[129];
+   armttbar[127]=armttbar[27]*armttbar[127];
+   armttbar[129]=13 + armttbar[194];
+   armttbar[129]=armttbar[129]*armttbar[107];
+   armttbar[129]= - 139./3. + armttbar[129];
+   armttbar[129]=armttbar[129]*armttbar[108];
+   armttbar[130]= - 139./2. + armttbar[343];
+   armttbar[130]=armttbar[130]*armttbar[105];
+   armttbar[129]=armttbar[129] + armttbar[130];
+   armttbar[129]=armttbar[29]*armttbar[129];
+   armttbar[130]= - 59./3. + armttbar[248];
+   armttbar[130]=armttbar[130]*armttbar[107];
+   armttbar[160]= - 59 - armttbar[465];
+   armttbar[160]=armttbar[160]*armttbar[105];
+   armttbar[129]= - armttbar[251] + armttbar[129] + armttbar[130] + 
+   armttbar[160];
+   armttbar[129]=armttbar[129]*armttbar[196];
+   armttbar[130]= - 41./3. + 25./2.*armttbar[107];
+   armttbar[130]=armttbar[130]*armttbar[107];
+   armttbar[160]= - 41 + 67./2.*armttbar[102];
+   armttbar[160]=armttbar[160]*armttbar[105];
+   armttbar[130]=armttbar[130] + armttbar[160];
+   armttbar[130]=armttbar[130]*armttbar[304];
+   armttbar[129]=armttbar[130] + armttbar[129];
+   armttbar[130]=armttbar[208]*armttbar[263];
+   armttbar[129]=1./2.*armttbar[129] + armttbar[130];
+   armttbar[129]=armttbar[129]*armttbar[206];
+   armttbar[130]= - 43 + armttbar[457];
+   armttbar[130]=armttbar[130]*armttbar[189];
+   armttbar[130]= - 2 + armttbar[130];
+   armttbar[130]=armttbar[130]*armttbar[107];
+   armttbar[160]=27 + armttbar[391];
+   armttbar[113]=armttbar[160]*armttbar[113];
+   armttbar[113]= - 2 + armttbar[113];
+   armttbar[113]=armttbar[113]*armttbar[102];
+   armttbar[113]=armttbar[130] + armttbar[113];
+   armttbar[113]=armttbar[113]*armttbar[304];
+   armttbar[113]=armttbar[113] + 3./8.*armttbar[255];
+   armttbar[113]=armttbar[113]*armttbar[294];
+   armttbar[130]= - 11./3. + armttbar[286];
+   armttbar[130]=armttbar[130]*armttbar[108];
+   armttbar[160]= - 809./9. - armttbar[235];
+   armttbar[160]=armttbar[160]*armttbar[345];
+   armttbar[130]=armttbar[160] + 1024./81. + armttbar[130];
+   armttbar[130]=armttbar[130]*armttbar[304];
+   armttbar[160]=armttbar[236]*armttbar[264];
+   armttbar[171]= - armttbar[299]*armttbar[259];
+   armttbar[113]=armttbar[171] + armttbar[113] + armttbar[130] + 1./2.*
+   armttbar[160];
+   armttbar[113]=armttbar[9]*armttbar[113];
+   armttbar[113]=armttbar[113] + armttbar[127] + armttbar[129];
+   armttbar[113]=armttbar[9]*armttbar[113];
+   armttbar[127]= - 17./27. - armttbar[215];
+   armttbar[127]=armttbar[127]*armttbar[108];
+   armttbar[129]= - 61./3. + armttbar[220];
+   armttbar[129]=armttbar[129]*armttbar[102];
+   armttbar[127]=13./162.*armttbar[129] + 224./243. + armttbar[127];
+   armttbar[127]=armttbar[6]*armttbar[127];
+   armttbar[129]= - armttbar[142]*armttbar[215];
+   armttbar[130]= - armttbar[140]*armttbar[222];
+   armttbar[129]=armttbar[130] - 128./81. + armttbar[129];
+   armttbar[129]=armttbar[129]*armttbar[313];
+   armttbar[127]=armttbar[127] + armttbar[129] - armttbar[291];
+   armttbar[127]=armttbar[27]*armttbar[127];
+   armttbar[129]=armttbar[215] + 1./3.;
+   armttbar[129]=armttbar[129]*armttbar[107];
+   armttbar[130]=1./3. + 3./4.*armttbar[102];
+   armttbar[130]=armttbar[130]*armttbar[102];
+   armttbar[130]=armttbar[374] + armttbar[129] + armttbar[130];
+   armttbar[130]=armttbar[1]*armttbar[130];
+   armttbar[140]=5./3. + 11./4.*armttbar[102];
+   armttbar[140]=armttbar[140]*armttbar[105];
+   armttbar[142]=armttbar[180] + 5./9.;
+   armttbar[142]=armttbar[142]*armttbar[107];
+   armttbar[140]=armttbar[140] + armttbar[142];
+   armttbar[142]= - 29./3. - armttbar[448];
+   armttbar[142]=armttbar[142]*armttbar[108];
+   armttbar[160]= - 29./2. + armttbar[188];
+   armttbar[160]=armttbar[160]*armttbar[105];
+   armttbar[142]=armttbar[142] + armttbar[160];
+   armttbar[142]=armttbar[142]*armttbar[157];
+   armttbar[118]=3./4.*armttbar[118] + armttbar[142] + armttbar[140];
+   armttbar[118]=armttbar[27]*armttbar[118];
+   armttbar[118]=armttbar[130] + armttbar[118];
+   armttbar[118]=armttbar[3]*armttbar[118];
+   armttbar[130]= - armttbar[356]*armttbar[107];
+   armttbar[130]= - 3 + armttbar[130];
+   armttbar[130]=armttbar[130]*armttbar[108];
+   armttbar[142]=armttbar[102] - 1./2.;
+   armttbar[157]=armttbar[142]*armttbar[131];
+   armttbar[130]=armttbar[130] + armttbar[157];
+   armttbar[130]=armttbar[1]*armttbar[130];
+   armttbar[157]= - armttbar[316]*armttbar[107];
+   armttbar[157]=7./3. + armttbar[157];
+   armttbar[157]=armttbar[157]*armttbar[108];
+   armttbar[160]=7./2. + armttbar[391];
+   armttbar[160]=armttbar[160]*armttbar[105];
+   armttbar[157]=armttbar[157] + armttbar[160];
+   armttbar[157]=armttbar[157]*armttbar[261];
+   armttbar[130]=armttbar[130] + armttbar[157];
+   armttbar[130]=armttbar[130]*armttbar[206];
+   armttbar[130]=armttbar[130] - armttbar[436];
+   armttbar[130]=armttbar[10]*armttbar[130];
+   armttbar[157]=armttbar[6]*armttbar[342];
+   armttbar[160]= - armttbar[356]*armttbar[194];
+   armttbar[160]= - 11./3. + armttbar[160];
+   armttbar[160]=armttbar[160]*armttbar[108];
+   armttbar[142]=armttbar[142]*armttbar[422];
+   armttbar[142]=armttbar[160] + armttbar[142];
+   armttbar[142]=armttbar[142]*armttbar[206];
+   armttbar[142]=armttbar[157] + armttbar[142];
+   armttbar[142]=armttbar[10]*armttbar[142];
+   armttbar[157]= - armttbar[6]*armttbar[440];
+   armttbar[140]=3./4.*armttbar[265] + armttbar[140];
+   armttbar[140]=armttbar[3]*armttbar[140];
+   armttbar[140]=armttbar[142] + armttbar[140] + armttbar[157] - 
+   armttbar[339];
+   armttbar[140]=armttbar[31]*armttbar[140];
+   armttbar[113]=armttbar[140] + armttbar[130] + armttbar[113] + 
+   armttbar[118] - armttbar[453] + armttbar[127];
+   armttbar[113]=armttbar[15]*armttbar[113];
+   armttbar[118]= - 1 - armttbar[324];
+   armttbar[118]=armttbar[118]*armttbar[102];
+   armttbar[118]= - armttbar[308] + armttbar[118];
+   armttbar[118]=armttbar[118]*armttbar[419];
+   armttbar[127]= - 53./3. + armttbar[407];
+   armttbar[127]=armttbar[127]*armttbar[108];
+   armttbar[130]= - 47 + 101./2.*armttbar[102];
+   armttbar[130]=armttbar[130]*armttbar[345];
+   armttbar[127]=armttbar[130] + 32./9. + armttbar[127];
+   armttbar[127]=armttbar[17]*armttbar[127];
+   armttbar[130]=armttbar[19] - armttbar[34];
+   armttbar[130]=armttbar[380]*armttbar[130];
+   armttbar[140]=2 - armttbar[180];
+   armttbar[140]=armttbar[140]*armttbar[107];
+   armttbar[140]= - 8./3. + armttbar[140];
+   armttbar[140]=armttbar[29]*armttbar[140];
+   armttbar[140]=armttbar[140] + armttbar[445];
+   armttbar[140]=armttbar[389]*armttbar[140];
+   armttbar[142]=armttbar[33] - armttbar[163];
+   armttbar[142]=armttbar[142]*armttbar[108];
+   armttbar[157]= - armttbar[116]*armttbar[33]*armttbar[230];
+   armttbar[160]=armttbar[427]*armttbar[239];
+   armttbar[163]=armttbar[456]*armttbar[30]*armttbar[16];
+   armttbar[118]=armttbar[163] + armttbar[127] + armttbar[118] + 
+   armttbar[160] + armttbar[157] + armttbar[142] + armttbar[140] + 
+   armttbar[130];
+   armttbar[118]=armttbar[27]*armttbar[118];
+   armttbar[127]=23./2. + armttbar[194];
+   armttbar[127]=armttbar[127]*armttbar[108];
+   armttbar[127]= - 77./3. + armttbar[127];
+   armttbar[127]=armttbar[127]*armttbar[108];
+   armttbar[130]= - 17 + armttbar[198];
+   armttbar[130]=armttbar[130]*armttbar[443];
+   armttbar[127]=armttbar[130] + 32./9. + armttbar[127];
+   armttbar[127]=armttbar[29]*armttbar[127];
+   armttbar[112]=1 - armttbar[112];
+   armttbar[112]=armttbar[112]*armttbar[107];
+   armttbar[112]=armttbar[112] + armttbar[234];
+   armttbar[112]=armttbar[112]*armttbar[155];
+   armttbar[130]= - 37./3. + 35./2.*armttbar[107];
+   armttbar[130]=armttbar[130]*armttbar[215];
+   armttbar[140]=113 - 71./2.*armttbar[102];
+   armttbar[140]=armttbar[140]*armttbar[432];
+   armttbar[112]=armttbar[112] + armttbar[127] + armttbar[140] + 32./9.
+    + armttbar[130];
+   armttbar[112]=armttbar[112]*armttbar[196];
+   armttbar[127]=armttbar[280] + 3*armttbar[284];
+   armttbar[127]=armttbar[127]*armttbar[424];
+   armttbar[130]=2./3. + armttbar[108];
+   armttbar[130]=armttbar[130]*armttbar[107];
+   armttbar[140]=armttbar[300]*armttbar[411];
+   armttbar[130]=armttbar[130] + armttbar[140];
+   armttbar[130]=armttbar[16]*armttbar[130];
+   armttbar[127]=armttbar[130] + armttbar[127];
+   armttbar[127]=armttbar[1]*armttbar[127];
+   armttbar[130]=3*armttbar[208];
+   armttbar[140]=armttbar[312]*armttbar[130];
+   armttbar[142]=armttbar[280]*armttbar[1];
+   armttbar[157]=armttbar[435]*armttbar[142];
+   armttbar[112]=armttbar[140] + armttbar[112] + armttbar[118] + 
+   armttbar[127] - armttbar[157];
+   armttbar[112]=armttbar[3]*armttbar[112];
+   armttbar[118]= - armttbar[150] + armttbar[123];
+   armttbar[118]=MMt*armttbar[118];
+   armttbar[118]= - armttbar[151] + armttbar[118];
+   armttbar[118]=armttbar[118]*armttbar[412];
+   armttbar[127]=armttbar[143]*armttbar[9];
+   armttbar[140]=armttbar[241] - armttbar[127];
+   armttbar[140]=armttbar[15]*armttbar[140];
+   armttbar[143]=armttbar[8]*armttbar[148];
+   armttbar[160]=29./3. + armttbar[248];
+   armttbar[160]=armttbar[160]*armttbar[107];
+   armttbar[163]=29 + 47./6.*armttbar[102];
+   armttbar[163]=armttbar[163]*armttbar[105];
+   armttbar[118]=armttbar[140] + armttbar[118] + armttbar[143] + 
+   armttbar[160] + armttbar[163];
+   armttbar[118]=armttbar[15]*armttbar[118];
+   armttbar[140]=armttbar[150] + 21./8.*armttbar[123] - armttbar[320];
+   armttbar[140]=armttbar[140]*armttbar[207];
+   armttbar[143]=armttbar[51]*MMt;
+   armttbar[143]= - armttbar[93] + armttbar[143] + armttbar[20];
+   armttbar[143]=armttbar[148]*armttbar[143];
+   armttbar[150]=7./3. + armttbar[190];
+   armttbar[150]=armttbar[150]*armttbar[107];
+   armttbar[160]=7 + 61./6.*armttbar[102];
+   armttbar[160]=armttbar[160]*armttbar[105];
+   armttbar[150]=armttbar[150] + armttbar[160];
+   armttbar[150]=armttbar[18]*armttbar[150];
+   armttbar[133]= - armttbar[42]*armttbar[133];
+   armttbar[118]=armttbar[133] + armttbar[118] + armttbar[140] + 
+   armttbar[150] - armttbar[192] + armttbar[143];
+   armttbar[118]=armttbar[46]*armttbar[118];
+   armttbar[133]=armttbar[15]*armttbar[106]*armttbar[178];
+   armttbar[118]=armttbar[133] + armttbar[118];
+   armttbar[118]=armttbar[118]*armttbar[403];
+   armttbar[133]=armttbar[408] + 1./9.;
+   armttbar[140]=armttbar[133]*armttbar[250];
+   armttbar[143]=armttbar[334]*armttbar[193];
+   armttbar[150]=armttbar[169]*armttbar[180];
+   armttbar[150]= - 1./9. + armttbar[150];
+   armttbar[150]=armttbar[150]*armttbar[215];
+   armttbar[160]= - 1 + 5./72.*armttbar[102];
+   armttbar[160]=armttbar[160]*armttbar[102];
+   armttbar[140]=armttbar[143] + armttbar[140] + 5./36.*armttbar[160]
+    + 16./81. + armttbar[150];
+   armttbar[140]=armttbar[27]*armttbar[140];
+   armttbar[143]= - 13./6. + armttbar[107];
+   armttbar[143]=armttbar[143]*armttbar[107];
+   armttbar[143]=83./27. + armttbar[143];
+   armttbar[143]=armttbar[143]*armttbar[189];
+   armttbar[150]=armttbar[349]*armttbar[381];
+   armttbar[160]=armttbar[162] + 1;
+   armttbar[160]=armttbar[160]*armttbar[158];
+   armttbar[162]=armttbar[216]*armttbar[160];
+   armttbar[143]=armttbar[162] + armttbar[150] + 16./27. + 
+   armttbar[143];
+   armttbar[143]=armttbar[1]*armttbar[143];
+   armttbar[147]= - armttbar[147]*armttbar[288];
+   armttbar[150]= - armttbar[237]*armttbar[319];
+   armttbar[162]= - armttbar[200]*armttbar[258];
+   armttbar[147]=armttbar[162] + armttbar[147] + armttbar[150];
+   armttbar[150]= - armttbar[289]*armttbar[201];
+   armttbar[147]=1./2.*armttbar[147] + armttbar[150];
+   armttbar[150]=3 + armttbar[273];
+   armttbar[150]=armttbar[150]*armttbar[107];
+   armttbar[131]=armttbar[150] + armttbar[131];
+   armttbar[131]=armttbar[131]*armttbar[319];
+   armttbar[150]=5./3. + armttbar[229];
+   armttbar[150]=armttbar[150]*armttbar[107];
+   armttbar[150]=armttbar[150] + armttbar[314];
+   armttbar[150]=armttbar[150]*armttbar[154];
+   armttbar[131]=armttbar[131] + armttbar[150];
+   armttbar[150]=armttbar[196]*armttbar[3];
+   armttbar[131]=armttbar[131]*armttbar[150];
+   armttbar[131]=1./2.*armttbar[147] + armttbar[131];
+   armttbar[131]=armttbar[9]*armttbar[131];
+   armttbar[147]= - armttbar[319]*armttbar[437];
+   armttbar[154]= - 2 - armttbar[240];
+   armttbar[154]=armttbar[1]*armttbar[154];
+   armttbar[162]= - 2./3. - armttbar[210];
+   armttbar[162]=armttbar[27]*armttbar[162];
+   armttbar[154]=armttbar[154] + armttbar[162];
+   armttbar[154]=armttbar[154]*armttbar[390];
+   armttbar[131]=armttbar[131] + armttbar[154] + armttbar[140] + 
+   armttbar[147] + armttbar[143];
+   armttbar[131]=armttbar[10]*armttbar[131];
+   armttbar[136]=armttbar[136]*armttbar[146];
+   armttbar[126]= - armttbar[126] + armttbar[136] + armttbar[152];
+   armttbar[126]=armttbar[126]*armttbar[137];
+   armttbar[136]= - 97./9. - armttbar[211];
+   armttbar[136]=armttbar[136]*armttbar[215];
+   armttbar[140]= - 97./36. - armttbar[102];
+   armttbar[140]=armttbar[140]*armttbar[102];
+   armttbar[136]=armttbar[136] + armttbar[140];
+   armttbar[136]=armttbar[136]*armttbar[304];
+   armttbar[126]=armttbar[136] + armttbar[126];
+   armttbar[126]=armttbar[126]*armttbar[315];
+   armttbar[136]= - armttbar[123]*armttbar[221];
+   armttbar[136]=armttbar[136] - armttbar[246];
+   armttbar[136]=armttbar[136]*armttbar[214];
+   armttbar[140]= - armttbar[327]*armttbar[107];
+   armttbar[140]= - 9./4. + armttbar[140];
+   armttbar[140]=armttbar[140]*armttbar[107];
+   armttbar[143]= - armttbar[186]*armttbar[102];
+   armttbar[143]= - 9./2. + armttbar[143];
+   armttbar[143]=armttbar[143]*armttbar[116];
+   armttbar[140]=armttbar[140] + armttbar[143];
+   armttbar[140]=armttbar[140]*armttbar[304];
+   armttbar[140]=armttbar[140] + 1./4.*armttbar[255];
+   armttbar[140]=armttbar[140]*armttbar[369];
+   armttbar[126]=1./2.*armttbar[140] + armttbar[126] + armttbar[136];
+   armttbar[126]=armttbar[9]*armttbar[126];
+   armttbar[136]= - 71./9. + armttbar[287];
+   armttbar[136]=armttbar[136]*armttbar[107];
+   armttbar[136]=armttbar[136] + 121./9.*armttbar[102];
+   armttbar[138]= - 9 + armttbar[138];
+   armttbar[138]=armttbar[138]*armttbar[107];
+   armttbar[138]=armttbar[138] - armttbar[282];
+   armttbar[138]=armttbar[29]*armttbar[138];
+   armttbar[136]=3*armttbar[209] + 1./3.*armttbar[136] + armttbar[138];
+   armttbar[136]=armttbar[136]*armttbar[261];
+   armttbar[120]=armttbar[120]*armttbar[454];
+   armttbar[120]=armttbar[120] + armttbar[136];
+   armttbar[120]=MMt*armttbar[120];
+   armttbar[136]=11./3. + armttbar[107];
+   armttbar[136]=armttbar[136]*armttbar[107];
+   armttbar[136]= - 23./9. + armttbar[136];
+   armttbar[136]=armttbar[136]*armttbar[107];
+   armttbar[136]=armttbar[136] + armttbar[102];
+   armttbar[136]=armttbar[136]*armttbar[304];
+   armttbar[120]=armttbar[136] + armttbar[120];
+   armttbar[117]= - armttbar[254]*armttbar[117]*armttbar[226];
+   armttbar[117]=1./2.*armttbar[120] + armttbar[117];
+   armttbar[117]=1./2.*armttbar[117] + armttbar[126];
+   armttbar[117]=armttbar[117]*armttbar[277];
+   armttbar[120]=89./18. - armttbar[205];
+   armttbar[120]=armttbar[120]*armttbar[107];
+   armttbar[126]=14./3. - armttbar[179];
+   armttbar[126]=armttbar[126]*armttbar[107];
+   armttbar[126]= - 8./3. + armttbar[126];
+   armttbar[126]=armttbar[126]*armttbar[193];
+   armttbar[120]=armttbar[126] - 8./3. + armttbar[120];
+   armttbar[126]=armttbar[242]*armttbar[280]*armttbar[155];
+   armttbar[119]= - armttbar[119]*armttbar[377];
+   armttbar[119]=4./3. + armttbar[119];
+   armttbar[119]=armttbar[119]*armttbar[107];
+   armttbar[119]= - 8./9. + armttbar[119];
+   armttbar[119]=armttbar[29]*armttbar[119];
+   armttbar[119]=armttbar[126] + 1./3.*armttbar[120] + armttbar[119];
+   armttbar[119]=armttbar[27]*armttbar[119];
+   armttbar[120]= - armttbar[289]*armttbar[395];
+   armttbar[126]= - armttbar[1]*armttbar[160];
+   armttbar[133]= - armttbar[27]*armttbar[133]*armttbar[107];
+   armttbar[120]=armttbar[120] + armttbar[126] + armttbar[133];
+   armttbar[120]=armttbar[10]*armttbar[120];
+   armttbar[126]=armttbar[129] + armttbar[366];
+   armttbar[126]=armttbar[1]*armttbar[126];
+   armttbar[133]=armttbar[145]*armttbar[280]*armttbar[226];
+   armttbar[117]=1./2.*armttbar[120] + armttbar[117] + armttbar[133] + 
+   1./6.*armttbar[126] + armttbar[119];
+   armttbar[117]=armttbar[21]*armttbar[117];
+   armttbar[119]= - armttbar[6]*armttbar[18]*armttbar[360];
+   armttbar[120]=armttbar[177] + 1./9.;
+   armttbar[120]=armttbar[120]*armttbar[107];
+   armttbar[120]=armttbar[120] + 16./27.;
+   armttbar[126]=5./9. + 3./16.*armttbar[102];
+   armttbar[126]=armttbar[126]*armttbar[102];
+   armttbar[126]=armttbar[126] + armttbar[120];
+   armttbar[126]=armttbar[25]*armttbar[126];
+   armttbar[133]=1./9. + armttbar[355];
+   armttbar[133]=armttbar[133]*armttbar[108];
+   armttbar[136]=179./3. - 23./32.*armttbar[102];
+   armttbar[136]=armttbar[136]*armttbar[244];
+   armttbar[138]=1./27. - armttbar[227];
+   armttbar[138]=armttbar[138]*armttbar[107];
+   armttbar[138]=armttbar[138] + armttbar[232];
+   armttbar[138]=armttbar[138]*armttbar[463];
+   armttbar[119]=armttbar[126] + armttbar[138] + armttbar[119] + 
+   armttbar[136] + 256./81. + armttbar[133];
+   armttbar[119]=armttbar[1]*armttbar[119];
+   armttbar[126]=armttbar[184]*armttbar[27];
+   armttbar[133]= - armttbar[126]*armttbar[247];
+   armttbar[134]=armttbar[369]*armttbar[134];
+   armttbar[133]= - 1./8.*armttbar[134] - armttbar[185] + armttbar[133]
+   ;
+   armttbar[133]=armttbar[133]*armttbar[412];
+   armttbar[134]=355./9. + armttbar[161];
+   armttbar[134]=armttbar[134]*armttbar[177];
+   armttbar[136]=7291./27. - armttbar[460];
+   armttbar[136]=armttbar[136]*armttbar[182];
+   armttbar[134]=armttbar[136] - 1024./81. + armttbar[134];
+   armttbar[134]=armttbar[27]*armttbar[134];
+   armttbar[136]= - 25./2. - armttbar[194];
+   armttbar[136]=armttbar[136]*armttbar[107];
+   armttbar[116]=armttbar[249]*armttbar[116];
+   armttbar[116]=armttbar[136] + armttbar[116];
+   armttbar[116]=armttbar[116]*armttbar[150];
+   armttbar[116]=armttbar[133] + armttbar[134] + armttbar[116];
+   armttbar[116]=armttbar[9]*armttbar[116];
+   armttbar[133]=64./27. + armttbar[310];
+   armttbar[133]=armttbar[133]*armttbar[370];
+   armttbar[134]= - 41./9. - armttbar[161];
+   armttbar[134]=armttbar[134]*armttbar[189];
+   armttbar[136]= - 443./3. + armttbar[175];
+   armttbar[136]=armttbar[136]*armttbar[217];
+   armttbar[134]=armttbar[136] - 64./27. + armttbar[134];
+   armttbar[134]=armttbar[134]*armttbar[421];
+   armttbar[136]=armttbar[3]*armttbar[27]*armttbar[203];
+   armttbar[116]=armttbar[116] + armttbar[136] + armttbar[133] + 
+   armttbar[134];
+   armttbar[116]=armttbar[20]*armttbar[116];
+   armttbar[133]=armttbar[304]*armttbar[263];
+   armttbar[134]= - 55./3. - 37./2.*armttbar[107];
+   armttbar[134]=armttbar[134]*armttbar[158];
+   armttbar[136]= - 55./9. - armttbar[460];
+   armttbar[136]=armttbar[136]*armttbar[102];
+   armttbar[134]=armttbar[134] + armttbar[136];
+   armttbar[134]=armttbar[134]*armttbar[173];
+   armttbar[133]=armttbar[133] + armttbar[134];
+   armttbar[134]=101./3. + armttbar[165];
+   armttbar[134]=armttbar[134]*armttbar[158];
+   armttbar[136]=101./9. + armttbar[465];
+   armttbar[136]=armttbar[136]*armttbar[102];
+   armttbar[134]=armttbar[134] + armttbar[136] + armttbar[168];
+   armttbar[134]=armttbar[134]*armttbar[153];
+   armttbar[134]=9./2.*armttbar[141] + armttbar[134];
+   armttbar[134]=MMt*armttbar[134];
+   armttbar[136]= - armttbar[400]*armttbar[325]*armttbar[266];
+   armttbar[133]=armttbar[136] + 1./4.*armttbar[133] + armttbar[134];
+   armttbar[133]=armttbar[9]*armttbar[133];
+   armttbar[134]=armttbar[8]*armttbar[149];
+   armttbar[133]=armttbar[134] + armttbar[133];
+   armttbar[133]=armttbar[9]*armttbar[133];
+   armttbar[134]=armttbar[141]*armttbar[8];
+   armttbar[136]= - armttbar[141] - armttbar[134];
+   armttbar[136]=armttbar[136]*armttbar[268];
+   armttbar[138]=armttbar[8]*armttbar[295];
+   armttbar[140]=armttbar[141]*armttbar[231];
+   armttbar[133]=9./8.*armttbar[136] + 9./4.*armttbar[140] + 
+   armttbar[133] + armttbar[138];
+   armttbar[133]=armttbar[133]*armttbar[269];
+   armttbar[136]=armttbar[15]*armttbar[212]*armttbar[412];
+   armttbar[137]= - armttbar[373]*armttbar[137];
+   armttbar[138]=2 + armttbar[194];
+   armttbar[138]=armttbar[138]*armttbar[107];
+   armttbar[138]=armttbar[138] + armttbar[219];
+   armttbar[138]=armttbar[138]*armttbar[126];
+   armttbar[136]=armttbar[136] + armttbar[137] + armttbar[138];
+   armttbar[136]=armttbar[3]*armttbar[136];
+   armttbar[137]=armttbar[304]*armttbar[148];
+   armttbar[137]= - armttbar[151] + armttbar[137];
+   armttbar[137]=armttbar[27]*armttbar[137];
+   armttbar[138]=armttbar[141] - armttbar[134];
+   armttbar[138]=MMt*armttbar[138];
+   armttbar[137]=armttbar[137] + armttbar[138];
+   armttbar[137]=armttbar[137]*armttbar[368];
+   armttbar[138]=armttbar[3]*armttbar[213]*armttbar[187]*armttbar[224];
+   armttbar[137]=armttbar[137] - 6*armttbar[138];
+   armttbar[137]=armttbar[3]*armttbar[137];
+   armttbar[138]= - 7*armttbar[141] + 5*armttbar[134];
+   armttbar[138]=MMt*armttbar[138];
+   armttbar[140]=armttbar[123]*armttbar[304];
+   armttbar[138]=armttbar[140] + armttbar[138];
+   armttbar[138]=armttbar[138]*armttbar[338];
+   armttbar[137]=armttbar[138] + armttbar[137];
+   armttbar[137]=armttbar[9]*armttbar[137];
+   armttbar[126]= - 1./4.*armttbar[196] + armttbar[126];
+   armttbar[126]=armttbar[278]*armttbar[176]*armttbar[126];
+   armttbar[126]=armttbar[126] + armttbar[137];
+   armttbar[126]=armttbar[9]*armttbar[126];
+   armttbar[134]=3./2.*armttbar[141] - armttbar[134];
+   armttbar[134]=armttbar[134]*armttbar[338]*armttbar[268];
+   armttbar[126]=armttbar[134] + armttbar[126] + armttbar[136];
+   armttbar[126]=armttbar[28]*armttbar[126];
+   armttbar[134]= - 377./3. + 35./2.*armttbar[102];
+   armttbar[134]=armttbar[134]*armttbar[426];
+   armttbar[136]=armttbar[161] + 49./9.;
+   armttbar[136]=armttbar[136]*armttbar[177];
+   armttbar[134]= - armttbar[134] + armttbar[136] + 16./81.;
+   armttbar[134]=armttbar[134]*armttbar[27];
+   armttbar[136]= - 5./3. + 7./16.*armttbar[102];
+   armttbar[137]=armttbar[136]*armttbar[105];
+   armttbar[120]=armttbar[137] - armttbar[120];
+   armttbar[120]=armttbar[120]*armttbar[1];
+   armttbar[136]=armttbar[136]*armttbar[274];
+   armttbar[136]=armttbar[136] - armttbar[357];
+   armttbar[136]=armttbar[136]*armttbar[31];
+   armttbar[120]=armttbar[134] - armttbar[120] - armttbar[136];
+   armttbar[134]=13 + armttbar[190];
+   armttbar[134]=armttbar[134]*armttbar[107];
+   armttbar[136]=13 - armttbar[167];
+   armttbar[136]=armttbar[136]*armttbar[102];
+   armttbar[134]=armttbar[134] + armttbar[136];
+   armttbar[134]=armttbar[134]*armttbar[277];
+   armttbar[136]=armttbar[106]*armttbar[268];
+   armttbar[134]=armttbar[136] - armttbar[241] + armttbar[134];
+   armttbar[136]=1./32.*MMH;
+   armttbar[134]=armttbar[134]*armttbar[136];
+   armttbar[137]=73./3. + armttbar[161];
+   armttbar[137]=armttbar[137]*armttbar[107];
+   armttbar[138]=73 - armttbar[434];
+   armttbar[138]=armttbar[138]*armttbar[105];
+   armttbar[137]=armttbar[137] + armttbar[138];
+   armttbar[137]=armttbar[137]*armttbar[296];
+   armttbar[138]=9055./9. - 347./2.*armttbar[107];
+   armttbar[138]=armttbar[138]*armttbar[107];
+   armttbar[140]=2461 - 2983./6.*armttbar[102];
+   armttbar[140]=armttbar[140]*armttbar[102];
+   armttbar[134]=armttbar[134] + 1./64.*armttbar[137] - armttbar[441]
+    + 1./6912.*armttbar[140] - 724./81. + 1./256.*armttbar[138];
+   armttbar[134]=armttbar[46]*armttbar[134];
+   armttbar[137]= - 5./2. + armttbar[302];
+   armttbar[136]=armttbar[452]*armttbar[136]*armttbar[332]*
+   armttbar[137];
+   armttbar[134]=armttbar[136] + armttbar[134] + armttbar[120];
+   armttbar[134]=armttbar[13]*armttbar[134];
+   armttbar[136]=MMt*armttbar[144];
+   armttbar[137]=armttbar[218]*armttbar[369];
+   armttbar[136]=armttbar[136] + armttbar[137];
+   armttbar[136]=armttbar[9]*armttbar[136];
+   armttbar[137]= - 7 - armttbar[223];
+   armttbar[137]=armttbar[137]*armttbar[105];
+   armttbar[137]= - armttbar[139] + armttbar[137];
+   armttbar[137]=1./2.*armttbar[137] - armttbar[164];
+   armttbar[137]=armttbar[9]*armttbar[137];
+   armttbar[138]=armttbar[363]*armttbar[351];
+   armttbar[137]=armttbar[137] + armttbar[138];
+   armttbar[137]=armttbar[137]*armttbar[269];
+   armttbar[136]=armttbar[136] + armttbar[137];
+   armttbar[136]=armttbar[46]*armttbar[136];
+   armttbar[137]=1./8.*armttbar[301];
+   armttbar[138]=armttbar[267]*armttbar[246];
+   armttbar[138]=armttbar[138] - armttbar[137];
+   armttbar[138]=armttbar[138]*armttbar[269];
+   armttbar[139]= - armttbar[359]*armttbar[141];
+   armttbar[138]=armttbar[139] + armttbar[138];
+   armttbar[136]=9*armttbar[138] + armttbar[136];
+   armttbar[136]=armttbar[44]*armttbar[136];
+   armttbar[138]= - 8./9. - armttbar[189];
+   armttbar[138]=armttbar[138]*armttbar[107];
+   armttbar[139]= - 8 - 23./8.*armttbar[102];
+   armttbar[139]=armttbar[139]*armttbar[174];
+   armttbar[138]= - 3./8.*armttbar[164] + armttbar[138] + armttbar[139]
+   ;
+   armttbar[138]=armttbar[9]*armttbar[138];
+   armttbar[139]=25./9. - armttbar[161];
+   armttbar[139]=armttbar[139]*armttbar[107];
+   armttbar[140]=25./3. - armttbar[175];
+   armttbar[140]=armttbar[140]*armttbar[105];
+   armttbar[139]=armttbar[139] + armttbar[140];
+   armttbar[139]=armttbar[139]*armttbar[352];
+   armttbar[139]=armttbar[139] - armttbar[401];
+   armttbar[139]=armttbar[139]*armttbar[302];
+   armttbar[138]=armttbar[138] + 1./8.*armttbar[139];
+   armttbar[138]=armttbar[46]*armttbar[138];
+   armttbar[139]=armttbar[185] + armttbar[172];
+   armttbar[139]=armttbar[139]*armttbar[267];
+   armttbar[137]=armttbar[139] - armttbar[137];
+   armttbar[139]=armttbar[302] - 1;
+   armttbar[139]=armttbar[452]*armttbar[271]*armttbar[139];
+   armttbar[137]=1./16.*armttbar[139] + 9./2.*armttbar[137] + 
+   armttbar[138];
+   armttbar[137]=armttbar[32]*armttbar[137];
+   armttbar[138]=armttbar[123]*armttbar[184];
+   armttbar[138]=7./4.*armttbar[156] + 25*armttbar[138];
+   armttbar[138]=armttbar[138]*armttbar[277];
+   armttbar[139]= - 83./3. - 149./4.*armttbar[107];
+   armttbar[139]=armttbar[139]*armttbar[107];
+   armttbar[140]= - 83 - 103./12.*armttbar[102];
+   armttbar[140]=armttbar[140]*armttbar[105];
+   armttbar[139]=armttbar[139] + armttbar[140];
+   armttbar[128]=1./3.*armttbar[139] + armttbar[128];
+   armttbar[139]=155./18. + armttbar[194];
+   armttbar[139]=armttbar[139]*armttbar[107];
+   armttbar[140]=155 + 61*armttbar[102];
+   armttbar[140]=armttbar[140]*armttbar[345];
+   armttbar[139]=armttbar[139] + armttbar[140];
+   armttbar[139]=armttbar[139]*armttbar[294];
+   armttbar[128]=armttbar[138] + 1./4.*armttbar[128] + armttbar[139];
+   armttbar[128]=armttbar[128]*armttbar[340];
+   armttbar[138]=97./3. + armttbar[433];
+   armttbar[138]=armttbar[138]*armttbar[107];
+   armttbar[139]=97 + 211./6.*armttbar[102];
+   armttbar[139]=armttbar[139]*armttbar[105];
+   armttbar[138]=armttbar[138] + armttbar[139];
+   armttbar[138]=1./2.*armttbar[138] + armttbar[428];
+   armttbar[138]=armttbar[138]*armttbar[268];
+   armttbar[139]= - 13./9. + armttbar[248];
+   armttbar[139]=armttbar[139]*armttbar[107];
+   armttbar[139]=armttbar[139] + 13./9.*armttbar[260];
+   armttbar[139]=armttbar[139]*armttbar[279];
+   armttbar[138]=armttbar[138] - armttbar[387] + armttbar[139];
+   armttbar[139]=1./3. + 5./16.*armttbar[107];
+   armttbar[139]=armttbar[139]*armttbar[107];
+   armttbar[139]=armttbar[139] + armttbar[166];
+   armttbar[139]=armttbar[3]*armttbar[139];
+   armttbar[128]=armttbar[128] + 5*armttbar[139] + 1./16.*armttbar[138]
+   ;
+   armttbar[128]=armttbar[46]*armttbar[128];
+   armttbar[128]= - 27./2.*armttbar[228] + armttbar[128];
+   armttbar[128]=armttbar[42]*armttbar[128];
+   armttbar[138]= - 19./3. - armttbar[170];
+   armttbar[138]=armttbar[138]*armttbar[107];
+   armttbar[139]= - 19 - 97./6.*armttbar[102];
+   armttbar[139]=armttbar[139]*armttbar[105];
+   armttbar[138]=armttbar[138] + armttbar[139];
+   armttbar[138]=1./8.*armttbar[138] + armttbar[164];
+   armttbar[138]=armttbar[9]*armttbar[138];
+   armttbar[138]=armttbar[353] + armttbar[138];
+   armttbar[138]=MMH*armttbar[138];
+   armttbar[139]= - 19./3. + armttbar[248];
+   armttbar[107]=armttbar[139]*armttbar[107];
+   armttbar[139]= - 19 + 143./6.*armttbar[102];
+   armttbar[105]=armttbar[139]*armttbar[105];
+   armttbar[105]=armttbar[107] + armttbar[105];
+   armttbar[106]=armttbar[106]*armttbar[296];
+   armttbar[105]=armttbar[138] + 1./8.*armttbar[105] + armttbar[106];
+   armttbar[105]=armttbar[46]*armttbar[105];
+   armttbar[106]= - armttbar[452]*armttbar[225];
+   armttbar[105]=armttbar[105] + armttbar[106];
+   armttbar[105]=armttbar[74]*armttbar[105];
+   armttbar[106]= - armttbar[121]*armttbar[174];
+   armttbar[107]= - armttbar[406]*armttbar[297];
+   armttbar[106]=armttbar[107] + armttbar[135] + armttbar[106];
+   armttbar[106]=armttbar[46]*armttbar[106];
+   armttbar[106]=1./2.*armttbar[106] - armttbar[120];
+   armttbar[106]=armttbar[24]*armttbar[106];
+   armttbar[107]=armttbar[127] + armttbar[241];
+   armttbar[107]= - armttbar[107]*armttbar[383];
+   armttbar[120]=armttbar[3]*armttbar[123];
+   armttbar[107]= - 9./2.*armttbar[120] + armttbar[107];
+   armttbar[107]=armttbar[46]*armttbar[107];
+   armttbar[120]= - armttbar[204]*armttbar[452];
+   armttbar[107]=armttbar[107] + armttbar[120];
+   armttbar[107]=armttbar[48]*armttbar[107];
+   armttbar[120]= - armttbar[6]*armttbar[129];
+   armttbar[120]=armttbar[120] - armttbar[285];
+   armttbar[120]=armttbar[16]*armttbar[120];
+   armttbar[114]=5./3. - armttbar[114];
+   armttbar[108]=armttbar[114]*armttbar[108];
+   armttbar[102]=197./9. - 119./8.*armttbar[102];
+   armttbar[102]=armttbar[102]*armttbar[167];
+   armttbar[102]=armttbar[102] - 352./27. + armttbar[108];
+   armttbar[102]=armttbar[6]*armttbar[102];
+   armttbar[102]=armttbar[102] + armttbar[339];
+   armttbar[102]=armttbar[17]*armttbar[102];
+   armttbar[102]=armttbar[102] + armttbar[120];
+   armttbar[102]=armttbar[454]*armttbar[102];
+   armttbar[108]=armttbar[115]*armttbar[130];
+   armttbar[114]= - armttbar[304]*armttbar[299];
+   armttbar[108]=armttbar[108] + armttbar[114];
+   armttbar[108]=armttbar[9]*armttbar[108];
+   armttbar[114]=armttbar[338]*armttbar[304];
+   armttbar[115]=armttbar[252]*armttbar[114];
+   armttbar[108]=armttbar[108] + armttbar[115];
+   armttbar[108]=armttbar[36]*armttbar[108];
+   armttbar[115]= - armttbar[292]*armttbar[130];
+   armttbar[120]=armttbar[304]*armttbar[362];
+   armttbar[115]=armttbar[115] + armttbar[120];
+   armttbar[115]=armttbar[9]*armttbar[115];
+   armttbar[114]=armttbar[159]*armttbar[114];
+   armttbar[114]=armttbar[115] + armttbar[114];
+   armttbar[114]=armttbar[38]*armttbar[114];
+   armttbar[115]=armttbar[5]*armttbar[438];
+   armttbar[120]=armttbar[352]*armttbar[157];
+   armttbar[121]= - armttbar[454]*armttbar[413];
+   armttbar[121]= - armttbar[142] + armttbar[121];
+   armttbar[121]=armttbar[121]*armttbar[468];
 
-      mttbarret = armttbar[102] + armttbar[103] + armttbar[104] + 1./3.
-      *armttbar[105] + armttbar[107];
+      mttbarret = armttbar[102] + armttbar[103] + armttbar[104] + 1./8.
+      *armttbar[105] + armttbar[106] + 1./4.*armttbar[107] + 
+      armttbar[108] + armttbar[109] + armttbar[110] + armttbar[111] + 
+      armttbar[112] + armttbar[113] + armttbar[114] + armttbar[115] + 
+      armttbar[116] + armttbar[117] + armttbar[118] + armttbar[119] + 
+      armttbar[120] + armttbar[121] + armttbar[122] + armttbar[124] + 
+      armttbar[125] + 3*armttbar[126] + armttbar[128] + armttbar[131]
+       + armttbar[132] + armttbar[133] + armttbar[134] + armttbar[136]
+       + armttbar[137];
       return mttbarret;
 }

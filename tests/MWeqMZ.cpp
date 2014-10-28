@@ -15,8 +15,8 @@ TEST_CASE
   mi.setmW(mi.mZ()*sqrt(1 - 0.001));
   mi.setmt(0.4);
   
-  ww dMW_at_mu_eq_MZ  = ww(mi, mi.mmZ());
-  zz dMZ_at_mu_eq_MZ  = zz(mi, mi.mmZ());
+  WW<MS> dMW_at_mu_eq_MZ  = WW<MS>(mi, mi.mmZ());
+  ZZ<MS> dMZ_at_mu_eq_MZ  = ZZ<MS>(mi, mi.mmZ());
   
   REQUIRE( dMW_at_mu_eq_MZ.m20().real() == Approx( dMZ_at_mu_eq_MZ.m20().real() ).epsilon(0.001) );
 }

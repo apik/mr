@@ -15,17 +15,19 @@ dr::dr11(size_t nL, size_t nH, size_t boson)
     ardr[7]=Tsil::A(MMt,mu2);
     ardr[8]=pow(MMt,-1);
     ardr[9]=Tsil::Aeps(MMt,mu2);
-   ardr[10]=ardr[9] - ardr[6];
-   ardr[11]=ardr[3]*pow(MMt,2);
-   ardr[12]=ardr[8] - 12*ardr[3];
-   ardr[12]=ardr[7]*ardr[12];
-   ardr[12]=5 + 2*ardr[12];
-   ardr[12]=ardr[7]*ardr[12];
-   ardr[10]=2*ardr[12] + 64*ardr[11] + 4*ardr[10] - 37./2.*MMt;
-   ardr[11]=ardr[10]*pow(ardr[5],2);
-   ardr[10]=ardr[10]*pow(ardr[2],2);
-   ardr[10]=ardr[11] + ardr[10];
+   ardr[10]= - ardr[8] + 12*ardr[3];
+   ardr[11]=2*ardr[7];
+   ardr[10]=ardr[10]*ardr[11];
+   ardr[10]=ardr[10] - 5;
+   ardr[10]=ardr[10]*ardr[11];
+   ardr[11]=ardr[9] - ardr[6];
+   ardr[12]=64*ardr[3];
+   ardr[12]=ardr[12]*pow(MMt,2);
+   ardr[10]=ardr[10] - ardr[12] + 37./2.*MMt - 4*ardr[11];
+   ardr[11]= - pow(ardr[2],2);
+   ardr[12]= - pow(ardr[5],2);
+   ardr[11]=ardr[11] + ardr[12];
 
-      drret = ardr[10]*ardr[4]*ardr[1];
+      drret = ardr[11]*ardr[10]*ardr[4]*ardr[1];
       return drret;
 }

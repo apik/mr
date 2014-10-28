@@ -4,7 +4,7 @@ HH<MS>::m10(size_t nL, size_t nH, size_t boson)
 {     
       
       
-    std::complex<long double> armHHos[21], mHHosret;
+    std::complex<long double> armHHos[22], mHHosret;
 
     armHHos[1]=double(nH);
     armHHos[2]=Tsil::B(mmt,mmt,mmH,mu2);
@@ -20,43 +20,40 @@ HH<MS>::m10(size_t nL, size_t nH, size_t boson)
     armHHos[12]=Tsil::A(mmW,mu2);
     armHHos[13]=Tsil::A(mmZ,mu2);
     armHHos[14]=Tsil::A(mmH,mu2);
-   armHHos[15]= - 1./2.*armHHos[13];
-   armHHos[16]= - 9./2.*armHHos[11] - armHHos[9];
-   armHHos[16]=mmH*armHHos[16];
-   armHHos[17]= - armHHos[10]*mmH;
-   armHHos[16]=1./4.*armHHos[17] + 1./2.*armHHos[16] + armHHos[15] - 3./
-   2.*armHHos[14] - armHHos[12];
-   armHHos[17]=pow(armHHos[6],2);
-   armHHos[18]=armHHos[17]*armHHos[16];
-   armHHos[19]=pow(armHHos[5],2);
-   armHHos[16]=armHHos[19]*armHHos[16];
-   armHHos[16]=armHHos[18] + armHHos[16];
-   armHHos[16]=armHHos[3]*armHHos[16];
-   armHHos[18]= - armHHos[9]*mmZ;
-   armHHos[20]= - armHHos[10]*mmZ;
-   armHHos[15]=1./2.*armHHos[20] + armHHos[18] - armHHos[12] + 
-   armHHos[15];
-   armHHos[15]=armHHos[4]*armHHos[15];
-   armHHos[15]=3*armHHos[15] + armHHos[9] + 1./2.*armHHos[10];
-   armHHos[15]=armHHos[19]*armHHos[15];
-   armHHos[18]= - armHHos[13] + armHHos[20];
-   armHHos[18]=armHHos[4]*armHHos[18];
-   armHHos[18]=armHHos[10] + 3*armHHos[18];
-   armHHos[18]=armHHos[17]*armHHos[18];
-   armHHos[20]=armHHos[4]*armHHos[9]*mmZ;
-   armHHos[15]=1./2.*armHHos[16] + armHHos[15] + 3*armHHos[20] + 1./2.*
-   armHHos[18];
-   armHHos[15]=armHHos[8]*armHHos[15];
-   armHHos[16]= - armHHos[1]*mmt*armHHos[2];
-   armHHos[18]=mmt*armHHos[2];
-   armHHos[18]=armHHos[7] + armHHos[18];
-   armHHos[18]=armHHos[4]*armHHos[1]*mmt*armHHos[18];
-   armHHos[16]=1./2.*armHHos[16] + 2*armHHos[18];
-   armHHos[17]=armHHos[17]*armHHos[16];
-   armHHos[16]=armHHos[19]*armHHos[16];
-   armHHos[16]=armHHos[17] + armHHos[16];
-   armHHos[16]=armHHos[3]*armHHos[16];
+   armHHos[15]=pow(armHHos[6],2);
+   armHHos[16]=pow(armHHos[5],2);
+   armHHos[15]=armHHos[15] + armHHos[16];
+   armHHos[17]= - 9./2.*armHHos[11] - armHHos[9];
+   armHHos[17]=armHHos[15]*armHHos[17];
+   armHHos[18]=1./2.*armHHos[10];
+   armHHos[18]=armHHos[15]*armHHos[18];
+   armHHos[17]= - armHHos[18] + armHHos[17];
+   armHHos[17]=mmH*armHHos[17];
+   armHHos[19]=armHHos[15]*armHHos[13];
+   armHHos[17]= - armHHos[19] + armHHos[17];
+   armHHos[20]=armHHos[14]*armHHos[15];
+   armHHos[17]= - 3./4.*armHHos[20] + 1./4.*armHHos[17];
+   armHHos[17]=armHHos[3]*armHHos[17];
+   armHHos[20]=1 - armHHos[16];
+   armHHos[20]=armHHos[9]*armHHos[20];
+   armHHos[20]= - armHHos[18] + armHHos[20];
+   armHHos[20]=mmZ*armHHos[20];
+   armHHos[21]= - armHHos[12]*armHHos[16];
+   armHHos[19]=armHHos[21] - 1./2.*armHHos[19] + armHHos[20];
+   armHHos[19]=armHHos[4]*armHHos[19];
+   armHHos[20]=1./2.*armHHos[3];
+   armHHos[20]= - armHHos[12]*armHHos[15]*armHHos[20];
+   armHHos[16]=armHHos[9]*armHHos[16];
+   armHHos[16]=3*armHHos[19] + armHHos[20] + armHHos[16] + armHHos[18]
+    + armHHos[17];
+   armHHos[16]=armHHos[8]*armHHos[16];
+   armHHos[17]=armHHos[15]*mmt*armHHos[2];
+   armHHos[15]=armHHos[7]*armHHos[15];
+   armHHos[15]=armHHos[15] + armHHos[17];
+   armHHos[15]=armHHos[4]*mmt*armHHos[15];
+   armHHos[15]= - 1./2.*armHHos[17] + 2*armHHos[15];
+   armHHos[15]=armHHos[15]*armHHos[3]*armHHos[1];
 
-      mHHosret = armHHos[15] + 3*armHHos[16];
+      mHHosret = 3*armHHos[15] + armHHos[16];
       return mHHosret;
 }

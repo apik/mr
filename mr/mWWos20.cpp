@@ -4,7 +4,7 @@ WW<MS>::m20(size_t nL, size_t nH, size_t boson)
 {     
       
       
-    std::complex<long double> armWWos[222], mWWosret;
+    std::complex<long double> armWWos[404], mWWosret;
 
     armWWos[1]=double(nL + nH);
     armWWos[2]=pow(mmZ,-1);
@@ -106,2850 +106,3934 @@ WW<MS>::m20(size_t nL, size_t nH, size_t boson)
     armWWos[98]=1/(4*mmt - mmZ);
     armWWos[99]=1/(mmH - 4*mmZ);
     armWWos[100]=1/(mmH - 4*mmW);
-   armWWos[101]= - 659./36. - 85*armWWos[9];
-   armWWos[102]=2./3. + armWWos[6];
-   armWWos[103]=1./3.*armWWos[1]*armWWos[102];
-   armWWos[102]=armWWos[35]*armWWos[102];
-   armWWos[104]=armWWos[100]*armWWos[17];
+   armWWos[101]=pow(armWWos[3],2);
+   armWWos[102]=1./2.*armWWos[101];
+   armWWos[103]=armWWos[102] + 1;
+   armWWos[103]=armWWos[103]*armWWos[101];
+   armWWos[104]=pow(armWWos[4],2);
    armWWos[105]=1./2.*armWWos[104];
-   armWWos[101]=armWWos[105] + armWWos[10] + armWWos[102] + 1./8.*
-   armWWos[101] + armWWos[103];
-   armWWos[101]=armWWos[33]*armWWos[101];
-   armWWos[106]= - 3*armWWos[37];
-   armWWos[107]=8*armWWos[40] + armWWos[106] - 2*armWWos[38];
-   armWWos[108]=armWWos[17] - 9./4.*armWWos[16];
-   armWWos[108]=armWWos[33]*armWWos[108];
-   armWWos[109]=2 - armWWos[33];
+   armWWos[106]=armWWos[105] + 1;
+   armWWos[107]=armWWos[106]*armWWos[104];
+   armWWos[103]=armWWos[103] + armWWos[107];
+   armWWos[108]=armWWos[103]*armWWos[17];
+   armWWos[109]=37 - armWWos[105];
+   armWWos[109]=armWWos[109]*armWWos[104];
+   armWWos[109]=109./2. + armWWos[109];
+   armWWos[109]=armWWos[109]*armWWos[104];
+   armWWos[110]=35*armWWos[101];
+   armWWos[111]=109 + armWWos[110];
+   armWWos[111]=armWWos[111]*armWWos[102];
+   armWWos[109]=armWWos[109] + armWWos[111];
    armWWos[109]=armWWos[15]*armWWos[109];
-   armWWos[110]=3*armWWos[34];
-   armWWos[107]=armWWos[110] + 3*armWWos[109] + armWWos[108] - 
-   armWWos[17] + 6*armWWos[18] + 3*armWWos[107] + 10*armWWos[20];
-   armWWos[107]=armWWos[5]*armWWos[107];
-   armWWos[108]= - 4*armWWos[53];
-   armWWos[109]= - 31./3.*armWWos[42];
-   armWWos[111]=armWWos[109] - 89./12. + armWWos[108];
-   armWWos[112]=5./2.*armWWos[20];
-   armWWos[106]= - 5./2.*armWWos[17] + armWWos[18] + armWWos[112] + 6*
-   armWWos[40] - armWWos[38] + armWWos[106] + 2*armWWos[62];
-   armWWos[106]=armWWos[100]*armWWos[106];
-   armWWos[113]=armWWos[47] + 1./3.*armWWos[41];
-   armWWos[114]= - 2*armWWos[46];
-   armWWos[115]=armWWos[113] + armWWos[114];
-   armWWos[116]= - armWWos[48] + 1./2.*armWWos[43] + 2*armWWos[115] + 1.
-   /2.*armWWos[45];
-   armWWos[117]= - 5 + armWWos[59];
-   armWWos[117]=armWWos[100]*armWWos[117];
-   armWWos[116]= - 9*armWWos[5] + armWWos[117] + 1./3.*armWWos[116] + 2
-   *armWWos[44];
-   armWWos[116]=mmt*armWWos[116];
-   armWWos[118]= - 41./8.*armWWos[50];
-   armWWos[119]= - 7./3.*armWWos[56];
-   armWWos[120]= - 17./32.*armWWos[55];
-   armWWos[121]=1./6.*armWWos[52];
-   armWWos[122]= - 9./4.*armWWos[54];
-   armWWos[123]=6*armWWos[51];
-   armWWos[124]= - 1./6.*armWWos[27];
-   armWWos[125]=35./6.*armWWos[58];
-   armWWos[126]= - 311./32.*armWWos[60];
-   armWWos[127]= - 17./12.*armWWos[30];
-   armWWos[128]=491./96.*armWWos[39];
-   armWWos[129]=73./24.*armWWos[59];
-   armWWos[130]=5./2.*armWWos[57];
-   armWWos[131]=41./8.*armWWos[13];
-   armWWos[132]= - 6*armWWos[14];
-   armWWos[133]= - armWWos[33]*armWWos[100];
-   armWWos[134]= - 6*armWWos[100] + armWWos[133];
-   armWWos[134]=armWWos[15]*armWWos[134];
-   armWWos[135]=armWWos[34]*armWWos[100];
-   armWWos[136]=4*armWWos[135];
-   armWWos[137]= - mmH*armWWos[44];
-   armWWos[138]=3*armWWos[137];
-   armWWos[139]= - 2*armWWos[10];
-   armWWos[111]=armWWos[116] + armWWos[138] + armWWos[107] + 
-   armWWos[136] + armWWos[134] + armWWos[101] + armWWos[106] + 
-   armWWos[139] + armWWos[132] + armWWos[131] + armWWos[130] + 
-   armWWos[129] + armWWos[128] + armWWos[127] + armWWos[126] + 
-   armWWos[125] + armWWos[124] + armWWos[123] + armWWos[122] + 
-   armWWos[121] + armWWos[120] + armWWos[119] + 1./3.*armWWos[111] + 
-   armWWos[118];
-   armWWos[111]=mmt*armWWos[111];
-   armWWos[140]= - 9*armWWos[9];
-   armWWos[141]=559./72. + armWWos[140];
-   armWWos[142]=5*armWWos[10];
-   armWWos[143]= - 451./96.*armWWos[33];
-   armWWos[144]= - armWWos[15]*armWWos[100];
-   armWWos[145]=8*armWWos[144];
-   armWWos[146]= - armWWos[34]*armWWos[100];
-   armWWos[147]=3*armWWos[146];
-   armWWos[141]=armWWos[147] + armWWos[145] + armWWos[143] + 
-   armWWos[104] + armWWos[142] + armWWos[102] + 7./4.*armWWos[141] + 
-   armWWos[103];
-   armWWos[141]=armWWos[34]*armWWos[141];
-   armWWos[148]=43*armWWos[63];
-   armWWos[149]=armWWos[148] - 4175./12.*armWWos[36];
-   armWWos[150]=13*armWWos[61];
-   armWWos[149]=1./8.*armWWos[149] + armWWos[150];
-   armWWos[151]=469./12. - 3*armWWos[54];
-   armWWos[152]= - 3*armWWos[51];
-   armWWos[151]=7./2.*armWWos[14] + 21./4.*armWWos[57] - 5./2.*
-   armWWos[59] + 3./4.*armWWos[39] - 1./2.*armWWos[49] + 1./4.*
-   armWWos[151] + armWWos[152];
-   armWWos[153]= - 5 - 7*armWWos[10];
-   armWWos[153]=armWWos[33]*armWWos[153];
-   armWWos[154]=1./12.*armWWos[153] + 1./2.*armWWos[151] + 8./3.*
-   armWWos[10];
-   armWWos[154]=mmH*armWWos[154];
-   armWWos[155]=71./12.*armWWos[62];
-   armWWos[156]=5./12.*armWWos[8];
-   armWWos[157]= - 23./8.*armWWos[38];
-   armWWos[158]= - 115./24.*armWWos[20];
-   armWWos[159]= - 109./24.*armWWos[17];
-   armWWos[160]= - 11*armWWos[17];
-   armWWos[161]=armWWos[160] - 101./24.*armWWos[16];
-   armWWos[161]=1./8.*armWWos[33]*armWWos[161];
-   armWWos[162]= - 2*armWWos[33];
-   armWWos[163]=109./24. + armWWos[162];
-   armWWos[163]=armWWos[15]*armWWos[163];
-   armWWos[164]= - 3*armWWos[34] - 27./2.*armWWos[15] - 12*armWWos[17]
-    + 1./4.*armWWos[16];
-   armWWos[164]=armWWos[5]*armWWos[34]*armWWos[164];
-   armWWos[165]=3./2.*armWWos[37];
-   armWWos[111]=armWWos[111] + armWWos[154] + armWWos[164] + 
-   armWWos[141] + armWWos[163] + armWWos[161] - 6463./576.*armWWos[16]
-    + armWWos[159] + 253./72.*armWWos[18] + armWWos[158] + 6571./576.*
-   armWWos[19] + 683./288.*armWWos[40] + armWWos[157] + armWWos[156] + 
-   armWWos[155] + 1./3.*armWWos[149] + armWWos[165];
-   armWWos[111]=mmt*armWWos[111];
-   armWWos[141]= - 59*armWWos[9];
-   armWWos[149]= - 775./36. + armWWos[141];
-   armWWos[166]=1./2.*armWWos[6];
-   armWWos[167]=1./3. + armWWos[166];
-   armWWos[168]=armWWos[1]*armWWos[167];
-   armWWos[169]=1./3.*armWWos[168];
-   armWWos[167]=armWWos[35]*armWWos[167];
-   armWWos[170]=1./2.*armWWos[10];
-   armWWos[171]=1./4.*armWWos[104];
-   armWWos[149]=armWWos[171] + armWWos[170] + armWWos[167] + 1./8.*
-   armWWos[149] + armWWos[169];
-   armWWos[149]=armWWos[33]*armWWos[149];
-   armWWos[172]= - 3./2.*armWWos[37];
-   armWWos[173]=4*armWWos[40] + armWWos[172] - armWWos[38];
-   armWWos[174]=3*armWWos[18];
-   armWWos[175]= - 1./2.*armWWos[17];
-   armWWos[173]=armWWos[175] + armWWos[174] + 3*armWWos[173] + 5*
-   armWWos[20];
-   armWWos[176]= - 3./2.*armWWos[16];
-   armWWos[177]=armWWos[17] + armWWos[176];
-   armWWos[177]=armWWos[33]*armWWos[177];
-   armWWos[178]= - 1./2.*armWWos[33];
-   armWWos[179]=1 + armWWos[178];
-   armWWos[179]=3*armWWos[15]*armWWos[179];
-   armWWos[180]=3./2.*armWWos[34];
-   armWWos[177]=armWWos[180] + armWWos[179] + armWWos[173] + 1./2.*
-   armWWos[177];
-   armWWos[177]=armWWos[5]*armWWos[177];
-   armWWos[181]=3*armWWos[40];
-   armWWos[182]= - 1./2.*armWWos[38];
-   armWWos[183]=1./2.*armWWos[18];
-   armWWos[172]= - 5./4.*armWWos[17] + armWWos[183] + 5./4.*armWWos[20]
-    + armWWos[181] + armWWos[182] + armWWos[172] + armWWos[62];
-   armWWos[172]=armWWos[100]*armWWos[172];
-   armWWos[184]= - armWWos[45] + armWWos[43];
-   armWWos[117]=1./2.*armWWos[117];
-   armWWos[185]= - 9./2.*armWWos[5];
-   armWWos[184]=armWWos[185] + armWWos[117] + 1./2.*armWWos[184] + 
-   armWWos[44];
-   armWWos[184]=mmt*armWWos[184];
-   armWWos[186]=5./8.*armWWos[55] - 5*armWWos[56] + 947./24. - 13*
-   armWWos[50];
-   armWWos[186]=armWWos[122] + 1./2.*armWWos[186] - armWWos[52];
-   armWWos[187]=1./4.*armWWos[58];
-   armWWos[188]=3*armWWos[51];
-   armWWos[189]=73./48.*armWWos[59];
-   armWWos[190]=5./4.*armWWos[57];
-   armWWos[191]= - 3*armWWos[14];
-   armWWos[192]= - 3*armWWos[100] + 1./2.*armWWos[133];
-   armWWos[192]=armWWos[15]*armWWos[192];
-   armWWos[135]=2*armWWos[135];
-   armWWos[137]=3./2.*armWWos[137];
-   armWWos[149]=armWWos[184] + armWWos[137] + armWWos[177] + 
-   armWWos[135] + armWWos[192] + armWWos[149] + armWWos[172] - 
-   armWWos[10] + armWWos[191] + 17./4.*armWWos[13] + armWWos[190] + 
-   armWWos[189] + 71./32.*armWWos[39] - 3./8.*armWWos[30] - 195./32.*
-   armWWos[60] + armWWos[187] - 1./2.*armWWos[27] + 1./2.*armWWos[186]
-    + armWWos[188];
-   armWWos[149]=mmt*armWWos[149];
-   armWWos[177]= - 1921./36. - 93*armWWos[9];
-   armWWos[184]=5./2.*armWWos[10];
-   armWWos[186]=4*armWWos[144];
-   armWWos[146]=3./2.*armWWos[146];
-   armWWos[177]=armWWos[146] + armWWos[186] - 23./32.*armWWos[33] + 
-   armWWos[105] + armWWos[184] + armWWos[167] + 1./8.*armWWos[177] + 
-   armWWos[169];
-   armWWos[177]=armWWos[34]*armWWos[177];
-   armWWos[193]= - 2*armWWos[17] + 9./4.*armWWos[16];
-   armWWos[194]= - 3./2.*armWWos[34];
-   armWWos[193]=armWWos[194] + 3*armWWos[193] + 5*armWWos[15];
-   armWWos[193]=armWWos[5]*armWWos[34]*armWWos[193];
-   armWWos[151]=1./24.*armWWos[153] + 1./4.*armWWos[151] + 4./3.*
-   armWWos[10];
-   armWWos[151]=mmH*armWWos[151];
-   armWWos[153]=13*armWWos[63] - 45./8.*armWWos[36];
-   armWWos[195]=armWWos[160] - 197./4.*armWWos[16];
-   armWWos[195]=armWWos[33]*armWWos[195];
-   armWWos[196]=35./8. - 8*armWWos[33];
-   armWWos[196]=armWWos[15]*armWWos[196];
-   armWWos[197]=3./4.*armWWos[37];
-   armWWos[198]=71./24.*armWWos[62];
-   armWWos[199]= - 115./48.*armWWos[20];
-   armWWos[200]= - 109./48.*armWWos[17];
-   armWWos[149]=armWWos[149] + armWWos[151] + armWWos[193] + 
-   armWWos[177] + 1./3.*armWWos[196] + 1./16.*armWWos[195] - 125./64.*
-   armWWos[16] + armWWos[200] - 7./8.*armWWos[18] + armWWos[199] - 159./
-   64.*armWWos[19] - 363./32.*armWWos[40] - 17./8.*armWWos[38] + 1./4.*
-   armWWos[8] + armWWos[198] + armWWos[197] + 1./4.*armWWos[153] + 2*
-   armWWos[61];
-   armWWos[149]=mmt*armWWos[149];
-   armWWos[153]= - 1 - armWWos[57];
-   armWWos[177]= - armWWos[33]*armWWos[10];
-   armWWos[153]=armWWos[177] + 13./2.*armWWos[153] - 5./3.*armWWos[10];
-   armWWos[153]=mmH*armWWos[153];
-   armWWos[177]= - 11./6.*armWWos[40] + armWWos[165] - 11./3.*
-   armWWos[62];
-   armWWos[193]= - armWWos[33]*armWWos[17];
-   armWWos[195]=5./3. + armWWos[33];
-   armWWos[196]=armWWos[15]*armWWos[195];
-   armWWos[201]=13./2. - armWWos[10];
-   armWWos[201]=armWWos[34]*armWWos[201];
-   armWWos[153]=1./6.*armWWos[153] + 1./3.*armWWos[201] + 1./6.*
-   armWWos[196] + 1./6.*armWWos[193] + 1./2.*armWWos[177] + 17./9.*
-   armWWos[17];
-   armWWos[153]=mmH*armWWos[153];
-   armWWos[177]=23./3.*armWWos[17] - 79./4.*armWWos[16];
-   armWWos[177]=15./8.*armWWos[34] + 1./2.*armWWos[177] - 41./3.*
-   armWWos[15];
-   armWWos[177]=armWWos[34]*armWWos[177];
-   armWWos[177]=1./2.*armWWos[177] + armWWos[153];
-   armWWos[149]=1./2.*armWWos[177] + armWWos[149];
-   armWWos[177]=pow(armWWos[3],2);
-   armWWos[149]=armWWos[177]*armWWos[149];
-   armWWos[193]=23*armWWos[17];
-   armWWos[196]=armWWos[193] - 3617./24.*armWWos[16];
-   armWWos[196]= - 3727./96.*armWWos[34] + 1./4.*armWWos[196] - 26./3.*
-   armWWos[15];
-   armWWos[196]=armWWos[34]*armWWos[196];
-   armWWos[111]=armWWos[149] + armWWos[111] + 1./3.*armWWos[196] + 
-   armWWos[153];
-   armWWos[111]=armWWos[177]*armWWos[111];
-   armWWos[149]=armWWos[109] + 935./12. + armWWos[108];
-   armWWos[101]=armWWos[116] + armWWos[138] + armWWos[107] + 
-   armWWos[136] + armWWos[134] + armWWos[101] + armWWos[106] + 
-   armWWos[139] + armWWos[132] + armWWos[131] + armWWos[130] + 
-   armWWos[129] + armWWos[128] + armWWos[127] + armWWos[126] + 
-   armWWos[125] + armWWos[124] + armWWos[123] + armWWos[122] + 
-   armWWos[121] + armWWos[120] + armWWos[119] + 1./3.*armWWos[149] + 
-   armWWos[118];
-   armWWos[101]=mmt*armWWos[101];
-   armWWos[106]= - 4279./72. - 63*armWWos[9];
-   armWWos[102]=armWWos[147] + armWWos[145] + armWWos[143] + 
-   armWWos[104] + armWWos[142] + armWWos[102] + 1./4.*armWWos[106] + 
-   armWWos[103];
-   armWWos[102]=armWWos[34]*armWWos[102];
-   armWWos[103]=armWWos[148] - 79./12.*armWWos[36];
-   armWWos[103]=1./8.*armWWos[103] + armWWos[150];
-   armWWos[101]=armWWos[101] + armWWos[154] + armWWos[164] + 
-   armWWos[102] + armWWos[163] + armWWos[161] + 1729./576.*armWWos[16]
-    + armWWos[159] - 1795./72.*armWWos[18] + armWWos[158] - 1621./576.*
-   armWWos[19] - 2503./96.*armWWos[40] + armWWos[157] + armWWos[156] + 
-   armWWos[155] + 1./3.*armWWos[103] + armWWos[165];
-   armWWos[101]=mmt*armWWos[101];
-   armWWos[102]=29./18. - 13*armWWos[9];
-   armWWos[102]=armWWos[171] + armWWos[170] + armWWos[167] + 1./4.*
-   armWWos[102] + armWWos[169];
-   armWWos[102]=armWWos[33]*armWWos[102];
-   armWWos[103]= - 3*armWWos[16];
-   armWWos[104]=armWWos[17] + armWWos[103];
-   armWWos[104]=armWWos[33]*armWWos[104];
-   armWWos[104]=armWWos[180] + armWWos[179] + armWWos[173] + 1./2.*
-   armWWos[104];
-   armWWos[104]=armWWos[5]*armWWos[104];
-   armWWos[106]=armWWos[115] + armWWos[45];
-   armWWos[106]= - armWWos[48] + 2*armWWos[106] - armWWos[43];
-   armWWos[106]=armWWos[185] + armWWos[117] + 1./3.*armWWos[106] + 
-   armWWos[44];
-   armWWos[106]=mmt*armWWos[106];
-   armWWos[107]=armWWos[109] + 6749./288. + armWWos[108];
-   armWWos[109]=1./3.*armWWos[27];
-   armWWos[102]=armWWos[106] + armWWos[137] + armWWos[104] + 
-   armWWos[135] + armWWos[192] + armWWos[102] + armWWos[172] - 
-   armWWos[10] + armWWos[191] + 7./8.*armWWos[13] + armWWos[190] + 
-   armWWos[189] + 139./48.*armWWos[39] - 25./24.*armWWos[30] - 29./8.*
-   armWWos[60] + 67./12.*armWWos[58] + armWWos[109] + armWWos[188] - 9./
-   8.*armWWos[54] + 2./3.*armWWos[52] - 11./16.*armWWos[55] - 13./12.*
-   armWWos[56] + 1./3.*armWWos[107] - 15./8.*armWWos[50];
-   armWWos[102]=mmt*armWWos[102];
-   armWWos[104]= - 33*armWWos[9];
-   armWWos[106]=47./54. + armWWos[104];
-   armWWos[105]=armWWos[146] + armWWos[186] - 191./48.*armWWos[33] + 
-   armWWos[105] + armWWos[184] + armWWos[167] + 1./8.*armWWos[106] + 
-   armWWos[169];
-   armWWos[105]=armWWos[34]*armWWos[105];
-   armWWos[106]= - 35*armWWos[63] - 1303./18.*armWWos[36];
-   armWWos[106]=1./8.*armWWos[106] + 7*armWWos[61];
-   armWWos[107]=armWWos[160] + 271./18.*armWWos[16];
-   armWWos[107]=armWWos[33]*armWWos[107];
-   armWWos[115]=2*armWWos[33];
-   armWWos[116]=37./4. + armWWos[115];
-   armWWos[116]=armWWos[15]*armWWos[116];
-   armWWos[117]=armWWos[194] - 37./2.*armWWos[15] - 6*armWWos[17] - 13./
-   2.*armWWos[16];
-   armWWos[117]=armWWos[5]*armWWos[34]*armWWos[117];
-   armWWos[102]=armWWos[102] + armWWos[151] + armWWos[117] + 
-   armWWos[105] + 1./3.*armWWos[116] + 1./16.*armWWos[107] + 2089./864.
-   *armWWos[16] + armWWos[200] - 1331./54.*armWWos[18] + armWWos[199]
-    + 1907./864.*armWWos[19] - 2779./432.*armWWos[40] - 3./4.*
-   armWWos[38] + 1./6.*armWWos[8] + armWWos[198] + 1./3.*armWWos[106]
-    + armWWos[197];
-   armWWos[102]=mmt*armWWos[102];
-   armWWos[105]=83./6. + 15*armWWos[50];
-   armWWos[106]= - 53./36. + 21*armWWos[9];
-   armWWos[106]=armWWos[33]*armWWos[106];
-   armWWos[107]= - armWWos[33]*armWWos[16];
-   armWWos[116]=armWWos[5]*armWWos[107];
-   armWWos[105]=3./2.*armWWos[116] + 1./4.*armWWos[106] - 15./4.*
-   armWWos[13] - 125./144.*armWWos[39] + 109./48.*armWWos[60] + 67./9.*
-   armWWos[58] + armWWos[109] - 1./3.*armWWos[52] + 77./144.*
-   armWWos[55] + 1./4.*armWWos[105] + 1./3.*armWWos[56];
-   armWWos[106]= - armWWos[45] - armWWos[43];
-   armWWos[116]= - 1./3.*armWWos[48];
-   armWWos[106]=1./2.*armWWos[106] + armWWos[116];
-   armWWos[106]=mmt*armWWos[106];
-   armWWos[105]=1./2.*armWWos[105] + 1./3.*armWWos[106];
-   armWWos[105]=mmt*armWWos[105];
-   armWWos[106]= - 43./9.*armWWos[63] + 3./4.*armWWos[36];
-   armWWos[117]= - 1./4. - armWWos[33];
-   armWWos[117]=armWWos[15]*armWWos[117];
-   armWWos[118]=9*armWWos[9];
-   armWWos[119]= - 155./144.*armWWos[33] - 293./144. + armWWos[118];
-   armWWos[119]=armWWos[34]*armWWos[119];
-   armWWos[120]= - 5./2.*armWWos[16];
-   armWWos[121]=armWWos[120] + armWWos[15];
-   armWWos[121]=armWWos[5]*armWWos[34]*armWWos[121];
-   armWWos[122]=armWWos[33]*armWWos[16];
-   armWWos[105]=armWWos[105] + 1./2.*armWWos[121] + 1./2.*armWWos[119]
-    + 1./6.*armWWos[117] + 299./576.*armWWos[122] + 523./576.*
-   armWWos[16] - 1./8.*armWWos[18] - 13./192.*armWWos[19] + 289./288.*
-   armWWos[40] - 1./8.*armWWos[38] + 1./36.*armWWos[8] + 1./8.*
-   armWWos[106] + 1./3.*armWWos[61];
-   armWWos[105]=mmt*armWWos[105];
-   armWWos[106]=1 + armWWos[50];
-   armWWos[117]= - 1./2.*armWWos[13];
-   armWWos[106]=armWWos[117] + 1./2.*armWWos[60] + 1./2.*armWWos[106]
-    + armWWos[58];
-   armWWos[119]=armWWos[33]*armWWos[9];
-   armWWos[106]=1./2.*armWWos[106] + 1./3.*armWWos[119];
-   armWWos[106]=mmt*armWWos[106];
-   armWWos[119]=7./3.*armWWos[9];
-   armWWos[121]= - 1 + armWWos[119];
-   armWWos[121]=armWWos[34]*armWWos[121];
-   armWWos[121]=armWWos[40] + armWWos[121];
-   armWWos[106]=1./4.*armWWos[121] + armWWos[106];
-   armWWos[121]=pow(armWWos[4],2);
-   armWWos[106]=armWWos[121]*mmt*armWWos[106];
-   armWWos[123]= - 47./16.*armWWos[34] + 205./48.*armWWos[16] - 
-   armWWos[15];
-   armWWos[123]=armWWos[34]*armWWos[123];
-   armWWos[105]=1./2.*armWWos[106] + 1./6.*armWWos[123] + armWWos[105];
-   armWWos[105]=armWWos[121]*armWWos[105];
-   armWWos[106]=armWWos[193] - 7./18.*armWWos[16];
-   armWWos[106]= - 1441./36.*armWWos[34] + 1./2.*armWWos[106] + 3193./9.
-   *armWWos[15];
-   armWWos[106]=armWWos[34]*armWWos[106];
-   armWWos[106]=1./6.*armWWos[106] + armWWos[153];
-   armWWos[102]=armWWos[105] + 1./2.*armWWos[106] + armWWos[102];
-   armWWos[102]=armWWos[121]*armWWos[102];
-   armWWos[105]=armWWos[193] + 479./24.*armWWos[16];
-   armWWos[105]=1./4.*armWWos[105] + 230./3.*armWWos[15];
-   armWWos[105]=1./3.*armWWos[105] + 41./32.*armWWos[34];
-   armWWos[105]=armWWos[34]*armWWos[105];
-   armWWos[101]=armWWos[102] + armWWos[101] + armWWos[105] + 
-   armWWos[153];
-   armWWos[101]=armWWos[121]*armWWos[101];
-   armWWos[102]= - 5 + armWWos[33];
-   armWWos[102]=armWWos[34]*armWWos[102];
-   armWWos[105]=pow(armWWos[34],2);
-   armWWos[106]=armWWos[5]*armWWos[105];
-   armWWos[102]=armWWos[102] + 12*armWWos[106];
-   armWWos[102]=armWWos[5]*armWWos[102];
-   armWWos[123]= - 1 + 19./6.*armWWos[33];
-   armWWos[124]=pow(armWWos[5],2);
-   armWWos[125]=mmt*armWWos[124]*armWWos[34];
-   armWWos[126]=36*armWWos[125] + 1./2.*armWWos[123] + 3*armWWos[102];
-   armWWos[126]=mmt*armWWos[126];
-   armWWos[127]=5./6. + armWWos[33];
-   armWWos[127]=armWWos[34]*armWWos[127];
-   armWWos[128]= - armWWos[5]*armWWos[105];
-   armWWos[126]=armWWos[126] + armWWos[127] + 6*armWWos[128];
-   armWWos[126]=mmt*armWWos[126];
-   armWWos[126]=armWWos[105] + armWWos[126];
-   armWWos[127]=armWWos[177]*armWWos[126];
-   armWWos[102]=72*armWWos[125] + armWWos[123] + 6*armWWos[102];
-   armWWos[102]=mmt*armWWos[102];
-   armWWos[123]=5./3. + armWWos[115];
-   armWWos[123]=armWWos[34]*armWWos[123];
-   armWWos[102]=armWWos[102] + armWWos[123] + 12*armWWos[128];
-   armWWos[102]=mmt*armWWos[102];
-   armWWos[102]=2*armWWos[105] + armWWos[102];
-   armWWos[123]=armWWos[102] + armWWos[127];
-   armWWos[123]=armWWos[177]*armWWos[123];
-   armWWos[125]=armWWos[121]*armWWos[126];
-   armWWos[102]=armWWos[102] + armWWos[125];
-   armWWos[102]=armWWos[121]*armWWos[102];
-   armWWos[102]=armWWos[123] + armWWos[102];
-   armWWos[102]=armWWos[31]*armWWos[102];
-   armWWos[101]=armWWos[102] + armWWos[111] + armWWos[101];
-   armWWos[101]=armWWos[31]*armWWos[101];
-   armWWos[102]=3*armWWos[16];
-   armWWos[111]= - 7./2.*armWWos[17];
-   armWWos[123]=armWWos[111] + armWWos[102];
-   armWWos[123]=armWWos[33]*armWWos[123];
-   armWWos[125]=7./2. + 5*armWWos[54];
-   armWWos[125]=armWWos[10] + 9./2.*armWWos[14] + 11./4.*armWWos[57] - 
-   9./4.*armWWos[59] - 5./4.*armWWos[39] - 3./2.*armWWos[49] + 1./4.*
-   armWWos[125] + armWWos[152];
-   armWWos[126]= - 5 - 13*armWWos[10];
-   armWWos[126]=armWWos[33]*armWWos[126];
-   armWWos[127]=armWWos[125] + 1./6.*armWWos[126];
-   armWWos[127]=mmH*armWWos[127];
-   armWWos[128]= - 41./6. - 25*armWWos[33];
-   armWWos[128]=armWWos[15]*armWWos[128];
-   armWWos[129]= - 39./2. - armWWos[33];
-   armWWos[129]=armWWos[34]*armWWos[129];
-   armWWos[130]= - 15./2.*armWWos[37];
-   armWWos[131]=27./4.*armWWos[62];
-   armWWos[132]=17*armWWos[40];
-   armWWos[134]=7./2.*armWWos[20];
-   armWWos[135]= - 9./2.*armWWos[17];
-   armWWos[123]=armWWos[127] + 1./2.*armWWos[129] + 1./2.*armWWos[128]
-    + 1./2.*armWWos[123] - 121./6.*armWWos[16] + armWWos[135] + 39./4.*
-   armWWos[18] + armWWos[134] - 85./12.*armWWos[19] + armWWos[132] - 57.
-   /4.*armWWos[38] + armWWos[131] + armWWos[130] + 73./4.*armWWos[63]
-    - armWWos[61];
-   armWWos[128]=1./2.*armWWos[57];
-   armWWos[129]=armWWos[33]*armWWos[17];
-   armWWos[136]=armWWos[129] + armWWos[20] - armWWos[17];
-   armWWos[136]=armWWos[5]*armWWos[136];
-   armWWos[137]=mmH*armWWos[44];
-   armWWos[138]=armWWos[137] + 1./2.*armWWos[136] - 5./8.*armWWos[33]
-    + armWWos[128] + 15./8.*armWWos[59] + 2*armWWos[39] + 9./2.*
-   armWWos[60] - 5./4.*armWWos[54] - 3./4.*armWWos[56] - 9./8. - 
-   armWWos[42];
-   armWWos[138]=mmt*armWWos[138];
-   armWWos[123]=1./2.*armWWos[123] + armWWos[138];
-   armWWos[123]=mmt*armWWos[123];
-   armWWos[138]=3./2.*armWWos[18] - 3./2.*armWWos[20] - 7./4.*
-   armWWos[40] + armWWos[182] - 5./2.*armWWos[62] - armWWos[61] + 9./4.
-   *armWWos[37];
-   armWWos[142]=armWWos[138] + 5./3.*armWWos[17];
-   armWWos[143]=11./4. - armWWos[33];
-   armWWos[143]=armWWos[15]*armWWos[143];
-   armWWos[145]=1./3.*armWWos[129];
-   armWWos[142]=1./3.*armWWos[143] + 1./2.*armWWos[142] + armWWos[145];
-   armWWos[146]=1./2.*armWWos[49];
-   armWWos[147]= - 3./2.*armWWos[14];
-   armWWos[148]=armWWos[147] - 7./4.*armWWos[57] + armWWos[146] - 7./4.
-    + armWWos[51];
-   armWWos[149]=armWWos[148] - 11./6.*armWWos[10];
-   armWWos[150]=armWWos[33]*armWWos[10];
-   armWWos[151]=1./3.*armWWos[150];
-   armWWos[149]=1./2.*armWWos[149] + armWWos[151];
-   armWWos[149]=mmH*armWWos[149];
-   armWWos[153]= - 4*armWWos[10];
-   armWWos[154]=19./4. + armWWos[153];
-   armWWos[154]=armWWos[34]*armWWos[154];
-   armWWos[154]=armWWos[149] + armWWos[142] + 1./3.*armWWos[154];
-   armWWos[154]=mmH*armWWos[154];
-   armWWos[155]= - 5*armWWos[17];
-   armWWos[156]= - 105*armWWos[15] + armWWos[155] + 103./3.*armWWos[16]
-   ;
-   armWWos[157]= - 13*armWWos[34];
-   armWWos[156]=1./2.*armWWos[156] + armWWos[157];
-   armWWos[156]=armWWos[34]*armWWos[156];
-   armWWos[123]=armWWos[123] + 1./4.*armWWos[156] + armWWos[154];
-   armWWos[123]=mmt*armWWos[123];
-   armWWos[154]=armWWos[111] + 145./9.*armWWos[16];
-   armWWos[154]=armWWos[33]*armWWos[154];
-   armWWos[156]= - 25./2. - 59*armWWos[33];
-   armWWos[156]=armWWos[15]*armWWos[156];
-   armWWos[158]= - 25./2. - armWWos[33];
-   armWWos[158]=armWWos[34]*armWWos[158];
-   armWWos[154]=armWWos[127] + 1./2.*armWWos[158] + 1./6.*armWWos[156]
-    + 1./2.*armWWos[154] - 833./36.*armWWos[16] + armWWos[135] + 7*
-   armWWos[18] + armWWos[134] - 67./36.*armWWos[19] + armWWos[132] - 31.
-   /2.*armWWos[38] + armWWos[131] + armWWos[130] + 67./4.*armWWos[63]
-    - armWWos[61];
-   armWWos[156]=15./16.*armWWos[59];
-   armWWos[158]=1./4.*armWWos[57];
-   armWWos[159]=1./4.*armWWos[136];
-   armWWos[160]=1./2.*armWWos[137];
-   armWWos[161]=armWWos[160] + armWWos[159] - 13./16.*armWWos[33] + 
-   armWWos[158] + armWWos[156] + armWWos[39] + 33./16.*armWWos[60] - 5./
-   8.*armWWos[54] - 3./8.*armWWos[56] - 5./4. - armWWos[42];
-   armWWos[161]=mmt*armWWos[161];
-   armWWos[154]=1./4.*armWWos[154] + armWWos[161];
-   armWWos[154]=mmt*armWWos[154];
-   armWWos[161]=19./8. + armWWos[139];
-   armWWos[161]=armWWos[34]*armWWos[161];
-   armWWos[142]=1./2.*armWWos[149] + 1./2.*armWWos[142] + 1./3.*
-   armWWos[161];
-   armWWos[142]=mmH*armWWos[142];
-   armWWos[149]=armWWos[155] + 119./3.*armWWos[16];
-   armWWos[149]=armWWos[157] + 1./2.*armWWos[149] - 125./3.*armWWos[15]
-   ;
-   armWWos[149]=armWWos[34]*armWWos[149];
-   armWWos[149]=armWWos[154] + 1./8.*armWWos[149] + armWWos[142];
-   armWWos[149]=mmt*armWWos[149];
-   armWWos[154]=armWWos[176] + armWWos[183] + armWWos[63] + 
-   armWWos[182];
-   armWWos[157]=1 + armWWos[60];
-   armWWos[157]=mmt*armWWos[157];
-   armWWos[163]= - armWWos[15]*armWWos[33];
-   armWWos[164]=1./3.*armWWos[163];
-   armWWos[165]= - 1./2.*armWWos[34];
-   armWWos[154]=1./4.*armWWos[157] + armWWos[165] + armWWos[164] + 1./2.
-   *armWWos[154] + 1./3.*armWWos[122];
-   armWWos[154]=mmt*armWWos[154];
-   armWWos[157]= - 7./4.*armWWos[15];
-   armWWos[170]=armWWos[16] + armWWos[157];
-   armWWos[170]=armWWos[34]*armWWos[170];
-   armWWos[154]=1./3.*armWWos[170] + armWWos[154];
-   armWWos[154]=armWWos[121]*mmt*armWWos[154];
-   armWWos[170]= - armWWos[17] + armWWos[15];
-   armWWos[170]=armWWos[34]*armWWos[170];
-   armWWos[172]= - mmH*armWWos[34]*armWWos[10];
-   armWWos[170]=armWWos[170] + armWWos[172];
-   armWWos[170]=mmH*armWWos[170];
-   armWWos[172]=1./12.*armWWos[170];
-   armWWos[149]=1./2.*armWWos[154] + armWWos[172] + armWWos[149];
-   armWWos[149]=armWWos[121]*armWWos[149];
-   armWWos[123]=armWWos[149] + 1./6.*armWWos[170] + armWWos[123];
-   armWWos[123]=armWWos[121]*armWWos[123];
-   armWWos[149]=armWWos[131] + armWWos[130] + 75./4.*armWWos[63] - 
-   armWWos[61];
-   armWWos[149]=21./2.*armWWos[20] - 395./12.*armWWos[19] + 51*
-   armWWos[40] + 3*armWWos[149] - 83./2.*armWWos[38];
-   armWWos[125]=3*armWWos[125] + 1./2.*armWWos[126];
-   armWWos[125]=mmH*armWWos[125];
-   armWWos[126]=3./2.*armWWos[137] + 3./4.*armWWos[136] - 7./16.*
-   armWWos[33] + 3./4.*armWWos[57] + 45./16.*armWWos[59] + 3*
-   armWWos[39] + 111./16.*armWWos[60] - 15./8.*armWWos[54] - 9./8.*
-   armWWos[56] - 1 - armWWos[42];
-   armWWos[126]=mmt*armWWos[126];
-   armWWos[136]= - 21./2.*armWWos[17] - 17*armWWos[16];
-   armWWos[136]=armWWos[33]*armWWos[136];
-   armWWos[154]= - 139./2. - 241*armWWos[33];
-   armWWos[154]=armWWos[15]*armWWos[154];
-   armWWos[173]= - 3*armWWos[33];
-   armWWos[179]= - 131./2. + armWWos[173];
-   armWWos[179]=armWWos[34]*armWWos[179];
-   armWWos[125]=armWWos[126] + 1./4.*armWWos[125] + 1./8.*armWWos[179]
-    + 1./24.*armWWos[154] + 1./8.*armWWos[136] - 613./48.*armWWos[16]
-    - 27./8.*armWWos[17] + 1./4.*armWWos[149] + 8*armWWos[18];
-   armWWos[125]=mmt*armWWos[125];
-   armWWos[126]=5*armWWos[17];
-   armWWos[136]=3*armWWos[138] + armWWos[126];
-   armWWos[136]=armWWos[143] + 1./2.*armWWos[136] + armWWos[129];
-   armWWos[138]=3*armWWos[148] - 11./2.*armWWos[10];
-   armWWos[138]=1./2.*armWWos[138] + armWWos[150];
-   armWWos[138]=mmH*armWWos[138];
-   armWWos[136]=1./2.*armWWos[138] + 1./2.*armWWos[136] + armWWos[161];
-   armWWos[136]=mmH*armWWos[136];
-   armWWos[138]= - 15*armWWos[17] + 293./3.*armWWos[16];
-   armWWos[138]= - 39*armWWos[34] + 1./2.*armWWos[138] - 505./3.*
-   armWWos[15];
-   armWWos[138]=armWWos[34]*armWWos[138];
-   armWWos[125]=armWWos[125] + 1./8.*armWWos[138] + armWWos[136];
-   armWWos[125]=mmt*armWWos[125];
-   armWWos[125]=1./4.*armWWos[170] + armWWos[125];
-   armWWos[123]=armWWos[125] + armWWos[123];
-   armWWos[123]=armWWos[121]*armWWos[123];
-   armWWos[111]=armWWos[111] - 23*armWWos[16];
-   armWWos[111]=armWWos[33]*armWWos[111];
-   armWWos[136]= - 19./2. - 91./3.*armWWos[33];
-   armWWos[136]=armWWos[15]*armWWos[136];
-   armWWos[138]= - 53./2. - armWWos[33];
-   armWWos[138]=armWWos[34]*armWWos[138];
-   armWWos[111]=armWWos[127] + 1./2.*armWWos[138] + 1./2.*armWWos[136]
-    + 1./2.*armWWos[111] - 43./4.*armWWos[16] + armWWos[135] + 25./2.*
-   armWWos[18] + armWWos[134] - 75./4.*armWWos[19] + armWWos[132] - 13*
-   armWWos[38] + armWWos[131] + armWWos[130] + 79./4.*armWWos[63] - 
-   armWWos[61];
-   armWWos[127]=39./2.*armWWos[60] - 5*armWWos[54] + 1 - 3*armWWos[56];
-   armWWos[127]=armWWos[160] + armWWos[159] + 3./16.*armWWos[33] + 
-   armWWos[158] + armWWos[156] + 1./8.*armWWos[127] + armWWos[39];
-   armWWos[127]=mmt*armWWos[127];
-   armWWos[111]=1./4.*armWWos[111] + armWWos[127];
-   armWWos[111]=mmt*armWWos[111];
-   armWWos[127]=armWWos[155] + 29*armWWos[16];
-   armWWos[127]= - 13./2.*armWWos[34] + 1./4.*armWWos[127] - 95./3.*
-   armWWos[15];
-   armWWos[127]=armWWos[34]*armWWos[127];
-   armWWos[111]=armWWos[111] + 1./4.*armWWos[127] + armWWos[142];
-   armWWos[111]=mmt*armWWos[111];
-   armWWos[111]=armWWos[172] + armWWos[111];
-   armWWos[111]=armWWos[177]*armWWos[111];
-   armWWos[111]=armWWos[125] + armWWos[111];
-   armWWos[111]=armWWos[177]*armWWos[111];
-   armWWos[125]=5./4. - armWWos[33];
-   armWWos[125]=armWWos[33]*armWWos[125];
-   armWWos[127]=armWWos[5]*armWWos[34]*armWWos[33];
-   armWWos[125]=armWWos[125] + 3*armWWos[127];
-   armWWos[125]=mmt*armWWos[125];
-   armWWos[130]=5./2. - armWWos[33];
-   armWWos[130]=armWWos[34]*armWWos[130];
-   armWWos[125]=armWWos[125] + 1./2.*armWWos[130] + 3*armWWos[106];
-   armWWos[125]=mmt*armWWos[125];
-   armWWos[125]=1./2.*armWWos[105] + armWWos[125];
-   armWWos[125]=mmt*armWWos[125];
-   armWWos[131]=armWWos[177]*armWWos[125];
-   armWWos[132]=3*armWWos[125];
-   armWWos[131]=armWWos[132] + armWWos[131];
-   armWWos[131]=armWWos[177]*armWWos[131];
-   armWWos[134]=5./2. + armWWos[162];
-   armWWos[134]=armWWos[33]*armWWos[134];
-   armWWos[127]=armWWos[134] + 6*armWWos[127];
-   armWWos[127]=mmt*armWWos[127];
-   armWWos[106]=armWWos[127] + armWWos[130] + 6*armWWos[106];
-   armWWos[106]=mmt*armWWos[106];
-   armWWos[106]=armWWos[105] + armWWos[106];
-   armWWos[106]=mmt*armWWos[106];
-   armWWos[125]=armWWos[121]*armWWos[125];
-   armWWos[106]=armWWos[106] + armWWos[125];
-   armWWos[106]=armWWos[121]*armWWos[106];
-   armWWos[106]=armWWos[132] + armWWos[106];
-   armWWos[106]=armWWos[121]*armWWos[106];
-   armWWos[106]=armWWos[131] + armWWos[106];
-   armWWos[106]=armWWos[31]*armWWos[106];
-   armWWos[106]=armWWos[106] + armWWos[111] + armWWos[123];
-   armWWos[106]=armWWos[31]*armWWos[106];
-   armWWos[111]= - 3./2.*armWWos[17] + armWWos[183] + armWWos[62] + 
-   armWWos[182];
-   armWWos[123]=armWWos[59] + 1 + armWWos[49];
-   armWWos[125]= - 1./2.*armWWos[14];
-   armWWos[123]=armWWos[125] + 1./2.*armWWos[123] + armWWos[57];
-   armWWos[127]=1./2.*armWWos[123] + armWWos[151];
-   armWWos[127]=mmH*armWWos[127];
-   armWWos[127]=armWWos[127] + armWWos[165] + armWWos[164] + 1./2.*
-   armWWos[111] + armWWos[145];
-   armWWos[127]=mmH*armWWos[127];
-   armWWos[130]=1 + armWWos[59];
-   armWWos[130]=mmt*mmH*armWWos[130];
-   armWWos[127]=armWWos[127] + 1./4.*armWWos[130];
-   armWWos[127]=mmt*armWWos[127];
-   armWWos[131]=armWWos[17] + armWWos[157];
-   armWWos[131]=armWWos[34]*armWWos[131];
-   armWWos[132]=7./3.*armWWos[10];
-   armWWos[134]= - 1 + armWWos[132];
-   armWWos[134]=armWWos[34]*armWWos[134];
-   armWWos[134]=armWWos[40] + armWWos[134];
-   armWWos[134]=mmH*armWWos[134];
-   armWWos[135]=1./3.*armWWos[131] + 1./4.*armWWos[134];
-   armWWos[135]=mmH*armWWos[135];
-   armWWos[127]=armWWos[135] + armWWos[127];
-   armWWos[127]=mmt*armWWos[127];
-   armWWos[135]=armWWos[121]*armWWos[127];
-   armWWos[135]=armWWos[127] + 1./2.*armWWos[135];
-   armWWos[135]=armWWos[121]*armWWos[135];
-   armWWos[136]=3./2.*armWWos[123] + armWWos[150];
-   armWWos[136]=mmH*armWWos[136];
-   armWWos[136]=armWWos[136] + armWWos[194] + armWWos[163] + 3./2.*
-   armWWos[111] + armWWos[129];
-   armWWos[136]=mmH*armWWos[136];
-   armWWos[136]=armWWos[136] + 3./4.*armWWos[130];
-   armWWos[136]=mmt*armWWos[136];
-   armWWos[138]=7*armWWos[10];
-   armWWos[142]= - 3 + armWWos[138];
-   armWWos[142]=armWWos[34]*armWWos[142];
-   armWWos[142]=armWWos[181] + armWWos[142];
-   armWWos[142]=mmH*armWWos[142];
-   armWWos[131]=armWWos[131] + 1./4.*armWWos[142];
-   armWWos[131]=mmH*armWWos[131];
-   armWWos[131]=armWWos[131] + armWWos[136];
-   armWWos[131]=mmt*armWWos[131];
-   armWWos[131]=1./2.*armWWos[131] + armWWos[135];
-   armWWos[131]=armWWos[121]*armWWos[131];
-   armWWos[123]=armWWos[123] + 2./3.*armWWos[150];
-   armWWos[123]=mmH*armWWos[123];
-   armWWos[111]=armWWos[123] - armWWos[34] + 2./3.*armWWos[163] + 
-   armWWos[111] + 2./3.*armWWos[129];
-   armWWos[111]=mmH*armWWos[111];
-   armWWos[111]=armWWos[111] + 1./2.*armWWos[130];
-   armWWos[111]=mmt*armWWos[111];
-   armWWos[123]=2*armWWos[17];
-   armWWos[129]=armWWos[123] - 7./2.*armWWos[15];
-   armWWos[129]=armWWos[34]*armWWos[129];
-   armWWos[129]=1./3.*armWWos[129] + 1./2.*armWWos[134];
-   armWWos[129]=mmH*armWWos[129];
-   armWWos[111]=armWWos[129] + armWWos[111];
-   armWWos[111]=mmt*armWWos[111];
-   armWWos[129]=armWWos[111] + armWWos[131];
-   armWWos[129]=armWWos[121]*armWWos[129];
-   armWWos[127]=armWWos[177]*armWWos[127];
-   armWWos[111]=armWWos[111] + 1./2.*armWWos[127];
-   armWWos[111]=armWWos[177]*armWWos[111];
-   armWWos[127]= - armWWos[34]*armWWos[33];
-   armWWos[130]= - mmt*pow(armWWos[33],2);
-   armWWos[131]=armWWos[127] + 1./2.*armWWos[130];
-   armWWos[131]=mmt*armWWos[131];
-   armWWos[131]= - 1./2.*armWWos[105] + armWWos[131];
-   armWWos[134]=pow(mmt,2);
-   armWWos[131]=armWWos[134]*armWWos[131];
-   armWWos[135]=armWWos[177]*armWWos[131];
-   armWWos[127]=2*armWWos[127] + armWWos[130];
-   armWWos[127]=mmt*armWWos[127];
-   armWWos[105]= - armWWos[105] + armWWos[127];
-   armWWos[105]=armWWos[134]*armWWos[105];
-   armWWos[127]=2*armWWos[105];
-   armWWos[130]=armWWos[127] + armWWos[135];
-   armWWos[130]=armWWos[177]*armWWos[130];
-   armWWos[134]=armWWos[121]*armWWos[131];
-   armWWos[105]=armWWos[105] + armWWos[134];
-   armWWos[105]=armWWos[121]*armWWos[105];
-   armWWos[105]=3*armWWos[131] + armWWos[105];
-   armWWos[105]=armWWos[121]*armWWos[105];
-   armWWos[105]=armWWos[127] + armWWos[105];
-   armWWos[105]=armWWos[121]*armWWos[105];
-   armWWos[105]=armWWos[130] + armWWos[105];
-   armWWos[105]=armWWos[31]*armWWos[105];
-   armWWos[105]=armWWos[105] + armWWos[111] + armWWos[129];
-   armWWos[105]=armWWos[31]*armWWos[105];
-   armWWos[111]= - 1./6.*armWWos[80];
-   armWWos[127]=1./6.*armWWos[14];
-   armWWos[129]=pow(armWWos[10],2);
-   armWWos[130]= - 1./9.*armWWos[129] + armWWos[127] + 1 + armWWos[111]
-   ;
-   armWWos[130]=mmH*armWWos[130];
-   armWWos[131]=1./2.*armWWos[67];
-   armWWos[134]= - 5./2.*armWWos[20] + armWWos[93] + armWWos[131];
-   armWWos[134]=1./2.*armWWos[134] - armWWos[18];
-   armWWos[135]= - 1 - 7./18.*armWWos[10];
-   armWWos[135]=armWWos[17]*armWWos[135];
-   armWWos[136]=1 + 7./9.*armWWos[10];
-   armWWos[136]=armWWos[15]*armWWos[136];
-   armWWos[130]=1./2.*armWWos[130] + 1./4.*armWWos[136] + 1./3.*
-   armWWos[134] + 1./2.*armWWos[135];
-   armWWos[130]=mmH*armWWos[130];
-   armWWos[135]=19*armWWos[17];
-   armWWos[136]=armWWos[135] + 13*armWWos[15];
-   armWWos[136]=armWWos[15]*armWWos[136];
-   armWWos[142]=pow(armWWos[17],2);
-   armWWos[136]=armWWos[142] + 1./4.*armWWos[136];
-   armWWos[136]=1./9.*armWWos[136] + armWWos[130];
-   armWWos[143]=pow(mmH,2);
-   armWWos[136]=armWWos[177]*armWWos[65]*armWWos[143]*armWWos[136];
-   armWWos[145]=armWWos[135] + 31*armWWos[15];
-   armWWos[145]=armWWos[15]*armWWos[145];
-   armWWos[145]=armWWos[142] + 1./4.*armWWos[145];
-   armWWos[145]=1./9.*armWWos[145] + armWWos[130];
-   armWWos[145]=armWWos[65]*armWWos[143]*armWWos[145];
-   armWWos[136]=armWWos[145] + 1./4.*armWWos[136];
-   armWWos[136]=armWWos[177]*armWWos[136];
-   armWWos[148]=armWWos[135] + 49*armWWos[15];
-   armWWos[148]=armWWos[15]*armWWos[148];
-   armWWos[148]=armWWos[142] + 1./4.*armWWos[148];
-   armWWos[148]=1./9.*armWWos[148] + armWWos[130];
-   armWWos[148]=armWWos[65]*armWWos[143]*armWWos[148];
-   armWWos[149]=85*armWWos[15];
-   armWWos[150]=armWWos[135] + armWWos[149];
-   armWWos[150]=armWWos[15]*armWWos[150];
-   armWWos[150]=armWWos[142] + 1./4.*armWWos[150];
-   armWWos[130]=1./9.*armWWos[150] + armWWos[130];
-   armWWos[130]=armWWos[121]*armWWos[65]*armWWos[143]*armWWos[130];
-   armWWos[130]=armWWos[148] + 1./2.*armWWos[130];
-   armWWos[130]=armWWos[121]*armWWos[130];
-   armWWos[148]= - 3 - 7./6.*armWWos[10];
-   armWWos[148]=armWWos[17]*armWWos[148];
-   armWWos[150]=3 + armWWos[132];
-   armWWos[150]=armWWos[15]*armWWos[150];
-   armWWos[129]= - 1./3.*armWWos[129] + 1./2.*armWWos[14] + 3 - 1./2.*
-   armWWos[80];
-   armWWos[129]=mmH*armWWos[129];
-   armWWos[129]=1./2.*armWWos[129] + 1./4.*armWWos[150] + armWWos[134]
-    + 1./2.*armWWos[148];
-   armWWos[129]=mmH*armWWos[129];
-   armWWos[134]=armWWos[135] + 37*armWWos[15];
-   armWWos[134]=armWWos[15]*armWWos[134];
-   armWWos[134]=armWWos[142] + 1./4.*armWWos[134];
-   armWWos[129]=1./3.*armWWos[134] + armWWos[129];
-   armWWos[129]=armWWos[65]*armWWos[143]*armWWos[129];
-   armWWos[129]=1./2.*armWWos[129] + armWWos[130];
-   armWWos[129]=armWWos[121]*armWWos[129];
-   armWWos[129]=armWWos[145] + 1./2.*armWWos[129];
-   armWWos[129]=armWWos[121]*armWWos[129];
-   armWWos[105]=armWWos[105] + armWWos[136] + armWWos[129];
-   armWWos[105]=armWWos[2]*armWWos[105];
-   armWWos[129]= - 133./6. + 3*armWWos[84];
-   armWWos[130]=5./3.*armWWos[86];
-   armWWos[129]=1./2.*armWWos[129] + armWWos[130];
-   armWWos[134]= - 17./6.*armWWos[14];
-   armWWos[135]=13*armWWos[10];
-   armWWos[136]= - 1 + armWWos[135];
-   armWWos[136]=armWWos[10]*armWWos[136];
-   armWWos[143]= - armWWos[73] - 1./3.*armWWos[70];
-   armWWos[143]=mmH*armWWos[143];
-   armWWos[129]=1./2.*armWWos[143] + 1./18.*armWWos[136] + armWWos[134]
-    - 17./3.*armWWos[89] + 1./4.*armWWos[85] + 1./2.*armWWos[129] + 
-   armWWos[80];
-   armWWos[129]=mmH*armWWos[129];
-   armWWos[136]=25*armWWos[10];
-   armWWos[145]=167 + armWWos[136];
-   armWWos[145]=armWWos[17]*armWWos[145];
-   armWWos[138]=17./3. + armWWos[138];
-   armWWos[138]=armWWos[16]*armWWos[138];
-   armWWos[148]=79./3. + 41*armWWos[10];
-   armWWos[148]=armWWos[15]*armWWos[148];
-   armWWos[150]=5*armWWos[69] - armWWos[93];
-   armWWos[129]=1./2.*armWWos[129] + 1./12.*armWWos[148] + 1./2.*
-   armWWos[138] + 1./36.*armWWos[145] + 11./4.*armWWos[18] - 23./12.*
-   armWWos[20] + 17./6.*armWWos[19] + 37./24.*armWWos[68] - 1./8.*
-   armWWos[95] + 19./12.*armWWos[67] + 1./8.*armWWos[150] - 17./3.*
-   armWWos[94];
-   armWWos[129]=mmH*armWWos[129];
-   armWWos[138]=armWWos[17] - 17./8.*armWWos[16];
-   armWWos[138]=armWWos[16]*armWWos[138];
-   armWWos[145]=5./8.*armWWos[142];
-   armWWos[138]=armWWos[145] + armWWos[138];
-   armWWos[148]=43./9.*armWWos[17] + 23*armWWos[16];
-   armWWos[148]=1./2.*armWWos[148] - 119./9.*armWWos[15];
-   armWWos[148]=armWWos[15]*armWWos[148];
-   armWWos[129]=1./2.*armWWos[129] + 1./3.*armWWos[138] + 1./4.*
-   armWWos[148];
-   armWWos[129]=armWWos[177]*armWWos[65]*mmH*armWWos[129];
-   armWWos[138]=97 + armWWos[136];
-   armWWos[138]=armWWos[17]*armWWos[138];
-   armWWos[148]=19 + 131./18.*armWWos[10];
-   armWWos[148]=armWWos[16]*armWWos[148];
-   armWWos[138]=armWWos[148] + 1./6.*armWWos[138] - 5./6.*armWWos[18]
-    - 23./2.*armWWos[20] + 53./6.*armWWos[19] + 55./12.*armWWos[68] - 3.
-   /4.*armWWos[95] + 31./3.*armWWos[67] + 3./4.*armWWos[150] - 71./3.*
-   armWWos[94];
-   armWWos[148]=7 + armWWos[135];
-   armWWos[148]=armWWos[10]*armWWos[148];
-   armWWos[151]= - 3*armWWos[73] - armWWos[70];
-   armWWos[151]=mmH*armWWos[151];
-   armWWos[148]=1./8.*armWWos[151] + 1./24.*armWWos[148] - 17./8.*
-   armWWos[14] - 71./24.*armWWos[89] + 3./16.*armWWos[85] + 3./4.*
-   armWWos[80] + 5./8.*armWWos[86] + 9./16.*armWWos[84] - 81./32. + 1./
-   3.*armWWos[90];
-   armWWos[148]=mmH*armWWos[148];
-   armWWos[151]=1 + 11./3.*armWWos[10];
-   armWWos[151]=armWWos[15]*armWWos[151];
-   armWWos[138]=1./2.*armWWos[148] + 1./8.*armWWos[138] + 2./3.*
-   armWWos[151];
-   armWWos[138]=mmH*armWWos[138];
-   armWWos[148]=5./4.*armWWos[142];
-   armWWos[151]= - 7./3.*armWWos[17];
-   armWWos[154]=armWWos[151] - 23./4.*armWWos[16];
-   armWWos[154]=armWWos[16]*armWWos[154];
-   armWWos[154]=armWWos[148] + 1./3.*armWWos[154];
-   armWWos[155]=7*armWWos[17];
-   armWWos[156]=armWWos[155] + 23./2.*armWWos[16];
-   armWWos[156]=5./2.*armWWos[156] - 58*armWWos[15];
-   armWWos[156]=armWWos[15]*armWWos[156];
-   armWWos[138]=armWWos[138] + 1./4.*armWWos[154] + 1./9.*armWWos[156];
-   armWWos[138]=armWWos[65]*mmH*armWWos[138];
-   armWWos[129]=armWWos[138] + 1./2.*armWWos[129];
-   armWWos[129]=armWWos[177]*armWWos[129];
-   armWWos[154]= - 25./32. + armWWos[90];
-   armWWos[156]=23 + armWWos[135];
-   armWWos[156]=armWWos[10]*armWWos[156];
-   armWWos[154]=1./8.*armWWos[143] + 1./72.*armWWos[156] - 17./24.*
-   armWWos[14] - 5./8.*armWWos[89] + 1./16.*armWWos[85] + 1./4.*
-   armWWos[80] + 5./24.*armWWos[86] + 1./3.*armWWos[154] + 3./16.*
-   armWWos[84];
-   armWWos[154]=mmH*armWWos[154];
-   armWWos[156]=1./4.*armWWos[150] - 5*armWWos[94];
-   armWWos[136]=29 + armWWos[136];
-   armWWos[136]=armWWos[17]*armWWos[136];
-   armWWos[157]=9 - 73./18.*armWWos[10];
-   armWWos[157]=armWWos[16]*armWWos[157];
-   armWWos[158]= - 13 + 53*armWWos[10];
-   armWWos[158]=armWWos[15]*armWWos[158];
-   armWWos[136]=armWWos[154] + 1./36.*armWWos[158] + 1./4.*armWWos[157]
-    + 1./72.*armWWos[136] - 47./24.*armWWos[18] - 23./24.*armWWos[20]
-    - 11./24.*armWWos[19] + 5./48.*armWWos[68] - 1./16.*armWWos[95] + 1.
-   /4.*armWWos[156] + armWWos[67];
-   armWWos[136]=mmH*armWWos[136];
-   armWWos[154]= - 5./3.*armWWos[17] - 1./8.*armWWos[16];
-   armWWos[154]=armWWos[16]*armWWos[154];
-   armWWos[156]=61*armWWos[17] + 59*armWWos[16];
-   armWWos[156]=1./2.*armWWos[156] - 113*armWWos[15];
-   armWWos[156]=armWWos[15]*armWWos[156];
-   armWWos[145]=1./6.*armWWos[156] + armWWos[145] + armWWos[154];
-   armWWos[136]=1./3.*armWWos[145] + armWWos[136];
-   armWWos[136]=armWWos[65]*mmH*armWWos[136];
-   armWWos[145]= - 1./2.*armWWos[19];
-   armWWos[131]=armWWos[17] + armWWos[145] - armWWos[94] + armWWos[131]
-   ;
-   armWWos[154]=1 - 7./12.*armWWos[10];
-   armWWos[154]=armWWos[16]*armWWos[154];
-   armWWos[156]=1 + armWWos[132];
-   armWWos[156]=armWWos[15]*armWWos[156];
-   armWWos[157]= - 1 - armWWos[89];
-   armWWos[157]=mmH*armWWos[157];
-   armWWos[131]=1./4.*armWWos[157] + 1./4.*armWWos[156] + 1./2.*
-   armWWos[131] + armWWos[154];
-   armWWos[131]=mmH*armWWos[131];
-   armWWos[154]= - armWWos[16]*armWWos[17];
-   armWWos[156]=armWWos[17] + armWWos[16];
-   armWWos[156]=7./2.*armWWos[156] - 5*armWWos[15];
-   armWWos[156]=armWWos[15]*armWWos[156];
-   armWWos[154]=armWWos[154] + 1./2.*armWWos[156];
-   armWWos[131]=1./3.*armWWos[154] + armWWos[131];
-   armWWos[131]=armWWos[121]*armWWos[65]*mmH*armWWos[131];
-   armWWos[131]=armWWos[136] + 1./6.*armWWos[131];
-   armWWos[131]=armWWos[121]*armWWos[131];
-   armWWos[136]= - 1./2.*armWWos[95];
-   armWWos[154]=3./2.*armWWos[68];
-   armWWos[150]= - 19./3.*armWWos[18] - 23./3.*armWWos[20] + 19./6.*
-   armWWos[19] + armWWos[154] + armWWos[136] + 43./6.*armWWos[67] + 1./
-   2.*armWWos[150] - 37./3.*armWWos[94];
-   armWWos[156]=31 + 25./2.*armWWos[10];
-   armWWos[156]=armWWos[17]*armWWos[156];
-   armWWos[150]=1./2.*armWWos[150] + 1./9.*armWWos[156];
-   armWWos[156]= - 55./16. + armWWos[90];
-   armWWos[135]=11 + armWWos[135];
-   armWWos[135]=armWWos[10]*armWWos[135];
-   armWWos[135]=1./4.*armWWos[143] + 1./36.*armWWos[135] - 17./12.*
-   armWWos[14] - 37./24.*armWWos[89] + 1./8.*armWWos[85] + 1./2.*
-   armWWos[80] + 5./12.*armWWos[86] + 1./3.*armWWos[156] + 3./8.*
-   armWWos[84];
-   armWWos[135]=mmH*armWWos[135];
-   armWWos[143]=1 + 1./48.*armWWos[10];
-   armWWos[143]=armWWos[16]*armWWos[143];
-   armWWos[156]=17 + 229*armWWos[10];
-   armWWos[156]=armWWos[15]*armWWos[156];
-   armWWos[135]=1./2.*armWWos[135] + 1./144.*armWWos[156] + 1./4.*
-   armWWos[150] + 5./3.*armWWos[143];
-   armWWos[135]=mmH*armWWos[135];
-   armWWos[143]= - 13./9.*armWWos[17] - 1./2.*armWWos[16];
-   armWWos[143]=armWWos[16]*armWWos[143];
-   armWWos[150]=79*armWWos[17] + 253./3.*armWWos[16];
-   armWWos[150]=1./2.*armWWos[150] - 115*armWWos[15];
-   armWWos[150]=armWWos[15]*armWWos[150];
-   armWWos[143]=1./6.*armWWos[150] + 5./6.*armWWos[142] + armWWos[143];
-   armWWos[135]=1./4.*armWWos[143] + armWWos[135];
-   armWWos[135]=armWWos[65]*mmH*armWWos[135];
-   armWWos[131]=armWWos[135] + 1./2.*armWWos[131];
-   armWWos[131]=armWWos[121]*armWWos[131];
-   armWWos[131]=armWWos[138] + armWWos[131];
-   armWWos[131]=armWWos[121]*armWWos[131];
-   armWWos[105]=armWWos[105] + armWWos[106] + armWWos[129] + 
-   armWWos[131];
-   armWWos[105]=armWWos[2]*armWWos[105];
-   armWWos[106]= - 2*armWWos[90];
-   armWWos[129]=439./192. + armWWos[106];
-   armWWos[131]= - 1./3.*armWWos[80];
-   armWWos[135]= - 43./48.*armWWos[91];
-   armWWos[138]= - 2./3.*armWWos[30];
-   armWWos[143]=pow(armWWos[9],2);
-   armWWos[150]=1./24.*armWWos[143];
-   armWWos[156]= - 11./3.*armWWos[10];
-   armWWos[157]=armWWos[156] - 131./9. + 13./2.*armWWos[9];
-   armWWos[157]=armWWos[10]*armWWos[157];
-   armWWos[158]=2*armWWos[78];
-   armWWos[159]=armWWos[158] - armWWos[75];
-   armWWos[160]=1./2.*armWWos[71] - 1./4.*armWWos[74] - 1./8.*
-   armWWos[96] + armWWos[159] - 1./2.*armWWos[70];
-   armWWos[160]=mmH*armWWos[160];
-   armWWos[129]=1./3.*armWWos[160] + 1./12.*armWWos[157] + armWWos[150]
-    + 61./48.*armWWos[14] - 5./48.*armWWos[13] + armWWos[138] + 137./48.
-   *armWWos[89] - 7./48.*armWWos[85] + armWWos[135] + armWWos[131] - 1./
-   8.*armWWos[87] + 5./16.*armWWos[81] + 5./16.*armWWos[82] - 1./6.*
-   armWWos[88] + 1./12.*armWWos[83] + 1./3.*armWWos[129] - 7./16.*
-   armWWos[84];
-   armWWos[129]=mmH*armWWos[129];
-   armWWos[157]=3./2.*armWWos[69] + armWWos[93];
-   armWWos[160]= - 17./6.*armWWos[68] + armWWos[95] - 19./3.*
-   armWWos[67] - 11./12.*armWWos[66] + armWWos[157] + 89./6.*
-   armWWos[94];
-   armWWos[161]= - 5./9. + 1./8.*armWWos[9];
-   armWWos[161]=35*armWWos[161] - 23./4.*armWWos[10];
-   armWWos[161]=armWWos[17]*armWWos[161];
-   armWWos[162]= - 1./2.*armWWos[9];
-   armWWos[163]=89./6.*armWWos[10] - 205./3. + armWWos[162];
-   armWWos[163]=armWWos[16]*armWWos[163];
-   armWWos[164]= - 11*armWWos[9];
-   armWWos[170]= - 457./27. + armWWos[164];
-   armWWos[170]=1./8.*armWWos[170] - 43./9.*armWWos[10];
-   armWWos[170]=armWWos[15]*armWWos[170];
-   armWWos[129]=armWWos[129] + 1./2.*armWWos[170] + 1./12.*armWWos[163]
-    + 1./6.*armWWos[161] + 3./4.*armWWos[18] - 3./16.*armWWos[20] + 1./
-   4.*armWWos[160] + 2./3.*armWWos[19];
-   armWWos[129]=mmH*armWWos[129];
-   armWWos[160]= - 1./2.*armWWos[142];
-   armWWos[161]=7./3.*armWWos[17] + 31./2.*armWWos[16];
-   armWWos[161]=armWWos[16]*armWWos[161];
-   armWWos[161]=armWWos[160] + armWWos[161];
-   armWWos[163]=1909./8.*armWWos[15] + 13*armWWos[17] + 2969./24.*
-   armWWos[16];
-   armWWos[163]=armWWos[15]*armWWos[163];
-   armWWos[161]=1./2.*armWWos[161] + 1./3.*armWWos[163];
-   armWWos[129]=1./2.*armWWos[161] + armWWos[129];
-   armWWos[129]=armWWos[65]*armWWos[129];
-   armWWos[161]=1./2.*armWWos[86];
-   armWWos[163]=armWWos[161] - 233./48. + armWWos[88];
-   armWWos[170]= - 1./4.*armWWos[85];
-   armWWos[163]=11./12.*armWWos[13] - 77./36.*armWWos[89] + 
-   armWWos[170] - 13./4.*armWWos[91] - 5./4.*armWWos[81] + 1./3.*
-   armWWos[163] - 5./4.*armWWos[82];
-   armWWos[172]=1./3.*armWWos[14];
-   armWWos[179]= - 7*armWWos[9];
-   armWWos[180]=11./9. + armWWos[179];
-   armWWos[180]=armWWos[10]*armWWos[180];
-   armWWos[184]= - mmH*armWWos[71];
-   armWWos[163]=1./12.*armWWos[184] + 1./16.*armWWos[180] + 1./4.*
-   armWWos[163] + armWWos[172];
-   armWWos[163]=mmH*armWWos[163];
-   armWWos[180]=11./16. - 2./3.*armWWos[9];
-   armWWos[180]=armWWos[17]*armWWos[180];
-   armWWos[132]=armWWos[132] + 1./12. - armWWos[9];
-   armWWos[132]=armWWos[16]*armWWos[132];
-   armWWos[184]=3*armWWos[9];
-   armWWos[185]= - 5./18.*armWWos[10] + 1./9. + armWWos[184];
-   armWWos[185]=armWWos[15]*armWWos[185];
-   armWWos[132]=armWWos[163] + 1./4.*armWWos[185] + 1./12.*armWWos[132]
-    + armWWos[180] - 4./9.*armWWos[18] - 1./8.*armWWos[20] + 1./18.*
-   armWWos[19] - 1./6.*armWWos[68] + 1./12.*armWWos[95] - 1./48.*
-   armWWos[67] - 2./9.*armWWos[94] + 5./16.*armWWos[66];
-   armWWos[132]=mmH*armWWos[132];
-   armWWos[163]=1./9.*armWWos[17] + 5./8.*armWWos[16];
-   armWWos[163]=armWWos[16]*armWWos[163];
-   armWWos[126]=631*armWWos[15] + armWWos[126] + 217*armWWos[16];
-   armWWos[126]=armWWos[15]*armWWos[126];
-   armWWos[126]=armWWos[132] + armWWos[163] + 1./72.*armWWos[126];
-   armWWos[126]=armWWos[65]*armWWos[126];
-   armWWos[132]=1./2.*armWWos[66];
-   armWWos[163]= - armWWos[94] + armWWos[132];
-   armWWos[180]= - 1./2.*armWWos[20];
-   armWWos[185]=armWWos[163] + armWWos[180];
-   armWWos[186]=1 - 7./12.*armWWos[9];
-   armWWos[186]=armWWos[17]*armWWos[186];
-   armWWos[189]=1./2.*armWWos[16];
-   armWWos[119]=1 + armWWos[119];
-   armWWos[119]=armWWos[15]*armWWos[119];
-   armWWos[119]=1./4.*armWWos[119] + armWWos[189] + 1./2.*armWWos[185]
-    + armWWos[186];
-   armWWos[185]= - 1./2.*armWWos[82];
-   armWWos[186]= - 1./2.*armWWos[81];
-   armWWos[190]=armWWos[186] - 1 + armWWos[185];
-   armWWos[191]=1./6.*armWWos[13];
-   armWWos[127]=armWWos[127] + armWWos[191] - 1./2.*armWWos[89] + 1./3.
-   *armWWos[190] - 1./2.*armWWos[91];
-   armWWos[190]= - armWWos[10]*armWWos[9];
-   armWWos[127]=1./2.*armWWos[127] + 1./9.*armWWos[190];
-   armWWos[127]=mmH*armWWos[127];
-   armWWos[119]=1./3.*armWWos[119] + armWWos[127];
-   armWWos[119]=mmH*armWWos[119];
-   armWWos[127]=19*armWWos[16] + armWWos[149];
-   armWWos[127]=armWWos[15]*armWWos[127];
-   armWWos[149]=pow(armWWos[16],2);
-   armWWos[127]=armWWos[149] + 1./4.*armWWos[127];
-   armWWos[119]=1./9.*armWWos[127] + armWWos[119];
-   armWWos[119]=armWWos[121]*armWWos[65]*armWWos[119];
-   armWWos[119]=armWWos[126] + 1./4.*armWWos[119];
-   armWWos[119]=armWWos[121]*armWWos[119];
-   armWWos[126]= - 5./3. - armWWos[6];
-   armWWos[127]=armWWos[1]*armWWos[126];
-   armWWos[126]=armWWos[35]*armWWos[126];
-   armWWos[126]=1./3.*armWWos[127] + armWWos[126];
-   armWWos[126]=armWWos[10]*armWWos[126];
-   armWWos[127]=armWWos[1]*armWWos[12];
-   armWWos[190]=armWWos[35]*armWWos[12];
-   armWWos[126]=armWWos[126] + 1./3.*armWWos[127] + armWWos[190];
-   armWWos[126]=mmH*armWWos[126];
-   armWWos[127]= - 1./2.*armWWos[6];
-   armWWos[190]= - 1./3. + armWWos[127];
-   armWWos[192]=armWWos[1]*armWWos[190];
-   armWWos[190]=armWWos[35]*armWWos[190];
-   armWWos[190]=1./3.*armWWos[192] + armWWos[190];
-   armWWos[190]=armWWos[17]*armWWos[190];
-   armWWos[192]=5./3. + armWWos[6];
-   armWWos[193]=armWWos[1]*armWWos[192];
-   armWWos[192]=armWWos[35]*armWWos[192];
-   armWWos[192]=1./3.*armWWos[193] + armWWos[192];
-   armWWos[192]=armWWos[15]*armWWos[192];
-   armWWos[126]=1./2.*armWWos[126] + armWWos[190] + 1./2.*armWWos[192];
-   armWWos[126]=mmH*armWWos[126];
-   armWWos[190]=1./6.*armWWos[126];
-   armWWos[119]=armWWos[119] + armWWos[190] + armWWos[129];
-   armWWos[119]=armWWos[121]*armWWos[119];
-   armWWos[129]= - 1./4.*armWWos[96];
-   armWWos[192]= - 1./2.*armWWos[74];
-   armWWos[159]=1./4.*armWWos[71] + armWWos[192] + armWWos[129] + 
-   armWWos[159] - armWWos[70];
-   armWWos[159]=mmH*armWWos[159];
-   armWWos[193]=19./9. + 17*armWWos[9];
-   armWWos[193]=5./8.*armWWos[193] + armWWos[156];
-   armWWos[193]=armWWos[10]*armWWos[193];
-   armWWos[106]=3023./192. + armWWos[106];
-   armWWos[106]=1./3.*armWWos[159] + 1./6.*armWWos[193] + 1./12.*
-   armWWos[143] + 13./8.*armWWos[14] - 41./48.*armWWos[13] + 
-   armWWos[138] + 143./16.*armWWos[89] - 11./48.*armWWos[85] + 
-   armWWos[135] - 2./3.*armWWos[80] - 1./12.*armWWos[87] + 41./48.*
-   armWWos[81] + 41./48.*armWWos[82] - 1./24.*armWWos[86] - 1./12.*
-   armWWos[88] + 1./6.*armWWos[83] + 1./3.*armWWos[106] - 7./8.*
-   armWWos[84];
-   armWWos[106]=mmH*armWWos[106];
-   armWWos[135]= - 7./2.*armWWos[68] + 5./6.*armWWos[95] - 119./24.*
-   armWWos[67] - 41./24.*armWWos[66] + armWWos[157] + 43./2.*
-   armWWos[94];
-   armWWos[159]= - 5689./18. + 67*armWWos[9];
-   armWWos[159]=1./2.*armWWos[159] - 19*armWWos[10];
-   armWWos[159]=armWWos[17]*armWWos[159];
-   armWWos[193]= - 1./3.*armWWos[10] - 1765./24. - armWWos[9];
-   armWWos[193]=armWWos[16]*armWWos[193];
-   armWWos[194]= - 113./3.*armWWos[10] - 1327./27. - 21*armWWos[9];
-   armWWos[194]=armWWos[15]*armWWos[194];
-   armWWos[106]=armWWos[106] + 1./8.*armWWos[194] + 1./6.*armWWos[193]
-    + 1./12.*armWWos[159] - 11./3.*armWWos[18] - 5./6.*armWWos[20] + 1./
-   2.*armWWos[135] - 5./3.*armWWos[19];
-   armWWos[106]=mmH*armWWos[106];
-   armWWos[135]=armWWos[17] - 677./8.*armWWos[16];
-   armWWos[135]=armWWos[16]*armWWos[135];
-   armWWos[135]=armWWos[148] + armWWos[135];
-   armWWos[148]=73./8.*armWWos[17];
-   armWWos[159]= - 499./6.*armWWos[15];
-   armWWos[193]=armWWos[159] + armWWos[148] - 337./3.*armWWos[16];
-   armWWos[193]=armWWos[15]*armWWos[193];
-   armWWos[193]=armWWos[135] + armWWos[193];
-   armWWos[193]=1./3.*armWWos[193] + armWWos[106];
-   armWWos[193]=armWWos[65]*armWWos[193];
-   armWWos[126]=1./3.*armWWos[126];
-   armWWos[119]=armWWos[119] + armWWos[126] + armWWos[193];
-   armWWos[119]=armWWos[121]*armWWos[119];
-   armWWos[148]=armWWos[159] + armWWos[148] + 215./3.*armWWos[16];
-   armWWos[148]=armWWos[15]*armWWos[148];
-   armWWos[135]=armWWos[135] + armWWos[148];
-   armWWos[106]=1./3.*armWWos[135] + armWWos[106];
-   armWWos[106]=armWWos[65]*armWWos[106];
-   armWWos[135]=619./9. + 59*armWWos[9];
-   armWWos[135]=1./4.*armWWos[135] + armWWos[156];
-   armWWos[135]=armWWos[10]*armWWos[135];
-   armWWos[148]= - 1./2.*armWWos[71] + armWWos[192] - armWWos[70] + 
-   armWWos[129];
-   armWWos[148]=mmH*armWWos[148];
-   armWWos[156]=619./9. - 7*armWWos[84];
-   armWWos[156]=13./6.*armWWos[87] + 13./6.*armWWos[81] + 13./6.*
-   armWWos[82] - 1./6.*armWWos[86] + 1./3.*armWWos[88] + 1./4.*
-   armWWos[156] + 1./3.*armWWos[83];
-   armWWos[131]=1./6.*armWWos[148] + 1./12.*armWWos[135] + armWWos[150]
-    + 17./48.*armWWos[14] - 5./4.*armWWos[13] + 85./12.*armWWos[89] - 1.
-   /12.*armWWos[85] + 1./4.*armWWos[156] + armWWos[131];
-   armWWos[131]=mmH*armWWos[131];
-   armWWos[135]= - 43./12.*armWWos[67] - 5./2.*armWWos[66] + 
-   armWWos[157] + 169./6.*armWWos[94];
-   armWWos[135]= - 25./12.*armWWos[68] + 1./2.*armWWos[135] + 1./3.*
-   armWWos[95];
-   armWWos[148]= - 4505./27. + 41*armWWos[9];
-   armWWos[148]=1./2.*armWWos[148] - 5*armWWos[10];
-   armWWos[148]=armWWos[17]*armWWos[148];
-   armWWos[150]= - 5*armWWos[9];
-   armWWos[156]= - 21*armWWos[10] - 227./6. + armWWos[150];
-   armWWos[156]=armWWos[16]*armWWos[156];
-   armWWos[157]= - 31*armWWos[9];
-   armWWos[159]= - 2197./27. + armWWos[157];
-   armWWos[159]=1./2.*armWWos[159] - 167./9.*armWWos[10];
-   armWWos[159]=armWWos[15]*armWWos[159];
-   armWWos[131]=armWWos[131] + 1./8.*armWWos[159] + 1./8.*armWWos[156]
-    + 1./8.*armWWos[148] - 53./12.*armWWos[18] + 17./48.*armWWos[20] + 
-   1./2.*armWWos[135] - 14./3.*armWWos[19];
-   armWWos[131]=mmH*armWWos[131];
-   armWWos[135]= - armWWos[17] - 219*armWWos[16];
-   armWWos[135]=armWWos[16]*armWWos[135];
-   armWWos[148]= - 6119./18.*armWWos[15] + armWWos[155] - 6563./6.*
-   armWWos[16];
-   armWWos[148]=armWWos[15]*armWWos[148];
-   armWWos[135]=1./2.*armWWos[148] + 13./6.*armWWos[142] + armWWos[135]
-   ;
-   armWWos[131]=1./4.*armWWos[135] + armWWos[131];
-   armWWos[131]=armWWos[65]*armWWos[131];
-   armWWos[131]=armWWos[190] + armWWos[131];
-   armWWos[131]=armWWos[177]*armWWos[131];
-   armWWos[106]=armWWos[131] + armWWos[126] + armWWos[106];
-   armWWos[106]=armWWos[177]*armWWos[106];
-   armWWos[101]=armWWos[105] + armWWos[101] + armWWos[106] + 
-   armWWos[119];
-   armWWos[101]=armWWos[2]*armWWos[101];
-   armWWos[105]=33*armWWos[9];
-   armWWos[106]=245./3. + armWWos[105];
-   armWWos[119]=4./3. - armWWos[6];
-   armWWos[119]=2*armWWos[1]*armWWos[119];
-   armWWos[126]=4 - 3*armWWos[6];
-   armWWos[126]=2*armWWos[35]*armWWos[126];
-   armWWos[131]= - 3*armWWos[10];
-   armWWos[106]=armWWos[131] + armWWos[126] + 1./2.*armWWos[106] + 
-   armWWos[119];
-   armWWos[106]=armWWos[34]*armWWos[106];
-   armWWos[135]=armWWos[175] + armWWos[103];
-   armWWos[135]=armWWos[33]*armWWos[135];
-   armWWos[148]= - 1./4.*armWWos[20];
-   armWWos[155]=1./4.*armWWos[17];
-   armWWos[156]=6 + armWWos[178];
-   armWWos[156]=3*armWWos[15]*armWWos[156];
-   armWWos[159]= - armWWos[16] - armWWos[15];
-   armWWos[175]=armWWos[5]*armWWos[34]*armWWos[159];
-   armWWos[106]=36*armWWos[175] + armWWos[106] + armWWos[156] + 1./2.*
-   armWWos[135] + 10*armWWos[16] + armWWos[155] + armWWos[174] + 
-   armWWos[148] + 11*armWWos[19] + 25*armWWos[40] - 11*armWWos[36] - 3*
-   armWWos[38];
-   armWWos[106]=armWWos[5]*armWWos[106];
-   armWWos[135]= - armWWos[61] + 1./2.*armWWos[37];
-   armWWos[175]=7./2.*armWWos[18];
-   armWWos[135]= - 9./4.*armWWos[17] + armWWos[175] - 7./4.*armWWos[20]
-    + armWWos[181] + armWWos[182] + 3*armWWos[135] + armWWos[62];
-   armWWos[135]=armWWos[100]*armWWos[135];
-   armWWos[181]=3*armWWos[57];
-   armWWos[152]=5./2.*armWWos[14] + armWWos[181] + 1./2.*armWWos[59] + 
-   armWWos[146] + 43./8. + armWWos[152];
-   armWWos[152]=armWWos[100]*armWWos[152];
-   armWWos[182]=3*armWWos[10];
-   armWWos[159]=armWWos[5]*armWWos[159];
-   armWWos[159]=18*armWWos[159] - 5./2.*armWWos[33] - 32 + armWWos[182]
-   ;
-   armWWos[159]=armWWos[5]*armWWos[159];
-   armWWos[190]= - 4*armWWos[46] + 11*armWWos[45];
-   armWWos[193]= - 1 + armWWos[10];
-   armWWos[194]=armWWos[100]*armWWos[193];
-   armWWos[196]=1./2.*armWWos[33]*armWWos[194];
-   armWWos[159]=armWWos[159] + armWWos[196] + armWWos[152] + 
-   armWWos[44] + 11./12.*armWWos[48] + 2./3.*armWWos[190] + 3./2.*
-   armWWos[43];
-   armWWos[159]=mmt*armWWos[159];
-   armWWos[190]= - 101./8.*armWWos[50];
-   armWWos[197]= - 49./8.*armWWos[56];
-   armWWos[198]= - 349./128.*armWWos[55];
-   armWWos[199]= - 581./16.*armWWos[52] + armWWos[198] + armWWos[197]
-    + armWWos[190] - 13./6.*armWWos[42] + 9259./128. + 68./3.*
-   armWWos[53];
-   armWWos[200]=11351./96. - 67*armWWos[9];
-   armWWos[168]=1./4.*armWWos[200] + armWWos[168];
-   armWWos[168]= - 17./18.*armWWos[33] + armWWos[171] + armWWos[10] + 1.
-   /3.*armWWos[168] + armWWos[167];
-   armWWos[168]=armWWos[33]*armWWos[168];
-   armWWos[200]=1./4.*armWWos[54];
-   armWWos[201]= - 13./12.*armWWos[27];
-   armWWos[202]= - 169./192.*armWWos[58];
-   armWWos[203]= - 1651./384.*armWWos[60];
-   armWWos[204]= - 19./12.*armWWos[30];
-   armWWos[205]=1037./384.*armWWos[39];
-   armWWos[206]=13./24.*armWWos[59];
-   armWWos[207]= - 7./3. + armWWos[6];
-   armWWos[208]=1./6.*armWWos[1]*armWWos[207];
-   armWWos[207]=1./2.*armWWos[35]*armWWos[207];
-   armWWos[209]= - 3./2.*armWWos[10];
-   armWWos[133]=7*armWWos[100] + armWWos[133];
-   armWWos[133]=1./2.*armWWos[15]*armWWos[133];
-   armWWos[210]=4 + armWWos[10];
-   armWWos[210]=armWWos[34]*armWWos[100]*armWWos[210];
-   armWWos[199]=armWWos[159] + armWWos[137] + armWWos[106] + 
-   armWWos[210] + armWWos[133] + armWWos[168] + armWWos[135] + 
-   armWWos[209] + armWWos[207] + armWWos[208] - 905./48.*armWWos[9] + 
-   armWWos[147] + 835./48.*armWWos[13] + armWWos[128] + armWWos[206] + 
-   armWWos[205] + armWWos[204] + armWWos[146] + armWWos[203] + 
-   armWWos[202] + armWWos[201] + armWWos[51] + 1./3.*armWWos[199] + 
-   armWWos[200];
-   armWWos[199]=mmt*armWWos[199];
-   armWWos[119]=armWWos[131] + armWWos[126] + armWWos[119] - 16./3. + 
-   99./2.*armWWos[9];
-   armWWos[119]=armWWos[34]*armWWos[119];
-   armWWos[126]= - 1./2.*armWWos[36];
-   armWWos[211]=2*armWWos[40];
-   armWWos[212]=1./2.*armWWos[19] + armWWos[211] + armWWos[126] - 
-   armWWos[38];
-   armWWos[103]= - armWWos[17] + armWWos[103];
-   armWWos[103]=armWWos[33]*armWWos[103];
-   armWWos[213]= - armWWos[16] - 2*armWWos[15];
-   armWWos[214]=armWWos[5]*armWWos[34]*armWWos[213];
-   armWWos[103]=18*armWWos[214] + armWWos[119] + armWWos[156] + 1./4.*
-   armWWos[103] + 9*armWWos[16] + armWWos[155] + armWWos[174] + 3*
-   armWWos[212] + armWWos[148];
-   armWWos[103]=armWWos[5]*armWWos[103];
-   armWWos[119]= - 2479./144. - 81*armWWos[9];
-   armWWos[119]=1./2.*armWWos[33] + armWWos[171] + armWWos[10] + 
-   armWWos[167] + 1./8.*armWWos[119] + armWWos[169];
-   armWWos[119]=armWWos[33]*armWWos[119];
-   armWWos[148]=armWWos[5]*armWWos[213];
-   armWWos[148]=3*armWWos[148] + armWWos[178] - 3 + armWWos[10];
-   armWWos[148]=armWWos[5]*armWWos[148];
-   armWWos[155]=armWWos[45] + armWWos[43];
-   armWWos[156]=armWWos[155] + 1./2.*armWWos[48];
-   armWWos[148]=3*armWWos[148] + armWWos[196] + armWWos[152] + 3./2.*
-   armWWos[156] + armWWos[44];
-   armWWos[148]=mmt*armWWos[148];
-   armWWos[103]=armWWos[148] + armWWos[137] + armWWos[103] + 
-   armWWos[210] + armWWos[133] + armWWos[119] + armWWos[135] + 
-   armWWos[209] + armWWos[207] + armWWos[208] - 57./16.*armWWos[9] + 
-   armWWos[147] + 93./16.*armWWos[13] + armWWos[128] + armWWos[206] + 
-   185./128.*armWWos[39] - armWWos[30] + armWWos[146] - 1663./128.*
-   armWWos[60] - 25./64.*armWWos[58] - 7./4.*armWWos[27] + armWWos[51]
-    + armWWos[200] + 31./16.*armWWos[52] - 41./128.*armWWos[55] - 11./8.
-   *armWWos[56] + 28439./1152. - 6*armWWos[50];
-   armWWos[103]=mmt*armWWos[103];
-   armWWos[119]=armWWos[32] + 51./2.*armWWos[97];
-   armWWos[148]=armWWos[119] + 33./2.*armWWos[98];
-   armWWos[152]=2*armWWos[100];
-   armWWos[148]=1./2.*armWWos[148] + armWWos[152];
-   armWWos[148]=armWWos[15]*armWWos[148];
-   armWWos[156]= - 9163./72. - 453*armWWos[9];
-   armWWos[167]=9./8.*armWWos[98] + armWWos[32] - 3./2.*armWWos[97];
-   armWWos[167]=armWWos[16]*armWWos[167];
-   armWWos[169]=123./8.*armWWos[98] - armWWos[32] + 69./2.*armWWos[97];
-   armWWos[169]=armWWos[34]*armWWos[169];
-   armWWos[171]= - 5./3. + 2*armWWos[6];
-   armWWos[174]=armWWos[1]*armWWos[171];
-   armWWos[171]=armWWos[35]*armWWos[171];
-   armWWos[178]= - armWWos[100]*armWWos[17];
-   armWWos[148]=1./4.*armWWos[169] + armWWos[148] - 319./128.*
-   armWWos[33] + armWWos[178] + 1./4.*armWWos[167] + armWWos[10] + 
-   armWWos[171] + 1./16.*armWWos[156] + 1./3.*armWWos[174];
-   armWWos[148]=armWWos[34]*armWWos[148];
-   armWWos[156]=9*armWWos[17];
-   armWWos[167]=armWWos[156] + 719./32.*armWWos[16];
-   armWWos[167]=armWWos[33]*armWWos[167];
-   armWWos[169]=3307./12. + 83*armWWos[33];
-   armWWos[169]=armWWos[15]*armWWos[169];
-   armWWos[212]= - 29./6.*armWWos[17];
-   armWWos[167]=1./6.*armWWos[169] + 1./2.*armWWos[167] + 3421./192.*
-   armWWos[16] + armWWos[212] - 155./4.*armWWos[18] + armWWos[112] + 
-   1373./64.*armWWos[19] - 3777./32.*armWWos[40] + 19./2.*armWWos[38]
-    + 7./2.*armWWos[8] - 1./3.*armWWos[62] + 159./4.*armWWos[61] - 23*
-   armWWos[63] + 41./32.*armWWos[36];
-   armWWos[169]=armWWos[189] + armWWos[15];
-   armWWos[165]=3*armWWos[169] + armWWos[165];
-   armWWos[165]=armWWos[5]*armWWos[34]*armWWos[165];
-   armWWos[213]=161./36. + 3*armWWos[54];
-   armWWos[213]=armWWos[14] + 13./6.*armWWos[57] - 3./2.*armWWos[39] + 
-   1./2.*armWWos[213] - armWWos[49];
-   armWWos[193]=armWWos[33]*armWWos[193];
-   armWWos[193]=1./6.*armWWos[193] + 1./2.*armWWos[213] + 13./9.*
-   armWWos[10];
-   armWWos[193]=1./2.*mmH*armWWos[193];
-   armWWos[103]=armWWos[103] + armWWos[193] + 3*armWWos[165] + 1./4.*
-   armWWos[167] + armWWos[148];
-   armWWos[103]=armWWos[177]*armWWos[103];
-   armWWos[148]=10627./24. - 1301*armWWos[9];
-   armWWos[148]=1./16.*armWWos[148] + armWWos[174];
-   armWWos[165]=armWWos[119] - 121./2.*armWWos[98];
-   armWWos[165]=1./2.*armWWos[165] + armWWos[152];
-   armWWos[165]=armWWos[15]*armWWos[165];
-   armWWos[167]=69./4.*armWWos[97];
-   armWWos[213]= - 407./16.*armWWos[98];
-   armWWos[214]=armWWos[213] - 7*armWWos[32] + armWWos[167];
-   armWWos[214]=armWWos[34]*armWWos[214];
-   armWWos[215]= - 1./2.*armWWos[97];
-   armWWos[216]= - 1./3.*armWWos[32] + armWWos[215];
-   armWWos[217]=armWWos[216] - 77./16.*armWWos[98];
-   armWWos[217]=armWWos[16]*armWWos[217];
-   armWWos[218]= - 11209./1152.*armWWos[33];
-   armWWos[148]=1./2.*armWWos[214] + armWWos[165] + armWWos[218] + 
-   armWWos[178] + 1./2.*armWWos[217] + armWWos[10] + 1./3.*armWWos[148]
-    + armWWos[171];
-   armWWos[148]=armWWos[34]*armWWos[148];
-   armWWos[165]= - 29*armWWos[63];
-   armWWos[214]=97./6.*armWWos[8] - armWWos[62] + 833./12.*armWWos[61]
-    + armWWos[165] - 3205./96.*armWWos[36];
-   armWWos[217]=armWWos[156] - 3341./96.*armWWos[16];
-   armWWos[217]=armWWos[33]*armWWos[217];
-   armWWos[219]=109*armWWos[33];
-   armWWos[220]= - 625./4. + armWWos[219];
-   armWWos[220]=armWWos[15]*armWWos[220];
-   armWWos[221]=59./2.*armWWos[38];
-   armWWos[214]=1./6.*armWWos[220] + 1./2.*armWWos[217] + 12113./576.*
-   armWWos[16] + armWWos[212] - 403./12.*armWWos[18] + armWWos[112] - 
-   1087./192.*armWWos[19] - 17695./288.*armWWos[40] + 1./3.*
-   armWWos[214] + armWWos[221];
-   armWWos[217]= - 15*armWWos[34] + armWWos[16] + 9*armWWos[15];
-   armWWos[217]=armWWos[5]*armWWos[34]*armWWos[217];
-   armWWos[103]=armWWos[103] + armWWos[199] + armWWos[193] + 
-   armWWos[217] + 1./4.*armWWos[214] + armWWos[148];
-   armWWos[103]=armWWos[177]*armWWos[103];
-   armWWos[148]=128387./128. - 580*armWWos[53];
-   armWWos[148]=1./3.*armWWos[148] - 13./2.*armWWos[42];
-   armWWos[148]=8851./144.*armWWos[52] + armWWos[198] + armWWos[197] + 
-   1./3.*armWWos[148] + armWWos[190];
-   armWWos[106]=armWWos[159] + armWWos[137] + armWWos[106] + 
-   armWWos[210] + armWWos[133] + armWWos[168] + armWWos[135] + 
-   armWWos[209] + armWWos[207] + armWWos[208] + 5935./432.*armWWos[9]
-    + armWWos[147] - 6565./432.*armWWos[13] + armWWos[128] + 
-   armWWos[206] + armWWos[205] + armWWos[204] + armWWos[146] + 
-   armWWos[203] + armWWos[202] + armWWos[201] + armWWos[51] + 1./3.*
-   armWWos[148] + armWWos[200];
-   armWWos[106]=mmt*armWWos[106];
-   armWWos[128]= - 5./3.*armWWos[32];
-   armWWos[133]=armWWos[213] + armWWos[128] + armWWos[167];
-   armWWos[133]=armWWos[34]*armWWos[133];
-   armWWos[135]= - 197495./8. + 2371*armWWos[9];
-   armWWos[135]=1./144.*armWWos[135] + armWWos[174];
-   armWWos[119]=armWWos[119] - 107./6.*armWWos[98];
-   armWWos[119]=1./2.*armWWos[119] + armWWos[152];
-   armWWos[119]=armWWos[15]*armWWos[119];
-   armWWos[137]=armWWos[216] + 793./48.*armWWos[98];
-   armWWos[137]=armWWos[16]*armWWos[137];
-   armWWos[119]=1./2.*armWWos[133] + armWWos[119] + armWWos[218] + 
-   armWWos[178] + 1./2.*armWWos[137] + armWWos[10] + 1./3.*armWWos[135]
-    + armWWos[171];
-   armWWos[119]=armWWos[34]*armWWos[119];
-   armWWos[133]=43./2.*armWWos[8] - armWWos[62] + 1345./12.*armWWos[61]
-    + armWWos[165] + 1915./96.*armWWos[36];
-   armWWos[135]=armWWos[156] - 2599./288.*armWWos[16];
-   armWWos[135]=armWWos[33]*armWWos[135];
-   armWWos[137]= - 1529./36. + armWWos[219];
-   armWWos[137]=armWWos[15]*armWWos[137];
-   armWWos[112]=1./6.*armWWos[137] + 1./2.*armWWos[135] + 21235./1728.*
-   armWWos[16] + armWWos[212] - 2617./36.*armWWos[18] + armWWos[112] - 
-   789./64.*armWWos[19] - 36127./288.*armWWos[40] + 1./3.*armWWos[133]
-    + armWWos[221];
-   armWWos[133]= - 275./24. + 7*armWWos[50];
-   armWWos[135]= - 2*armWWos[56];
-   armWWos[137]=1./4.*armWWos[30];
-   armWWos[147]= - 31./8. + 25*armWWos[9];
-   armWWos[147]=1./4.*armWWos[147] + armWWos[33];
-   armWWos[147]=armWWos[33]*armWWos[147];
-   armWWos[133]=1./2.*armWWos[147] - 671./72.*armWWos[9] + 205./36.*
-   armWWos[13] - 143./64.*armWWos[39] + armWWos[137] + 5./64.*
-   armWWos[60] - 605./96.*armWWos[58] - 473./72.*armWWos[52] + 271./64.
-   *armWWos[55] + 1./8.*armWWos[133] + armWWos[135];
-   armWWos[147]=1./2.*armWWos[36];
-   armWWos[145]=5*armWWos[16] + armWWos[145] + armWWos[147] - 
-   armWWos[40];
-   armWWos[140]=5./6. + armWWos[140];
-   armWWos[140]=armWWos[34]*armWWos[140];
-   armWWos[148]= - armWWos[5]*armWWos[34]*armWWos[16];
-   armWWos[107]=18*armWWos[148] + armWWos[140] + 7./3.*armWWos[145] + 3.
-   /4.*armWWos[107];
-   armWWos[107]=armWWos[5]*armWWos[107];
-   armWWos[140]=19*armWWos[45] + armWWos[48];
-   armWWos[145]= - armWWos[5]*armWWos[16];
-   armWWos[145]=9*armWWos[145] - 5./3. - armWWos[33];
-   armWWos[145]=armWWos[5]*armWWos[145];
-   armWWos[140]=1./6.*armWWos[140] + armWWos[145];
-   armWWos[140]=mmt*armWWos[140];
-   armWWos[107]=armWWos[140] + 1./3.*armWWos[133] + armWWos[107];
-   armWWos[107]=mmt*armWWos[107];
-   armWWos[133]=2191./8.*armWWos[36] + 31*armWWos[61];
-   armWWos[133]=1./2.*armWWos[133] + 115*armWWos[8];
-   armWWos[140]=4841./108. + armWWos[33];
-   armWWos[140]=armWWos[15]*armWWos[140];
-   armWWos[133]=1./3.*armWWos[140] + 329./288.*armWWos[122] - 23803./
-   2592.*armWWos[16] + 175./54.*armWWos[18] - 8515./864.*armWWos[19] + 
-   1./27.*armWWos[133] - 179./16.*armWWos[40];
-   armWWos[140]=11*armWWos[32];
-   armWWos[145]=armWWos[140] + armWWos[215];
-   armWWos[148]=armWWos[145] - 515./12.*armWWos[98];
-   armWWos[148]=armWWos[16]*armWWos[148];
-   armWWos[152]= - 851./8. + 301./9.*armWWos[9];
-   armWWos[148]= - 233./48.*armWWos[33] + 1./2.*armWWos[152] + 
-   armWWos[148];
-   armWWos[152]= - 11*armWWos[32];
-   armWWos[156]=armWWos[152] + 485./4.*armWWos[98];
-   armWWos[156]=armWWos[34]*armWWos[156];
-   armWWos[159]=armWWos[15]*armWWos[98];
-   armWWos[148]=1./2.*armWWos[156] + 1./2.*armWWos[148] + 235./3.*
-   armWWos[159];
-   armWWos[148]=armWWos[34]*armWWos[148];
-   armWWos[156]=43*armWWos[16] - 17*armWWos[34];
-   armWWos[156]=armWWos[5]*armWWos[34]*armWWos[156];
-   armWWos[133]=1./3.*armWWos[156] + 1./2.*armWWos[133] + 1./3.*
-   armWWos[148];
-   armWWos[148]= - 41./18.*armWWos[52] + 331./144.*armWWos[55] - 45./16.
-    + armWWos[50];
-   armWWos[109]= - 5./36.*armWWos[9] + 11./36.*armWWos[13] - 331./288.*
-   armWWos[39] - 137./96.*armWWos[60] - 313./144.*armWWos[58] + 1./2.*
-   armWWos[148] + armWWos[109];
-   armWWos[148]= - armWWos[43] - 1./6.*armWWos[48];
-   armWWos[156]= - armWWos[5]*armWWos[33];
-   armWWos[148]=1./3.*armWWos[148] + armWWos[156];
-   armWWos[148]=mmt*armWWos[148];
-   armWWos[156]= - 25./64. + armWWos[9];
-   armWWos[156]=armWWos[33]*armWWos[156];
-   armWWos[165]= - 1 - armWWos[9];
-   armWWos[165]=armWWos[5]*armWWos[34]*armWWos[165];
-   armWWos[109]=armWWos[148] + armWWos[165] + 1./2.*armWWos[109] + 1./3.
-   *armWWos[156];
-   armWWos[109]=mmt*armWWos[109];
-   armWWos[148]=armWWos[16]*armWWos[98];
-   armWWos[156]=25./2.*armWWos[148] + 281./8. + 31*armWWos[9];
-   armWWos[156]=1./3.*armWWos[156] - 25./8.*armWWos[33];
-   armWWos[165]=armWWos[34]*armWWos[98];
-   armWWos[156]=25./8.*armWWos[165] + 1./4.*armWWos[156] + 25./3.*
-   armWWos[159];
-   armWWos[156]=armWWos[34]*armWWos[156];
-   armWWos[165]= - 1./9.*armWWos[63] + 13./128.*armWWos[36];
-   armWWos[109]=1./2.*armWWos[109] + 1./12.*armWWos[156] + 161./864.*
-   armWWos[15] + 25./768.*armWWos[122] + 2057./6912.*armWWos[16] + 19./
-   144.*armWWos[18] - 679./2304.*armWWos[19] - 797./1152.*armWWos[40]
-    + 7./72.*armWWos[8] + 5*armWWos[165] - 1./16.*armWWos[61];
-   armWWos[109]=armWWos[121]*armWWos[109];
-   armWWos[107]=armWWos[109] + 1./2.*armWWos[133] + armWWos[107];
-   armWWos[107]=armWWos[121]*armWWos[107];
-   armWWos[106]=armWWos[107] + armWWos[106] + armWWos[193] + 
-   armWWos[217] + 1./4.*armWWos[112] + armWWos[119];
-   armWWos[106]=armWWos[121]*armWWos[106];
-   armWWos[107]=armWWos[33]*armWWos[195];
-   armWWos[107]= - 7./3. + armWWos[107];
-   armWWos[109]=4 + armWWos[173];
-   armWWos[109]=armWWos[5]*armWWos[34]*armWWos[109];
-   armWWos[107]=1./2.*armWWos[107] + 2*armWWos[109];
-   armWWos[107]=mmt*armWWos[107];
-   armWWos[109]= - 5./3. + armWWos[115];
-   armWWos[109]=armWWos[34]*armWWos[109];
-   armWWos[107]=armWWos[109] + armWWos[107];
-   armWWos[109]=armWWos[177]*armWWos[107];
-   armWWos[109]=armWWos[107] + armWWos[109];
-   armWWos[109]=armWWos[177]*armWWos[109];
-   armWWos[107]=armWWos[121]*armWWos[107];
-   armWWos[107]=armWWos[109] + armWWos[107];
-   armWWos[107]=armWWos[31]*armWWos[107];
-   armWWos[109]= - 1 + armWWos[9];
-   armWWos[109]=armWWos[34]*armWWos[109];
-   armWWos[112]=armWWos[9] - armWWos[13] + armWWos[52] + 1 - 
-   armWWos[53];
-   armWWos[112]=mmt*armWWos[112];
-   armWWos[109]=armWWos[109] + armWWos[112];
-   armWWos[103]=armWWos[107] + armWWos[106] + 256./9.*armWWos[109] + 
-   armWWos[103];
-   armWWos[103]=armWWos[31]*armWWos[103];
-   armWWos[106]= - 5425./18. + 167*armWWos[9];
-   armWWos[107]=6*armWWos[10];
-   armWWos[109]= - armWWos[16]*armWWos[99];
-   armWWos[112]=15./4.*armWWos[109];
-   armWWos[115]=25*armWWos[17] + 29./2.*armWWos[16];
-   armWWos[115]=1./6.*armWWos[100]*armWWos[115];
-   armWWos[119]=33./4.*armWWos[15]*armWWos[100];
-   armWWos[106]=armWWos[119] + armWWos[115] + armWWos[112] + 1./4.*
-   armWWos[106] + armWWos[107];
-   armWWos[106]=armWWos[15]*armWWos[106];
-   armWWos[133]=10123./576. + 10*armWWos[90];
-   armWWos[156]= - 7./12. - armWWos[9];
-   armWWos[156]=armWWos[9]*armWWos[156];
-   armWWos[165]=931./9. - 71./2.*armWWos[9];
-   armWWos[165]=1./6.*armWWos[165] + armWWos[10];
-   armWWos[165]=armWWos[10]*armWWos[165];
-   armWWos[167]= - 4./3.*armWWos[78] + armWWos[75];
-   armWWos[167]= - 23./24.*armWWos[71] + 17./24.*armWWos[74] + 17./48.*
-   armWWos[96] + 1./6.*armWWos[70] + 2*armWWos[167] + 3./4.*armWWos[73]
-   ;
-   armWWos[167]=mmH*armWWos[167];
-   armWWos[133]=armWWos[167] + 1./4.*armWWos[165] + 1./4.*armWWos[156]
-    - 215./48.*armWWos[14] - 1./8.*armWWos[13] + 8./3.*armWWos[30] - 
-   197./24.*armWWos[89] + 11./12.*armWWos[85] + 89./16.*armWWos[91] + 
-   armWWos[111] + 25./48.*armWWos[87] - 9./16.*armWWos[81] - 9./16.*
-   armWWos[82] + 11./6.*armWWos[86] + 2./3.*armWWos[88] - 1./2.*
-   armWWos[83] + 1./3.*armWWos[133] + 9./8.*armWWos[84];
-   armWWos[133]=mmH*armWWos[133];
-   armWWos[156]=9*armWWos[69] + 11./3.*armWWos[93];
-   armWWos[165]=armWWos[156] - 605./6.*armWWos[94];
-   armWWos[167]=armWWos[165] + 149./3.*armWWos[66];
-   armWWos[168]=47./3.*armWWos[67];
-   armWWos[167]=179./6.*armWWos[95] + 1./2.*armWWos[167] + armWWos[168]
-   ;
-   armWWos[173]=29./3.*armWWos[68];
-   armWWos[190]= - 85./8.*armWWos[20];
-   armWWos[193]=3./2.*armWWos[10];
-   armWWos[195]=armWWos[193] + 95./9. - 49./8.*armWWos[9];
-   armWWos[195]=armWWos[17]*armWWos[195];
-   armWWos[167]=armWWos[195] + 6175./72.*armWWos[18] + armWWos[190] - 
-   599./8.*armWWos[19] + 1./2.*armWWos[167] + armWWos[173];
-   armWWos[197]= - 557./27. + 125*armWWos[9];
-   armWWos[198]=armWWos[17]*armWWos[99];
-   armWWos[197]=73./24.*armWWos[109] + 7./6.*armWWos[198] + 11./16.*
-   armWWos[197] - 23./3.*armWWos[10];
-   armWWos[197]=armWWos[16]*armWWos[197];
-   armWWos[199]=3*armWWos[17];
-   armWWos[200]=armWWos[199] - 7./8.*armWWos[16];
-   armWWos[200]=armWWos[16]*armWWos[200];
-   armWWos[201]=59./4.*armWWos[15] + 14./3.*armWWos[17] + 69./8.*
-   armWWos[16];
-   armWWos[201]=armWWos[15]*armWWos[201];
-   armWWos[200]=armWWos[201] + 3./2.*armWWos[142] + armWWos[200];
-   armWWos[200]=armWWos[5]*armWWos[200];
-   armWWos[151]=armWWos[151] + 5./2.*armWWos[16];
-   armWWos[151]=armWWos[16]*armWWos[151];
-   armWWos[151]= - 1./3.*armWWos[142] + armWWos[151];
-   armWWos[151]=1./4.*armWWos[100]*armWWos[151];
-   armWWos[106]=armWWos[133] + armWWos[200] + armWWos[106] + 
-   armWWos[151] + 1./2.*armWWos[167] + armWWos[197];
-   armWWos[106]=armWWos[65]*armWWos[106];
-   armWWos[167]=11./24.*armWWos[96];
-   armWWos[197]=11./12.*armWWos[74];
-   armWWos[201]=11./12.*armWWos[71] + armWWos[197] + armWWos[167] + 3./
-   2.*armWWos[73] + 1./3.*armWWos[70];
-   armWWos[201]=mmH*armWWos[201];
-   armWWos[202]=9*armWWos[84];
-   armWWos[203]=97./216. + armWWos[202];
-   armWWos[204]= - 1./3.*armWWos[9];
-   armWWos[205]= - 7./8. + armWWos[204];
-   armWWos[205]=armWWos[9]*armWWos[205];
-   armWWos[206]= - 1247./9. - 161./2.*armWWos[9];
-   armWWos[206]=1./6.*armWWos[206] + armWWos[10];
-   armWWos[206]=armWWos[10]*armWWos[206];
-   armWWos[111]=1./2.*armWWos[201] + 1./4.*armWWos[206] + 1./2.*
-   armWWos[205] - 137./48.*armWWos[14] + 15./8.*armWWos[13] - 95./8.*
-   armWWos[89] + 5./6.*armWWos[85] + armWWos[111] - 29./48.*armWWos[87]
-    - 29./48.*armWWos[81] - 29./48.*armWWos[82] + armWWos[130] - 1./3.*
-   armWWos[88] + 1./8.*armWWos[203] - 1./3.*armWWos[83];
-   armWWos[111]=mmH*armWWos[111];
-   armWWos[130]= - 327*armWWos[9];
-   armWWos[201]=45421./18. + armWWos[130];
-   armWWos[201]=1./2.*armWWos[201] + 29*armWWos[10];
-   armWWos[201]=19./4.*armWWos[109] + 1./2.*armWWos[201] + 3*
-   armWWos[198];
-   armWWos[201]=armWWos[16]*armWWos[201];
-   armWWos[189]=armWWos[199] + armWWos[189];
-   armWWos[189]=armWWos[16]*armWWos[189];
-   armWWos[142]=23./6.*armWWos[142] + armWWos[189];
-   armWWos[142]=armWWos[100]*armWWos[142];
-   armWWos[156]= - 489./2.*armWWos[66] + armWWos[156] - 197./2.*
-   armWWos[94];
-   armWWos[189]=armWWos[182] + 517./9. - 147./4.*armWWos[9];
-   armWWos[189]=armWWos[17]*armWWos[189];
-   armWWos[142]=armWWos[142] + armWWos[201] + 1./2.*armWWos[189] + 2349.
-   /8.*armWWos[18] - 151./8.*armWWos[20] + 1571./4.*armWWos[19] + 11./2.
-   *armWWos[68] - 159*armWWos[95] + 1./4.*armWWos[156] + 17./3.*
-   armWWos[67];
-   armWWos[156]= - 22003./27. - 1121*armWWos[9];
-   armWWos[156]=7*armWWos[109] + 1./4.*armWWos[156] + 31*armWWos[10];
-   armWWos[120]=8*armWWos[17] + armWWos[120];
-   armWWos[120]=armWWos[100]*armWWos[120];
-   armWWos[120]=7./2.*armWWos[144] + 1./4.*armWWos[156] + armWWos[120];
-   armWWos[120]=armWWos[15]*armWWos[120];
-   armWWos[156]= - 2*armWWos[16];
-   armWWos[189]=3./2.*armWWos[17] + armWWos[156];
-   armWWos[189]=armWWos[16]*armWWos[189];
-   armWWos[123]= - 35./4.*armWWos[15] + armWWos[123] - 109./8.*
-   armWWos[16];
-   armWWos[123]=armWWos[15]*armWWos[123];
-   armWWos[123]=armWWos[123] + armWWos[160] + armWWos[189];
-   armWWos[123]=armWWos[5]*armWWos[123];
-   armWWos[111]=armWWos[111] + armWWos[123] + 1./2.*armWWos[142] + 
-   armWWos[120];
-   armWWos[111]=armWWos[65]*armWWos[111];
-   armWWos[120]=1./2.*armWWos[8];
-   armWWos[123]=armWWos[7] + armWWos[120];
-   armWWos[142]=1./2.*armWWos[20];
-   armWWos[123]=35./2.*armWWos[18] + armWWos[142] + 11*armWWos[123] + 
-   13*armWWos[19];
-   armWWos[160]=armWWos[1]*armWWos[123];
-   armWWos[123]=armWWos[35]*armWWos[123];
-   armWWos[189]= - 23./18. + armWWos[6];
-   armWWos[189]=armWWos[1]*armWWos[189];
-   armWWos[199]=3*armWWos[6];
-   armWWos[201]= - 23./6. + armWWos[199];
-   armWWos[201]=armWWos[35]*armWWos[201];
-   armWWos[189]=armWWos[189] + armWWos[201];
-   armWWos[189]=1./2.*armWWos[17]*armWWos[189];
-   armWWos[123]=armWWos[189] + 1./3.*armWWos[160] + armWWos[123];
-   armWWos[160]= - armWWos[149]*armWWos[99];
-   armWWos[201]=armWWos[100]*armWWos[149];
-   armWWos[160]=armWWos[160] + armWWos[201];
-   armWWos[201]=armWWos[100]*armWWos[16];
-   armWWos[201]=armWWos[109] + armWWos[201];
-   armWWos[201]=armWWos[15]*armWWos[201];
-   armWWos[160]=1./2.*armWWos[160] + armWWos[201];
-   armWWos[160]=armWWos[177]*armWWos[65]*armWWos[160];
-   armWWos[201]=13./3. + armWWos[166];
-   armWWos[203]=armWWos[1]*armWWos[201];
-   armWWos[201]=armWWos[35]*armWWos[201];
-   armWWos[201]=1./3.*armWWos[203] + armWWos[201];
-   armWWos[201]=armWWos[10]*armWWos[201];
-   armWWos[203]= - 1./12.*armWWos[6] + 1./4.*armWWos[14] - 1./24.*
-   armWWos[12] - 1./4.*armWWos[25] + 4./9. + 1./4.*armWWos[28];
-   armWWos[205]=armWWos[1]*armWWos[203];
-   armWWos[203]=armWWos[35]*armWWos[203];
-   armWWos[201]=1./6.*armWWos[201] + 1./3.*armWWos[205] + armWWos[203];
-   armWWos[201]=mmH*armWWos[201];
-   armWWos[203]= - 163./24. + 4*armWWos[6];
-   armWWos[205]=armWWos[1]*armWWos[203];
-   armWWos[203]=armWWos[35]*armWWos[203];
-   armWWos[203]=1./3.*armWWos[205] + armWWos[203];
-   armWWos[203]=armWWos[16]*armWWos[203];
-   armWWos[205]= - 989./6. + 79*armWWos[6];
-   armWWos[206]=armWWos[1]*armWWos[205];
-   armWWos[205]=armWWos[35]*armWWos[205];
-   armWWos[205]=1./3.*armWWos[206] + armWWos[205];
-   armWWos[205]=armWWos[15]*armWWos[205];
-   armWWos[111]=3./4.*armWWos[160] + armWWos[111] + armWWos[201] + 1./
-   12.*armWWos[205] + 1./2.*armWWos[123] + armWWos[203];
-   armWWos[111]=armWWos[177]*armWWos[111];
-   armWWos[123]=7*armWWos[7];
-   armWWos[160]=1./6.*armWWos[20];
-   armWWos[203]=5./18.*armWWos[18] + armWWos[160] - 19./9.*armWWos[19]
-    + armWWos[123] + 17./18.*armWWos[8];
-   armWWos[203]=armWWos[1]*armWWos[203];
-   armWWos[205]=21*armWWos[7];
-   armWWos[206]=5./6.*armWWos[18] + armWWos[142] - 19./3.*armWWos[19]
-    + armWWos[205] + 17./6.*armWWos[8];
-   armWWos[206]=armWWos[35]*armWWos[206];
-   armWWos[207]= - 41./6. - 61*armWWos[6];
-   armWWos[208]=armWWos[1]*armWWos[207];
-   armWWos[207]=armWWos[35]*armWWos[207];
-   armWWos[207]=1./3.*armWWos[208] + armWWos[207];
-   armWWos[207]=armWWos[16]*armWWos[207];
-   armWWos[203]=1./6.*armWWos[207] + armWWos[189] + armWWos[203] + 
-   armWWos[206];
-   armWWos[206]= - 235./8. + 23./3.*armWWos[6];
-   armWWos[207]=armWWos[1]*armWWos[206];
-   armWWos[206]=armWWos[35]*armWWos[206];
-   armWWos[206]=1./3.*armWWos[207] + armWWos[206];
-   armWWos[206]=armWWos[15]*armWWos[206];
-   armWWos[106]=armWWos[111] + armWWos[106] + armWWos[201] + 1./2.*
-   armWWos[203] + armWWos[206];
-   armWWos[106]=armWWos[177]*armWWos[106];
-   armWWos[111]= - 2449./6. - 307*armWWos[9];
-   armWWos[107]=armWWos[119] + armWWos[115] + armWWos[112] + 1./12.*
-   armWWos[111] + armWWos[107];
-   armWWos[107]=armWWos[15]*armWWos[107];
-   armWWos[111]=armWWos[165] - 467./3.*armWWos[66];
-   armWWos[111]= - 365./6.*armWWos[95] + 1./2.*armWWos[111] + 
-   armWWos[168];
-   armWWos[111]=armWWos[195] + 127./72.*armWWos[18] + armWWos[190] + 
-   2315./24.*armWWos[19] + 1./2.*armWWos[111] + armWWos[173];
-   armWWos[112]=35633./9. + 989*armWWos[9];
-   armWWos[112]=73./8.*armWWos[109] + 7./2.*armWWos[198] + 1./16.*
-   armWWos[112] - 11*armWWos[10];
-   armWWos[112]=armWWos[16]*armWWos[112];
-   armWWos[107]=armWWos[133] + armWWos[200] + armWWos[107] + 
-   armWWos[151] + 1./2.*armWWos[111] + 1./3.*armWWos[112];
-   armWWos[107]=armWWos[65]*armWWos[107];
-   armWWos[111]=1453./3. + 1429*armWWos[9];
-   armWWos[111]=1./36.*armWWos[111] + armWWos[10];
-   armWWos[112]=armWWos[17] + 11./2.*armWWos[16];
-   armWWos[112]=armWWos[100]*armWWos[112];
-   armWWos[111]=1./4.*armWWos[144] + 1./6.*armWWos[112] + 1./4.*
-   armWWos[111] + 2*armWWos[109];
-   armWWos[111]=armWWos[15]*armWWos[111];
-   armWWos[112]=13./16. - armWWos[83];
-   armWWos[112]=17./8.*armWWos[81] + 17./8.*armWWos[82] + armWWos[161]
-    + 1./2.*armWWos[112] - armWWos[88];
-   armWWos[115]= - 1./2. - armWWos[9];
-   armWWos[115]=armWWos[9]*armWWos[115];
-   armWWos[119]=1./2.*armWWos[9];
-   armWWos[133]= - 1./3. + armWWos[119];
-   armWWos[133]=armWWos[10]*armWWos[133];
-   armWWos[144]=1./2.*armWWos[96] + armWWos[74];
-   armWWos[151]=armWWos[144] + 7./3.*armWWos[71];
-   armWWos[151]=mmH*armWWos[151];
-   armWWos[112]=1./4.*armWWos[151] + 29./12.*armWWos[133] + 1./12.*
-   armWWos[115] - 23./24.*armWWos[14] - 1./3.*armWWos[13] - 16./9.*
-   armWWos[89] + 1./12.*armWWos[85] + 155./48.*armWWos[91] + 1./3.*
-   armWWos[112] + 1./8.*armWWos[87];
-   armWWos[112]=mmH*armWWos[112];
-   armWWos[115]= - 4271./9. - 313./2.*armWWos[9];
-   armWWos[115]=1./6.*armWWos[115] - armWWos[10];
-   armWWos[133]= - armWWos[17]*armWWos[99];
-   armWWos[151]=2./3.*armWWos[109];
-   armWWos[115]=armWWos[151] + 1./4.*armWWos[115] + 1./3.*armWWos[133];
-   armWWos[115]=armWWos[16]*armWWos[115];
-   armWWos[133]= - 119*armWWos[94] + 1031./6.*armWWos[66];
-   armWWos[133]= - 2051./6.*armWWos[18] + 73./6.*armWWos[20] - 815./4.*
-   armWWos[19] + 25*armWWos[68] + 151./2.*armWWos[95] + 1./2.*
-   armWWos[133] + armWWos[67];
-   armWWos[161]=13 + 43./6.*armWWos[9];
-   armWWos[161]=armWWos[17]*armWWos[161];
-   armWWos[133]=1./3.*armWWos[133] + armWWos[161];
-   armWWos[161]=armWWos[17] + 3./4.*armWWos[16];
-   armWWos[161]=armWWos[16]*armWWos[161];
-   armWWos[165]=17./2.*armWWos[16] - armWWos[15];
-   armWWos[165]=armWWos[15]*armWWos[165];
-   armWWos[161]=3*armWWos[161] + armWWos[165];
-   armWWos[161]=armWWos[5]*armWWos[161];
-   armWWos[165]= - 1./3.*armWWos[17] + 3./2.*armWWos[16];
-   armWWos[165]=armWWos[100]*armWWos[16]*armWWos[165];
-   armWWos[111]=armWWos[112] + 1./2.*armWWos[161] + armWWos[111] + 1./4.
-   *armWWos[165] + 1./4.*armWWos[133] + armWWos[115];
-   armWWos[111]=armWWos[65]*armWWos[111];
-   armWWos[112]= - 3*armWWos[87];
-   armWWos[115]= - 1./3.*armWWos[91] + armWWos[112] + armWWos[81] - 61./
-   36. + armWWos[82];
-   armWWos[133]= - 7 + 13./6.*armWWos[9];
-   armWWos[133]=armWWos[10]*armWWos[133];
-   armWWos[161]= - 1./2.*armWWos[96] - armWWos[74];
-   armWWos[165]=armWWos[161] - armWWos[71];
-   armWWos[165]=mmH*armWWos[165];
-   armWWos[115]=1./3.*armWWos[165] + 1./3.*armWWos[133] + 5./18.*
-   armWWos[9] + armWWos[134] + armWWos[13] - armWWos[89] + 1./2.*
-   armWWos[115] + 7./3.*armWWos[85];
-   armWWos[115]=mmH*armWWos[115];
-   armWWos[133]= - 17 + armWWos[179];
-   armWWos[133]=23./36.*armWWos[133] + armWWos[10];
-   armWWos[133]=1./2.*armWWos[133] + 1./3.*armWWos[198];
-   armWWos[133]=1./2.*armWWos[133] + armWWos[151];
-   armWWos[133]=armWWos[16]*armWWos[133];
-   armWWos[134]=11./2.*armWWos[9];
-   armWWos[151]=43./9. + armWWos[134];
-   armWWos[109]=1./4.*armWWos[151] + armWWos[109];
-   armWWos[109]=armWWos[15]*armWWos[109];
-   armWWos[151]= - armWWos[15]*armWWos[16];
-   armWWos[151]=armWWos[149] + armWWos[151];
-   armWWos[151]=armWWos[5]*armWWos[151];
-   armWWos[165]= - 1./9. + 1./4.*armWWos[9];
-   armWWos[165]=armWWos[17]*armWWos[165];
-   armWWos[165]=armWWos[165] - 355./36.*armWWos[18] - 43./36.*
-   armWWos[20] - 121./12.*armWWos[19] + 11./6.*armWWos[68] + 7./3.*
-   armWWos[95] - 41./36.*armWWos[94] + 3*armWWos[66];
-   armWWos[109]=1./8.*armWWos[115] + 1./8.*armWWos[151] + armWWos[109]
-    + 1./4.*armWWos[165] + armWWos[133];
-   armWWos[109]=armWWos[65]*armWWos[109];
-   armWWos[115]= - 5./2.*armWWos[19] + armWWos[132] + armWWos[95];
-   armWWos[115]=1./2.*armWWos[115] - armWWos[18];
-   armWWos[132]= - 1 - 7./18.*armWWos[9];
-   armWWos[132]=armWWos[16]*armWWos[132];
-   armWWos[133]=1 + 7./9.*armWWos[9];
-   armWWos[133]=armWWos[15]*armWWos[133];
-   armWWos[151]= - 1 - armWWos[91];
-   armWWos[151]=mmH*armWWos[151];
-   armWWos[115]=1./12.*armWWos[151] + 1./4.*armWWos[133] + 1./3.*
-   armWWos[115] + 1./2.*armWWos[132];
-   armWWos[115]=armWWos[121]*armWWos[65]*armWWos[115];
-   armWWos[132]=armWWos[18] + 3*armWWos[8] - armWWos[19];
-   armWWos[132]=armWWos[1]*armWWos[132];
-   armWWos[133]= - 11*armWWos[19];
-   armWWos[151]=11*armWWos[18] + 17*armWWos[8] + armWWos[133];
-   armWWos[151]=armWWos[35]*armWWos[151];
-   armWWos[132]=armWWos[132] + 1./9.*armWWos[151];
-   armWWos[151]= - armWWos[1] - 5./9.*armWWos[35];
-   armWWos[151]=armWWos[16]*armWWos[151];
-   armWWos[165]= - armWWos[1] - 11./9.*armWWos[35];
-   armWWos[168]=armWWos[15]*armWWos[165];
-   armWWos[109]=1./4.*armWWos[115] + armWWos[109] + 5./24.*armWWos[168]
-    + 1./4.*armWWos[132] + 2./3.*armWWos[151];
-   armWWos[109]=armWWos[121]*armWWos[109];
-   armWWos[115]=5./3.*armWWos[18] + 4./3.*armWWos[8] - armWWos[19];
-   armWWos[115]=armWWos[1]*armWWos[115];
-   armWWos[132]=55*armWWos[18] + 40*armWWos[8] - 37*armWWos[19];
-   armWWos[132]=armWWos[35]*armWWos[132];
-   armWWos[115]=armWWos[115] + 1./27.*armWWos[132];
-   armWWos[132]= - 71./3. + 11./4.*armWWos[6];
-   armWWos[132]=armWWos[1]*armWWos[132];
-   armWWos[151]= - 179./9. + 1./4.*armWWos[6];
-   armWWos[151]=armWWos[35]*armWWos[151];
-   armWWos[132]=armWWos[132] + armWWos[151];
-   armWWos[132]=armWWos[16]*armWWos[132];
-   armWWos[151]= - 235./3. + armWWos[6];
-   armWWos[151]=armWWos[1]*armWWos[151];
-   armWWos[168]= - 835./27. + armWWos[6];
-   armWWos[168]=armWWos[35]*armWWos[168];
-   armWWos[151]=1./3.*armWWos[151] + armWWos[168];
-   armWWos[151]=armWWos[15]*armWWos[151];
-   armWWos[109]=armWWos[109] + armWWos[111] + 1./12.*armWWos[151] + 2*
-   armWWos[115] + 1./9.*armWWos[132];
-   armWWos[109]=armWWos[121]*armWWos[109];
-   armWWos[111]= - 91./18.*armWWos[18] + armWWos[160] - 13./9.*
-   armWWos[19] + armWWos[123] + 65./18.*armWWos[8];
-   armWWos[111]=armWWos[1]*armWWos[111];
-   armWWos[115]= - 145./18.*armWWos[18] + armWWos[142] - 31./9.*
-   armWWos[19] + armWWos[205] + 131./18.*armWWos[8];
-   armWWos[115]=armWWos[35]*armWWos[115];
-   armWWos[123]=79./6. - armWWos[6];
-   armWWos[123]=armWWos[1]*armWWos[123];
-   armWWos[132]= - 115./18. - 17*armWWos[6];
-   armWWos[132]=armWWos[35]*armWWos[132];
-   armWWos[123]=1./3.*armWWos[123] + armWWos[132];
-   armWWos[123]=armWWos[16]*armWWos[123];
-   armWWos[111]=1./6.*armWWos[123] + armWWos[189] + armWWos[111] + 
-   armWWos[115];
-   armWWos[115]=23*armWWos[6];
-   armWWos[123]=191./8. + armWWos[115];
-   armWWos[123]=armWWos[1]*armWWos[123];
-   armWWos[115]= - 1865./72. + armWWos[115];
-   armWWos[115]=armWWos[35]*armWWos[115];
-   armWWos[115]=1./3.*armWWos[123] + armWWos[115];
-   armWWos[115]=armWWos[15]*armWWos[115];
-   armWWos[107]=armWWos[109] + armWWos[107] + armWWos[201] + 1./2.*
-   armWWos[111] + 1./3.*armWWos[115];
-   armWWos[107]=armWWos[121]*armWWos[107];
-   armWWos[109]= - armWWos[16]*armWWos[9];
-   armWWos[111]=1 - armWWos[9];
-   armWWos[115]=armWWos[15]*armWWos[111];
-   armWWos[109]=4*armWWos[115] + 2*armWWos[109] - 4*armWWos[18] - 2*
-   armWWos[66] + 17./3.*armWWos[19];
-   armWWos[109]=armWWos[65]*armWWos[109];
-   armWWos[101]=armWWos[101] + armWWos[103] + armWWos[107] + 8*
-   armWWos[109] + armWWos[106];
-   armWWos[101]=armWWos[2]*armWWos[101];
-   armWWos[103]= - 7./4. - armWWos[58];
-   armWWos[103]=1./2.*armWWos[103] - armWWos[60];
-   armWWos[106]=pow(armWWos[97],2);
-   armWWos[103]=mmZ*armWWos[106]*armWWos[103];
-   armWWos[107]=3*armWWos[155] + armWWos[48];
-   armWWos[109]=1./2.*armWWos[55] - 3./8. + armWWos[56];
-   armWWos[109]= - 3./4.*armWWos[39] + 1./2.*armWWos[109] + armWWos[30]
-   ;
-   armWWos[109]=armWWos[32]*armWWos[109];
-   armWWos[115]= - armWWos[63] + armWWos[120];
-   armWWos[115]=armWWos[97]*armWWos[115];
-   armWWos[120]=3./2.*armWWos[115] - 1./4.*armWWos[60] + 103./16. + 
-   armWWos[58];
-   armWWos[120]=armWWos[97]*armWWos[120];
-   armWWos[123]= - 205 - 9*armWWos[55];
-   armWWos[123]= - 11*armWWos[13] + 9./8.*armWWos[39] + 9./8.*
-   armWWos[60] - 9./4.*armWWos[58] + 1./8.*armWWos[123] + 11*
-   armWWos[52];
-   armWWos[123]=armWWos[98]*armWWos[123];
-   armWWos[132]=2./3.*armWWos[10] + armWWos[14] - 6*armWWos[57] - 53./
-   12. - armWWos[49];
-   armWWos[132]=armWWos[100]*armWWos[132];
-   armWWos[151]=1 - armWWos[10];
-   armWWos[151]=armWWos[100]*armWWos[151];
-   armWWos[151]=81./512.*armWWos[98] + armWWos[151];
-   armWWos[151]=armWWos[33]*armWWos[151];
-   armWWos[155]=armWWos[16]*armWWos[106];
-   armWWos[160]= - armWWos[9]*armWWos[98];
-   armWWos[103]=3./4.*armWWos[103] + armWWos[151] + armWWos[132] + 3./4.
-   *armWWos[155] + 99./64.*armWWos[160] + 9./64.*armWWos[123] + 1./2.*
-   armWWos[120] + 2*armWWos[107] + armWWos[109];
-   armWWos[103]=mmZ*armWWos[103];
-   armWWos[107]=armWWos[36] + armWWos[8];
-   armWWos[107]= - armWWos[19] - 3*armWWos[40] + 1./2.*armWWos[107] + 2
-   *armWWos[38];
-   armWWos[109]= - 6*armWWos[18];
-   armWWos[102]= - armWWos[17] + armWWos[102];
-   armWWos[102]=armWWos[33]*armWWos[102];
-   armWWos[120]= - 3 + armWWos[33];
-   armWWos[120]=armWWos[15]*armWWos[120];
-   armWWos[123]=7./2. + 3*armWWos[33];
-   armWWos[123]=mmZ*armWWos[123];
-   armWWos[102]=armWWos[110] + armWWos[123] + 3*armWWos[120] + 1./2.*
-   armWWos[102] - 9./2.*armWWos[16] + 1./2.*armWWos[17] + armWWos[109]
-    + 3*armWWos[107] + armWWos[180];
-   armWWos[102]=armWWos[5]*armWWos[102];
-   armWWos[107]= - 7./2.*armWWos[14];
-   armWWos[110]=armWWos[139] + armWWos[107] + armWWos[181] - 
-   armWWos[59] + armWWos[146] + 7./4. + armWWos[188];
-   armWWos[110]=armWWos[100]*armWWos[110];
-   armWWos[120]=19./2. - armWWos[33];
-   armWWos[123]= - armWWos[5]*armWWos[34];
-   armWWos[132]=21*armWWos[123];
-   armWWos[120]=1./2.*armWWos[120] + armWWos[132];
-   armWWos[120]=armWWos[5]*armWWos[120];
-   armWWos[139]= - armWWos[45] - 1./2.*armWWos[43];
-   armWWos[146]= - 2*armWWos[48];
-   armWWos[124]= - mmt*armWWos[124];
-   armWWos[110]=18*armWWos[124] + 3*armWWos[120] + armWWos[196] + 
-   armWWos[110] - 2*armWWos[44] + 7*armWWos[139] + armWWos[146];
-   armWWos[110]=mmt*armWWos[110];
-   armWWos[120]= - 18919./1536. + armWWos[174];
-   armWWos[139]=armWWos[32] - 81./64.*armWWos[98];
-   armWWos[139]=armWWos[16]*armWWos[139];
-   armWWos[120]= - 5./4.*armWWos[33] + 1./2.*armWWos[178] + 1./4.*
-   armWWos[139] + 1./3.*armWWos[120] + armWWos[171];
-   armWWos[120]=armWWos[33]*armWWos[120];
-   armWWos[139]=armWWos[9]*armWWos[98];
-   armWWos[151]=33./4.*armWWos[139] - 561./32.*armWWos[98] + 
-   armWWos[32] - 61*armWWos[97];
-   armWWos[168]=2 - armWWos[10];
-   armWWos[168]=armWWos[100]*armWWos[168];
-   armWWos[171]=81./32.*armWWos[98] - armWWos[32] + 9./2.*armWWos[97];
-   armWWos[171]=armWWos[33]*armWWos[171];
-   armWWos[173]=mmZ*armWWos[106];
-   armWWos[151]=9./8.*armWWos[173] + 1./4.*armWWos[171] + 3./4.*
-   armWWos[151] + 2*armWWos[168];
-   armWWos[151]=armWWos[34]*armWWos[151];
-   armWWos[168]=78289./3456. - 33*armWWos[50];
-   armWWos[147]= - armWWos[63] + armWWos[147];
-   armWWos[171]=armWWos[147] + armWWos[38];
-   armWWos[171]=armWWos[32]*armWWos[171];
-   armWWos[174]= - 57./2.*armWWos[40] - 9./8.*armWWos[38] - 1./8.*
-   armWWos[8] + 1./4.*armWWos[63] + 15*armWWos[61];
-   armWWos[174]=armWWos[97]*armWWos[174];
-   armWWos[178]=armWWos[32] + 3./2.*armWWos[97];
-   armWWos[178]=armWWos[19]*armWWos[178];
-   armWWos[179]=armWWos[32] - 111./4.*armWWos[97];
-   armWWos[179]=armWWos[18]*armWWos[179];
-   armWWos[181]= - 11*armWWos[18] - 33./16.*armWWos[19] - 155./8.*
-   armWWos[40] + 3./8.*armWWos[36] + 11*armWWos[61];
-   armWWos[181]=armWWos[98]*armWWos[181];
-   armWWos[188]=8./3. - 5*armWWos[6];
-   armWWos[189]=armWWos[1]*armWWos[188];
-   armWWos[188]=armWWos[35]*armWWos[188];
-   armWWos[190]= - 7./3.*armWWos[10];
-   armWWos[195]=63./64.*armWWos[98] + armWWos[32] - armWWos[97];
-   armWWos[195]=armWWos[16]*armWWos[195];
-   armWWos[196]=17./6.*armWWos[17] - armWWos[18] + armWWos[142] - 2*
-   armWWos[62] + armWWos[38];
-   armWWos[196]=armWWos[100]*armWWos[196];
-   armWWos[198]=armWWos[32] - 9./4.*armWWos[97];
-   armWWos[198]=1./2.*armWWos[198] + armWWos[100];
-   armWWos[198]=armWWos[33]*armWWos[198];
-   armWWos[198]=armWWos[198] - 2./3.*armWWos[100] + 33./32.*armWWos[98]
-    - armWWos[32] + 39./4.*armWWos[97];
-   armWWos[198]=armWWos[15]*armWWos[198];
-   armWWos[200]= - armWWos[40]*armWWos[32];
-   armWWos[102]=armWWos[110] + armWWos[102] + armWWos[151] + 
-   armWWos[103] + armWWos[198] + armWWos[120] + armWWos[196] + 1./4.*
-   armWWos[195] + armWWos[190] + 1./3.*armWWos[188] + 1./9.*
-   armWWos[189] + 1837./64.*armWWos[9] + 3./16.*armWWos[181] + 1./2.*
-   armWWos[179] - armWWos[14] + 1./4.*armWWos[178] + armWWos[174] + 957.
-   /64.*armWWos[13] + armWWos[200] + 1./2.*armWWos[171] - 2*armWWos[57]
-    + 1681./512.*armWWos[39] + 21./8.*armWWos[30] + armWWos[49] + 145./
-   512.*armWWos[60] + 207./256.*armWWos[58] - 33./8.*armWWos[27] - 165./
-   64.*armWWos[52] - 657./512.*armWWos[55] + 1./4.*armWWos[168] + 
-   armWWos[135];
-   armWWos[102]=armWWos[177]*armWWos[102];
-   armWWos[103]=armWWos[113] + 2*armWWos[46];
-   armWWos[110]= - 5*armWWos[45];
-   armWWos[103]= - armWWos[48] - 3*armWWos[43] + 2./3.*armWWos[103] + 
-   armWWos[110];
-   armWWos[113]=armWWos[60] - 307./4. - armWWos[58];
-   armWWos[120]=armWWos[63] - 1./2.*armWWos[8];
-   armWWos[135]=armWWos[97]*armWWos[120];
-   armWWos[113]=1./6.*armWWos[113] + armWWos[135];
-   armWWos[113]=armWWos[97]*armWWos[113];
-   armWWos[135]=1 + armWWos[187];
-   armWWos[135]=1./2.*armWWos[135] + armWWos[60];
-   armWWos[135]=mmZ*armWWos[106]*armWWos[135];
-   armWWos[151]= - 1./2.*armWWos[58] - 5./6.*armWWos[55] + 1./8. - 
-   armWWos[56];
-   armWWos[151]=11./12.*armWWos[39] + 1./2.*armWWos[151] - armWWos[30];
-   armWWos[151]=armWWos[32]*armWWos[151];
-   armWWos[168]=3067 + 123*armWWos[55];
-   armWWos[168]=165*armWWos[13] - 123./8.*armWWos[39] - 123./8.*
-   armWWos[60] + 123./4.*armWWos[58] + 1./8.*armWWos[168] - 165*
-   armWWos[52];
-   armWWos[168]=armWWos[98]*armWWos[168];
-   armWWos[171]= - armWWos[16]*armWWos[106];
-   armWWos[174]= - 2./3.*armWWos[10] - armWWos[14] + 6*armWWos[57] + 53.
-   /12. + armWWos[49];
-   armWWos[174]=armWWos[100]*armWWos[174];
-   armWWos[178]= - 369./512.*armWWos[98] + armWWos[194];
-   armWWos[178]=armWWos[33]*armWWos[178];
-   armWWos[103]=armWWos[135] + armWWos[178] + armWWos[174] + 1./4.*
-   armWWos[171] + 495./64.*armWWos[139] + 3./64.*armWWos[168] + 1./4.*
-   armWWos[113] + 2*armWWos[103] + armWWos[151];
-   armWWos[103]=mmZ*armWWos[103];
-   armWWos[113]= - 85./9.*armWWos[32] - 369./32.*armWWos[98];
-   armWWos[113]=armWWos[33]*armWWos[113];
-   armWWos[135]= - mmZ*armWWos[106];
-   armWWos[113]=3./4.*armWWos[135] + 1./2.*armWWos[113] + 495./8.*
-   armWWos[160] + 7387./64.*armWWos[98] + 73./18.*armWWos[32] - 
-   armWWos[97];
-   armWWos[113]=armWWos[34]*armWWos[113];
-   armWWos[122]=3./2.*armWWos[122] + armWWos[156] + armWWos[211] - 
-   armWWos[36] + armWWos[8];
-   armWWos[135]= - 11./3. - armWWos[33];
-   armWWos[135]=mmZ*armWWos[135];
-   armWWos[151]=2*armWWos[34];
-   armWWos[135]=armWWos[151] + armWWos[122] + armWWos[135];
-   armWWos[135]=armWWos[5]*armWWos[135];
-   armWWos[156]= - armWWos[47] - 1./3.*armWWos[41];
-   armWWos[168]=armWWos[156] + 2./3.*armWWos[46];
-   armWWos[123]=42*armWWos[123] - 13./2. - armWWos[33];
-   armWWos[123]=armWWos[5]*armWWos[123];
-   armWWos[171]=12*armWWos[124];
-   armWWos[168]=armWWos[171] + armWWos[123] + 23./6.*armWWos[43] + 2*
-   armWWos[168] - 3*armWWos[45];
-   armWWos[168]=mmt*armWWos[168];
-   armWWos[174]=armWWos[128] + armWWos[215];
-   armWWos[174]=armWWos[19]*armWWos[174];
-   armWWos[178]=1./2.*armWWos[32] - armWWos[97];
-   armWWos[179]= - 215./128.*armWWos[98];
-   armWWos[178]=1./3.*armWWos[178] + armWWos[179];
-   armWWos[178]=armWWos[16]*armWWos[178];
-   armWWos[181]= - 25./3.*armWWos[42] + 28489./1536. + 8*armWWos[53];
-   armWWos[187]= - 7./8.*armWWos[36] - 11*armWWos[61];
-   armWWos[187]=121*armWWos[18] + 523./16.*armWWos[19] + 11*
-   armWWos[187] + 1721./8.*armWWos[40];
-   armWWos[187]=armWWos[98]*armWWos[187];
-   armWWos[128]=armWWos[128] + 369./64.*armWWos[98];
-   armWWos[128]=armWWos[16]*armWWos[128];
-   armWWos[128]= - 113./9.*armWWos[33] + armWWos[128] - 12307./384. + 
-   armWWos[9];
-   armWWos[128]=armWWos[33]*armWWos[128];
-   armWWos[126]=armWWos[63] + armWWos[126];
-   armWWos[126]=1./3.*armWWos[32]*armWWos[126];
-   armWWos[120]=1./3.*armWWos[120] + 1./2.*armWWos[40];
-   armWWos[120]=armWWos[97]*armWWos[120];
-   armWWos[188]=1./2.*armWWos[120];
-   armWWos[189]= - armWWos[15]*armWWos[98];
-   armWWos[102]=armWWos[102] + armWWos[168] + armWWos[135] + 1./2.*
-   armWWos[113] + armWWos[103] + 121./32.*armWWos[189] + 1./4.*
-   armWWos[128] + 1./2.*armWWos[178] - 1265./64.*armWWos[9] + 1./16.*
-   armWWos[187] + 1./4.*armWWos[174] + armWWos[188] - 17./64.*
-   armWWos[13] + 79./36.*armWWos[200] + armWWos[126] - 659./1536.*
-   armWWos[39] - 19./36.*armWWos[30] + 143./512.*armWWos[60] - 4045./
-   768.*armWWos[58] + 5./24.*armWWos[27] - 1093./192.*armWWos[52] + 659.
-   /1536.*armWWos[55] + 1./3.*armWWos[181] + 23./4.*armWWos[50];
-   armWWos[102]=armWWos[177]*armWWos[102];
-   armWWos[103]= - 121./3. + 5*armWWos[55];
-   armWWos[103]=5./8.*armWWos[103] + 37*armWWos[52];
-   armWWos[113]=1./8.*armWWos[36] + armWWos[61];
-   armWWos[113]= - 1./3.*armWWos[18] + 1./48.*armWWos[19] + 1./3.*
-   armWWos[113] - 7./8.*armWWos[40];
-   armWWos[113]=armWWos[98]*armWWos[113];
-   armWWos[128]= - armWWos[16]*armWWos[98];
-   armWWos[135]= - 1./2. + armWWos[148];
-   armWWos[135]=armWWos[33]*armWWos[135];
-   armWWos[103]=25./12.*armWWos[159] + 25./32.*armWWos[135] + 125./96.*
-   armWWos[128] - 277./72.*armWWos[9] + 25./2.*armWWos[113] - 151./24.*
-   armWWos[13] - 25./64.*armWWos[39] - 25./64.*armWWos[60] - 565./96.*
-   armWWos[58] + 1./8.*armWWos[103] + 5./3.*armWWos[27];
-   armWWos[113]=3 + 1./3.*armWWos[55];
-   armWWos[113]=1./9.*armWWos[13] - 1./24.*armWWos[39] - 1./24.*
-   armWWos[60] + 1./12.*armWWos[58] + 1./8.*armWWos[113] - 1./9.*
-   armWWos[52];
-   armWWos[113]=armWWos[98]*armWWos[113];
-   armWWos[128]= - armWWos[33]*armWWos[98];
-   armWWos[113]=1./24.*armWWos[128] + armWWos[113] + 1./9.*armWWos[139]
-   ;
-   armWWos[113]=mmZ*armWWos[113];
-   armWWos[135]=1./8.*armWWos[128] - 5./8.*armWWos[98] + 1./3.*
-   armWWos[160];
-   armWWos[135]=armWWos[34]*armWWos[135];
-   armWWos[103]=25./6.*armWWos[135] + 1./3.*armWWos[103] + 25./8.*
-   armWWos[113];
-   armWWos[103]=armWWos[121]*armWWos[103];
-   armWWos[113]= - 4819./9. + 163*armWWos[55];
-   armWWos[113]=1./8.*armWWos[113] + 1733./9.*armWWos[52];
-   armWWos[135]=armWWos[32]*armWWos[147];
-   armWWos[113]=1./4.*armWWos[120] - 2437./288.*armWWos[13] + 11./4.*
-   armWWos[200] + 11./2.*armWWos[135] - 163./256.*armWWos[39] + 5./24.*
-   armWWos[30] - 2057./768.*armWWos[60] - 151./384.*armWWos[58] + 1./32.
-   *armWWos[113] + 22./9.*armWWos[27];
-   armWWos[120]= - 1 - armWWos[58];
-   armWWos[135]=armWWos[32]*armWWos[120];
-   armWWos[147]=1 + armWWos[58];
-   armWWos[147]=armWWos[97]*armWWos[147];
-   armWWos[135]=1./12.*armWWos[147] + armWWos[116] + 11./2.*
-   armWWos[135];
-   armWWos[147]=31 + 7./3.*armWWos[55];
-   armWWos[147]=37./9.*armWWos[13] - 7./24.*armWWos[39] - 7./24.*
-   armWWos[60] + 7./12.*armWWos[58] + 1./8.*armWWos[147] - 37./9.*
-   armWWos[52];
-   armWWos[147]=armWWos[98]*armWWos[147];
-   armWWos[135]=35./384.*armWWos[128] + 185./144.*armWWos[139] + 1./3.*
-   armWWos[135] + 5./16.*armWWos[147];
-   armWWos[135]=mmZ*armWWos[135];
-   armWWos[128]=35./32.*armWWos[128] + 185./12.*armWWos[160] + 
-   armWWos[145] - 3025./96.*armWWos[98];
-   armWWos[128]=armWWos[34]*armWWos[128];
-   armWWos[145]=121./6. - armWWos[33];
-   armWWos[132]=1./2.*armWWos[145] + armWWos[132];
-   armWWos[132]=armWWos[5]*armWWos[132];
-   armWWos[145]=2*armWWos[43] + armWWos[116];
-   armWWos[124]=6*armWWos[124] + 1./3.*armWWos[145] + armWWos[132];
-   armWWos[124]=mmt*armWWos[124];
-   armWWos[132]=35./32.*armWWos[148] - 35./64. - armWWos[9];
-   armWWos[145]=1./3.*armWWos[33];
-   armWWos[132]=1./2.*armWWos[132] + armWWos[145];
-   armWWos[132]=armWWos[33]*armWWos[132];
-   armWWos[147]=17*armWWos[36] + 5*armWWos[8];
-   armWWos[133]=55./6.*mmZ - 55./6.*armWWos[16] + armWWos[133] + 1./2.*
-   armWWos[147] - 17*armWWos[40];
-   armWWos[133]=1./3.*armWWos[133] + armWWos[34];
-   armWWos[133]=armWWos[5]*armWWos[133];
-   armWWos[147]= - 103./8.*armWWos[36] + 47*armWWos[61];
-   armWWos[147]= - 47./9.*armWWos[18] + 227./144.*armWWos[19] + 1./9.*
-   armWWos[147] - 63./8.*armWWos[40];
-   armWWos[147]=armWWos[98]*armWWos[147];
-   armWWos[148]=925./192.*armWWos[98] + armWWos[140] - 1./6.*
-   armWWos[97];
-   armWWos[148]=armWWos[16]*armWWos[148];
-   armWWos[103]=1./8.*armWWos[103] + armWWos[124] + armWWos[133] + 1./6.
-   *armWWos[128] + 1./2.*armWWos[135] + 235./144.*armWWos[159] + 1./6.*
-   armWWos[132] + 1./6.*armWWos[148] - 5911./2592.*armWWos[9] + 1./3.*
-   armWWos[113] + 5./8.*armWWos[147];
-   armWWos[103]=armWWos[121]*armWWos[103];
-   armWWos[113]= - 11*armWWos[39] + 13*armWWos[58] + 19./4. + 11*
-   armWWos[55];
-   armWWos[113]=armWWos[32]*armWWos[113];
-   armWWos[113]=armWWos[116] + 1./4.*armWWos[113];
-   armWWos[116]= - 1./9.*armWWos[60] + 5./12. + armWWos[58];
-   armWWos[115]=1./2.*armWWos[116] + 1./3.*armWWos[115];
-   armWWos[115]=armWWos[97]*armWWos[115];
-   armWWos[116]=mmZ*armWWos[106]*armWWos[120];
-   armWWos[120]= - 3343 - 941./3.*armWWos[55];
-   armWWos[120]= - 2201./9.*armWWos[13] + 941./24.*armWWos[39] + 941./
-   24.*armWWos[60] - 941./12.*armWWos[58] + 1./8.*armWWos[120] + 2201./
-   9.*armWWos[52];
-   armWWos[120]=armWWos[98]*armWWos[120];
-   armWWos[124]=armWWos[33]*armWWos[98];
-   armWWos[113]=1./24.*armWWos[116] + 941./1536.*armWWos[124] + 1./12.*
-   armWWos[155] + 2201./576.*armWWos[160] + 1./64.*armWWos[120] + 1./3.
-   *armWWos[113] + 1./4.*armWWos[115];
-   armWWos[113]=mmZ*armWWos[113];
-   armWWos[115]= - 3*armWWos[9];
-   armWWos[116]=armWWos[140] - 941./64.*armWWos[98];
-   armWWos[116]=armWWos[16]*armWWos[116];
-   armWWos[116]=armWWos[145] + 1./3.*armWWos[116] + 455./1152. + 
-   armWWos[115];
-   armWWos[116]=armWWos[33]*armWWos[116];
-   armWWos[120]=armWWos[152] + 941./32.*armWWos[98];
-   armWWos[120]=armWWos[33]*armWWos[120];
-   armWWos[120]=1./4.*armWWos[173] + 1./6.*armWWos[120] + 2201./72.*
-   armWWos[139] - 17485./576.*armWWos[98] + 7./6.*armWWos[32] - 
-   armWWos[97];
-   armWWos[120]=armWWos[34]*armWWos[120];
-   armWWos[124]= - 4./3. + armWWos[33];
-   armWWos[124]=mmZ*armWWos[124];
-   armWWos[122]=armWWos[151] + armWWos[122] + armWWos[124];
-   armWWos[122]=armWWos[5]*armWWos[122];
-   armWWos[110]=armWWos[146] + armWWos[110] + 11./2.*armWWos[43];
-   armWWos[110]=armWWos[171] + 1./3.*armWWos[110] + armWWos[123];
-   armWWos[110]=mmt*armWWos[110];
-   armWWos[123]=71./1152.*armWWos[39] + 103./27.*armWWos[30] + 143./128.
-   *armWWos[60] - 4711./576.*armWWos[58] - 179./54.*armWWos[27] + 2963./
-   432.*armWWos[52] - 71./1152.*armWWos[55] - 258031./10368. + 3*
-   armWWos[50];
-   armWWos[124]=armWWos[140] + 1./2.*armWWos[97];
-   armWWos[124]=armWWos[19]*armWWos[124];
-   armWWos[128]=107*armWWos[18] - 2527./16.*armWWos[19] + 1067./8.*
-   armWWos[40] + 793./8.*armWWos[36] - 107*armWWos[61];
-   armWWos[128]=armWWos[98]*armWWos[128];
-   armWWos[132]=armWWos[179] - 5./2.*armWWos[32] - 1./3.*armWWos[97];
-   armWWos[132]=armWWos[16]*armWWos[132];
-   armWWos[103]=armWWos[103] + armWWos[110] + armWWos[122] + 1./2.*
-   armWWos[120] + armWWos[113] + 107./96.*armWWos[189] + 1./4.*
-   armWWos[116] + 1./2.*armWWos[132] + 5183./5184.*armWWos[9] + 1./48.*
-   armWWos[128] + 1./12.*armWWos[124] + armWWos[188] - 2827./1728.*
-   armWWos[13] + 3./4.*armWWos[200] + 1./4.*armWWos[123] + armWWos[126]
-   ;
-   armWWos[103]=armWWos[121]*armWWos[103];
-   armWWos[110]=1./3.*armWWos[48] + armWWos[43] + 2*armWWos[45] + 
-   armWWos[156] + armWWos[114];
-   armWWos[113]= - 8./3.*armWWos[13];
-   armWWos[114]=armWWos[113] - 7 + 8./3.*armWWos[52];
-   armWWos[114]=armWWos[98]*armWWos[114];
-   armWWos[110]=8./3.*armWWos[160] + 2./3.*armWWos[110] + armWWos[114];
-   armWWos[114]= - 1./8. - 1./3.*armWWos[60];
-   armWWos[106]=mmZ*armWWos[106]*armWWos[114];
-   armWWos[106]=2*armWWos[110] + armWWos[106];
-   armWWos[106]=mmZ*armWWos[106];
-   armWWos[108]=14./9.*armWWos[9] - 22./3.*armWWos[13] + armWWos[138]
-    + 2./3.*armWWos[27] + 20./3.*armWWos[52] - 53./9. + armWWos[108];
-   armWWos[110]= - armWWos[98] + armWWos[139];
-   armWWos[110]=armWWos[34]*armWWos[110];
-   armWWos[114]= - 5./3. + armWWos[33];
-   armWWos[114]=armWWos[33]*armWWos[114];
-   armWWos[114]=4./9. + armWWos[114];
-   armWWos[114]=armWWos[31]*armWWos[114]*pow(armWWos[3],4);
-   armWWos[102]=armWWos[114] + armWWos[103] + armWWos[102] + 64./3.*
-   armWWos[110] + 4./3.*armWWos[108] + armWWos[106];
-   armWWos[102]=armWWos[31]*armWWos[102];
-   armWWos[103]=337./6. + armWWos[164];
-   armWWos[103]=1./2.*armWWos[103] + armWWos[153];
-   armWWos[103]=armWWos[17]*armWWos[103];
-   armWWos[106]=149./2. - 25*armWWos[10];
-   armWWos[106]=armWWos[16]*armWWos[106];
-   armWWos[108]=3./4.*armWWos[95];
-   armWWos[110]=1./4.*armWWos[68];
-   armWWos[114]= - 2*armWWos[19];
-   armWWos[103]=1./6.*armWWos[106] + armWWos[103] - 107./12.*
-   armWWos[18] + 35./3.*armWWos[20] + armWWos[114] + armWWos[110] + 
-   armWWos[108] + 11*armWWos[163] - 47./12.*armWWos[67];
-   armWWos[103]=armWWos[100]*armWWos[103];
-   armWWos[106]= - 33./2.*armWWos[9];
-   armWWos[116]=armWWos[182] + 79./3. + armWWos[106];
-   armWWos[116]=armWWos[16]*armWWos[116];
-   armWWos[120]=armWWos[15]*armWWos[16];
-   armWWos[120]=1./2.*armWWos[149] + armWWos[120];
-   armWWos[122]=armWWos[16] - armWWos[15];
-   armWWos[122]=7./2.*armWWos[122] - 5*mmZ;
-   armWWos[122]=mmZ*armWWos[122];
-   armWWos[122]=3*armWWos[120] + armWWos[122];
-   armWWos[122]=armWWos[5]*armWWos[122];
-   armWWos[123]=11*armWWos[66] + armWWos[154];
-   armWWos[123]=1./2.*armWWos[123] - 7*armWWos[19];
-   armWWos[124]=37 + armWWos[104];
-   armWWos[124]=armWWos[17]*armWWos[124];
-   armWWos[126]= - 419./6. + armWWos[105];
-   armWWos[126]=armWWos[15]*armWWos[126];
-   armWWos[128]=99*armWWos[9];
-   armWWos[132]=armWWos[10] + 3535./9. + armWWos[128];
-   armWWos[132]=mmZ*armWWos[132];
-   armWWos[116]=3*armWWos[122] + 1./4.*armWWos[132] + 1./2.*
-   armWWos[126] + 1./4.*armWWos[116] + 1./8.*armWWos[124] - 33*
-   armWWos[18] + 3*armWWos[123] - 217./24.*armWWos[20];
-   armWWos[116]=armWWos[5]*armWWos[116];
-   armWWos[122]=11*armWWos[87];
-   armWWos[123]= - 11*armWWos[91];
-   armWWos[124]=7*armWWos[85] + armWWos[123] - 7 + armWWos[122];
-   armWWos[126]=11*armWWos[89];
-   armWWos[132]= - 11./2.*armWWos[13];
-   armWWos[107]=armWWos[107] + armWWos[132] + 1./2.*armWWos[124] + 
-   armWWos[126];
-   armWWos[107]=1./2.*armWWos[99]*armWWos[107];
-   armWWos[124]= - 28./9. - 11./4.*armWWos[9];
-   armWWos[124]=5*armWWos[124] + armWWos[10];
-   armWWos[124]=armWWos[10]*armWWos[124];
-   armWWos[124]=armWWos[124] + 55./2.*armWWos[9] + 40*armWWos[14] + 55./
-   4.*armWWos[13] - 110*armWWos[89] + armWWos[170] - 11./2.*armWWos[91]
-    + 2*armWWos[80] - 55./4.*armWWos[81] - 55./4.*armWWos[82] - 3*
-   armWWos[86] - 23041./144. - 9*armWWos[84];
-   armWWos[124]=armWWos[100]*armWWos[124];
-   armWWos[133]= - 2*armWWos[79] - armWWos[76];
-   armWWos[133]=11*armWWos[133] + 357./16.*armWWos[72];
-   armWWos[135]= - armWWos[9]*armWWos[99];
-   armWWos[139]=11./4.*armWWos[135];
-   armWWos[140]= - armWWos[10]*armWWos[99];
-   armWWos[145]=7./4.*armWWos[140];
-   armWWos[124]=armWWos[124] + armWWos[145] + armWWos[139] + 
-   armWWos[107] - 55./2.*armWWos[71] - 11*armWWos[74] - 11./2.*
-   armWWos[96] + armWWos[70] + 3*armWWos[133] + 8*armWWos[75];
-   armWWos[124]=mmZ*armWWos[124];
-   armWWos[133]=armWWos[158] - 5./3.*armWWos[75];
-   armWWos[133]=14./3.*armWWos[71] + armWWos[197] + 4*armWWos[133] + 
-   armWWos[167];
-   armWWos[133]=mmH*armWWos[133];
-   armWWos[146]= - 47./6.*armWWos[10] + 353./24. + 11*armWWos[9];
-   armWWos[146]=armWWos[100]*armWWos[146];
-   armWWos[147]= - 15./8.*armWWos[99];
-   armWWos[146]=armWWos[147] + armWWos[146];
-   armWWos[146]=armWWos[15]*armWWos[146];
-   armWWos[148]=11*armWWos[135];
-   armWWos[151]=armWWos[10]*armWWos[99];
-   armWWos[152]=7*armWWos[151] + 119./3.*armWWos[99] + armWWos[148];
-   armWWos[152]=1./4.*armWWos[16]*armWWos[152];
-   armWWos[153]= - 488245./864. - 57*armWWos[92];
-   armWWos[154]=9491./3. + 511*armWWos[9];
-   armWWos[154]=armWWos[9]*armWWos[154];
-   armWWos[155]= - 53 - 55./6.*armWWos[9];
-   armWWos[155]=armWWos[10]*armWWos[155];
-   armWWos[156]=1./6.*armWWos[86];
-   armWWos[158]=15./2.*armWWos[18] + 5./12.*armWWos[20] + 29./6.*
-   armWWos[19] - 15./2.*armWWos[95] + 7./3.*armWWos[68];
-   armWWos[158]=1./2.*armWWos[99]*armWWos[158];
-   armWWos[159]=armWWos[9]*armWWos[99];
-   armWWos[160]=11*armWWos[159];
-   armWWos[164]= - 61./3.*armWWos[99] + armWWos[160];
-   armWWos[164]=1./8.*armWWos[17]*armWWos[164];
-   armWWos[103]=armWWos[133] + armWWos[116] + armWWos[124] + 
-   armWWos[146] + armWWos[103] + armWWos[152] + armWWos[164] + 1./2.*
-   armWWos[155] + 1./16.*armWWos[154] + armWWos[158] + 121./12.*
-   armWWos[14] - 3709./48.*armWWos[13] + 922./9.*armWWos[30] - 55./4.*
-   armWWos[89] - 19./6.*armWWos[85] - 51./4.*armWWos[91] + 11./12.*
-   armWWos[87] + 11./12.*armWWos[81] + 11./12.*armWWos[82] + 
-   armWWos[156] + 1285./16.*armWWos[88] - 215./8.*armWWos[83] + 1./2.*
-   armWWos[153] - 8./3.*armWWos[90];
-   armWWos[103]=armWWos[65]*armWWos[103];
-   armWWos[116]=5*mmZ;
-   armWWos[124]=7*armWWos[169] + armWWos[116];
-   armWWos[124]=mmZ*armWWos[124];
-   armWWos[133]=armWWos[16] + armWWos[15];
-   armWWos[146]=armWWos[15]*armWWos[133];
-   armWWos[124]=1./2.*armWWos[124] + 1./4.*armWWos[149] + armWWos[146];
-   armWWos[124]=armWWos[5]*armWWos[124];
-   armWWos[146]=1./2.*armWWos[68];
-   armWWos[153]=armWWos[146] - 11*armWWos[66] + armWWos[67];
-   armWWos[153]=1./2.*armWWos[153] + 5*armWWos[19];
-   armWWos[153]=5*armWWos[18] + 1./2.*armWWos[153] + armWWos[20];
-   armWWos[128]= - 85 + armWWos[128];
-   armWWos[128]=1./8.*armWWos[128] - armWWos[10];
-   armWWos[128]=armWWos[17]*armWWos[128];
-   armWWos[154]= - 1 - 11./2.*armWWos[9];
-   armWWos[154]=3*armWWos[154] + armWWos[10];
-   armWWos[154]=armWWos[16]*armWWos[154];
-   armWWos[155]=armWWos[193] - 4 - 99./4.*armWWos[9];
-   armWWos[155]=armWWos[15]*armWWos[155];
-   armWWos[131]=armWWos[131] - 1847./6. - 99*armWWos[9];
-   armWWos[131]=mmZ*armWWos[131];
-   armWWos[124]=9*armWWos[124] + 1./4.*armWWos[131] + armWWos[155] + 3./
-   4.*armWWos[154] + 9*armWWos[153] + armWWos[128];
-   armWWos[124]=armWWos[5]*armWWos[124];
-   armWWos[122]=armWWos[85] + armWWos[123] - 5./2. + armWWos[122];
-   armWWos[122]=armWWos[125] + armWWos[132] + 1./2.*armWWos[122] + 
-   armWWos[126];
-   armWWos[122]=armWWos[99]*armWWos[122];
-   armWWos[123]= - armWWos[10] + 62./9. + 33./4.*armWWos[9];
-   armWWos[123]=armWWos[10]*armWWos[123];
-   armWWos[123]=armWWos[123] + armWWos[106] - 19*armWWos[14] - 33./4.*
-   armWWos[13] + 66*armWWos[89] + 3./4.*armWWos[85] + 33./4.*
-   armWWos[91] - 2*armWWos[80] + 33./4.*armWWos[81] + 33./4.*
-   armWWos[82] + 3*armWWos[86] + 13903./144. + armWWos[202];
-   armWWos[123]=armWWos[100]*armWWos[123];
-   armWWos[122]=armWWos[123] + 3./4.*armWWos[140] + 33./4.*armWWos[135]
-    + 3./2.*armWWos[122] + 33./2.*armWWos[71] + 33./2.*armWWos[74] + 33.
-   /4.*armWWos[96] - 459./16.*armWWos[72] - armWWos[70];
-   armWWos[122]=mmZ*armWWos[122];
-   armWWos[123]=armWWos[151] + 13*armWWos[99] + armWWos[148];
-   armWWos[123]=armWWos[16]*armWWos[123];
-   armWWos[105]= - 1739./9. + armWWos[105];
-   armWWos[105]=1./2.*armWWos[105] + armWWos[190];
-   armWWos[105]=armWWos[17]*armWWos[105];
-   armWWos[126]= - 13./2. + armWWos[10];
-   armWWos[126]=armWWos[16]*armWWos[126];
-   armWWos[105]=3*armWWos[126] + 1./2.*armWWos[105] - 145./12.*
-   armWWos[18] - 661./24.*armWWos[20] - 1./4.*armWWos[19] + 3./8.*
-   armWWos[68] - 1./4.*armWWos[95] + 11./3.*armWWos[67] - 33./4.*
-   armWWos[66] + 33./2.*armWWos[94] + 9./2.*armWWos[69] + 5*armWWos[93]
-   ;
-   armWWos[105]=armWWos[100]*armWWos[105];
-   armWWos[126]=armWWos[175] + 21./4.*armWWos[20] - 31./2.*armWWos[19]
-    - 7./2.*armWWos[95] + 3*armWWos[68];
-   armWWos[126]=armWWos[99]*armWWos[126];
-   armWWos[128]= - 1697./3. + armWWos[130];
-   armWWos[128]=armWWos[9]*armWWos[128];
-   armWWos[130]= - 1./2.*armWWos[10] + 41./9. + armWWos[134];
-   armWWos[130]=armWWos[10]*armWWos[130];
-   armWWos[131]= - 15*armWWos[99] + armWWos[160];
-   armWWos[131]=armWWos[17]*armWWos[131];
-   armWWos[104]= - 697./36. + armWWos[104];
-   armWWos[104]=1./2.*armWWos[104] + 22./3.*armWWos[10];
-   armWWos[104]=armWWos[100]*armWWos[104];
-   armWWos[104]= - 7./8.*armWWos[99] + armWWos[104];
-   armWWos[104]=armWWos[15]*armWWos[104];
-   armWWos[132]= - 13./2.*armWWos[71] - 13./2.*armWWos[74] - 13./4.*
-   armWWos[96] - 3./2.*armWWos[73] + 2./3.*armWWos[70];
-   armWWos[132]=mmH*armWWos[132];
-   armWWos[134]=3./2.*armWWos[85];
-   armWWos[104]=armWWos[132] + armWWos[124] + armWWos[122] + 
-   armWWos[104] + armWWos[105] + 3./4.*armWWos[123] + 3./8.*
-   armWWos[131] + armWWos[130] + 1./16.*armWWos[128] + 1./2.*
-   armWWos[126] - 7./6.*armWWos[14] - 391./8.*armWWos[13] + 33*
-   armWWos[89] + armWWos[134] - 11./4.*armWWos[87] - 11./4.*armWWos[81]
-    - 11./4.*armWWos[82] + armWWos[156] + 435./16.*armWWos[88] + 435./
-   16.*armWWos[83] + 5416./81. + 9./4.*armWWos[84];
-   armWWos[104]=armWWos[65]*armWWos[104];
-   armWWos[105]= - armWWos[19] + 2*armWWos[7] + armWWos[8];
-   armWWos[109]=armWWos[109] + 3*armWWos[105] + armWWos[180];
-   armWWos[109]=armWWos[35]*armWWos[109];
-   armWWos[122]=1 - armWWos[6];
-   armWWos[123]=armWWos[1]*armWWos[122];
-   armWWos[122]=armWWos[35]*armWWos[122];
-   armWWos[122]=1./3.*armWWos[123] + armWWos[122];
-   armWWos[122]=armWWos[17]*armWWos[122];
-   armWWos[123]= - 3 + armWWos[6];
-   armWWos[124]=armWWos[1]*armWWos[123];
-   armWWos[123]=armWWos[35]*armWWos[123];
-   armWWos[123]=armWWos[124] + 3*armWWos[123];
-   armWWos[124]=armWWos[16]*armWWos[123];
-   armWWos[123]=armWWos[15]*armWWos[123];
-   armWWos[126]=7./6. + armWWos[6];
-   armWWos[126]=armWWos[1]*armWWos[126];
-   armWWos[128]=7./2. + armWWos[199];
-   armWWos[128]=armWWos[35]*armWWos[128];
-   armWWos[126]=armWWos[126] + armWWos[128];
-   armWWos[126]=mmZ*armWWos[126];
-   armWWos[105]= - 2*armWWos[18] + armWWos[105] - 1./6.*armWWos[20];
-   armWWos[105]=armWWos[1]*armWWos[105];
-   armWWos[105]=armWWos[126] + armWWos[123] + 1./2.*armWWos[124] + 1./2.
-   *armWWos[122] + armWWos[105] + armWWos[109];
-   armWWos[105]=armWWos[5]*armWWos[105];
-   armWWos[109]=armWWos[183] + armWWos[136] + armWWos[19];
-   armWWos[109]=armWWos[99]*armWWos[109];
-   armWWos[122]=armWWos[16]*armWWos[99];
-   armWWos[123]=armWWos[176] - 1./2.*armWWos[18] + 1./2.*armWWos[95] - 
-   armWWos[19];
-   armWWos[123]=armWWos[100]*armWWos[123];
-   armWWos[124]= - armWWos[99] + armWWos[100];
-   armWWos[126]=armWWos[15]*armWWos[124];
-   armWWos[124]=mmZ*armWWos[124];
-   armWWos[109]=3./16.*armWWos[124] + 1./4.*armWWos[126] + armWWos[123]
-    + armWWos[109] + 3./2.*armWWos[122];
-   armWWos[109]=armWWos[177]*armWWos[65]*armWWos[109];
-   armWWos[122]= - 5./3. + armWWos[6];
-   armWWos[122]=armWWos[6]*armWWos[122];
-   armWWos[123]=pow(Pi,2);
-   armWWos[122]=armWWos[122] + 4./9. - armWWos[123];
-   armWWos[124]=armWWos[1]*armWWos[122];
-   armWWos[126]=5./3.*armWWos[123] + 37./3.*armWWos[29] + 11053./648.
-    - 11*armWWos[26];
-   armWWos[128]= - 1./3.*armWWos[14];
-   armWWos[130]= - 7./9. - 1./4.*armWWos[6];
-   armWWos[130]=armWWos[6]*armWWos[130];
-   armWWos[126]=1./9.*armWWos[124] + 121./12.*armWWos[9] + 5./3.*
-   armWWos[130] + armWWos[128] + 11./2.*armWWos[13] + 19./4.*
-   armWWos[30] - 11./4.*armWWos[27] + 23./72.*armWWos[12] + 1./4.*
-   armWWos[126] + 1./3.*armWWos[25];
-   armWWos[126]=armWWos[1]*armWWos[126];
-   armWWos[122]=armWWos[35]*armWWos[122];
-   armWWos[131]=5*armWWos[123] + 37*armWWos[29] + 11053./216. - 33*
-   armWWos[26];
-   armWWos[122]=armWWos[122] + 2./3.*armWWos[124] + 121./4.*armWWos[9]
-    + 5*armWWos[130] - armWWos[14] + 33./2.*armWWos[13] + 57./4.*
-   armWWos[30] - 33./4.*armWWos[27] + 23./24.*armWWos[12] + 1./4.*
-   armWWos[131] + armWWos[25];
-   armWWos[122]=armWWos[35]*armWWos[122];
-   armWWos[124]= - 1./3. - armWWos[6];
-   armWWos[130]=armWWos[1]*armWWos[124];
-   armWWos[124]=armWWos[35]*armWWos[124];
-   armWWos[124]=1./3.*armWWos[130] + armWWos[124];
-   armWWos[124]=armWWos[17]*armWWos[124];
-   armWWos[130]= - armWWos[18] + armWWos[7] + armWWos[142];
-   armWWos[131]=armWWos[1]*armWWos[130];
-   armWWos[130]=armWWos[35]*armWWos[130];
-   armWWos[124]=1./2.*armWWos[124] + 1./3.*armWWos[131] + armWWos[130];
-   armWWos[124]=armWWos[100]*armWWos[124];
-   armWWos[130]= - armWWos[25] + 7./3. + 2*armWWos[28];
-   armWWos[131]=1./3.*armWWos[6] + armWWos[172] + 1./3.*armWWos[130] + 
-   armWWos[12];
-   armWWos[131]=armWWos[1]*armWWos[131];
-   armWWos[132]=2./3. - armWWos[6];
-   armWWos[136]=armWWos[1]*armWWos[132];
-   armWWos[132]=armWWos[35]*armWWos[132];
-   armWWos[132]=1./3.*armWWos[136] + armWWos[132];
-   armWWos[132]=armWWos[10]*armWWos[132];
-   armWWos[130]=armWWos[6] + armWWos[14] + armWWos[130] + 3*armWWos[12]
-   ;
-   armWWos[130]=armWWos[35]*armWWos[130];
-   armWWos[130]=armWWos[132] + armWWos[131] + armWWos[130];
-   armWWos[130]=armWWos[100]*armWWos[130];
-   armWWos[131]=armWWos[22] + armWWos[21];
-   armWWos[132]=armWWos[131] + 1./3.*armWWos[24];
-   armWWos[132]=armWWos[1]*armWWos[132];
-   armWWos[131]=3*armWWos[131] + armWWos[24];
-   armWWos[131]=armWWos[35]*armWWos[131];
-   armWWos[131]=armWWos[132] + armWWos[131];
-   armWWos[130]=2*armWWos[131] + armWWos[130];
-   armWWos[130]=mmZ*armWWos[130];
-   armWWos[131]= - 2./3. + armWWos[6];
-   armWWos[132]=armWWos[1]*armWWos[131];
-   armWWos[131]=armWWos[35]*armWWos[131];
-   armWWos[131]=1./3.*armWWos[132] + armWWos[131];
-   armWWos[132]=armWWos[15]*armWWos[100]*armWWos[131];
-   armWWos[136]= - 1./3.*armWWos[1] - armWWos[35];
-   armWWos[136]=armWWos[10]*armWWos[136];
-   armWWos[104]=3./2.*armWWos[109] + armWWos[104] + armWWos[105] + 
-   armWWos[130] + armWWos[132] + armWWos[124] + 7./3.*armWWos[136] + 
-   armWWos[126] + armWWos[122];
-   armWWos[104]=armWWos[177]*armWWos[104];
-   armWWos[105]=37./2.*armWWos[11];
-   armWWos[109]= - 7*armWWos[29];
-   armWWos[122]=7*armWWos[123];
-   armWWos[124]=armWWos[122] + armWWos[109] + armWWos[105] + 1109./36.
-    + 23*armWWos[26];
-   armWWos[124]=1./3.*armWWos[124] + 3*armWWos[27];
-   armWWos[126]= - 7./3. + armWWos[127];
-   armWWos[126]=armWWos[6]*armWWos[126];
-   armWWos[130]= - 55 + armWWos[166];
-   armWWos[130]=armWWos[9]*armWWos[130];
-   armWWos[113]=1./6.*armWWos[130] + 7./6.*armWWos[126] + armWWos[113]
-    + 1./4.*armWWos[124] - 10./9.*armWWos[30];
-   armWWos[113]=armWWos[1]*armWWos[113];
-   armWWos[124]=59./36. + armWWos[26];
-   armWWos[105]=9*armWWos[27] + armWWos[122] + armWWos[109] + 23*
-   armWWos[124] + armWWos[105];
-   armWWos[109]= - 15 - 7./2.*armWWos[6];
-   armWWos[109]=armWWos[6]*armWWos[109];
-   armWWos[105]=1./2.*armWWos[130] + 1./2.*armWWos[109] - 8*armWWos[13]
-    + 1./4.*armWWos[105] - 10./3.*armWWos[30];
-   armWWos[105]=armWWos[35]*armWWos[105];
-   armWWos[109]= - 2*armWWos[22];
-   armWWos[122]= - 2*armWWos[21];
-   armWWos[124]=armWWos[122] + armWWos[23] + armWWos[109];
-   armWWos[124]=2*armWWos[124] - armWWos[24];
-   armWWos[124]=armWWos[1]*armWWos[124];
-   armWWos[109]=armWWos[122] + armWWos[109] + 1./9.*armWWos[64] + 
-   armWWos[23];
-   armWWos[109]=2*armWWos[109] - armWWos[24];
-   armWWos[109]=armWWos[35]*armWWos[109];
-   armWWos[109]=1./3.*armWWos[124] + armWWos[109];
-   armWWos[122]=armWWos[25] - 7./3. - 2*armWWos[28];
-   armWWos[124]= - 1./3.*armWWos[6] + armWWos[128] + 1./3.*armWWos[122]
-    - armWWos[12];
-   armWWos[124]=armWWos[1]*armWWos[124];
-   armWWos[126]=armWWos[10]*armWWos[131];
-   armWWos[122]= - armWWos[6] - armWWos[14] + armWWos[122] - 3*
-   armWWos[12];
-   armWWos[122]=armWWos[35]*armWWos[122];
-   armWWos[122]=armWWos[126] + armWWos[124] + armWWos[122];
-   armWWos[122]=armWWos[100]*armWWos[122];
-   armWWos[109]=2*armWWos[109] + armWWos[122];
-   armWWos[109]=mmZ*armWWos[109];
-   armWWos[122]= - 11./3. - armWWos[6];
-   armWWos[124]=armWWos[1]*armWWos[122];
-   armWWos[122]=armWWos[35]*armWWos[122];
-   armWWos[122]=1./3.*armWWos[124] + armWWos[122];
-   armWWos[122]=mmZ*armWWos[122];
-   armWWos[124]= - 2./3. + armWWos[166];
-   armWWos[124]=armWWos[1]*armWWos[124];
-   armWWos[126]= - 2 + 3./2.*armWWos[6];
-   armWWos[126]=armWWos[35]*armWWos[126];
+   armWWos[111]=2089./3. + 523./2.*armWWos[104];
+   armWWos[111]=armWWos[111]*armWWos[104];
+   armWWos[111]=1729./2. + armWWos[111];
+   armWWos[112]=1./9.*armWWos[104];
+   armWWos[111]=armWWos[111]*armWWos[112];
+   armWWos[113]= - 6463./9. - 125*armWWos[101];
+   armWWos[113]=armWWos[113]*armWWos[102];
+   armWWos[111]=armWWos[111] + armWWos[113];
+   armWWos[113]=1./32.*armWWos[16];
+   armWWos[111]=armWWos[111]*armWWos[113];
+   armWWos[114]= - 35 - 43./3.*armWWos[104];
+   armWWos[114]=armWWos[114]*armWWos[104];
+   armWWos[114]=43 + armWWos[114];
+   armWWos[115]=1./6.*armWWos[104];
+   armWWos[114]=armWWos[114]*armWWos[115];
+   armWWos[116]=13*armWWos[101];
+   armWWos[117]=43./6. + armWWos[116];
+   armWWos[117]=armWWos[117]*armWWos[101];
+   armWWos[114]=armWWos[114] + armWWos[117];
+   armWWos[114]=armWWos[63]*armWWos[114];
+   armWWos[117]=armWWos[104] + 7;
+   armWWos[118]=armWWos[117]*armWWos[104];
+   armWWos[118]=13 + armWWos[118];
+   armWWos[119]=1./3.*armWWos[104];
+   armWWos[118]=armWWos[61]*armWWos[118]*armWWos[119];
+   armWWos[120]=armWWos[101]*armWWos[61];
+   armWWos[121]=13./3.*armWWos[61] + 2*armWWos[120];
+   armWWos[121]=armWWos[121]*armWWos[101];
+   armWWos[109]= - 109./24.*armWWos[108] + 1./4.*armWWos[114] + 
+   armWWos[111] + 1./12.*armWWos[109] + armWWos[118] + armWWos[121];
+   armWWos[109]=armWWos[2]*armWWos[109];
+   armWWos[111]=11./4.*armWWos[104];
+   armWWos[114]=205./3. + armWWos[111];
+   armWWos[114]=armWWos[114]*armWWos[104];
+   armWWos[114]= - 6565./12. + armWWos[114];
+   armWWos[118]=1./4.*armWWos[104];
+   armWWos[114]=armWWos[114]*armWWos[118];
+   armWWos[114]= - 256 + armWWos[114];
+   armWWos[121]=1./16.*armWWos[101];
+   armWWos[122]=835./3. + 93*armWWos[101];
+   armWWos[122]=armWWos[122]*armWWos[121];
+   armWWos[114]=1./9.*armWWos[114] + armWWos[122];
+   armWWos[114]=armWWos[13]*armWWos[114];
+   armWWos[122]=5*armWWos[104];
+   armWWos[123]=7./3.*armWWos[104];
+   armWWos[124]=2 + armWWos[123];
+   armWWos[124]=armWWos[124]*armWWos[122];
+   armWWos[125]=9*armWWos[101];
+   armWWos[126]=10 + armWWos[125];
+   armWWos[126]=armWWos[126]*armWWos[101];
    armWWos[124]=armWWos[124] + armWWos[126];
-   armWWos[124]=armWWos[16]*armWWos[124];
-   armWWos[122]=armWWos[124] + armWWos[122];
-   armWWos[122]=armWWos[5]*armWWos[122];
-   armWWos[103]=armWWos[104] + armWWos[103] + armWWos[122] + 
-   armWWos[109] + armWWos[113] + armWWos[105];
-   armWWos[103]=armWWos[177]*armWWos[103];
-   armWWos[104]=armWWos[192] + armWWos[129] + 23./8.*armWWos[72] + 2*
-   armWWos[79] - armWWos[76];
-   armWWos[105]=3*armWWos[91] - 31./4. + armWWos[112];
-   armWWos[105]= - armWWos[14] + 3./2.*armWWos[13] - 3*armWWos[89] + 1./
-   2.*armWWos[105] + armWWos[85];
-   armWWos[105]=armWWos[99]*armWWos[105];
-   armWWos[109]=2 - 1./4.*armWWos[91];
-   armWWos[109]=armWWos[100]*armWWos[109];
-   armWWos[104]=1./3.*armWWos[109] + armWWos[140] + 3./2.*armWWos[159]
-    + 1./3.*armWWos[104] + armWWos[105];
-   armWWos[104]=mmZ*armWWos[104];
-   armWWos[105]=armWWos[66] + 9./2.*armWWos[68];
-   armWWos[109]=13./2. + armWWos[150];
-   armWWos[109]=armWWos[17]*armWWos[109];
-   armWWos[105]=1./3.*armWWos[109] - armWWos[18] - 47./12.*armWWos[20]
-    + 1./2.*armWWos[105] - 5*armWWos[19];
-   armWWos[109]=21./2.*armWWos[16] + armWWos[116];
-   armWWos[109]=mmZ*armWWos[109];
-   armWWos[109]=9./2.*armWWos[149] + armWWos[109];
-   armWWos[109]=armWWos[5]*armWWos[109];
-   armWWos[112]= - 4./3. + 9./4.*armWWos[9];
-   armWWos[112]=armWWos[16]*armWWos[112];
-   armWWos[113]=19./3. + armWWos[9];
-   armWWos[113]=armWWos[15]*armWWos[113];
-   armWWos[122]=7./4. + armWWos[184];
-   armWWos[122]=mmZ*armWWos[122];
-   armWWos[105]=1./2.*armWWos[109] + 1./2.*armWWos[122] + 1./4.*
-   armWWos[113] + 1./2.*armWWos[105] + armWWos[112];
-   armWWos[105]=armWWos[5]*armWWos[105];
-   armWWos[109]=25./3.*armWWos[99] + 3*armWWos[159];
-   armWWos[109]=1./2.*armWWos[109] + armWWos[151];
-   armWWos[109]=armWWos[16]*armWWos[109];
-   armWWos[112]= - armWWos[17]*armWWos[9];
-   armWWos[112]= - 7./6.*armWWos[16] + 1./6.*armWWos[112] - 3./4.*
-   armWWos[20] - 3./2.*armWWos[19] + 1./3.*armWWos[163] + 3./4.*
-   armWWos[68];
-   armWWos[112]=armWWos[100]*armWWos[112];
-   armWWos[113]=1./36.*armWWos[88] - 33./8.*armWWos[83] + 10069./288.
-    + 7*armWWos[92];
-   armWWos[122]=2*armWWos[18] - 5./12.*armWWos[20] + 37./6.*armWWos[19]
-    - 2*armWWos[95] - 1./3.*armWWos[68];
-   armWWos[122]=armWWos[99]*armWWos[122];
-   armWWos[126]=233./3. - 121./2.*armWWos[9];
-   armWWos[126]=armWWos[9]*armWWos[126];
-   armWWos[128]=1 + armWWos[162];
-   armWWos[128]=armWWos[10]*armWWos[128];
-   armWWos[129]=13./3.*armWWos[99] + 3*armWWos[135];
-   armWWos[129]=armWWos[17]*armWWos[129];
-   armWWos[130]=4 + armWWos[119];
-   armWWos[130]=armWWos[100]*armWWos[130];
-   armWWos[130]= - armWWos[99] + 1./3.*armWWos[130];
-   armWWos[130]=armWWos[15]*armWWos[130];
-   armWWos[131]=1./2.*armWWos[161] - 1./3.*armWWos[71];
-   armWWos[131]=mmH*armWWos[131];
-   armWWos[104]=1./2.*armWWos[131] + armWWos[105] + armWWos[104] + 
-   armWWos[130] + 1./2.*armWWos[112] + armWWos[109] + 1./4.*
-   armWWos[129] + 1./6.*armWWos[128] + 1./36.*armWWos[126] + 
-   armWWos[122] + 5./12.*armWWos[14] + 151./144.*armWWos[13] + 
-   armWWos[138] - 7./4.*armWWos[89] - 5./12.*armWWos[85] - 79./36.*
-   armWWos[91] + 1./2.*armWWos[113] + 5./3.*armWWos[87];
-   armWWos[104]=armWWos[65]*armWWos[104];
-   armWWos[105]= - 5./6.*armWWos[91] + 1./2.*armWWos[87] + 13./8.*
-   armWWos[88] - 7./2.*armWWos[83] + 1489./96. + armWWos[92];
-   armWWos[109]= - 1./6.*armWWos[89];
-   armWWos[105]=armWWos[125] + 11./24.*armWWos[13] + armWWos[109] + 1./
-   3.*armWWos[105] + 1./2.*armWWos[85];
-   armWWos[112]=armWWos[91] - 23 - armWWos[87];
-   armWWos[113]=1./12.*armWWos[13];
-   armWWos[109]= - armWWos[14] + armWWos[113] + armWWos[109] + 1./12.*
-   armWWos[112] + armWWos[85];
-   armWWos[109]=armWWos[99]*armWWos[109];
-   armWWos[109]=armWWos[140] + 1./12.*armWWos[159] - 3./16.*armWWos[72]
-    + armWWos[109];
-   armWWos[109]=mmZ*armWWos[109];
-   armWWos[111]=armWWos[17]*armWWos[111];
-   armWWos[111]= - armWWos[20] + armWWos[111];
-   armWWos[112]=1./3. + armWWos[119];
-   armWWos[112]=armWWos[16]*armWWos[112];
-   armWWos[119]=mmZ*armWWos[9];
-   armWWos[111]=1./3.*armWWos[119] - 1./3.*armWWos[15] + 1./6.*
-   armWWos[111] + armWWos[112];
-   armWWos[111]=armWWos[5]*armWWos[111];
-   armWWos[112]=19*armWWos[99] + armWWos[159];
-   armWWos[112]=1./12.*armWWos[112] + armWWos[151];
-   armWWos[112]=armWWos[16]*armWWos[112];
-   armWWos[119]=armWWos[18] - 5./24.*armWWos[20] + 7./4.*armWWos[19] - 
-   armWWos[95] + 1./6.*armWWos[68];
-   armWWos[119]=armWWos[99]*armWWos[119];
-   armWWos[122]=31 + armWWos[141];
-   armWWos[122]=armWWos[9]*armWWos[122];
-   armWWos[125]= - armWWos[99] + 1./3.*armWWos[135];
-   armWWos[125]=armWWos[17]*armWWos[125];
-   armWWos[126]= - armWWos[15]*armWWos[99];
-   armWWos[128]=mmH*armWWos[161];
-   armWWos[105]=1./12.*armWWos[128] + 1./4.*armWWos[111] + armWWos[109]
-    + 1./2.*armWWos[126] + armWWos[112] + 1./8.*armWWos[125] - 1./4.*
-   armWWos[10] + 1./144.*armWWos[122] + 1./2.*armWWos[105] + 
-   armWWos[119];
-   armWWos[105]=armWWos[65]*armWWos[105];
-   armWWos[109]=armWWos[29] + 1 + armWWos[11];
-   armWWos[111]=armWWos[204] + armWWos[117] + armWWos[109] + 1./2.*
-   armWWos[27];
-   armWWos[111]=armWWos[1]*armWWos[111];
-   armWWos[109]= - 11./9.*armWWos[9] - 11./6.*armWWos[13] + 
-   armWWos[109] + 11./6.*armWWos[27];
-   armWWos[109]=armWWos[35]*armWWos[109];
-   armWWos[109]=armWWos[111] + 1./3.*armWWos[109];
-   armWWos[111]= - 1./9.*armWWos[143] + armWWos[191] + 1 - 1./6.*
-   armWWos[83];
-   armWWos[111]=armWWos[121]*armWWos[65]*armWWos[111];
-   armWWos[105]=1./8.*armWWos[111] + 1./2.*armWWos[109] + armWWos[105];
-   armWWos[105]=armWWos[121]*armWWos[105];
-   armWWos[109]= - 29./8. - 5./9.*armWWos[11];
-   armWWos[111]= - 251./3. - armWWos[6];
-   armWWos[111]=armWWos[9]*armWWos[111];
-   armWWos[112]=pow(armWWos[6],2);
-   armWWos[109]=1./36.*armWWos[111] + 1./6.*armWWos[112] - 17./6.*
-   armWWos[13] + armWWos[137] + 17./6.*armWWos[27] - 1./6.*armWWos[123]
-    + 1./4.*armWWos[109] + 2./3.*armWWos[29];
-   armWWos[109]=armWWos[1]*armWWos[109];
-   armWWos[111]=armWWos[8] - armWWos[19];
-   armWWos[117]=armWWos[1]*armWWos[111];
-   armWWos[111]=armWWos[35]*armWWos[111];
-   armWWos[119]=armWWos[16]*armWWos[165];
-   armWWos[122]=armWWos[1] + 11./9.*armWWos[35];
-   armWWos[122]=mmZ*armWWos[122];
-   armWWos[111]=5./2.*armWWos[122] + 5./2.*armWWos[119] + 3*
-   armWWos[117] + 11./3.*armWWos[111];
-   armWWos[111]=armWWos[5]*armWWos[111];
-   armWWos[117]= - 701./24. + armWWos[11];
-   armWWos[112]=1./2.*armWWos[112] - 187./6.*armWWos[13] + 11./4.*
-   armWWos[30] + 187./6.*armWWos[27] - 1./2.*armWWos[123] + 1./4.*
-   armWWos[117] + 2*armWWos[29];
-   armWWos[117]= - 947./27. - armWWos[6];
-   armWWos[117]=armWWos[9]*armWWos[117];
-   armWWos[112]=1./3.*armWWos[112] + 1./4.*armWWos[117];
-   armWWos[112]=armWWos[35]*armWWos[112];
-   armWWos[117]= - armWWos[1]*armWWos[24];
-   armWWos[119]= - armWWos[35]*armWWos[24];
-   armWWos[117]=armWWos[117] + 1./3.*armWWos[119];
-   armWWos[117]=mmZ*armWWos[117];
-   armWWos[104]=armWWos[105] + armWWos[104] + armWWos[111] + 1./6.*
-   armWWos[117] + armWWos[109] + 1./3.*armWWos[112];
-   armWWos[104]=armWWos[121]*armWWos[104];
-   armWWos[105]=49./6. + armWWos[115];
-   armWWos[105]=armWWos[17]*armWWos[105];
-   armWWos[109]=5./2. - armWWos[10];
-   armWWos[109]=armWWos[16]*armWWos[109];
-   armWWos[105]=1./6.*armWWos[109] + 1./2.*armWWos[105] - 11./12.*
-   armWWos[18] - 1./3.*armWWos[20] + armWWos[114] + armWWos[110] + 
-   armWWos[108] + 3*armWWos[163] + 1./12.*armWWos[67];
-   armWWos[105]=armWWos[100]*armWWos[105];
-   armWWos[108]=21./2.*armWWos[133] + armWWos[116];
-   armWWos[108]=mmZ*armWWos[108];
-   armWWos[108]=9*armWWos[120] + armWWos[108];
-   armWWos[108]=armWWos[5]*armWWos[108];
-   armWWos[106]=armWWos[182] - 113./3. + armWWos[106];
-   armWWos[106]=armWWos[16]*armWWos[106];
-   armWWos[109]=armWWos[66] + armWWos[146];
-   armWWos[109]=1./2.*armWWos[109] - armWWos[19];
-   armWWos[110]=5 - armWWos[9];
-   armWWos[110]=armWWos[17]*armWWos[110];
-   armWWos[111]= - 83./6. + armWWos[118];
-   armWWos[111]=armWWos[15]*armWWos[111];
-   armWWos[112]=179./3. + armWWos[157];
-   armWWos[112]=1./3.*armWWos[112] - armWWos[10];
-   armWWos[112]=mmZ*armWWos[112];
-   armWWos[106]=armWWos[108] + 1./4.*armWWos[112] + 1./2.*armWWos[111]
-    + 1./4.*armWWos[106] + 1./8.*armWWos[110] - 9*armWWos[18] + 9*
-   armWWos[109] - 19./8.*armWWos[20];
-   armWWos[106]=armWWos[5]*armWWos[106];
-   armWWos[108]= - 1./3.*armWWos[81] - 13./4. - 1./3.*armWWos[82];
-   armWWos[108]=armWWos[134] + 1./2.*armWWos[108] - 3*armWWos[91];
-   armWWos[109]= - 1 - 1./6.*armWWos[9];
-   armWWos[109]=armWWos[10]*armWWos[109];
-   armWWos[108]=1./2.*armWWos[109] + 1./6.*armWWos[9] - 2./3.*
-   armWWos[14] + armWWos[113] + 1./2.*armWWos[108] - 2./3.*armWWos[89];
-   armWWos[108]=armWWos[100]*armWWos[108];
-   armWWos[107]=armWWos[108] + armWWos[145] + armWWos[139] + 
-   armWWos[107] - 1./6.*armWWos[71] - 3*armWWos[74] - 3./2.*armWWos[96]
-    + 31./16.*armWWos[72] + 34./3.*armWWos[79] - 5*armWWos[76];
-   armWWos[107]=mmZ*armWWos[107];
-   armWWos[108]=11./2.*armWWos[87] + armWWos[186] + armWWos[185] + 
-   armWWos[86] + 445./24.*armWWos[88] + 331./4.*armWWos[83] - 167989./
-   288. - 59*armWWos[92];
-   armWWos[108]= - 7./2.*armWWos[89] - 19./3.*armWWos[85] + 1./3.*
-   armWWos[108] - 35./2.*armWWos[91];
-   armWWos[109]=1./6.*armWWos[10] + 65./24. + armWWos[184];
-   armWWos[109]=armWWos[100]*armWWos[109];
-   armWWos[109]=armWWos[147] + armWWos[109];
-   armWWos[109]=armWWos[15]*armWWos[109];
-   armWWos[110]= - 1277 + 653*armWWos[9];
-   armWWos[110]=armWWos[9]*armWWos[110];
-   armWWos[111]=5 - 19./2.*armWWos[9];
-   armWWos[111]=armWWos[10]*armWWos[111];
-   armWWos[112]=11./12.*armWWos[144] - 2*armWWos[71];
-   armWWos[112]=mmH*armWWos[112];
-   armWWos[105]=armWWos[112] + armWWos[106] + armWWos[107] + 
-   armWWos[109] + armWWos[105] + armWWos[152] + armWWos[164] + 1./6.*
-   armWWos[111] + 1./48.*armWWos[110] + armWWos[158] + 37./12.*
-   armWWos[14] - 727./144.*armWWos[13] + 1./2.*armWWos[108] - 34./3.*
-   armWWos[30];
-   armWWos[105]=armWWos[65]*armWWos[105];
-   armWWos[106]= - 85./9.*armWWos[27] - armWWos[123] + 13./3.*
-   armWWos[29] + 55./18.*armWWos[11] + 1645./108. + armWWos[26];
-   armWWos[107]=1./9. + armWWos[166];
-   armWWos[107]=armWWos[6]*armWWos[107];
-   armWWos[108]=293./27. + armWWos[127];
-   armWWos[108]=armWWos[9]*armWWos[108];
-   armWWos[106]=1./2.*armWWos[108] + 1./2.*armWWos[107] + 19./9.*
-   armWWos[13] + 1./4.*armWWos[106] + 10./3.*armWWos[30];
-   armWWos[106]=armWWos[1]*armWWos[106];
-   armWWos[107]= - 317./27.*armWWos[27] - 1./3.*armWWos[123] + 23./3.*
-   armWWos[29] + 229./18.*armWWos[11] + 7981./324. + 3*armWWos[26];
-   armWWos[108]= - 1./3. + armWWos[166];
-   armWWos[108]=armWWos[6]*armWWos[108];
-   armWWos[109]=781./81. - 3./2.*armWWos[6];
-   armWWos[109]=armWWos[9]*armWWos[109];
-   armWWos[107]=1./2.*armWWos[109] + 1./6.*armWWos[108] + 59./27.*
-   armWWos[13] + 1./4.*armWWos[107] + 110./27.*armWWos[30];
-   armWWos[107]=armWWos[35]*armWWos[107];
-   armWWos[108]= - 4./3. + armWWos[6];
-   armWWos[109]=armWWos[1]*armWWos[108];
-   armWWos[108]=armWWos[35]*armWWos[108];
-   armWWos[108]=1./3.*armWWos[109] + armWWos[108];
-   armWWos[108]=mmZ*armWWos[108];
-   armWWos[108]=armWWos[124] + armWWos[108];
-   armWWos[108]=armWWos[5]*armWWos[108];
-   armWWos[104]=armWWos[104] + armWWos[105] + armWWos[108] + 1./3.*
-   armWWos[117] + armWWos[106] + armWWos[107];
-   armWWos[104]=armWWos[121]*armWWos[104];
-   armWWos[105]= - armWWos[72] - armWWos[77] + 2*armWWos[76];
-   armWWos[106]=pow(c,2);
-   armWWos[105]=armWWos[106]*armWWos[105];
-   armWWos[105]=armWWos[71] - armWWos[75] + 2*armWWos[105] - 23./3.*
-   armWWos[72] + 4*armWWos[79] + 23./3.*armWWos[76];
-   armWWos[107]=2 + armWWos[9];
-   armWWos[107]=armWWos[10]*armWWos[107];
-   armWWos[107]=4*armWWos[107] - 8*armWWos[9] - 20*armWWos[14] - 4*
-   armWWos[13] + 32*armWWos[89] + 4*armWWos[81] + 63 + 4*armWWos[82];
-   armWWos[107]=armWWos[100]*armWWos[107];
-   armWWos[105]=8*armWWos[105] + armWWos[107];
-   armWWos[105]=mmZ*armWWos[105];
-   armWWos[107]= - 2 - armWWos[9];
-   armWWos[107]=mmZ*armWWos[107];
-   armWWos[108]=armWWos[5]*pow(mmZ,2);
-   armWWos[107]=4*armWWos[107] + 5*armWWos[108];
+   armWWos[126]=armWWos[16]*armWWos[5];
+   armWWos[124]=armWWos[124]*armWWos[126];
+   armWWos[127]=armWWos[104] + 7./3.;
+   armWWos[127]=armWWos[127]*armWWos[104];
+   armWWos[128]= - 101./3. + armWWos[127];
+   armWWos[129]=1./8.*armWWos[104];
+   armWWos[128]=armWWos[128]*armWWos[129];
+   armWWos[130]=6*armWWos[101];
+   armWWos[131]= - 101./24. - armWWos[130];
+   armWWos[131]=armWWos[131]*armWWos[101];
+   armWWos[128]=armWWos[128] + armWWos[131];
+   armWWos[128]=armWWos[50]*armWWos[128];
+   armWWos[131]=2*armWWos[104];
+   armWWos[132]= - 49./8. - armWWos[131];
+   armWWos[132]=armWWos[132]*armWWos[119];
+   armWWos[133]=1./8.*armWWos[101];
+   armWWos[134]=11*armWWos[101];
+   armWWos[135]= - 49./3. - armWWos[134];
+   armWWos[135]=armWWos[135]*armWWos[133];
+   armWWos[132]=armWWos[132] + armWWos[135];
+   armWWos[132]=armWWos[56]*armWWos[132];
+   armWWos[135]=331./6.*armWWos[104];
+   armWWos[136]= - 143 - armWWos[135];
+   armWWos[136]=armWWos[136]*armWWos[104];
+   armWWos[136]=1037./2. + armWWos[136];
+   armWWos[136]=armWWos[136]*armWWos[119];
+   armWWos[137]=1037./3. + 185*armWWos[101];
+   armWWos[137]=armWWos[137]*armWWos[102];
+   armWWos[136]=armWWos[136] + armWWos[137];
+   armWWos[136]=armWWos[39]*armWWos[136];
+   armWWos[137]=armWWos[101] + 1;
+   armWWos[138]=armWWos[137]*armWWos[101];
+   armWWos[139]=armWWos[138] + armWWos[104];
+   armWWos[140]=armWWos[5]*armWWos[15];
+   armWWos[141]=armWWos[139]*armWWos[140];
+   armWWos[142]=18*armWWos[141];
+   armWWos[143]= - 55./9. - 9./2.*armWWos[104];
+   armWWos[143]=armWWos[143]*armWWos[122];
+   armWWos[143]=128387./54. + armWWos[143];
+   armWWos[144]=1./64.*armWWos[104];
+   armWWos[143]=armWWos[143]*armWWos[144];
+   armWWos[145]= - 473./3. - 41./2.*armWWos[104];
+   armWWos[145]=armWWos[145]*armWWos[104];
+   armWWos[145]=8851./6. + armWWos[145];
+   armWWos[145]=armWWos[145]*armWWos[129];
+   armWWos[145]=256 + armWWos[145];
+   armWWos[145]=armWWos[52]*armWWos[145];
+   armWWos[146]=28439./72. + 31*armWWos[52];
+   armWWos[146]=armWWos[146]*armWWos[101];
+   armWWos[147]=9259./8. - 581*armWWos[52];
+   armWWos[146]=1./3.*armWWos[147] + armWWos[146];
+   armWWos[146]=armWWos[146]*armWWos[121];
+   armWWos[147]=armWWos[51]*armWWos[139];
+   armWWos[148]=armWWos[139]*armWWos[5];
+   armWWos[149]=1./4.*armWWos[17];
+   armWWos[150]=armWWos[148]*armWWos[149];
+   armWWos[109]=1./64.*armWWos[136] + armWWos[132] + armWWos[109] + 
+   armWWos[150] + armWWos[128] + armWWos[147] + armWWos[124] + 
+   armWWos[142] + armWWos[114] + armWWos[146] + 1./9.*armWWos[145] + 
+   256./9. + armWWos[143];
+   armWWos[109]=armWWos[2]*armWWos[109];
+   armWWos[114]=armWWos[120] + 3*armWWos[61];
+   armWWos[114]=armWWos[114]*armWWos[102];
+   armWWos[124]=armWWos[107] + 3./2.;
+   armWWos[128]=armWWos[124]*armWWos[104];
+   armWWos[132]=armWWos[128]*armWWos[61];
+   armWWos[114]=armWWos[114] + armWWos[132];
+   armWWos[132]=armWWos[101] + 3;
+   armWWos[136]=armWWos[132]*armWWos[102];
+   armWWos[136]=armWWos[128] + armWWos[136];
+   armWWos[143]=armWWos[136]*armWWos[17];
+   armWWos[145]=25./2.*armWWos[104];
+   armWWos[146]= - 41 - armWWos[145];
+   armWWos[146]=armWWos[146]*armWWos[104];
+   armWWos[146]= - 139./2. + armWWos[146];
+   armWWos[146]=armWWos[146]*armWWos[119];
+   armWWos[147]=19*armWWos[101];
+   armWWos[150]= - 139./3. - armWWos[147];
+   armWWos[150]=armWWos[150]*armWWos[102];
+   armWWos[146]=armWWos[146] + armWWos[150];
+   armWWos[150]=1./4.*armWWos[15];
+   armWWos[146]=armWWos[146]*armWWos[150];
+   armWWos[151]=3*armWWos[104];
+   armWWos[152]= - 833./18. - armWWos[151];
+   armWWos[152]=armWWos[152]*armWWos[105];
+   armWWos[152]= - 121./3. + armWWos[152];
+   armWWos[152]=armWWos[152]*armWWos[104];
+   armWWos[152]= - 613./12. + armWWos[152];
+   armWWos[152]=armWWos[152]*armWWos[104];
+   armWWos[153]=1./4.*armWWos[101];
+   armWWos[154]=43*armWWos[101];
+   armWWos[155]= - 613./3. - armWWos[154];
+   armWWos[155]=armWWos[155]*armWWos[153];
+   armWWos[152]=armWWos[152] + armWWos[155];
+   armWWos[155]=1./2.*armWWos[16];
+   armWWos[152]=armWWos[152]*armWWos[155];
+   armWWos[156]=67./4. + armWWos[104];
+   armWWos[156]=armWWos[156]*armWWos[104];
+   armWWos[156]=73./2. + armWWos[156];
+   armWWos[156]=armWWos[156]*armWWos[104];
+   armWWos[156]=225./4. + armWWos[156];
+   armWWos[156]=armWWos[156]*armWWos[104];
+   armWWos[157]=79*armWWos[101];
+   armWWos[158]=225 + armWWos[157];
+   armWWos[158]=armWWos[158]*armWWos[153];
+   armWWos[156]=armWWos[156] + armWWos[158];
+   armWWos[158]=1./2.*armWWos[63];
+   armWWos[156]=armWWos[156]*armWWos[158];
+   armWWos[146]= - 9./2.*armWWos[143] + armWWos[156] + armWWos[152] + 
+   armWWos[146] - armWWos[114];
+   armWWos[152]=1./2.*armWWos[2];
+   armWWos[146]=armWWos[146]*armWWos[152];
+   armWWos[156]=armWWos[108]*armWWos[5];
+   armWWos[159]=armWWos[104] + 15;
+   armWWos[159]=armWWos[159]*armWWos[104];
+   armWWos[160]=7 - armWWos[159];
+   armWWos[160]=armWWos[160]*armWWos[104];
+   armWWos[160]=41 + armWWos[160];
+   armWWos[160]=armWWos[160]*armWWos[105];
+   armWWos[161]=17*armWWos[101];
+   armWWos[162]=41./2. + armWWos[161];
+   armWWos[162]=armWWos[162]*armWWos[101];
+   armWWos[160]=armWWos[160] + armWWos[162];
+   armWWos[162]=1./4.*armWWos[13];
+   armWWos[160]=armWWos[160]*armWWos[162];
+   armWWos[163]=armWWos[101] + 2;
+   armWWos[163]=armWWos[163]*armWWos[101];
+   armWWos[164]=armWWos[104] + 2;
+   armWWos[165]=armWWos[164]*armWWos[104];
+   armWWos[163]=armWWos[163] + armWWos[165];
+   armWWos[166]=3*armWWos[5];
+   armWWos[167]=armWWos[163]*armWWos[166];
+   armWWos[168]=armWWos[15]*armWWos[167];
+   armWWos[169]=3*armWWos[51];
+   armWWos[170]=armWWos[163]*armWWos[169];
+   armWWos[159]= - 15 + armWWos[159];
+   armWWos[159]=armWWos[159]*armWWos[104];
+   armWWos[159]= - 41 + armWWos[159];
+   armWWos[159]=armWWos[159]*armWWos[105];
+   armWWos[171]=armWWos[116] + 41./2.;
+   armWWos[172]= - armWWos[171]*armWWos[101];
+   armWWos[159]=armWWos[159] + armWWos[172];
+   armWWos[172]=1./4.*armWWos[50];
+   armWWos[159]=armWWos[159]*armWWos[172];
+   armWWos[173]=83./6. + armWWos[104];
+   armWWos[173]=armWWos[173]*armWWos[104];
+   armWWos[173]=6749./108. + armWWos[173];
+   armWWos[173]=armWWos[173]*armWWos[105];
+   armWWos[173]=935./9. + armWWos[173];
+   armWWos[173]=armWWos[173]*armWWos[118];
+   armWWos[174]=armWWos[105] - 2;
+   armWWos[175]=armWWos[174]*armWWos[104];
+   armWWos[175]=armWWos[175] - 1./2.;
+   armWWos[176]= - armWWos[52]*armWWos[175]*armWWos[119];
+   armWWos[177]=947./48. - armWWos[52];
+   armWWos[177]=armWWos[177]*armWWos[101];
+   armWWos[178]= - 89./6. + armWWos[52];
+   armWWos[177]=1./3.*armWWos[178] + armWWos[177];
+   armWWos[177]=armWWos[177]*armWWos[102];
+   armWWos[146]=armWWos[146] - armWWos[156] + armWWos[159] + 
+   armWWos[170] + armWWos[168] + armWWos[160] + armWWos[177] + 
+   armWWos[173] + armWWos[176];
+   armWWos[146]=armWWos[2]*armWWos[146];
+   armWWos[159]=5./3.*armWWos[104];
+   armWWos[160]= - 32 - armWWos[159];
+   armWWos[160]=armWWos[160]*armWWos[104];
+   armWWos[168]= - 32 - armWWos[125];
+   armWWos[168]=armWWos[168]*armWWos[101];
+   armWWos[142]= - armWWos[142] + armWWos[160] + armWWos[168];
+   armWWos[142]=armWWos[5]*armWWos[142];
+   armWWos[160]=pow(armWWos[5],2);
+   armWWos[168]=armWWos[160]*armWWos[16];
+   armWWos[170]=armWWos[168]*armWWos[163];
+   armWWos[173]=armWWos[139]*armWWos[44];
+   armWWos[176]=19./2.*armWWos[104];
+   armWWos[177]=22 + armWWos[176];
+   armWWos[177]=armWWos[119]*armWWos[45]*armWWos[177];
+   armWWos[178]=armWWos[101]*armWWos[45];
+   armWWos[179]=3./2.*armWWos[101];
+   armWWos[180]=22./3. + armWWos[179];
+   armWWos[180]=armWWos[180]*armWWos[178];
+   armWWos[142]=armWWos[146] - 9*armWWos[170] + armWWos[142] + 
+   armWWos[173] + armWWos[177] + armWWos[180];
+   armWWos[142]=armWWos[2]*armWWos[142];
+   armWWos[146]=1./2.*armWWos[17];
+   armWWos[177]=armWWos[146]*armWWos[5];
+   armWWos[180]= - armWWos[136]*armWWos[177];
+   armWWos[181]= - 5 + armWWos[105];
+   armWWos[181]=armWWos[181]*armWWos[104];
+   armWWos[181]= - 9./2. + armWWos[181];
+   armWWos[181]=armWWos[181]*armWWos[118];
+   armWWos[181]= - 1 + armWWos[181];
+   armWWos[181]=armWWos[181]*armWWos[104];
+   armWWos[182]= - 1 + armWWos[133];
+   armWWos[182]=armWWos[182]*armWWos[101];
+   armWWos[180]=armWWos[180] + armWWos[181] + armWWos[182];
+   armWWos[180]=armWWos[2]*armWWos[180];
+   armWWos[181]=armWWos[103]*armWWos[5];
+   armWWos[182]=armWWos[44]*armWWos[163];
+   armWWos[175]= - armWWos[119]*armWWos[45]*armWWos[175];
+   armWWos[183]=armWWos[101] - 1./3.;
+   armWWos[184]= - armWWos[102]*armWWos[45]*armWWos[183];
+   armWWos[175]=armWWos[180] - 9*armWWos[181] + armWWos[182] + 
+   armWWos[175] + armWWos[184];
+   armWWos[180]=pow(armWWos[2],2);
+   armWWos[175]=armWWos[175]*armWWos[180];
+   armWWos[182]=pow(armWWos[2],3);
+   armWWos[184]=armWWos[136]*armWWos[182];
+   armWWos[185]=armWWos[184]*armWWos[57];
+   armWWos[186]=armWWos[56]*armWWos[184];
+   armWWos[132]=armWWos[132]*armWWos[101];
+   armWWos[187]=armWWos[165] + 3;
+   armWWos[187]=armWWos[187]*armWWos[104];
+   armWWos[132]=armWWos[132] + armWWos[187];
+   armWWos[188]=armWWos[132]*armWWos[182];
+   armWWos[189]=armWWos[39]*armWWos[188];
+   armWWos[175]=1./2.*armWWos[185] + armWWos[189] + armWWos[175] - 3./4.
+   *armWWos[186];
+   armWWos[175]=mmt*armWWos[175];
+   armWWos[186]= - 13./2. + armWWos[104];
+   armWWos[186]=armWWos[186]*armWWos[105];
+   armWWos[186]= - 7 + armWWos[186];
+   armWWos[186]=armWWos[186]*armWWos[119];
+   armWWos[189]=5./4.*armWWos[101];
+   armWWos[190]= - 7./3. - armWWos[189];
+   armWWos[190]=armWWos[190]*armWWos[101];
+   armWWos[186]=armWWos[186] + armWWos[190];
+   armWWos[186]=armWWos[56]*armWWos[186];
+   armWWos[190]=139 - 125./6.*armWWos[104];
+   armWWos[190]=armWWos[190]*armWWos[104];
+   armWWos[190]=491./2. + armWWos[190];
+   armWWos[190]=armWWos[190]*armWWos[119];
+   armWWos[191]=491./3. + 71*armWWos[101];
+   armWWos[191]=armWWos[191]*armWWos[102];
+   armWWos[190]=armWWos[190] + armWWos[191];
+   armWWos[190]=armWWos[39]*armWWos[190];
+   armWWos[186]=1./16.*armWWos[190] + armWWos[186];
+   armWWos[186]=armWWos[180]*armWWos[186];
+   armWWos[190]=3*armWWos[101];
+   armWWos[191]=armWWos[190] + 2;
+   armWWos[191]=armWWos[191]*armWWos[101];
+   armWWos[191]=armWWos[191] + armWWos[165];
+   armWWos[192]=armWWos[191]*armWWos[160];
+   armWWos[193]=armWWos[103]*armWWos[180];
+   armWWos[194]=armWWos[193]*armWWos[57];
+   armWWos[142]=armWWos[175] + 5./2.*armWWos[194] - 6*armWWos[192] + 
+   armWWos[142] + armWWos[186];
+   armWWos[142]=mmt*armWWos[142];
+   armWWos[175]=armWWos[182]*mmt;
+   armWWos[186]=armWWos[136]*armWWos[175];
+   armWWos[195]=73./3.*armWWos[193] + 15*armWWos[186];
+   armWWos[195]=mmt*armWWos[195];
+   armWWos[196]=armWWos[139]*armWWos[2];
+   armWWos[195]=13./3.*armWWos[196] + armWWos[195];
+   armWWos[195]=armWWos[59]*armWWos[195];
+   armWWos[197]=armWWos[103]*armWWos[166];
+   armWWos[198]=armWWos[136]*armWWos[2];
+   armWWos[199]= - armWWos[197] - 5./4.*armWWos[198];
+   armWWos[200]=armWWos[180]*mmt;
+   armWWos[199]=armWWos[199]*armWWos[200];
+   armWWos[199]=1./2.*armWWos[193] + armWWos[199];
+   armWWos[201]=3*armWWos[37];
+   armWWos[199]=armWWos[199]*armWWos[201];
+   armWWos[202]= - 13 + 121./6.*armWWos[104];
+   armWWos[202]=armWWos[202]*armWWos[104];
+   armWWos[203]=57./2.*armWWos[101];
+   armWWos[204]= - 13 + armWWos[203];
+   armWWos[204]=armWWos[204]*armWWos[101];
+   armWWos[202]=armWWos[202] + armWWos[204];
+   armWWos[204]=1./2.*armWWos[5];
+   armWWos[202]=armWWos[202]*armWWos[204];
+   armWWos[205]=armWWos[104] + 1;
+   armWWos[205]=armWWos[205]*armWWos[104];
+   armWWos[206]=armWWos[205] + armWWos[101];
+   armWWos[207]=1./3.*armWWos[180];
+   armWWos[208]=pow(mmt,2);
+   armWWos[209]=armWWos[206]*armWWos[207]*armWWos[208];
+   armWWos[209]=armWWos[209] - armWWos[101];
+   armWWos[210]=armWWos[47]*armWWos[209];
+   armWWos[211]=armWWos[115] - 1;
+   armWWos[211]=armWWos[211]*armWWos[104];
+   armWWos[212]=11./2. - armWWos[211];
+   armWWos[212]=armWWos[212]*armWWos[119];
+   armWWos[213]=11./3. + armWWos[190];
+   armWWos[213]=armWWos[213]*armWWos[102];
+   armWWos[212]=armWWos[212] + armWWos[213];
+   armWWos[212]=armWWos[212]*armWWos[152];
+   armWWos[213]=armWWos[119] + 1;
+   armWWos[214]=armWWos[213]*armWWos[104];
+   armWWos[215]= - 1 - armWWos[214];
+   armWWos[215]=armWWos[215]*armWWos[104];
+   armWWos[215]=armWWos[215] - armWWos[101];
+   armWWos[215]=armWWos[215]*armWWos[200];
+   armWWos[212]=armWWos[212] + 1./3.*armWWos[215];
+   armWWos[212]=mmt*armWWos[212];
+   armWWos[215]= - 2 - armWWos[119];
+   armWWos[215]=armWWos[215]*armWWos[119];
+   armWWos[216]=pow(armWWos[3],4);
+   armWWos[217]=2*armWWos[216];
+   armWWos[212]=armWWos[212] + armWWos[215] - armWWos[217];
+   armWWos[212]=armWWos[48]*armWWos[212];
+   armWWos[215]=7*armWWos[101];
+   armWWos[218]= - 3 - armWWos[215];
+   armWWos[218]=armWWos[218]*armWWos[178];
+   armWWos[219]=armWWos[139]*armWWos[152];
+   armWWos[220]=armWWos[57]*armWWos[219];
+   armWWos[221]= - armWWos[45]*armWWos[159];
+   armWWos[222]= - armWWos[44]*armWWos[217];
+   armWWos[109]=armWWos[199] + 1./8.*armWWos[195] + armWWos[212] + 2*
+   armWWos[210] + armWWos[142] + armWWos[220] + armWWos[202] + 
+   armWWos[222] + armWWos[221] + armWWos[218] + armWWos[109];
+   armWWos[109]=mmt*armWWos[109];
+   armWWos[142]=armWWos[190] - 11;
+   armWWos[195]=11./2.*armWWos[101];
+   armWWos[142]=armWWos[142]*armWWos[195];
+   armWWos[199]=5./2.*armWWos[104];
+   armWWos[202]=armWWos[199] + 47;
+   armWWos[202]=armWWos[202]*armWWos[159];
+   armWWos[202]=armWWos[202] - 107./2.;
+   armWWos[202]=armWWos[202]*armWWos[119];
+   armWWos[142]=armWWos[142] + armWWos[202];
+   armWWos[202]=1./2.*armWWos[15];
+   armWWos[210]=armWWos[202] + armWWos[61];
+   armWWos[210]=armWWos[142]*armWWos[210];
+   armWWos[212]=37 - armWWos[199];
+   armWWos[212]=armWWos[212]*armWWos[104];
+   armWWos[212]= - 43./2. + 5./9.*armWWos[212];
+   armWWos[212]=armWWos[212]*armWWos[122];
+   armWWos[218]= - 215 + 63*armWWos[101];
+   armWWos[218]=armWWos[218]*armWWos[102];
+   armWWos[212]=armWWos[212] + armWWos[218];
+   armWWos[218]=1./16.*armWWos[16];
+   armWWos[212]=armWWos[212]*armWWos[218];
+   armWWos[220]=armWWos[199] - 103;
+   armWWos[220]=armWWos[220]*armWWos[159];
+   armWWos[220]=armWWos[220] + 793./2.;
+   armWWos[220]=armWWos[220]*armWWos[119];
+   armWWos[221]=armWWos[125] - 77;
+   armWWos[221]=armWWos[221]*armWWos[102];
+   armWWos[220]=armWWos[220] + armWWos[221];
+   armWWos[221]=armWWos[36]*armWWos[220];
+   armWWos[222]=227 + armWWos[199];
+   armWWos[222]=armWWos[222]*armWWos[159];
+   armWWos[222]= - 2527./2. + armWWos[222];
+   armWWos[222]=armWWos[222]*armWWos[119];
+   armWWos[223]=523 - 99*armWWos[101];
+   armWWos[223]=armWWos[223]*armWWos[102];
+   armWWos[222]=armWWos[222] + armWWos[223];
+   armWWos[222]=armWWos[19]*armWWos[222];
+   armWWos[210]=1./16.*armWWos[222] + 1./8.*armWWos[221] + armWWos[212]
+    + armWWos[210];
+   armWWos[212]=armWWos[199] + 7;
+   armWWos[221]=armWWos[212]*armWWos[122];
+   armWWos[221]=armWWos[221] - 941./2.;
+   armWWos[221]=armWWos[221]*armWWos[119];
+   armWWos[222]=armWWos[125] - 41;
+   armWWos[223]=9./2.*armWWos[101];
+   armWWos[222]=armWWos[222]*armWWos[223];
+   armWWos[221]=armWWos[221] - armWWos[222];
+   armWWos[222]=1./256.*armWWos[39];
+   armWWos[224]=1./256.*armWWos[55] - armWWos[222];
+   armWWos[224]=armWWos[221]*armWWos[224];
+   armWWos[225]=armWWos[101] - 5;
+   armWWos[225]=armWWos[225]*armWWos[101];
+   armWWos[226]=armWWos[199] + 37;
+   armWWos[226]=armWWos[226]*armWWos[122];
+   armWWos[226]=armWWos[226] - 2201./2.;
+   armWWos[226]=armWWos[226]*armWWos[104];
+   armWWos[227]= - 16 + 1./96.*armWWos[226];
+   armWWos[227]=1./3.*armWWos[227];
+   armWWos[228]= - armWWos[227] + 99./64.*armWWos[225];
+   armWWos[229]= - armWWos[13]*armWWos[228];
+   armWWos[230]=31 + 15./2.*armWWos[104];
+   armWWos[230]=armWWos[230]*armWWos[122];
+   armWWos[230]= - 3343./2. + armWWos[230];
+   armWWos[231]=1./256.*armWWos[104];
+   armWWos[230]=armWWos[230]*armWWos[231];
+   armWWos[227]= - armWWos[52]*armWWos[227];
+   armWWos[232]= - 205./8. + 11*armWWos[52];
+   armWWos[232]=armWWos[232]*armWWos[190];
+   armWWos[233]=165*armWWos[52];
+   armWWos[232]=armWWos[232] + 3067./8. - armWWos[233];
+   armWWos[232]=armWWos[232]*armWWos[101];
+   armWWos[224]=armWWos[229] + 3./64.*armWWos[232] + armWWos[227] - 14
+    + armWWos[230] + armWWos[224];
+   armWWos[224]=mmZ*armWWos[224];
+   armWWos[210]=1./8.*armWWos[210] + armWWos[224];
+   armWWos[210]=armWWos[98]*armWWos[210];
+   armWWos[224]=armWWos[139]*armWWos[17];
+   armWWos[227]=armWWos[139]*armWWos[15];
+   armWWos[229]= - armWWos[61] - armWWos[120];
+   armWWos[229]=armWWos[229]*armWWos[101];
+   armWWos[230]=armWWos[104]*armWWos[61];
+   armWWos[229]= - armWWos[230] + armWWos[229];
+   armWWos[229]= - 9./4.*armWWos[224] + 3*armWWos[229] + 7./2.*
+   armWWos[227];
+   armWWos[229]=armWWos[2]*armWWos[229];
+   armWWos[232]=armWWos[163]*armWWos[15];
+   armWWos[234]= - 3*armWWos[232] - 5./2.*armWWos[108];
+   armWWos[234]=armWWos[2]*armWWos[234];
+   armWWos[235]=43./8. - armWWos[169];
+   armWWos[235]=armWWos[139]*armWWos[235];
+   armWWos[234]=armWWos[234] + armWWos[235];
+   armWWos[234]=armWWos[2]*armWWos[234];
+   armWWos[235]=armWWos[103]*armWWos[200];
+   armWWos[236]=5*armWWos[235];
+   armWWos[237]=3*armWWos[196];
+   armWWos[238]=armWWos[57]*armWWos[237];
+   armWWos[234]= - armWWos[236] + armWWos[234] + armWWos[238];
+   armWWos[234]=mmt*armWWos[234];
+   armWWos[238]=armWWos[235] + armWWos[219];
+   armWWos[238]=armWWos[238]*mmt;
+   armWWos[238]=armWWos[238] - armWWos[216];
+   armWWos[239]=armWWos[59]*armWWos[238];
+   armWWos[240]=armWWos[219] - armWWos[235];
+   armWWos[201]=armWWos[240]*armWWos[201];
+   armWWos[240]=armWWos[57] + armWWos[51];
+   armWWos[241]=3*armWWos[216];
+   armWWos[240]=armWWos[241]*armWWos[240];
+   armWWos[201]=armWWos[201] + armWWos[239] + armWWos[234] + 
+   armWWos[229] + 7./4.*armWWos[216] + armWWos[240];
+   armWWos[201]=mmt*armWWos[201];
+   armWWos[229]=7./2.*armWWos[196];
+   armWWos[234]= - armWWos[229] + armWWos[236];
+   armWWos[234]=mmt*armWWos[234];
+   armWWos[234]=armWWos[216] + armWWos[234];
+   armWWos[236]=1./2.*armWWos[20];
+   armWWos[234]=armWWos[234]*armWWos[236];
+   armWWos[238]= - armWWos[38]*armWWos[238];
+   armWWos[239]=armWWos[216]*armWWos[15];
+   armWWos[240]=armWWos[17]*armWWos[216];
+   armWWos[240]= - 2*armWWos[239] + 17./2.*armWWos[240];
+   armWWos[242]=armWWos[101] - 1;
+   armWWos[243]=armWWos[242]*armWWos[101];
+   armWWos[244]=armWWos[243]*mmZ;
+   armWWos[245]= - 53./12. - 6*armWWos[57];
+   armWWos[245]=armWWos[245]*armWWos[244];
+   armWWos[246]=armWWos[242]*mmZ;
+   armWWos[247]=1./3.*armWWos[101];
+   armWWos[248]=armWWos[247]*armWWos[246];
+   armWWos[249]= - mmt*armWWos[216];
+   armWWos[248]=armWWos[249] + armWWos[248];
+   armWWos[248]=armWWos[10]*armWWos[248];
+   armWWos[201]=2*armWWos[248] + armWWos[238] + armWWos[245] + 
+   armWWos[234] + 1./3.*armWWos[240] + armWWos[201];
+   armWWos[201]=armWWos[100]*armWWos[201];
+   armWWos[234]=4841./3. + 161./2.*armWWos[104];
+   armWWos[234]=armWWos[234]*armWWos[104];
+   armWWos[234]= - 1529./2. + armWWos[234];
+   armWWos[234]=armWWos[234]*armWWos[112];
+   armWWos[238]= - 625 + 3307./3.*armWWos[101];
+   armWWos[238]=armWWos[238]*armWWos[102];
+   armWWos[234]=armWWos[234] + armWWos[238];
+   armWWos[234]=armWWos[15]*armWWos[234];
+   armWWos[238]= - 23803./3. + 2057./2.*armWWos[104];
+   armWWos[238]=armWWos[238]*armWWos[104];
+   armWWos[238]=21235./2. + armWWos[238];
+   armWWos[238]=armWWos[238]*armWWos[112];
+   armWWos[240]=12113./3. + 3421*armWWos[101];
+   armWWos[240]=armWWos[240]*armWWos[102];
+   armWWos[238]=armWWos[238] + armWWos[240];
+   armWWos[238]=armWWos[16]*armWWos[238];
+   armWWos[240]=31./27. - armWWos[105];
+   armWWos[240]=armWWos[240]*armWWos[104];
+   armWWos[240]=1345./18. + armWWos[240];
+   armWWos[230]=armWWos[240]*armWWos[230];
+   armWWos[120]=833./9.*armWWos[61] + 159*armWWos[120];
+   armWWos[120]=armWWos[120]*armWWos[102];
+   armWWos[120]=1./48.*armWWos[238] + 1./6.*armWWos[234] + armWWos[230]
+    + armWWos[120];
+   armWWos[230]=pow(armWWos[4],4);
+   armWWos[234]= - 29./4. - 5./3.*armWWos[230];
+   armWWos[234]=armWWos[234]*armWWos[119];
+   armWWos[238]=23*armWWos[101];
+   armWWos[240]= - 29./3. - armWWos[238];
+   armWWos[240]=armWWos[240]*armWWos[153];
+   armWWos[234]=armWWos[234] + armWWos[240];
+   armWWos[234]=armWWos[63]*armWWos[234];
+   armWWos[120]= - 29./24.*armWWos[224] + 1./8.*armWWos[120] + 
+   armWWos[234];
+   armWWos[120]=armWWos[2]*armWWos[120];
+   armWWos[234]= - 11 + 7./6.*armWWos[104];
+   armWWos[234]=armWWos[234]*armWWos[104];
+   armWWos[240]=armWWos[179] + 11;
+   armWWos[240]=armWWos[240]*armWWos[101];
+   armWWos[234]=armWWos[234] - armWWos[240];
+   armWWos[234]=armWWos[234]*armWWos[5];
+   armWWos[240]=3./2.*armWWos[104];
+   armWWos[245]= - 1303./27. + armWWos[240];
+   armWWos[245]=armWWos[245]*armWWos[104];
+   armWWos[245]= - 79./18. + armWWos[245];
+   armWWos[245]=armWWos[245]*armWWos[104];
+   armWWos[248]=5./2.*armWWos[101];
+   armWWos[249]= - 835./9. - armWWos[125];
+   armWWos[249]=armWWos[249]*armWWos[248];
+   armWWos[245]=armWWos[245] + armWWos[249];
+   armWWos[249]=1./16.*armWWos[2];
+   armWWos[245]=armWWos[245]*armWWos[249];
+   armWWos[245]=armWWos[234] + armWWos[245];
+   armWWos[250]=mmt*armWWos[2];
+   armWWos[245]=armWWos[245]*armWWos[250];
+   armWWos[251]=17./6.*armWWos[104];
+   armWWos[252]= - 1 + armWWos[251];
+   armWWos[252]=armWWos[252]*armWWos[104];
+   armWWos[253]=armWWos[179] - 1;
+   armWWos[254]=armWWos[253]*armWWos[101];
+   armWWos[252]=armWWos[252] + armWWos[254];
+   armWWos[252]=armWWos[5]*armWWos[252];
+   armWWos[254]=2191./27. + 65./2.*armWWos[104];
+   armWWos[254]=armWWos[254]*armWWos[104];
+   armWWos[254]=1915./18. + armWWos[254];
+   armWWos[254]=armWWos[254]*armWWos[104];
+   armWWos[255]=41*armWWos[101];
+   armWWos[256]= - 3205./9. + armWWos[255];
+   armWWos[256]=armWWos[256]*armWWos[102];
+   armWWos[254]=armWWos[254] + armWWos[256];
+   armWWos[256]=1./64.*armWWos[2];
+   armWWos[254]=armWWos[254]*armWWos[256];
+   armWWos[245]=armWWos[245] + armWWos[252] + armWWos[254];
+   armWWos[245]=armWWos[36]*armWWos[245];
+   armWWos[252]=11*armWWos[104];
+   armWWos[254]=19./4. - armWWos[252];
+   armWWos[254]=armWWos[254]*armWWos[119];
+   armWWos[257]=armWWos[190] - 1;
+   armWWos[258]= - armWWos[257]*armWWos[153];
+   armWWos[259]=11./3. - armWWos[190];
+   armWWos[259]=armWWos[259]*armWWos[101];
+   armWWos[260]=11./3.*armWWos[104];
+   armWWos[259]= - armWWos[260] + armWWos[259];
+   armWWos[259]=armWWos[39]*armWWos[259];
+   armWWos[261]=armWWos[101] - 5./3.;
+   armWWos[261]=armWWos[261]*armWWos[101];
+   armWWos[261]=armWWos[261] + armWWos[260];
+   armWWos[262]=armWWos[55]*armWWos[261];
+   armWWos[254]=armWWos[262] + armWWos[259] + armWWos[254] + 
+   armWWos[258];
+   armWWos[258]=armWWos[56]*armWWos[243];
+   armWWos[254]=armWWos[258] + 1./2.*armWWos[254];
+   armWWos[254]=mmZ*armWWos[254];
+   armWWos[258]=armWWos[216]*armWWos[38];
+   armWWos[254]=armWWos[258] + armWWos[254];
+   armWWos[259]=armWWos[102] - 1./3.;
+   armWWos[259]=armWWos[259]*armWWos[101];
+   armWWos[262]=11./2.*armWWos[104];
+   armWWos[263]=armWWos[262] - 1;
+   armWWos[263]=armWWos[263]*armWWos[119];
+   armWWos[259]=armWWos[259] + armWWos[263];
+   armWWos[263]=1./2.*armWWos[36] - armWWos[63];
+   armWWos[263]=armWWos[259]*armWWos[263];
+   armWWos[264]=armWWos[101] + 1./3.;
+   armWWos[265]=armWWos[264]*armWWos[102];
+   armWWos[266]= - 5./2. + armWWos[260];
+   armWWos[266]=armWWos[266]*armWWos[104];
+   armWWos[266]=armWWos[266] + armWWos[265];
+   armWWos[266]=armWWos[266]*armWWos[155];
+   armWWos[267]=armWWos[19]*armWWos[261];
+   armWWos[254]=1./4.*armWWos[267] - armWWos[239] + armWWos[266] + 
+   armWWos[263] + 1./2.*armWWos[254];
+   armWWos[254]=armWWos[32]*armWWos[254];
+   armWWos[263]=71./3.*armWWos[193] + 27./2.*armWWos[186];
+   armWWos[263]=mmt*armWWos[263];
+   armWWos[266]=1./3.*armWWos[196];
+   armWWos[263]= - armWWos[266] + armWWos[263];
+   armWWos[124]=armWWos[124]*armWWos[105];
+   armWWos[124]=armWWos[124] + 1;
+   armWWos[124]=armWWos[124]*armWWos[104];
+   armWWos[267]=armWWos[153] + 1;
+   armWWos[268]=armWWos[267]*armWWos[101];
+   armWWos[124]=armWWos[124] + armWWos[268];
+   armWWos[268]=pow(armWWos[2],4);
+   armWWos[269]=armWWos[268]*mmt;
+   armWWos[270]=armWWos[124]*armWWos[269];
+   armWWos[271]= - 5./4.*armWWos[184] + armWWos[270];
+   armWWos[271]=mmt*armWWos[271];
+   armWWos[271]= - 11./6.*armWWos[193] + armWWos[271];
+   armWWos[271]=mmH*armWWos[271];
+   armWWos[272]=armWWos[163]*armWWos[200];
+   armWWos[273]=armWWos[272] + armWWos[196];
+   armWWos[274]=mmt*armWWos[273];
+   armWWos[274]= - armWWos[217] + armWWos[274];
+   armWWos[274]=armWWos[100]*armWWos[274];
+   armWWos[263]=armWWos[271] + 1./4.*armWWos[263] + armWWos[274];
+   armWWos[263]=armWWos[62]*armWWos[263];
+   armWWos[271]=armWWos[206]*armWWos[200];
+   armWWos[274]=armWWos[161] - 64 - 145./3.*armWWos[104];
+   armWWos[275]=1./3.*armWWos[2];
+   armWWos[274]=armWWos[274]*armWWos[275];
+   armWWos[274]=armWWos[274] - armWWos[271];
+   armWWos[274]=mmt*armWWos[274];
+   armWWos[276]=armWWos[101] - 2;
+   armWWos[274]=2*armWWos[276] + armWWos[274];
+   armWWos[274]=armWWos[53]*armWWos[274];
+   armWWos[277]=armWWos[101] + armWWos[104];
+   armWWos[278]=armWWos[277]*armWWos[2];
+   armWWos[271]= - 2*armWWos[278] - armWWos[271];
+   armWWos[271]=mmt*armWWos[271];
+   armWWos[271]=armWWos[101] + armWWos[271];
+   armWWos[271]=mmt*armWWos[271];
+   armWWos[271]=armWWos[271] + 2*armWWos[246];
+   armWWos[271]=armWWos[46]*armWWos[271];
+   armWWos[271]=armWWos[274] + armWWos[271];
+   armWWos[274]=armWWos[163]*armWWos[5];
+   armWWos[279]=5*armWWos[274] + 7./4.*armWWos[198];
+   armWWos[279]=armWWos[279]*armWWos[180];
+   armWWos[280]=armWWos[186]*armWWos[204];
+   armWWos[279]=armWWos[279] + armWWos[280];
+   armWWos[279]=mmt*armWWos[279];
+   armWWos[280]=armWWos[103]*armWWos[2];
+   armWWos[281]= - armWWos[148] - 115./6.*armWWos[280];
+   armWWos[282]=1./4.*armWWos[2];
+   armWWos[281]=armWWos[281]*armWWos[282];
+   armWWos[279]=armWWos[281] + armWWos[279];
+   armWWos[279]=mmt*armWWos[279];
+   armWWos[281]=armWWos[216]*armWWos[5];
+   armWWos[283]= - armWWos[281] + 5./4.*armWWos[196];
+   armWWos[279]=1./2.*armWWos[283] + armWWos[279];
+   armWWos[279]=armWWos[20]*armWWos[279];
+   armWWos[283]=13./2.*armWWos[104];
+   armWWos[284]=1907./9. - armWWos[283];
+   armWWos[284]=armWWos[284]*armWWos[104];
+   armWWos[284]= - 1621./6. + armWWos[284];
+   armWWos[284]=armWWos[284]*armWWos[119];
+   armWWos[285]=159*armWWos[101];
+   armWWos[286]=6571./9. - armWWos[285];
+   armWWos[286]=armWWos[286]*armWWos[102];
+   armWWos[284]=armWWos[284] + armWWos[286];
+   armWWos[286]=1./32.*armWWos[2];
+   armWWos[284]=armWWos[284]*armWWos[286];
+   armWWos[234]= - armWWos[234] + armWWos[284];
+   armWWos[234]=armWWos[2]*armWWos[234];
+   armWWos[284]= - 85 - 67./6.*armWWos[104];
+   armWWos[284]=armWWos[284]*armWWos[104];
+   armWWos[284]= - 395./2. + armWWos[284];
+   armWWos[284]=armWWos[284]*armWWos[119];
+   armWWos[287]=15*armWWos[101];
+   armWWos[288]= - 79./3. - armWWos[287];
+   armWWos[288]=armWWos[288]*armWWos[248];
+   armWWos[284]=armWWos[284] + armWWos[288];
+   armWWos[284]=armWWos[284]*armWWos[175];
+   armWWos[234]=armWWos[234] + 1./8.*armWWos[284];
+   armWWos[234]=mmt*armWWos[234];
+   armWWos[284]= - 8515./3. - 679./2.*armWWos[104];
+   armWWos[284]=armWWos[284]*armWWos[112];
+   armWWos[284]= - 789./2. + armWWos[284];
+   armWWos[284]=armWWos[284]*armWWos[104];
+   armWWos[288]= - 1087./3. + 1373*armWWos[101];
+   armWWos[288]=armWWos[288]*armWWos[102];
+   armWWos[284]=armWWos[284] + armWWos[288];
+   armWWos[284]=armWWos[2]*armWWos[284];
+   armWWos[288]=armWWos[241] + 11./3.*armWWos[230];
+   armWWos[288]=armWWos[288]*armWWos[5];
+   armWWos[234]=armWWos[234] - armWWos[288] + 1./128.*armWWos[284];
+   armWWos[234]=armWWos[19]*armWWos[234];
+   armWWos[135]=271 + armWWos[135];
+   armWWos[135]=armWWos[135]*armWWos[104];
+   armWWos[135]= - 349./2. + armWWos[135];
+   armWWos[135]=armWWos[135]*armWWos[119];
+   armWWos[255]= - 349./3. - armWWos[255];
+   armWWos[255]=armWWos[255]*armWWos[102];
+   armWWos[135]=armWWos[135] + armWWos[255];
+   armWWos[135]=armWWos[135]*armWWos[282];
+   armWWos[255]=7./18.*armWWos[104];
+   armWWos[284]= - 1 + armWWos[255];
+   armWWos[284]=armWWos[284]*armWWos[252];
+   armWWos[284]= - 17./2. + armWWos[284];
+   armWWos[284]=armWWos[284]*armWWos[104];
+   armWWos[289]=5*armWWos[101];
+   armWWos[290]= - 17 + armWWos[289];
+   armWWos[290]=armWWos[290]*armWWos[102];
+   armWWos[284]=armWWos[284] + armWWos[290];
+   armWWos[284]=armWWos[284]*armWWos[200];
+   armWWos[135]=armWWos[135] + armWWos[284];
+   armWWos[135]=mmt*armWWos[135];
+   armWWos[284]=armWWos[145] + 163;
+   armWWos[284]=armWWos[284]*armWWos[104];
+   armWWos[284]=armWWos[284] - 71./6.;
+   armWWos[284]=armWWos[284]*armWWos[119];
+   armWWos[290]=659./3. - 657*armWWos[101];
+   armWWos[290]=armWWos[290]*armWWos[102];
+   armWWos[290]=armWWos[284] + armWWos[290];
+   armWWos[135]=1./16.*armWWos[290] + armWWos[135];
+   armWWos[135]=armWWos[55]*armWWos[135];
+   armWWos[290]= - 4 + 55./6.*armWWos[104];
+   armWWos[290]=armWWos[290]*armWWos[119];
+   armWWos[291]=7./2.*armWWos[101];
+   armWWos[292]=armWWos[291] - 11./3.;
+   armWWos[293]=armWWos[292]*armWWos[101];
+   armWWos[290]=armWWos[290] + armWWos[293];
+   armWWos[290]=armWWos[290]*armWWos[5];
+   armWWos[293]=armWWos[107] - 4;
+   armWWos[294]=2*armWWos[243];
+   armWWos[293]= - armWWos[294] + 1./9.*armWWos[293];
+   armWWos[295]= - armWWos[48]*armWWos[293];
+   armWWos[296]=armWWos[190] - 5;
+   armWWos[178]=armWWos[296]*armWWos[178];
+   armWWos[178]=4./3.*armWWos[45] + armWWos[178];
+   armWWos[297]=armWWos[47]*armWWos[242];
+   armWWos[178]=armWWos[295] + 4./3.*armWWos[297] + 2*armWWos[178] + 
+   armWWos[290];
+   armWWos[178]=mmZ*armWWos[178];
+   armWWos[295]= - 31 - armWWos[104];
+   armWWos[295]=armWWos[295]*armWWos[104];
+   armWWos[295]= - 57 + armWWos[295];
+   armWWos[295]=armWWos[295]*armWWos[104];
+   armWWos[295]= - 83 + armWWos[295];
+   armWWos[295]=armWWos[295]*armWWos[105];
+   armWWos[297]= - 83./2. - armWWos[116];
+   armWWos[297]=armWWos[297]*armWWos[101];
+   armWWos[295]=armWWos[295] + armWWos[297];
+   armWWos[295]=armWWos[295]*armWWos[282];
+   armWWos[295]= - armWWos[167] + armWWos[295];
+   armWWos[295]=armWWos[295]*armWWos[200];
+   armWWos[297]= - 3 - armWWos[105];
+   armWWos[297]=armWWos[297]*armWWos[104];
+   armWWos[297]= - 23./2. + armWWos[297];
+   armWWos[297]=armWWos[297]*armWWos[104];
+   armWWos[298]=armWWos[161] + 23;
+   armWWos[299]= - armWWos[298]*armWWos[102];
+   armWWos[297]=armWWos[297] + armWWos[299];
+   armWWos[297]=armWWos[297]*armWWos[282];
+   armWWos[299]=armWWos[139]*armWWos[166];
+   armWWos[297]= - armWWos[299] + armWWos[297];
+   armWWos[297]=armWWos[2]*armWWos[297];
+   armWWos[295]=armWWos[297] + armWWos[295];
+   armWWos[295]=mmt*armWWos[295];
+   armWWos[297]=59 + armWWos[147];
+   armWWos[297]=armWWos[297]*armWWos[101];
+   armWWos[297]=59*armWWos[104] + armWWos[297];
+   armWWos[300]=1./8.*armWWos[2];
+   armWWos[297]=armWWos[297]*armWWos[300];
+   armWWos[301]=6*armWWos[281];
+   armWWos[295]=armWWos[295] + armWWos[301] + armWWos[297];
+   armWWos[295]=armWWos[38]*armWWos[295];
+   armWWos[297]=armWWos[107] - 1./2.;
+   armWWos[302]=armWWos[297]*armWWos[119];
+   armWWos[265]=armWWos[302] - armWWos[265];
+   armWWos[265]=armWWos[265]*armWWos[200];
+   armWWos[302]= - 13 + armWWos[230];
+   armWWos[302]=armWWos[302]*armWWos[119];
+   armWWos[303]= - 13./3. - armWWos[215];
+   armWWos[303]=armWWos[303]*armWWos[101];
+   armWWos[302]=armWWos[302] + armWWos[303];
+   armWWos[302]=armWWos[302]*armWWos[282];
+   armWWos[302]=armWWos[302] + armWWos[265];
+   armWWos[302]=mmt*armWWos[302];
+   armWWos[303]=22./3. + 5./8.*armWWos[104];
+   armWWos[303]=armWWos[303]*armWWos[104];
+   armWWos[303]= - 179./24. + armWWos[303];
+   armWWos[303]=armWWos[303]*armWWos[104];
+   armWWos[303]=8 + armWWos[303];
+   armWWos[304]=33*armWWos[101];
+   armWWos[305]=5./3. - armWWos[304];
+   armWWos[305]=armWWos[305]*armWWos[133];
+   armWWos[302]=armWWos[302] + 1./9.*armWWos[303] + armWWos[305];
+   armWWos[302]=armWWos[27]*armWWos[302];
+   armWWos[303]=3 - 1./3.*armWWos[230];
+   armWWos[303]=armWWos[303]*armWWos[104];
+   armWWos[137]=armWWos[137]*armWWos[190];
+   armWWos[137]=armWWos[303] + armWWos[137];
+   armWWos[137]=armWWos[137]*armWWos[152];
+   armWWos[137]=armWWos[137] - armWWos[265];
+   armWWos[137]=mmt*armWWos[137];
+   armWWos[265]=11./2. + armWWos[131];
+   armWWos[265]=armWWos[265]*armWWos[119];
+   armWWos[303]=23./3. - armWWos[215];
+   armWWos[303]=armWWos[303]*armWWos[102];
+   armWWos[137]=armWWos[137] + armWWos[265] + armWWos[303];
+   armWWos[137]=mmt*armWWos[137];
+   armWWos[265]=armWWos[242]*armWWos[190];
+   armWWos[303]=2./3. + armWWos[265];
+   armWWos[303]=mmZ*armWWos[303];
+   armWWos[137]=armWWos[137] + 2*armWWos[303];
+   armWWos[137]=armWWos[43]*armWWos[137];
+   armWWos[303]= - 4819./3. - 605./2.*armWWos[104];
+   armWWos[303]=armWWos[303]*armWWos[104];
+   armWWos[303]= - 258031./18. + armWWos[303];
+   armWWos[231]=armWWos[303]*armWWos[231];
+   armWWos[231]= - 212./3. + armWWos[231];
+   armWWos[303]=1733./9. + 37./2.*armWWos[104];
+   armWWos[303]=armWWos[303]*armWWos[104];
+   armWWos[303]=2963./18. + armWWos[303];
+   armWWos[305]=1./32.*armWWos[104];
+   armWWos[303]=armWWos[303]*armWWos[305];
+   armWWos[303]=80./3. + armWWos[303];
+   armWWos[303]=armWWos[52]*armWWos[303];
+   armWWos[231]=1./3.*armWWos[231] + armWWos[303];
+   armWWos[303]= - 2437./3. - 151./2.*armWWos[104];
+   armWWos[303]=armWWos[303]*armWWos[104];
+   armWWos[303]= - 2827./6. + armWWos[303];
+   armWWos[303]=armWWos[303]*armWWos[305];
+   armWWos[303]= - 88 + armWWos[303];
+   armWWos[306]=1./64.*armWWos[101];
+   armWWos[307]= - 17 + 957*armWWos[101];
+   armWWos[307]=armWWos[307]*armWWos[306];
+   armWWos[303]=1./9.*armWWos[303] + armWWos[307];
+   armWWos[303]=armWWos[13]*armWWos[303];
+   armWWos[307]=2 + 55./18.*armWWos[104];
+   armWWos[307]=armWWos[307]*armWWos[104];
+   armWWos[308]=armWWos[223] + 2;
+   armWWos[308]=armWWos[308]*armWWos[101];
+   armWWos[307]=armWWos[307] + armWWos[308];
+   armWWos[308]= - armWWos[307]*armWWos[126];
+   armWWos[309]= - 659./3. + 1681*armWWos[101];
+   armWWos[309]=armWWos[309]*armWWos[102];
+   armWWos[284]= - armWWos[284] + armWWos[309];
+   armWWos[222]=armWWos[284]*armWWos[222];
+   armWWos[284]=armWWos[163]*armWWos[2];
+   armWWos[309]=armWWos[299] - armWWos[284];
+   armWWos[309]=armWWos[309]*armWWos[250];
+   armWWos[309]= - 3./2.*armWWos[196] + armWWos[309];
+   armWWos[309]=mmt*armWWos[309];
+   armWWos[309]= - 7./3.*armWWos[216] + armWWos[309];
+   armWWos[309]=armWWos[10]*armWWos[309];
+   armWWos[310]= - 7./6.*armWWos[196] - armWWos[235];
+   armWWos[310]=mmt*armWWos[310];
+   armWWos[311]=4./9.*armWWos[216];
+   armWWos[310]=armWWos[311] + armWWos[310];
+   armWWos[310]=armWWos[31]*armWWos[310];
+   armWWos[209]=mmt*armWWos[209];
+   armWWos[209]=armWWos[209] + 2./3.*armWWos[246];
+   armWWos[209]=armWWos[41]*armWWos[209];
+   armWWos[312]=armWWos[139]*armWWos[250];
+   armWWos[313]=armWWos[312] + armWWos[216];
+   armWWos[314]=1./2.*mmt;
+   armWWos[313]=armWWos[313]*armWWos[314];
+   armWWos[313]=armWWos[313] - armWWos[244];
+   armWWos[315]=armWWos[100]*armWWos[313];
+   armWWos[316]=mmt*armWWos[219];
+   armWWos[315]=armWWos[315] + armWWos[216] + armWWos[316];
+   armWWos[315]=armWWos[49]*armWWos[315];
+   armWWos[316]=armWWos[206]*armWWos[180];
+   armWWos[317]= - 1 - armWWos[205];
+   armWWos[317]=armWWos[317]*armWWos[104];
+   armWWos[317]=armWWos[317] - armWWos[101];
+   armWWos[317]=armWWos[317]*armWWos[175];
+   armWWos[316]= - 31./9.*armWWos[316] + armWWos[317];
+   armWWos[316]=mmt*armWWos[316];
+   armWWos[278]= - 13./18.*armWWos[278] + armWWos[316];
+   armWWos[278]=mmt*armWWos[278];
+   armWWos[278]= - 25./9.*armWWos[101] + armWWos[278];
+   armWWos[278]=armWWos[42]*armWWos[278];
+   armWWos[316]=armWWos[140]*armWWos[216];
+   armWWos[317]=9*armWWos[316];
+   armWWos[318]=armWWos[146]*armWWos[281];
+   armWWos[319]= - armWWos[57] - armWWos[56];
+   armWWos[319]=armWWos[217]*armWWos[319];
+   armWWos[233]=78289./216. - armWWos[233];
+   armWWos[233]=armWWos[233]*armWWos[101];
+   armWWos[320]=28489./24. - 1093*armWWos[52];
+   armWWos[233]=1./3.*armWWos[320] + armWWos[233];
+   armWWos[233]=armWWos[233]*armWWos[306];
+   armWWos[306]=armWWos[304] - 23;
+   armWWos[306]=armWWos[306]*armWWos[101];
+   armWWos[306]=armWWos[306] - armWWos[151];
+   armWWos[172]= - armWWos[306]*armWWos[172];
+   armWWos[109]=armWWos[263] + armWWos[137] + armWWos[278] + 
+   armWWos[254] + armWWos[315] + 2./3.*armWWos[209] + armWWos[310] + 
+   armWWos[201] + armWWos[309] + armWWos[302] + armWWos[210] + 
+   armWWos[295] + armWWos[178] + 1./16.*armWWos[135] + armWWos[234] + 
+   armWWos[245] + armWWos[279] + armWWos[222] + armWWos[120] + 
+   armWWos[318] + armWWos[172] + armWWos[308] - armWWos[317] + 
+   armWWos[303] + 1./3.*armWWos[231] + armWWos[233] + armWWos[109] + 
+   armWWos[319] + 4./3.*armWWos[271];
+   armWWos[109]=armWWos[31]*armWWos[109];
+   armWWos[120]=armWWos[253]*armWWos[134];
+   armWWos[135]=armWWos[115] + 3;
+   armWWos[135]=armWWos[135]*armWWos[104];
+   armWWos[120]=armWWos[120] - armWWos[135];
+   armWWos[137]=1./2.*armWWos[120];
+   armWWos[137]=armWWos[91]*armWWos[137];
+   armWWos[172]=11./4.*armWWos[101];
+   armWWos[178]=armWWos[172]*armWWos[296];
+   armWWos[201]=1./12.*armWWos[104];
+   armWWos[178]= - armWWos[201] + armWWos[178] + 4;
+   armWWos[209]=armWWos[82] - armWWos[13];
+   armWWos[209]=armWWos[178]*armWWos[209];
+   armWWos[210]= - 13./16. + 2./3.*armWWos[104];
+   armWWos[210]=armWWos[210]*armWWos[104];
+   armWWos[222]=13903./9. + armWWos[223];
+   armWWos[222]=armWWos[222]*armWWos[101];
+   armWWos[222]= - 23041./9. + armWWos[222];
+   armWWos[222]=armWWos[222]*armWWos[121];
+   armWWos[231]=armWWos[84]*armWWos[243];
+   armWWos[233]=armWWos[257]*armWWos[101];
+   armWWos[234]=armWWos[151] + armWWos[233];
+   armWWos[245]=1./4.*armWWos[85];
+   armWWos[234]=armWWos[234]*armWWos[245];
+   armWWos[254]=armWWos[86]*armWWos[265];
+   armWWos[137]=armWWos[254] + armWWos[137] + armWWos[234] + 9*
+   armWWos[231] + armWWos[222] + 63 + armWWos[210] + armWWos[209];
+   armWWos[137]=mmZ*armWWos[137];
+   armWWos[209]= - 47./2. + 22*armWWos[101];
+   armWWos[209]=armWWos[209]*armWWos[101];
+   armWWos[209]=armWWos[105] + armWWos[209];
+   armWWos[210]=1./3.*armWWos[15];
+   armWWos[209]=armWWos[209]*armWWos[210];
+   armWWos[222]= - 25./6. + armWWos[190];
+   armWWos[222]=armWWos[222]*armWWos[101];
+   armWWos[222]= - armWWos[115] + armWWos[222];
+   armWWos[222]=armWWos[16]*armWWos[222];
+   armWWos[231]= - 4 - 7./6.*armWWos[101];
+   armWWos[231]=armWWos[17]*armWWos[231]*armWWos[101];
+   armWWos[234]= - 70 + 31*armWWos[101];
+   armWWos[234]=armWWos[234]*armWWos[101];
+   armWWos[234]=2./9.*armWWos[234] + 8 - armWWos[105];
+   armWWos[234]=mmZ*armWWos[234];
+   armWWos[254]= - armWWos[10]*armWWos[244];
+   armWWos[209]=armWWos[254] + armWWos[234] + armWWos[231] + 
+   armWWos[209] + armWWos[222];
+   armWWos[209]=armWWos[10]*armWWos[209];
+   armWWos[222]=29 + armWWos[252];
+   armWWos[222]=armWWos[222]*armWWos[115];
+   armWWos[231]= - 5 + armWWos[179];
+   armWWos[231]=armWWos[231]*armWWos[101];
+   armWWos[231]=29./6. + armWWos[231];
+   armWWos[231]=armWWos[231]*armWWos[101];
+   armWWos[222]=armWWos[222] + armWWos[231];
+   armWWos[222]=armWWos[15]*armWWos[222];
+   armWWos[231]=5 + armWWos[151];
+   armWWos[231]=armWWos[231]*armWWos[105];
+   armWWos[234]=armWWos[179] + 1;
+   armWWos[234]=armWWos[234]*armWWos[101];
+   armWWos[254]=5./2. + armWWos[234];
+   armWWos[254]=armWWos[254]*armWWos[101];
+   armWWos[231]=armWWos[231] + armWWos[254];
+   armWWos[231]=armWWos[231]*armWWos[155];
+   armWWos[222]=armWWos[222] + armWWos[231];
+   armWWos[222]=armWWos[16]*armWWos[222];
+   armWWos[231]=33 - armWWos[104];
+   armWWos[231]=armWWos[231]*armWWos[105];
+   armWWos[254]=33./2. - armWWos[215];
+   armWWos[254]=armWWos[254]*armWWos[101];
+   armWWos[231]=armWWos[231] + armWWos[254];
+   armWWos[254]=pow(armWWos[15],2);
+   armWWos[231]=armWWos[231]*armWWos[254];
+   armWWos[222]=armWWos[231] + armWWos[222];
+   armWWos[231]=25 + armWWos[104];
+   armWWos[231]=armWWos[231]*armWWos[115];
+   armWWos[263]=25./6. + 8*armWWos[101];
+   armWWos[263]=armWWos[263]*armWWos[101];
+   armWWos[231]=armWWos[231] + armWWos[263];
+   armWWos[231]=armWWos[15]*armWWos[231];
+   armWWos[117]= - armWWos[117]*armWWos[115];
+   armWWos[263]= - 7./6. + armWWos[190];
+   armWWos[263]=armWWos[263]*armWWos[101];
+   armWWos[117]=armWWos[117] + armWWos[263];
+   armWWos[117]=armWWos[117]*armWWos[155];
+   armWWos[263]= - 1 + armWWos[238];
+   armWWos[263]=armWWos[263]*armWWos[101];
+   armWWos[263]= - armWWos[104] + armWWos[263];
+   armWWos[265]=1./12.*armWWos[17];
+   armWWos[263]=armWWos[263]*armWWos[265];
+   armWWos[117]=armWWos[263] + armWWos[231] + armWWos[117];
+   armWWos[117]=armWWos[17]*armWWos[117];
+   armWWos[117]=1./2.*armWWos[222] + armWWos[117];
+   armWWos[117]=armWWos[2]*armWWos[117];
+   armWWos[222]=65./8. + 4*armWWos[104];
+   armWWos[222]=armWWos[222]*armWWos[119];
+   armWWos[231]= - 697./9. + armWWos[190];
+   armWWos[231]=armWWos[231]*armWWos[101];
+   armWWos[231]=353./3. + armWWos[231];
+   armWWos[231]=armWWos[231]*armWWos[133];
+   armWWos[222]=armWWos[222] + armWWos[231];
+   armWWos[222]=armWWos[15]*armWWos[222];
+   armWWos[231]=7*armWWos[104];
+   armWWos[263]=5 - armWWos[231];
+   armWWos[263]=armWWos[263]*armWWos[115];
+   armWWos[271]= - 13 - armWWos[179];
+   armWWos[271]=armWWos[271]*armWWos[190];
+   armWWos[271]=149./6. + armWWos[271];
+   armWWos[271]=armWWos[271]*armWWos[101];
+   armWWos[263]=armWWos[263] + armWWos[271];
+   armWWos[263]=armWWos[263]*armWWos[155];
+   armWWos[271]= - 1./3. - 3./8.*armWWos[104];
+   armWWos[271]=armWWos[271]*armWWos[104];
+   armWWos[278]=35 - 661./8.*armWWos[101];
+   armWWos[278]=armWWos[278]*armWWos[247];
+   armWWos[271]=armWWos[271] + armWWos[278];
+   armWWos[271]=armWWos[20]*armWWos[271];
+   armWWos[278]=3./4.*armWWos[104];
+   armWWos[279]= - 2 - armWWos[278];
+   armWWos[279]=armWWos[279]*armWWos[104];
+   armWWos[295]= - 1./2. - armWWos[190];
+   armWWos[295]=armWWos[295]*armWWos[102];
+   armWWos[295]= - 2 + armWWos[295];
+   armWWos[295]=armWWos[295]*armWWos[101];
+   armWWos[279]=armWWos[279] + armWWos[295];
+   armWWos[279]=armWWos[19]*armWWos[279];
+   armWWos[295]=9./2.*armWWos[69] + 5*armWWos[93];
+   armWWos[295]=armWWos[216]*armWWos[295];
+   armWWos[302]=337 - 1739./3.*armWWos[101];
+   armWWos[302]=armWWos[302]*armWWos[101];
+   armWWos[302]=49*armWWos[104] + armWWos[302];
+   armWWos[302]=armWWos[302]*armWWos[265];
+   armWWos[303]= - 47./4. + armWWos[134];
+   armWWos[303]=armWWos[303]*armWWos[101];
+   armWWos[303]=armWWos[118] + armWWos[303];
+   armWWos[303]=armWWos[67]*armWWos[303];
+   armWWos[308]=3 + armWWos[233];
+   armWWos[308]=armWWos[308]*armWWos[101];
+   armWWos[308]=armWWos[151] + armWWos[308];
+   armWWos[308]=armWWos[95]*armWWos[308];
+   armWWos[117]=armWWos[209] + armWWos[137] + armWWos[279] + 
+   armWWos[271] + 1./4.*armWWos[308] + armWWos[117] + 1./3.*
+   armWWos[303] + armWWos[302] + armWWos[222] + armWWos[263] + 
+   armWWos[295];
+   armWWos[117]=armWWos[100]*armWWos[117];
+   armWWos[137]=7./2.*armWWos[104];
+   armWWos[209]=179./9. + armWWos[137];
+   armWWos[209]=armWWos[209]*armWWos[118];
+   armWWos[222]=1./12.*armWWos[101];
+   armWWos[263]=3535./3. - 1847./2.*armWWos[101];
+   armWWos[263]=armWWos[263]*armWWos[222];
+   armWWos[271]=armWWos[233] + armWWos[104];
+   armWWos[279]=armWWos[271]*armWWos[140];
+   armWWos[209]=21./2.*armWWos[279] + armWWos[263] - 16 + armWWos[209];
+   armWWos[209]=armWWos[5]*armWWos[209];
+   armWWos[263]= - 31./2. - 23./3.*armWWos[104];
+   armWWos[263]=armWWos[263]*armWWos[104];
+   armWWos[263]= - 7 + armWWos[263];
+   armWWos[263]=armWWos[263]*armWWos[104];
+   armWWos[279]=3./4.*armWWos[101];
+   armWWos[295]= - 5 - armWWos[279];
+   armWWos[295]=armWWos[295]*armWWos[179];
+   armWWos[295]= - 7 + armWWos[295];
+   armWWos[295]=armWWos[295]*armWWos[101];
+   armWWos[263]=armWWos[263] + armWWos[295];
+   armWWos[295]=armWWos[135] - 11./2.;
+   armWWos[295]=armWWos[295]*armWWos[104];
+   armWWos[302]=armWWos[190] + 1;
+   armWWos[303]=armWWos[302]*armWWos[195];
+   armWWos[295]=armWWos[295] - armWWos[303];
+   armWWos[303]=armWWos[13]*armWWos[295];
+   armWWos[263]=1./2.*armWWos[263] + armWWos[303];
+   armWWos[303]=armWWos[205] + 7./4.;
+   armWWos[303]=armWWos[303]*armWWos[104];
+   armWWos[308]=armWWos[190] + 7;
+   armWWos[309]=armWWos[308]*armWWos[153];
+   armWWos[303]=armWWos[303] + armWWos[309];
+   armWWos[309]=armWWos[85]*armWWos[303];
+   armWWos[263]=1./2.*armWWos[263] + armWWos[309];
+   armWWos[263]=armWWos[99]*armWWos[263];
+   armWWos[309]=armWWos[74] + 1./2.*armWWos[96];
+   armWWos[310]=armWWos[120]*armWWos[309];
+   armWWos[315]=armWWos[234] + armWWos[107];
+   armWWos[319]=armWWos[315]*armWWos[168];
+   armWWos[320]=1./2.*armWWos[99];
+   armWWos[321]=armWWos[320]*armWWos[295];
+   armWWos[322]=armWWos[91]*armWWos[321];
+   armWWos[323]=armWWos[253]*armWWos[190];
+   armWWos[323]=armWWos[323] + 2 + armWWos[107];
+   armWWos[323]=mmZ*armWWos[323]*armWWos[160];
+   armWWos[324]=23./3. - armWWos[240];
+   armWWos[324]=armWWos[324]*armWWos[104];
+   armWWos[324]=31./2. + armWWos[324];
+   armWWos[324]=armWWos[324]*armWWos[129];
+   armWWos[325]=armWWos[190] - 7;
+   armWWos[326]=armWWos[325]*armWWos[101];
+   armWWos[327]=pow(c,2);
+   armWWos[328]=16*armWWos[327];
+   armWWos[324]= - armWWos[328] - 153./16.*armWWos[326] - 184./3. + 
+   armWWos[324];
+   armWWos[324]=armWWos[72]*armWWos[324];
+   armWWos[326]=armWWos[119] + 5;
+   armWWos[326]=armWWos[326]*armWWos[104];
+   armWWos[327]=32*armWWos[327];
+   armWWos[329]=armWWos[327] - armWWos[304] + 184./3. - armWWos[326];
+   armWWos[329]=armWWos[76]*armWWos[329];
+   armWWos[330]=armWWos[104] + 17;
+   armWWos[330]=armWWos[330]*armWWos[119];
+   armWWos[331]= - armWWos[304] + 16 + armWWos[330];
+   armWWos[331]=armWWos[79]*armWWos[331];
+   armWWos[332]=armWWos[296]*armWWos[195];
+   armWWos[332]= - armWWos[332] + armWWos[115] - 8;
+   armWWos[333]= - armWWos[71]*armWWos[332];
+   armWWos[209]=armWWos[329] + armWWos[324] + 5*armWWos[323] + 
+   armWWos[333] + armWWos[322] + 2*armWWos[331] + armWWos[263] + 21./2.
+   *armWWos[319] + armWWos[209] + armWWos[310];
+   armWWos[209]=mmZ*armWWos[209];
+   armWWos[263]=armWWos[197]*armWWos[16];
+   armWWos[310]=13 - armWWos[112];
+   armWWos[310]=armWWos[310]*armWWos[105];
+   armWWos[310]=95./9. + armWWos[310];
+   armWWos[310]=armWWos[310]*armWWos[104];
+   armWWos[319]=95 + 517./2.*armWWos[101];
+   armWWos[319]=armWWos[319]*armWWos[101];
+   armWWos[310]=armWWos[310] + 1./9.*armWWos[319];
+   armWWos[319]=7./3. + armWWos[101];
+   armWWos[319]=armWWos[319]*armWWos[101];
+   armWWos[319]=armWWos[123] + armWWos[319];
+   armWWos[319]=armWWos[319]*armWWos[140];
+   armWWos[322]=3 - armWWos[101];
+   armWWos[322]=armWWos[322]*armWWos[101];
+   armWWos[151]=armWWos[151] + armWWos[322];
+   armWWos[151]=armWWos[151]*armWWos[177];
+   armWWos[151]=armWWos[151] + armWWos[263] + 1./2.*armWWos[310] + 2*
+   armWWos[319];
+   armWWos[151]=armWWos[17]*armWWos[151];
+   armWWos[310]=13 + 5./12.*armWWos[104];
+   armWWos[310]=armWWos[310]*armWWos[104];
+   armWWos[310]=73./4. + armWWos[310];
+   armWWos[310]=armWWos[310]*armWWos[119];
+   armWWos[319]=73./3. + armWWos[215];
+   armWWos[319]=armWWos[319]*armWWos[153];
+   armWWos[310]=armWWos[310] + armWWos[319];
+   armWWos[310]=armWWos[310]*armWWos[202];
+   armWWos[319]=7./4. + armWWos[119];
+   armWWos[319]=armWWos[319]*armWWos[104];
+   armWWos[319]=1 + armWWos[319];
+   armWWos[319]=armWWos[319]*armWWos[119];
+   armWWos[322]=1./3. - armWWos[153];
+   armWWos[322]=armWWos[322]*armWWos[101];
+   armWWos[319]=armWWos[319] + armWWos[322];
+   armWWos[319]=armWWos[16]*armWWos[319];
+   armWWos[322]=5./3. - armWWos[105];
+   armWWos[322]=armWWos[322]*armWWos[104];
+   armWWos[323]=13./2.*armWWos[101];
+   armWWos[324]=5 + armWWos[323];
+   armWWos[324]=armWWos[324]*armWWos[247];
+   armWWos[322]=armWWos[322] + armWWos[324];
+   armWWos[322]=armWWos[322]*armWWos[149];
+   armWWos[310]=armWWos[322] + armWWos[310] + armWWos[319];
+   armWWos[310]=armWWos[17]*armWWos[310];
+   armWWos[319]=217 + armWWos[176];
+   armWWos[319]=armWWos[319]*armWWos[104];
+   armWWos[319]=2969./2. + armWWos[319];
+   armWWos[319]=armWWos[319]*armWWos[129];
+   armWWos[319]= - 337 + armWWos[319];
+   armWWos[319]=armWWos[319]*armWWos[119];
+   armWWos[322]=215./3. - 6563./16.*armWWos[101];
+   armWWos[322]=armWWos[322]*armWWos[101];
+   armWWos[319]=armWWos[319] + armWWos[322];
+   armWWos[319]=armWWos[319]*armWWos[210];
+   armWWos[322]=5./2. + armWWos[112];
+   armWWos[322]=armWWos[322]*armWWos[104];
+   armWWos[322]=31./2. + armWWos[322];
+   armWWos[322]=armWWos[322]*armWWos[104];
+   armWWos[322]= - 677./6. + armWWos[322];
+   armWWos[322]=armWWos[322]*armWWos[104];
+   armWWos[324]= - 677./6. - 219*armWWos[101];
+   armWWos[324]=armWWos[324]*armWWos[101];
+   armWWos[322]=armWWos[322] + armWWos[324];
+   armWWos[324]=1./4.*armWWos[16];
+   armWWos[322]=armWWos[322]*armWWos[324];
+   armWWos[319]=armWWos[319] + armWWos[322];
+   armWWos[319]=armWWos[16]*armWWos[319];
+   armWWos[322]=85./2.*armWWos[104];
+   armWWos[329]=631 + armWWos[322];
+   armWWos[329]=armWWos[329]*armWWos[119];
+   armWWos[329]=1909./2. + armWWos[329];
+   armWWos[329]=armWWos[329]*armWWos[118];
+   armWWos[329]= - 499./3. + armWWos[329];
+   armWWos[329]=armWWos[329]*armWWos[104];
+   armWWos[331]= - 499 - 6119./8.*armWWos[101];
+   armWWos[331]=armWWos[331]*armWWos[247];
+   armWWos[329]=armWWos[329] + armWWos[331];
+   armWWos[329]=armWWos[329]*armWWos[254];
+   armWWos[310]=armWWos[310] + 1./6.*armWWos[329] + armWWos[319];
+   armWWos[310]=armWWos[2]*armWWos[310];
+   armWWos[319]= - 391./18. - armWWos[104];
+   armWWos[319]=armWWos[319]*armWWos[104];
+   armWWos[319]= - 4271./27. + armWWos[319];
+   armWWos[319]=armWWos[319]*armWWos[104];
+   armWWos[319]=35633./54. + armWWos[319];
+   armWWos[319]=armWWos[319]*armWWos[104];
+   armWWos[329]=1./18.*armWWos[101];
+   armWWos[331]= - 6127./3. + 45421*armWWos[101];
+   armWWos[331]=armWWos[331]*armWWos[329];
+   armWWos[319]=armWWos[319] + armWWos[331];
+   armWWos[331]=17 - armWWos[105];
+   armWWos[331]=armWWos[331]*armWWos[104];
+   armWWos[331]=69./2. + armWWos[331];
+   armWWos[331]=armWWos[331]*armWWos[104];
+   armWWos[333]=69 - 109*armWWos[101];
+   armWWos[333]=armWWos[333]*armWWos[102];
+   armWWos[331]=armWWos[331] + armWWos[333];
+   armWWos[331]=armWWos[331]*armWWos[140];
+   armWWos[319]=1./2.*armWWos[319] + armWWos[331];
+   armWWos[331]=9 + armWWos[104];
+   armWWos[331]=armWWos[331]*armWWos[104];
+   armWWos[331]= - 7 + armWWos[331];
+   armWWos[331]=armWWos[331]*armWWos[129];
+   armWWos[333]=2*armWWos[101];
+   armWWos[334]= - 7./8. - armWWos[333];
+   armWWos[334]=armWWos[334]*armWWos[101];
+   armWWos[331]=armWWos[331] + armWWos[334];
+   armWWos[331]=armWWos[331]*armWWos[126];
+   armWWos[319]=1./4.*armWWos[319] + armWWos[331];
+   armWWos[319]=armWWos[16]*armWWos[319];
+   armWWos[331]=43./9. + armWWos[118];
+   armWWos[331]=armWWos[331]*armWWos[104];
+   armWWos[331]=1453./108. + armWWos[331];
+   armWWos[331]=armWWos[331]*armWWos[104];
+   armWWos[331]= - 2449./18. + armWWos[331];
+   armWWos[331]=armWWos[331]*armWWos[118];
+   armWWos[334]= - 5425 - 22003./6.*armWWos[101];
+   armWWos[334]=armWWos[334]*armWWos[101];
+   armWWos[331]=1./72.*armWWos[334] + 32 + armWWos[331];
+   armWWos[331]=armWWos[15]*armWWos[331];
+   armWWos[334]=59./2. - armWWos[104];
+   armWWos[334]=armWWos[334]*armWWos[104];
+   armWWos[110]=59 - armWWos[110];
+   armWWos[110]=armWWos[110]*armWWos[102];
+   armWWos[110]=armWWos[334] + armWWos[110];
+   armWWos[110]=armWWos[110]*armWWos[254]*armWWos[204];
+   armWWos[334]=armWWos[104] + 47;
+   armWWos[335]=armWWos[334]*armWWos[105];
+   armWWos[336]=47./2. + armWWos[161];
+   armWWos[336]=armWWos[336]*armWWos[101];
+   armWWos[335]=armWWos[335] + armWWos[336];
+   armWWos[336]=1./6.*armWWos[67];
+   armWWos[335]=armWWos[335]*armWWos[336];
+   armWWos[110]=armWWos[310] + armWWos[335] + armWWos[151] + 
+   armWWos[319] + armWWos[331] + armWWos[110];
+   armWWos[110]=armWWos[2]*armWWos[110];
+   armWWos[151]=6 + armWWos[118];
+   armWWos[151]=armWWos[151]*armWWos[104];
+   armWWos[310]=6 + 31./4.*armWWos[101];
+   armWWos[310]=armWWos[310]*armWWos[101];
+   armWWos[151]=armWWos[151] + armWWos[310];
+   armWWos[151]=armWWos[15]*armWWos[151];
+   armWWos[310]= - 1 + armWWos[104];
+   armWWos[310]=armWWos[310]*armWWos[118];
+   armWWos[310]= - 11./3. + armWWos[310];
+   armWWos[310]=armWWos[310]*armWWos[104];
+   armWWos[319]= - 23./3. + 29./4.*armWWos[101];
+   armWWos[319]=armWWos[319]*armWWos[101];
+   armWWos[310]=armWWos[310] + armWWos[319];
+   armWWos[310]=armWWos[16]*armWWos[310];
+   armWWos[151]=3./4.*armWWos[224] + armWWos[151] + armWWos[310];
+   armWWos[151]=armWWos[2]*armWWos[151];
+   armWWos[303]=armWWos[303]*armWWos[99];
+   armWWos[310]=armWWos[303] + 3./4.*armWWos[148];
+   armWWos[310]=armWWos[16]*armWWos[310];
+   armWWos[271]=armWWos[271]*armWWos[5];
+   armWWos[319]= - 1./4.*armWWos[271] - armWWos[303];
+   armWWos[319]=mmZ*armWWos[319];
+   armWWos[331]=1./3. - armWWos[105];
+   armWWos[331]=armWWos[331]*armWWos[104];
+   armWWos[331]=5./3. + armWWos[331];
+   armWWos[331]=armWWos[331]*armWWos[105];
+   armWWos[335]= - 53./2. + 41./9.*armWWos[101];
+   armWWos[335]=armWWos[335]*armWWos[101];
+   armWWos[337]=1./2.*armWWos[10];
+   armWWos[338]= - armWWos[216]*armWWos[337];
+   armWWos[339]= - armWWos[17]*armWWos[281];
+   armWWos[151]=armWWos[338] + armWWos[319] + armWWos[151] + 
+   armWWos[339] + 3./2.*armWWos[316] + armWWos[331] + armWWos[335] + 
+   armWWos[310];
+   armWWos[151]=armWWos[10]*armWWos[151];
+   armWWos[165]=armWWos[165] + 15./4.;
+   armWWos[165]=armWWos[165]*armWWos[104];
+   armWWos[308]=armWWos[308]*armWWos[101];
+   armWWos[308]=armWWos[308] + 15;
+   armWWos[310]=armWWos[308]*armWWos[153];
+   armWWos[165]=armWWos[165] + armWWos[310];
+   armWWos[310]= - armWWos[15]*armWWos[165];
+   armWWos[319]= - 73./8. - 2*armWWos[205];
+   armWWos[319]=armWWos[319]*armWWos[119];
+   armWWos[331]= - 19 - armWWos[190];
+   armWWos[331]=armWWos[331]*armWWos[101];
+   armWWos[331]= - 73./3. + armWWos[331];
+   armWWos[331]=armWWos[331]*armWWos[133];
+   armWWos[319]=armWWos[319] + armWWos[331];
+   armWWos[319]=armWWos[16]*armWWos[319];
+   armWWos[331]=armWWos[105] - 1;
+   armWWos[331]=armWWos[331]*armWWos[104];
+   armWWos[335]=armWWos[331] + 7./2.;
+   armWWos[335]=armWWos[335]*armWWos[119];
+   armWWos[338]=armWWos[190] + 7./3.;
+   armWWos[338]=armWWos[338]*armWWos[102];
+   armWWos[335]=armWWos[335] + armWWos[338];
+   armWWos[338]=armWWos[17]*armWWos[335];
+   armWWos[310]=armWWos[338] + armWWos[310] + armWWos[319];
+   armWWos[310]=armWWos[2]*armWWos[16]*armWWos[310];
+   armWWos[319]= - 15./8. - armWWos[107];
+   armWWos[319]=armWWos[319]*armWWos[104];
+   armWWos[308]= - armWWos[308]*armWWos[133];
+   armWWos[308]=armWWos[319] + armWWos[308];
+   armWWos[308]=armWWos[15]*armWWos[308];
+   armWWos[319]=25 + armWWos[176];
+   armWWos[319]=armWWos[319]*armWWos[104];
+   armWWos[319]=119./2. + armWWos[319];
+   armWWos[319]=armWWos[319]*armWWos[119];
+   armWWos[338]=13 + armWWos[190];
+   armWWos[338]=armWWos[338]*armWWos[190];
+   armWWos[338]=119./3. + armWWos[338];
+   armWWos[338]=armWWos[338]*armWWos[102];
+   armWWos[319]=armWWos[319] + armWWos[338];
+   armWWos[319]=armWWos[319]*armWWos[155];
+   armWWos[338]=armWWos[105] - 13./3.;
+   armWWos[338]=armWWos[338]*armWWos[104];
+   armWWos[339]= - 61./6. - armWWos[338];
+   armWWos[339]=armWWos[339]*armWWos[104];
+   armWWos[340]= - 61./3. - 45*armWWos[101];
+   armWWos[340]=armWWos[340]*armWWos[102];
+   armWWos[339]=armWWos[339] + armWWos[340];
+   armWWos[339]=armWWos[339]*armWWos[149];
+   armWWos[308]=armWWos[310] + armWWos[339] + armWWos[308] + 
+   armWWos[319];
+   armWWos[308]=armWWos[99]*armWWos[308];
+   armWWos[310]= - armWWos[334]*armWWos[119];
+   armWWos[310]= - 19 + armWWos[310];
+   armWWos[310]=armWWos[310]*armWWos[129];
+   armWWos[319]= - 217./24. + armWWos[125];
+   armWWos[319]=armWWos[319]*armWWos[101];
+   armWWos[310]=armWWos[310] + armWWos[319];
+   armWWos[310]=armWWos[5]*armWWos[310];
+   armWWos[319]=73 - 43./2.*armWWos[104];
+   armWWos[319]=armWWos[319]*armWWos[112];
+   armWWos[319]= - 85./2. + armWWos[319];
+   armWWos[319]=armWWos[319]*armWWos[104];
+   armWWos[334]= - 85 - 151*armWWos[101];
+   armWWos[334]=armWWos[334]*armWWos[102];
+   armWWos[319]=armWWos[319] + armWWos[334];
+   armWWos[319]=armWWos[319]*armWWos[300];
+   armWWos[297]= - armWWos[297]*armWWos[159];
+   armWWos[334]=5./3. + 21*armWWos[101];
+   armWWos[334]=armWWos[334]*armWWos[102];
+   armWWos[297]=armWWos[297] + armWWos[334];
+   armWWos[297]=armWWos[99]*armWWos[297];
+   armWWos[297]=1./4.*armWWos[297] + armWWos[310] + armWWos[319];
+   armWWos[297]=armWWos[20]*armWWos[297];
+   armWWos[310]= - 9 - armWWos[199];
+   armWWos[310]=armWWos[310]*armWWos[104];
+   armWWos[319]= - 7 + 15./2.*armWWos[101];
+   armWWos[319]=armWWos[319]*armWWos[190];
+   armWWos[310]=armWWos[310] + armWWos[319];
+   armWWos[310]=armWWos[5]*armWWos[310];
+   armWWos[319]= - 121 - armWWos[122];
+   armWWos[319]=armWWos[319]*armWWos[104];
+   armWWos[319]= - 815 + armWWos[319];
+   armWWos[319]=armWWos[319]*armWWos[104];
+   armWWos[319]=2315 + armWWos[319];
+   armWWos[334]=1./16.*armWWos[104];
+   armWWos[319]=armWWos[319]*armWWos[334];
+   armWWos[319]=136 + armWWos[319];
+   armWWos[339]= - 599./2. + 1571*armWWos[101];
+   armWWos[339]=armWWos[339]*armWWos[133];
+   armWWos[319]=1./3.*armWWos[319] + armWWos[339];
+   armWWos[319]=armWWos[2]*armWWos[319];
+   armWWos[339]=37./3. + armWWos[137];
+   armWWos[339]=armWWos[339]*armWWos[104];
+   armWWos[339]=29./6. + armWWos[339];
+   armWWos[339]=armWWos[339]*armWWos[104];
+   armWWos[340]= - 31./2. + armWWos[190];
+   armWWos[340]=armWWos[340]*armWWos[101];
+   armWWos[340]=29./6. + armWWos[340];
+   armWWos[340]=armWWos[340]*armWWos[101];
+   armWWos[339]=armWWos[339] + armWWos[340];
+   armWWos[320]=armWWos[339]*armWWos[320];
+   armWWos[310]=armWWos[320] + armWWos[310] + armWWos[319];
+   armWWos[310]=armWWos[19]*armWWos[310];
+   armWWos[319]=25 + armWWos[262];
+   armWWos[319]=armWWos[319]*armWWos[105];
+   armWWos[319]=29 + armWWos[319];
+   armWWos[319]=armWWos[319]*armWWos[119];
+   armWWos[320]=29./3. + armWWos[195];
+   armWWos[320]=armWWos[320]*armWWos[101];
+   armWWos[319]=armWWos[319] + armWWos[320];
+   armWWos[319]=armWWos[2]*armWWos[319];
+   armWWos[181]=9./2.*armWWos[181] + armWWos[319];
+   armWWos[319]=armWWos[99]*armWWos[335];
+   armWWos[320]=1 + armWWos[240];
+   armWWos[320]=armWWos[320]*armWWos[104];
+   armWWos[320]=armWWos[320] + armWWos[234];
+   armWWos[335]=1./4.*armWWos[100];
+   armWWos[320]=armWWos[320]*armWWos[335];
+   armWWos[181]=armWWos[320] + 1./2.*armWWos[181] + armWWos[319];
+   armWWos[181]=armWWos[68]*armWWos[181];
+   armWWos[319]=armWWos[104] - 19;
+   armWWos[320]= - armWWos[319]*armWWos[104];
+   armWWos[320]= - 83 + armWWos[320];
+   armWWos[320]=armWWos[320]*armWWos[201];
+   armWWos[339]=4*armWWos[101];
+   armWWos[340]= - 419./12. - armWWos[339];
+   armWWos[340]=armWWos[340]*armWWos[101];
+   armWWos[320]=armWWos[320] + armWWos[340];
+   armWWos[320]=armWWos[15]*armWWos[320];
+   armWWos[340]=13 + armWWos[105];
+   armWWos[340]=armWWos[340]*armWWos[119];
+   armWWos[340]=5./2. + armWWos[340];
+   armWWos[340]=armWWos[340]*armWWos[104];
+   armWWos[341]=37 - 85*armWWos[101];
+   armWWos[341]=armWWos[341]*armWWos[102];
+   armWWos[340]=armWWos[340] + armWWos[341];
+   armWWos[340]=armWWos[340]*armWWos[149];
+   armWWos[341]=armWWos[254]*armWWos[281];
+   armWWos[320]=armWWos[340] + armWWos[320] + 9*armWWos[341];
+   armWWos[320]=armWWos[5]*armWWos[320];
+   armWWos[340]=9*armWWos[141];
+   armWWos[341]= - 4 + armWWos[118];
+   armWWos[341]=armWWos[341]*armWWos[104];
+   armWWos[341]= - 113./4. + armWWos[341];
+   armWWos[341]=armWWos[341]*armWWos[119];
+   armWWos[342]=79./3. - armWWos[125];
+   armWWos[342]=armWWos[342]*armWWos[153];
+   armWWos[341]=armWWos[340] + armWWos[341] + armWWos[342];
+   armWWos[341]=armWWos[5]*armWWos[341];
+   armWWos[342]=9./2.*armWWos[103];
+   armWWos[168]=armWWos[168]*armWWos[342];
+   armWWos[168]=armWWos[341] + armWWos[168];
+   armWWos[168]=armWWos[16]*armWWos[168];
+   armWWos[165]=armWWos[165]*armWWos[99];
+   armWWos[341]=armWWos[105] + 7;
+   armWWos[341]=armWWos[341]*armWWos[104];
+   armWWos[342]=151./2. + armWWos[341];
+   armWWos[342]=armWWos[342]*armWWos[104];
+   armWWos[342]= - 365./2. + armWWos[342];
+   armWWos[342]=armWWos[342]*armWWos[115];
+   armWWos[285]=179./12. - armWWos[285];
+   armWWos[285]=armWWos[285]*armWWos[101];
+   armWWos[285]=armWWos[342] + armWWos[285];
+   armWWos[285]=armWWos[285]*armWWos[152];
+   armWWos[285]=armWWos[285] - armWWos[165];
+   armWWos[285]=armWWos[95]*armWWos[285];
+   armWWos[342]=armWWos[120]*armWWos[100];
+   armWWos[343]= - 119 - 41./6.*armWWos[104];
+   armWWos[343]=armWWos[343]*armWWos[104];
+   armWWos[343]= - 605./2. + armWWos[343];
+   armWWos[343]=armWWos[343]*armWWos[119];
+   armWWos[344]=197*armWWos[101];
+   armWWos[345]= - 605./3. - armWWos[344];
+   armWWos[345]=armWWos[345]*armWWos[102];
+   armWWos[343]=armWWos[343] + armWWos[345];
+   armWWos[343]=armWWos[343]*armWWos[300];
+   armWWos[343]=armWWos[343] + armWWos[342];
+   armWWos[343]=armWWos[94]*armWWos[343];
+   armWWos[345]=armWWos[104] - 5./3.;
+   armWWos[346]=armWWos[345]*armWWos[105];
+   armWWos[346]= - 19./3. + armWWos[346];
+   armWWos[346]=armWWos[346]*armWWos[104];
+   armWWos[347]= - 19./3. + armWWos[190];
+   armWWos[347]=armWWos[347]*armWWos[101];
+   armWWos[346]=armWWos[346] + armWWos[347];
+   armWWos[346]=armWWos[85]*armWWos[346];
+   armWWos[347]=1489./72. + armWWos[104];
+   armWWos[347]=armWWos[347]*armWWos[104];
+   armWWos[347]=10069./72. + armWWos[347];
+   armWWos[347]=armWWos[347]*armWWos[104];
+   armWWos[347]= - 167989./216. + armWWos[347];
+   armWWos[347]=armWWos[347]*armWWos[118];
+   armWWos[346]=armWWos[346] + 917./3. + armWWos[347];
+   armWWos[347]=armWWos[104] + 11;
+   armWWos[348]=armWWos[347]*armWWos[104];
+   armWWos[349]=151./3. + armWWos[348];
+   armWWos[349]=armWWos[349]*armWWos[104];
+   armWWos[349]= - 727./3. + armWWos[349];
+   armWWos[349]=armWWos[349]*armWWos[334];
+   armWWos[349]=268 + armWWos[349];
+   armWWos[350]= - 3709./6. - 391*armWWos[101];
+   armWWos[350]=armWWos[350]*armWWos[133];
+   armWWos[349]=1./3.*armWWos[349] + armWWos[350];
+   armWWos[349]=armWWos[13]*armWWos[349];
+   armWWos[350]= - 7 - armWWos[118];
+   armWWos[350]=armWWos[350]*armWWos[119];
+   armWWos[350]= - 33./4. + armWWos[350];
+   armWWos[350]=armWWos[350]*armWWos[104];
+   armWWos[350]=331./6. + armWWos[350];
+   armWWos[350]=armWWos[350]*armWWos[118];
+   armWWos[351]= - 43 + 87./2.*armWWos[101];
+   armWWos[351]=armWWos[351]*armWWos[101];
+   armWWos[350]=5./8.*armWWos[351] + 8 + armWWos[350];
+   armWWos[350]=armWWos[83]*armWWos[350];
+   armWWos[351]=1./3. + armWWos[283];
+   armWWos[351]=armWWos[351]*armWWos[104];
+   armWWos[351]=445./6. + armWWos[351];
+   armWWos[351]=armWWos[351]*armWWos[129];
+   armWWos[351]= - 244 + armWWos[351];
+   armWWos[352]=257 + 87*armWWos[101];
+   armWWos[352]=armWWos[352]*armWWos[101];
+   armWWos[351]= - armWWos[327] + 1./3.*armWWos[351] + 5./16.*
+   armWWos[352];
+   armWWos[351]=armWWos[88]*armWWos[351];
+   armWWos[352]=armWWos[84]*armWWos[216];
+   armWWos[353]=armWWos[67]*armWWos[281];
+   armWWos[352]=armWWos[352] + armWWos[353];
+   armWWos[353]=9./8.*armWWos[69] + 11./24.*armWWos[93];
+   armWWos[353]=armWWos[196]*armWWos[353];
+   armWWos[354]=5416./27.*armWWos[101] - 488245./576. - 8*armWWos[90];
+   armWWos[354]=armWWos[354]*armWWos[247];
+   armWWos[355]= - 79 - armWWos[122];
+   armWWos[355]=armWWos[355]*armWWos[112];
+   armWWos[355]= - 35 + armWWos[355];
+   armWWos[355]=armWWos[355]*armWWos[104];
+   armWWos[355]=armWWos[355] - 51*armWWos[101];
+   armWWos[355]=armWWos[91]*armWWos[355];
+   armWWos[356]=armWWos[86]*armWWos[139];
+   armWWos[357]=armWWos[183]*armWWos[134];
+   armWWos[357]=armWWos[357] + armWWos[119];
+   armWWos[357]=1./4.*armWWos[357];
+   armWWos[358]= - armWWos[82]*armWWos[357];
+   armWWos[359]=1 + armWWos[13];
+   armWWos[360]= - mmZ*armWWos[77];
+   armWWos[359]=2*armWWos[359] + armWWos[360];
+   armWWos[328]=armWWos[359]*armWWos[328];
+   armWWos[359]=armWWos[119] + 7;
+   armWWos[359]=armWWos[359]*armWWos[104];
+   armWWos[360]= - 59./3. + armWWos[359];
+   armWWos[360]=armWWos[360]*armWWos[105];
+   armWWos[203]= - armWWos[203] + 88./3. + armWWos[360];
+   armWWos[203]=armWWos[92]*armWWos[203];
+   armWWos[110]=armWWos[203] + armWWos[351] + armWWos[181] + 
+   armWWos[343] + armWWos[328] + armWWos[117] + armWWos[151] + 
+   armWWos[310] + armWWos[358] + armWWos[297] + 1./6.*armWWos[356] + 
+   armWWos[285] + 1./4.*armWWos[355] + armWWos[308] + armWWos[110] + 
+   armWWos[168] + armWWos[350] + armWWos[349] + armWWos[354] + 
+   armWWos[353] + armWWos[320] + armWWos[209] + 1./2.*armWWos[346] + 9./
+   4.*armWWos[352];
+   armWWos[110]=armWWos[65]*armWWos[110];
+   armWWos[117]=armWWos[25] - 7./3.;
+   armWWos[117]=armWWos[117]*armWWos[243];
+   armWWos[151]=armWWos[294]*armWWos[28];
+   armWWos[168]=armWWos[243]*armWWos[6];
+   armWWos[117]= - armWWos[117] + armWWos[151] + armWWos[168];
+   armWWos[117]=armWWos[117]*mmZ;
+   armWWos[151]= - armWWos[168] + 2./3.*armWWos[243];
+   armWWos[168]=armWWos[10]*mmZ;
+   armWWos[151]=armWWos[151]*armWWos[168];
+   armWWos[181]=armWWos[6] - 2./3.;
+   armWWos[181]=armWWos[181]*armWWos[239];
+   armWWos[203]=1./3.*armWWos[216];
+   armWWos[209]=armWWos[216]*armWWos[6];
+   armWWos[285]=armWWos[203] + armWWos[209];
+   armWWos[285]=armWWos[285]*armWWos[146];
+   armWWos[297]=armWWos[236]*armWWos[216];
+   armWWos[117]=armWWos[297] + armWWos[117] + armWWos[151] + 
+   armWWos[181] - armWWos[285];
+   armWWos[117]=armWWos[117]*armWWos[100];
+   armWWos[151]=armWWos[139]*armWWos[6];
+   armWWos[181]= - armWWos[151] + 7./3.*armWWos[139];
+   armWWos[181]=armWWos[181]*armWWos[152]*mmt;
+   armWWos[285]= - 5*armWWos[209] + 8./3.*armWWos[216];
+   armWWos[181]= - armWWos[181] + 1./3.*armWWos[285];
+   armWWos[181]=armWWos[181]*armWWos[31];
+   armWWos[285]=armWWos[244]*armWWos[100];
+   armWWos[297]=armWWos[285] - armWWos[216];
+   armWWos[297]=armWWos[297]*armWWos[14];
+   armWWos[117]=armWWos[297] + armWWos[117] + armWWos[181];
+   armWWos[181]=armWWos[339] - 61./12.;
+   armWWos[181]=armWWos[181]*armWWos[101];
+   armWWos[297]= - 1 + armWWos[252];
+   armWWos[297]=armWWos[297]*armWWos[201];
+   armWWos[297]=armWWos[297] + armWWos[181];
+   armWWos[297]=armWWos[6]*armWWos[297];
+   armWWos[131]= - 71./9. - armWWos[131];
+   armWWos[131]=armWWos[131]*armWWos[104];
+   armWWos[131]=79./72. + armWWos[131];
+   armWWos[131]=armWWos[131]*armWWos[104];
+   armWWos[308]=41./3. + 163*armWWos[101];
+   armWWos[310]=armWWos[308]*armWWos[101];
+   armWWos[131]=armWWos[297] + armWWos[131] - 1./24.*armWWos[310];
+   armWWos[131]=armWWos[16]*armWWos[131];
+   armWWos[297]=23 + 79./4.*armWWos[101];
+   armWWos[297]=armWWos[297]*armWWos[101];
+   armWWos[310]=armWWos[118] + 23;
+   armWWos[310]=armWWos[310]*armWWos[104];
+   armWWos[297]=armWWos[297] + armWWos[310];
+   armWWos[297]=armWWos[297]*armWWos[210]*armWWos[6];
+   armWWos[310]=235 + 989./9.*armWWos[101];
+   armWWos[310]=armWWos[310]*armWWos[102];
+   armWWos[320]= - 47./9. - armWWos[105];
+   armWWos[320]=armWWos[320]*armWWos[122];
+   armWWos[320]=191./6. + armWWos[320];
+   armWWos[320]=armWWos[320]*armWWos[104];
+   armWWos[320]=armWWos[320] - armWWos[310];
+   armWWos[320]=armWWos[320]*armWWos[150];
+   armWWos[131]=armWWos[131] + armWWos[320] + armWWos[297];
+   armWWos[320]= - 23./18.*armWWos[139] + armWWos[151];
+   armWWos[320]=armWWos[320]*armWWos[149];
+   armWWos[131]=1./3.*armWWos[131] + armWWos[320];
+   armWWos[131]=armWWos[2]*armWWos[131];
+   armWWos[320]= - 4./9. + armWWos[199];
+   armWWos[320]=armWWos[320]*armWWos[104];
+   armWWos[292]=armWWos[292]*armWWos[247];
+   armWWos[328]=armWWos[183]*armWWos[101];
+   armWWos[343]=armWWos[119] + armWWos[328];
+   armWWos[343]=armWWos[6]*armWWos[343];
+   armWWos[292]=armWWos[343] + armWWos[320] + armWWos[292];
+   armWWos[292]=armWWos[5]*armWWos[292];
+   armWWos[294]= - armWWos[107] + armWWos[294];
+   armWWos[294]=armWWos[24]*armWWos[294];
+   armWWos[320]=2*armWWos[22];
+   armWWos[343]=armWWos[320] - armWWos[23];
+   armWWos[346]=armWWos[22]*armWWos[101];
+   armWWos[343]= - 2./3.*armWWos[343] + armWWos[346];
+   armWWos[343]=armWWos[343]*armWWos[101];
+   armWWos[346]= - 2*armWWos[23] + armWWos[22];
+   armWWos[343]=1./3.*armWWos[346] + armWWos[343];
+   armWWos[346]= - 4./3. + armWWos[101];
+   armWWos[346]=armWWos[346]*armWWos[101];
+   armWWos[346]=1./3. + armWWos[346];
+   armWWos[349]=2*armWWos[21];
+   armWWos[346]=armWWos[346]*armWWos[349];
+   armWWos[292]=armWWos[346] + 1./3.*armWWos[294] + 2*armWWos[343] + 
+   armWWos[292];
+   armWWos[292]=mmZ*armWWos[292];
+   armWWos[294]=1./3.*armWWos[103];
+   armWWos[343]=armWWos[103]*armWWos[6];
+   armWWos[346]=armWWos[294] + 1./2.*armWWos[343];
+   armWWos[346]=armWWos[346]*armWWos[17];
+   armWWos[350]=armWWos[343]*armWWos[15];
+   armWWos[351]=armWWos[103]*armWWos[15];
+   armWWos[350]=armWWos[350] + 5./3.*armWWos[351];
+   armWWos[346]= - armWWos[346] + 1./2.*armWWos[350];
+   armWWos[346]=armWWos[346]*armWWos[2];
+   armWWos[346]=armWWos[346] - 1./4.*armWWos[151] + 4./3.*armWWos[139];
+   armWWos[346]=armWWos[346]*armWWos[275];
+   armWWos[350]=armWWos[343] + 5./3.*armWWos[103];
+   armWWos[350]=armWWos[350]*armWWos[180]*mmH;
+   armWWos[352]=1./2.*armWWos[151];
+   armWWos[353]=armWWos[352] + 13./3.*armWWos[139];
+   armWWos[353]=armWWos[353]*armWWos[2];
+   armWWos[350]=armWWos[353] - armWWos[350];
+   armWWos[353]=1./6.*armWWos[10];
+   armWWos[350]=armWWos[350]*armWWos[353];
+   armWWos[354]=armWWos[139]*armWWos[282];
+   armWWos[355]= - armWWos[25] + armWWos[14] + armWWos[28];
+   armWWos[355]=armWWos[355]*armWWos[354];
+   armWWos[346]=armWWos[346] + armWWos[350] + armWWos[355];
+   armWWos[350]=1./3.*mmH;
+   armWWos[355]=armWWos[346]*armWWos[350];
+   armWWos[356]=armWWos[119] + 1./2.;
+   armWWos[358]=armWWos[356]*armWWos[104];
+   armWWos[360]=armWWos[289] + 7;
+   armWWos[361]=1./6.*armWWos[101];
+   armWWos[362]=armWWos[360]*armWWos[361];
+   armWWos[358]=armWWos[358] - armWWos[362];
+   armWWos[362]=1./2.*armWWos[6];
+   armWWos[363]=armWWos[358]*armWWos[362];
+   armWWos[364]=5./3.*armWWos[101];
+   armWWos[365]= - 7./2. - armWWos[364];
+   armWWos[365]=armWWos[365]*armWWos[215];
+   armWWos[365]=armWWos[105] + armWWos[365];
+   armWWos[316]=armWWos[363] + 1./9.*armWWos[365] + armWWos[316];
+   armWWos[316]=armWWos[6]*armWWos[316];
+   armWWos[363]= - 2./3. - armWWos[199];
+   armWWos[363]=armWWos[363]*armWWos[104];
+   armWWos[365]= - 2./3. - armWWos[179];
+   armWWos[365]=armWWos[365]*armWWos[101];
+   armWWos[363]=armWWos[352] + armWWos[363] + armWWos[365];
+   armWWos[363]=armWWos[363]*armWWos[126];
+   armWWos[365]=1./3.*armWWos[163];
+   armWWos[343]=armWWos[365] + armWWos[343];
+   armWWos[366]=armWWos[343]*armWWos[275];
+   armWWos[367]= - armWWos[5]*armWWos[151];
+   armWWos[367]=4./3.*armWWos[148] + armWWos[367];
+   armWWos[366]=2*armWWos[367] + armWWos[366];
+   armWWos[366]=armWWos[366]*armWWos[250];
+   armWWos[367]= - 2*armWWos[151] + 5./3.*armWWos[139];
+   armWWos[368]= - armWWos[367]*armWWos[275];
+   armWWos[366]=armWWos[368] + armWWos[366];
+   armWWos[368]=armWWos[34]*armWWos[31];
+   armWWos[366]=armWWos[366]*armWWos[368];
+   armWWos[369]=armWWos[6] - 1;
+   armWWos[369]=armWWos[369]*armWWos[281];
+   armWWos[370]=armWWos[17]*armWWos[369];
+   armWWos[371]=armWWos[219] - armWWos[281];
+   armWWos[372]=armWWos[20]*armWWos[371];
+   armWWos[370]=armWWos[370] - armWWos[372];
+   armWWos[372]=5./3.*armWWos[216];
+   armWWos[373]=armWWos[372] - armWWos[209];
+   armWWos[373]=armWWos[373]*armWWos[6];
+   armWWos[374]=pow(Pi,2);
+   armWWos[375]=armWWos[374]*armWWos[216];
+   armWWos[311]=armWWos[373] + armWWos[375] - armWWos[311];
+   armWWos[373]= - 1./9.*armWWos[1] - 2./3.*armWWos[35];
+   armWWos[373]=armWWos[311]*armWWos[373];
+   armWWos[375]=armWWos[105] + 17./3.;
+   armWWos[376]= - armWWos[375]*armWWos[105];
+   armWWos[376]=19./9. + armWWos[376];
+   armWWos[376]=armWWos[376]*armWWos[104];
+   armWWos[377]= - 8./3. + armWWos[195];
+   armWWos[377]=armWWos[377]*armWWos[101];
+   armWWos[376]=armWWos[377] - 8./3. + armWWos[376];
+   armWWos[376]=armWWos[13]*armWWos[376];
+   armWWos[377]= - 2 - armWWos[118];
+   armWWos[377]=armWWos[377]*armWWos[104];
+   armWWos[377]= - 13./18. + armWWos[377];
+   armWWos[377]=armWWos[377]*armWWos[104];
+   armWWos[378]=armWWos[116] - 19./3.;
+   armWWos[379]=armWWos[378]*armWWos[361];
+   armWWos[377]=armWWos[377] + armWWos[379];
+   armWWos[377]=armWWos[2]*armWWos[377];
+   armWWos[379]=armWWos[216] + 3*armWWos[230];
+   armWWos[379]=armWWos[379]*armWWos[5];
+   armWWos[377]= - armWWos[379] + armWWos[377];
+   armWWos[377]=armWWos[19]*armWWos[377];
+   armWWos[380]=armWWos[375]*armWWos[104];
+   armWWos[381]= - 85./18. + armWWos[380];
+   armWWos[381]=armWWos[381]*armWWos[105];
+   armWWos[382]=armWWos[134] - 3;
+   armWWos[383]= - armWWos[382]*armWWos[153];
+   armWWos[381]=armWWos[383] + 8./3. + armWWos[381];
+   armWWos[381]=armWWos[27]*armWWos[381];
+   armWWos[374]=1./2.*armWWos[374];
+   armWWos[358]= - armWWos[358]*armWWos[374];
+   armWWos[383]=armWWos[195] - 5;
+   armWWos[383]=armWWos[383]*armWWos[195];
+   armWWos[384]= - 251./18. - armWWos[104];
+   armWWos[384]=armWWos[384]*armWWos[104];
+   armWWos[384]=293./9. + armWWos[384];
+   armWWos[384]=armWWos[384]*armWWos[105];
+   armWWos[384]=armWWos[383] + 40./3. + armWWos[384];
+   armWWos[385]=armWWos[112] + 1;
+   armWWos[386]= - armWWos[385]*armWWos[104];
+   armWWos[386]=armWWos[386] + armWWos[247];
+   armWWos[387]=1./4.*armWWos[6];
+   armWWos[386]=armWWos[386]*armWWos[387];
+   armWWos[384]=1./3.*armWWos[384] + armWWos[386];
+   armWWos[384]=armWWos[9]*armWWos[384];
+   armWWos[386]=armWWos[105] + 2./3.;
+   armWWos[386]=armWWos[386]*armWWos[104];
+   armWWos[388]=13./12. + armWWos[386];
+   armWWos[388]=armWWos[388]*armWWos[104];
+   armWWos[389]=37*armWWos[101];
+   armWWos[390]=armWWos[389] - 7;
+   armWWos[391]=armWWos[390]*armWWos[222];
+   armWWos[388]=armWWos[388] + armWWos[391];
+   armWWos[388]=armWWos[29]*armWWos[388];
+   armWWos[391]=armWWos[203]*armWWos[100];
+   armWWos[281]=armWWos[391] + 2*armWWos[281];
+   armWWos[391]=7 + 11./3.*armWWos[101];
+   armWWos[391]=armWWos[391]*armWWos[101];
+   armWWos[391]=armWWos[231] + armWWos[391];
+   armWWos[391]=armWWos[391]*armWWos[152];
+   armWWos[391]=armWWos[391] + armWWos[281];
+   armWWos[391]=armWWos[7]*armWWos[391];
+   armWWos[278]=8./3. + armWWos[278];
+   armWWos[278]=armWWos[278]*armWWos[104];
+   armWWos[278]=65./36. + armWWos[278];
+   armWWos[278]=armWWos[278]*armWWos[104];
+   armWWos[392]=armWWos[134] + 17./3.;
+   armWWos[393]=armWWos[392]*armWWos[222];
+   armWWos[278]=armWWos[278] + armWWos[393];
+   armWWos[278]=armWWos[2]*armWWos[278];
+   armWWos[278]=armWWos[379] + armWWos[278];
+   armWWos[278]=armWWos[8]*armWWos[278];
+   armWWos[379]=armWWos[118] + 10./3.;
+   armWWos[393]=armWWos[379]*armWWos[104];
+   armWWos[394]= - 10./9. + 19./4.*armWWos[101];
+   armWWos[394]=armWWos[394]*armWWos[101];
+   armWWos[394]=armWWos[394] - 8./3. + armWWos[393];
+   armWWos[394]=armWWos[30]*armWWos[394];
+   armWWos[395]=armWWos[239]*armWWos[166];
+   armWWos[396]= - 29./16. + armWWos[104];
+   armWWos[396]=armWWos[396]*armWWos[104];
+   armWWos[396]=1645./216. + armWWos[396];
+   armWWos[396]=armWWos[396]*armWWos[105];
+   armWWos[397]=11053./6.*armWWos[101];
+   armWWos[398]=1109 + armWWos[397];
+   armWWos[398]=armWWos[398]*armWWos[101];
+   armWWos[399]=23./3. - armWWos[134];
+   armWWos[399]=armWWos[399]*armWWos[101];
+   armWWos[399]=armWWos[104] + armWWos[399];
+   armWWos[400]=1./4.*armWWos[26];
+   armWWos[399]=armWWos[399]*armWWos[400];
+   armWWos[401]= - 5./18. + armWWos[104];
+   armWWos[401]=armWWos[401]*armWWos[104];
+   armWWos[401]=55./36. + armWWos[401];
+   armWWos[401]=armWWos[401]*armWWos[104];
+   armWWos[401]=armWWos[401] + 37./12.*armWWos[101];
+   armWWos[402]=1./2.*armWWos[11];
+   armWWos[401]=armWWos[401]*armWWos[402];
+   armWWos[203]=armWWos[25]*armWWos[203];
+   armWWos[403]=armWWos[10]*armWWos[216];
+   armWWos[131]=armWWos[394] + armWWos[278] + armWWos[391] + 
+   armWWos[388] + armWWos[384] + armWWos[366] + armWWos[355] + 
+   armWWos[358] - 7./9.*armWWos[403] + armWWos[381] + armWWos[292] + 
+   armWWos[377] + armWWos[401] + armWWos[203] + armWWos[131] + 
+   armWWos[363] + armWWos[316] - armWWos[395] + armWWos[376] + 
+   armWWos[399] + 1./432.*armWWos[398] - 136./9. + armWWos[396] + 
+   armWWos[373] + 1./3.*armWWos[117] - 1./6.*armWWos[370];
+   armWWos[131]=armWWos[1]*armWWos[131];
+   armWWos[203]= - 179./3. - 10*armWWos[104];
+   armWWos[203]=armWWos[203]*armWWos[104];
+   armWWos[203]= - 115./8. + armWWos[203];
+   armWWos[203]=armWWos[203]*armWWos[112];
+   armWWos[278]= - armWWos[308]*armWWos[133];
+   armWWos[203]=armWWos[203] + armWWos[278];
+   armWWos[278]= - 17 + armWWos[119];
+   armWWos[278]=armWWos[278]*armWWos[201];
+   armWWos[181]=armWWos[278] + armWWos[181];
+   armWWos[181]=armWWos[6]*armWWos[181];
+   armWWos[181]=1./3.*armWWos[203] + armWWos[181];
+   armWWos[181]=armWWos[16]*armWWos[181];
+   armWWos[203]= - 167./3. - armWWos[262];
+   armWWos[203]=armWWos[203]*armWWos[104];
+   armWWos[203]= - 373./2. + armWWos[203];
+   armWWos[203]=armWWos[203]*armWWos[104];
+   armWWos[203]=5./27.*armWWos[203] - armWWos[310];
+   armWWos[150]=armWWos[203]*armWWos[150];
+   armWWos[203]= - 23./6.*armWWos[139] + 3*armWWos[151];
+   armWWos[149]=armWWos[203]*armWWos[149];
+   armWWos[149]=armWWos[149] + armWWos[181] + armWWos[150] + 
+   armWWos[297];
+   armWWos[149]=armWWos[2]*armWWos[149];
+   armWWos[150]= - armWWos[24]*armWWos[293];
+   armWWos[181]=armWWos[23] + 1./9.*armWWos[64];
+   armWWos[203]= - armWWos[320] + armWWos[181];
+   armWWos[278]=armWWos[22]*armWWos[190];
+   armWWos[203]=2*armWWos[203] + armWWos[278];
+   armWWos[203]=armWWos[203]*armWWos[101];
+   armWWos[181]=armWWos[203] - 2*armWWos[181] + armWWos[22];
+   armWWos[203]=armWWos[6]*armWWos[271];
+   armWWos[278]= - 4 + armWWos[190];
+   armWWos[278]=armWWos[278]*armWWos[101];
+   armWWos[278]=1 + armWWos[278];
+   armWWos[278]=armWWos[278]*armWWos[349];
+   armWWos[150]=armWWos[278] + armWWos[150] + armWWos[203] + 2*
+   armWWos[181] + armWWos[290];
+   armWWos[150]=mmZ*armWWos[150];
+   armWWos[181]=mmH*armWWos[346];
+   armWWos[203]=armWWos[360]*armWWos[102];
+   armWWos[278]=armWWos[356]*armWWos[119];
+   armWWos[203]=armWWos[203] - armWWos[278];
+   armWWos[290]= - armWWos[203]*armWWos[362];
+   armWWos[292]= - 3./2. - 7./9.*armWWos[101];
+   armWWos[292]=armWWos[292]*armWWos[289];
+   armWWos[293]=1./18.*armWWos[104];
+   armWWos[290]=armWWos[290] + armWWos[395] - armWWos[293] + 
+   armWWos[292];
+   armWWos[290]=armWWos[6]*armWWos[290];
+   armWWos[292]=armWWos[2]*armWWos[343];
+   armWWos[297]= - armWWos[166]*armWWos[151];
+   armWWos[297]=4*armWWos[148] + armWWos[297];
+   armWWos[292]=2*armWWos[297] + armWWos[292];
+   armWWos[292]=armWWos[292]*armWWos[250];
+   armWWos[297]= - armWWos[2]*armWWos[367];
+   armWWos[292]=armWWos[297] + armWWos[292];
+   armWWos[292]=armWWos[292]*armWWos[368];
+   armWWos[297]= - 947./6. - armWWos[252];
+   armWWos[297]=armWWos[297]*armWWos[104];
+   armWWos[297]=781./3. + armWWos[297];
+   armWWos[297]=armWWos[297]*armWWos[105];
+   armWWos[297]=200 + armWWos[297];
+   armWWos[308]=armWWos[119] + 3;
+   armWWos[308]=armWWos[308]*armWWos[104];
+   armWWos[308]=armWWos[308] - armWWos[101];
+   armWWos[310]= - armWWos[308]*armWWos[387];
+   armWWos[297]=armWWos[310] + 1./27.*armWWos[297] + armWWos[383];
+   armWWos[297]=armWWos[9]*armWWos[297];
+   armWWos[310]= - 701./144. + armWWos[104];
+   armWWos[310]=armWWos[310]*armWWos[104];
+   armWWos[310]=7981./216. + armWWos[310];
+   armWWos[310]=armWWos[310]*armWWos[105];
+   armWWos[316]=1357 + armWWos[397];
+   armWWos[316]=armWWos[316]*armWWos[101];
+   armWWos[310]=1./48.*armWWos[316] - 680./9. + armWWos[310];
+   armWWos[316]= - armWWos[375]*armWWos[262];
+   armWWos[316]=59./3. + armWWos[316];
+   armWWos[316]=armWWos[316]*armWWos[104];
+   armWWos[316]= - 40 + armWWos[316];
+   armWWos[320]= - 8 + 33./2.*armWWos[101];
+   armWWos[320]=armWWos[320]*armWWos[101];
+   armWWos[316]=1./9.*armWWos[316] + armWWos[320];
+   armWWos[316]=armWWos[13]*armWWos[316];
+   armWWos[151]= - armWWos[307] + 3./2.*armWWos[151];
+   armWWos[151]=armWWos[151]*armWWos[126];
+   armWWos[307]= - 74./3. - armWWos[111];
+   armWWos[307]=armWWos[307]*armWWos[104];
+   armWWos[307]= - 31./2. + armWWos[307];
+   armWWos[307]=armWWos[307]*armWWos[112];
+   armWWos[320]=armWWos[378]*armWWos[102];
+   armWWos[307]=armWWos[307] + armWWos[320];
+   armWWos[307]=armWWos[2]*armWWos[307];
+   armWWos[307]= - armWWos[288] + armWWos[307];
+   armWWos[307]=armWWos[19]*armWWos[307];
+   armWWos[320]=armWWos[375]*armWWos[252];
+   armWWos[320]= - 317./6. + armWWos[320];
+   armWWos[320]=armWWos[320]*armWWos[105];
+   armWWos[320]=40 + armWWos[320];
+   armWWos[346]= - armWWos[382]*armWWos[279];
+   armWWos[320]=1./9.*armWWos[320] + armWWos[346];
+   armWWos[320]=armWWos[27]*armWWos[320];
+   armWWos[203]=armWWos[203]*armWWos[374];
+   armWWos[346]=23./4. + armWWos[386];
+   armWWos[346]=armWWos[346]*armWWos[119];
+   armWWos[349]=armWWos[390]*armWWos[153];
+   armWWos[346]=armWWos[346] + armWWos[349];
+   armWWos[346]=armWWos[29]*armWWos[346];
+   armWWos[311]= - armWWos[35]*armWWos[311];
+   armWWos[349]=armWWos[216]*armWWos[100];
+   armWWos[349]=armWWos[349] + armWWos[301];
+   armWWos[355]=21 + armWWos[134];
+   armWWos[355]=armWWos[355]*armWWos[101];
+   armWWos[355]=21*armWWos[104] + armWWos[355];
+   armWWos[355]=armWWos[355]*armWWos[152];
+   armWWos[355]=armWWos[355] + armWWos[349];
+   armWWos[355]=armWWos[7]*armWWos[355];
+   armWWos[356]= - 7./3.*armWWos[10] + armWWos[25];
+   armWWos[356]=armWWos[216]*armWWos[356];
+   armWWos[306]= - armWWos[306]*armWWos[400];
+   armWWos[358]= - armWWos[369]*armWWos[146];
+   armWWos[360]=armWWos[371]*armWWos[236];
+   armWWos[362]=armWWos[104] + 1./6.;
+   armWWos[363]=armWWos[362]*armWWos[104];
+   armWWos[363]=229./12. + armWWos[363];
+   armWWos[363]=armWWos[363]*armWWos[119];
+   armWWos[363]=armWWos[363] + 37./4.*armWWos[101];
+   armWWos[363]=armWWos[363]*armWWos[402];
+   armWWos[117]=armWWos[355] + armWWos[311] + armWWos[346] + 
+   armWWos[297] + armWWos[292] + armWWos[181] + armWWos[203] + 
+   armWWos[320] + armWWos[150] + armWWos[307] + armWWos[363] + 
+   armWWos[360] + armWWos[149] + armWWos[358] + armWWos[151] + 
+   armWWos[290] - armWWos[317] + armWWos[316] + 1./3.*armWWos[310] + 
+   armWWos[306] + armWWos[356] + armWWos[117];
+   armWWos[117]=armWWos[35]*armWWos[117];
+   armWWos[149]= - 59./4. - armWWos[104];
+   armWWos[149]=armWWos[149]*armWWos[119];
+   armWWos[149]= - 25./2. + armWWos[149];
+   armWWos[149]=armWWos[149]*armWWos[104];
+   armWWos[149]= - 241./12. + armWWos[149];
+   armWWos[149]=armWWos[149]*armWWos[104];
+   armWWos[150]= - 241 - 91*armWWos[101];
+   armWWos[150]=armWWos[150]*armWWos[222];
+   armWWos[149]=armWWos[149] + armWWos[150];
+   armWWos[149]=armWWos[15]*armWWos[149];
+   armWWos[150]=145./12. + armWWos[104];
+   armWWos[150]=armWWos[150]*armWWos[119];
+   armWWos[150]=3./2. + armWWos[150];
+   armWWos[150]=armWWos[150]*armWWos[104];
+   armWWos[150]= - 17./4. + armWWos[150];
+   armWWos[150]=armWWos[150]*armWWos[104];
+   armWWos[151]= - 17 - armWWos[238];
+   armWWos[151]=armWWos[151]*armWWos[153];
+   armWWos[150]=armWWos[150] + armWWos[151];
+   armWWos[150]=armWWos[16]*armWWos[150];
+   armWWos[149]= - 7./4.*armWWos[143] + armWWos[149] + armWWos[150];
+   armWWos[149]=armWWos[149]*armWWos[152];
+   armWWos[150]=29 - 53./4.*armWWos[104];
+   armWWos[150]=armWWos[150]*armWWos[104];
+   armWWos[150]= - 659./4. + armWWos[150];
+   armWWos[150]=armWWos[150]*armWWos[104];
+   armWWos[151]= - 659 - 775*armWWos[101];
+   armWWos[151]=armWWos[151]*armWWos[153];
+   armWWos[150]=armWWos[150] + armWWos[151];
+   armWWos[151]= - armWWos[166]*armWWos[351];
+   armWWos[181]=armWWos[136]*armWWos[126];
+   armWWos[149]=armWWos[149] + armWWos[156] - 3./2.*armWWos[181] + 1./
+   72.*armWWos[150] + armWWos[151];
+   armWWos[149]=armWWos[2]*armWWos[149];
+   armWWos[107]= - 5./2. - armWWos[107];
+   armWWos[107]=armWWos[107]*armWWos[104];
+   armWWos[150]= - 5 - armWWos[190];
+   armWWos[150]=armWWos[150]*armWWos[102];
+   armWWos[107]=armWWos[107] + armWWos[150];
    armWWos[107]=armWWos[5]*armWWos[107];
-   armWWos[108]=917./2. + 88*armWWos[92];
-   armWWos[109]= - 61./3. - 8*armWWos[106];
-   armWWos[109]=armWWos[88]*armWWos[109];
-   armWWos[110]= - 16*armWWos[106];
-   armWWos[111]= - 33 + armWWos[110];
-   armWWos[111]=armWWos[30]*armWWos[111];
-   armWWos[112]=67./3. + 8*armWWos[106];
-   armWWos[112]=armWWos[13]*armWWos[112];
-   armWWos[110]= - 2*armWWos[9] - 127./3. + armWWos[110];
-   armWWos[110]=armWWos[9]*armWWos[110];
-   armWWos[105]=2*armWWos[107] + armWWos[105] + 2*armWWos[110] + 4*
-   armWWos[112] + 4*armWWos[111] + 4*armWWos[109] + 8*armWWos[83] + 1./
-   3.*armWWos[108] + 32*armWWos[106];
-   armWWos[105]=armWWos[65]*armWWos[105];
-   armWWos[106]=5./3.*armWWos[9] - armWWos[13] - armWWos[30] - 17./3.
-    + armWWos[27];
-   armWWos[107]=armWWos[1]*armWWos[106];
-   armWWos[106]=armWWos[35]*armWWos[106];
-   armWWos[106]=armWWos[107] + 5./3.*armWWos[106];
-   armWWos[107]=armWWos[21] - 2*armWWos[23] + armWWos[22];
-   armWWos[107]=armWWos[1]*armWWos[107];
-   armWWos[108]= - 1./9.*armWWos[64] - armWWos[23];
-   armWWos[108]=2./9.*armWWos[24] + armWWos[21] + 2*armWWos[108] + 
-   armWWos[22];
-   armWWos[108]=armWWos[35]*armWWos[108];
-   armWWos[107]=1./3.*armWWos[107] + armWWos[108];
-   armWWos[107]=mmZ*armWWos[107];
-   armWWos[106]=4./3.*armWWos[106] + armWWos[107];
+   armWWos[107]=armWWos[107] + armWWos[149];
+   armWWos[107]=armWWos[2]*armWWos[107];
+   armWWos[149]= - 5 - armWWos[283];
+   armWWos[149]=armWWos[149]*armWWos[104];
+   armWWos[149]= - 7./2. + armWWos[149];
+   armWWos[149]=armWWos[149]*armWWos[104];
+   armWWos[150]=armWWos[325]*armWWos[102];
+   armWWos[149]=armWWos[149] + armWWos[150];
+   armWWos[150]=armWWos[5]*armWWos[143];
+   armWWos[149]=1./4.*armWWos[149] + armWWos[150];
+   armWWos[149]=armWWos[149]*armWWos[175];
+   armWWos[107]=armWWos[107] + 1./2.*armWWos[149];
+   armWWos[107]=mmt*armWWos[107];
+   armWWos[149]= - 31 - armWWos[145];
+   armWWos[149]=armWWos[149]*armWWos[104];
+   armWWos[149]=11351./6. + armWWos[149];
+   armWWos[149]=armWWos[149]*armWWos[104];
+   armWWos[150]=11351 - 2479*armWWos[101];
+   armWWos[150]=armWWos[150]*armWWos[361];
+   armWWos[149]=armWWos[149] + armWWos[150];
+   armWWos[150]= - armWWos[166]*armWWos[227];
+   armWWos[151]= - armWWos[146]*armWWos[148];
+   armWWos[149]=armWWos[151] - armWWos[263] + 1./96.*armWWos[149] + 
+   armWWos[150];
+   armWWos[150]= - armWWos[174]*armWWos[119];
+   armWWos[150]= - 2 + armWWos[150];
+   armWWos[150]=armWWos[150]*armWWos[104];
+   armWWos[151]= - 1 - 4./3.*armWWos[101];
+   armWWos[151]=armWWos[151]*armWWos[333];
+   armWWos[150]=armWWos[150] + armWWos[151];
+   armWWos[150]=armWWos[15]*armWWos[150];
+   armWWos[151]=271 + 299./2.*armWWos[104];
+   armWWos[151]=armWWos[151]*armWWos[119];
+   armWWos[151]= - 101./2. + armWWos[151];
+   armWWos[151]=armWWos[151]*armWWos[119];
+   armWWos[156]= - 101./3. - armWWos[344];
+   armWWos[156]=armWWos[156]*armWWos[102];
+   armWWos[151]=armWWos[151] + armWWos[156];
+   armWWos[151]=armWWos[151]*armWWos[113];
+   armWWos[150]= - 11./8.*armWWos[108] + armWWos[150] + armWWos[151];
+   armWWos[150]=armWWos[2]*armWWos[150];
+   armWWos[149]=1./2.*armWWos[149] + armWWos[150];
+   armWWos[149]=armWWos[2]*armWWos[149];
+   armWWos[150]= - armWWos[5]*armWWos[315];
+   armWWos[151]=armWWos[196] + armWWos[235];
+   armWWos[151]=armWWos[10]*armWWos[151];
+   armWWos[107]=armWWos[151] + armWWos[107] + armWWos[150] + 
+   armWWos[149];
+   armWWos[107]=mmt*armWWos[107];
+   armWWos[106]=armWWos[106]*armWWos[119];
+   armWWos[106]=armWWos[106] + 1./2.;
+   armWWos[149]=armWWos[106]*armWWos[104];
+   armWWos[150]=armWWos[247] + 1;
+   armWWos[151]=armWWos[150]*armWWos[102];
+   armWWos[151]=armWWos[149] + armWWos[151];
+   armWWos[156]=armWWos[151]*armWWos[15];
+   armWWos[174]=armWWos[151]*armWWos[17];
+   armWWos[181]=armWWos[156] - armWWos[174];
+   armWWos[181]=armWWos[181]*armWWos[2];
+   armWWos[203]= - 5./12.*armWWos[103] - armWWos[181];
+   armWWos[203]=armWWos[203]*armWWos[180];
+   armWWos[149]=armWWos[149] + 2./3.;
+   armWWos[149]=armWWos[149]*armWWos[104];
+   armWWos[263]=armWWos[102] + 2;
+   armWWos[283]=armWWos[263]*armWWos[247];
+   armWWos[149]=armWWos[149] + armWWos[283];
+   armWWos[283]= - armWWos[15] + armWWos[17];
+   armWWos[283]=armWWos[2]*armWWos[149]*armWWos[283];
+   armWWos[283]= - 5./4.*armWWos[151] + armWWos[283];
+   armWWos[283]=armWWos[283]*armWWos[175];
+   armWWos[203]=armWWos[203] + armWWos[283];
+   armWWos[203]=mmt*armWWos[203];
+   armWWos[283]=armWWos[351] - armWWos[108];
+   armWWos[283]=armWWos[2]*armWWos[283];
+   armWWos[290]=1./2.*armWWos[139];
+   armWWos[283]= - armWWos[290] + armWWos[283];
+   armWWos[283]=armWWos[2]*armWWos[283];
+   armWWos[292]=armWWos[151]*armWWos[175];
+   armWWos[297]= - 7./3.*armWWos[193] - 13*armWWos[292];
+   armWWos[297]=mmt*armWWos[297];
+   armWWos[266]=armWWos[266] + armWWos[297];
+   armWWos[297]=1./4.*armWWos[10];
+   armWWos[266]=armWWos[266]*armWWos[297];
+   armWWos[306]=armWWos[151]*armWWos[182];
+   armWWos[307]=armWWos[149]*armWWos[269];
+   armWWos[307]=armWWos[306] + armWWos[307];
+   armWWos[307]=mmt*armWWos[307];
+   armWWos[307]= - 1./6.*armWWos[193] + armWWos[307];
+   armWWos[307]=mmH*armWWos[10]*armWWos[307];
+   armWWos[203]=armWWos[307] + armWWos[266] + 1./6.*armWWos[283] + 
+   armWWos[203];
+   armWWos[203]=mmH*armWWos[203];
+   armWWos[266]=armWWos[103]*armWWos[146];
+   armWWos[266]= - armWWos[351] + armWWos[266];
+   armWWos[266]=armWWos[2]*armWWos[266];
+   armWWos[266]= - armWWos[290] + armWWos[266];
+   armWWos[266]=armWWos[266]*armWWos[250];
+   armWWos[283]=armWWos[139]*armWWos[146];
+   armWWos[283]= - armWWos[227] + armWWos[283];
+   armWWos[283]=armWWos[2]*armWWos[283];
+   armWWos[283]= - armWWos[216] + armWWos[283];
+   armWWos[266]=1./2.*armWWos[283] + armWWos[266];
+   armWWos[266]=mmt*armWWos[266];
+   armWWos[283]=armWWos[10]*armWWos[313];
+   armWWos[290]= - armWWos[216]*armWWos[146];
+   armWWos[266]=armWWos[283] + armWWos[244] + armWWos[266] + 
+   armWWos[239] + armWWos[290];
+   armWWos[266]=armWWos[100]*armWWos[266];
+   armWWos[283]= - 17./3. + armWWos[104];
+   armWWos[283]=armWWos[283]*armWWos[119];
+   armWWos[290]= - 17./9. + armWWos[101];
+   armWWos[290]=armWWos[290]*armWWos[101];
+   armWWos[283]=armWWos[283] + armWWos[290];
+   armWWos[283]=armWWos[283]*armWWos[250];
+   armWWos[290]= - 113./9. - armWWos[289];
+   armWWos[290]=armWWos[290]*armWWos[102];
+   armWWos[278]=armWWos[283] + armWWos[278] + armWWos[290];
+   armWWos[128]=armWWos[128] + 2;
+   armWWos[128]=armWWos[128]*armWWos[104];
+   armWWos[263]=armWWos[263]*armWWos[101];
+   armWWos[128]=armWWos[128] + armWWos[263];
+   armWWos[263]= - armWWos[128]*armWWos[269];
+   armWWos[188]= - armWWos[188] + armWWos[263];
+   armWWos[188]=armWWos[188]*armWWos[208];
+   armWWos[188]=armWWos[219] + armWWos[188];
+   armWWos[188]=mmt*armWWos[188];
+   armWWos[188]=armWWos[216] + armWWos[188];
+   armWWos[188]=armWWos[31]*armWWos[188];
+   armWWos[188]=1./2.*armWWos[278] + armWWos[188];
+   armWWos[188]=armWWos[33]*armWWos[188];
+   armWWos[263]=armWWos[343]*armWWos[200];
+   armWWos[278]=armWWos[352] + 1./3.*armWWos[139];
+   armWWos[278]=armWWos[278]*armWWos[2];
+   armWWos[263]=armWWos[278] + armWWos[263];
+   armWWos[263]=armWWos[263]*mmt;
+   armWWos[209]=armWWos[263] - armWWos[372] + 2*armWWos[209];
+   armWWos[263]=1./3.*armWWos[1] + armWWos[35];
+   armWWos[209]=armWWos[209]*armWWos[263];
+   armWWos[263]=109./2. + armWWos[104];
+   armWWos[263]=armWWos[263]*armWWos[104];
+   armWWos[278]=109 + 83*armWWos[101];
+   armWWos[278]=armWWos[278]*armWWos[102];
+   armWWos[263]=armWWos[263] + armWWos[278];
+   armWWos[263]=armWWos[263]*armWWos[210];
+   armWWos[278]=329./3. + armWWos[145];
+   armWWos[278]=armWWos[278]*armWWos[104];
+   armWWos[278]= - 2599./6. + armWWos[278];
+   armWWos[278]=armWWos[278]*armWWos[119];
+   armWWos[283]= - 3341./3. + 719*armWWos[101];
+   armWWos[283]=armWWos[283]*armWWos[102];
+   armWWos[278]=armWWos[278] + armWWos[283];
+   armWWos[113]=armWWos[278]*armWWos[113];
+   armWWos[113]=9./2.*armWWos[224] + armWWos[263] + armWWos[113];
+   armWWos[113]=armWWos[113]*armWWos[282];
+   armWWos[263]=5*armWWos[186];
+   armWWos[278]=19./3.*armWWos[193] + armWWos[263];
+   armWWos[278]=mmt*armWWos[278];
+   armWWos[283]=5./3.*armWWos[196];
+   armWWos[278]=armWWos[283] + armWWos[278];
+   armWWos[278]=armWWos[278]*armWWos[314];
+   armWWos[278]= - armWWos[372] + armWWos[278];
+   armWWos[278]=armWWos[31]*armWWos[278];
+   armWWos[212]= - armWWos[212]*armWWos[104];
+   armWWos[212]=91./6. + armWWos[212];
+   armWWos[212]=armWWos[212]*armWWos[122];
+   armWWos[290]= - 12307 - 18919./3.*armWWos[101];
+   armWWos[290]=armWWos[290]*armWWos[102];
+   armWWos[212]=armWWos[212] + armWWos[290];
+   armWWos[290]=armWWos[16] - 1./2.*mmZ;
+   armWWos[290]=armWWos[98]*armWWos[221]*armWWos[290];
+   armWWos[307]=armWWos[16]*armWWos[148];
+   armWWos[271]=mmZ*armWWos[271];
+   armWWos[107]=armWWos[203] + armWWos[188] + armWWos[209] + 
+   armWWos[278] + armWWos[266] + 1./128.*armWWos[290] + armWWos[271] + 
+   armWWos[113] - armWWos[318] + 3./2.*armWWos[307] + 1./768.*
+   armWWos[212] + armWWos[395] + armWWos[107];
+   armWWos[107]=armWWos[31]*armWWos[107];
+   armWWos[113]= - 191 - 155./6.*armWWos[104];
+   armWWos[113]=armWWos[113]*armWWos[104];
+   armWWos[113]= - 451./2. + armWWos[113];
+   armWWos[113]=armWWos[113]*armWWos[119];
+   armWWos[188]= - 451./3. - armWWos[238];
+   armWWos[188]=armWWos[188]*armWWos[102];
+   armWWos[113]=armWWos[113] + armWWos[188];
+   armWWos[188]=1./4.*armWWos[180];
+   armWWos[113]=armWWos[113]*armWWos[188];
+   armWWos[113]=armWWos[113] - armWWos[186];
+   armWWos[113]=mmt*armWWos[113];
+   armWWos[203]=armWWos[221]*armWWos[98];
+   armWWos[209]= - 233./3. - armWWos[145];
+   armWWos[209]=armWWos[209]*armWWos[104];
+   armWWos[209]= - 11209./6. + armWWos[209];
+   armWWos[209]=armWWos[209]*armWWos[119];
+   armWWos[212]=29*armWWos[101];
+   armWWos[221]= - 1019./9. - armWWos[212];
+   armWWos[195]=armWWos[221]*armWWos[195];
+   armWWos[195]=armWWos[209] + armWWos[195];
+   armWWos[195]=armWWos[195]*armWWos[249];
+   armWWos[113]= - 1./16.*armWWos[203] + armWWos[195] + armWWos[113];
+   armWWos[195]=armWWos[167] - armWWos[198];
+   armWWos[195]=armWWos[195]*armWWos[180];
+   armWWos[132]=armWWos[132]*armWWos[166];
+   armWWos[166]= - 4 - armWWos[187];
+   armWWos[166]=armWWos[166]*armWWos[104];
+   armWWos[187]= - 4 - armWWos[101];
+   armWWos[187]=armWWos[187]*armWWos[101];
+   armWWos[166]=armWWos[166] + armWWos[187];
+   armWWos[166]=armWWos[2]*armWWos[166];
+   armWWos[166]=armWWos[132] + armWWos[166];
+   armWWos[166]=armWWos[166]*armWWos[175];
+   armWWos[166]=armWWos[195] + armWWos[166];
+   armWWos[166]=mmt*armWWos[166];
+   armWWos[187]= - 6*armWWos[148] + armWWos[284];
+   armWWos[187]=armWWos[2]*armWWos[187];
+   armWWos[166]=armWWos[187] + armWWos[166];
+   armWWos[166]=mmt*armWWos[166];
+   armWWos[166]=2*armWWos[196] + armWWos[166];
+   armWWos[166]=armWWos[31]*armWWos[166];
+   armWWos[113]=1./4.*armWWos[113] + armWWos[166];
+   armWWos[113]=armWWos[31]*armWWos[113];
+   armWWos[166]= - 85./9. - armWWos[101];
+   armWWos[166]=armWWos[166]*armWWos[101];
+   armWWos[166]= - armWWos[260] + armWWos[166];
+   armWWos[187]=armWWos[32]*armWWos[31];
+   armWWos[166]=armWWos[166]*armWWos[187];
+   armWWos[195]=armWWos[97]*armWWos[31];
+   armWWos[209]=9./8.*armWWos[195];
+   armWWos[221]=armWWos[216]*armWWos[209];
+   armWWos[113]=armWWos[221] + armWWos[113] + 1./4.*armWWos[166];
+   armWWos[113]=armWWos[34]*armWWos[113];
+   armWWos[166]=armWWos[104] + 25./4.;
+   armWWos[166]=armWWos[166]*armWWos[104];
+   armWWos[221]= - 67./2. + armWWos[166];
+   armWWos[221]=armWWos[221]*armWWos[119];
+   armWWos[266]= - 67./3. - 81./2.*armWWos[101];
+   armWWos[266]=armWWos[266]*armWWos[102];
+   armWWos[221]=armWWos[221] + armWWos[266];
+   armWWos[221]=armWWos[2]*armWWos[221];
+   armWWos[266]=21./4. + armWWos[119];
+   armWWos[266]=armWWos[266]*armWWos[104];
+   armWWos[266]= - 13./2. + armWWos[266];
+   armWWos[266]=armWWos[266]*armWWos[104];
+   armWWos[266]= - 85./4. + armWWos[266];
+   armWWos[266]=armWWos[266]*armWWos[104];
+   armWWos[271]=85 + 59*armWWos[101];
+   armWWos[278]= - armWWos[271]*armWWos[153];
+   armWWos[266]=armWWos[266] + armWWos[278];
+   armWWos[266]=armWWos[266]*armWWos[200];
+   armWWos[221]=armWWos[221] + armWWos[266];
+   armWWos[221]=mmt*armWWos[221];
+   armWWos[221]= - 1./2.*armWWos[308] + armWWos[221];
+   armWWos[266]=1./2.*armWWos[31];
+   armWWos[221]=armWWos[9]*armWWos[221]*armWWos[266];
+   armWWos[261]=armWWos[261]*armWWos[155];
+   armWWos[261]=armWWos[239] + armWWos[261];
+   armWWos[278]=armWWos[266]*armWWos[32];
+   armWWos[261]=armWWos[261]*armWWos[278];
+   armWWos[209]= - armWWos[239]*armWWos[209];
+   armWWos[107]=armWWos[221] + armWWos[113] + armWWos[209] + 
+   armWWos[261] + armWWos[107];
+   armWWos[107]=armWWos[33]*armWWos[107];
+   armWWos[113]=1./3. + armWWos[118];
+   armWWos[113]=armWWos[113]*armWWos[104];
+   armWWos[113]= - 457./36. + armWWos[113];
+   armWWos[113]=armWWos[113]*armWWos[104];
+   armWWos[113]= - 1327./18. + armWWos[113];
+   armWWos[113]=armWWos[113]*armWWos[104];
+   armWWos[209]= - 1327 - 2197./2.*armWWos[101];
+   armWWos[209]=armWWos[209]*armWWos[329];
+   armWWos[113]=armWWos[113] + armWWos[209];
+   armWWos[113]=armWWos[15]*armWWos[113];
+   armWWos[209]=armWWos[362]*armWWos[105];
+   armWWos[209]= - 205./3. + armWWos[209];
+   armWWos[209]=armWWos[209]*armWWos[104];
+   armWWos[209]= - 1765./12. + armWWos[209];
+   armWWos[209]=armWWos[209]*armWWos[104];
+   armWWos[221]= - 1765./3. - 227*armWWos[101];
+   armWWos[221]=armWWos[221]*armWWos[153];
+   armWWos[209]=armWWos[209] + armWWos[221];
+   armWWos[209]=armWWos[16]*armWWos[209];
+   armWWos[113]=armWWos[113] + armWWos[209];
+   armWWos[209]=11./4. + armWWos[119];
+   armWWos[209]=armWWos[209]*armWWos[105];
+   armWWos[209]= - 175./27. + armWWos[209];
+   armWWos[209]=armWWos[209]*armWWos[104];
+   armWWos[209]= - 5689./216. + armWWos[209];
+   armWWos[209]=armWWos[209]*armWWos[104];
+   armWWos[221]= - 5689 - 4505*armWWos[101];
+   armWWos[221]=armWWos[221]*armWWos[101];
+   armWWos[209]=armWWos[209] + 1./216.*armWWos[221];
+   armWWos[209]=armWWos[17]*armWWos[209];
+   armWWos[221]= - 19 - armWWos[118];
+   armWWos[221]=armWWos[221]*armWWos[104];
+   armWWos[221]= - 119./4. + armWWos[221];
+   armWWos[221]=armWWos[221]*armWWos[104];
+   armWWos[154]= - 119 - armWWos[154];
+   armWWos[154]=armWWos[154]*armWWos[153];
+   armWWos[154]=armWWos[221] + armWWos[154];
+   armWWos[154]=armWWos[154]*armWWos[336];
+   armWWos[113]=armWWos[154] + 1./6.*armWWos[113] + armWWos[209];
+   armWWos[154]=59 + armWWos[137];
+   armWWos[154]=armWWos[154]*armWWos[104];
+   armWWos[154]=253./2. + armWWos[154];
+   armWWos[154]=armWWos[154]*armWWos[105];
+   armWWos[154]=115 + armWWos[154];
+   armWWos[154]=armWWos[154]*armWWos[112];
+   armWWos[209]=5./9. + armWWos[153];
+   armWWos[209]=armWWos[209]*armWWos[238];
+   armWWos[154]=armWWos[154] + armWWos[209];
+   armWWos[154]=armWWos[15]*armWWos[154];
+   armWWos[209]=armWWos[115] + 1;
+   armWWos[221]=armWWos[209]*armWWos[104];
+   armWWos[238]= - 23./6. - armWWos[221];
+   armWWos[238]=armWWos[238]*armWWos[104];
+   armWWos[261]= - armWWos[298]*armWWos[361];
+   armWWos[238]=armWWos[238] + armWWos[261];
+   armWWos[238]=armWWos[238]*armWWos[155];
+   armWWos[154]=armWWos[154] + armWWos[238];
+   armWWos[154]=armWWos[154]*armWWos[324];
+   armWWos[238]=61 + armWWos[137];
+   armWWos[238]=armWWos[238]*armWWos[119];
+   armWWos[238]=79./2. + armWWos[238];
+   armWWos[238]=armWWos[238]*armWWos[118];
+   armWWos[238]=35./3. + armWWos[238];
+   armWWos[238]=armWWos[238]*armWWos[104];
+   armWWos[261]=35 + 43./8.*armWWos[101];
+   armWWos[261]=armWWos[261]*armWWos[247];
+   armWWos[238]=armWWos[238] + armWWos[261];
+   armWWos[238]=armWWos[15]*armWWos[238];
+   armWWos[261]= - 5 - armWWos[105];
+   armWWos[261]=armWWos[261]*armWWos[104];
+   armWWos[261]= - 13./2. + armWWos[261];
+   armWWos[261]=armWWos[261]*armWWos[104];
+   armWWos[261]= - 7./2. + armWWos[261];
+   armWWos[261]=armWWos[261]*armWWos[119];
+   armWWos[284]= - 7./6. + armWWos[101];
+   armWWos[284]=armWWos[284]*armWWos[101];
+   armWWos[261]=armWWos[261] + armWWos[284];
+   armWWos[261]=armWWos[16]*armWWos[261];
+   armWWos[238]=armWWos[238] + armWWos[261];
+   armWWos[238]=1./3.*armWWos[238] + 5./4.*armWWos[174];
+   armWWos[238]=armWWos[238]*armWWos[146];
+   armWWos[261]= - 113 - armWWos[199];
+   armWWos[261]=armWWos[261]*armWWos[119];
+   armWWos[261]= - 115./2. + armWWos[261];
+   armWWos[261]=armWWos[261]*armWWos[118];
+   armWWos[261]= - 58./3. + armWWos[261];
+   armWWos[261]=armWWos[261]*armWWos[104];
+   armWWos[284]= - 58 - 119./8.*armWWos[101];
+   armWWos[284]=armWWos[284]*armWWos[247];
+   armWWos[261]=armWWos[261] + armWWos[284];
+   armWWos[261]=armWWos[261]*armWWos[254];
+   armWWos[154]=armWWos[238] + 1./3.*armWWos[261] + armWWos[154];
+   armWWos[154]=armWWos[2]*armWWos[154];
+   armWWos[113]=1./2.*armWWos[113] + armWWos[154];
+   armWWos[113]=armWWos[2]*armWWos[113];
+   armWWos[154]= - 61./12. - armWWos[104];
+   armWWos[154]=armWWos[154]*armWWos[104];
+   armWWos[154]=13./2. + armWWos[154];
+   armWWos[154]=armWWos[154]*armWWos[334];
+   armWWos[238]=10123./576. + 10*armWWos[90];
+   armWWos[154]=armWWos[154] + armWWos[238];
+   armWWos[154]=armWWos[154]*armWWos[104];
+   armWWos[238]=97./576.*armWWos[101] + armWWos[238];
+   armWWos[238]=armWWos[238]*armWWos[101];
+   armWWos[154]=armWWos[154] + armWWos[238];
+   armWWos[238]= - 1./3. + armWWos[129];
+   armWWos[238]=armWWos[238]*armWWos[104];
+   armWWos[238]= - 1./8. + armWWos[238];
+   armWWos[238]=armWWos[238]*armWWos[104];
+   armWWos[261]= - 1 + armWWos[287];
+   armWWos[261]=armWWos[261]*armWWos[133];
+   armWWos[238]=armWWos[238] + armWWos[261];
+   armWWos[238]=armWWos[13]*armWWos[238];
+   armWWos[261]=armWWos[247] + 1./2.;
+   armWWos[261]=armWWos[261]*armWWos[101];
+   armWWos[284]=armWWos[213]*armWWos[105];
+   armWWos[261]=armWWos[261] + armWWos[284];
+   armWWos[284]= - armWWos[83]*armWWos[261];
+   armWWos[290]=armWWos[289] + 11./2.;
+   armWWos[290]=armWWos[290]*armWWos[101];
+   armWWos[298]=1 + armWWos[137];
+   armWWos[298]=armWWos[298]*armWWos[104];
+   armWWos[298]=11 + armWWos[298];
+   armWWos[298]=armWWos[298]*armWWos[105];
+   armWWos[298]=armWWos[298] + armWWos[290];
+   armWWos[298]=armWWos[85]*armWWos[298];
+   armWWos[307]=armWWos[84]*armWWos[139];
+   armWWos[113]=1./6.*armWWos[298] + armWWos[113] + armWWos[284] + 9./8.
+   *armWWos[307] + 1./3.*armWWos[154] + armWWos[238];
+   armWWos[113]=armWWos[2]*armWWos[113];
+   armWWos[154]= - 43 - 5./4.*armWWos[104];
+   armWWos[154]=armWWos[154]*armWWos[119];
+   armWWos[154]= - 113./4. + armWWos[154];
+   armWWos[154]=armWWos[154]*armWWos[104];
+   armWWos[238]=167./3.*armWWos[101];
+   armWWos[284]= - 113 - armWWos[238];
+   armWWos[284]=armWWos[284]*armWWos[153];
+   armWWos[154]=armWWos[154] + armWWos[284];
+   armWWos[154]=armWWos[154]*armWWos[210];
+   armWWos[284]=89./2. + armWWos[231];
+   armWWos[284]=armWWos[284]*armWWos[105];
+   armWWos[284]= - 1 + armWWos[284];
+   armWWos[284]=armWWos[284]*armWWos[112];
+   armWWos[298]= - 1./9. - 21./4.*armWWos[101];
+   armWWos[298]=armWWos[298]*armWWos[101];
+   armWWos[284]=armWWos[284] + armWWos[298];
+   armWWos[284]=armWWos[16]*armWWos[284];
+   armWWos[298]=23./2.*armWWos[104];
+   armWWos[307]= - 19 - armWWos[298];
+   armWWos[307]=armWWos[307]*armWWos[119];
+   armWWos[248]= - 19./3. - armWWos[248];
+   armWWos[248]=armWWos[248]*armWWos[101];
+   armWWos[248]=armWWos[307] + armWWos[248];
+   armWWos[248]=armWWos[248]*armWWos[146];
+   armWWos[154]=armWWos[248] + armWWos[154] + armWWos[284];
+   armWWos[154]=armWWos[2]*armWWos[154];
+   armWWos[248]= - 29./3. - armWWos[137];
+   armWWos[248]=armWWos[248]*armWWos[104];
+   armWWos[248]=931./18. + armWWos[248];
+   armWWos[248]=armWWos[248]*armWWos[104];
+   armWWos[284]=931 - 1247*armWWos[101];
+   armWWos[284]=armWWos[284]*armWWos[329];
+   armWWos[248]=armWWos[248] + armWWos[284];
+   armWWos[154]=1./6.*armWWos[248] + armWWos[154];
+   armWWos[154]=armWWos[2]*armWWos[154];
+   armWWos[248]=armWWos[10]*armWWos[219];
+   armWWos[154]=armWWos[154] + armWWos[248];
+   armWWos[154]=armWWos[154]*armWWos[337];
+   armWWos[248]=5./3. + armWWos[214];
+   armWWos[248]=armWWos[248]*armWWos[105];
+   armWWos[284]=5./2. + armWWos[101];
+   armWWos[284]=armWWos[284]*armWWos[247];
+   armWWos[248]=armWWos[248] + armWWos[284];
+   armWWos[248]=armWWos[95]*armWWos[248];
+   armWWos[284]= - 3./2. - armWWos[221];
+   armWWos[284]=armWWos[284]*armWWos[118];
+   armWWos[284]= - 5./3. + armWWos[284];
+   armWWos[284]=armWWos[284]*armWWos[104];
+   armWWos[307]= - 5 + 17./8.*armWWos[101];
+   armWWos[307]=armWWos[307]*armWWos[247];
+   armWWos[284]=armWWos[284] + armWWos[307];
+   armWWos[236]=armWWos[284]*armWWos[236];
+   armWWos[236]=armWWos[236] + 1./2.*armWWos[248];
+   armWWos[236]=armWWos[180]*armWWos[236];
+   armWWos[248]=3./4.*armWWos[69] + 1./2.*armWWos[93];
+   armWWos[248]=armWWos[193]*armWWos[248];
+   armWWos[284]=armWWos[116] - 11./6.;
+   armWWos[284]=armWWos[284]*armWWos[101];
+   armWWos[214]=armWWos[214] - 11./3.;
+   armWWos[214]=armWWos[214]*armWWos[105];
+   armWWos[214]=armWWos[284] + armWWos[214];
+   armWWos[214]= - armWWos[214]*armWWos[309];
+   armWWos[284]=armWWos[347]*armWWos[105];
+   armWWos[284]=armWWos[284] + armWWos[290];
+   armWWos[284]=armWWos[86]*armWWos[284]*armWWos[275];
+   armWWos[290]=armWWos[115] + 2;
+   armWWos[290]=armWWos[290]*armWWos[104];
+   armWWos[307]=14./3. - armWWos[323];
+   armWWos[307]=armWWos[307]*armWWos[101];
+   armWWos[307]= - armWWos[290] + armWWos[307];
+   armWWos[307]=armWWos[71]*armWWos[307];
+   armWWos[308]=9 + 29./3.*armWWos[101];
+   armWWos[308]=armWWos[308]*armWWos[102];
+   armWWos[310]=armWWos[380] - 9./2.;
+   armWWos[310]=armWWos[310]*armWWos[104];
+   armWWos[308]=armWWos[308] - armWWos[310];
+   armWWos[310]= - armWWos[82]*armWWos[308]*armWWos[300];
+   armWWos[290]= - 5 + armWWos[290];
+   armWWos[290]=armWWos[290]*armWWos[104];
+   armWWos[311]= - 5 - 14*armWWos[101];
+   armWWos[311]=armWWos[311]*armWWos[101];
+   armWWos[290]=armWWos[290] + armWWos[311];
+   armWWos[290]=armWWos[19]*armWWos[290]*armWWos[207];
+   armWWos[205]=155 - armWWos[205];
+   armWWos[205]=armWWos[205]*armWWos[119];
+   armWWos[205]=89 + armWWos[205];
+   armWWos[205]=armWWos[205]*armWWos[104];
+   armWWos[205]=armWWos[205] + 89*armWWos[101];
+   armWWos[205]=armWWos[91]*armWWos[205]*armWWos[249];
+   armWWos[113]=armWWos[154] + armWWos[290] + armWWos[310] + 
+   armWWos[307] + armWWos[284] + armWWos[205] + 1./2.*armWWos[214] + 
+   armWWos[248] + armWWos[236] + armWWos[113];
+   armWWos[113]=armWWos[65]*armWWos[113];
+   armWWos[106]=armWWos[106]*armWWos[105];
+   armWWos[106]=armWWos[106] + 1./3.;
+   armWWos[106]=armWWos[106]*armWWos[104];
+   armWWos[154]=armWWos[267]*armWWos[247];
+   armWWos[106]=armWWos[106] + armWWos[154];
+   armWWos[154]=armWWos[106]*armWWos[17];
+   armWWos[205]=armWWos[106]*armWWos[15];
+   armWWos[214]=19./4.*armWWos[205] + armWWos[154];
+   armWWos[214]=armWWos[17]*armWWos[214];
+   armWWos[236]=49 + armWWos[322];
+   armWWos[236]=armWWos[236]*armWWos[119];
+   armWWos[236]=37./2. + armWWos[236];
+   armWWos[236]=armWWos[236]*armWWos[105];
+   armWWos[236]=31./3. + armWWos[236];
+   armWWos[236]=armWWos[236]*armWWos[104];
+   armWWos[248]=31 + 13./4.*armWWos[101];
+   armWWos[248]=armWWos[248]*armWWos[247];
+   armWWos[236]=armWWos[236] + armWWos[248];
+   armWWos[236]=armWWos[236]*armWWos[254];
+   armWWos[214]=1./4.*armWWos[236] + armWWos[214];
+   armWWos[214]=armWWos[214]*armWWos[275];
+   armWWos[236]=17./6. + armWWos[338];
+   armWWos[236]=armWWos[236]*armWWos[129];
+   armWWos[236]=2 + armWWos[236];
+   armWWos[236]=armWWos[236]*armWWos[104];
+   armWWos[248]=2 + 79./48.*armWWos[101];
+   armWWos[248]=armWWos[248]*armWWos[101];
+   armWWos[236]=armWWos[236] + armWWos[248];
+   armWWos[236]=armWWos[236]*armWWos[210];
+   armWWos[248]=9./2. + armWWos[119];
+   armWWos[248]=armWWos[248]*armWWos[118];
+   armWWos[248]=5./3. + armWWos[248];
+   armWWos[248]=armWWos[248]*armWWos[104];
+   armWWos[248]=19./8. + armWWos[248];
+   armWWos[248]=armWWos[248]*armWWos[104];
+   armWWos[254]=19 + 17./3.*armWWos[101];
+   armWWos[254]=armWWos[254]*armWWos[133];
+   armWWos[248]=armWWos[248] + armWWos[254];
+   armWWos[248]=armWWos[16]*armWWos[248];
+   armWWos[254]=29./6. + armWWos[104];
+   armWWos[254]=armWWos[254]*armWWos[105];
+   armWWos[254]=31./3. + armWWos[254];
+   armWWos[254]=armWWos[254]*armWWos[104];
+   armWWos[254]=97./4. + armWWos[254];
+   armWWos[254]=armWWos[254]*armWWos[104];
+   armWWos[238]=97 + armWWos[238];
+   armWWos[238]=armWWos[238]*armWWos[153];
+   armWWos[238]=armWWos[254] + armWWos[238];
+   armWWos[238]=armWWos[238]*armWWos[265];
+   armWWos[254]=1./24.*armWWos[104];
+   armWWos[265]=1 + armWWos[254];
+   armWWos[265]=armWWos[265]*armWWos[104];
+   armWWos[265]=43./24. + armWWos[265];
+   armWWos[265]=armWWos[265]*armWWos[104];
+   armWWos[265]=31./12. + armWWos[265];
+   armWWos[265]=armWWos[265]*armWWos[104];
+   armWWos[267]=31 + 19./2.*armWWos[101];
+   armWWos[267]=armWWos[267]*armWWos[222];
+   armWWos[265]=armWWos[265] + armWWos[267];
+   armWWos[267]=1./2.*armWWos[67];
+   armWWos[265]=armWWos[265]*armWWos[267];
+   armWWos[214]=armWWos[214] + armWWos[265] + armWWos[238] + 
+   armWWos[236] + armWWos[248];
+   armWWos[214]=armWWos[2]*armWWos[214];
+   armWWos[236]=1./6.*armWWos[83] - 7./8.*armWWos[84];
+   armWWos[236]=armWWos[103]*armWWos[236];
+   armWWos[238]= - 233./24. - armWWos[104];
+   armWWos[238]=armWWos[238]*armWWos[129];
+   armWWos[248]=2*armWWos[90];
+   armWWos[238]=armWWos[238] + 439./192. - armWWos[248];
+   armWWos[238]=armWWos[238]*armWWos[104];
+   armWWos[248]=armWWos[248] - 3023./192.;
+   armWWos[238]=armWWos[238] - armWWos[248];
+   armWWos[238]=armWWos[238]*armWWos[104];
+   armWWos[248]=619./48.*armWWos[101] - armWWos[248];
+   armWWos[248]=armWWos[248]*armWWos[101];
+   armWWos[238]=armWWos[238] + armWWos[248];
+   armWWos[248]= - 5 + armWWos[348];
+   armWWos[248]=armWWos[248]*armWWos[104];
+   armWWos[248]= - 41 + armWWos[248];
+   armWWos[248]=armWWos[248]*armWWos[201];
+   armWWos[265]= - 41./12. - armWWos[289];
+   armWWos[265]=armWWos[265]*armWWos[101];
+   armWWos[248]=armWWos[248] + armWWos[265];
+   armWWos[162]=armWWos[248]*armWWos[162];
+   armWWos[162]=armWWos[214] + 1./3.*armWWos[238] + armWWos[162] + 
+   armWWos[236];
+   armWWos[162]=armWWos[2]*armWWos[162];
+   armWWos[214]=armWWos[134] + 17;
+   armWWos[214]=armWWos[214]*armWWos[361];
+   armWWos[211]=armWWos[211] - 17./6.;
+   armWWos[211]=armWWos[211]*armWWos[104];
+   armWWos[211]=armWWos[214] - armWWos[211];
+   armWWos[211]=armWWos[211]*armWWos[309];
+   armWWos[214]=7 - armWWos[105];
+   armWWos[214]=armWWos[214]*armWWos[104];
+   armWWos[214]= - 23./2. + armWWos[214];
+   armWWos[214]=armWWos[214]*armWWos[104];
+   armWWos[236]= - 23 + armWWos[134];
+   armWWos[236]=armWWos[236]*armWWos[102];
+   armWWos[214]=armWWos[214] + armWWos[236];
+   armWWos[214]=armWWos[71]*armWWos[214];
+   armWWos[162]=1./12.*armWWos[214] + 1./4.*armWWos[211] + armWWos[162]
+   ;
+   armWWos[162]=armWWos[2]*armWWos[162];
+   armWWos[127]= - 11./3. - armWWos[127];
+   armWWos[127]=armWWos[127]*armWWos[118];
+   armWWos[211]= - 11./4. - armWWos[101];
+   armWWos[211]=armWWos[211]*armWWos[247];
+   armWWos[127]=armWWos[127] + armWWos[211];
+   armWWos[127]=armWWos[127]*armWWos[245];
+   armWWos[211]= - 1 + armWWos[230];
+   armWWos[211]=armWWos[211]*armWWos[104];
+   armWWos[138]=armWWos[211] - armWWos[138];
+   armWWos[138]=armWWos[86]*armWWos[138];
+   armWWos[211]=armWWos[326] - 5;
+   armWWos[211]=armWWos[211]*armWWos[104];
+   armWWos[211]=armWWos[211] - 41./3.;
+   armWWos[211]=armWWos[211]*armWWos[105];
+   armWWos[171]=armWWos[171]*armWWos[247];
+   armWWos[171]=armWWos[211] - armWWos[171];
+   armWWos[211]=armWWos[82]*armWWos[171];
+   armWWos[214]= - 13 - armWWos[104];
+   armWWos[214]=armWWos[214]*armWWos[104];
+   armWWos[214]= - 43./3. + armWWos[214];
+   armWWos[214]=armWWos[214]*armWWos[104];
+   armWWos[214]= - 43./3. + armWWos[214];
+   armWWos[214]=armWWos[214]*armWWos[104];
+   armWWos[214]=armWWos[214] - 43./3.*armWWos[101];
+   armWWos[214]=armWWos[91]*armWWos[214];
+   armWWos[127]= - 1./8.*armWWos[211] + 1./24.*armWWos[138] + 1./16.*
+   armWWos[214] + armWWos[127];
+   armWWos[127]=armWWos[180]*armWWos[127];
+   armWWos[138]=53 + armWWos[137];
+   armWWos[138]=armWWos[138]*armWWos[104];
+   armWWos[138]=229./2. + armWWos[138];
+   armWWos[138]=armWWos[138]*armWWos[129];
+   armWWos[138]=22 + armWWos[138];
+   armWWos[138]=armWWos[138]*armWWos[119];
+   armWWos[211]=22./3. + 41./16.*armWWos[101];
+   armWWos[211]=armWWos[211]*armWWos[101];
+   armWWos[138]=armWWos[138] + armWWos[211];
+   armWWos[138]=armWWos[138]*armWWos[210];
+   armWWos[211]= - 73 - armWWos[231];
+   armWWos[211]=armWWos[211]*armWWos[104];
+   armWWos[211]=5 + armWWos[211];
+   armWWos[211]=armWWos[211]*armWWos[104];
+   armWWos[211]=131 + armWWos[211];
+   armWWos[211]=armWWos[211]*armWWos[293];
+   armWWos[214]=131./18. + armWWos[215];
+   armWWos[214]=armWWos[214]*armWWos[101];
+   armWWos[211]=armWWos[211] + armWWos[214];
+   armWWos[214]=1./8.*armWWos[16];
+   armWWos[211]=armWWos[211]*armWWos[214];
+   armWWos[138]=25./24.*armWWos[174] + armWWos[138] + armWWos[211];
+   armWWos[138]=armWWos[2]*armWWos[138];
+   armWWos[111]= - 131./3. + armWWos[111];
+   armWWos[111]=armWWos[111]*armWWos[104];
+   armWWos[111]=95./12. + armWWos[111];
+   armWWos[111]=armWWos[111]*armWWos[104];
+   armWWos[211]=95 + 619*armWWos[101];
+   armWWos[211]=armWWos[211]*armWWos[222];
+   armWWos[111]=armWWos[111] + armWWos[211];
+   armWWos[111]=1./36.*armWWos[111] + armWWos[138];
+   armWWos[111]=armWWos[111]*armWWos[180];
+   armWWos[138]=armWWos[10]*armWWos[193];
+   armWWos[111]=armWWos[111] - 11./18.*armWWos[138];
+   armWWos[111]=armWWos[10]*armWWos[111];
+   armWWos[138]=armWWos[93] + armWWos[95];
+   armWWos[138]=5./16.*armWWos[69] - 1./16.*armWWos[138];
+   armWWos[138]=armWWos[184]*armWWos[138];
+   armWWos[211]=armWWos[20]*armWWos[306];
+   armWWos[230]=19 - armWWos[348];
+   armWWos[230]=armWWos[230]*armWWos[104];
+   armWWos[230]=53 + armWWos[230];
+   armWWos[230]=armWWos[230]*armWWos[105];
+   armWWos[236]=53./2. + armWWos[161];
+   armWWos[236]=armWWos[236]*armWWos[101];
+   armWWos[230]=armWWos[230] + armWWos[236];
+   armWWos[230]=armWWos[19]*armWWos[230]*armWWos[182];
+   armWWos[111]=armWWos[111] + 1./24.*armWWos[230] - 23./8.*
+   armWWos[211] + armWWos[127] + armWWos[138] + armWWos[162];
+   armWWos[111]=armWWos[65]*armWWos[111];
+   armWWos[127]=armWWos[202] - armWWos[17];
+   armWWos[127]=armWWos[124]*armWWos[127];
+   armWWos[138]=armWWos[106]*armWWos[267];
+   armWWos[127]=armWWos[138] + armWWos[127];
+   armWWos[127]=armWWos[2]*armWWos[127];
+   armWWos[138]=armWWos[84]*armWWos[136];
+   armWWos[162]= - armWWos[129] - 25./32. + armWWos[90];
+   armWWos[162]=armWWos[162]*armWWos[104];
+   armWWos[162]=armWWos[162] - 55./16. + armWWos[90];
+   armWWos[162]=armWWos[162]*armWWos[119];
+   armWWos[211]= - 81./32. + 1./3.*armWWos[90];
+   armWWos[162]=armWWos[162] + armWWos[211];
+   armWWos[162]=armWWos[162]*armWWos[104];
+   armWWos[211]= - 133./96.*armWWos[101] + armWWos[211];
+   armWWos[211]=armWWos[211]*armWWos[101];
+   armWWos[127]=armWWos[127] + 3./8.*armWWos[138] + armWWos[162] + 
+   armWWos[211];
+   armWWos[127]=armWWos[2]*armWWos[127];
+   armWWos[138]= - armWWos[103]*armWWos[309];
+   armWWos[127]=1./3.*armWWos[138] + armWWos[127];
+   armWWos[127]=armWWos[127]*armWWos[180];
+   armWWos[138]=armWWos[205] - armWWos[154];
+   armWWos[138]=armWWos[2]*armWWos[138];
+   armWWos[154]=11 + armWWos[298];
+   armWWos[154]=armWWos[154]*armWWos[119];
+   armWWos[154]=7./2. + armWWos[154];
+   armWWos[154]=armWWos[154]*armWWos[104];
+   armWWos[162]=7 - armWWos[247];
+   armWWos[162]=armWWos[162]*armWWos[102];
+   armWWos[154]=armWWos[154] + armWWos[162];
+   armWWos[138]=1./2.*armWWos[154] + 7*armWWos[138];
+   armWWos[138]=armWWos[138]*armWWos[182];
+   armWWos[154]=armWWos[10]*armWWos[306];
+   armWWos[138]=armWWos[138] + 13./2.*armWWos[154];
+   armWWos[138]=armWWos[138]*armWWos[353];
+   armWWos[154]=armWWos[106]*armWWos[268];
+   armWWos[162]= - 5./2.*armWWos[20] + armWWos[93];
+   armWWos[162]=armWWos[154]*armWWos[162];
+   armWWos[211]=armWWos[85]*armWWos[184];
+   armWWos[230]=armWWos[86]*armWWos[306];
+   armWWos[236]=armWWos[331] - 1./2.;
+   armWWos[236]=armWWos[236]*armWWos[104];
+   armWWos[238]=armWWos[242]*armWWos[102];
+   armWWos[236]=armWWos[236] + armWWos[238];
+   armWWos[207]= - armWWos[71]*armWWos[236]*armWWos[207];
+   armWWos[127]=armWWos[138] + armWWos[207] + 5./4.*armWWos[230] + 
+   armWWos[127] + 1./8.*armWWos[211] + armWWos[162];
+   armWWos[127]=armWWos[65]*armWWos[127];
+   armWWos[138]=armWWos[124]*armWWos[268];
+   armWWos[162]=pow(armWWos[10],2)*armWWos[154];
+   armWWos[162]=armWWos[138] - 1./3.*armWWos[162];
+   armWWos[162]=armWWos[65]*armWWos[162];
+   armWWos[154]=armWWos[154]*armWWos[65];
+   armWWos[207]=armWWos[14]*armWWos[154];
+   armWWos[162]=armWWos[162] + 1./2.*armWWos[207];
+   armWWos[162]=mmH*armWWos[162];
+   armWWos[207]=armWWos[182]*armWWos[65];
+   armWWos[211]=armWWos[151]*armWWos[207];
+   armWWos[230]=armWWos[14]*armWWos[211];
+   armWWos[127]=armWWos[162] + armWWos[127] - 17./4.*armWWos[230];
+   armWWos[162]=1./2.*mmH;
+   armWWos[127]=armWWos[127]*armWWos[162];
+   armWWos[230]= - armWWos[193] - armWWos[194];
+   armWWos[238]= - 7./4. + armWWos[51];
+   armWWos[238]=armWWos[238]*armWWos[184];
+   armWWos[238]=armWWos[238] - 7./4.*armWWos[185];
+   armWWos[242]=1./2. + armWWos[57];
+   armWWos[242]=mmt*armWWos[138]*armWWos[242];
+   armWWos[238]=1./2.*armWWos[238] + armWWos[242];
+   armWWos[238]=mmt*armWWos[238];
+   armWWos[242]= - 5./9.*armWWos[193] - 11./2.*armWWos[292];
+   armWWos[242]=armWWos[242]*armWWos[337];
+   armWWos[138]=armWWos[59]*armWWos[208]*armWWos[138];
+   armWWos[138]=armWWos[242] + 1./2.*armWWos[138] + 13./12.*
+   armWWos[230] + armWWos[238];
+   armWWos[138]=armWWos[31]*armWWos[138];
+   armWWos[208]=armWWos[326] + 37./3.;
+   armWWos[208]=armWWos[208]*armWWos[104];
+   armWWos[208]=armWWos[208] + 71./3.;
+   armWWos[208]=armWWos[208]*armWWos[105];
+   armWWos[161]=armWWos[161] + 71./2.;
+   armWWos[161]=armWWos[161]*armWWos[247];
+   armWWos[161]=armWWos[208] + armWWos[161];
+   armWWos[208]=armWWos[94]*armWWos[161];
+   armWWos[230]=5./6.*armWWos[104];
+   armWWos[238]=3 + armWWos[230];
+   armWWos[238]=armWWos[238]*armWWos[104];
+   armWWos[238]=55./6. + armWWos[238];
+   armWWos[238]=armWWos[238]*armWWos[104];
+   armWWos[242]=55 + armWWos[389];
+   armWWos[242]=armWWos[242]*armWWos[361];
+   armWWos[238]=armWWos[238] + armWWos[242];
+   armWWos[238]=armWWos[68]*armWWos[238];
+   armWWos[208]=1./16.*armWWos[238] - 1./4.*armWWos[208];
+   armWWos[208]=armWWos[207]*armWWos[208];
+   armWWos[238]=armWWos[270] + 1./2.*armWWos[184];
+   armWWos[242]=armWWos[266]*mmt;
+   armWWos[245]=armWWos[49]*armWWos[238]*armWWos[242];
+   armWWos[248]=armWWos[270] + 3./2.*armWWos[184];
+   armWWos[242]=armWWos[248]*armWWos[242];
+   armWWos[248]=1 + armWWos[334];
+   armWWos[248]=armWWos[248]*armWWos[104];
+   armWWos[248]=61./16. + armWWos[248];
+   armWWos[248]=armWWos[248]*armWWos[119];
+   armWWos[248]=13./8. + armWWos[248];
+   armWWos[248]=armWWos[248]*armWWos[104];
+   armWWos[265]=13 + 17./6.*armWWos[101];
+   armWWos[265]=armWWos[265]*armWWos[133];
+   armWWos[248]=armWWos[248] + armWWos[265];
+   armWWos[265]=armWWos[180]*armWWos[65];
+   armWWos[248]=armWWos[248]*armWWos[265];
+   armWWos[248]= - armWWos[242] + armWWos[248];
+   armWWos[248]=armWWos[14]*armWWos[248];
+   armWWos[267]=armWWos[266]*armWWos[40];
+   armWWos[268]=armWWos[270]*armWWos[267];
+   armWWos[236]=armWWos[88]*armWWos[236]*armWWos[265];
+   armWWos[111]=armWWos[127] + 1./6.*armWWos[236] + armWWos[268] + 
+   armWWos[248] + armWWos[245] + armWWos[138] + armWWos[111] + 
+   armWWos[208];
+   armWWos[111]=mmH*armWWos[111];
+   armWWos[127]=7./8. - armWWos[169];
+   armWWos[127]=armWWos[136]*armWWos[127];
+   armWWos[138]=armWWos[2]*armWWos[17]*armWWos[124];
+   armWWos[127]= - 3*armWWos[138] + armWWos[127];
+   armWWos[127]=armWWos[127]*armWWos[152];
+   armWWos[138]=armWWos[44]*armWWos[103];
+   armWWos[127]= - 3*armWWos[138] + armWWos[127];
+   armWWos[127]=armWWos[127]*armWWos[180];
+   armWWos[138]=armWWos[44]*armWWos[136];
+   armWWos[124]=armWWos[124]*armWWos[152];
+   armWWos[124]=armWWos[138] + armWWos[124];
+   armWWos[124]=armWWos[124]*armWWos[175];
+   armWWos[138]=armWWos[39]*armWWos[184];
+   armWWos[124]=armWWos[124] + 11./8.*armWWos[185] + armWWos[127] - 5./
+   8.*armWWos[138];
+   armWWos[124]=mmt*armWWos[124];
+   armWWos[114]=5*armWWos[174] + 11./2.*armWWos[156] - armWWos[114];
+   armWWos[114]=armWWos[2]*armWWos[114];
+   armWWos[127]=469./48. - armWWos[169];
+   armWWos[127]=armWWos[103]*armWWos[127];
+   armWWos[114]=armWWos[114] + armWWos[127];
+   armWWos[114]=armWWos[114]*armWWos[152];
+   armWWos[114]=armWWos[173] + armWWos[114];
+   armWWos[114]=armWWos[2]*armWWos[114];
+   armWWos[127]=3./8.*armWWos[39];
+   armWWos[138]=armWWos[193]*armWWos[127];
+   armWWos[114]=armWWos[124] + 21./8.*armWWos[194] + armWWos[114] + 
+   armWWos[138];
+   armWWos[114]=mmt*armWWos[114];
+   armWWos[124]= - armWWos[193] - 3*armWWos[186];
+   armWWos[124]=mmt*armWWos[124];
+   armWWos[124]= - armWWos[196] + armWWos[124];
+   armWWos[124]=armWWos[49]*armWWos[124];
+   armWWos[138]= - 11./3.*armWWos[193] - 7./2.*armWWos[186];
+   armWWos[138]=armWWos[40]*armWWos[138];
+   armWWos[124]=armWWos[124] + armWWos[138];
+   armWWos[138]= - 9./4.*armWWos[184] + armWWos[270];
+   armWWos[138]=mmt*armWWos[138];
+   armWWos[138]= - 5./2.*armWWos[193] + armWWos[138];
+   armWWos[138]=armWWos[59]*armWWos[138];
+   armWWos[156]= - armWWos[38]*armWWos[238];
+   armWWos[138]=armWWos[156] + armWWos[138];
+   armWWos[138]=armWWos[314]*armWWos[138];
+   armWWos[156]=armWWos[193] + 3./2.*armWWos[186];
+   armWWos[156]=armWWos[37]*armWWos[156];
+   armWWos[169]=armWWos[20]*armWWos[186];
+   armWWos[156]=armWWos[169] - armWWos[156];
+   armWWos[169]=5./2.*armWWos[351] + 17*armWWos[108];
+   armWWos[169]=armWWos[2]*armWWos[169];
+   armWWos[169]=161./32.*armWWos[139] + armWWos[169];
+   armWWos[169]=armWWos[2]*armWWos[169];
+   armWWos[173]=armWWos[163]*armWWos[180];
+   armWWos[174]=4./3.*armWWos[173] + 1./2.*armWWos[186];
+   armWWos[174]=mmt*armWWos[174];
+   armWWos[174]=13./18.*armWWos[196] + armWWos[174];
+   armWWos[174]=armWWos[10]*armWWos[174];
+   armWWos[127]=13./24.*armWWos[57] - armWWos[127];
+   armWWos[127]=armWWos[196]*armWWos[127];
+   armWWos[114]=armWWos[174] + armWWos[114] + 1./9.*armWWos[169] + 
+   armWWos[138] + armWWos[127] - 3./4.*armWWos[156] + 1./4.*
+   armWWos[124];
+   armWWos[114]=armWWos[31]*armWWos[114];
+   armWWos[124]= - 2./3. - armWWos[129];
+   armWWos[124]=armWWos[124]*armWWos[104];
+   armWWos[124]=89./8. + armWWos[124];
+   armWWos[124]=armWWos[124]*armWWos[119];
+   armWWos[124]=43./4. + armWWos[124];
+   armWWos[124]=armWWos[124]*armWWos[104];
+   armWWos[127]=43 + 169./6.*armWWos[101];
+   armWWos[127]=armWWos[127]*armWWos[153];
+   armWWos[124]=armWWos[124] + armWWos[127];
+   armWWos[124]=armWWos[94]*armWWos[124];
+   armWWos[127]= - 17./4. - armWWos[104];
+   armWWos[127]=armWWos[127]*armWWos[119];
+   armWWos[127]= - 7./2. + armWWos[127];
+   armWWos[127]=armWWos[127]*armWWos[104];
+   armWWos[138]= - 7 - 25./6.*armWWos[101];
+   armWWos[138]=armWWos[138]*armWWos[102];
+   armWWos[127]=armWWos[127] + armWWos[138];
+   armWWos[127]=armWWos[68]*armWWos[127];
+   armWWos[124]=1./2.*armWWos[127] + armWWos[124];
+   armWWos[124]=armWWos[265]*armWWos[124];
+   armWWos[127]=7*armWWos[193] + 9*armWWos[186];
+   armWWos[127]=mmt*armWWos[127];
+   armWWos[127]=armWWos[196] + armWWos[127];
+   armWWos[127]=armWWos[31]*armWWos[127];
+   armWWos[138]= - 23 - 17./2.*armWWos[104];
+   armWWos[138]=armWWos[138]*armWWos[104];
+   armWWos[138]= - 215./2. + armWWos[138];
+   armWWos[138]=armWWos[138]*armWWos[104];
+   armWWos[156]= - 215 - 137*armWWos[101];
+   armWWos[156]=armWWos[156]*armWWos[102];
+   armWWos[138]=armWWos[138] + armWWos[156];
+   armWWos[156]=armWWos[65]*armWWos[2];
+   armWWos[138]=armWWos[138]*armWWos[156];
+   armWWos[127]=armWWos[127] + 1./6.*armWWos[138];
+   armWWos[127]=armWWos[14]*armWWos[127];
+   armWWos[138]=2 - armWWos[104];
+   armWWos[138]=armWWos[138]*armWWos[104];
+   armWWos[169]= - armWWos[276]*armWWos[101];
+   armWWos[138]=armWWos[138] + armWWos[169];
+   armWWos[138]=armWWos[88]*armWWos[138]*armWWos[156];
+   armWWos[169]=armWWos[265]*mmH;
+   armWWos[174]=armWWos[206]*armWWos[169];
+   armWWos[184]=armWWos[277]*armWWos[156];
+   armWWos[185]= - armWWos[174] + 4*armWWos[184];
+   armWWos[186]= - armWWos[185]*armWWos[350];
+   armWWos[194]=armWWos[65]*armWWos[339];
+   armWWos[186]=armWWos[194] + armWWos[186];
+   armWWos[186]=armWWos[78]*armWWos[186];
+   armWWos[111]=2*armWWos[186] + armWWos[111] + 1./3.*armWWos[138] + 1./
+   4.*armWWos[127] + armWWos[113] + armWWos[114] + armWWos[124];
+   armWWos[111]=mmH*armWWos[111];
+   armWWos[113]=11 + armWWos[255];
+   armWWos[113]=armWWos[113]*armWWos[104];
+   armWWos[113]=1429./18. + armWWos[113];
+   armWWos[113]=armWWos[113]*armWWos[105];
+   armWWos[113]= - 307./3. + armWWos[113];
+   armWWos[113]=armWWos[113]*armWWos[118];
+   armWWos[114]=167 - 1121./4.*armWWos[101];
+   armWWos[114]=armWWos[114]*armWWos[153];
+   armWWos[113]=armWWos[114] - 32 + armWWos[113];
+   armWWos[113]=armWWos[15]*armWWos[113];
+   armWWos[114]= - 23 - armWWos[104];
+   armWWos[114]=armWWos[114]*armWWos[123];
+   armWWos[114]= - 313 + armWWos[114];
+   armWWos[114]=armWWos[114]*armWWos[104];
+   armWWos[114]=989 + armWWos[114];
+   armWWos[114]=armWWos[114]*armWWos[104];
+   armWWos[124]=327*armWWos[101];
+   armWWos[127]=1375./2. - armWWos[124];
+   armWWos[127]=armWWos[127]*armWWos[133];
+   armWWos[114]=armWWos[127] - 16 + 1./48.*armWWos[114];
+   armWWos[114]=armWWos[16]*armWWos[114];
+   armWWos[127]=armWWos[302]*armWWos[101];
+   armWWos[138]=43./3. + armWWos[105];
+   armWWos[138]=armWWos[138]*armWWos[104];
+   armWWos[138]= - 49./2. + armWWos[138];
+   armWWos[138]=armWWos[138]*armWWos[104];
+   armWWos[138]=armWWos[138] - 49./2.*armWWos[127];
+   armWWos[138]=armWWos[17]*armWWos[138];
+   armWWos[113]=1./8.*armWWos[138] + armWWos[113] + armWWos[114];
+   armWWos[113]=armWWos[2]*armWWos[113];
+   armWWos[114]= - 31./6. + armWWos[135];
+   armWWos[114]=armWWos[114]*armWWos[105];
+   armWWos[114]= - 99./4.*armWWos[243] - 8 + armWWos[114];
+   armWWos[114]=armWWos[5]*armWWos[114];
+   armWWos[114]=armWWos[114] + armWWos[321];
+   armWWos[114]=mmZ*armWWos[114];
+   armWWos[135]= - armWWos[15] + armWWos[146];
+   armWWos[120]=armWWos[120]*armWWos[135];
+   armWWos[135]=mmZ*armWWos[332];
+   armWWos[138]=armWWos[178]*armWWos[168];
+   armWWos[120]=armWWos[138] + armWWos[135] + armWWos[120];
+   armWWos[120]=armWWos[100]*armWWos[120];
+   armWWos[135]=233./3. + 31./4.*armWWos[104];
+   armWWos[135]=armWWos[135]*armWWos[119];
+   armWWos[135]= - 1277./4. + armWWos[135];
+   armWWos[135]=armWWos[135]*armWWos[118];
+   armWWos[138]=9491 - 1697*armWWos[101];
+   armWWos[138]=armWWos[138]*armWWos[121];
+   armWWos[135]=armWWos[138] - 254 + armWWos[135];
+   armWWos[138]=armWWos[304]*armWWos[253];
+   armWWos[168]=armWWos[105] + 9;
+   armWWos[168]=armWWos[168]*armWWos[104];
+   armWWos[138]=armWWos[138] - armWWos[168];
+   armWWos[186]=armWWos[138]*armWWos[140];
+   armWWos[194]=armWWos[168] - 33./2.;
+   armWWos[194]=armWWos[194]*armWWos[104];
+   armWWos[127]=armWWos[194] - 33./2.*armWWos[127];
+   armWWos[194]=armWWos[127]*armWWos[126];
+   armWWos[206]=armWWos[118] + 5;
+   armWWos[208]= - armWWos[206]*armWWos[119];
+   armWWos[208]= - 1./4. + armWWos[208];
+   armWWos[208]=armWWos[208]*armWWos[104];
+   armWWos[208]=armWWos[208] + 33./4.*armWWos[233];
+   armWWos[177]=armWWos[208]*armWWos[177];
+   armWWos[146]=armWWos[16] - armWWos[146];
+   armWWos[146]=armWWos[146]*armWWos[321];
+   armWWos[208]= - 19 - armWWos[104];
+   armWWos[115]=armWWos[208]*armWWos[115];
+   armWWos[208]= - 5./6. + armWWos[101];
+   armWWos[208]=armWWos[208]*armWWos[134];
+   armWWos[115]=armWWos[115] + armWWos[208];
+   armWWos[115]=armWWos[115]*armWWos[337];
+   armWWos[113]= - armWWos[327] + armWWos[120] + armWWos[115] + 
+   armWWos[114] + armWWos[146] + armWWos[113] + armWWos[177] + 1./4.*
+   armWWos[194] + 1./3.*armWWos[135] - 1./2.*armWWos[186];
+   armWWos[113]=armWWos[65]*armWWos[113];
+   armWWos[114]= - 671./3. - armWWos[199];
+   armWWos[114]=armWWos[114]*armWWos[104];
+   armWWos[114]=5935./6. + armWWos[114];
+   armWWos[114]=armWWos[114]*armWWos[129];
+   armWWos[114]=256 + armWWos[114];
+   armWWos[115]=57*armWWos[101];
+   armWWos[120]= - 905./3. - armWWos[115];
+   armWWos[120]=armWWos[120]*armWWos[121];
+   armWWos[114]=1./9.*armWWos[114] + armWWos[120];
+   armWWos[114]=armWWos[114]*armWWos[250];
+   armWWos[120]= - armWWos[98]*mmZ*armWWos[228];
+   armWWos[135]= - 5911./3. - 277./2.*armWWos[104];
+   armWWos[135]=armWWos[135]*armWWos[104];
+   armWWos[135]=5183./6. + armWWos[135];
+   armWWos[135]=armWWos[135]*armWWos[305];
+   armWWos[135]=56 + armWWos[135];
+   armWWos[146]= - 115 + 167*armWWos[101];
+   armWWos[146]=armWWos[146]*armWWos[101];
+   armWWos[114]=armWWos[120] + armWWos[114] + 1./27.*armWWos[135] + 11./
+   64.*armWWos[146];
+   armWWos[114]=armWWos[31]*armWWos[114];
+   armWWos[120]=3 + 7./36.*armWWos[104];
+   armWWos[120]=armWWos[120]*armWWos[104];
+   armWWos[120]= - 11./4. + armWWos[120];
+   armWWos[120]=armWWos[120]*armWWos[104];
+   armWWos[120]= - 21./2. + armWWos[120];
+   armWWos[120]=armWWos[120]*armWWos[104];
+   armWWos[135]=31./2.*armWWos[101];
+   armWWos[146]=armWWos[135] + 21;
+   armWWos[177]= - armWWos[146]*armWWos[102];
+   armWWos[120]=armWWos[120] + armWWos[177];
+   armWWos[120]=armWWos[120]*armWWos[202];
+   armWWos[177]= - 1./2. - armWWos[104];
+   armWWos[177]=armWWos[177]*armWWos[105];
+   armWWos[177]= - 1 + armWWos[177];
+   armWWos[177]=armWWos[177]*armWWos[119];
+   armWWos[186]= - 1./3. - armWWos[189];
+   armWWos[186]=armWWos[186]*armWWos[101];
+   armWWos[177]=armWWos[177] + armWWos[186];
+   armWWos[177]=armWWos[16]*armWWos[177];
+   armWWos[120]=armWWos[120] + armWWos[177];
+   armWWos[177]= - 2 - 7./48.*armWWos[104];
+   armWWos[177]=armWWos[177]*armWWos[104];
+   armWWos[177]=35./16. + armWWos[177];
+   armWWos[177]=armWWos[177]*armWWos[104];
+   armWWos[177]=67./8. + armWWos[177];
+   armWWos[177]=armWWos[177]*armWWos[119];
+   armWWos[186]=67./3. + 41./2.*armWWos[101];
+   armWWos[186]=armWWos[186]*armWWos[133];
+   armWWos[177]=armWWos[177] + armWWos[186];
+   armWWos[177]=armWWos[17]*armWWos[177];
+   armWWos[120]=1./2.*armWWos[120] + armWWos[177];
+   armWWos[120]=armWWos[2]*armWWos[120];
+   armWWos[177]= - 1 + armWWos[230];
+   armWWos[177]=armWWos[177]*armWWos[104];
+   armWWos[177]= - 7./2. + armWWos[177];
+   armWWos[177]=armWWos[177]*armWWos[119];
+   armWWos[186]= - armWWos[264]*armWWos[291];
+   armWWos[177]=armWWos[177] + armWWos[186];
+   armWWos[186]=29 + 13./6.*armWWos[104];
+   armWWos[186]=armWWos[186]*armWWos[104];
+   armWWos[186]= - 71./2. + armWWos[186];
+   armWWos[186]=armWWos[186]*armWWos[104];
+   armWWos[194]= - 71 - 161*armWWos[101];
+   armWWos[194]=armWWos[194]*armWWos[102];
+   armWWos[186]=armWWos[186] + armWWos[194];
+   armWWos[186]=armWWos[10]*armWWos[186];
+   armWWos[120]=1./24.*armWWos[186] + 1./8.*armWWos[177] + armWWos[120]
+   ;
+   armWWos[120]=armWWos[120]*armWWos[156];
+   armWWos[177]= - 7./4. - armWWos[112];
+   armWWos[177]=armWWos[177]*armWWos[104];
+   armWWos[177]=13./6. + armWWos[177];
+   armWWos[177]=armWWos[177]*armWWos[104];
+   armWWos[177]=85./12. + armWWos[177];
+   armWWos[177]=armWWos[177]*armWWos[104];
+   armWWos[186]=armWWos[271]*armWWos[222];
+   armWWos[177]=armWWos[177] + armWWos[186];
+   armWWos[177]=armWWos[177]*armWWos[169]*armWWos[297];
+   armWWos[120]=armWWos[120] + armWWos[177];
+   armWWos[120]=mmH*armWWos[120];
+   armWWos[127]= - armWWos[5]*armWWos[127];
+   armWWos[177]=9 + 7./12.*armWWos[104];
+   armWWos[177]=armWWos[177]*armWWos[104];
+   armWWos[177]= - 33./4. + armWWos[177];
+   armWWos[177]=armWWos[177]*armWWos[104];
+   armWWos[177]= - 63./2. + armWWos[177];
+   armWWos[177]=armWWos[177]*armWWos[104];
+   armWWos[146]= - armWWos[146]*armWWos[179];
+   armWWos[146]=armWWos[177] + armWWos[146];
+   armWWos[146]=armWWos[146]*armWWos[152];
+   armWWos[127]=armWWos[127] + armWWos[146];
+   armWWos[127]=armWWos[127]*armWWos[250];
+   armWWos[146]=301./3. + 31./2.*armWWos[104];
+   armWWos[146]=armWWos[146]*armWWos[104];
+   armWWos[146]=2371./6. + armWWos[146];
+   armWWos[146]=armWWos[146]*armWWos[129];
+   armWWos[146]=256 + armWWos[146];
+   armWWos[177]= - 1301./3. - 453*armWWos[101];
+   armWWos[177]=armWWos[177]*armWWos[121];
+   armWWos[146]=1./9.*armWWos[146] + armWWos[177];
+   armWWos[146]=armWWos[2]*armWWos[146];
+   armWWos[177]=64 - 1./24.*armWWos[226];
+   armWWos[177]=1./3.*armWWos[177] + 99./16.*armWWos[225];
+   armWWos[177]=armWWos[98]*armWWos[177];
+   armWWos[127]=armWWos[177] + armWWos[146] + armWWos[127];
+   armWWos[127]=armWWos[127]*armWWos[368];
+   armWWos[146]= - armWWos[261]*armWWos[156];
+   armWWos[177]=armWWos[103]*armWWos[169];
+   armWWos[146]=armWWos[146] + 1./6.*armWWos[177];
+   armWWos[146]=armWWos[146]*armWWos[162];
+   armWWos[177]= - 59./2. - armWWos[104];
+   armWWos[177]=armWWos[177]*armWWos[104];
+   armWWos[177]= - 121 + armWWos[177];
+   armWWos[177]=armWWos[177]*armWWos[119];
+   armWWos[177]=653./2. + armWWos[177];
+   armWWos[177]=armWWos[177]*armWWos[254];
+   armWWos[124]=511 - armWWos[124];
+   armWWos[124]=armWWos[124]*armWWos[121];
+   armWWos[124]=armWWos[124] - 4 + armWWos[177];
+   armWWos[124]=armWWos[65]*armWWos[124];
+   armWWos[124]=armWWos[124] + armWWos[146];
+   armWWos[124]=armWWos[9]*armWWos[124];
+   armWWos[113]=armWWos[124] + armWWos[127] + armWWos[120] + 
+   armWWos[114] + armWWos[113];
+   armWWos[113]=armWWos[9]*armWWos[113];
+   armWWos[114]= - 125 - armWWos[231];
+   armWWos[114]=armWWos[114]*armWWos[119];
+   armWWos[114]= - 105 + armWWos[114];
+   armWWos[114]=armWWos[114]*armWWos[104];
+   armWWos[114]= - 505./3. + armWWos[114];
+   armWWos[114]=armWWos[114]*armWWos[105];
+   armWWos[120]= - 101./2. - armWWos[147];
+   armWWos[120]=armWWos[120]*armWWos[364];
+   armWWos[114]=armWWos[114] + armWWos[120];
+   armWWos[114]=armWWos[114]*armWWos[202];
+   armWWos[120]=119./8. + armWWos[104];
+   armWWos[120]=armWWos[120]*armWWos[104];
+   armWWos[120]=103./4. + armWWos[120];
+   armWWos[120]=armWWos[120]*armWWos[104];
+   armWWos[120]=293./8. + armWWos[120];
+   armWWos[120]=armWWos[120]*armWWos[119];
+   armWWos[124]=293./3. + armWWos[212];
+   armWWos[124]=armWWos[124]*armWWos[133];
+   armWWos[120]=armWWos[120] + armWWos[124];
+   armWWos[120]=armWWos[16]*armWWos[120];
+   armWWos[114]= - 5./4.*armWWos[143] + armWWos[114] + armWWos[120];
+   armWWos[114]=armWWos[114]*armWWos[152];
+   armWWos[120]= - 293./36. - armWWos[104];
+   armWWos[120]=armWWos[120]*armWWos[104];
+   armWWos[120]=47./54. + armWWos[120];
+   armWWos[120]=armWWos[120]*armWWos[104];
+   armWWos[120]= - 4279./36. + armWWos[120];
+   armWWos[120]=armWWos[120]*armWWos[104];
+   armWWos[124]=3913 - 1921*armWWos[101];
+   armWWos[124]=armWWos[124]*armWWos[101];
+   armWWos[120]=armWWos[120] + 1./36.*armWWos[124];
+   armWWos[124]= - 37 + armWWos[104];
+   armWWos[124]=armWWos[124]*armWWos[104];
+   armWWos[124]= - 27 + armWWos[124];
+   armWWos[124]=armWWos[124]*armWWos[105];
+   armWWos[127]= - 27./2. + armWWos[289];
+   armWWos[127]=armWWos[127]*armWWos[101];
+   armWWos[124]=armWWos[124] + armWWos[127];
+   armWWos[124]=armWWos[124]*armWWos[140];
+   armWWos[127]= - 13 - armWWos[199];
+   armWWos[127]=armWWos[127]*armWWos[104];
+   armWWos[127]=1./2. + armWWos[127];
+   armWWos[127]=armWWos[127]*armWWos[104];
+   armWWos[140]=1 + 27*armWWos[101];
+   armWWos[140]=armWWos[140]*armWWos[102];
+   armWWos[127]=armWWos[127] + armWWos[140];
+   armWWos[127]=armWWos[5]*armWWos[127]*armWWos[155];
+   armWWos[140]=6*armWWos[274];
+   armWWos[143]= - armWWos[17]*armWWos[140];
+   armWWos[114]=armWWos[114] + armWWos[143] + armWWos[127] + 1./8.*
+   armWWos[120] + armWWos[124];
+   armWWos[114]=armWWos[2]*armWWos[114];
+   armWWos[120]=armWWos[345]*armWWos[104];
+   armWWos[124]=245./3. - armWWos[120];
+   armWWos[124]=armWWos[124]*armWWos[105];
+   armWWos[127]=245./2. - 16*armWWos[101];
+   armWWos[127]=armWWos[127]*armWWos[247];
+   armWWos[124]= - 36*armWWos[141] + armWWos[124] + armWWos[127];
+   armWWos[124]=armWWos[5]*armWWos[124];
+   armWWos[114]=armWWos[114] + armWWos[124] - 18*armWWos[170];
+   armWWos[114]=armWWos[2]*armWWos[114];
+   armWWos[124]= - 39./2. - armWWos[166];
+   armWWos[124]=armWWos[124]*armWWos[104];
+   armWWos[124]= - 131./4. + armWWos[124];
+   armWWos[124]=armWWos[124]*armWWos[104];
+   armWWos[127]= - 131 - 53*armWWos[101];
+   armWWos[127]=armWWos[127]*armWWos[153];
+   armWWos[124]=armWWos[124] + armWWos[127];
+   armWWos[124]=armWWos[124]*armWWos[282];
+   armWWos[124]=armWWos[197] + armWWos[124];
+   armWWos[124]=armWWos[124]*armWWos[200];
+   armWWos[114]=armWWos[124] - 21*armWWos[192] + armWWos[114];
+   armWWos[114]=mmt*armWWos[114];
+   armWWos[124]=3193./18. - armWWos[104];
+   armWWos[124]=armWWos[124]*armWWos[105];
+   armWWos[124]=230./3. + armWWos[124];
+   armWWos[124]=armWWos[124]*armWWos[104];
+   armWWos[127]= - 26./3. - 41./4.*armWWos[101];
+   armWWos[127]=armWWos[127]*armWWos[101];
+   armWWos[124]=armWWos[124] + armWWos[127];
+   armWWos[124]=armWWos[124]*armWWos[210];
+   armWWos[127]= - 7./3. + 205./2.*armWWos[104];
+   armWWos[127]=armWWos[127]*armWWos[104];
+   armWWos[127]=479./2. + armWWos[127];
+   armWWos[127]=armWWos[127]*armWWos[112];
+   armWWos[141]= - 3617./9. - armWWos[157];
+   armWWos[141]=armWWos[141]*armWWos[102];
+   armWWos[127]=armWWos[127] + armWWos[141];
+   armWWos[127]=armWWos[127]*armWWos[218];
+   armWWos[124]=23./12.*armWWos[108] + armWWos[124] + armWWos[127];
+   armWWos[124]=armWWos[2]*armWWos[124];
+   armWWos[127]= - 851 + 281./6.*armWWos[104];
+   armWWos[127]=armWWos[127]*armWWos[104];
+   armWWos[127]= - 197495./18. + armWWos[127];
+   armWWos[127]=armWWos[127]*armWWos[144];
+   armWWos[141]=10627 - 9163*armWWos[101];
+   armWWos[141]=armWWos[141]*armWWos[101];
+   armWWos[127]=1./384.*armWWos[141] - 256./3. + armWWos[127];
+   armWWos[141]=1 + 43./6.*armWWos[104];
+   armWWos[141]=armWWos[141]*armWWos[104];
+   armWWos[143]=1 + armWWos[223];
+   armWWos[143]=armWWos[143]*armWWos[101];
+   armWWos[141]=armWWos[141] + armWWos[143];
+   armWWos[126]=armWWos[141]*armWWos[126];
+   armWWos[124]=armWWos[124] + armWWos[126] + 1./3.*armWWos[127] + 
+   armWWos[340];
+   armWWos[124]=armWWos[2]*armWWos[124];
+   armWWos[126]=armWWos[15]*armWWos[142];
+   armWWos[127]=armWWos[220]*armWWos[214];
+   armWWos[126]=armWWos[126] + armWWos[127];
+   armWWos[126]=armWWos[126]*armWWos[152];
+   armWWos[127]= - 121./3. - armWWos[199];
+   armWWos[122]=armWWos[127]*armWWos[122];
+   armWWos[122]= - 3497./6. + armWWos[122];
+   armWWos[122]=armWWos[122]*armWWos[104];
+   armWWos[122]= - 64 + 5./64.*armWWos[122];
+   armWWos[127]=7387 - 1683*armWWos[101];
+   armWWos[127]=armWWos[127]*armWWos[101];
+   armWWos[122]=armWWos[126] + 1./3.*armWWos[122] + 1./128.*
+   armWWos[127];
+   armWWos[122]=armWWos[98]*armWWos[122];
+   armWWos[108]= - 4*armWWos[232] + armWWos[108];
+   armWWos[108]=armWWos[2]*armWWos[108];
+   armWWos[108]=4*armWWos[139] + armWWos[108];
+   armWWos[108]=armWWos[2]*armWWos[108];
+   armWWos[108]=armWWos[108] + 2*armWWos[272];
+   armWWos[108]=mmt*armWWos[108];
+   armWWos[126]=2*armWWos[227] - armWWos[224];
+   armWWos[126]=armWWos[2]*armWWos[126];
+   armWWos[127]= - armWWos[217] + armWWos[312];
+   armWWos[127]=armWWos[10]*armWWos[127];
+   armWWos[108]=armWWos[127] + armWWos[108] + 4*armWWos[216] + 
+   armWWos[126];
+   armWWos[108]=armWWos[100]*armWWos[108];
+   armWWos[126]=armWWos[136]*armWWos[152];
+   armWWos[126]= - armWWos[167] + armWWos[126];
+   armWWos[126]=armWWos[126]*armWWos[180];
+   armWWos[127]=36*armWWos[160];
+   armWWos[139]=armWWos[272]*armWWos[127];
+   armWWos[126]=5*armWWos[126] + armWWos[139];
+   armWWos[126]=mmt*armWWos[126];
+   armWWos[139]=8*armWWos[148] + 5./3.*armWWos[280];
+   armWWos[139]=armWWos[2]*armWWos[139];
+   armWWos[126]=armWWos[139] + armWWos[126];
+   armWWos[126]=mmt*armWWos[126];
+   armWWos[126]= - armWWos[283] + armWWos[126];
+   armWWos[126]=armWWos[31]*armWWos[126];
+   armWWos[139]=armWWos[5]*armWWos[191];
+   armWWos[141]= - armWWos[299] + 5*armWWos[280];
+   armWWos[141]=armWWos[141]*armWWos[250];
+   armWWos[141]=armWWos[196] + armWWos[141];
+   armWWos[141]=armWWos[10]*armWWos[141];
+   armWWos[108]=armWWos[126] + armWWos[108] + armWWos[141] + 
+   armWWos[122] + armWWos[114] + armWWos[139] + armWWos[124];
+   armWWos[108]=armWWos[31]*armWWos[108];
+   armWWos[114]= - armWWos[140] + armWWos[198];
+   armWWos[114]=armWWos[114]*armWWos[180];
+   armWWos[122]= - armWWos[2]*armWWos[128];
+   armWWos[122]=armWWos[132] + armWWos[122];
+   armWWos[122]=armWWos[2]*armWWos[122];
+   armWWos[124]=armWWos[163]*armWWos[127];
+   armWWos[122]=armWWos[124] + armWWos[122];
+   armWWos[122]=armWWos[122]*armWWos[200];
+   armWWos[114]=armWWos[114] + armWWos[122];
+   armWWos[114]=mmt*armWWos[114];
+   armWWos[114]=armWWos[173] + armWWos[114];
+   armWWos[114]=armWWos[31]*armWWos[114];
+   armWWos[122]= - 15 - armWWos[251];
+   armWWos[122]=armWWos[122]*armWWos[104];
+   armWWos[124]= - 5 - armWWos[102];
+   armWWos[124]=armWWos[124]*armWWos[190];
+   armWWos[122]=armWWos[122] + armWWos[124];
+   armWWos[122]=armWWos[5]*armWWos[122];
+   armWWos[124]=47./2.*armWWos[104];
+   armWWos[126]= - 1441./9. - armWWos[124];
+   armWWos[126]=armWWos[126]*armWWos[119];
+   armWWos[126]=41./2. + armWWos[126];
+   armWWos[126]=armWWos[126]*armWWos[104];
+   armWWos[127]= - 3727./9. + armWWos[287];
+   armWWos[127]=armWWos[127]*armWWos[102];
+   armWWos[126]=armWWos[126] + armWWos[127];
+   armWWos[126]=armWWos[126]*armWWos[249];
+   armWWos[122]=armWWos[122] + armWWos[126];
+   armWWos[122]=armWWos[2]*armWWos[122];
+   armWWos[126]= - armWWos[197] - 13./4.*armWWos[198];
+   armWWos[126]=armWWos[126]*armWWos[200];
+   armWWos[127]=97 + armWWos[199];
+   armWWos[127]=armWWos[127]*armWWos[159];
+   armWWos[127]= - 407./2. + armWWos[127];
+   armWWos[127]=armWWos[127]*armWWos[104];
+   armWWos[128]= - 407 + 123*armWWos[101];
+   armWWos[128]=armWWos[128]*armWWos[102];
+   armWWos[127]=armWWos[127] + armWWos[128];
+   armWWos[127]=armWWos[98]*armWWos[127]*armWWos[249];
+   armWWos[128]=3*armWWos[100];
+   armWWos[132]= - armWWos[235]*armWWos[128];
+   armWWos[114]=armWWos[114] + armWWos[132] + armWWos[127] + 
+   armWWos[122] + armWWos[126];
+   armWWos[114]=armWWos[31]*armWWos[114];
+   armWWos[122]= - 5 - armWWos[262];
+   armWWos[122]=armWWos[122]*armWWos[119];
+   armWWos[126]= - 7 - armWWos[102];
+   armWWos[126]=armWWos[126]*armWWos[101];
+   armWWos[122]=armWWos[122] + armWWos[126];
+   armWWos[122]=armWWos[122]*armWWos[152]*armWWos[187];
+   armWWos[126]=armWWos[196]*armWWos[195];
+   armWWos[114]=69./8.*armWWos[126] + armWWos[114] + armWWos[122];
+   armWWos[114]=armWWos[34]*armWWos[114];
+   armWWos[103]=13./3.*armWWos[103] + armWWos[181];
+   armWWos[103]=armWWos[103]*armWWos[180];
+   armWWos[122]=armWWos[17]*armWWos[149];
+   armWWos[122]= - 7./2.*armWWos[205] + armWWos[122];
+   armWWos[122]=armWWos[2]*armWWos[122];
+   armWWos[122]=19./4.*armWWos[151] + armWWos[122];
+   armWWos[122]=armWWos[122]*armWWos[182];
+   armWWos[122]=armWWos[122] - armWWos[270];
+   armWWos[122]=mmt*armWWos[122];
+   armWWos[126]= - armWWos[164]*armWWos[119];
+   armWWos[126]= - 1 + armWWos[126];
+   armWWos[126]=armWWos[126]*armWWos[104];
+   armWWos[127]= - armWWos[150]*armWWos[101];
+   armWWos[126]=armWWos[126] + armWWos[127];
+   armWWos[126]=armWWos[126]*armWWos[175];
+   armWWos[126]= - 1./3.*armWWos[193] + 2*armWWos[126];
+   armWWos[126]=armWWos[10]*armWWos[126];
+   armWWos[103]=armWWos[126] + 1./2.*armWWos[103] + armWWos[122];
+   armWWos[103]=armWWos[31]*armWWos[103];
+   armWWos[106]=armWWos[106]*armWWos[269];
+   armWWos[106]= - armWWos[306] + 7*armWWos[106];
+   armWWos[106]=armWWos[10]*armWWos[106];
+   armWWos[106]= - armWWos[270] + armWWos[106];
+   armWWos[122]=armWWos[266]*mmH;
+   armWWos[106]=armWWos[106]*armWWos[122];
+   armWWos[103]=armWWos[103] + armWWos[106];
+   armWWos[103]=mmH*armWWos[103];
+   armWWos[106]=armWWos[16]*armWWos[259];
+   armWWos[106]=armWWos[227] + armWWos[106];
+   armWWos[106]=armWWos[2]*armWWos[106];
+   armWWos[126]=7./2. + armWWos[252];
+   armWWos[126]=armWWos[126]*armWWos[119];
+   armWWos[127]=73./9. + armWWos[190];
+   armWWos[127]=armWWos[127]*armWWos[102];
+   armWWos[106]=armWWos[106] + armWWos[126] + armWWos[127];
+   armWWos[106]=armWWos[106]*armWWos[278];
+   armWWos[126]= - armWWos[221] - armWWos[234];
+   armWWos[126]=armWWos[16]*armWWos[126];
+   armWWos[126]=51*armWWos[227] + armWWos[126];
+   armWWos[126]=armWWos[126]*armWWos[152];
+   armWWos[127]= - 1 - 183./2.*armWWos[101];
+   armWWos[127]=armWWos[127]*armWWos[101];
+   armWWos[126]=armWWos[126] - armWWos[221] + armWWos[127];
+   armWWos[126]=armWWos[31]*armWWos[126];
+   armWWos[127]=armWWos[257]*armWWos[190];
+   armWWos[127]=armWWos[104] + armWWos[127];
+   armWWos[132]=1./4.*armWWos[195];
+   armWWos[127]=mmZ*armWWos[127]*armWWos[132];
+   armWWos[126]=armWWos[126] + armWWos[127];
+   armWWos[126]=armWWos[97]*armWWos[126];
+   armWWos[103]=armWWos[114] + 1./2.*armWWos[126] + armWWos[103] + 
+   armWWos[108] + armWWos[106];
+   armWWos[103]=armWWos[34]*armWWos[103];
+   armWWos[106]=39./2. + armWWos[341];
+   armWWos[106]=armWWos[106]*armWWos[118];
+   armWWos[106]=8 + armWWos[106];
+   armWWos[106]=armWWos[106]*armWWos[104];
+   armWWos[108]=8 + 25./8.*armWWos[101];
+   armWWos[108]=armWWos[108]*armWWos[101];
+   armWWos[106]=armWWos[106] + armWWos[108];
+   armWWos[106]=armWWos[2]*armWWos[106];
+   armWWos[106]=armWWos[167] + armWWos[106];
+   armWWos[106]=armWWos[106]*armWWos[200];
+   armWWos[108]= - 1331./27. - armWWos[118];
+   armWWos[108]=armWWos[108]*armWWos[104];
+   armWWos[108]= - 1795./36. + armWWos[108];
+   armWWos[108]=armWWos[108]*armWWos[104];
+   armWWos[114]=253./9. - armWWos[215];
+   armWWos[114]=armWWos[114]*armWWos[153];
+   armWWos[108]=armWWos[108] + armWWos[114];
+   armWWos[108]=armWWos[108]*armWWos[152];
+   armWWos[108]=armWWos[299] + armWWos[108];
+   armWWos[108]=armWWos[2]*armWWos[108];
+   armWWos[106]=armWWos[108] + armWWos[106];
+   armWWos[106]=mmt*armWWos[106];
+   armWWos[108]=175./3. + armWWos[176];
+   armWWos[108]=armWWos[108]*armWWos[104];
+   armWWos[108]= - 2617./2. + armWWos[108];
+   armWWos[108]=armWWos[108]*armWWos[112];
+   armWWos[114]= - 13./3. - armWWos[289];
+   armWWos[114]=armWWos[114]*armWWos[135];
+   armWWos[108]=armWWos[108] + armWWos[114];
+   armWWos[108]=armWWos[108]*armWWos[300];
+   armWWos[114]=armWWos[98]*armWWos[142];
+   armWWos[126]=armWWos[229] + armWWos[235];
+   armWWos[126]=mmt*armWWos[126];
+   armWWos[126]= - armWWos[216] + armWWos[126];
+   armWWos[126]=armWWos[100]*armWWos[126];
+   armWWos[106]=armWWos[126] - 1./8.*armWWos[114] + armWWos[106] - 
+   armWWos[301] + armWWos[108];
+   armWWos[106]=armWWos[31]*armWWos[106];
+   armWWos[108]= - 11 + armWWos[287];
+   armWWos[108]=armWWos[108]*armWWos[190];
+   armWWos[108]= - armWWos[168] + armWWos[108];
+   armWWos[108]=armWWos[5]*armWWos[108];
+   armWWos[114]= - 355./12. - armWWos[104];
+   armWWos[114]=armWWos[114]*armWWos[104];
+   armWWos[114]= - 2051./6. + armWWos[114];
+   armWWos[114]=armWWos[114]*armWWos[104];
+   armWWos[114]=127./12. + armWWos[114];
+   armWWos[114]=armWWos[114]*armWWos[201];
+   armWWos[126]=6175./9. + 2349*armWWos[101];
+   armWWos[121]=armWWos[126]*armWWos[121];
+   armWWos[114]=armWWos[121] - 32 + armWWos[114];
+   armWWos[114]=armWWos[2]*armWWos[114];
+   armWWos[121]= - 145./3. - armWWos[190];
+   armWWos[121]=armWWos[121]*armWWos[101];
+   armWWos[121]= - 107./3. + armWWos[121];
+   armWWos[121]=armWWos[121]*armWWos[101];
+   armWWos[121]= - armWWos[260] + armWWos[121];
+   armWWos[121]=armWWos[121]*armWWos[335];
+   armWWos[108]=armWWos[121] + armWWos[165] + armWWos[108] + 
+   armWWos[114];
+   armWWos[108]=armWWos[65]*armWWos[108];
+   armWWos[114]=armWWos[154]*mmH;
+   armWWos[121]= - 19 - armWWos[124];
+   armWWos[121]=armWWos[121]*armWWos[104];
+   armWWos[121]= - 5./2. + armWWos[121];
+   armWWos[121]=armWWos[121]*armWWos[119];
+   armWWos[124]= - 5./3. + armWWos[134];
+   armWWos[124]=armWWos[124]*armWWos[102];
+   armWWos[121]=armWWos[121] + armWWos[124];
+   armWWos[124]=1./8.*armWWos[207];
+   armWWos[121]=armWWos[121]*armWWos[124];
+   armWWos[121]=armWWos[121] - armWWos[114];
+   armWWos[121]=mmH*armWWos[121];
+   armWWos[124]=3./4. - 4./9.*armWWos[104];
+   armWWos[124]=armWWos[124]*armWWos[104];
+   armWWos[124]= - 11./3. + armWWos[124];
+   armWWos[124]=armWWos[124]*armWWos[104];
+   armWWos[126]= - 11 - 53./4.*armWWos[101];
+   armWWos[126]=armWWos[126]*armWWos[247];
+   armWWos[124]=armWWos[124] + armWWos[126];
+   armWWos[124]=armWWos[124]*armWWos[265];
+   armWWos[121]=armWWos[121] + armWWos[242] + armWWos[124];
+   armWWos[121]=mmH*armWWos[121];
+   armWWos[124]=armWWos[379]*armWWos[252];
+   armWWos[126]= - 145./4. + armWWos[124];
+   armWWos[126]=armWWos[126]*armWWos[112];
+   armWWos[127]=armWWos[215] + 1./3.;
+   armWWos[135]=armWWos[127]*armWWos[189];
+   armWWos[126]=armWWos[126] + armWWos[135];
+   armWWos[126]=armWWos[2]*armWWos[126];
+   armWWos[126]=armWWos[126] - armWWos[349];
+   armWWos[126]=armWWos[35]*armWWos[126];
+   armWWos[135]= - 91./36. + armWWos[393];
+   armWWos[135]=armWWos[135]*armWWos[104];
+   armWWos[127]=armWWos[127]*armWWos[101];
+   armWWos[127]=armWWos[135] + 5./12.*armWWos[127];
+   armWWos[127]=armWWos[2]*armWWos[127];
+   armWWos[127]=armWWos[127] - armWWos[281];
+   armWWos[127]=armWWos[1]*armWWos[127];
+   armWWos[135]= - 111./8.*armWWos[195] + armWWos[278];
+   armWWos[135]=armWWos[216]*armWWos[135];
+   armWWos[106]=armWWos[127] + armWWos[126] + armWWos[121] + 
+   armWWos[106] + armWWos[108] + armWWos[135];
+   armWWos[106]=armWWos[18]*armWWos[106];
+   armWWos[108]=25 - armWWos[123];
+   armWWos[108]=armWWos[108]*armWWos[104];
+   armWWos[121]=25 + armWWos[130];
+   armWWos[121]=armWWos[121]*armWWos[101];
+   armWWos[108]=armWWos[108] + armWWos[121];
+   armWWos[108]=armWWos[5]*armWWos[108];
+   armWWos[121]=289./36. + armWWos[104];
+   armWWos[121]=armWWos[121]*armWWos[104];
+   armWWos[121]= - 2779./54. + armWWos[121];
+   armWWos[121]=armWWos[121]*armWWos[104];
+   armWWos[121]= - 2503./12. + armWWos[121];
+   armWWos[121]=armWWos[121]*armWWos[104];
+   armWWos[123]=683./9. - 363*armWWos[101];
+   armWWos[123]=armWWos[123]*armWWos[153];
+   armWWos[121]=armWWos[121] + armWWos[123];
+   armWWos[121]=armWWos[121]*armWWos[300];
+   armWWos[108]=armWWos[108] + armWWos[121];
+   armWWos[108]=armWWos[2]*armWWos[108];
+   armWWos[121]=12*armWWos[274] + 17./2.*armWWos[198];
+   armWWos[121]=armWWos[121]*armWWos[200];
+   armWWos[123]=armWWos[273]*armWWos[128];
+   armWWos[108]=armWWos[123] + armWWos[108] + armWWos[121];
+   armWWos[108]=mmt*armWWos[108];
+   armWWos[121]=2 - 17./3.*armWWos[104];
+   armWWos[121]=armWWos[121]*armWWos[104];
+   armWWos[123]=2 - armWWos[125];
+   armWWos[123]=armWWos[123]*armWWos[101];
+   armWWos[121]=armWWos[121] + armWWos[123];
+   armWWos[121]=armWWos[5]*armWWos[121];
+   armWWos[123]= - 179 - 797./18.*armWWos[104];
+   armWWos[123]=armWWos[123]*armWWos[104];
+   armWWos[123]= - 36127./18. + armWWos[123];
+   armWWos[123]=armWWos[123]*armWWos[104];
+   armWWos[125]= - 17695./9. - 3777*armWWos[101];
+   armWWos[125]=armWWos[125]*armWWos[102];
+   armWWos[123]=armWWos[123] + armWWos[125];
+   armWWos[123]=armWWos[123]*armWWos[256];
+   armWWos[125]= - 9 - armWWos[230];
+   armWWos[125]=armWWos[125]*armWWos[104];
+   armWWos[125]=1067./6. + 35*armWWos[125];
+   armWWos[125]=armWWos[125]*armWWos[104];
+   armWWos[126]=1721 - 465*armWWos[101];
+   armWWos[126]=armWWos[126]*armWWos[102];
+   armWWos[125]=armWWos[125] + armWWos[126];
+   armWWos[125]=armWWos[98]*armWWos[125];
+   armWWos[108]=1./64.*armWWos[125] + armWWos[121] + armWWos[123] + 
+   armWWos[108];
+   armWWos[108]=armWWos[31]*armWWos[108];
+   armWWos[121]= - 3 - armWWos[260];
+   armWWos[121]=armWWos[121]*armWWos[118];
+   armWWos[123]= - 79./36. - armWWos[101];
+   armWWos[123]=armWWos[123]*armWWos[101];
+   armWWos[121]=armWWos[121] + armWWos[123];
+   armWWos[121]=armWWos[121]*armWWos[187];
+   armWWos[108]=armWWos[108] + armWWos[121];
+   armWWos[108]=armWWos[40]*armWWos[108];
+   armWWos[121]=armWWos[319]*armWWos[201];
+   armWWos[123]= - 19./12. - armWWos[101];
+   armWWos[123]=armWWos[123]*armWWos[101];
+   armWWos[121]=armWWos[121] + armWWos[123];
+   armWWos[121]=armWWos[2]*armWWos[121];
+   armWWos[123]= - 17 - armWWos[145];
+   armWWos[123]=armWWos[123]*armWWos[119];
+   armWWos[125]= - 17./3. - armWWos[179];
+   armWWos[125]=armWWos[125]*armWWos[101];
+   armWWos[123]=armWWos[123] + armWWos[125];
+   armWWos[123]=armWWos[123]*armWWos[200];
+   armWWos[121]=armWWos[121] + 1./4.*armWWos[123];
+   armWWos[121]=mmt*armWWos[121];
+   armWWos[123]=103./3. + armWWos[199];
+   armWWos[123]=armWWos[123]*armWWos[118];
+   armWWos[123]= - 8 + armWWos[123];
+   armWWos[125]= - 19./9. + 21./2.*armWWos[101];
+   armWWos[125]=armWWos[125]*armWWos[153];
+   armWWos[121]=armWWos[121] + 1./9.*armWWos[123] + armWWos[125];
+   armWWos[121]=armWWos[31]*armWWos[121];
+   armWWos[123]= - armWWos[327] + 461./9.*armWWos[101] - 66 - 
+   armWWos[330];
+   armWWos[125]=2*armWWos[65];
+   armWWos[123]=armWWos[123]*armWWos[125];
+   armWWos[126]=mmH*armWWos[185];
+   armWWos[124]= - 40 + armWWos[124];
+   armWWos[127]= - 10./3. + 57./4.*armWWos[101];
+   armWWos[127]=armWWos[127]*armWWos[101];
+   armWWos[124]=1./9.*armWWos[124] + armWWos[127];
+   armWWos[124]=armWWos[35]*armWWos[124];
+   armWWos[127]=armWWos[244]*armWWos[187];
+   armWWos[121]=armWWos[124] + 2./3.*armWWos[126] + armWWos[127] + 
+   armWWos[121] + armWWos[123];
+   armWWos[121]=armWWos[30]*armWWos[121];
+   armWWos[123]=armWWos[203]*mmZ;
+   armWWos[124]= - 2057./3. - armWWos[145];
+   armWWos[124]=armWWos[124]*armWWos[119];
+   armWWos[124]=143./2. + armWWos[124];
+   armWWos[124]=armWWos[124]*armWWos[104];
+   armWWos[126]=143 + 145*armWWos[101];
+   armWWos[126]=armWWos[126]*armWWos[102];
+   armWWos[124]=armWWos[123] - armWWos[124] - armWWos[126];
+   armWWos[126]=109./12. + armWWos[104];
+   armWWos[126]=armWWos[126]*armWWos[104];
+   armWWos[126]= - 29 + armWWos[126];
+   armWWos[126]=armWWos[126]*armWWos[104];
+   armWWos[126]= - 311./4. + armWWos[126];
+   armWWos[126]=armWWos[126]*armWWos[104];
+   armWWos[127]= - 311 - 195*armWWos[101];
+   armWWos[127]=armWWos[127]*armWWos[153];
+   armWWos[126]=armWWos[126] + armWWos[127];
+   armWWos[126]=armWWos[126]*armWWos[188];
+   armWWos[127]=33./2. + armWWos[104];
+   armWWos[127]=armWWos[127]*armWWos[118];
+   armWWos[127]=9 + armWWos[127];
+   armWWos[127]=armWWos[127]*armWWos[104];
+   armWWos[127]=111./8. + armWWos[127];
+   armWWos[127]=armWWos[127]*armWWos[104];
+   armWWos[116]=37 + armWWos[116];
+   armWWos[116]=armWWos[116]*armWWos[101];
+   armWWos[116]=armWWos[127] + 3./8.*armWWos[116];
+   armWWos[116]=armWWos[116]*armWWos[175];
+   armWWos[116]=armWWos[126] + armWWos[116];
+   armWWos[116]=mmt*armWWos[116];
+   armWWos[126]=5 - 137./2.*armWWos[104];
+   armWWos[126]=armWWos[126]*armWWos[104];
+   armWWos[126]= - 1651./2. + armWWos[126];
+   armWWos[126]=armWWos[126]*armWWos[119];
+   armWWos[127]= - 1651./3. - 1663*armWWos[101];
+   armWWos[127]=armWWos[127]*armWWos[102];
+   armWWos[126]=armWWos[126] + armWWos[127];
+   armWWos[126]=armWWos[126]*armWWos[286];
+   armWWos[116]=armWWos[126] + armWWos[116];
+   armWWos[116]=mmt*armWWos[116];
+   armWWos[116]=armWWos[116] - 1./128.*armWWos[124];
+   armWWos[116]=armWWos[60]*armWWos[116]*armWWos[266];
+   armWWos[124]= - armWWos[219] - armWWos[272];
+   armWWos[124]=mmt*armWWos[124];
+   armWWos[126]= - 7*armWWos[216] + 5*armWWos[312];
+   armWWos[126]=armWWos[126]*armWWos[314];
+   armWWos[126]=armWWos[126] + armWWos[244];
+   armWWos[126]=armWWos[100]*armWWos[126];
+   armWWos[124]=armWWos[126] - armWWos[216] + 3*armWWos[124];
+   armWWos[124]=armWWos[31]*armWWos[124];
+   armWWos[120]=37./3. - armWWos[120];
+   armWWos[120]=armWWos[120]*armWWos[105];
+   armWWos[126]=121./2. - armWWos[215];
+   armWWos[126]=armWWos[126]*armWWos[247];
+   armWWos[120]=armWWos[120] + armWWos[126];
+   armWWos[126]= - mmZ*armWWos[303];
+   armWWos[127]=40 - armWWos[147];
+   armWWos[127]=armWWos[127]*armWWos[101];
+   armWWos[128]= - 10 - armWWos[119];
+   armWWos[127]=2*armWWos[128] + armWWos[127];
+   armWWos[128]=armWWos[100]*mmZ;
+   armWWos[127]=armWWos[127]*armWWos[128];
+   armWWos[120]=armWWos[127] + 1./2.*armWWos[120] + armWWos[126];
+   armWWos[120]=armWWos[65]*armWWos[120];
+   armWWos[120]=armWWos[124] + armWWos[120];
+   armWWos[120]=armWWos[14]*armWWos[120];
+   armWWos[124]=5./4. + armWWos[119];
+   armWWos[124]=armWWos[124]*armWWos[119];
+   armWWos[126]= - 307./3. + 103*armWWos[101];
+   armWWos[126]=armWWos[126]*armWWos[153];
+   armWWos[127]= - armWWos[112] - armWWos[328];
+   armWWos[127]=armWWos[60]*armWWos[127];
+   armWWos[124]=armWWos[127] + armWWos[124] + armWWos[126];
+   armWWos[126]=1./8.*mmZ;
+   armWWos[124]=armWWos[126]*armWWos[124];
+   armWWos[126]=armWWos[102] + 1./3.;
+   armWWos[126]=armWWos[126]*armWWos[101];
+   armWWos[127]=armWWos[209]*armWWos[119];
+   armWWos[126]=armWWos[126] + armWWos[127];
+   armWWos[127]=armWWos[158] - armWWos[155];
+   armWWos[127]=armWWos[126]*armWWos[127];
+   armWWos[130]=armWWos[61]*armWWos[216];
+   armWWos[130]=5*armWWos[130] + 13./4.*armWWos[239];
+   armWWos[135]=armWWos[233] + armWWos[119];
+   armWWos[139]=armWWos[19]*armWWos[135];
+   armWWos[124]= - 9./8.*armWWos[258] + 1./8.*armWWos[139] + 3*
+   armWWos[130] + armWWos[127] + armWWos[124];
+   armWWos[124]=armWWos[31]*armWWos[124];
+   armWWos[127]=armWWos[209]*armWWos[105];
+   armWWos[115]=1./2. - armWWos[115];
+   armWWos[115]=armWWos[115]*armWWos[101];
+   armWWos[115]=armWWos[127] + armWWos[115];
+   armWWos[115]=armWWos[115]*armWWos[267];
+   armWWos[127]=armWWos[16] - armWWos[63];
+   armWWos[127]=armWWos[135]*armWWos[127];
+   armWWos[130]=1 - 21./16.*armWWos[101];
+   armWWos[130]=armWWos[130]*armWWos[101];
+   armWWos[130]= - 1./4.*armWWos[213] + armWWos[130];
+   armWWos[130]=mmZ*armWWos[130];
+   armWWos[127]=1./2.*armWWos[127] + armWWos[130];
+   armWWos[130]=armWWos[266]*mmZ;
+   armWWos[127]=armWWos[127]*armWWos[130];
+   armWWos[139]=1 - armWWos[279];
+   armWWos[139]=armWWos[139]*armWWos[101];
+   armWWos[139]= - 1./3. + armWWos[139];
+   armWWos[140]=pow(mmZ,2);
+   armWWos[139]=armWWos[60]*armWWos[31]*armWWos[139]*armWWos[140];
+   armWWos[127]=armWWos[127] + armWWos[139];
+   armWWos[127]=armWWos[97]*armWWos[127];
+   armWWos[115]=armWWos[127] + armWWos[115] + armWWos[124];
+   armWWos[115]=armWWos[97]*armWWos[115];
+   armWWos[124]= - 151 - 565./2.*armWWos[104];
+   armWWos[124]=armWWos[124]*armWWos[104];
+   armWWos[124]= - 4711./2. + armWWos[124];
+   armWWos[124]=armWWos[124]*armWWos[112];
+   armWWos[127]= - 4045./3. + 207*armWWos[101];
+   armWWos[127]=armWWos[127]*armWWos[102];
+   armWWos[123]=armWWos[123] + armWWos[124] + armWWos[127];
+   armWWos[124]= - 605 - 313./2.*armWWos[104];
+   armWWos[124]=armWWos[124]*armWWos[119];
+   armWWos[124]= - 169./2. + armWWos[124];
+   armWWos[124]=armWWos[124]*armWWos[119];
+   armWWos[127]= - 169./3. - 25*armWWos[101];
+   armWWos[127]=armWWos[127]*armWWos[102];
+   armWWos[124]=armWWos[124] + armWWos[127];
+   armWWos[124]=armWWos[124]*armWWos[249];
+   armWWos[127]=67./9. + armWWos[105];
+   armWWos[127]=armWWos[127]*armWWos[104];
+   armWWos[127]=67./6. + armWWos[127];
+   armWWos[127]=armWWos[127]*armWWos[104];
+   armWWos[127]=35./3. + armWWos[127];
+   armWWos[127]=armWWos[127]*armWWos[104];
+   armWWos[139]=35./3. + armWWos[102];
+   armWWos[139]=armWWos[139]*armWWos[101];
+   armWWos[127]=armWWos[127] + armWWos[139];
+   armWWos[127]=armWWos[127]*armWWos[200];
+   armWWos[124]=armWWos[124] + armWWos[127];
+   armWWos[124]=mmt*armWWos[124];
+   armWWos[123]=armWWos[124] + 1./64.*armWWos[123];
+   armWWos[123]=armWWos[31]*armWWos[123];
+   armWWos[124]=armWWos[385]*armWWos[118];
+   armWWos[127]= - 1./12. + armWWos[101];
+   armWWos[127]=armWWos[127]*armWWos[101];
+   armWWos[124]=armWWos[124] + armWWos[127];
+   armWWos[124]=armWWos[31]*mmZ*armWWos[124];
+   armWWos[127]= - armWWos[135]*armWWos[140]*armWWos[132];
+   armWWos[124]=armWWos[124] + armWWos[127];
+   armWWos[124]=armWWos[97]*armWWos[124];
+   armWWos[127]=13 - armWWos[252];
+   armWWos[127]=armWWos[127]*armWWos[119];
+   armWWos[127]=armWWos[127] - armWWos[101];
+   armWWos[127]=mmZ*armWWos[127]*armWWos[278];
+   armWWos[123]=armWWos[124] + armWWos[123] + armWWos[127];
+   armWWos[123]=armWWos[58]*armWWos[123];
+   armWWos[124]= - mmZ*armWWos[321];
+   armWWos[127]=armWWos[206]*armWWos[104];
+   armWWos[127]=11./4. + armWWos[127];
+   armWWos[127]=armWWos[127]*armWWos[119];
+   armWWos[132]= - armWWos[183]*armWWos[172];
+   armWWos[124]=armWWos[124] + armWWos[127] + armWWos[132];
+   armWWos[124]=armWWos[65]*armWWos[124];
+   armWWos[127]=1 - armWWos[240];
+   armWWos[127]=armWWos[127]*armWWos[104];
+   armWWos[127]=25./6. + armWWos[127];
+   armWWos[127]=armWWos[127]*armWWos[104];
+   armWWos[132]=25 - armWWos[212];
+   armWWos[132]=armWWos[132]*armWWos[361];
+   armWWos[127]=armWWos[127] + armWWos[132];
+   armWWos[127]=armWWos[65]*armWWos[127]*armWWos[152];
+   armWWos[132]= - 1./3. - armWWos[105];
+   armWWos[132]=armWWos[132]*armWWos[104];
+   armWWos[139]= - 1 + armWWos[323];
+   armWWos[139]=armWWos[139]*armWWos[247];
+   armWWos[132]=armWWos[132] + armWWos[139];
+   armWWos[132]=armWWos[132]*armWWos[169];
+   armWWos[127]=armWWos[127] + armWWos[132];
+   armWWos[132]=1./4.*mmH;
+   armWWos[127]=armWWos[127]*armWWos[132];
+   armWWos[124]=armWWos[124] + armWWos[127];
+   armWWos[124]=armWWos[87]*armWWos[124];
+   armWWos[127]= - mmZ*armWWos[99]*armWWos[295];
+   armWWos[139]= - 7 - armWWos[359];
+   armWWos[139]=armWWos[139]*armWWos[118];
+   armWWos[140]= - 5./4. + armWWos[190];
+   armWWos[140]=armWWos[140]*armWWos[134];
+   armWWos[134]=armWWos[296]*armWWos[134];
+   armWWos[134]=armWWos[134] + 16 - armWWos[119];
+   armWWos[134]=armWWos[134]*armWWos[128];
+   armWWos[127]=2*armWWos[134] + armWWos[127] + armWWos[139] + 
+   armWWos[140];
+   armWWos[127]=armWWos[65]*armWWos[127];
+   armWWos[134]= - 77./9. - armWWos[104];
+   armWWos[134]=armWWos[134]*armWWos[104];
+   armWWos[134]=137./3. + armWWos[134];
+   armWWos[134]=armWWos[134]*armWWos[104];
+   armWWos[134]=143 + armWWos[134];
+   armWWos[134]=armWWos[134]*armWWos[118];
+   armWWos[139]=143./4. + 85./3.*armWWos[101];
+   armWWos[139]=armWWos[139]*armWWos[101];
+   armWWos[134]=armWWos[134] + armWWos[139];
+   armWWos[134]=armWWos[134]*armWWos[265];
+   armWWos[139]= - armWWos[161]*armWWos[207]*armWWos[162];
+   armWWos[134]=armWWos[134] + armWWos[139];
+   armWWos[134]=armWWos[134]*armWWos[132];
+   armWWos[129]= - 16./9. - armWWos[129];
+   armWWos[129]=armWWos[129]*armWWos[104];
+   armWWos[129]= - 197./24. + armWWos[129];
+   armWWos[129]=armWWos[129]*armWWos[104];
+   armWWos[139]= - 197./3. - 95*armWWos[101];
+   armWWos[139]=armWWos[139]*armWWos[133];
+   armWWos[129]=armWWos[129] + armWWos[139];
+   armWWos[129]=armWWos[129]*armWWos[156];
+   armWWos[129]=armWWos[129] + armWWos[134];
+   armWWos[129]=mmH*armWWos[129];
+   armWWos[127]=armWWos[127] + armWWos[129];
+   armWWos[127]=armWWos[89]*armWWos[127];
+   armWWos[129]=1 + armWWos[230];
+   armWWos[129]=armWWos[129]*armWWos[104];
+   armWWos[129]=armWWos[129] + armWWos[234];
+   armWWos[129]=armWWos[5]*armWWos[129];
+   armWWos[134]=115./3. + armWWos[137];
+   armWWos[134]=armWWos[134]*armWWos[119];
+   armWWos[134]=43./2. + armWWos[134];
+   armWWos[134]=armWWos[134]*armWWos[119];
+   armWWos[137]=97./9. + armWWos[215];
+   armWWos[137]=armWWos[137]*armWWos[102];
+   armWWos[134]=armWWos[134] + armWWos[137];
+   armWWos[134]=armWWos[134]*armWWos[282];
+   armWWos[137]=5./2. + armWWos[221];
+   armWWos[119]=armWWos[137]*armWWos[119];
+   armWWos[137]=5./3. + armWWos[101];
+   armWWos[102]=armWWos[137]*armWWos[102];
+   armWWos[102]=armWWos[119] + armWWos[102];
+   armWWos[102]=armWWos[102]*armWWos[200];
+   armWWos[102]=1./2.*armWWos[102] + armWWos[129] + armWWos[134];
+   armWWos[102]=armWWos[31]*armWWos[102];
+   armWWos[119]= - armWWos[31]*armWWos[126];
+   armWWos[126]=armWWos[97]*armWWos[135]*armWWos[130];
+   armWWos[119]=armWWos[119] + armWWos[126];
+   armWWos[119]=armWWos[97]*armWWos[119];
+   armWWos[126]=80./3. + 17./4.*armWWos[104];
+   armWWos[126]=armWWos[126]*armWWos[104];
+   armWWos[126]=131./4. + armWWos[126];
+   armWWos[112]=armWWos[126]*armWWos[112];
+   armWWos[126]=armWWos[392]*armWWos[153];
+   armWWos[112]=armWWos[112] + armWWos[126];
+   armWWos[112]=armWWos[2]*armWWos[112];
+   armWWos[112]=armWWos[288] + armWWos[112];
+   armWWos[112]=armWWos[35]*armWWos[112];
+   armWWos[102]=armWWos[112] + armWWos[102] + 1./4.*armWWos[119];
+   armWWos[102]=armWWos[8]*armWWos[102];
+   armWWos[112]= - 9*armWWos[193] - armWWos[263];
+   armWWos[112]=mmt*armWWos[112];
+   armWWos[112]=armWWos[196] + armWWos[112];
+   armWWos[112]=armWWos[31]*mmt*armWWos[112];
+   armWWos[119]= - 3*armWWos[193] + armWWos[263];
+   armWWos[119]=mmt*armWWos[119];
+   armWWos[119]=armWWos[237] + armWWos[119];
+   armWWos[119]=armWWos[119]*armWWos[122];
+   armWWos[112]=armWWos[112] + armWWos[119];
+   armWWos[112]=armWWos[54]*armWWos[112];
+   armWWos[119]= - armWWos[138]*armWWos[204];
+   armWWos[122]=3 + armWWos[201];
+   armWWos[122]=armWWos[122]*armWWos[104];
+   armWWos[122]=1031./36. + armWWos[122];
+   armWWos[122]=armWWos[122]*armWWos[104];
+   armWWos[122]= - 467./6. + armWWos[122];
+   armWWos[118]=armWWos[122]*armWWos[118];
+   armWWos[122]=149./3. - 489./2.*armWWos[101];
+   armWWos[122]=armWWos[122]*armWWos[133];
+   armWWos[118]=armWWos[122] - 16 + armWWos[118];
+   armWWos[118]=armWWos[2]*armWWos[118];
+   armWWos[118]= - 1./2.*armWWos[342] + armWWos[119] + armWWos[118];
+   armWWos[118]=armWWos[65]*armWWos[118];
+   armWWos[119]= - 11./3. + armWWos[326];
+   armWWos[104]=armWWos[119]*armWWos[104];
+   armWWos[104]= - 41./3. + armWWos[104];
+   armWWos[104]=armWWos[104]*armWWos[105];
+   armWWos[105]= - 41./6. - armWWos[289];
+   armWWos[105]=armWWos[105]*armWWos[101];
+   armWWos[104]=armWWos[104] + armWWos[105];
+   armWWos[104]=armWWos[104]*armWWos[169];
+   armWWos[104]=armWWos[118] + 1./8.*armWWos[104];
+   armWWos[104]=armWWos[66]*armWWos[104];
+   armWWos[105]=armWWos[193]*mmH;
+   armWWos[105]=armWWos[105] - armWWos[354];
+   armWWos[105]=armWWos[105]*mmH;
+   armWWos[118]=armWWos[100]*armWWos[190]*armWWos[246];
+   armWWos[118]=1./6.*armWWos[105] + 23./24.*armWWos[216] + 
+   armWWos[118];
+   armWWos[118]=armWWos[35]*armWWos[118];
+   armWWos[105]=1./18.*armWWos[105] + 23./72.*armWWos[216] + 
+   armWWos[285];
+   armWWos[105]=armWWos[1]*armWWos[105];
+   armWWos[105]=armWWos[118] + armWWos[105];
+   armWWos[105]=armWWos[12]*armWWos[105];
+   armWWos[118]=armWWos[136]*armWWos[207];
+   armWWos[114]=armWWos[118] - armWWos[114];
+   armWWos[114]=armWWos[114]*armWWos[132];
+   armWWos[118]= - armWWos[265]*armWWos[365];
+   armWWos[114]=armWWos[118] + armWWos[114];
+   armWWos[114]=mmH*armWWos[114];
+   armWWos[118]=armWWos[196]*armWWos[65];
+   armWWos[119]=1./6.*armWWos[118];
+   armWWos[114]= - armWWos[119] + armWWos[114];
+   armWWos[114]=mmH*armWWos[114];
+   armWWos[122]= - armWWos[285]*armWWos[125];
+   armWWos[114]=armWWos[122] + armWWos[114];
+   armWWos[114]=armWWos[80]*armWWos[114];
+   armWWos[122]= - armWWos[265]*armWWos[294];
+   armWWos[125]=1./8.*mmH;
+   armWWos[126]= - armWWos[211]*armWWos[125];
+   armWWos[122]=armWWos[122] + armWWos[126];
+   armWWos[122]=mmH*armWWos[122];
+   armWWos[119]=armWWos[119] + armWWos[122];
+   armWWos[119]=mmH*armWWos[119];
+   armWWos[122]=armWWos[65]*armWWos[216];
+   armWWos[119]=2./3.*armWWos[122] + armWWos[119];
+   armWWos[119]=mmH*armWWos[119];
+   armWWos[122]= - armWWos[65]*armWWos[244];
+   armWWos[119]=armWWos[122] + armWWos[119];
+   armWWos[119]=armWWos[70]*armWWos[119];
+   armWWos[122]= - armWWos[308]*armWWos[156];
+   armWWos[126]= - armWWos[171]*armWWos[169];
+   armWWos[122]=armWWos[122] + armWWos[126];
+   armWWos[122]=armWWos[122]*armWWos[125];
+   armWWos[125]=armWWos[178]*armWWos[128];
+   armWWos[125]= - armWWos[357] + armWWos[125];
+   armWWos[125]=armWWos[65]*armWWos[125];
+   armWWos[122]=armWWos[125] + armWWos[122];
+   armWWos[122]=armWWos[81]*armWWos[122];
+   armWWos[125]=2*armWWos[184] - 1./3.*armWWos[174];
+   armWWos[125]=mmH*armWWos[125];
+   armWWos[101]=armWWos[65]*armWWos[101];
+   armWWos[101]= - 20./3.*armWWos[101] + armWWos[125];
+   armWWos[101]=mmH*armWWos[101];
+   armWWos[125]=armWWos[65]*armWWos[246];
+   armWWos[101]=8*armWWos[125] + armWWos[101];
+   armWWos[101]=armWWos[75]*armWWos[101];
+   armWWos[125]=1./2.*armWWos[136];
+   armWWos[125]= - pow(mmH,2)*armWWos[207]*armWWos[125];
+   armWWos[118]=3*armWWos[118] + armWWos[125];
+   armWWos[118]=armWWos[118]*armWWos[162];
+   armWWos[125]= - armWWos[65]*armWWos[241];
+   armWWos[118]=armWWos[125] + armWWos[118];
+   armWWos[118]=armWWos[73]*armWWos[118]*armWWos[162];
 
       mWWosret = armWWos[101] + armWWos[102] + armWWos[103] + 
-      armWWos[104] + armWWos[105] + 2*armWWos[106];
+      armWWos[104] + armWWos[105] + armWWos[106] + armWWos[107] + 
+      armWWos[108] + armWWos[109] + armWWos[110] + armWWos[111] + 1./4.
+      *armWWos[112] + armWWos[113] + armWWos[114] + armWWos[115] + 
+      armWWos[116] + armWWos[117] + armWWos[118] + armWWos[119] + 
+      armWWos[120] + armWWos[121] + armWWos[122] + 1./2.*armWWos[123]
+       + armWWos[124] + armWWos[127] + armWWos[131];
       return mWWosret;
 }

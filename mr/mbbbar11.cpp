@@ -4,7 +4,7 @@ bb::m11(size_t nL, size_t nH, size_t boson)
 {     
       
       
-    std::complex<long double> armbbbar[29], mbbbarret;
+    std::complex<long double> armbbbar[39], mbbbarret;
 
     armbbbar[1]=double(boson);
     armbbbar[2]=pow(CW,-1);
@@ -23,134 +23,102 @@ bb::m11(size_t nL, size_t nH, size_t boson)
     armbbbar[15]=Tsil::Aeps(MMb,mu2);
     armbbbar[16]=prot0bb0b->Tvxu(0);
     armbbbar[17]=1/(MMt - MMW);
-   armbbbar[18]=pow(CW,2);
-   armbbbar[19]=1 + armbbbar[18];
-   armbbbar[20]=armbbbar[18]*armbbbar[19];
-   armbbbar[20]=1 + armbbbar[20];
-   armbbbar[20]=MMZ*armbbbar[20];
-   armbbbar[18]= - 1 - armbbbar[18];
-   armbbbar[21]=armbbbar[14]*armbbbar[18];
-   armbbbar[22]=armbbbar[13]*armbbbar[18];
-   armbbbar[23]=armbbbar[6]*armbbbar[19];
-   armbbbar[24]=armbbbar[11]*armbbbar[18];
-   armbbbar[18]=armbbbar[12]*armbbbar[18];
-   armbbbar[18]=2*armbbbar[20] + armbbbar[18] + armbbbar[24] + 
-   armbbbar[23] + armbbbar[21] + armbbbar[22];
-   armbbbar[18]=MMZ*armbbbar[18];
-   armbbbar[20]=armbbbar[12]*armbbbar[11];
-   armbbbar[18]=armbbbar[20] + armbbbar[18];
-   armbbbar[18]=MMZ*armbbbar[18];
-   armbbbar[20]= - armbbbar[12]*armbbbar[11];
-   armbbbar[21]= - armbbbar[6] + armbbbar[14] + armbbbar[13];
-   armbbbar[22]= - 2*MMZ + armbbbar[12] + armbbbar[21] + armbbbar[11];
-   armbbbar[22]=MMZ*armbbbar[22];
-   armbbbar[20]=armbbbar[20] + armbbbar[22];
+   armbbbar[18]=armbbbar[7]*armbbbar[4];
+   armbbbar[19]=MMt*armbbbar[4];
+   armbbbar[20]=1./4.*armbbbar[19] + 3./2.*armbbbar[18];
+   armbbbar[21]=pow(armbbbar[2],2);
    armbbbar[22]=pow(armbbbar[5],2);
-   armbbbar[20]=armbbbar[22]*MMZ*armbbbar[20];
-   armbbbar[18]=armbbbar[18] + armbbbar[20];
-   armbbbar[18]=armbbbar[17]*armbbbar[18];
-   armbbbar[20]=armbbbar[6] - armbbbar[14] - armbbbar[13];
-   armbbbar[23]= - armbbbar[11] + armbbbar[12];
-   armbbbar[23]=armbbbar[9]*armbbbar[8]*armbbbar[23];
-   armbbbar[19]=MMZ*armbbbar[19];
-   armbbbar[19]=17*armbbbar[19] + 3./2.*armbbbar[23] - 11*armbbbar[12]
-    + 7*armbbbar[20] - 3*armbbbar[11];
-   armbbbar[19]=MMZ*armbbbar[19];
-   armbbbar[20]=3*armbbbar[11];
-   armbbbar[23]=armbbbar[11] - armbbbar[12];
-   armbbbar[23]=armbbbar[9]*armbbbar[8]*armbbbar[23];
-   armbbbar[23]= - 17*MMZ + 3./2.*armbbbar[23] + 11*armbbbar[12] + 7*
-   armbbbar[21] + armbbbar[20];
-   armbbbar[23]=MMZ*armbbbar[23];
-   armbbbar[24]= - 4*armbbbar[11];
-   armbbbar[25]=armbbbar[24] - 3./2.*armbbbar[12];
-   armbbbar[25]=armbbbar[12]*armbbbar[25];
-   armbbbar[23]=armbbbar[25] + armbbbar[23];
-   armbbbar[23]=armbbbar[22]*armbbbar[23];
-   armbbbar[18]=3*armbbbar[18] + armbbbar[19] + armbbbar[23];
-   armbbbar[18]=armbbbar[17]*armbbbar[18];
-   armbbbar[19]=armbbbar[9]*armbbbar[8]*armbbbar[11];
-   armbbbar[23]=armbbbar[24] - 1./2.*armbbbar[12];
-   armbbbar[23]=armbbbar[4]*armbbbar[12]*armbbbar[23];
-   armbbbar[24]=armbbbar[9]*armbbbar[8];
-   armbbbar[24]= - 10 + 1./2.*armbbbar[24];
-   armbbbar[24]=MMZ*armbbbar[24];
-   armbbbar[19]=3*armbbbar[24] + armbbbar[23] + 3./2.*armbbbar[19] + 9*
-   armbbbar[12] + 8*armbbbar[21] + armbbbar[20];
-   armbbbar[19]=armbbbar[22]*armbbbar[19];
-   armbbbar[20]=pow(armbbbar[2],2);
-   armbbbar[21]= - armbbbar[20]*armbbbar[11];
-   armbbbar[23]= - armbbbar[12]*armbbbar[20];
-   armbbbar[21]=4*armbbbar[21] + 1./2.*armbbbar[23];
-   armbbbar[21]=armbbbar[4]*armbbbar[12]*armbbbar[21];
-   armbbbar[23]= - armbbbar[9]*armbbbar[8];
-   armbbbar[23]=10 + 1./2.*armbbbar[23];
-   armbbbar[23]=MMZ*armbbbar[23];
-   armbbbar[18]=armbbbar[18] + armbbbar[19] + armbbbar[21] + 3*
-   armbbbar[23];
-   armbbbar[18]=armbbbar[17]*armbbbar[18];
-   armbbbar[19]=1./4.*MMt + 3./2.*armbbbar[7] - 2./3.*armbbbar[10];
-   armbbbar[19]=armbbbar[20]*armbbbar[19];
-   armbbbar[21]= - armbbbar[3]*MMt;
-   armbbbar[21]=1./2. + 4*armbbbar[21];
-   armbbbar[23]=armbbbar[12]*armbbbar[20]*armbbbar[21];
-   armbbbar[19]=3*armbbbar[23] - 4./3.*armbbbar[10] + armbbbar[19];
-   armbbbar[19]=armbbbar[9]*armbbbar[8]*armbbbar[19];
-   armbbbar[23]=armbbbar[3]*pow(MMt,2);
-   armbbbar[23]=32*armbbbar[23] - 103./12.*MMt - 4*armbbbar[6] - 3./2.*
-   armbbbar[10] + 4*armbbbar[13] - 1./2.*armbbbar[7] + 4*armbbbar[14];
-   armbbbar[24]=armbbbar[20]*armbbbar[23];
-   armbbbar[25]=armbbbar[3]*MMt;
-   armbbbar[25]=13./2. + 4*armbbbar[25];
-   armbbbar[26]=armbbbar[20]*armbbbar[25];
-   armbbbar[27]= - armbbbar[20]*armbbbar[3];
-   armbbbar[28]=armbbbar[12]*armbbbar[27];
-   armbbbar[26]=armbbbar[26] + 24*armbbbar[28];
-   armbbbar[26]=armbbbar[12]*armbbbar[26];
-   armbbbar[19]=armbbbar[19] + armbbbar[24] + armbbbar[26];
-   armbbbar[19]=armbbbar[4]*armbbbar[19];
-   armbbbar[24]= - armbbbar[12]*armbbbar[3];
-   armbbbar[24]=armbbbar[25] + 24*armbbbar[24];
-   armbbbar[24]=armbbbar[12]*armbbbar[24];
-   armbbbar[25]=3*armbbbar[7] + 1./2.*MMt;
-   armbbbar[21]=armbbbar[12]*armbbbar[21];
-   armbbbar[21]=1./2.*armbbbar[25] + 3*armbbbar[21];
-   armbbbar[21]=armbbbar[9]*armbbbar[8]*armbbbar[21];
-   armbbbar[21]=armbbbar[21] + armbbbar[23] + armbbbar[24];
-   armbbbar[21]=armbbbar[4]*armbbbar[21];
-   armbbbar[23]= - armbbbar[10] - 2*armbbbar[11];
-   armbbbar[23]=armbbbar[3]*armbbbar[23];
-   armbbbar[24]=armbbbar[10] + 2*armbbbar[11];
-   armbbbar[24]=armbbbar[3]*armbbbar[24];
-   armbbbar[24]= - 1./4. + armbbbar[24];
-   armbbbar[24]=armbbbar[9]*armbbbar[8]*armbbbar[24];
-   armbbbar[25]=armbbbar[9]*armbbbar[8]*armbbbar[3];
-   armbbbar[25]= - armbbbar[3] + 3*armbbbar[25];
-   armbbbar[25]=MMZ*armbbbar[25];
-   armbbbar[21]=2*armbbbar[25] + armbbbar[21] + 3*armbbbar[24] - 167./8.
-    + armbbbar[23];
-   armbbbar[21]=armbbbar[22]*armbbbar[21];
-   armbbbar[22]= - armbbbar[3]*armbbbar[10];
-   armbbbar[22]= - 107./216. + armbbbar[22];
-   armbbbar[22]=armbbbar[20]*armbbbar[22];
-   armbbbar[23]=armbbbar[3]*armbbbar[10];
-   armbbbar[23]= - 31./36. + 3*armbbbar[23];
-   armbbbar[23]=armbbbar[20]*armbbbar[23];
-   armbbbar[23]=34./9. + armbbbar[23];
-   armbbbar[23]=armbbbar[8]*armbbbar[23];
-   armbbbar[24]=armbbbar[9]*pow(armbbbar[8],2);
-   armbbbar[23]=32./9.*armbbbar[24] - 40./9.*armbbbar[15] + 
-   armbbbar[23];
-   armbbbar[23]=armbbbar[9]*armbbbar[23];
-   armbbbar[24]=2*armbbbar[3] + armbbbar[27];
-   armbbbar[20]=armbbbar[20]*armbbbar[3];
-   armbbbar[20]= - 2*armbbbar[3] + armbbbar[20];
-   armbbbar[20]=armbbbar[9]*armbbbar[8]*armbbbar[20];
-   armbbbar[20]=1./3.*armbbbar[24] + armbbbar[20];
-   armbbbar[20]=MMZ*armbbbar[20];
-   armbbbar[24]= - 77./3. - 20*armbbbar[16];
-   armbbbar[18]=armbbbar[18] + armbbbar[21] + 2*armbbbar[20] + 
-   armbbbar[19] + armbbbar[23] + 2./9.*armbbbar[24] + armbbbar[22];
+   armbbbar[23]=armbbbar[21] + armbbbar[22];
+   armbbbar[20]=armbbbar[23]*armbbbar[20];
+   armbbbar[24]= - armbbbar[12] + armbbbar[11];
+   armbbbar[25]=armbbbar[17]*MMZ;
+   armbbbar[26]=armbbbar[22] - 1;
+   armbbbar[24]=armbbbar[25]*armbbbar[26]*armbbbar[24];
+   armbbbar[27]=armbbbar[26]*MMZ;
+   armbbbar[28]=armbbbar[22]*armbbbar[11];
+   armbbbar[24]=armbbbar[24] + armbbbar[28] + armbbbar[27];
+   armbbbar[24]=armbbbar[17]*armbbbar[24];
+   armbbbar[29]=armbbbar[23]*armbbbar[12];
+   armbbbar[30]=4*armbbbar[4];
+   armbbbar[31]=armbbbar[30]*MMt*armbbbar[3];
+   armbbbar[32]=1./2.*armbbbar[4] - armbbbar[31];
+   armbbbar[32]=armbbbar[32]*armbbbar[29];
+   armbbbar[33]=3*armbbbar[22];
+   armbbbar[34]=armbbbar[21] - 2 + armbbbar[33];
+   armbbbar[35]=2*MMZ;
+   armbbbar[36]=armbbbar[35]*armbbbar[3];
+   armbbbar[34]=armbbbar[34]*armbbbar[36];
+   armbbbar[37]=armbbbar[3]*armbbbar[23];
+   armbbbar[38]= - 2 - armbbbar[21];
+   armbbbar[38]=armbbbar[4]*armbbbar[38];
+   armbbbar[37]=2./3.*armbbbar[38] + 3*armbbbar[37];
+   armbbbar[37]=armbbbar[10]*armbbbar[37];
+   armbbbar[38]=armbbbar[3]*armbbbar[28];
+   armbbbar[20]=3./2.*armbbbar[24] + armbbbar[37] + armbbbar[34] + 6*
+   armbbbar[38] + 3*armbbbar[32] - 31./36.*armbbbar[21] + 34./9. - 3./4.
+   *armbbbar[22] + armbbbar[20];
+   armbbbar[20]=armbbbar[9]*armbbbar[20];
+   armbbbar[24]=armbbbar[8]*pow(armbbbar[9],2);
+   armbbbar[20]=armbbbar[20] + 32./9.*armbbbar[24];
+   armbbbar[20]=armbbbar[8]*armbbbar[20];
+   armbbbar[24]= - armbbbar[14] + armbbbar[6] - armbbbar[13];
+   armbbbar[32]= - 7*armbbbar[24] + 3*armbbbar[11] + 11*armbbbar[12];
+   armbbbar[32]=armbbbar[26]*armbbbar[32];
+   armbbbar[34]=pow(CW,2);
+   armbbbar[37]=armbbbar[26] - armbbbar[34];
+   armbbbar[38]=MMZ*armbbbar[37];
+   armbbbar[32]= - 17*armbbbar[38] + armbbbar[32];
+   armbbbar[32]=MMZ*armbbbar[32];
+   armbbbar[38]=armbbbar[11] + armbbbar[12] - armbbbar[24];
+   armbbbar[37]=armbbbar[37]*armbbbar[38];
+   armbbbar[38]=armbbbar[34] + 1;
+   armbbbar[34]=armbbbar[38]*armbbbar[34];
+   armbbbar[34]=armbbbar[34] - armbbbar[26];
+   armbbbar[34]=armbbbar[34]*armbbbar[35];
+   armbbbar[34]=armbbbar[34] + armbbbar[37];
+   armbbbar[34]=MMZ*armbbbar[34];
+   armbbbar[26]= - armbbbar[26]*armbbbar[11]*armbbbar[12];
+   armbbbar[26]=armbbbar[26] + armbbbar[34];
+   armbbbar[25]=armbbbar[26]*armbbbar[25];
+   armbbbar[26]=armbbbar[22]*pow(armbbbar[12],2);
+   armbbbar[34]=armbbbar[12]*armbbbar[28];
+   armbbbar[25]=3*armbbbar[25] + armbbbar[32] - 3./2.*armbbbar[26] - 4*
+   armbbbar[34];
+   armbbbar[25]=armbbbar[17]*armbbbar[25];
+   armbbbar[26]= - armbbbar[22]*armbbbar[24];
+   armbbbar[32]=1./2.*armbbbar[23];
+   armbbbar[34]=armbbbar[12]*armbbbar[4];
+   armbbbar[35]= - armbbbar[32]*armbbbar[34];
+   armbbbar[35]=9*armbbbar[22] + armbbbar[35];
+   armbbbar[35]=armbbbar[12]*armbbbar[35];
+   armbbbar[37]= - armbbbar[30]*armbbbar[29];
+   armbbbar[33]=armbbbar[33] + armbbbar[37];
+   armbbbar[33]=armbbbar[11]*armbbbar[33];
+   armbbbar[25]=armbbbar[25] - 30*armbbbar[27] + armbbbar[33] + 8*
+   armbbbar[26] + armbbbar[35];
+   armbbbar[25]=armbbbar[17]*armbbbar[25];
+   armbbbar[19]=armbbbar[3]*armbbbar[19];
+   armbbbar[19]= - 103./12.*armbbbar[4] + 32*armbbbar[19];
+   armbbbar[19]=MMt*armbbbar[19];
+   armbbbar[26]= - 3./2.*armbbbar[4] - armbbbar[3];
+   armbbbar[26]=armbbbar[10]*armbbbar[26];
+   armbbbar[19]=armbbbar[26] + armbbbar[19];
+   armbbbar[19]=armbbbar[23]*armbbbar[19];
+   armbbbar[23]= - armbbbar[24]*armbbbar[23]*armbbbar[30];
+   armbbbar[24]=armbbbar[3]*armbbbar[34];
+   armbbbar[24]= - 24*armbbbar[24] + 13./2.*armbbbar[4] + armbbbar[31];
+   armbbbar[24]=armbbbar[24]*armbbbar[29];
+   armbbbar[18]= - armbbbar[18]*armbbbar[32];
+   armbbbar[26]=2*armbbbar[3];
+   armbbbar[26]= - armbbbar[26]*armbbbar[28];
+   armbbbar[27]= - 1./3.*armbbbar[21] + 2./3. - armbbbar[22];
+   armbbbar[27]=armbbbar[27]*armbbbar[36];
+   armbbbar[28]=armbbbar[9]*armbbbar[15];
+   armbbbar[28]=armbbbar[28] + armbbbar[16];
+   armbbbar[18]=armbbbar[20] + armbbbar[25] + armbbbar[27] + 
+   armbbbar[26] + armbbbar[24] + armbbbar[18] - 107./216.*armbbbar[21]
+    - 154./27. - 167./8.*armbbbar[22] + armbbbar[23] - 40./9.*
+   armbbbar[28] + armbbbar[19];
 
       mbbbarret = armbbbar[18]*armbbbar[1];
       return mbbbarret;
