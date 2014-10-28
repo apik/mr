@@ -25,8 +25,8 @@ int main (int argc, char *argv[])
       long double alpha0 = 1./137.035999;
 
       alphaMt = alphaMZ;
-      ww W80  = ww(JKVH80, JKVH80.mmW());
-      ww W200 = ww(JKVH200, JKVH200.mmW());
+      WW<MS> W80  = WW<MS>(JKVH80, JKVH80.mmW());
+      WW<MS> W200 = WW<MS>(JKVH200, JKVH200.mmW());
 
       std::cout << "\\mu = MW" << std::endl;
       // 

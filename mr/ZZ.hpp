@@ -7,7 +7,13 @@
 #include "constants.hpp"
 #include "base.hpp"
 
+template<class T>
 class ZZ : public PoleMass
+{
+};
+
+template<>
+class ZZ<OS> : public PoleMass
 {
 
   long double MMb, MMt, MMH, MMW, MMZ, mu2;
@@ -124,32 +130,33 @@ public:
 
 
   }
-  std::complex<long double> m01(size_t nL = 2, size_t nH = 1);
+  std::complex<long double> m01(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
   
-  std::complex<long double> m10(size_t nL = 2, size_t nH = 1, int boson = 1);
+  std::complex<long double> m10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
   
-  std::complex<long double> m11(size_t nL = 2, size_t nH = 1, int boson = 1);
+  std::complex<long double> m11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
   
 
-  std::complex<long double> m20(size_t nL = 2, size_t nH = 1, int boson = 1);
+  std::complex<long double> m20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
 
-  std::complex<long double> my01(size_t nL = 2, size_t nH = 1);
-
-  
-  std::complex<long double> my10(size_t nL = 2, size_t nH = 1);
+  std::complex<long double> my01(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
   
-  std::complex<long double> my11(size_t nL = 2, size_t nH = 1);
+  std::complex<long double> my10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+
+  
+  std::complex<long double> my11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
   
 
-  std::complex<long double> my20(size_t nL = 2, size_t nH = 1);
+  std::complex<long double> my20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
     
 };
 
-class zz
+template<>
+class ZZ<MS>
 {
 
   long double mmb, mmt, mmH, mmW, mmZ, mu2;
@@ -177,27 +184,27 @@ class zz
   
   TsilST* protos[19];
 public:
-  zz()
+  ZZ()
   {
   }
 
-  zz(long double,long double,long double,long double,long double);
+  ZZ(long double,long double,long double,long double,long double);
 
-  zz(MSinput, long double);
+  ZZ(MSinput, long double);
 
   void init();
 
 
-  std::complex<long double> m01(size_t nL = 2, size_t nH = 1);
+  std::complex<long double> m01(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
   
-  std::complex<long double> m10(size_t nL = 2, size_t nH = 1);
+  std::complex<long double> m10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
   
-  std::complex<long double> m11(size_t nL = 2, size_t nH = 1);
+  std::complex<long double> m11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
   
 
-  std::complex<long double> m20(size_t nL = 2, size_t nH = 1);
+  std::complex<long double> m20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
     
 };

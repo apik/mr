@@ -17,18 +17,18 @@ ALPHAGF = alphaGF.hpp alphaGF.cpp alphaGF10.cpp alphaGF11.cpp alphaGF20.cpp
 # 
 # MS-bar masses and constants
 #
-BBMS = bb.hpp bb.cpp bb01.cpp bb10.cpp bb11.cpp bb20.cpp yb01.cpp yb10.cpp yb11.cpp yb20.cpp
-WWMS = WW.hpp WW.cpp WW10.cpp WW11.cpp WW20.cpp yW10.cpp yW11.cpp yW20.cpp
-ZZMS = ZZ.hpp ZZ.cpp ZZ10.cpp ZZ11.cpp ZZ20.cpp yZ10.cpp yZ11.cpp yZ20.cpp
-HHMS = HH.hpp HH.cpp HH10.cpp HH11.cpp HH20.cpp yH10.cpp yH11.cpp yH20.cpp
-TTMS = tt.hpp tt.cpp tt01.cpp tt02.cpp tt03.cpp tt10.cpp tt11.cpp tt20.cpp yt01.cpp yt10.cpp yt11.cpp yt20.cpp
+BBMS = bb.hpp bb.cpp mbbbar01.cpp mbbbar10.cpp mbbbar11.cpp mbbbar20.cpp yubb01.cpp yubb10.cpp yubb11.cpp yubb20.cpp
+WWMS = WW.hpp WW.cpp mWWbar10.cpp mWWbar11.cpp mWWbar20.cpp yuWW10.cpp yuWW11.cpp yuWW20.cpp
+ZZMS = ZZ.hpp ZZ.cpp mZZbar10.cpp mZZbar11.cpp mZZbar20.cpp yuZZ10.cpp yuZZ11.cpp yuZZ20.cpp
+HHMS = HH.hpp HH.cpp mHHbar10.cpp mHHbar11.cpp mHHbar20.cpp yuHH10.cpp yuHH11.cpp yuHH20.cpp
+TTMS = tt.hpp tt.cpp mttbar01.cpp mttbar02.cpp mttbar03.cpp mttbar10.cpp mttbar11.cpp mttbar20.cpp yutt01.cpp yutt10.cpp yutt11.cpp yutt20.cpp
 
 # 
 # Gauge-less limit
 # 
-HHMSGL = HHgl10.cpp HHgl11.cpp HHgl20.cpp lamgl10.cpp lamgl11.cpp lamgl20.cpp
-BBMSGL = bbgl10.cpp bbgl11.cpp bbgl20.cpp ybgl10.cpp ybgl11.cpp ybgl20.cpp
-TTMSGL = ttgl10.cpp ttgl11.cpp ttgl20.cpp ytgl10.cpp ytgl11.cpp ytgl20.cpp
+HHMSGL = mHHbarGL10.cpp mHHbarGL11.cpp mHHbarGL20.cpp yuHHGL10.cpp yuHHGL11.cpp yuHHGL20.cpp
+BBMSGL = mbbbarGL10.cpp mbbbarGL11.cpp mbbbarGL20.cpp yubbGL10.cpp yubbGL11.cpp yubbGL20.cpp
+TTMSGL = mttbarGL10.cpp mttbarGL11.cpp mttbarGL20.cpp yuttGL10.cpp yuttGL11.cpp yuttGL20.cpp
 
 #
 # delta-r in MS-bar  scheme with OS input
@@ -36,11 +36,11 @@ TTMSGL = ttgl10.cpp ttgl11.cpp ttgl20.cpp ytgl10.cpp ytgl11.cpp ytgl20.cpp
 DRMSOS = dr.cpp dr10.cpp dr11.cpp dr20.cpp drgl10.cpp drgl11.cpp drgl20.cpp
 
 # W pole mass from MS input
-WWMS2OS = WW2MS10.cpp WW2MS11.cpp WW2MS20.cpp
+WWMS2OS = mWWos10.cpp mWWos11.cpp mWWos20.cpp
 # Z pole mass from MS input
-ZZMS2OS = ZZ2MS10.cpp ZZ2MS11.cpp ZZ2MS20.cpp
+ZZMS2OS = mZZos10.cpp mZZos11.cpp mZZos20.cpp
 # H pole mass from MS input
-HHMS2OS = HH2MS10.cpp HH2MS11.cpp HH2MS20.cpp
+HHMS2OS = mHHos10.cpp mHHos11.cpp mHHos20.cpp
 
 
 libmr_a_SOURCES =    $(MAINSRC) $(ALPHAGF) $(RUNSRC) $(BBMS) $(WWMS) $(ZZMS) $(HHMS) $(TTMS)\

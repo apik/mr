@@ -12,4 +12,5 @@ const long double S2    = 0.2604341376321620989557291432080307854550447788484284
 // g5 = -i/24*EPAIR*eps(mu1,mu2,mu3,mu4)*g(mu1)*g(mu2)*g(mu3)*g(mu4)
 // Sp[g5*g5] = 4
 const long double EPAIR2 = -1.;
+
 #endif  // __CONSTANTS_HPP__

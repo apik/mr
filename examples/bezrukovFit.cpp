@@ -42,7 +42,7 @@ int main (int argc, char *argv[])
       for (std::vector<OSinput>::iterator it = sv.begin(); it != sv.end(); ++it)
         {
           tt dMt  = tt(*it, it->MMZ());
-          HH dMH  = HH(*it, it->MMZ());
+          HH<OS> dMH  = HH<OS>(*it, it->MMZ());
           dr ddr  = dr(*it, it->MMZ());
           std::cout << "sigmata   [1,0] = " << dMt.m10() << std::endl;
           std::cout << "deltayta  [1,0]= " << dMt.my10() << std::endl;

@@ -54,6 +54,7 @@ class alphaGF
   Tsil* prot0000W;
   // Tsil* prot00000;
   Tsil* protWZWHW;
+  
   TsilSTU* protHZ00;
 
 
@@ -74,13 +75,13 @@ public:
   void init();
   
  
-  std::complex<long double> a10(size_t nL = 2, size_t nH = 1);
+  std::complex<long double> a10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
   
-  std::complex<long double> a11(size_t nL = 2, size_t nH = 1);
+  std::complex<long double> a11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
   
 
-  std::complex<long double> a20(size_t nL = 2, size_t nH = 1);
+  std::complex<long double> a20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 };
 
 

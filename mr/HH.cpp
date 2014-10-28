@@ -9,7 +9,7 @@
 //   init(MMW, MMZ, MMH, MMt, mu2);
 // }
 
-HH::HH(OSinput sm, long double mu2_)
+HH<OS>::HH(OSinput sm, long double mu2_)
 {
   MMb = sm.MMb();
   MMW = sm.MMW();
@@ -22,7 +22,7 @@ HH::HH(OSinput sm, long double mu2_)
 }
 
 
-void HH::init()
+void HH<OS>::init()
 {
   
   CW = sqrt(MMW/MMZ);
@@ -76,7 +76,7 @@ void HH::init()
 
 
 
-hh::hh(MSinput sm, long double mu2_)
+HH<MS>::HH(MSinput sm, long double mu2_)
 {
   mmb = sm.mmb();
   mmW = sm.mmW();
@@ -89,7 +89,7 @@ hh::hh(MSinput sm, long double mu2_)
 }
 
 
-void hh::init()
+void HH<MS>::init()
 {
   
   c = sqrt(mmW/mmZ);

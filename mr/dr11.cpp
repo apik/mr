@@ -1,33 +1,31 @@
 #include <dr.hpp>
-std::complex<long double> dr::dr11(size_t nL, size_t nH)
+std::complex<long double>
+dr::dr11(size_t nL, size_t nH, size_t boson)
 {     
       
       
-    std::complex<long double> mdr[13], mdrret;
+    std::complex<long double> ardr[13], drret;
 
-    mdr[1]=double(nH);
-    mdr[2]=pow(CW,-1);
-    mdr[3]=pow(MMH,-1);
-    mdr[4]=pow(MMZ,-1);
-    mdr[5]=pow(SW,-1);
-    mdr[6]=Tsil::I2(0,0,MMt,mu2);
-    mdr[7]=Tsil::A(MMt,mu2);
-    mdr[8]=pow(MMt,-1);
-    mdr[9]=Tsil::Aeps(MMt,mu2);
-   mdr[10]= - mdr[8] + 12*mdr[3];
-   mdr[11]=2*mdr[7];
-   mdr[10]=mdr[10]*mdr[11];
-   mdr[10]=mdr[10] - 5;
-   mdr[10]=mdr[10]*mdr[11];
-   mdr[11]=mdr[9] - mdr[6];
-   mdr[12]=MMt*mdr[3];
-   mdr[12]= - 37./2. + 64*mdr[12];
-   mdr[12]=mdr[12]*MMt;
-   mdr[10]= - mdr[10] + mdr[12] + 4*mdr[11];
-   mdr[11]=pow(mdr[2],2);
-   mdr[12]=pow(mdr[5],2);
-   mdr[11]=mdr[11] + mdr[12];
+    ardr[1]=double(nH);
+    ardr[2]=pow(CW,-1);
+    ardr[3]=pow(MMH,-1);
+    ardr[4]=pow(MMZ,-1);
+    ardr[5]=pow(SW,-1);
+    ardr[6]=Tsil::I2(0,0,MMt,mu2);
+    ardr[7]=Tsil::A(MMt,mu2);
+    ardr[8]=pow(MMt,-1);
+    ardr[9]=Tsil::Aeps(MMt,mu2);
+   ardr[10]=ardr[9] - ardr[6];
+   ardr[11]=ardr[3]*pow(MMt,2);
+   ardr[12]=ardr[8] - 12*ardr[3];
+   ardr[12]=ardr[7]*ardr[12];
+   ardr[12]=5 + 2*ardr[12];
+   ardr[12]=ardr[7]*ardr[12];
+   ardr[10]=2*ardr[12] + 64*ardr[11] + 4*ardr[10] - 37./2.*MMt;
+   ardr[11]=ardr[10]*pow(ardr[5],2);
+   ardr[10]=ardr[10]*pow(ardr[2],2);
+   ardr[10]=ardr[11] + ardr[10];
 
-      mdrret = mdr[11]*mdr[10]*mdr[4]*mdr[1];
-      return mdrret;
+      drret = ardr[10]*ardr[4]*ardr[1];
+      return drret;
 }

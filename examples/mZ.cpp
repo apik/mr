@@ -25,8 +25,8 @@ int main (int argc, char *argv[])
       long double alpha0 = 1./137.035999;
 
       alphaMt = alphaMZ;
-      zz W80  = zz(JKVH80, JKVH80.mmZ());
-      zz W200 = zz(JKVH200, JKVH200.mmZ());
+      ZZ<MS> W80  = ZZ<MS>(JKVH80, JKVH80.mmZ());
+      ZZ<MS> W200 = ZZ<MS>(JKVH200, JKVH200.mmZ());
 
       std::cout << "\\mu = MZ" << std::endl;
       // 

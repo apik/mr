@@ -7,7 +7,16 @@
 #include "constants.hpp"
 #include "base.hpp"
 
-class WW : public PoleMass
+
+template<class T>
+class WW 
+//: public PoleMass
+{
+};
+
+
+template<>
+class WW<OS> : public PoleMass
 {
 
   long double MMb, MMt, MMH, MMW, MMZ, mu2;
@@ -133,43 +142,32 @@ public:
   }
 
   // Pole -> MS
-  std::complex<long double> m01(size_t nL = 2, size_t nH = 1, int boson = 1);
+  std::complex<long double> m01(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
   
-  std::complex<long double> m10(size_t nL = 2, size_t nH = 1, int boson = 1);
+  std::complex<long double> m10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
   
-  std::complex<long double> m11(size_t nL = 2, size_t nH = 1, int boson = 1);
+  std::complex<long double> m11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
   
 
-  std::complex<long double> m20(size_t nL = 2, size_t nH = 1, int boson = 1);
-
-  // MS -> Pole
-  std::complex<long double> m2MS01(size_t nL = 2, size_t nH = 1);
-
-  
-  std::complex<long double> m2MS10(size_t nL = 2, size_t nH = 1);
-
-  
-  std::complex<long double> m2MS11(size_t nL = 2, size_t nH = 1);
-  
-
-  std::complex<long double> m2MS20(size_t nL = 2, size_t nH = 1);
+  std::complex<long double> m20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
 
   // Yukawa
-  std::complex<long double> my10(size_t nL = 2, size_t nH = 1);
+  std::complex<long double> my10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
   
-  std::complex<long double> my11(size_t nL = 2, size_t nH = 1);
+  std::complex<long double> my11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
   
 
-  std::complex<long double> my20(size_t nL = 2, size_t nH = 1);
+  std::complex<long double> my20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
 };
 
 
-class ww
+template<>
+class WW<MS>
 {
 
   long double mmb, mmt, mmH, mmW, mmZ, mu2;
@@ -202,13 +200,13 @@ class ww
   
   TsilST* protos[24];
 public:
-  ww()
+  WW()
   {
   }
 
-  ww(long double,long double,long double,long double,long double);
+  WW(long double,long double,long double,long double,long double);
 
-  ww(MSinput, long double);
+  WW(MSinput, long double);
 
   void init();
   
@@ -293,16 +291,16 @@ public:
 //   }
 
   // Pole -> MS
-  std::complex<long double> m01(size_t nL = 2, size_t nH = 1, int boson = 1);
+  std::complex<long double> m01(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
   
-  std::complex<long double> m10(size_t nL = 2, size_t nH = 1, int boson = 1);
+  std::complex<long double> m10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
   
-  std::complex<long double> m11(size_t nL = 2, size_t nH = 1, int boson = 1);
+  std::complex<long double> m11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
   
 
-  std::complex<long double> m20(size_t nL = 2, size_t nH = 1, int boson = 1);
+  std::complex<long double> m20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
 
 };
