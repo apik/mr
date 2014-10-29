@@ -108,7 +108,7 @@ public:
     std::vector<std::complex<long double> > diffIfin;
 
 
-#include "testWW.hpp"
+// #include "testWW.hpp"
     
     for(int i = 0; i < diffMfin.size(); i++)
       std::cout << "Test diffMfin[" << i << "]= " << diffMfin[i] << std::endl;

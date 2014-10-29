@@ -6,7 +6,7 @@ int main (int argc, char *argv[])
   try
     {
       // Disable TSIL warnings output
-      fclose(stderr);
+      // fclose(stderr);
       long double MMt,MMW,MMZ,MMH,alphaMt,alphaS;
 
       long double xxx=1.;
@@ -15,10 +15,10 @@ int main (int argc, char *argv[])
       std::vector<OSinput> KV;
       KV.push_back(OSinput(0, xxx*80.385, xxx*91.1876, 124, 173.5));
       KV.push_back(OSinput(0, xxx*80.385, xxx*91.1876, 125, 173.5));
-      KV.push_back(OSinput(0, xxx*80.385, xxx*91.1876, 126, 173.5));
-      KV.push_back(OSinput(0, xxx*80.385, xxx*91.1876, 126, 173.5));
-      KV.push_back(OSinput(0, xxx*80.385, xxx*91.1876, 126, 183.5));
-      KV.push_back(OSinput(0, xxx*80.385, xxx*91.1876, 126, 193.5));
+      // KV.push_back(OSinput(0, xxx*80.385, xxx*91.1876, 126, 173.5));
+      // KV.push_back(OSinput(0, xxx*80.385, xxx*91.1876, 126, 173.5));
+      // KV.push_back(OSinput(0, xxx*80.385, xxx*91.1876, 126, 183.5));
+      // KV.push_back(OSinput(0, xxx*80.385, xxx*91.1876, 126, 193.5));
       
       alphaMt  = 0.00779305;
       alphaS   = 0.1184;
@@ -31,6 +31,9 @@ int main (int argc, char *argv[])
       for (std::vector<OSinput>::iterator it = KV.begin(); it != KV.end(); ++it)
         {
           tt dMt  = tt(*it, it->MMZ());
+
+          dMt.test();
+          
           std::cout << "Mh= " << it->MH()  << std::endl;
           std::cout << "as(MMt) = " << as(it->MMt()) << std::endl;          
           std::cout << "\t1-loop \\alpha         " << pow(xxx,2)*it->Mt()*alphaMt/4./Pi*dMt.m10() << std::endl;
@@ -42,7 +45,7 @@ int main (int argc, char *argv[])
           
 
           std::cout << " Full one-loop +QCD " << it->Mt()*alphaMt/4./Pi*dMt.m10() + it->Mt()*alphaS/4./Pi*dMt.m01() << std::endl;
-          // dMt.test();
+          dMt.test();
         }
       
     }

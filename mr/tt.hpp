@@ -118,7 +118,7 @@ void test()
     std::vector<std::complex<long double> > diffSfin;
     std::vector<std::complex<long double> > diffIfin;
 
-// #include "testtt.hpp"
+#include "testtt.hpp"
 // #include "testyt.hpp"
 // #include "testttgl.hpp"
 // #include "testytgl.hpp"

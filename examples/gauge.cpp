@@ -7,7 +7,16 @@ int main (int argc, char *argv[])
   try
     {
       // Disable TSIL warnings output
-      // fclose(stderr);
+      fclose(stderr);
+
+
+      long double x = 0.1;
+      TsilST Tt00 = TsilST(x,1.,2.,3.,4.);
+      std::cout << "x = " << x << "   T(x,0,0,1) = " << Tt00.Txuv(0) << std::endl;
+
+      return 0;
+
+
       long double MMt,MMW,MMZ,MMH,alphaMt,alphaSMt;
 
       OSinput KVPhys(4.40, 80.385, 91.1875, 125.6, 172.3);

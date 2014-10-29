@@ -24,7 +24,7 @@
 # GNU C Compiler:
 # ===============
  CC		= gcc
- TSIL_OPT	= -O3 -funroll-loops 
+ TSIL_OPT	= -O0 -funroll-loops 
 #
 ################### INSTALLATION DIRECTORIES #######################
 #
