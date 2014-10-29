@@ -52,19 +52,19 @@ dr()
   // 
   // Delta-r
   // 
-  std::complex<long double> dr10(size_t nL = 2, size_t nH = 1);
+  std::complex<long double> dr10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
   
-  std::complex<long double> dr11(size_t nL = 2, size_t nH = 1);
+  std::complex<long double> dr11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
-  std::complex<long double> dr20(size_t nL = 2, size_t nH = 1);
+  std::complex<long double> dr20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
 
   // Gaugeless limit
-  std::complex<long double> drgl10(size_t nL = 2, size_t nH = 1);
+  std::complex<long double> drgl10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
   
-  std::complex<long double> drgl11(size_t nL = 2, size_t nH = 1);
+  std::complex<long double> drgl11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
-  std::complex<long double> drgl20(size_t nL = 2, size_t nH = 1);
+  std::complex<long double> drgl20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
   
 };

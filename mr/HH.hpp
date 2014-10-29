@@ -7,7 +7,13 @@
 #include "constants.hpp"
 #include "base.hpp"
 
+template<class T>
 class HH : public PoleMass
+{
+};
+
+template<>
+class HH<OS> : public PoleMass
 {
 
   long double MMb, MMt, MMH, MMW, MMZ, mu2;
@@ -138,48 +144,49 @@ public:
 
 
   }
-  std::complex<long double> m01(size_t nL = 2, size_t nH = 1);
+  std::complex<long double> m01(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
   
-  std::complex<long double> m10(size_t nL = 2, size_t nH = 1);
+  std::complex<long double> m10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
   
-  std::complex<long double> m11(size_t nL = 2, size_t nH = 1);
+  std::complex<long double> m11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
   
 
-  std::complex<long double> m20(size_t nL = 2, size_t nH = 1);
+  std::complex<long double> m20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
 
   // Gaugeless limit
-  std::complex<long double> mgl10(size_t nL = 2, size_t nH = 1);
+  std::complex<long double> mgl10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
   
-  std::complex<long double> mgl11(size_t nL = 2, size_t nH = 1);
+  std::complex<long double> mgl11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
-  std::complex<long double> mgl20(size_t nL = 2, size_t nH = 1);
+  std::complex<long double> mgl20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
 
     
   // 
   // \lambda/sqrt(2)/GF/MMH
   // 
-  std::complex<long double> my10(size_t nL = 2, size_t nH = 1);
+  std::complex<long double> my10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
-  std::complex<long double> my11(size_t nL = 2, size_t nH = 1);
+  std::complex<long double> my11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
   
-  std::complex<long double> my20(size_t nL = 2, size_t nH = 1);
+  std::complex<long double> my20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
   // Gaugeless limit
 
-  std::complex<long double> mygl10(size_t nL = 2, size_t nH = 1);
+  std::complex<long double> mygl10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
-  std::complex<long double> mygl11(size_t nL = 2, size_t nH = 1);
+  std::complex<long double> mygl11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
-  std::complex<long double> mygl20(size_t nL = 2, size_t nH = 1);
+  std::complex<long double> mygl20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
   
 };
 
 
-class hh
+template<>
+class HH<MS>
 {
 
   long double mmb, mmt, mmH, mmW, mmZ, mu2;
@@ -210,54 +217,54 @@ class hh
 
   TsilST* protos[20];
 public:
-  hh()
+  HH()
   {
   }
 
 
-  hh(long double,long double,long double,long double,long double);
+  HH(long double,long double,long double,long double,long double);
   
-  hh(MSinput, long double);
+  HH(MSinput, long double);
   
   void init();
 
-  std::complex<long double> m01(size_t nL = 2, size_t nH = 1);
+  std::complex<long double> m01(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
   
-  std::complex<long double> m10(size_t nL = 2, size_t nH = 1);
+  std::complex<long double> m10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
   
-  std::complex<long double> m11(size_t nL = 2, size_t nH = 1);
+  std::complex<long double> m11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
   
 
-  std::complex<long double> m20(size_t nL = 2, size_t nH = 1);
+  std::complex<long double> m20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
 
   // Gaugeless limit
-  std::complex<long double> mgl10(size_t nL = 2, size_t nH = 1);
+  std::complex<long double> mgl10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
   
-  std::complex<long double> mgl11(size_t nL = 2, size_t nH = 1);
+  std::complex<long double> mgl11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
-  std::complex<long double> mgl20(size_t nL = 2, size_t nH = 1);
+  std::complex<long double> mgl20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
 
     
   // 
   // \lambda/sqrt(2)/GF/MMH
   // 
-  std::complex<long double> lam10(size_t nL = 2, size_t nH = 1);
+  std::complex<long double> my10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
-  std::complex<long double> lam11(size_t nL = 2, size_t nH = 1);
+  std::complex<long double> my11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
   
-  std::complex<long double> lam20(size_t nL = 2, size_t nH = 1);
+  std::complex<long double> my20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
   // Gaugeless limit
 
-  std::complex<long double> lamgl10(size_t nL = 2, size_t nH = 1);
+  std::complex<long double> mygl10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
-  std::complex<long double> lamgl11(size_t nL = 2, size_t nH = 1);
+  std::complex<long double> mygl11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
-  std::complex<long double> lamgl20(size_t nL = 2, size_t nH = 1);
+  std::complex<long double> mygl20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
   
 };
 

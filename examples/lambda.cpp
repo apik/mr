@@ -36,7 +36,7 @@ int main (int argc, char *argv[])
         {
       
           BKKS.setMH(mHstart + mHi*mHstep);
-          HH dH  = HH(BKKS, BKKS.MMt());          
+          HH<OS> dH  = HH<OS>(BKKS, BKKS.MMt());          
           
           plotLam.add(BKKS.MH(),
                       alpha(BKKS.Mt())/4./Pi*dH.my10().real(),

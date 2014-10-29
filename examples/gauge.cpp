@@ -27,8 +27,8 @@ int main (int argc, char *argv[])
 
       long double alphaS = 0.1184;
 
-      WW dW    = WW(KVPhys, KVPhys.MMZ());
-      ZZ dZ    = ZZ(KVPhys, KVPhys.MMZ());
+      WW<OS> dW    = WW<OS>(KVPhys, KVPhys.MMZ());
+      ZZ<OS> dZ    = ZZ<OS>(KVPhys, KVPhys.MMZ());
       dr drOS  = dr(KVPhys, KVPhys.MMZ());
 
       long double r10,r11,r20,w10,w11,w20,z10,z11,z20;

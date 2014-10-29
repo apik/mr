@@ -63,10 +63,10 @@ int main (int argc, char *argv[])
         {
            
           std::vector<PoleMass*> pmvWW(4);
-          pmvWW[0] = new WW(KPV, mu[i]);
-          pmvWW[1] = new WW(divMt, mu[i]);
-          pmvWW[2] = new WW(divMH, mu[i]);
-          pmvWW[3] = new WW(divMW, mu[i]);
+          pmvWW[0] = new WW<OS>(KPV, mu[i]);
+          pmvWW[1] = new WW<OS>(divMt, mu[i]);
+          pmvWW[2] = new WW<OS>(divMH, mu[i]);
+          pmvWW[3] = new WW<OS>(divMW, mu[i]);
           
           mMap[std::make_pair("WW",mu[i])] = pmvWW;
 

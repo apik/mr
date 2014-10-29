@@ -22,8 +22,8 @@ int main (int argc, char *argv[])
       // long double alphaMZ = 1./137.035999;
 
       long double alphaMZ = 1./128.992;
-      HH dMH80  = HH(ACOVH80, ACOVH80.MMZ());
-      HH dMH200 = HH(ACOVH200, ACOVH200.MMZ());
+      HH<OS> dMH80  = HH<OS>(ACOVH80, ACOVH80.MMZ());
+      HH<OS> dMH200 = HH<OS>(ACOVH200, ACOVH200.MMZ());
       
       // Compare with FIG.5
       std::cout << "1-loop \\alpha      Mh= " << ACOVH80.MH()  << ", [mH/MH -1] = " << alphaMZ/4./Pi*dMH80.m10(0,0) << std::endl;

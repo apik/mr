@@ -242,4 +242,7 @@ public:
 
 };
 
+typedef MSinput MS;
+typedef OSinput OS;
 #endif // __SMINPUT_HPP__
+

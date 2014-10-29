@@ -8,7 +8,7 @@
 //   init(MMW, MMZ, MMH, MMt, mu2);
 // }
 
-ZZ::ZZ(OSinput sm, long double mu2_)
+ZZ<OS>::ZZ(OSinput sm, long double mu2_)
 {
   MMb = sm.MMb();
   MMW = sm.MMW();
@@ -21,7 +21,7 @@ ZZ::ZZ(OSinput sm, long double mu2_)
 }
 
 
-void ZZ::init()
+void ZZ<OS>::init()
 {
 
   CW = sqrt(MMW/MMZ);
@@ -70,7 +70,7 @@ void ZZ::init()
 }
 
 
-zz::zz(MSinput sm, long double mu2_)
+ZZ<MS>::ZZ(MSinput sm, long double mu2_)
 {
   mmb = sm.mmb();
   mmW = sm.mmW();
@@ -83,7 +83,7 @@ zz::zz(MSinput sm, long double mu2_)
 }
 
 
-void zz::init()
+void ZZ<MS>::init()
 {
 
   c = sqrt(mmW/mmZ);

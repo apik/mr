@@ -8,7 +8,8 @@
 //   init(MMB, MMW, MMZ, MMH, MMt, mu2);
 // }
 
-WW::WW(OSinput sm, long double mu2_)
+//template<>
+WW<OS>::WW(OSinput sm, long double mu2_)
 {
   MMb = sm.MMb();
   MMW = sm.MMW();
@@ -20,8 +21,8 @@ WW::WW(OSinput sm, long double mu2_)
   init();
 }
 
-
-void WW::init()
+//template<>
+void WW<OS>::init()
 {
 
   CW = sqrt(MMW/MMZ);
@@ -77,7 +78,7 @@ void WW::init()
 }
 
 
-ww::ww(MSinput sm, long double mu2_)
+WW<MS>::WW(MSinput sm, long double mu2_)
 {
   mmb = sm.mmb();
   mmW = sm.mmW();
@@ -90,7 +91,7 @@ ww::ww(MSinput sm, long double mu2_)
 }
 
 
-void ww::init()
+void WW<MS>::init()
 {
 
   c = sqrt(mmW/mmZ);
@@ -147,7 +148,7 @@ void ww::init()
 }
 
 
-std::pair<long double,long double> WW::test2(long double epsabs,long double epsrel)
+std::pair<long double,long double> WW<OS>::test2(long double epsabs,long double epsrel)
 { 
 
   std::cout << "Test 2" << std::endl;
