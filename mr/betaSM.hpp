@@ -1,3 +1,23 @@
+//
+// MR - 2-loop matching and 3-loop Running, including full 2-loop EW corrections
+// Copyright (C) 2014 Andrey Pikelner <pikelner@theor.jinr.ru>
+//
+// This file is part of MR.
+//
+// MR is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// MR is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with MR.  If not, see <http://www.gnu.org/licenses/>.
+//
+
 #ifndef __BETASM_HPP__
 #define __BETASM_HPP__
 
@@ -26,7 +46,7 @@ struct index_cmp_t : std::binary_function<index_t, index_t, bool> {
 
 
 
-index_t CouplingsPowers(size_t, size_t, size_t, size_t, size_t, size_t, size_t);
+// index_t CouplingsPowers(size_t, size_t, size_t, size_t, size_t, size_t, size_t);
 
 
 
@@ -81,6 +101,7 @@ class CouplingsSM
   double      mu0;
   state_type aSM0;
   size_t       NG;
+  BetaSMFull*   bep;
 
 public:
   CouplingsSM(double a1, double a2, double as, double at, double ab, double atau, double lam, double mu0_, size_t NG_) : mu0(mu0_), NG(NG_)
@@ -107,21 +128,35 @@ public:
                 << "   MU = " << std::setw(fw) << sqrt(mu0)
                 << "   NG = " << std::setw(fw) << NG <<std::endl; 
 
+       bep = new  BetaSMFull(pocoa1, pocoa2, pocoas, pocoat, pocoab, pocoatau, pocolam, NG_);
     }
 
   state_type operator()(long double mu2)
   {
-        
-    BetaSMFull be(pocoa1, pocoa2, pocoas, pocoat, pocoab, pocoatau, pocolam, NG);
     
+    // BetaSMFull be = BetaSMFull(pocoa1, pocoa2, pocoas, pocoat, pocoab,
+    //                 pocoatau, pocolam, NG);
+
     double lEnd = log(mu2/mu0);
+    // Integration parameters
+    // 
+    // For the Runge-Kutta controller the error made during one step
+    // is compared with 
+    //    eps_abs + eps_rel * ( ax * |x| + adxdt * dt * |dxdt| ). 
+    // If the error is smaller than this value the current
+    // step is accepted, otherwise it is rejected and the step size is decreased.
+    double abs_err = 1.0e-12 , rel_err = 1.0e-10 , a_x = 1.0 , a_dxdt = 1.0;
     
     controlled_stepper_standard< stepper_rk5_ck< state_type > >
-      controlled_rk5( 1E-6 , 1E-7 , 1.0 , 1.0 );
+      controlled_rk5( abs_err , rel_err , a_x , a_dxdt );
  
     state_type aSM(aSM0);
-    integrate_adaptive( controlled_rk5 ,
-                        be, aSM, 0.0, lEnd, 0.01
+    integrate_adaptive( controlled_rk5 , // Stepper function
+                        *bep,            // Derivatives
+                        aSM,             // Initial values
+                        0.0,             // t0 = Log[mu0/mu0]
+                        lEnd,            // t  = Log[mu/mu0]
+                        0.0001             // Initial step size
                         );
     return aSM; 
   }

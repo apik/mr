@@ -7,13 +7,13 @@ struct DiffGF
 {
 
   OSinput oi;
-  WW* dW;
-  ZZ* dZ;
+  WW<OS>* dW;
+  ZZ<OS>* dZ;
 
   DiffGF(OSinput in_) : oi(in_)
   {
-    dW = new WW(oi, oi.MMZ());
-    dZ = new ZZ(oi, oi.MMZ());
+    dW = new WW<OS>(oi, oi.MMZ());
+    dZ = new ZZ<OS>(oi, oi.MMZ());
   }
 
   long double operator()(long double alpha)
@@ -105,8 +105,8 @@ int main (int argc, char *argv[])
       // 
       
       
-      WW dW    = WW(KVPhys, KVPhys.MMZ());
-      ZZ dZ    = ZZ(KVPhys, KVPhys.MMZ());
+      WW<OS> dW    = WW<OS>(KVPhys, KVPhys.MMZ());
+      ZZ<OS> dZ    = ZZ<OS>(KVPhys, KVPhys.MMZ());
       std::ofstream of("GF.dat");
       for (double alpha = 1./137.; alpha < 1./125.; alpha += 0.00001)
         {

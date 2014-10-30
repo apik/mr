@@ -3,9 +3,11 @@
 // ROOT
 // #include <TRandom1.h>
 // #include <TH1F.h>
+#include <TF1.h>
 #include <TGraph.h>
 #include <TApplication.h>
 #include <TFitResult.h>
+
 int main (int argc, char *argv[])
 {
   try
@@ -44,23 +46,34 @@ int main (int argc, char *argv[])
 
       AlphaS as;
             
-      for (int mui = 0; mui < n; mui++)
+      for (int mHi = 0; mHi < n; mHi++)
         {
-          OSinput DS2l(0, 80.384, 91.1876, 125.6, 173.10);
-          ZZ<OS> dH  = ZZ<OS>(DS2l, pow(mustart + mui*mustep,2));          
+
+          long double mH0 = 1.;
+
+          long double MH = 0.01 + mH0 - mHi*mH0/double(n);
+
+          OSinput DS2l(0, 80.384, 91.1876, MH , 173.10);
+
+          HH<OS> dH  = HH<OS>(DS2l, DS2l.MMZ());          
           
-          std::cout << "2-loop \\alpha^2      Mh= " << DS2l.MH() << ", [mH/MH -1] = " << dH.m20() << std::endl;     
+          std::cout << " Mh= " << DS2l.MH() << ", [mH/MH -1] = " << dH.m20().real() << std::endl;     
           
-          x[mui] = mustart + mui*mustep// dH.Q()
-            ;
-          y[mui] = dH.m20().real();
+
+          x[mHi] = MH;
+
+          y[mHi] = 1./dH.m20().real();
 
         }
 
-      TGraph* gr = new TGraph(n,x,y);
+TGraph* gr = new TGraph(n,x,y);
+
+// TF1  *mH2 = new TF1("mH2","1/x/x",0.01,1.);
+// TF1  *mH4 = new TF1("mH4","1/x/x/x/x");
 
       // Trying to fit in mu=[80,180] range
       TFitResultPtr r = gr->Fit("pol2","S");
+      // TFitResultPtr r = gr->Fit("mH2","S");
       
       std::cout << " b -: " << r->Value(0) << std::endl;
       gr->Draw();

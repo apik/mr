@@ -53,18 +53,18 @@ int main (int argc, char *argv[])
 
         }
 
-      CRunDec crundec;
-      crundec.nfMmu[0].nf = 5;
-      crundec.nfMmu[0].Mth = Mb;
-      crundec.nfMmu[0].muth = Mb;
-      crundec.nfMmu[1].nf = 6;
-      crundec.nfMmu[1].Mth = Mt;
-      crundec.nfMmu[1].muth = Mt;
+      // CRunDec crundec;
+      // crundec.nfMmu[0].nf = 5;
+      // crundec.nfMmu[0].Mth = Mb;
+      // crundec.nfMmu[0].muth = Mb;
+      // crundec.nfMmu[1].nf = 6;
+      // crundec.nfMmu[1].Mth = Mt;
+      // crundec.nfMmu[1].muth = Mt;
       
       // crundec.AlL2AlH(asMz, Mz,crundec.nfMmu,sqrt(MMt),4);
       
-      std::cout << "My code: \\mu=M_top, g_3 = " << sqrt(4*Pi*as4l5(MMt)) << std::endl;
-      std::cout << "CRunDec: \\mu=M_top, g_3 = " << sqrt(4*Pi*crundec.AlL2AlH(asMz, Mz,crundec.nfMmu,Mt,4)) << std::endl;
+      // std::cout << "My code: \\mu=M_top, g_3 = " << sqrt(4*Pi*as4l5(MMt)) << std::endl;
+      // std::cout << "CRunDec: \\mu=M_top, g_3 = " << sqrt(4*Pi*crundec.AlL2AlH(asMz, Mz,crundec.nfMmu,Mt,4)) << std::endl;
 
     }
   catch (std::exception &p) 

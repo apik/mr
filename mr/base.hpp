@@ -1,3 +1,23 @@
+//
+// MR - 2-loop matching and 3-loop Running, including full 2-loop EW corrections
+// Copyright (C) 2014 Andrey Pikelner <pikelner@theor.jinr.ru>
+//
+// This file is part of MR.
+//
+// MR is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// MR is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with MR.  If not, see <http://www.gnu.org/licenses/>.
+//
+
 #ifndef __BASE_HPP__
 #define __BASE_HPP__
 
@@ -22,7 +42,17 @@ public:
 
   virtual std::complex<long double> m20(size_t nL = 2, size_t nH = 1, size_t boson = 1) = 0;
 
+  // and meta method
+  long double m(size_t apow, size_t aspow, size_t nL = 2, size_t nH = 1, size_t boson = 1)
+  {
+    if(apow == 1 && aspow == 0)
+      return m10(nL, nH, boson).real();
+    if(apow == 1 && aspow == 1)
+      return m11(nL, nH, boson).real();
+    if(apow == 2 && aspow == 0)
+      return m20(nL, nH, boson).real();
 
+  }
   // Gaugeless limit
   // virtual std::complex<long double> mgl01(size_t nL = 2, size_t nH = 1);
 
@@ -45,6 +75,16 @@ public:
 
   virtual std::complex<long double> my20(size_t nL = 2, size_t nH = 1, size_t boson = 1) = 0;
 
+  long double my(size_t apow, size_t aspow, size_t nL = 2, size_t nH = 1, size_t boson = 1)
+  {
+    if(apow == 1 && aspow == 0)
+      return my10(nL, nH, boson).real();
+    if(apow == 1 && aspow == 1)
+      return my11(nL, nH, boson).real();
+    if(apow == 2 && aspow == 0)
+      return my20(nL, nH, boson).real();
+
+  }
 
   // Gaugeless limit
   // virtual std::complex<long double> mygl01();

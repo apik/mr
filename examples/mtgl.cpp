@@ -12,15 +12,27 @@ int main (int argc, char *argv[])
       fclose(stderr);
       long double MMt,MMW,MMZ,MMH,alphaMt,alphaS;
 
-      long double xxx=1.;
+      long double xxx = 1.;
 
       // Compare with:
       std::vector<OSinput> KV;
-      // KV.push_back(OSinput(0, xxx*80.385, xxx*91.1876, 124, 173.5));
-      // KV.push_back(OSinput(0, xxx*80.385, xxx*91.1876, 125, 173.5));
-      // KV.push_back(OSinput(0, xxx*80.385, xxx*91.1876, 126, 173.5));
-      // KV.push_back(OSinput(4.89, xxx*80.385, xxx*91.1874, 126, 173.5));
-      KV.push_back(OSinput(4.4, xxx*80.385, xxx*91.1874, 125, 173.5));
+      KV.push_back(OSinput(4.4, 80.385, 91.1876, 124, 173.5));
+      KV.push_back(OSinput(4.4, 80.385, 91.1876, 125, 173.5));
+      KV.push_back(OSinput(4.4, 80.385, 91.1876, 126, 173.5));
+
+      OSinput KVphys = OSinput(4.4, 80.385, 91.1876, 126, 173.5);
+
+      // PDG 2014
+      std::vector<OSinput> KPV;
+      KPV.push_back(OSinput(4.4, 80.385, 91.1876, 125.7, 173.2));
+      KPV.push_back(OSinput(4.4, 80.385, 91.1876, 125.7, 173.2));
+      KPV.push_back(OSinput(4.4, 80.385, 91.1876, 125.7, 173.2));
+
+      OSinput KPVphys = OSinput(4.4, 80.385, 91.1876, 125.7, 173.2);
+
+
+
+
       // KV.push_back(OSinput(4.89, xxx*80.385, xxx*91.1874, 193.5, 193.5));
       alphaMt  = 0.00781592;
       // alphaMt  = 0.00779305;
