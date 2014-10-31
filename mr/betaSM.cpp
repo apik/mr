@@ -1,25 +1,29 @@
+//
+// MR - 2-loop matching and 3-loop Running, including full 2-loop EW corrections
+// Copyright (C) 2014 Andrey Pikelner <pikelner@theor.jinr.ru>
+//
+// This file is part of MR.
+//
+// MR is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// MR is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with MR.  If not, see <http://www.gnu.org/licenses/>.
+//
+
 #include <iostream>
 #include "betaSM.hpp"
-// #include "mr.hpp"
-
-
-// // index_t CouplingsPowers(size_t pocoa1_, size_t pocoa2_, size_t pocoas_, size_t pocoat_, size_t pocoab_, size_t pocoatau_, size_t pocolam_)
-// {
-//   index_t v;
-//   v.push_back(pocoa1_);
-//   v.push_back(pocoa2_);
-//   v.push_back(pocoas_);
-//   v.push_back(pocoat_);
-//   v.push_back(pocoab_);
-//   v.push_back(pocoatau_);
-//   v.push_back(pocolam_);
-//   return v;
-// }
-
 
 void BetaSMFull::add(std::map<index_t, long double, index_cmp_t>& m, size_t p, size_t ia1, size_t ia2, size_t ias, size_t iat, size_t iab, size_t iatau, size_t ilam, long double c)
 {
-  if (ia1 + ia2 + ias + iat + iab + iatau + ilam <= p + 2 ) // 
+  if (ia1 + ia2 + ias + iat + iab + iatau + ilam <= p + 1 ) // 
     {
       if ((pocoa1 < 0 ) && (ia1 > 0))
         return;
@@ -637,7 +641,6 @@ BetaSMFull::BetaSMFull(int pocoa1_, int pocoa2_, int pocoas_, int pocoat_, int p
   add(be7, pocoa7, 3, 0, 1, 0, 0, 0, 0, (-1683/1000.) * (NG) + (198/125.) * ((NG) * (Zeta3)));
   add(be7, pocoa7, 3, 1, 0, 0, 0, 0, 0, -29779/32000. + (-18001/12000.) * (NG) + (-2/9.) * (pow(NG,2)) + (81/160.) * (Zeta3) + (183/125.) * ((NG) * (Zeta3)));
   add(be7, pocoa7, 4, 0, 0, 0, 0, 0, 0, -12321/128000. + (-12441/8000.) * (NG) + (-1/5.) * (pow(NG,2)) + (8019/80000.) * (Zeta3) + (171/125.) * ((NG) * (Zeta3)));
-  
 }
 
 
@@ -648,7 +651,6 @@ void BetaSMFull::operator() (const state_type &a, state_type &dadt, const double
   // 
   //    - parameter: t = Log(mu/mu0)
   // 
-    
   dadt[0] = 0;                // beta a1
   dadt[1] = 0;                // beta a2
   dadt[2] = 0;                // beta as
@@ -656,7 +658,7 @@ void BetaSMFull::operator() (const state_type &a, state_type &dadt, const double
   dadt[4] = 0;                // beta ab
   dadt[5] = 0;                // beta atau
   dadt[6] = 0;                // beta lam
-    
+
   long double a1   = pocoa1   < 0  ? 0 : a[0];
   long double a2   = pocoa2   < 0  ? 0 : a[1];
   long double as   = pocoa3   < 0  ? 0 : a[2];
@@ -664,6 +666,7 @@ void BetaSMFull::operator() (const state_type &a, state_type &dadt, const double
   long double ab   = pocoa5   < 0  ? 0 : a[4];
   long double atau = pocoa6   < 0  ? 0 : a[5];
   long double lam  = pocoa7   < 0  ? 0 : a[6];
+
 
   for (std::map<index_t, long double, index_cmp_t>::iterator it = be1.begin(); it != be1.end(); ++it)
     {
@@ -720,6 +723,7 @@ void BetaSMFull::operator() (const state_type &a, state_type &dadt, const double
                                 *pow(at,ia[3])*pow(ab,ia[4])*pow(atau,ia[5])
                                 *pow(lam,ia[6]);
     }
+
 
 }
 

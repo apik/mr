@@ -4,7 +4,7 @@ ACLOCAL_AMFLAGS = ${ACLOCAL_FLAGS} -I m4
 LDADD = ../mr/libmr.a
 EX_CFLAGS = $(MR_CFLAGS) -I$(top_srcdir)/tsil-1.21 -I$(top_srcdir)/mr
 
-noinst_PROGRAMS = mW mZ mH mt runAlpha runSM runGL mb yukawa lambda yt gauge plotyukawa mtgl bezrukovFit GFermi
+noinst_PROGRAMS = mW mZ mH mt runAlpha runSM runGL mb yukawa lambda yt gauge plotyukawa mtgl bezrukovFit GFermi tables
 if HAVE_ROOT
 noinst_PROGRAMS += mHroot interpolation
 endif 
@@ -43,6 +43,10 @@ mt_LDADD = $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.21 -ltsil -
 mtgl_SOURCES =  mtgl.cpp
 mtgl_CPPFLAGS = $(EX_CFLAGS)
 mtgl_LDADD = $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.21 -ltsil -lm
+
+tables_SOURCES =  tables.cpp
+tables_CPPFLAGS = $(EX_CFLAGS)
+tables_LDADD = $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.21 -ltsil -lm
 
 yukawa_SOURCES =  yukawa.cpp
 yukawa_CPPFLAGS = $(EX_CFLAGS)

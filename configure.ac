@@ -49,8 +49,8 @@ if test "x$ac_cv_path_MCC" != "x" ; then
   AC_SUBST([MCC],[$ac_cv_path_MCC])
   AC_MSG_RESULT($ac_cv_path_MCC)
 else
-  AC_MSG_RESULT(no)
-fi
+  AC_MSG_RESULT(no)     
+fi                      
 if test `uname -s` == "Linux" ; then
   case `uname -m` in
     ia64)   SystemIDList="Linux-IA64";;
@@ -85,11 +85,10 @@ else
   fi
 fi
 # ------------------------- # ------------------------- # -------------------------
-AM_CONDITIONAL(HAVE_MCC,   test "x$with_mcc_path" != "xno" && test "x$ac_cv_path_MCC"   != "x")
+dnl AM_CONDITIONAL(HAVE_MCC,   test "x$with_mcc_path" != "xno" && test "x$ac_cv_path_MCC"   != "x")
 AM_CONDITIONAL(HAVE_MPREP, test "x$with_mcc_path" != "xno" && test "x$ac_cv_path_MPREP" != "x")
 
-AC_MSG_NOTICE([$ac_cv_path_MPREP])
-
+AC_MSG_NOTICE([$MPREP])
 
 AC_PROG_RANLIB
 dnl LT_INIT

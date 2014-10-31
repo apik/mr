@@ -1,3 +1,22 @@
+/* * MR - 2-loop matching and 3-loop Running, including full 2-loop EW corrections
+ * Copyright (C) 2014 Andrey Pikelner <pikelner@theor.jinr.ru>
+ *
+ * This file is part of MR.
+ *
+ * MR is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * MR is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with MR.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 /*
   CRunDec.h
 
@@ -34,14 +53,14 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 
 // Numerical values for input parameters:
-#define asMz 0.1183
-#define Mz   91.18
-#define Mt   173.2
-#define Mb   4.8
-#define Mc   1.5
-#define muc  1.279
-#define mub  4.163
-#define Mtau 1.777
+/* #define asMz 0.1183 */
+/* #define Mz   91.18 */
+/* #define Mt   173.2 */
+/* #define Mb   4.8 */
+/* #define Mc   1.5 */
+/* #define muc  1.279 */
+/* #define mub  4.163 */
+/* #define Mtau 1.777 */
 
 /* // Some constants: */
 #define cf 4./3.
