@@ -27,18 +27,13 @@
 #include "constants.hpp"
 #include "base.hpp"
 
-// #include "tsil.hpp"
-// #include "mr.hpp"
-
-class bb
+class bb : public PoleMass
 {
 
   long double MMb, MMt, MMH, MMW, MMZ, mu2;
   long double SW, CW;
 
   Tsil* prot0bb0b;
-
-  static const long double EPAIR2 = 1.; 
 
 public:
   bb()

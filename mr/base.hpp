@@ -42,6 +42,11 @@ public:
 
   virtual std::complex<long double> m20(size_t nL = 2, size_t nH = 1, size_t boson = 1) = 0;
 
+  virtual std::complex<long double> m02(size_t nL = 5)
+  {
+    std::cout << "Order a^0*as^2 is not implemented for this particle" << std::endl;
+  }
+
   // and meta method
   long double m(size_t apow, size_t aspow, size_t nL = 2, size_t nH = 1, size_t boson = 1)
   {

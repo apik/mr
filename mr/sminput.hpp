@@ -34,6 +34,29 @@ public:
     iMb(Mb_), iMW(MW_), iMZ(MZ_), iMH(MH_), iMt(Mt_)
   {
   }
+  
+  bool operator < (const OSinput& b) const 
+  {
+    if(iMb < b.Mb()) return true;
+    else if(iMb > b.Mb()) return false;
+    else
+      
+      if(iMW < b.MW()) return true;
+      else if(iMW > b.MW()) return false;
+      else
+        
+        if(iMZ < b.MZ()) return true;
+        else if(iMZ > b.MZ()) return false;
+        else
+        
+          if(iMH < b.MH()) return true;
+          else if(iMH > b.MH()) return false;
+          else
+            if(iMt < b.Mt()) return true;
+            else if(iMt > b.Mt()) return false;
+    return false;
+  }
+
   long double MMb() const
   {
     return iMb*iMb;

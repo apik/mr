@@ -72,4 +72,3 @@ void bb::init(long double MMb_, long double MMW_,long double MMZ_,long double MM
 
 }
 
-const long double bb::EPAIR2;
