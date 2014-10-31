@@ -1,30 +1,14 @@
-HAVE_MPREP=@HAVE_MPREP@
 MPREP=@MPREP@
 MATHROOT= $(dir $(MPREP))
 
 
-mr : mrtm.cpp mr.cpp 
-	$(CXX)  -I$(MATHROOT) -I../mr -I../tsil-1.21 $?  -L$(MATHROOT) -lML64i3 -lm -lpthread -lrt -lstdc++ -L../mr -lmr -o $@
+mr : mrimpl.cpp mr.cpp 
+	$(CXX)  -I$(MATHROOT) -I../mr -I../tsil-1.21 $?  -L$(MATHROOT) -lML64i3 -lm -lpthread -lrt -lstdc++ -L../mr -lmr -L../tsil-1.21 -ltsil -o $@
 
 
 # if HAVE_MPREP
-mrtm.cpp: mr.tm
+mr.cpp: mr.tm
 	$(MPREP) $? -o $@
 # endif
 
 
-# CXX = g++
-# CXXFLAGS = -I$(MATHROOT)
-# LDFLAGS  = -L$(MATHROOT)
-
-# BINARIES = mr
-
-# all : 
-# 	echo $(MATHROOT)
-# # $(BINARIES)
-
-# mr : mrtm.c mr.cpp 
-# 	$(CXX)  $(CXXFLAGS) -I$(top_srcdir)/mr mrtm.c mr.cpp  -lML64i3 -lm -lpthread -lrt -lstdc++ -o $@
-
-# mrtm.c : mr.tm
-# 	$(MPREP) mr.tm -o mrtm.c
