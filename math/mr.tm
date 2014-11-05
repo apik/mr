@@ -28,9 +28,15 @@
 
 :Evaluate:  mbMb::usage  = "mbMb[Mb,MW,MZ,MH,Mt,mu,nL=2,nH=1]  mb/Mb, full correction to relation between MS-bar mass mb and pole Mb"
 
-:Evaluate:  aEW::usage  = "alpha/4/Pi, running EW constant"
+:Evaluate:  a1::usage  = "a1[Mb,MW,MZ,MH,Mt,mu,nL=2,nH=1]  a1=5/3(g1/(4\[Pi]))^2, we use GUT normalization"
 
-:Evaluate:  aQCD::usage  = "alpha_S/4/Pi, running QCD constant"
+:Evaluate:  a2::usage  = "a2[Mb,MW,MZ,MH,Mt,mu,nL=2,nH=1]  a2=(g2/(4\[Pi]))^2"
+
+:Evaluate:  aEW::usage  = "\[Alpha]/(4\[Pi]), running EW constant"
+
+:Evaluate:  aQCD::usage  = "\[Alpha]_S/(4\[Pi]), running QCD constant"
+
+:Evaluate:  Gf::usage  = "G_F Fermi constant"
 
 :Evaluate:  xW::usage  = ""
 :Evaluate:  xZ::usage  = ""
@@ -38,10 +44,17 @@
 :Evaluate:  xt::usage  = ""
 :Evaluate:  xb::usage  = ""
 
+:Evaluate:  yW::usage  = ""
+:Evaluate:  yZ::usage  = ""
+:Evaluate:  yH::usage  = ""
+:Evaluate:  yt::usage  = ""
+:Evaluate:  yb::usage  = ""
+
 :Evaluate:  Begin["`Private`"]
 
 // Mathematica part
 
+// Masses
 :Evaluate:  mmWMMW[mb_?NumericQ,mW_?NumericQ,mZ_?NumericQ,mH_?NumericQ,mt_?NumericQ,mu_?NumericQ,nL_Integer:2,nH_Integer:1] := (1+aEW[mu]*xW[1,0]+aEW[mu]*aQCD[mu]*xW[1,1]+aEW[mu]^2*xW[2,0])/.XW[mb,mW,mZ,mH,mt,mu,nH,nL];
 
 :Evaluate:  mmZMMZ[mb_?NumericQ,mW_?NumericQ,mZ_?NumericQ,mH_?NumericQ,mt_?NumericQ,mu_?NumericQ,nL_Integer:2,nH_Integer:1] := (1+aEW[mu]*xZ[1,0]+aEW[mu]*aQCD[mu]*xZ[1,1]+aEW[mu]^2*xZ[2,0])/.XZ[mb,mW,mZ,mH,mt,mu,nH,nL];
@@ -51,7 +64,12 @@
 :Evaluate:  mtMt[mb_?NumericQ,mW_?NumericQ,mZ_?NumericQ,mH_?NumericQ,mt_?NumericQ,mu_?NumericQ,nL_Integer:2,nH_Integer:1] := (1+aEW[mu]*xt[1,0]+aEW[mu]*aQCD[mu]*xt[1,1]+aEW[mu]^2*xt[2,0])/.Xt[mb,mW,mZ,mH,mt,mu,nH,nL];
 
 :Evaluate:  mbMb[mb_?NumericQ,mW_?NumericQ,mZ_?NumericQ,mH_?NumericQ,mt_?NumericQ,mu_?NumericQ,nL_Integer:2,nH_Integer:1] := (1+aEW[mu]*xb[1,0]+aEW[mu]*aQCD[mu]*xb[1,1]+aEW[mu]^2*xb[2,0])/.Xb[mb,mW,mZ,mH,mt,mu,nH,nL];
- 
+
+// Couplings
+:Evaluate:  a1[mb_?NumericQ,mW_?NumericQ,mZ_?NumericQ,mH_?NumericQ,mt_?NumericQ,mu_?NumericQ,nL_Integer:2,nH_Integer:1] := 5/3*2^(5/2)*Gf/(4*Pi)^2*((mZ^2*(1+aEW[mu]*yZ[1,0]+aEW[mu]*aQCD[mu]*yZ[1,1]+aEW[mu]^2*yZ[2,0])/.XZ[mb,mW,mZ,mH,mt,mu,nH,nL]) - (mW^2*(1+aEW[mu]*yW[1,0]+aEW[mu]*aQCD[mu]*yW[1,1]+aEW[mu]^2*yW[2,0])/.XW[mb,mW,mZ,mH,mt,mu,nH,nL]));
+
+:Evaluate:  a2[mb_?NumericQ,mW_?NumericQ,mZ_?NumericQ,mH_?NumericQ,mt_?NumericQ,mu_?NumericQ,nL_Integer:2,nH_Integer:1] := 2^(5/2)*Gf/(4*Pi)^2*mW^2*(1+aEW[mu]*yW[1,0]+aEW[mu]*aQCD[mu]*yW[1,1]+aEW[mu]^2*yW[2,0])/.XW[mb,mW,mZ,mH,mt,mu,nH,nL];
+
 // C++ part
 :Begin:
 :Function: XW

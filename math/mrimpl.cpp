@@ -190,41 +190,41 @@ void Xb(double mb, double mW, double mZ, double mH, double mt, double mu, int nL
       }
 }
 
-void XW(double mb, double mW, double mZ, double mH, double mt, double mu, int apow, int aspow, int nL,int nH) 
-{
-  OSinput oi(mb, mW, mZ, mH, mt);
+// void XW(double mb, double mW, double mZ, double mH, double mt, double mu, int apow, int aspow, int nL,int nH) 
+// {
+//   OSinput oi(mb, mW, mZ, mH, mt);
 
-  WW<OS> wwm = get_WW(oi, pow(mu,2));
+//   WW<OS> wwm = get_WW(oi, pow(mu,2));
 
-  MLPutReal128(stdlink, wwm.m(apow, aspow, nL, nH));
-}
+//   MLPutReal128(stdlink, wwm.m(apow, aspow, nL, nH));
+// }
 
-void XZ(double mb, double mW, double mZ, double mH, double mt, double mu, int apow, int aspow, int nL,int nH) 
-{
-  OSinput oi(mb, mW, mZ, mH, mt);
+// void XZ(double mb, double mW, double mZ, double mH, double mt, double mu, int apow, int aspow, int nL,int nH) 
+// {
+//   OSinput oi(mb, mW, mZ, mH, mt);
 
-  ZZ<OS> zzm = get_ZZ(oi, pow(mu,2));
+//   ZZ<OS> zzm = get_ZZ(oi, pow(mu,2));
 
-  MLPutReal128(stdlink, zzm.m(apow, aspow, nL, nH));
-}
+//   MLPutReal128(stdlink, zzm.m(apow, aspow, nL, nH));
+// }
 
-void XH(double mb, double mW, double mZ, double mH, double mt, double mu, int apow, int aspow, int nL,int nH) 
-{
-  OSinput oi(mb, mW, mZ, mH, mt);
+// void XH(double mb, double mW, double mZ, double mH, double mt, double mu, int apow, int aspow, int nL,int nH) 
+// {
+//   OSinput oi(mb, mW, mZ, mH, mt);
 
-  HH<OS> hhm = get_HH(oi, pow(mu,2));
+//   HH<OS> hhm = get_HH(oi, pow(mu,2));
 
-  MLPutReal128(stdlink, hhm.m(apow, aspow, nL, nH));
-}
+//   MLPutReal128(stdlink, hhm.m(apow, aspow, nL, nH));
+// }
 
-void Xt(double mb, double mW, double mZ, double mH, double mt, double mu, int apow, int aspow, int nL,int nH) 
-{
-  OSinput oi(mb, mW, mZ, mH, mt);
+// void Xt(double mb, double mW, double mZ, double mH, double mt, double mu, int apow, int aspow, int nL,int nH) 
+// {
+//   OSinput oi(mb, mW, mZ, mH, mt);
 
-  tt ttm = get_tt(oi, pow(mu,2));
+//   tt ttm = get_tt(oi, pow(mu,2));
 
-  MLPutReal128(stdlink, ttm.m(apow, aspow, nL, nH));
-}
+//   MLPutReal128(stdlink, ttm.m(apow, aspow, nL, nH));
+// }
 
 
 
