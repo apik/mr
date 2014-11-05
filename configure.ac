@@ -75,6 +75,7 @@ else
       ac_cv_path_MPREP=$with_mcc_path/mprep
     else
       ac_cv_path_MCC=$with_mcc_path
+      ac_cv_path_MPREP=$with_mcc_path/mprep
     fi
     if test "x$ac_cv_path_MCC" != "x" && test -x $ac_cv_path_MCC ; then
       AC_SUBST([MCC],[$ac_cv_path_MCC])
@@ -89,6 +90,34 @@ dnl AM_CONDITIONAL(HAVE_MCC,   test "x$with_mcc_path" != "xno" && test "x$ac_cv_
 AM_CONDITIONAL(HAVE_MPREP, test "x$with_mcc_path" != "xno" && test "x$ac_cv_path_MPREP" != "x")
 
 AC_MSG_NOTICE([$MPREP])
+
+AC_CANONICAL_HOST       
+case $host_os in        
+  darwin* )   
+          LDMATH="-lMLi4 -lc++ -framework Foundation"
+          AC_SUBST(LDMATH)  
+          ALTMATHPATH="AlternativeLibraries"
+          AC_SUBST(ALTMATHPATH)  
+          ;;
+  linux*)
+          LDMATH="-lML64i3 -lm -lpthread -lrt -lstdc++"
+          AC_SUBST(LDMATH)  
+          ALTMATHPATH=""
+          AC_SUBST(ALTMATHPATH)  
+          ;;
+   *BSD*)
+          LDMATH="-lML64i3 -lm -lpthread -lrt -lstdc++"
+          AC_SUBST(LDMATH)  
+          ALTMATHPATH=""
+          AC_SUBST(ALTMATHPATH)  
+          ;;
+    *)
+
+    AC_MSG_ERROR([Mathlink on your platform is not currently supported])
+    ;;
+esac
+
+AC_MSG_NOTICE([$host_os])
 
 AC_PROG_RANLIB
 dnl LT_INIT

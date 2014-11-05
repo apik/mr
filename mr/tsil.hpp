@@ -31,7 +31,7 @@
 #ifdef __cplusplus
 extern "C"{
 #endif  
-#define complex _Complex
+// #define complex _Complex
 #include "tsil.h"  
 
 #ifdef __cplusplus
