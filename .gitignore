@@ -7,9 +7,9 @@ Makefile.in
 /autom4te.cache
 /aclocal.m4
 /compile
-/configure
+# /configure
 /depcomp
-/install-sh
+# /install-sh
 /missing
 /stamp-h1
 
