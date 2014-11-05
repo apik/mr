@@ -38,7 +38,7 @@
 
 :Evaluate:  Gf::usage  = "G_F Fermi constant"
 
-:Evaluate:  xW::usage  = ""
+:Evaluate:  xW::usage  = "1/\[Alpha](\*SubscriptBox[M,Z]) in \*SubscriptBox[N,f] = 5 QCD"
 :Evaluate:  xZ::usage  = ""
 :Evaluate:  xH::usage  = ""
 :Evaluate:  xt::usage  = ""
