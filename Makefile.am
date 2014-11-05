@@ -9,6 +9,11 @@ SUBDIRS = \
 	tsil-1.21 \
 	mr \
 	examples \
-	tests \
-	math
+	tests 
+
+if HAVE_MPREP
+SUBDIRS+=math
+endif
+
+
 
