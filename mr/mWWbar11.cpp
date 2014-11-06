@@ -20,7 +20,7 @@
 
 #include <WW.hpp>
 std::complex<long double>
-WW<OS>::m11(size_t nL, size_t nH, size_t boson)
+WW<OS>::x11(size_t nL, size_t nH, size_t boson)
 {     
       
       

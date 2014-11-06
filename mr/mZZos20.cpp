@@ -20,7 +20,7 @@
 
 #include <ZZ.hpp>
 std::complex<long double>
-ZZ<MS>::m20(size_t nL, size_t nH, size_t boson)
+ZZ<MS>::x20(size_t nL, size_t nH, size_t boson)
 {     
       
       

@@ -20,7 +20,7 @@
 
 #include <HH.hpp>
 std::complex<long double>
-HH<OS>::mgl20(size_t nL, size_t nH, size_t boson)
+HH<OS>::xgl20(size_t nL, size_t nH, size_t boson)
 {     
       
       

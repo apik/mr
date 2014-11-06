@@ -20,7 +20,7 @@
 
 #include <HH.hpp>
 std::complex<long double>
-HH<OS>::my11(size_t nL, size_t nH, size_t boson)
+HH<OS>::y11(size_t nL, size_t nH, size_t boson)
 {     
       
       

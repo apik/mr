@@ -20,7 +20,7 @@
 
 #include <tt.hpp>
 std::complex<long double>
-tt::mgl20(size_t nL, size_t nH, size_t boson)
+tt::xgl20(size_t nL, size_t nH, size_t boson)
 {     
       
       

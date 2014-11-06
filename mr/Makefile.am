@@ -4,7 +4,7 @@ ACLOCAL_AMFLAGS = ${ACLOCAL_FLAGS} -I m4
 lib_LIBRARIES = libmr.a
 
 # Main sources
-MAINSRC = mr.hpp tsil.hpp tsil.cpp base.hpp
+MAINSRC = mr.hpp tsil.hpp tsil.cpp base.hpp mOS2mMSQCD.cpp
 
 # Running
 RUNSRC = betaSM.hpp betaSM.cpp betaQCD.hpp CRunDec.cpp CRunDec.h
@@ -17,11 +17,11 @@ ALPHAGF = alphaGF.hpp alphaGF.cpp alphaGF10.cpp alphaGF11.cpp alphaGF20.cpp
 # 
 # MS-bar masses and constants
 #
-BBMS = bb.hpp bb.cpp mbbbar01.cpp mbbbar02.cpp mbbbar03.cpp mbbbar10.cpp mbbbar11.cpp mbbbar20.cpp yubb01.cpp yubb10.cpp yubb11.cpp yubb20.cpp
+BBMS = bb.hpp bb.cpp mbbbar01.cpp mbbbar10.cpp mbbbar11.cpp mbbbar20.cpp yubb01.cpp yubb10.cpp yubb11.cpp yubb20.cpp
 WWMS = WW.hpp WW.cpp mWWbar10.cpp mWWbar11.cpp mWWbar20.cpp yuWW10.cpp yuWW11.cpp yuWW20.cpp
 ZZMS = ZZ.hpp ZZ.cpp mZZbar10.cpp mZZbar11.cpp mZZbar20.cpp yuZZ10.cpp yuZZ11.cpp yuZZ20.cpp
 HHMS = HH.hpp HH.cpp mHHbar10.cpp mHHbar11.cpp mHHbar20.cpp yuHH10.cpp yuHH11.cpp yuHH20.cpp
-TTMS = tt.hpp tt.cpp mttbar01.cpp mttbar02.cpp mttbar03.cpp mttbar10.cpp mttbar11.cpp mttbar20.cpp yutt01.cpp yutt10.cpp yutt11.cpp yutt20.cpp
+TTMS = tt.hpp tt.cpp mttbar01.cpp mttbar10.cpp mttbar11.cpp mttbar20.cpp yutt01.cpp yutt10.cpp yutt11.cpp yutt20.cpp
 
 # 
 # Gauge-less limit

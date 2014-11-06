@@ -169,68 +169,53 @@ std::pair<long double,long double> test2(long double epsabs = 1.E-5,long double 
   // 
   // Pure QCD part m_ij=mY_ij by definition
   // 
-  std::complex<long double> m01(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+  std::complex<long double> x01(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
-  std::complex<long double> m02(size_t nL = 5);
+  std::complex<long double> x02(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
-  std::complex<long double> m03(size_t nL = 5);
+  std::complex<long double> x03(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
   // 
   // Mass corrections
   // 
-  std::complex<long double> m10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+  std::complex<long double> x10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
   
-  std::complex<long double> m11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+  std::complex<long double> x11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
-  std::complex<long double> m20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
-
-
-  // 
-  // Delta-r
-  // 
-  // std::complex<long double> drgl10(size_t nL = 2, size_t nH = 1);
-  
-  // std::complex<long double> drgl11(size_t nL = 2, size_t nH = 1);
-
-  // std::complex<long double> drgl20(size_t nL = 2, size_t nH = 1);
+  std::complex<long double> x20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
 
   // Gaugeless limit
-  std::complex<long double> mgl01(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+  std::complex<long double> xgl01(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
-  std::complex<long double> mgl10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+  std::complex<long double> xgl10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
   
-  std::complex<long double> mgl11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+  std::complex<long double> xgl11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
-  std::complex<long double> mgl20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+  std::complex<long double> xgl20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
   
 
   // 
   // mass definition using Yukawa couplings 
   // mY=y/sqrt(2*sqrt(2)*GF)
   // 
-  std::complex<long double> my01(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+  std::complex<long double> y01(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
-  std::complex<long double> my10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+  std::complex<long double> y10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
-  std::complex<long double> my11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+  std::complex<long double> y11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
-  std::complex<long double> my20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+  std::complex<long double> y20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
 
   // Gaugeless limit
-  std::complex<long double> mygl01(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+  std::complex<long double> ygl01(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
-  std::complex<long double> mygl10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+  std::complex<long double> ygl10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
-  std::complex<long double> mygl11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+  std::complex<long double> ygl11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
-  std::complex<long double> mygl20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
-
-  // std::complex<long double> dalpha(long double MMt,long double MMH)
-  // {
-  //   return 0;
-  // }
+  std::complex<long double> ygl20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
   
 };
 

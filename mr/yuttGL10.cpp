@@ -20,7 +20,7 @@
 
 #include <tt.hpp>
 std::complex<long double>
-tt::mygl10(size_t nL, size_t nH, size_t boson)
+tt::ygl10(size_t nL, size_t nH, size_t boson)
 {     
       
       

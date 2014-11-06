@@ -20,7 +20,7 @@
 
 #include <bb.hpp>
 std::complex<long double>
-bb::my11(size_t nL, size_t nH, size_t boson)
+bb::y11(size_t nL, size_t nH, size_t boson)
 {     
       
       

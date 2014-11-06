@@ -14,7 +14,7 @@ int main (int argc, char *argv[])
       TsilST Tt00 = TsilST(x,1.,2.,3.,4.);
       std::cout << "x = " << x << "   T(x,0,0,1) = " << Tt00.Txuv(0) << std::endl;
 
-      return 0;
+
 
 
       long double MMt,MMW,MMZ,MMH,alphaMt,alphaSMt;
@@ -33,18 +33,19 @@ int main (int argc, char *argv[])
 
       long double r10,r11,r20,w10,w11,w20,z10,z11,z20;
 
-      
+      dW.x02();
+      return 0;
       r10 = real(alpha/4./Pi*drOS.dr10());
       r11 = real(alpha/4./Pi*alphaS/4./Pi*drOS.dr11());
       r20 = real(pow(alpha/4./Pi,2)*drOS.dr20());
       
-      w10 = real(alpha/4./Pi*dW.m10());
-      w11 = real(alpha/4./Pi*alphaS/4./Pi*dW.m11());
-      w20 = real(pow(alpha/4./Pi,2)*dW.m20());
+      w10 = real(alpha/4./Pi*dW.x10());
+      w11 = real(alpha/4./Pi*alphaS/4./Pi*dW.x11());
+      w20 = real(pow(alpha/4./Pi,2)*dW.x20());
       
-      z10 = real(alpha/4./Pi*dZ.m10());
-      z11 = real(alpha/4./Pi*alphaS/4./Pi*dZ.m11());
-      z20 = real(pow(alpha/4./Pi,2)*dZ.m20());
+      z10 = real(alpha/4./Pi*dZ.x10());
+      z11 = real(alpha/4./Pi*alphaS/4./Pi*dZ.x11());
+      z20 = real(pow(alpha/4./Pi,2)*dZ.x20());
       
       long double rCZ10,rCZ11,rCZ20;
 
@@ -81,17 +82,17 @@ int main (int argc, char *argv[])
       dMZ = 0;
       dR  = 0;
 
-      dMW += alpha/4./Pi*dW.m10();
-      dMZ += alpha/4./Pi*dZ.m10();
+      dMW += alpha/4./Pi*dW.x10();
+      dMZ += alpha/4./Pi*dZ.x10();
       dR   += alpha/4./Pi*drOS.dr10();
       
       
-      // dMW += alpha/4./Pi*alphaS/4./Pi*dW.m11();
-      // dMZ += alpha/4./Pi*alphaS/4./Pi*dZ.m11();
+      // dMW += alpha/4./Pi*alphaS/4./Pi*dW.x11();
+      // dMZ += alpha/4./Pi*alphaS/4./Pi*dZ.x11();
       // dR   += alpha/4./Pi*alphaS/4./Pi*drOS.dr11();
       
-      // dMW += pow(alpha/4./Pi,2)*dW.m20();
-      // dMZ += pow(alpha/4./Pi,2)*dZ.m20();
+      // dMW += pow(alpha/4./Pi,2)*dW.x20();
+      // dMZ += pow(alpha/4./Pi,2)*dZ.x20();
       // dR  += pow(alpha/4./Pi,2)*drOS.dr20();
 
       
@@ -165,8 +166,8 @@ int main (int argc, char *argv[])
       
       
       // std::cout << aGF.a10() << std::endl;
-      // std::cout << dW.my10() << std::endl;
-      // std::cout << dZ.my10() << std::endl;
+      // std::cout << dW.y10() << std::endl;
+      // std::cout << dZ.y10() << std::endl;
       // return 0;
 
       
@@ -184,8 +185,8 @@ int main (int argc, char *argv[])
       // //     OSinput inH0(4.40, 80.385, 91.1876,mH , 173.5);
       // //     ZZ dZ    = ZZ(inH0, KVPhys.MMt());
       // //     WW dW    = WW(inH0, KVPhys.MMt());
-      // //     // of        << mH << ", " << dZ.m20(0,0).real() << std::endl;
-      // //     std::cout << "Log_10(mH) = " << log10mH <<" Mh = " << mH << ", MW = " << dW.m20(0,0) << ", MZ = " << dZ.m20(0,0) << std::endl;
+      // //     // of        << mH << ", " << dZ.x20(0,0).real() << std::endl;
+      // //     std::cout << "Log_10(mH) = " << log10mH <<" Mh = " << mH << ", MW = " << dW.x20(0,0) << ", MZ = " << dZ.x20(0,0) << std::endl;
       //     MMH = inH0.MMH();
       //     MMZ = inH0.MMZ();
       //     MMW = inH0.MMW();
@@ -248,8 +249,8 @@ int main (int argc, char *argv[])
 
 
       // // 1-loop level
-      // dMyW += alpha/4./Pi*dW.my10();
-      // dMyZ += alpha/4./Pi*dZ.my10();
+      // dMyW += alpha/4./Pi*dW.y10();
+      // dMyZ += alpha/4./Pi*dZ.y10();
       // dR   += alpha/4./Pi*drOS.dr10();
 
       // alpha = real(sqrt(2)*Gf*KVPhys.MMW()/Pi*(1-KVPhys.MMW()/KVPhys.MMZ()*dMyW/dMyZ)*dMyW);
@@ -257,13 +258,13 @@ int main (int argc, char *argv[])
       // std::cout << "\n 1-loop: 1/" << 1./alpha << std::endl;
       // std::cout << " \\delta-r = " << dR << std::endl;
 
-      // std::cout << " dMW = " << dW.m10().real() << std::endl;
-      // std::cout << " dMZ = " << dZ.m10().real() << std::endl;
-      // std::cout << " dMt = " << dt.m10().real() << std::endl;
+      // std::cout << " dMW = " << dW.x10().real() << std::endl;
+      // std::cout << " dMZ = " << dZ.x10().real() << std::endl;
+      // std::cout << " dMt = " << dt.x10().real() << std::endl;
 
       
-      // std::cout << " dMyW = " << dW.my10().real() << std::endl;
-      // std::cout << " dMyZ = " << dZ.my10().real() << std::endl;
+      // std::cout << " dMyW = " << dW.y10().real() << std::endl;
+      // std::cout << " dMyZ = " << dZ.y10().real() << std::endl;
 
       
 
@@ -271,12 +272,12 @@ int main (int argc, char *argv[])
       // dMyW = 1;
       // dMyZ = 1;
 
-      // dMyW += alpha/4./Pi*dW.my10();
-      // dMyZ += alpha/4./Pi*dZ.my10();
+      // dMyW += alpha/4./Pi*dW.y10();
+      // dMyZ += alpha/4./Pi*dZ.y10();
       // dR   += alpha/4./Pi*drOS.dr10();
 
-      // dMyW += alpha/4./Pi*alphaS/4./Pi*dW.my11();
-      // dMyZ += alpha/4./Pi*alphaS/4./Pi*dZ.my11();
+      // dMyW += alpha/4./Pi*alphaS/4./Pi*dW.y11();
+      // dMyZ += alpha/4./Pi*alphaS/4./Pi*dZ.y11();
       // dR   += alpha/4./Pi*alphaS/4./Pi*drOS.dr11();
       
       
@@ -284,41 +285,41 @@ int main (int argc, char *argv[])
       // std::cout << "\n EW*QCD: 1/" << 1./alpha << std::endl;
       // std::cout << " \\delta-r = " << dR << std::endl;
 
-      // std::cout << " dMW = " << dW.m11().real() << std::endl;
-      // std::cout << " dMZ = " << dZ.m11().real() << std::endl;
-      // std::cout << " dMyW = " <<dW.my11().real() << std::endl;
-      // std::cout << " dMyZ = " <<dZ.my11().real() << std::endl;
+      // std::cout << " dMW = " << dW.x11().real() << std::endl;
+      // std::cout << " dMZ = " << dZ.x11().real() << std::endl;
+      // std::cout << " dMyW = " <<dW.y11().real() << std::endl;
+      // std::cout << " dMyZ = " <<dZ.y11().real() << std::endl;
 
-      // std::cout << " dMt = " << dt.m11().real() << std::endl;
-      // std::cout << " dMyt = " <<dt.my11().real() << std::endl;
+      // std::cout << " dMt = " << dt.x11().real() << std::endl;
+      // std::cout << " dMyt = " <<dt.y11().real() << std::endl;
       // // 2-loop level EW
       // dMyW = 1;
       // dMyZ = 1;
       
-      // dMyW += alpha/4./Pi*dW.my10();
-      // dMyZ += alpha/4./Pi*dZ.my10();
+      // dMyW += alpha/4./Pi*dW.y10();
+      // dMyZ += alpha/4./Pi*dZ.y10();
       // dR   += alpha/4./Pi*drOS.dr10();
       
-      // dMyW += alpha/4./Pi*alphaS/4./Pi*dW.my11();
-      // dMyZ += alpha/4./Pi*alphaS/4./Pi*dZ.my11();
+      // dMyW += alpha/4./Pi*alphaS/4./Pi*dW.y11();
+      // dMyZ += alpha/4./Pi*alphaS/4./Pi*dZ.y11();
       // dR   += alpha/4./Pi*alphaS/4./Pi*drOS.dr11();
       
-      // dMyW += pow(alpha/4./Pi,2)*dW.my20();
-      // dMyZ += pow(alpha/4./Pi,2)*dZ.my20();
+      // dMyW += pow(alpha/4./Pi,2)*dW.y20();
+      // dMyZ += pow(alpha/4./Pi,2)*dZ.y20();
       // dR   += pow(alpha/4./Pi,2)*drOS.dr20();
 
       // alpha = real(sqrt(2)*Gf*KVPhys.MMW()/Pi*(1-KVPhys.MMW()/KVPhys.MMZ()*dMyW/dMyZ)*dMyW);
       // std::cout << "\n EW*EW:  1/" << 1./alpha << std::endl;
       // std::cout << " \\delta-r = " << dR << std::endl;
 
-      // std::cout << " dMW = " << dW.m20().real() << std::endl;
-      // std::cout << " dMZ = " << dZ.m20().real() << std::endl;
+      // std::cout << " dMW = " << dW.x20().real() << std::endl;
+      // std::cout << " dMZ = " << dZ.x20().real() << std::endl;
 
-      // std::cout << " dMyW = " << dW.my20().real() << std::endl;
-      // std::cout << " dMyZ = " << dZ.my20().real() << std::endl;
+      // std::cout << " dMyW = " << dW.y20().real() << std::endl;
+      // std::cout << " dMyZ = " << dZ.y20().real() << std::endl;
 
-      // std::cout << " dMt = " << dt.m20().real() << std::endl;
-      // std::cout << " dMyt = " << dt.my20().real() << std::endl;
+      // std::cout << " dMt = " << dt.x20().real() << std::endl;
+      // std::cout << " dMyt = " << dt.y20().real() << std::endl;
 
 
       
@@ -331,10 +332,10 @@ int main (int argc, char *argv[])
       // // std::cout << "[ W ]" << std::endl;
       // // std::cout << "Mh= " << KVPhys.MH()  << std::endl;
       // // std::cout << "as(MMt) = " << as(KVPhys.MMt()) << std::endl;          
-      // // std::cout << "\t1-loop \\alpha         " << alphaMZ/4./Pi*dMW.my10() << std::endl;
-      // // // std::cout << "\t1-loop \\alpha_S       " << alphaSMZ/4./Pi*dMW.my01() << std::endl;
-      // // std::cout << "\t2-loop \\alpha*\\alpha_S" << alphaMZ/4./Pi*alphaSMZ/4./Pi*dMW.my11() << std::endl;
-      // // std::cout << "\t2-loop \\alpha^2       " << pow(alphaMZ/4./Pi,2)*dMW.my20() << std::endl;
+      // // std::cout << "\t1-loop \\alpha         " << alphaMZ/4./Pi*dMW.y10() << std::endl;
+      // // // std::cout << "\t1-loop \\alpha_S       " << alphaSMZ/4./Pi*dMW.y01() << std::endl;
+      // // std::cout << "\t2-loop \\alpha*\\alpha_S" << alphaMZ/4./Pi*alphaSMZ/4./Pi*dMW.y11() << std::endl;
+      // // std::cout << "\t2-loop \\alpha^2       " << pow(alphaMZ/4./Pi,2)*dMW.y20() << std::endl;
 
       // // long double toLam =1.+0*KVPhys.MMH()*0.0000116637/sqrt(2);
 
@@ -347,25 +348,25 @@ int main (int argc, char *argv[])
       // // std::cout << "as(MMt) = " << as(degr.MMt()) << std::endl;          
       // // std::cout << "\t1-loop \\alpha         " << toLam*alphaMt/4./Pi*dMH.lam
       // 10() << std::endl;
-      // // std::cout << "\t1-loop \\alpha_S       " << alphaSMZ/4./Pi*dMW.my01() << std::endl;
-      // std::cout << "\t2-loop \\alpha*\\alpha_S" << toLam*alphaMt/4./Pi*alphaSMt/4./Pi*dMH.lam11() << std::endl;
-      // std::cout << "\t2-loop \\alpha^2       " << toLam*pow(alphaMt/4./Pi,2)*dMH.lam20() << std::endl;
+      // // std::cout << "\t1-loop \\alpha_S       " << alphaSMZ/4./Pi*dMW.y01() << std::endl;
+      // std::cout << "\t2-loop \\alpha*\\alpha_S" << toLam*alphaMt/4./Pi*alphaSMt/4./Pi*dMH.lax11() << std::endl;
+      // std::cout << "\t2-loop \\alpha^2       " << toLam*pow(alphaMt/4./Pi,2)*dMH.lax20() << std::endl;
 
 
       // Yukawa bottom
    //    bb dMb  = bb(degr, degr.MMb());
    //    std::cout << "[ Bottom quark ]" << std::endl;
-   //    std::cout << "\t1-loop \\alpha         " << alphaMb/4./Pi*dMb.my10() << std::endl;
-   //    std::cout << "\t1-loop \\alpha_S       " << alphaSMb/4./Pi*dMb.my01() << std::endl;
-   //    std::cout << "\t2-loop \\alpha*\\alpha_S" << alphaMb/4./Pi*alphaSMt/4./Pi*dMb.my11() << std::endl;
-   //    std::cout << "\t2-loop \\alpha^2       " << pow(alphaMb/4./Pi,2)*dMb.my20() << std::endl;
+   //    std::cout << "\t1-loop \\alpha         " << alphaMb/4./Pi*dMb.y10() << std::endl;
+   //    std::cout << "\t1-loop \\alpha_S       " << alphaSMb/4./Pi*dMb.y01() << std::endl;
+   //    std::cout << "\t2-loop \\alpha*\\alpha_S" << alphaMb/4./Pi*alphaSMt/4./Pi*dMb.y11() << std::endl;
+   //    std::cout << "\t2-loop \\alpha^2       " << pow(alphaMb/4./Pi,2)*dMb.y20() << std::endl;
       
       
    //    std::cout << "[ ratios ]" << std::endl;
-   //    std::cout << "<10> yt/yb = " << dMb.my10()/dMt.my10() << " mt/mb = " << dMb.m10()/dMt.m10() << std::endl;
-   //    std::cout << "<01> yt/yb = " << dMb.my01()/dMt.my01() << " mt/mb = " << dMb.m01()/dMt.m01() << std::endl;
-   //    std::cout << "<11> yt/yb = " << dMb.my11()/dMt.my11() << " mt/mb = " << dMb.m11()/dMt.m11() << std::endl;
-   //    std::cout << "<20> yt/yb = " << dMb.my20()/dMt.my20() << " mt/mb = " << dMb.m20()/dMt.m20() << std::endl;
+   //    std::cout << "<10> yt/yb = " << dMb.y10()/dMt.y10() << " mt/mb = " << dMb.x10()/dMt.x10() << std::endl;
+   //    std::cout << "<01> yt/yb = " << dMb.y01()/dMt.y01() << " mt/mb = " << dMb.m01()/dMt.m01() << std::endl;
+   //    std::cout << "<11> yt/yb = " << dMb.y11()/dMt.y11() << " mt/mb = " << dMb.x11()/dMt.x11() << std::endl;
+   //    std::cout << "<20> yt/yb = " << dMb.y20()/dMt.y20() << " mt/mb = " << dMb.x20()/dMt.x20() << std::endl;
       
       
 
@@ -379,9 +380,10 @@ int main (int argc, char *argv[])
    //    std::cout << "\n\n \t Jegerlehner input:" << std::endl;
       
    //    std::complex<long double> ytFJ = inFJ.Mt()*(1 
-   //                                                + alphaMt/4./Pi*topFJ.m10() 
+   //                                                +
+   //                                                alphaMt/4./Pi*topFJ.x10() 
    //                                                + alphaSMt/4./Pi*topFJ.m01()
-   //                                                + alphaMt/4./Pi*alphaSMt/4./Pi*topFJ.m11()
+   //                                                + alphaMt/4./Pi*alphaSMt/4./Pi*topFJ.x11()
    //                                                )*sqrt(2*sqrt(2)*1.16637e-5);
 
    //    std::cout << "yT(mt) = " << ytFJ << std::endl;
@@ -397,7 +399,7 @@ int main (int argc, char *argv[])
    //     OSinput DS2l(4.40, 80.385, 91.1876, mHstart + mHi*mHstep, 173.5);
    //     tt dtY  = tt(DS2l, DS2l.MMt());          
        
-   //     plotYt.add(DS2l.MH(),alphaMt/4./Pi*alphaSMt/4./Pi*dtY.my11().real());
+   //     plotYt.add(DS2l.MH(),alphaMt/4./Pi*alphaSMt/4./Pi*dtY.y11().real());
    //   }
 
 
@@ -411,7 +413,7 @@ int main (int argc, char *argv[])
    //     OSinput DS2l(4.40, 80.385, 91.1876, 125.6, 173.5);
    //     bb dbY  = bb(DS2l, mHstart + mHi*mHstep);          
        
-   //     plotYb.add(mHstart + mHi*mHstep,alphaMb/4./Pi*alphaSMb/4./Pi*dbY.my11().real());
+   //     plotYb.add(mHstart + mHi*mHstep,alphaMb/4./Pi*alphaSMb/4./Pi*dbY.y11().real());
    //   }
 
     }

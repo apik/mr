@@ -20,7 +20,7 @@
 
 #include <bb.hpp>
 std::complex<long double>
-bb::mgl11(size_t nL, size_t nH, size_t boson)
+bb::xgl11(size_t nL, size_t nH, size_t boson)
 {     
       
       

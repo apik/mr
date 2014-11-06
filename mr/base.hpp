@@ -36,27 +36,38 @@ class PoleMass
   // Mass corrections
   // 
 public:
-  virtual std::complex<long double> m10(size_t nL = 2, size_t nH = 1, size_t boson = 1) = 0;
+  virtual std::complex<long double> x10(size_t nL = 2, size_t nH = 1, size_t boson = 1) = 0;
   
-  virtual std::complex<long double> m11(size_t nL = 2, size_t nH = 1, size_t boson = 1) = 0;
+  virtual std::complex<long double> x11(size_t nL = 2, size_t nH = 1, size_t boson = 1) = 0;
 
-  virtual std::complex<long double> m20(size_t nL = 2, size_t nH = 1, size_t boson = 1) = 0;
+  virtual std::complex<long double> x20(size_t nL = 2, size_t nH = 1, size_t boson = 1) = 0;
 
-  virtual std::complex<long double> m02(size_t nL = 5)
+  virtual std::complex<long double> x01(size_t nL = 2, size_t nH = 1, size_t boson = 1)
+  {
+    std::cout << "Order a^0*as^1 is not implemented for this particle" << std::endl;
+    return 0;
+  }
+  virtual std::complex<long double> x02(size_t nL = 2, size_t nH = 1, size_t boson = 1)
   {
     std::cout << "Order a^0*as^2 is not implemented for this particle" << std::endl;
+    return 0;
+  }
+  virtual std::complex<long double> x03(size_t nL = 2, size_t nH = 1, size_t boson = 1)
+  {
+    std::cout << "Order a^0*as^3 is not implemented for this particle" << std::endl;
+    return 0;
   }
 
   // and meta method
-  long double m(size_t apow, size_t aspow, size_t nL = 2, size_t nH = 1, size_t boson = 1)
+  long double x(size_t apow, size_t aspow, size_t nL = 2, size_t nH = 1, size_t boson = 1)
   {
     if(apow == 1 && aspow == 0)
-      return m10(nL, nH, boson).real();
+      return x10(nL, nH, boson).real();
     if(apow == 1 && aspow == 1)
-      return m11(nL, nH, boson).real();
+      return x11(nL, nH, boson).real();
     if(apow == 2 && aspow == 0)
-      return m20(nL, nH, boson).real();
-
+      return x20(nL, nH, boson).real();
+    return 0;
   }
   // Gaugeless limit
   // virtual std::complex<long double> mgl01(size_t nL = 2, size_t nH = 1);
@@ -74,21 +85,27 @@ public:
   // 
   // virtual std::complex<long double> my01() = 0;
 
-  virtual std::complex<long double> my10(size_t nL = 2, size_t nH = 1, size_t boson = 1) = 0;
+  virtual std::complex<long double> y10(size_t nL = 2, size_t nH = 1, size_t boson = 1) = 0;
 
-  virtual std::complex<long double> my11(size_t nL = 2, size_t nH = 1, size_t boson = 1) = 0;
+  virtual std::complex<long double> y11(size_t nL = 2, size_t nH = 1, size_t boson = 1) = 0;
 
-  virtual std::complex<long double> my20(size_t nL = 2, size_t nH = 1, size_t boson = 1) = 0;
+  virtual std::complex<long double> y20(size_t nL = 2, size_t nH = 1, size_t boson = 1) = 0;
 
-  long double my(size_t apow, size_t aspow, size_t nL = 2, size_t nH = 1, size_t boson = 1)
+  long double y(size_t apow, size_t aspow, size_t nL = 2, size_t nH = 1, size_t boson = 1)
   {
     if(apow == 1 && aspow == 0)
-      return my10(nL, nH, boson).real();
+      return y10(nL, nH, boson).real();
     if(apow == 1 && aspow == 1)
-      return my11(nL, nH, boson).real();
+      return y11(nL, nH, boson).real();
     if(apow == 2 && aspow == 0)
-      return my20(nL, nH, boson).real();
-
+      return y20(nL, nH, boson).real();
+    if(apow == 0 && aspow == 1)
+      return x01(nL, nH, boson).real();
+    if(apow == 0 && aspow == 2)
+      return x02(nL, nH, boson).real();
+    if(apow == 0 && aspow == 3)
+      return x03(nL, nH, boson).real();
+    return 0;
   }
 
   // Gaugeless limit
@@ -102,10 +119,5 @@ public:
 
 
 };
-
-// class RunningMass
-// {
-//   virtual void  m01()
-// };
 
 #endif  // __BASE_HPP__

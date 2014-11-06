@@ -20,7 +20,7 @@
 
 #include <ZZ.hpp>
 std::complex<long double>
-ZZ<OS>::my10(size_t nL, size_t nH, size_t boson)
+ZZ<OS>::y10(size_t nL, size_t nH, size_t boson)
 {     
       
       

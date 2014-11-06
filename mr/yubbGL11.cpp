@@ -20,7 +20,7 @@
 
 #include <bb.hpp>
 std::complex<long double>
-bb::mygl11(size_t nL, size_t nH, size_t boson)
+bb::ygl11(size_t nL, size_t nH, size_t boson)
 {     
       
       

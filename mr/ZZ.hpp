@@ -150,28 +150,23 @@ public:
 
 
   }
-  std::complex<long double> m01(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+  
+  std::complex<long double> x10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
   
-  std::complex<long double> m10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
-
-  
-  std::complex<long double> m11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+  std::complex<long double> x11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
   
 
-  std::complex<long double> m20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+  std::complex<long double> x20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
 
-  std::complex<long double> my01(size_t nL = 2, size_t nH = 1, size_t boson = 1);
-
-  
-  std::complex<long double> my10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+  std::complex<long double> y10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
   
-  std::complex<long double> my11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+  std::complex<long double> y11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
   
 
-  std::complex<long double> my20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+  std::complex<long double> y20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
     
 };
 
@@ -215,16 +210,13 @@ public:
   void init();
 
 
-  std::complex<long double> m01(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+  std::complex<long double> x10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
   
-  std::complex<long double> m10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
-
-  
-  std::complex<long double> m11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+  std::complex<long double> x11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
   
 
-  std::complex<long double> m20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+  std::complex<long double> x20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
     
 };

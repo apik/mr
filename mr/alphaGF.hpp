@@ -82,7 +82,7 @@ class alphaGF
   TsilSTU* protWZ0Z;
   TsilSTU* protHW00;
   
-  TsilST* protos[24];
+  TsilST* protos[41];
 public:
   alphaGF()
   {

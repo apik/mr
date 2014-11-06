@@ -20,7 +20,7 @@
 
 #include <WW.hpp>
 std::complex<long double>
-WW<OS>::my11(size_t nL, size_t nH, size_t boson)
+WW<OS>::y11(size_t nL, size_t nH, size_t boson)
 {     
       
       

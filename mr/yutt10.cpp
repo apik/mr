@@ -20,7 +20,7 @@
 
 #include <tt.hpp>
 std::complex<long double>
-tt::my10(size_t nL, size_t nH, size_t boson)
+tt::y10(size_t nL, size_t nH, size_t boson)
 {     
       
       

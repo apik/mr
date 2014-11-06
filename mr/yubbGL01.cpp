@@ -20,7 +20,7 @@
 
 #include <bb.hpp>
 std::complex<long double>
-bb::mygl01(size_t nL, size_t nH, size_t boson)
+bb::ygl01(size_t nL, size_t nH, size_t boson)
 {     
       
       

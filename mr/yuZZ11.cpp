@@ -20,7 +20,7 @@
 
 #include <ZZ.hpp>
 std::complex<long double>
-ZZ<OS>::my11(size_t nL, size_t nH, size_t boson)
+ZZ<OS>::y11(size_t nL, size_t nH, size_t boson)
 {     
       
       

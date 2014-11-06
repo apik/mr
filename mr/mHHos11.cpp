@@ -20,7 +20,7 @@
 
 #include <HH.hpp>
 std::complex<long double>
-HH<MS>::m11(size_t nL, size_t nH, size_t boson)
+HH<MS>::x11(size_t nL, size_t nH, size_t boson)
 {     
       
       
