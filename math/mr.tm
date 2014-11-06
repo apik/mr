@@ -1,4 +1,4 @@
-:Evaluate:  Print["MR - MAtching and Running Mathmatica interface"];
+:Evaluate:  Print["MR - Matching and Running Mathmatica interface"];
 :Evaluate:  Print["To see available functions use Names[\"mr`*\"]"];
 :Evaluate:  Print["Andrey Pikelner <pikelner@theor.jinr.ru>"];
 
@@ -32,13 +32,19 @@
 
 :Evaluate:  a2::usage  = "a2[Mb,MW,MZ,MH,Mt,mu,nL=2,nH=1]  a2=(g2/(4\[Pi]))^2"
 
+:Evaluate:  at::usage  = "a1[Mb,MW,MZ,MH,Mt,mu,nL=2,nH=1]  at=(yt/(4\[Pi]))^2"
+
+:Evaluate:  ab::usage  = "ab[Mb,MW,MZ,MH,Mt,mu,nL=2,nH=1]  ab=(yb/(4\[Pi]))^2"
+
+:Evaluate:  alam::usage  = "alam[Mb,MW,MZ,MH,Mt,mu,nL=2,nH=1]  alam=\[Lambda]/(4\[Pi])^2"
+
 :Evaluate:  aEW::usage  = "\[Alpha]/(4\[Pi]), running EW constant"
 
 :Evaluate:  aQCD::usage  = "\[Alpha]_S/(4\[Pi]), running QCD constant"
 
 :Evaluate:  Gf::usage  = "G_F Fermi constant"
 
-:Evaluate:  xW::usage  = "1/\[Alpha](\*SubscriptBox[M,Z]) in \*SubscriptBox[N,f] = 5 QCD"
+:Evaluate:  xW::usage  = ""
 :Evaluate:  xZ::usage  = ""
 :Evaluate:  xH::usage  = ""
 :Evaluate:  xt::usage  = ""
@@ -69,6 +75,12 @@
 :Evaluate:  a1[mb_?NumericQ,mW_?NumericQ,mZ_?NumericQ,mH_?NumericQ,mt_?NumericQ,mu_?NumericQ,nL_Integer:2,nH_Integer:1] := 5/3*2^(5/2)*Gf/(4*Pi)^2*((mZ^2*(1+aEW[mu]*yZ[1,0]+aEW[mu]*aQCD[mu]*yZ[1,1]+aEW[mu]^2*yZ[2,0])/.XZ[mb,mW,mZ,mH,mt,mu,nH,nL]) - (mW^2*(1+aEW[mu]*yW[1,0]+aEW[mu]*aQCD[mu]*yW[1,1]+aEW[mu]^2*yW[2,0])/.XW[mb,mW,mZ,mH,mt,mu,nH,nL]));
 
 :Evaluate:  a2[mb_?NumericQ,mW_?NumericQ,mZ_?NumericQ,mH_?NumericQ,mt_?NumericQ,mu_?NumericQ,nL_Integer:2,nH_Integer:1] := 2^(5/2)*Gf/(4*Pi)^2*mW^2*(1+aEW[mu]*yW[1,0]+aEW[mu]*aQCD[mu]*yW[1,1]+aEW[mu]^2*yW[2,0])/.XW[mb,mW,mZ,mH,mt,mu,nH,nL];
+
+:Evaluate:  at[mb_?NumericQ,mW_?NumericQ,mZ_?NumericQ,mH_?NumericQ,mt_?NumericQ,mu_?NumericQ,nL_Integer:2,nH_Integer:1] := 2^(3/4)*Sqrt[Gf]/(4*Pi)^2*mt*(1+aEW[mu]*yt[1,0]+aEW[mu]*aQCD[mu]*yt[1,1]+aEW[mu]^2*yt[2,0])/.Xt[mb,mW,mZ,mH,mt,mu,nH,nL];
+
+:Evaluate:  ab[mb_?NumericQ,mW_?NumericQ,mZ_?NumericQ,mH_?NumericQ,mt_?NumericQ,mu_?NumericQ,nL_Integer:2,nH_Integer:1] := 2^(3/4)*Sqrt[Gf]/(4*Pi)^2*mb*(1+aEW[mu]*yb[1,0]+aEW[mu]*aQCD[mu]*yb[1,1]+aEW[mu]^2*yb[2,0])/.Xb[mb,mW,mZ,mH,mt,mu,nH,nL];
+
+:Evaluate:  alam[mb_?NumericQ,mW_?NumericQ,mZ_?NumericQ,mH_?NumericQ,mt_?NumericQ,mu_?NumericQ,nL_Integer:2,nH_Integer:1] := 2^(-1/2)*Gf/(4*Pi)^2*mH^2*(1+aEW[mu]*yH[1,0]+aEW[mu]*aQCD[mu]*yH[1,1]+aEW[mu]^2*yH[2,0])/.XH[mb,mW,mZ,mH,mt,mu,nH,nL];
 
 // C++ part
 :Begin:

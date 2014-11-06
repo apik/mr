@@ -98,4 +98,109 @@ public:
   }
 };
 
+/*
+  
+         ^
+         |
+  nf = 6 +                      o
+         |                     /
+  nf = 5 +     o---<---#--->---
+         |
+         |
+         +-----+-------+--------+--->
+        0      Mb      MZ       Mt
+        
+        We use as(MZ) as initial input, than 
+        for applications in MR we need:
+        1. as(Mb,nf=5) we use nf=5 running from MZ
+        2. as(Mt,nf=6) and as(mu>Mt,nf=6) we use 
+        nf=5 running from MZ to Mt and at threshold 
+        mu=Mt match as(nf=5) and as(nf=6) than run 
+        to higher scale with as(nf=6) if needed.
+ */
+
+long double as5nf2as6nf(long double MM, long double mu2, long double as4Pi, size_t nl = 5, size_t ord = 4)
+{
+
+  long double Lmu2MM = log(mu2/MM);
+
+  // z[as(nf=5)] = as(nf=6)/as(nf=5)
+  long double z = 1;
+
+  if(ord > 0)
+
+    z += as4Pi*Lmu2MM * ( 2./3. );
+
+  if(ord > 1)
+    {
+      z +=  + pow(as4Pi,2) * ( 14./3. );
+      
+      z +=  + pow(as4Pi,2)*Lmu2MM * ( 38./3. );
+      
+      z +=  + pow(as4Pi,2)*pow(Lmu2MM,2) * ( 4./9. );
+      
+    }
+  
+  if(ord > 2)
+    {
+      
+      z +=  + pow(as4Pi,3) * ( 58933./1944. + 80507./432.*Zeta3 + 128./3.*Zeta2 + 128./9.*log(2)*Zeta2 );
+      
+      z +=  + pow(as4Pi,3)*nl * (  - 2479./486. - 64./9.*Zeta2 );
+      
+      z +=  + pow(as4Pi,3)*Lmu2MM * ( 8941./27. );
+      
+      z +=  + pow(as4Pi,3)*Lmu2MM*nl * (  - 409./27. );
+      
+      z +=  + pow(as4Pi,3)*pow(Lmu2MM,2) * ( 511./9. );
+
+      z +=  + pow(as4Pi,3)*pow(Lmu2MM,3) * ( 8./27. );
+    }
+
+  if(ord > 3)
+    {
+
+      z +=  + pow(as4Pi,4) * ( 592371712./382725. - 21814592./2835.*
+                               a5 - 25433192./1701.*a4 + 40596749./5670.*Zeta5 + 71102219./8505.
+                               *Zeta4 + 2408412383./340200.*Zeta3 + 11153936./1215.*Zeta2 - 46048./
+                               27.*Zeta2*Zeta3 - 18636934./2835.*log(2)*Zeta4 - 131456./81.*log(2)*Zeta2 + 
+                               5826074./1701.*pow(log(2),2)*Zeta2 - 5453648./8505.*pow(log(2),3)*Zeta2
+                               - 3179149./5103.*pow(log(2),4) + 2726824./42525.*pow(log(2),5) );
+      
+      z +=  + pow(as4Pi,4)*nl * (  - 1773073./2916. - 692./81.*a4 - 
+                                   460./9.*Zeta5 + 697709./648.*Zeta4 - 4756441./3888.*Zeta3 - 71296./
+                                   81.*Zeta2 - 5632./81.*log(2)*Zeta2 + 1709./81.*pow(log(2),2)*Zeta2 - 173./
+                                   486.*pow(log(2),4) );
+      
+      z +=  + pow(as4Pi,4)*pow(nl,2) * ( 140825./5832. + 76./27.*Zeta3
+                                         + 1664./81.*Zeta2 );
+      
+      z +=  + pow(as4Pi,4)*Lmu2MM * ( 21084715./2916. + 2922161./648.*Zeta3
+                                 + 8960./9.*Zeta2 + 8960./27.*log(2)*Zeta2 );
+      
+      z +=  + pow(as4Pi,4)*Lmu2MM*nl * (  - 1140191./1458. - 132283./324.*
+                                     Zeta3 - 6016./27.*Zeta2 - 512./27.*log(2)*Zeta2 );
+      
+      z +=  + pow(as4Pi,4)*Lmu2MM*pow(nl,2) * ( 1679./729. + 256./27.*Zeta2);
+      
+      z +=  + pow(as4Pi,4)*pow(Lmu2MM,2) * ( 94078./27. );
+      
+      z +=  + pow(as4Pi,4)*pow(Lmu2MM,2)*nl * (  - 18230./81. );
+      
+      z +=  + pow(as4Pi,4)*pow(Lmu2MM,2)*pow(nl,2) * ( 493./81. );
+      
+      z +=  + pow(as4Pi,4)*pow(Lmu2MM,3) * ( 28298./81. );
+      
+      z +=  + pow(as4Pi,4)*pow(Lmu2MM,3)*nl * (  - 428./27. );
+      
+      z +=  + pow(as4Pi,4)*pow(Lmu2MM,4) * ( 16./81. );
+      
+    }
+
+  if(ord > 4)
+    std::cerr << "WARNING: Only 4-loop decoupling relations available."<< std::endl;
+
+  return as4Pi*z;
+}
+
 #endif  // __BETAQCD_HPP_
