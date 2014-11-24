@@ -164,8 +164,6 @@ public:
 
 
   }
-  std::complex<long double> x01(size_t nL = 2, size_t nH = 1, size_t boson = 1);
-
   
   std::complex<long double> x10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 

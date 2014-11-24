@@ -23,14 +23,14 @@ int main (int argc, char *argv[])
       // Scale inv test
       long double a = 40.;
       // Compare with:
-      alphaMt   = 1./128.175;
-      alphaSMt   = 0.1079;
+      alphaMt    = 1./127.72063;
+      alphaSMt   = 0.10798036651966895;
       
       // Initial input
       // OSinput KPV = OSinput(4.4, 80.385, 91.1876, 125.6, 173.5);
 
       // PDG 2014
-      OSinput KPV = OSinput(4.4, 80.385, 91.1876, 125.7, 173.2);
+      OSinput KPV = OSinput(pdg2014::Mb, pdg2014::MW, pdg2014::MZ, pdg2014::MH, pdg2014::Mt);
 
       long double unitStep = 0.0001;
       long double dMtStep  = 0.51;
@@ -43,9 +43,9 @@ int main (int argc, char *argv[])
       // OSinput divMH = OSinput(4.4, 80.385, 91.1876, 125.6 + dMHStep, 173.5);
       // OSinput divMW = OSinput(4.4, 80.385 + dMWStep, 91.1876, 125.6, 173.5);
 
-      OSinput divMt = OSinput(4.4, 80.385, 91.1876, 125.7, 173.2 + dMtStep);
-      OSinput divMH = OSinput(4.4, 80.385, 91.1876, 125.7 + dMHStep, 173.2);
-      OSinput divMW = OSinput(4.4, 80.385 + dMWStep, 91.1876, 125.7, 173.2);
+      OSinput divMt = OSinput(pdg2014::Mb, pdg2014::MW, pdg2014::MZ, pdg2014::MH, pdg2014::Mt + dMtStep);
+      OSinput divMH = OSinput(pdg2014::Mb, pdg2014::MW, pdg2014::MZ, pdg2014::MH + dMHStep, pdg2014::Mt);
+      OSinput divMW = OSinput(pdg2014::Mb, pdg2014::MW + dMWStep, pdg2014::MZ, pdg2014::MH, pdg2014::Mt);
 
       PoleMass* xMbase0      = new tt(KPV  , KPV.MMZ());
       // tt xMttdivMt  = tt(divMt, KPV.MMZ());
@@ -104,10 +104,10 @@ int main (int argc, char *argv[])
         for(size_t aspow = 0; aspow <= 1; aspow++)
           for(size_t apow = 2 - aspow; apow <= 2 - aspow ; apow++)
             {
-              long double M0  = it->second[0]->m(apow,aspow);
-              long double Mdt = it->second[1]->m(apow,aspow);
-              long double MdH = it->second[2]->m(apow,aspow);
-              long double MdW = it->second[3]->m(apow,aspow);
+              long double M0  = it->second[0]->x(apow,aspow);
+              long double Mdt = it->second[1]->x(apow,aspow);
+              long double MdH = it->second[2]->x(apow,aspow);
+              long double MdW = it->second[3]->x(apow,aspow);
               // std::cout << "Interpolation for X" << it->first.first 
               //           << "["<< apow << "," << aspow <<"] at  scale \\mu = " 
               //           << sqrt(it->first.second) << std::endl;
@@ -127,19 +127,19 @@ int main (int argc, char *argv[])
               std::cout << M0 << " \\non \\\\" << std::endl;      
 
 
-              long double Y0  = it->second[0]->my(apow,aspow);
-              long double Ydt = it->second[1]->my(apow,aspow);
-              long double YdH = it->second[2]->my(apow,aspow);
-              long double YdW = it->second[3]->my(apow,aspow);
+              long double Y0  = it->second[0]->y(apow,aspow);
+              long double Ydt = it->second[1]->y(apow,aspow);
+              long double YdH = it->second[2]->y(apow,aspow);
+              long double YdW = it->second[3]->y(apow,aspow);
 
-              // std::cout << "Interpolation for Y" << it->first.first 
-              //           << "["<< apow << "," << aspow <<"] at  scale \\mu = " 
-              //           << sqrt(it->first.second) << std::endl;
+              std::cout << "Interpolation for Y" << it->first.first 
+                        << "["<< apow << "," << aspow <<"] at  scale \\mu = " 
+                        << sqrt(it->first.second) << std::endl;
 
-              // std::cout << (Ydt - Y0)/dMtStep << " * (Mt - " << KPV.Mt() << ") + ";
-              // std::cout << (YdH - Y0)/dMHStep << " * (MH - " << KPV.MH() << ") + ";
-              // std::cout << (YdW - Y0)/dMWStep << " * (MW - " << KPV.MW() << ") + ";
-              // std::cout << Y0 << std::endl;      
+              std::cout << (Ydt - Y0)/dMtStep << " * (Mt - " << KPV.Mt() << ") + ";
+              std::cout << (YdH - Y0)/dMHStep << " * (MH - " << KPV.MH() << ") + ";
+              std::cout << (YdW - Y0)/dMWStep << " * (MW - " << KPV.MW() << ") + ";
+              std::cout << Y0 << std::endl;      
 
               // std::cout << "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%" << std::endl;
               // std::cout << "& X_" << it->first.first 

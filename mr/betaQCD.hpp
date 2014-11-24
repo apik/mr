@@ -20,8 +20,14 @@
 
 #ifndef __BETAQCD_HPP_
 #define __BETAQCD_HPP_
-#include <boost/numeric/odeint.hpp>
+
+#include <boost/numeric/odeint/integrator_adaptive_stepsize.hpp>
+
+#include <stdexcept>
+
+#include "sminput.hpp"
 #include "constants.hpp"
+
 
 using namespace boost::numeric::odeint;
 
@@ -29,27 +35,27 @@ typedef std::vector<long double> state_type;
 
 class BetaQCD
 {
-
+  
   size_t loops;
   double nf;
-
-public:
-  BetaQCD( size_t loops_, double nf_) : loops(loops_), nf(nf_) { }
   
+  bool MultiplyByMinus1;
+public:
+  BetaQCD( size_t loops_, double nf_, bool MultiplyByMinus1_ = false) : loops(loops_), nf(nf_), MultiplyByMinus1(MultiplyByMinus1_){ }
   double b0()
   {
     return loops > 0 ? 
-      (11.-2./3.*nf)/4. : 0;
+      (11.-2./3.*nf) : 0;
   }
   double b1()
   {
     return loops > 1 ? 
-      (102.-38./3.*nf)/16. : 0;
+      (102.-38./3.*nf) : 0;
   }
   double b2()
   {
     return loops > 2 ? 
-      (2857./2.-5033./18.*nf + 325./54.*nf*nf)/64. : 0;
+      (2857./2.-5033./18.*nf + 325./54.*nf*nf) : 0;
   }
   double b3()
   {
@@ -57,46 +63,24 @@ public:
       (149753./6. + 3564.*Zeta3
       - (1078361./162. + 6508./27.*Zeta3)*nf
       + (50065./162. + 6472./81.*Zeta3)*nf*nf
-       + 1093./729.*nf*nf*nf)/256. : 0;
+       + 1093./729.*nf*nf*nf) : 0;
   }
   void operator() (const state_type &a, state_type &dadt, const double t)
   {
-    dadt[0] = -b0()*pow(a[0],2) - b1()*pow(a[0],3) - b2()*pow(a[0],4) - b3()*pow(a[0],5);
+    double minusC = MultiplyByMinus1 ? -1. : 1.;
+    dadt[0] =  minusC         // We need -\\beta if evolve from t=0 to t < 0
+      *(-b0()*pow(a[0],2) - b1()*pow(a[0],3) - b2()*pow(a[0],4) - b3()*pow(a[0],5));
   }
 };
 
 
-class AlphaS
-{
-  double   mu0;
-  size_t loops;
-  size_t    nf;
-public:
-  AlphaS(size_t loops_ = 4, size_t nf_ = 5) : loops(loops_), nf(nf_)
-  { }
-  double operator()(long double mu2)
-  {
-    state_type a0(1);
+// run asStart from muStart to muEnd, 
+// using RGE with nf active flavours 
+double run(long double asStart, long double muStart, long double muEnd, size_t NF = 5, size_t loops = 4);
+//double run(long double asStart, long double muStart, long double muEnd, size_t NF, size_t loops);
 
-    // Starting value
-    a0[0] = 0.1184/Pi; 
-            
-    BetaQCD beta4l5nf(loops,nf);
-    
-    double mu0 = pow(91.1876,2);
-    
-    double lEnd = log(mu2/mu0);
-    
-    controlled_stepper_standard< stepper_rk5_ck< state_type > >
-      controlled_rk5( 1E-6 , 1E-7 , 1.0 , 1.0 );
- 
-    integrate_adaptive( controlled_rk5 ,
-                        beta4l5nf, a0, 0.0, lEnd, 0.01  );
-    
-    return a0[0]*Pi; 
 
-  }
-};
+
 
 /*
   
@@ -119,88 +103,85 @@ public:
         to higher scale with as(nf=6) if needed.
  */
 
-long double as5nf2as6nf(long double MM, long double mu2, long double as4Pi, size_t nl = 5, size_t ord = 4)
+long double as5nf2as6nf(long double M, long double mu, long double as, size_t nl = 5, size_t ord = 3);
+// long double as5nf2as6nf(long double, long double, long double, size_t, size_t);
+
+
+
+class AlphaS
 {
+  double muStart;
+  double asStart;
+  size_t   loops;
+  size_t nfFixed;
+  OSinput     oi;
 
-  long double Lmu2MM = log(mu2/MM);
+public:
 
-  // z[as(nf=5)] = as(nf=6)/as(nf=5)
-  long double z = 1;
+  // Running with fixed nf
+  AlphaS(long double asMZ = pdg2014::asMZ, long double mu = pdg2014::MZ, size_t loops_ = 4, size_t nfFixed_ = 5) : asStart(asMZ), muStart(mu),loops(loops_), nfFixed(nfFixed_)
+  { 
+    
+  }
 
-  if(ord > 0)
+  // Running down to bottom mass with nf=5
+  // and upto Mt with threshold at Mt
+  AlphaS(OSinput oi_, long double asMZ = pdg2014::asMZ, size_t loops_ = 4, size_t nfFixed_ = 0) 
+    : loops(loops_), asStart(asMZ), oi(oi_), nfFixed(nfFixed_)
+  { 
+    muStart = oi.MZ();
 
-    z += as4Pi*Lmu2MM * ( 2./3. );
+    // nf is not fixed
+    // nfFixed = 0, default
+  }
 
-  if(ord > 1)
-    {
-      z +=  + pow(as4Pi,2) * ( 14./3. );
-      
-      z +=  + pow(as4Pi,2)*Lmu2MM * ( 38./3. );
-      
-      z +=  + pow(as4Pi,2)*pow(Lmu2MM,2) * ( 4./9. );
-      
-    }
   
-  if(ord > 2)
-    {
-      
-      z +=  + pow(as4Pi,3) * ( 58933./1944. + 80507./432.*Zeta3 + 128./3.*Zeta2 + 128./9.*log(2)*Zeta2 );
-      
-      z +=  + pow(as4Pi,3)*nl * (  - 2479./486. - 64./9.*Zeta2 );
-      
-      z +=  + pow(as4Pi,3)*Lmu2MM * ( 8941./27. );
-      
-      z +=  + pow(as4Pi,3)*Lmu2MM*nl * (  - 409./27. );
-      
-      z +=  + pow(as4Pi,3)*pow(Lmu2MM,2) * ( 511./9. );
+  double operator()(long double mu)
+  {
+    
+    // Running with decoupling
+    if(nfFixed == 0)
+      {
 
-      z +=  + pow(as4Pi,3)*pow(Lmu2MM,3) * ( 8./27. );
-    }
+        // Run only down to Mb
+        if( mu < oi.Mb() ) 
+          throw std::logic_error("ERROR: running with nf = 5 to scale mu < Mb"); 
+        
+        // Run only up to Mt with nf=5
+        else if( mu < oi.Mt() ) 
+          {
+            return run(asStart, muStart, mu, 5 );
+          }
+        
+        // Threshold at Mt
+        else 
+          {
+            long double asMt5 = run(asStart, muStart, oi.Mt(), 5 );
+            
+            // We use 3-loop decoupling for 4-loop running
+            long double asMt6 = as5nf2as6nf(oi.Mt(), oi.Mt(), asMt5, /* nl= */5, 3);
+            
+            // Return as(nf=6,mu=Mt)
+            if (mu == oi.Mt())
+              return asMt6;
 
-  if(ord > 3)
-    {
+            // Run with nf=6 up to mu > Mt
+            else
+              return run(asMt6, oi.Mt(), mu, 6 );
+              
+          }
+      }
+    // Running with fixed nf
+    else
+      return run(asStart, muStart, mu, nfFixed);    
+  }
 
-      z +=  + pow(as4Pi,4) * ( 592371712./382725. - 21814592./2835.*
-                               a5 - 25433192./1701.*a4 + 40596749./5670.*Zeta5 + 71102219./8505.
-                               *Zeta4 + 2408412383./340200.*Zeta3 + 11153936./1215.*Zeta2 - 46048./
-                               27.*Zeta2*Zeta3 - 18636934./2835.*log(2)*Zeta4 - 131456./81.*log(2)*Zeta2 + 
-                               5826074./1701.*pow(log(2),2)*Zeta2 - 5453648./8505.*pow(log(2),3)*Zeta2
-                               - 3179149./5103.*pow(log(2),4) + 2726824./42525.*pow(log(2),5) );
-      
-      z +=  + pow(as4Pi,4)*nl * (  - 1773073./2916. - 692./81.*a4 - 
-                                   460./9.*Zeta5 + 697709./648.*Zeta4 - 4756441./3888.*Zeta3 - 71296./
-                                   81.*Zeta2 - 5632./81.*log(2)*Zeta2 + 1709./81.*pow(log(2),2)*Zeta2 - 173./
-                                   486.*pow(log(2),4) );
-      
-      z +=  + pow(as4Pi,4)*pow(nl,2) * ( 140825./5832. + 76./27.*Zeta3
-                                         + 1664./81.*Zeta2 );
-      
-      z +=  + pow(as4Pi,4)*Lmu2MM * ( 21084715./2916. + 2922161./648.*Zeta3
-                                 + 8960./9.*Zeta2 + 8960./27.*log(2)*Zeta2 );
-      
-      z +=  + pow(as4Pi,4)*Lmu2MM*nl * (  - 1140191./1458. - 132283./324.*
-                                     Zeta3 - 6016./27.*Zeta2 - 512./27.*log(2)*Zeta2 );
-      
-      z +=  + pow(as4Pi,4)*Lmu2MM*pow(nl,2) * ( 1679./729. + 256./27.*Zeta2);
-      
-      z +=  + pow(as4Pi,4)*pow(Lmu2MM,2) * ( 94078./27. );
-      
-      z +=  + pow(as4Pi,4)*pow(Lmu2MM,2)*nl * (  - 18230./81. );
-      
-      z +=  + pow(as4Pi,4)*pow(Lmu2MM,2)*pow(nl,2) * ( 493./81. );
-      
-      z +=  + pow(as4Pi,4)*pow(Lmu2MM,3) * ( 28298./81. );
-      
-      z +=  + pow(as4Pi,4)*pow(Lmu2MM,3)*nl * (  - 428./27. );
-      
-      z +=  + pow(as4Pi,4)*pow(Lmu2MM,4) * ( 16./81. );
-      
-    }
 
-  if(ord > 4)
-    std::cerr << "WARNING: Only 4-loop decoupling relations available."<< std::endl;
+  long double upto(long double mu2)
+  {
+    
+  }
 
-  return as4Pi*z;
-}
+};
 
 #endif  // __BETAQCD_HPP_

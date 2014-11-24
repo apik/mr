@@ -44,18 +44,18 @@ int main (int argc, char *argv[])
           tt dMt  = tt(*it, it->MMZ());
           HH<OS> dMH  = HH<OS>(*it, it->MMZ());
           dr ddr  = dr(*it, it->MMZ());
-          std::cout << "sigmata   [1,0] = " << dMt.m10() << std::endl;
-          std::cout << "deltayta  [1,0]= " << dMt.my10() << std::endl;
-          std::cout << "sigmataaS [1,1]= " << dMt.m11() << std::endl;
-          std::cout << "deltaytaaS[1,1] = " << dMt.my11() << std::endl;
+          std::cout << "sigmata   [1,0] = " << dMt.x10() << std::endl;
+          std::cout << "deltayta  [1,0]= " << dMt.y10() << std::endl;
+          std::cout << "sigmataaS [1,1]= " << dMt.x11() << std::endl;
+          std::cout << "deltaytaaS[1,1] = " << dMt.y11() << std::endl;
           
           std::cout << "\n\n        dr[1,0] = " << ddr.dr10() << std::endl;
           std::cout << "\n\n        dr[1,1] = " << ddr.dr11() << std::endl;
 
-          std::cout << "sigmaHa   [1,0] = " << dMH.m10() << std::endl;
-          std::cout << "deltayHa  [1,0]= " << dMH.my10() << std::endl;
-          std::cout << "sigmaHaaS [1,1]= " << dMH.m11() << std::endl;
-          std::cout << "deltayHaaS[1,1] = " << dMH.my11() << std::endl;
+          std::cout << "sigmaHa   [1,0] = " << dMH.x10() << std::endl;
+          std::cout << "deltayHa  [1,0]= " << dMH.y10() << std::endl;
+          std::cout << "sigmaHaaS [1,1]= " << dMH.x11() << std::endl;
+          std::cout << "deltayHaaS[1,1] = " << dMH.y11() << std::endl;
 
 
 

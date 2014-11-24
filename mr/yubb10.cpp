@@ -1,73 +1,99 @@
-//
-// MR - 2-loop matching and 3-loop Running, including full 2-loop EW corrections
-// Copyright (C) 2014 Andrey Pikelner <pikelner@theor.jinr.ru>
-//
-// This file is part of MR.
-//
-// MR is free software: you can redistribute it and/or modify
-// it under the terms of the GNU General Public License as published by
-// the Free Software Foundation, either version 3 of the License, or
-// (at your option) any later version.
-//
-// MR is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU General Public License for more details.
-//
-// You should have received a copy of the GNU General Public License
-// along with MR.  If not, see <http://www.gnu.org/licenses/>.
-//
-
 #include <bb.hpp>
 std::complex<long double>
 bb::y10(size_t nL, size_t nH, size_t boson)
 {     
       
       
-    std::complex<long double> aryubb[19], yubbret;
+    std::complex<long double> aryubb[28], yubbret;
 
-    aryubb[1]=double(boson);
-    aryubb[2]=pow(CW,-1);
-    aryubb[3]=pow(MMZ,-1);
-    aryubb[4]=pow(SW,-1);
-    aryubb[5]=Tsil::A(MMZ,mu2);
-    aryubb[6]=Tsil::A(MMW,mu2);
-    aryubb[7]=Tsil::A(MMt,mu2);
-    aryubb[8]=Tsil::A(MMb,mu2);
+    aryubb[1]=double(nH);
+    aryubb[2]=double(boson);
+    aryubb[3]=pow(CW,-1);
+    aryubb[4]=pow(MMZ,-1);
+    aryubb[5]=pow(SW,-1);
+    aryubb[6]=Tsil::A(MMt,mu2);
+    aryubb[7]=Tsil::B(MMH,MMb,MMb,mu2);
+    aryubb[8]=Tsil::B(MMZ,MMb,MMb,mu2);
     aryubb[9]=pow(MMb,-1);
-    aryubb[10]=1/(MMt - MMW);
-    aryubb[11]=1/( - MMW + MMH);
-    aryubb[12]=Tsil::A(MMH,mu2);
-   aryubb[13]=pow(aryubb[2],2);
-   aryubb[14]= - 3*aryubb[6] - 1./4.*MMH + 5./4.*MMt + 3./2.*aryubb[7];
-   aryubb[15]=5./6.*aryubb[5] - aryubb[14];
-   aryubb[15]=aryubb[15]*aryubb[13];
-   aryubb[16]=pow(aryubb[4],2);
-   aryubb[17]=aryubb[6] - aryubb[5];
-   aryubb[17]=aryubb[17]*aryubb[16];
-   aryubb[17]=aryubb[17] + aryubb[5];
-   aryubb[14]= - aryubb[14] + 3./2.*aryubb[17];
-   aryubb[14]=aryubb[14]*aryubb[16];
-   aryubb[14]=aryubb[15] + aryubb[14];
-   aryubb[14]= - 1./3.*aryubb[5] + 1./4.*aryubb[14];
-   aryubb[14]=aryubb[3]*aryubb[14];
-   aryubb[15]=aryubb[12] - aryubb[6];
-   aryubb[15]=aryubb[11]*aryubb[15];
-   aryubb[17]=aryubb[6] - aryubb[7];
-   aryubb[17]=aryubb[10]*aryubb[17];
-   aryubb[17]=aryubb[17] + 1;
-   aryubb[17]=MMZ*aryubb[17];
-   aryubb[18]=aryubb[6] + aryubb[17];
+    aryubb[10]=Tsil::B(MMW,MMt,MMb,mu2);
+    aryubb[11]=Tsil::A(MMH,mu2);
+    aryubb[12]=Tsil::A(MMZ,mu2);
+    aryubb[13]=Tsil::A(MMW,mu2);
+    aryubb[14]=Tsil::A(MMb,mu2);
+    aryubb[15]=1/( - MMb + MMt);
+    aryubb[16]=1/( - MMW + MMH);
+   aryubb[17]=1./2.*MMt;
+   aryubb[18]=1./2.*MMb;
+   aryubb[19]=aryubb[17] + aryubb[6] - aryubb[18];
+   aryubb[20]=3*MMb;
+   aryubb[20]=aryubb[20]*aryubb[15]*aryubb[1];
+   aryubb[19]=aryubb[19]*aryubb[20];
+   aryubb[21]=MMt*aryubb[1];
+   aryubb[21]=aryubb[21] - aryubb[12];
+   aryubb[22]= - aryubb[11] + aryubb[6] + 7*aryubb[13];
+   aryubb[20]=aryubb[20] + 1;
+   aryubb[20]=aryubb[20]*aryubb[14];
+   aryubb[23]=1./4.*MMH;
+   aryubb[24]=aryubb[1]*aryubb[6];
+   aryubb[19]= - 3*aryubb[24] + aryubb[20] + aryubb[23] - aryubb[19] + 
+   1./2.*aryubb[22] - 3./2.*aryubb[21];
+   aryubb[18]=aryubb[18] - MMt;
+   aryubb[20]=aryubb[10]*aryubb[18];
+   aryubb[20]=aryubb[20] + aryubb[19];
+   aryubb[20]=aryubb[4]*aryubb[20];
+   aryubb[21]=aryubb[13] - aryubb[6];
+   aryubb[22]= - MMt*aryubb[21];
+   aryubb[24]=pow(MMt,2);
+   aryubb[25]=aryubb[10]*aryubb[24];
+   aryubb[22]=aryubb[25] + aryubb[22];
+   aryubb[22]=aryubb[4]*aryubb[22];
+   aryubb[25]=aryubb[8]*MMZ;
+   aryubb[25]=aryubb[25] + aryubb[12];
+   aryubb[26]=aryubb[25] - aryubb[14];
+   aryubb[22]= - 5./9.*aryubb[26] + aryubb[22];
+   aryubb[22]=aryubb[9]*aryubb[22];
+   aryubb[27]= - 1./2. + aryubb[8];
+   aryubb[20]=1./2.*aryubb[22] + 17./18.*aryubb[27] + aryubb[20];
+   aryubb[22]=aryubb[23] - MMb;
+   aryubb[22]=aryubb[22]*aryubb[7];
+   aryubb[23]= - aryubb[4]*aryubb[22];
+   aryubb[20]=1./2.*aryubb[20] + aryubb[23];
+   aryubb[20]=aryubb[20]*pow(aryubb[3],2);
+   aryubb[23]=pow(aryubb[5],2);
+   aryubb[27]=aryubb[23]*aryubb[4];
+   aryubb[22]=aryubb[27]*aryubb[22];
+   aryubb[20]=aryubb[22] - aryubb[20];
+   aryubb[19]=aryubb[4]*aryubb[19];
+   aryubb[22]=aryubb[13] - aryubb[12];
+   aryubb[22]=aryubb[22]*aryubb[27];
+   aryubb[27]= - aryubb[13] + aryubb[11];
+   aryubb[27]=aryubb[16]*aryubb[27];
+   aryubb[27]= - 1./2. + aryubb[27];
+   aryubb[27]=3*aryubb[27] + aryubb[8];
+   aryubb[18]=aryubb[4]*aryubb[18];
+   aryubb[18]=1./2. + aryubb[18];
    aryubb[18]=aryubb[10]*aryubb[18];
-   aryubb[15]=aryubb[18] + aryubb[15];
-   aryubb[15]=aryubb[15]*aryubb[16];
-   aryubb[16]=aryubb[10]*aryubb[17];
-   aryubb[15]=aryubb[16] - aryubb[15];
-   aryubb[16]=aryubb[8]*aryubb[9];
-   aryubb[16]= - 1./2. + aryubb[16];
-   aryubb[13]=aryubb[14] - 11./72.*aryubb[13] + 1./3.*aryubb[16] - 3./8.
-   *aryubb[15];
+   aryubb[18]=aryubb[18] + 3./2.*aryubb[22] + 1./2.*aryubb[27] + 
+   aryubb[19];
+   aryubb[19]=1./4.*aryubb[23];
+   aryubb[18]=aryubb[19]*aryubb[18];
+   aryubb[22]= - aryubb[4]*aryubb[17];
+   aryubb[22]=aryubb[22] - 1;
+   aryubb[21]=aryubb[21]*aryubb[22];
+   aryubb[21]=aryubb[21] - 1./2.*aryubb[26];
+   aryubb[19]=aryubb[21]*aryubb[19];
+   aryubb[21]=aryubb[4]*aryubb[24];
+   aryubb[17]=1./2.*aryubb[21] - MMZ + aryubb[17];
+   aryubb[17]=aryubb[17]*aryubb[23];
+   aryubb[17]=MMZ + aryubb[17];
+   aryubb[17]=aryubb[10]*aryubb[17];
+   aryubb[21]=2*aryubb[14] + aryubb[25];
+   aryubb[17]=1./4.*aryubb[17] + 1./9.*aryubb[21] + aryubb[19];
+   aryubb[17]=aryubb[9]*aryubb[17];
+   aryubb[19]= - 1 + aryubb[8];
+   aryubb[17]=aryubb[17] + 2./9.*aryubb[19] + aryubb[18] - 1./2.*
+   aryubb[20];
 
-      yubbret = aryubb[13]*aryubb[1];
+      yubbret = aryubb[17]*aryubb[2];
       return yubbret;
 }

@@ -34,13 +34,13 @@ int main (int argc, char *argv[])
           std::cout << "Mh= " << KV[i]->MH()  << std::endl;
           std::cout << "as(MMt) = " << as(KV[i]->MMt()) << std::endl;          
           std::cout << "\t1-loop \\alpha         " << // KV[i]->Mb()*
-            alphaMZ/4./Pi*dMb.m10() << std::endl;
+            alphaMZ/4./Pi*dMb.x10() << std::endl;
           std::cout << "\t1-loop \\alpha_S       " << // KV[i]->Mb()*
-            asMb/4./Pi*dMb.m01() << std::endl;
+            asMb/4./Pi*dMb.x01() << std::endl;
           std::cout << "\t2-loop \\alpha*\\alpha_S" << // KV[i]->Mb()*
-            alphaMZ/4./Pi*asMb/4./Pi*dMb.m11() << std::endl;
+            alphaMZ/4./Pi*asMb/4./Pi*dMb.x11() << std::endl;
           std::cout << "\t2-loop \\alpha^2       " << // KV[i]->Mb()*
-            pow(alphaMZ/4./Pi,2)*dMb.m20() << std::endl;
+            pow(alphaMZ/4./Pi,2)*dMb.x20() << std::endl;
         }
       
     }

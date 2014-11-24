@@ -31,8 +31,8 @@ int main (int argc, char *argv[])
       HH<OS> dMH200 = HH<OS>(ACOVH200, ACOVH200.MMZ());
       
       // Compare with FIG.5
-      std::cout << "1-loop \\alpha      Mh= " << ACOVH80.MH()  << ", [mH/MH -1] = " << alphaMZ/4./Pi*dMH80.m10(0,0) << std::endl;
-      std::cout << "1-loop \\alpha      Mh= " << ACOVH200.MH() << ", [mH/MH -1] = " << alphaMZ/4./Pi*dMH200.m10(0,0) << std::endl;
+      std::cout << "1-loop \\alpha      Mh= " << ACOVH80.MH()  << ", [mH/MH -1] = " << alphaMZ/4./Pi*dMH80.x10(0,0) << std::endl;
+      std::cout << "1-loop \\alpha      Mh= " << ACOVH200.MH() << ", [mH/MH -1] = " << alphaMZ/4./Pi*dMH200.x10(0,0) << std::endl;
 
 
       // Two-loop comaprison with Degrassi and Strumia and root-plot
@@ -57,12 +57,12 @@ int main (int argc, char *argv[])
 
           HH<OS> dH  = HH<OS>(DS2l, DS2l.MMZ());          
           
-          std::cout << " Mh= " << DS2l.MH() << ", [mH/MH -1] = " << dH.m20().real() << std::endl;     
+          std::cout << " Mh= " << DS2l.MH() << ", [mH/MH -1] = " << dH.x20().real() << std::endl;     
           
 
           x[mHi] = MH;
 
-          y[mHi] = 1./dH.m20().real();
+          y[mHi] = 1./dH.x20().real();
 
         }
 

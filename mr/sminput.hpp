@@ -34,6 +34,10 @@ public:
     iMb(Mb_), iMW(MW_), iMZ(MZ_), iMH(MH_), iMt(Mt_)
   {
   }
+
+  OSinput() 
+  {
+  }
   
   bool operator < (const OSinput& b) const 
   {

@@ -130,7 +130,8 @@ libmr_a_LIBADD =
 am__objects_1 = libmr_a-tsil.$(OBJEXT) libmr_a-mOS2mMSQCD.$(OBJEXT)
 am__objects_2 = libmr_a-alphaGF.$(OBJEXT) libmr_a-alphaGF10.$(OBJEXT) \
 	libmr_a-alphaGF11.$(OBJEXT) libmr_a-alphaGF20.$(OBJEXT)
-am__objects_3 = libmr_a-betaSM.$(OBJEXT) libmr_a-CRunDec.$(OBJEXT)
+am__objects_3 = libmr_a-betaSM.$(OBJEXT) libmr_a-betaQEDQCD.$(OBJEXT) \
+	libmr_a-betaQCD.$(OBJEXT) libmr_a-CRunDec.$(OBJEXT)
 am__objects_4 = libmr_a-bb.$(OBJEXT) libmr_a-mbbbar01.$(OBJEXT) \
 	libmr_a-mbbbar10.$(OBJEXT) libmr_a-mbbbar11.$(OBJEXT) \
 	libmr_a-mbbbar20.$(OBJEXT) libmr_a-yubb01.$(OBJEXT) \
@@ -377,7 +378,7 @@ lib_LIBRARIES = libmr.a
 MAINSRC = mr.hpp tsil.hpp tsil.cpp base.hpp mOS2mMSQCD.cpp
 
 # Running
-RUNSRC = betaSM.hpp betaSM.cpp betaQCD.hpp CRunDec.cpp CRunDec.h
+RUNSRC = betaSM.hpp betaSM.cpp betaQCD.hpp betaQEDQCD.hpp betaQEDQCD.cpp betaQCD.cpp CRunDec.cpp CRunDec.h
 
 # alpha from G-Fermi and pole masses
 ALPHAGF = alphaGF.hpp alphaGF.cpp alphaGF10.cpp alphaGF11.cpp alphaGF20.cpp
@@ -396,7 +397,7 @@ TTMS = tt.hpp tt.cpp mttbar01.cpp mttbar10.cpp mttbar11.cpp mttbar20.cpp yutt01.
 # 
 HHMSGL = mHHbarGL10.cpp mHHbarGL11.cpp mHHbarGL20.cpp yuHHGL10.cpp yuHHGL11.cpp yuHHGL20.cpp
 BBMSGL = mbbbarGL10.cpp mbbbarGL11.cpp mbbbarGL20.cpp yubbGL10.cpp yubbGL11.cpp yubbGL20.cpp
-TTMSGL = mttbarGL10.cpp mttbarGL11.cpp mttbarGL20.cpp yuttGL10.cpp yuttGL11.cpp yuttGL20.cpp
+TTMSGL = mttbarGL10.cpp mttbarGL11.cpp mttbarGL20.cpp yuttGL10.cpp yuttGL11.cpp yuttGL20.cpp 
 
 #
 # delta-r in MS-bar  scheme with OS input
@@ -413,7 +414,7 @@ libmr_a_SOURCES = $(MAINSRC) $(ALPHAGF) $(RUNSRC) $(BBMS) $(WWMS) $(ZZMS) $(HHMS
  $(HHMSGL) $(BBMSGL) $(TTMSGL) $(DRMSOS)\
  $(WWMS2OS) $(ZZMS2OS) $(HHMS2OS)
 
-libmr_a_CPPFLAGS = $(MR_CFLAGS) -I$(top_srcdir)/tsil-1.21
+libmr_a_CPPFLAGS = $(MR_CFLAGS) -I$(top_srcdir)/tsil-1.21 -I$(top_srcdir)/mr/mu1
 all: all-am
 
 .SUFFIXES:
@@ -500,6 +501,8 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libmr_a-alphaGF11.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libmr_a-alphaGF20.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libmr_a-bb.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libmr_a-betaQCD.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libmr_a-betaQEDQCD.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libmr_a-betaSM.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libmr_a-dr.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libmr_a-dr10.Po@am__quote@
@@ -686,6 +689,34 @@ libmr_a-betaSM.obj: betaSM.cpp
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='betaSM.cpp' object='libmr_a-betaSM.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmr_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libmr_a-betaSM.obj `if test -f 'betaSM.cpp'; then $(CYGPATH_W) 'betaSM.cpp'; else $(CYGPATH_W) '$(srcdir)/betaSM.cpp'; fi`
+
+libmr_a-betaQEDQCD.o: betaQEDQCD.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmr_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libmr_a-betaQEDQCD.o -MD -MP -MF $(DEPDIR)/libmr_a-betaQEDQCD.Tpo -c -o libmr_a-betaQEDQCD.o `test -f 'betaQEDQCD.cpp' || echo '$(srcdir)/'`betaQEDQCD.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libmr_a-betaQEDQCD.Tpo $(DEPDIR)/libmr_a-betaQEDQCD.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='betaQEDQCD.cpp' object='libmr_a-betaQEDQCD.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmr_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libmr_a-betaQEDQCD.o `test -f 'betaQEDQCD.cpp' || echo '$(srcdir)/'`betaQEDQCD.cpp
+
+libmr_a-betaQEDQCD.obj: betaQEDQCD.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmr_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libmr_a-betaQEDQCD.obj -MD -MP -MF $(DEPDIR)/libmr_a-betaQEDQCD.Tpo -c -o libmr_a-betaQEDQCD.obj `if test -f 'betaQEDQCD.cpp'; then $(CYGPATH_W) 'betaQEDQCD.cpp'; else $(CYGPATH_W) '$(srcdir)/betaQEDQCD.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libmr_a-betaQEDQCD.Tpo $(DEPDIR)/libmr_a-betaQEDQCD.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='betaQEDQCD.cpp' object='libmr_a-betaQEDQCD.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmr_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libmr_a-betaQEDQCD.obj `if test -f 'betaQEDQCD.cpp'; then $(CYGPATH_W) 'betaQEDQCD.cpp'; else $(CYGPATH_W) '$(srcdir)/betaQEDQCD.cpp'; fi`
+
+libmr_a-betaQCD.o: betaQCD.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmr_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libmr_a-betaQCD.o -MD -MP -MF $(DEPDIR)/libmr_a-betaQCD.Tpo -c -o libmr_a-betaQCD.o `test -f 'betaQCD.cpp' || echo '$(srcdir)/'`betaQCD.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libmr_a-betaQCD.Tpo $(DEPDIR)/libmr_a-betaQCD.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='betaQCD.cpp' object='libmr_a-betaQCD.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmr_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libmr_a-betaQCD.o `test -f 'betaQCD.cpp' || echo '$(srcdir)/'`betaQCD.cpp
+
+libmr_a-betaQCD.obj: betaQCD.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmr_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libmr_a-betaQCD.obj -MD -MP -MF $(DEPDIR)/libmr_a-betaQCD.Tpo -c -o libmr_a-betaQCD.obj `if test -f 'betaQCD.cpp'; then $(CYGPATH_W) 'betaQCD.cpp'; else $(CYGPATH_W) '$(srcdir)/betaQCD.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libmr_a-betaQCD.Tpo $(DEPDIR)/libmr_a-betaQCD.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='betaQCD.cpp' object='libmr_a-betaQCD.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmr_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libmr_a-betaQCD.obj `if test -f 'betaQCD.cpp'; then $(CYGPATH_W) 'betaQCD.cpp'; else $(CYGPATH_W) '$(srcdir)/betaQCD.cpp'; fi`
 
 libmr_a-CRunDec.o: CRunDec.cpp
 @am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmr_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libmr_a-CRunDec.o -MD -MP -MF $(DEPDIR)/libmr_a-CRunDec.Tpo -c -o libmr_a-CRunDec.o `test -f 'CRunDec.cpp' || echo '$(srcdir)/'`CRunDec.cpp

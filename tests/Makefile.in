@@ -96,7 +96,7 @@ am_testsuite_OBJECTS = testsuite-testsuite.$(OBJEXT) \
 	testsuite-BKKS_1205.2893.$(OBJEXT) \
 	testsuite-JKV_0105304.$(OBJEXT) \
 	testsuite-JKV_0212319.$(OBJEXT) testsuite-MWeqMZ.$(OBJEXT) \
-	testsuite-mPlanck.$(OBJEXT)
+	testsuite-mPlanck.$(OBJEXT) testsuite-RunDec.$(OBJEXT)
 testsuite_OBJECTS = $(am_testsuite_OBJECTS)
 testsuite_DEPENDENCIES =
 AM_V_P = $(am__v_P_@AM_V@)
@@ -278,7 +278,7 @@ AUTOMAKE_OPTIONS = subdir-objects
 ACLOCAL_AMFLAGS = ${ACLOCAL_FLAGS} -I m4
 LDADD = ../mr/libmr.a
 EX_CFLAGS = $(MR_CFLAGS) -I$(top_srcdir)/tsil-1.21 -I$(top_srcdir)/mr
-testsuite_SOURCES = testsuite.cpp BKKS_1205.2893.cpp JKV_0105304.cpp JKV_0212319.cpp MWeqMZ.cpp mPlanck.cpp
+testsuite_SOURCES = testsuite.cpp BKKS_1205.2893.cpp JKV_0105304.cpp JKV_0212319.cpp MWeqMZ.cpp mPlanck.cpp RunDec.cpp
 testsuite_CPPFLAGS = $(EX_CFLAGS)
 testsuite_LDADD = $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.21 -ltsil -lm
 all: all-am
@@ -333,6 +333,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/testsuite-JKV_0105304.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/testsuite-JKV_0212319.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/testsuite-MWeqMZ.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/testsuite-RunDec.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/testsuite-mPlanck.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/testsuite-testsuite.Po@am__quote@
 
@@ -435,6 +436,20 @@ testsuite-mPlanck.obj: mPlanck.cpp
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='mPlanck.cpp' object='testsuite-mPlanck.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(testsuite_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o testsuite-mPlanck.obj `if test -f 'mPlanck.cpp'; then $(CYGPATH_W) 'mPlanck.cpp'; else $(CYGPATH_W) '$(srcdir)/mPlanck.cpp'; fi`
+
+testsuite-RunDec.o: RunDec.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(testsuite_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT testsuite-RunDec.o -MD -MP -MF $(DEPDIR)/testsuite-RunDec.Tpo -c -o testsuite-RunDec.o `test -f 'RunDec.cpp' || echo '$(srcdir)/'`RunDec.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/testsuite-RunDec.Tpo $(DEPDIR)/testsuite-RunDec.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='RunDec.cpp' object='testsuite-RunDec.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(testsuite_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o testsuite-RunDec.o `test -f 'RunDec.cpp' || echo '$(srcdir)/'`RunDec.cpp
+
+testsuite-RunDec.obj: RunDec.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(testsuite_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT testsuite-RunDec.obj -MD -MP -MF $(DEPDIR)/testsuite-RunDec.Tpo -c -o testsuite-RunDec.obj `if test -f 'RunDec.cpp'; then $(CYGPATH_W) 'RunDec.cpp'; else $(CYGPATH_W) '$(srcdir)/RunDec.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/testsuite-RunDec.Tpo $(DEPDIR)/testsuite-RunDec.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='RunDec.cpp' object='testsuite-RunDec.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(testsuite_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o testsuite-RunDec.obj `if test -f 'RunDec.cpp'; then $(CYGPATH_W) 'RunDec.cpp'; else $(CYGPATH_W) '$(srcdir)/RunDec.cpp'; fi`
 
 ID: $(am__tagged_files)
 	$(am__define_uniq_tagged_files); mkid -fID $$unique

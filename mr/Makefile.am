@@ -7,7 +7,7 @@ lib_LIBRARIES = libmr.a
 MAINSRC = mr.hpp tsil.hpp tsil.cpp base.hpp mOS2mMSQCD.cpp
 
 # Running
-RUNSRC = betaSM.hpp betaSM.cpp betaQCD.hpp CRunDec.cpp CRunDec.h
+RUNSRC = betaSM.hpp betaSM.cpp betaQCD.hpp betaQEDQCD.hpp betaQEDQCD.cpp betaQCD.cpp CRunDec.cpp CRunDec.h
 
 
 # alpha from G-Fermi and pole masses
@@ -28,7 +28,7 @@ TTMS = tt.hpp tt.cpp mttbar01.cpp mttbar10.cpp mttbar11.cpp mttbar20.cpp yutt01.
 # 
 HHMSGL = mHHbarGL10.cpp mHHbarGL11.cpp mHHbarGL20.cpp yuHHGL10.cpp yuHHGL11.cpp yuHHGL20.cpp
 BBMSGL = mbbbarGL10.cpp mbbbarGL11.cpp mbbbarGL20.cpp yubbGL10.cpp yubbGL11.cpp yubbGL20.cpp
-TTMSGL = mttbarGL10.cpp mttbarGL11.cpp mttbarGL20.cpp yuttGL10.cpp yuttGL11.cpp yuttGL20.cpp
+TTMSGL = mttbarGL10.cpp mttbarGL11.cpp mttbarGL20.cpp yuttGL10.cpp yuttGL11.cpp yuttGL20.cpp 
 
 #
 # delta-r in MS-bar  scheme with OS input
@@ -47,7 +47,7 @@ libmr_a_SOURCES =    $(MAINSRC) $(ALPHAGF) $(RUNSRC) $(BBMS) $(WWMS) $(ZZMS) $(H
  $(HHMSGL) $(BBMSGL) $(TTMSGL) $(DRMSOS)\
  $(WWMS2OS) $(ZZMS2OS) $(HHMS2OS)
 
-libmr_a_CPPFLAGS = $(MR_CFLAGS) -I$(top_srcdir)/tsil-1.21
+libmr_a_CPPFLAGS = $(MR_CFLAGS) -I$(top_srcdir)/tsil-1.21 -I$(top_srcdir)/mr/mu1
 
 # lib_LTLIBRARIES = libmr.la
 

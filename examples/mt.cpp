@@ -36,15 +36,15 @@ int main (int argc, char *argv[])
           
           std::cout << "Mh= " << it->MH()  << std::endl;
           std::cout << "as(MMt) = " << as(it->MMt()) << std::endl;          
-          std::cout << "\t1-loop \\alpha         " << pow(xxx,2)*it->Mt()*alphaMt/4./Pi*dMt.m10() << std::endl;
-          std::cout << "\t1-loop \\alpha_S       " << it->Mt()*as(it->MMt())/4./Pi*dMt.m01() << std::endl;
+          std::cout << "\t1-loop \\alpha         " << pow(xxx,2)*it->Mt()*alphaMt/4./Pi*dMt.x10() << std::endl;
+          std::cout << "\t1-loop \\alpha_S       " << it->Mt()*as(it->MMt())/4./Pi*dMt.x01() << std::endl;
           std::cout << "\t2-loop \\alpha*\\alpha_S" << pow(xxx,2)*it->Mt()*alphaMt/4./Pi*// as(it->MMt())
-            alphaS/4./Pi*dMt.m11() << std::endl;
-          std::cout << "\t2-loop \\alpha^2  g.l. " << pow(xxx,4)*it->Mt()*pow(alphaMt/4./Pi,2)*dMt.mgl20() << std::endl;
-          std::cout << "\t2-loop \\alpha^2       " << pow(xxx,4)*it->Mt()*pow(alphaMt/4./Pi,2)*dMt.m20() << std::endl;
+            alphaS/4./Pi*dMt.x11() << std::endl;
+          std::cout << "\t2-loop \\alpha^2  g.l. " << pow(xxx,4)*it->Mt()*pow(alphaMt/4./Pi,2)*dMt.xgl20() << std::endl;
+          std::cout << "\t2-loop \\alpha^2       " << pow(xxx,4)*it->Mt()*pow(alphaMt/4./Pi,2)*dMt.x20() << std::endl;
           
 
-          std::cout << " Full one-loop +QCD " << it->Mt()*alphaMt/4./Pi*dMt.m10() + it->Mt()*alphaS/4./Pi*dMt.m01() << std::endl;
+          std::cout << " Full one-loop +QCD " << it->Mt()*alphaMt/4./Pi*dMt.x10() + it->Mt()*alphaS/4./Pi*dMt.x01() << std::endl;
           dMt.test();
         }
       

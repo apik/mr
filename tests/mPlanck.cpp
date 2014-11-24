@@ -9,16 +9,19 @@ TEST_CASE
  )
 {
   
-  CouplingsSM<3,3,3,3,-1,-1,3> av(
-                                  5./3.*pow(0.35830/4./Pi,2), // GUT normalization
-                                  pow(0.64779/4./Pi,2),
-                                  pow(1.1666/4./Pi,2),
-                                  pow(0.9369/4./Pi,2),
-                                  pow(0.0/4./Pi,2),
-                                  pow(0.0/4./Pi,2),
-                                  0.12604*pow(4.*Pi,-2),
-                                  pow(173.34,2),
-                                  3);
+  CouplingsVevMu av(
+                    5./3.*pow(0.35830/4./Pi,2), // GUT normalization
+                    pow(0.64779/4./Pi,2),
+                    pow(1.1666/4./Pi,2),
+                    pow(0.93690/4./Pi,2),
+                    pow(0.0/4./Pi,2),
+                    pow(0.0/4./Pi,2),
+                    0.12604*pow(4.*Pi,-2),
+                    0*246,
+                    // 132.03/sqrt(2.*0.12604),
+                    131.55,
+                    pow(173.34,2),
+                    3);
   
   
   long double mmPlanck = pow(1.2209,2) * pow(10.,2*19); 
@@ -29,4 +32,12 @@ TEST_CASE
   REQUIRE( (4.*Pi*sqrt(avMpl[2])) == Approx( 0.4873 ).epsilon( 0.0001 ) );
   REQUIRE( (4.*Pi*sqrt(avMpl[3])) == Approx( 0.3825 ).epsilon( 0.0001 ) );
   REQUIRE( (16.*Pi*Pi*avMpl[6])   == Approx(-0.0143 ).epsilon( 0.0001 ));
+  REQUIRE( avMpl[8]               == Approx( 129.4  ).epsilon( 0.0001 ));
+
+
+  std::cout << "v = " << avMpl[7] << std::endl;
+  std::cout << "vc= " << avMpl[8]/sqrt(2.*16.*Pi*Pi*avMpl[6]) << std::endl;
+
+  // state_type av1000 = av(mmPlanck);
+
 }

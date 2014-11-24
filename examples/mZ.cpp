@@ -33,32 +33,32 @@ int main (int argc, char *argv[])
       // Bosonic part 1-loop
       // 
       std::cout << "No fermions: 1-loop \\alpha      Mh= " << JKVH80.mH()  << ", [mW/MW -1] = " 
-                << alphaMZ/4./Pi*W80.m10(0,0) << std::endl;
+                << alphaMZ/4./Pi*W80.x10(0,0) << std::endl;
       std::cout << "No fermions: 1-loop \\alpha      Mh= " << JKVH200.mH()  << ", [mW/MW -1] = " 
-                << alphaMZ/4./Pi*W200.m10(0,0) << std::endl;
+                << alphaMZ/4./Pi*W200.x10(0,0) << std::endl;
 
       // 
       // Full SM
       // 
       std::cout << "SM 1-loop \\alpha      Mh= " << JKVH80.mH()  << ", [mW/MW -1] = " 
-                << alphaMZ/4./Pi*W80.m10() << std::endl;
+                << alphaMZ/4./Pi*W80.x10() << std::endl;
       std::cout << "SM 1-loop \\alpha      Mh= " << JKVH200.mH()  << ", [mW/MW -1] = " 
-                << alphaMZ/4./Pi*W200.m10() << std::endl;
+                << alphaMZ/4./Pi*W200.x10() << std::endl;
 
       std::cout << "\nSM 2-loop \\alpha^2 nf=0     Mh= " << JKVH80.mH()  << ", [mW/MW -1] = " 
-                << pow(alphaMZ/4./Pi,2)*W80.m20(0,0) << std::endl;
+                << pow(alphaMZ/4./Pi,2)*W80.x20(0,0) << std::endl;
       std::cout << "SM 2-loop \\alpha^2 nf=0     Mh= " << JKVH200.mH()  << ", [mW/MW -1] = " 
-                << pow(alphaMZ/4./Pi,2)*W200.m20(0,0) << std::endl;
+                << pow(alphaMZ/4./Pi,2)*W200.x20(0,0) << std::endl;
 
       std::cout << "SM 2-loop \\alpha^2 nf=3     Mh= " << JKVH80.mH()  << ", [mW/MW -1] = " 
-                << pow(alphaMZ/4./Pi,2)*W80.m20() << std::endl;
+                << pow(alphaMZ/4./Pi,2)*W80.x20() << std::endl;
       std::cout << "SM 2-loop \\alpha^2 nf=3     Mh= " << JKVH200.mH()  << ", [mW/MW -1] = " 
-                << pow(alphaMZ/4./Pi,2)*W200.m20() << std::endl;
+                << pow(alphaMZ/4./Pi,2)*W200.x20() << std::endl;
 
       std::cout << "\nSM 2-loop \\alpha^2 nl=2,nh=0     Mh= " << JKVH80.mH()  << ", [mW/MW -1] = " 
-                << pow(alphaMZ/4./Pi,2)*W80.m20(2,0) << std::endl;
+                << pow(alphaMZ/4./Pi,2)*W80.x20(2,0) << std::endl;
       std::cout << "SM 2-loop \\alpha^2 nl=2,nh=0     Mh= " << JKVH200.mH()  << ", [mW/MW -1] = " 
-                << pow(alphaMZ/4./Pi,2)*W200.m20(2,0) << std::endl;
+                << pow(alphaMZ/4./Pi,2)*W200.x20(2,0) << std::endl;
 
       // // In ACOV \mu^2 = MMZ
       // ww W_ACOV_80  = ww(JKVH80, JKVH80.mmZ());
@@ -70,9 +70,9 @@ int main (int argc, char *argv[])
       // // 
       // std::cout << "\\mu = MZ" << std::endl;
       // std::cout << "2-loop \\alpha^2      Mh= " << JKVH80.mH()  << ", [mW/MW -1] = " 
-      //           << pow(alpha0/4./Pi,2)*W_ACOV_80.m20(0,0) << std::endl;
+      //           << pow(alpha0/4./Pi,2)*W_ACOV_80.x20(0,0) << std::endl;
       // std::cout << "2-loop \\alpha^2      Mh= " << JKVH200.mH()  << ", [mW/MW -1] = " 
-      //           << pow(alpha0/4./Pi,2)*W_ACOV_200.m20(0,0) << std::endl;
+      //           << pow(alpha0/4./Pi,2)*W_ACOV_200.x20(0,0) << std::endl;
 
       // // 
       // // Plot 2-loop bosonic part
@@ -90,9 +90,9 @@ int main (int argc, char *argv[])
       //     WW dW  = WW(DS2l, DS2l.MMZ());          
           
       //     plot.add(DS2l.MH(), 
-      //              // alphaMt/4./Pi*dW.m10().real(), 
-      //              // alphaMt/4./Pi*as(DS2l.MMt())/4./Pi*dH.m11().real(),
-      //              pow(alpha0/4./Pi,2)*dW.m20(0,0).real());
+      //              // alphaMt/4./Pi*dW.x10().real(), 
+      //              // alphaMt/4./Pi*as(DS2l.MMt())/4./Pi*dH.x11().real(),
+      //              pow(alpha0/4./Pi,2)*dW.x20(0,0).real());
       //   }
 
       // // 
@@ -108,8 +108,8 @@ int main (int argc, char *argv[])
       //     MSinput DS2l(4.4, 80.419, 91.188, mHstart + mHi*mHstep, 174.3);
       //     ww dW  = ww(DS2l, DS2l.mmW());          
           
-      //     long double mW_2l = pow(alpha0/4./Pi,2)*dW.m20(0,0).real();
-      //     long double mW_1l = pow(alpha0/4./Pi,1)*dW.m10(0,0).real();
+      //     long double mW_2l = pow(alpha0/4./Pi,2)*dW.x20(0,0).real();
+      //     long double mW_1l = pow(alpha0/4./Pi,1)*dW.x10(0,0).real();
       //     plotJKV.add(DS2l.mH(), 
       //              mW_1l,
       //              mW_2l,

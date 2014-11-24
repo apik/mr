@@ -42,30 +42,30 @@ int main (int argc, char *argv[])
           tt dt  = tt(BKKS, BKKS.MMt());          
           
           plotYt.add(BKKS.MH(),
-                     pow(alphaSMt/4./Pi,1)*dt.my01().real()+
-                     pow(alphaSMt/4./Pi,2)*dt.m02().real(),
+                     pow(alphaSMt/4./Pi,1)*dt.y01().real()+
+                     pow(alphaSMt/4./Pi,2)*dt.x02().real(),
                      
-                     pow(alphaSMt/4./Pi,1)*dt.my01().real()+
-                     pow(alphaSMt/4./Pi,2)*dt.m02().real()+
-                     pow(alphaSMt/4./Pi,3)*dt.m03().real(),
+                     pow(alphaSMt/4./Pi,1)*dt.y01().real()+
+                     pow(alphaSMt/4./Pi,2)*dt.x02().real()+
+                     pow(alphaSMt/4./Pi,3)*dt.x03().real(),
 
-                     pow(alphaSMt/4./Pi,1)*dt.m01().real()+
-                     pow(alphaSMt/4./Pi,2)*dt.m02().real()+
-                     pow(alphaSMt/4./Pi,3)*dt.m03().real()+
-                     alpha(BKKS.Mt())/4./Pi*dt.my10().real(),
+                     pow(alphaSMt/4./Pi,1)*dt.x01().real()+
+                     pow(alphaSMt/4./Pi,2)*dt.x02().real()+
+                     pow(alphaSMt/4./Pi,3)*dt.x03().real()+
+                     alpha(BKKS.Mt())/4./Pi*dt.y10().real(),
 
-                     pow(alphaSMt/4./Pi,1)*dt.m01().real()+
-                     pow(alphaSMt/4./Pi,2)*dt.m02().real()+
-                     pow(alphaSMt/4./Pi,3)*dt.m03().real()+
-                     alpha(BKKS.Mt())/4./Pi*dt.my10().real()+
-                     alpha(BKKS.Mt())/4./Pi*alphaSMt/4./Pi*dt.my11().real(),
+                     pow(alphaSMt/4./Pi,1)*dt.x01().real()+
+                     pow(alphaSMt/4./Pi,2)*dt.x02().real()+
+                     pow(alphaSMt/4./Pi,3)*dt.x03().real()+
+                     alpha(BKKS.Mt())/4./Pi*dt.y10().real()+
+                     alpha(BKKS.Mt())/4./Pi*alphaSMt/4./Pi*dt.y11().real(),
 
-                     pow(alphaSMt/4./Pi,1)*dt.m01().real()+
-                     pow(alphaSMt/4./Pi,2)*dt.m02().real()+
-                     pow(alphaSMt/4./Pi,3)*dt.m03().real()+
-                     alpha(BKKS.Mt())/4./Pi*dt.my10().real()+
-                     alpha(BKKS.Mt())/4./Pi*alphaSMt/4./Pi*dt.my11().real()+
-                     pow(alpha(BKKS.Mt())/4./Pi,2)*dt.my20().real());
+                     pow(alphaSMt/4./Pi,1)*dt.x01().real()+
+                     pow(alphaSMt/4./Pi,2)*dt.x02().real()+
+                     pow(alphaSMt/4./Pi,3)*dt.x03().real()+
+                     alpha(BKKS.Mt())/4./Pi*dt.y10().real()+
+                     alpha(BKKS.Mt())/4./Pi*alphaSMt/4./Pi*dt.y11().real()+
+                     pow(alpha(BKKS.Mt())/4./Pi,2)*dt.y20().real());
 
           // plotDegr.add(BKKS.MH(),
           //              (1+
@@ -81,14 +81,14 @@ int main (int argc, char *argv[])
           //              );
           
           plotYtDegrPart.add(BKKS.MH(),
-                             alphaMt/4./Pi*alphaSMt/4./Pi*dt.my11().real()*BKKS.Mt()*sqrt(1.16637e-5*sqrt(8)),
-                             pow(alphaMt/4./Pi,2)*dt.my20().real()*BKKS.Mt()*sqrt(1.16637e-5*sqrt(8)),
+                             alphaMt/4./Pi*alphaSMt/4./Pi*dt.y11().real()*BKKS.Mt()*sqrt(1.16637e-5*sqrt(8)),
+                             pow(alphaMt/4./Pi,2)*dt.y20().real()*BKKS.Mt()*sqrt(1.16637e-5*sqrt(8)),
                              (-7.53 + 0.09*(BKKS.MH()-125) - 0.23*(BKKS.Mt()-173))/pow(4*Pi,3)*alphaSMt,
                              (5.22  - 0.01*(BKKS.MH()-125) + 0.15*(BKKS.Mt()-173))/pow(4*Pi,4)
                              );
           
           // std::cout << "Rundec: " << 4.*alphaSMt/4./Pi*CRunDec::fMsFromOs1(BKKS.Mt(), BKKS.Mt()) << std::endl; 
-          std::cout << "      : " << alphaSMt/4./Pi*dt.my01().real() << "  A= " << Tsil::A(BKKS.MMt(),BKKS.MMt())/BKKS.MMt() << std::endl; 
+          std::cout << "      : " << alphaSMt/4./Pi*dt.y01().real() << "  A= " << Tsil::A(BKKS.MMt(),BKKS.MMt())/BKKS.MMt() << std::endl; 
 
           
           

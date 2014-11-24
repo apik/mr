@@ -63,11 +63,7 @@ namespace odeint {
             }
 
             if( !( t+dt > t) ) 
-              {
-                std::cerr << "NaN? t= " << t << ", dt = " << dt << std::endl;
-                std::cerr << "Limit in precision - singularity!!!" << std::endl;
                 throw; // we've reached machine precision with dt - no advancing in t
-              }
         }
         return iterations;
     }

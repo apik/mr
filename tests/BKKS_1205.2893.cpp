@@ -10,41 +10,49 @@ TEST_CASE
 {
   Approx approx = Approx::custom().epsilon( 0.00001 );
   
-  OSinput oi = OSinput(4.4, 80.399, 91.1876, 125.6, 173.5);
+  // Important Mb=0, but for comparison 
+  // mmd3->0 manualy in deltayta[...]
+  OSinput oi = OSinput(0., 80.399, 91.1876, 125.6, 173.5);
     
   SECTION( "top,\\mu=MZ" ) 
     {
       tt dMtZ  = tt(oi, oi.MMZ());
             
-      REQUIRE( dMtZ.m10().real() == Approx( -42.1503 ).epsilon( 0.0001 ) );
-      REQUIRE( dMtZ.m11().real() == Approx(  975.307 ).epsilon( 0.0001 ) );
+      REQUIRE( dMtZ.x10().real() == Approx( -42.1506 ) );
+      REQUIRE( dMtZ.x11().real() == Approx(  975.307 ) );
 
-      REQUIRE( dMtZ.my10().real() == Approx( -20.4605 ).epsilon( 0.0001 ) );
-      REQUIRE( dMtZ.my11().real() == Approx( -167.7   ).epsilon( 0.0001 ) );
+      REQUIRE( dMtZ.y10().real() == Approx( -20.4608 ) );
+      REQUIRE( dMtZ.y11().real() == Approx( -167.7   ) );
     }
   SECTION( "top,\\mu=Mt" ) 
     {
       tt dMtt  = tt(oi, oi.MMt());
             
-      REQUIRE( dMtt.m10().real() == Approx( 109.66 ).epsilon( 0.01 ) );
-      REQUIRE( dMtt.m11().real() == Approx( -417.114 ).epsilon( 0.01 ) );
+      REQUIRE( dMtt.x10().real() == Approx( 109.666 ) );
+      REQUIRE( dMtt.x11().real() == Approx( -417.114 ) );
 
-      REQUIRE( dMtt.my10().real() == Approx( 2.13494 ).epsilon( 0.0001 ) );
-      REQUIRE( dMtt.my11().real() == Approx( -75.9081   ).epsilon( 0.0001 ) );
+      REQUIRE( dMtt.y10().real() == Approx( 2.14111 ) );
+      REQUIRE( dMtt.y11().real() == Approx( -80.134 ) );
     }
   SECTION( "Higgs,\\mu=Mz" ) 
     {
       HH<OS> dMHZ  = HH<OS>(oi, oi.MMZ());
             
-      REQUIRE( dMHZ.my10().real() == Approx(  203.31 ) );
-      REQUIRE( dMHZ.my11().real() == Approx( -3805.1 ) );
+      REQUIRE( dMHZ.x10().real() == Approx( 159.93 ) );
+      REQUIRE( dMHZ.x11().real() == Approx( -1527.21 ) );
+
+      REQUIRE( dMHZ.y10().real() == Approx(  203.31 ) );
+      REQUIRE( dMHZ.y11().real() == Approx( -3805.1 ) );
     }
   SECTION( "Higgs,\\mu=Mt" ) 
     {
       HH<OS> dMHt  = HH<OS>(oi, oi.MMt());
-            
-      REQUIRE( dMHt.my10().real() == Approx( -18.4183 ) );
-      REQUIRE( dMHt.my11().real() == Approx( -1953.91 ) );
+
+      REQUIRE( dMHt.x10().real() == Approx( 196.631 ) );
+      REQUIRE( dMHt.x11().real() == Approx( -1480.94 ) );
+
+      REQUIRE( dMHt.y10().real() == Approx( -18.4183 ) );
+      REQUIRE( dMHt.y11().real() == Approx( -1953.91 ) );
     }
   SECTION( "\\delta-r,\\mu=Mz" ) 
     {
@@ -60,11 +68,4 @@ TEST_CASE
       REQUIRE( ddrt.dr10().real() == Approx( 215.049 ) );
       REQUIRE( ddrt.dr11().real() == Approx( 472.97 ) );
     }
-
-  
-  INFO( "Here is info" );
-  // CAPTURE( dMtZ.m11().real() );
-  
-
-
 }

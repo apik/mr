@@ -19,5 +19,5 @@ TEST_CASE
   WW<MS> dMW_at_mu_eq_MZ  = WW<MS>(mi, mi.mmZ());
   ZZ<MS> dMZ_at_mu_eq_MZ  = ZZ<MS>(mi, mi.mmZ());
   
-  REQUIRE( dMW_at_mu_eq_MZ.m20().real() == Approx( dMZ_at_mu_eq_MZ.m20().real() ).epsilon(0.001) );
+  REQUIRE( dMW_at_mu_eq_MZ.x20().real() == Approx( dMZ_at_mu_eq_MZ.x20().real() ).epsilon(0.001) );
 }

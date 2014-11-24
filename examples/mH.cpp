@@ -13,35 +13,71 @@ int main (int argc, char *argv[])
       // Compare with:
       // bosonic only part (nH = nL = 0)    : arXiv:hep-ph/0209084
 
-      OSinput ACOVH80(0, 80.419, 91.188, 80, 174.3);
-      OSinput ACOVH200(0, 80.419, 91.188, 200, 174.3);
+      // OSinput ACOVH80(0, 80.419, 91.188, 80, 174.3);
+      // OSinput ACOVH200(0, 80.419, 91.188, 200, 174.3);
       
-      alphaMt  = 0.00779305;
-      alphaS   = 0.1185;
+      // alphaMt  = 0.00779305;
+      // alphaS   = 0.1185;
 
-      // long double alphaMZ = 1./137.035999;
+      // // long double alphaMZ = 1./137.035999;
 
       long double alphaMZ = 1./128.992;
-      HH<OS> dMH80  = HH<OS>(ACOVH80, ACOVH80.MMZ());
-      HH<OS> dMH200 = HH<OS>(ACOVH200, ACOVH200.MMZ());
+      // HH<OS> dMH80  = HH<OS>(ACOVH80, ACOVH80.MMZ());
+      // HH<OS> dMH200 = HH<OS>(ACOVH200, ACOVH200.MMZ());
       
-      // Compare with FIG.5
-      std::cout << "1-loop \\alpha      Mh= " << ACOVH80.MH()  << ", [mH/MH -1] = " << alphaMZ/4./Pi*dMH80.m10(0,0) << std::endl;
-      std::cout << "1-loop \\alpha      Mh= " << ACOVH200.MH() << ", [mH/MH -1] = " << alphaMZ/4./Pi*dMH200.m10(0,0) << std::endl;
-      
+      // // Compare with FIG.5
+      // std::cout << "1-loop \\alpha      Mh= " << ACOVH80.MH()  << ", [mH/MH -1] = " << alphaMZ/4./Pi*dMH80.m10(0,0) << std::endl;
+      // std::cout << "1-loop \\alpha      Mh= " << ACOVH200.MH() << ", [mH/MH -1] = " << alphaMZ/4./Pi*dMH200.m10(0,0) << std::endl;
 
-      // MSinput SPM = MSinput::fromConsts( 0.127, 247.0, 0, 0.936, 0.648, 0.358);
+      BetaVEV bv(3);
 
-      // std::cout << "Mb= " << SPM.mb() << std::endl; 
-      // std::cout << "MW= " << SPM.mW() << std::endl; 
-      // std::cout << "MZ= " << SPM.mZ() << std::endl; 
-      // std::cout << "MH= " << SPM.mH() << std::endl; 
-      // std::cout << "Mt= " << SPM.mt() << std::endl; 
-      // std::cout << "1/al= " << 1./SPM.alpha() << std::endl; 
+      double vi[8] = {1.,2.,3.,4.,5.,6.,7.,8.}; 
+      state_type ain(vi, vi + 8);
 
       
-      // hh mHH  = hh(SPM, SPM.mmt());
-      // std::cout << "1-loop \\alpha      Mh= " << SPM.mH() << ", [mH/MH -1] = " << SPM.mH()*sqrt(1 + SPM.alpha()/4./Pi*mHH.m10()) << std::endl;
+      
+      std::cout << "VEV = " << BetaVEV::gamv(ain,3) << std::endl;
+      std::cout << "bms = " << BetaMu2::bmu2(ain,3) << std::endl;
+
+      
+      long double Mt = 173.10;
+      MSinput SPM = MSinput::fromConsts( 0.127,
+                                         367.241, //247.0
+                                         0, 0.936, 0.648, 0.358);
+
+      std::cout << "Mb= " << SPM.mb() << std::endl; 
+      std::cout << "MW= " << SPM.mW() << std::endl; 
+      std::cout << "MZ= " << SPM.mZ() << std::endl; 
+      std::cout << "MH= " << SPM.mH() << std::endl; 
+      std::cout << "Mt= " << SPM.mt() << std::endl; 
+      std::cout << "1/al= " << 1./SPM.alpha() << std::endl; 
+
+      
+      HH<MS> mHH(SPM, pow(Mt,2));
+      std::cout << "1-loop \\alpha      Mh= " << SPM.mH() << ", [mH/MH -1] = " << SPM.mH()*sqrt(1 + SPM.alpha()/4./Pi*mHH.x10()) << std::endl;
+
+
+      OSinput SMH(0, 80.419, 91.188, 125.6, 172.3);
+
+
+      HH<OS> dHHH(SMH, SMH.MMt());
+
+      std::cout << "1-loop \\alpha   [mH(mu)] = "  << sqrt(SMH.MMH()*(1+alphaMZ/4./Pi*dHHH.x10())) << std::endl;
+
+      HH<OS> dHHH_Planck(SMH, pow(1.2209,2) * pow(10.,2*19));
+      double  alphaMpl = 1./104.82;
+      double  alphaSMpl = 0.0188966;
+      std::cout << "1-loop \\alpha   [mH(mPl)] = "  << sqrt(SMH.MMH()*(1
+                                                                       + alphaMpl/4./Pi*dHHH.x10()
+                                                                       + alphaMpl/4./Pi*alphaSMpl/4./Pi*dHHH.x11())) << std::endl;
+
+      // std::cout << "1-loop \\alpha   [mH/MH -1] = "  << SMH.MMH()*(1+alphaMZ/4./Pi*dHHH.x10()) << std::endl;
+      // std::cout << "1-loop \\alpha               Mh= " << BKKS2l200.MH() << ", [mH/MH -1] = "  << alphaMZ/4./Pi*dEW200.m10() << std::endl;
+
+      // std::cout << "2-loop \\alpha*\\alpha_S      Mh= " << BKKS2l80.MH()  << ", [mH/MH -1] = "  << alphaMZ/4./Pi*alphaS/4./Pi*dEW80.m11() << std::endl;
+      // std::cout << "2-loop \\alpha*\\alpha_S      Mh= " << BKKS2l200.MH() << ", [mH/MH -1] = "  << alphaMZ/4./Pi*alphaS/4./Pi*dEW200.m11() << std::endl;
+
+      
       // std::cout << "2-loop \\alpha      Mh= " << SPM.mH() << ", [mH/MH -1] = " << pow(SPM.alpha()/4./Pi,1)*mHH.m10() << std::endl;
 
       // // 

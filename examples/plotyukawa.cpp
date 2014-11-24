@@ -93,12 +93,12 @@ int main (int argc, char *argv[])
        long double mu = mHstart + mHi*mHstep;
        tt dtY  = tt(DS2l, mu*mu);          
        
-       std::cout << "mu= " << mu << ",  as = " << as(mu) << ",  dyt = " << dtY.my11().real() << std::endl;
-       // plotYt.add(mu,a(mu)/4./Pi*dtY.my10().real(),
+       std::cout << "mu= " << mu << ",  as = " << as(mu) << ",  dyt = " << dtY.y11().real() << std::endl;
+       // plotYt.add(mu,a(mu)/4./Pi*dtY.y10().real(),
        //            // a(mu)/4./Pi*as(mu)/4./Pi*
-       //            dtY.my11().real(),
+       //            dtY.y11().real(),
        //            // pow(a(mu)/4./Pi,2)*
-       //            dtY.my20().real());
+       //            dtY.y20().real());
 
      }
 
@@ -114,9 +114,9 @@ int main (int argc, char *argv[])
        long double mu = mHstart + mHi*mHstep;
        bb dbY  = bb(DS2l, mu*mu);          
        
-       // plotYb.add(mu,a(mu)/4./Pi*dbY.my10().real(),
-       //            a(mu)/4./Pi*as(mu)/4./Pi*dbY.my11().real(),
-       //            pow(a(mu)/4./Pi,2)*dbY.my20().real());
+       // plotYb.add(mu,a(mu)/4./Pi*dbY.y10().real(),
+       //            a(mu)/4./Pi*as(mu)/4./Pi*dbY.y11().real(),
+       //            pow(a(mu)/4./Pi,2)*dbY.y20().real());
 
      }
 
