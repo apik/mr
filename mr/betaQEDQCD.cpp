@@ -1,0 +1,33 @@
+#include "betaQEDQCD.hpp"
+
+std::pair<double,double> runQEDQCD(long double aStart, long double asStart, long double muStart, long double muEnd, size_t nu, size_t nd, size_t nl)
+{
+  state_type alpha4pi(2);
+  
+  // Starting value
+  alpha4pi[0] = asStart/4./Pi;
+  alpha4pi[1] =  aStart/4./Pi; 
+  
+  double lEnd = 2.*log(muEnd/muStart);
+
+  
+  std::cout << "End time: " << fabs(lEnd) << std::endl;
+  BetaQEDQCD bEMQCD(nu, nd, nl, lEnd < 0);
+    
+  double abs_err = 1E-6;
+  double rel_err = 1E-7;
+  double a_x = 1.0;
+  double a_dxdt = 1.0;
+  
+  // OdeInt_v.1
+  controlled_stepper_standard< stepper_rk5_ck< state_type > >
+    controlled_rk5( 1E-6 , 1E-7 , 1.0 , 1.0 );
+  
+  integrate_adaptive( controlled_rk5 ,
+                      bEMQCD, alpha4pi, 0.0, fabs(lEnd), 0.01  );
+  
+  return std::make_pair(4.*Pi*alpha4pi[0],4.*Pi*alpha4pi[1]);            // We return a_S
+}
+
+
+
