@@ -82,14 +82,16 @@ noinst_PROGRAMS = mW$(EXEEXT) mZ$(EXEEXT) mH$(EXEEXT) mt$(EXEEXT) \
 	runAlpha$(EXEEXT) runSM$(EXEEXT) runGL$(EXEEXT) mb$(EXEEXT) \
 	yukawa$(EXEEXT) lambda$(EXEEXT) yt$(EXEEXT) gauge$(EXEEXT) \
 	plotyukawa$(EXEEXT) mtgl$(EXEEXT) bezrukovFit$(EXEEXT) \
-	GFermi$(EXEEXT) tables$(EXEEXT) $(am__EXEEXT_1)
+	GFermi$(EXEEXT) tables$(EXEEXT) poleRGI$(EXEEXT) \
+	$(am__EXEEXT_1) $(am__EXEEXT_2)
 @HAVE_ROOT_TRUE@am__append_1 = mHroot interpolation
+@HAVE_BOOST_TRUE@am__append_2 = errest
 subdir = examples
 DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/Makefile.am \
 	$(top_srcdir)/depcomp
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
-am__aclocal_m4_deps = $(top_srcdir)/m4/root.m4 \
-	$(top_srcdir)/configure.ac
+am__aclocal_m4_deps = $(top_srcdir)/m4/ax_boost_base.m4 \
+	$(top_srcdir)/m4/root.m4 $(top_srcdir)/configure.ac
 am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
 	$(ACLOCAL_M4)
 mkinstalldirs = $(install_sh) -d
@@ -97,6 +99,7 @@ CONFIG_HEADER = $(top_builddir)/config.h
 CONFIG_CLEAN_FILES =
 CONFIG_CLEAN_VPATH_FILES =
 @HAVE_ROOT_TRUE@am__EXEEXT_1 = mHroot$(EXEEXT) interpolation$(EXEEXT)
+@HAVE_BOOST_TRUE@am__EXEEXT_2 = errest$(EXEEXT)
 PROGRAMS = $(noinst_PROGRAMS)
 am_GFermi_OBJECTS = GFermi-GFermi.$(OBJEXT)
 GFermi_OBJECTS = $(am_GFermi_OBJECTS)
@@ -104,6 +107,11 @@ GFermi_DEPENDENCIES =
 am_bezrukovFit_OBJECTS = bezrukovFit-bezrukovFit.$(OBJEXT)
 bezrukovFit_OBJECTS = $(am_bezrukovFit_OBJECTS)
 bezrukovFit_DEPENDENCIES =
+am__errest_SOURCES_DIST = errest.cpp
+@HAVE_BOOST_TRUE@am_errest_OBJECTS = errest-errest.$(OBJEXT)
+errest_OBJECTS = $(am_errest_OBJECTS)
+am__DEPENDENCIES_1 =
+@HAVE_BOOST_TRUE@errest_DEPENDENCIES = $(am__DEPENDENCIES_1)
 am_gauge_OBJECTS = gauge-gauge.$(OBJEXT)
 gauge_OBJECTS = $(am_gauge_OBJECTS)
 gauge_DEPENDENCIES =
@@ -111,7 +119,6 @@ am__interpolation_SOURCES_DIST = interpolation.cpp
 @HAVE_ROOT_TRUE@am_interpolation_OBJECTS =  \
 @HAVE_ROOT_TRUE@	interpolation-interpolation.$(OBJEXT)
 interpolation_OBJECTS = $(am_interpolation_OBJECTS)
-am__DEPENDENCIES_1 =
 @HAVE_ROOT_TRUE@interpolation_DEPENDENCIES = $(am__DEPENDENCIES_1)
 am_lambda_OBJECTS = lambda-lambda.$(OBJEXT)
 lambda_OBJECTS = $(am_lambda_OBJECTS)
@@ -141,6 +148,9 @@ mtgl_DEPENDENCIES =
 am_plotyukawa_OBJECTS = plotyukawa-plotyukawa.$(OBJEXT)
 plotyukawa_OBJECTS = $(am_plotyukawa_OBJECTS)
 plotyukawa_DEPENDENCIES =
+am_poleRGI_OBJECTS = poleRGI-poleRGI.$(OBJEXT)
+poleRGI_OBJECTS = $(am_poleRGI_OBJECTS)
+poleRGI_DEPENDENCIES =
 am_runAlpha_OBJECTS = runAlpha-runAlpha.$(OBJEXT)
 runAlpha_OBJECTS = $(am_runAlpha_OBJECTS)
 runAlpha_DEPENDENCIES =
@@ -192,17 +202,19 @@ AM_V_CXXLD = $(am__v_CXXLD_@AM_V@)
 am__v_CXXLD_ = $(am__v_CXXLD_@AM_DEFAULT_V@)
 am__v_CXXLD_0 = @echo "  CXXLD   " $@;
 am__v_CXXLD_1 = 
-SOURCES = $(GFermi_SOURCES) $(bezrukovFit_SOURCES) $(gauge_SOURCES) \
-	$(interpolation_SOURCES) $(lambda_SOURCES) $(mH_SOURCES) \
-	$(mHroot_SOURCES) $(mW_SOURCES) $(mZ_SOURCES) $(mb_SOURCES) \
-	$(mt_SOURCES) $(mtgl_SOURCES) $(plotyukawa_SOURCES) \
-	$(runAlpha_SOURCES) $(runGL_SOURCES) $(runSM_SOURCES) \
-	$(tables_SOURCES) $(yt_SOURCES) $(yukawa_SOURCES)
+SOURCES = $(GFermi_SOURCES) $(bezrukovFit_SOURCES) $(errest_SOURCES) \
+	$(gauge_SOURCES) $(interpolation_SOURCES) $(lambda_SOURCES) \
+	$(mH_SOURCES) $(mHroot_SOURCES) $(mW_SOURCES) $(mZ_SOURCES) \
+	$(mb_SOURCES) $(mt_SOURCES) $(mtgl_SOURCES) \
+	$(plotyukawa_SOURCES) $(poleRGI_SOURCES) $(runAlpha_SOURCES) \
+	$(runGL_SOURCES) $(runSM_SOURCES) $(tables_SOURCES) \
+	$(yt_SOURCES) $(yukawa_SOURCES)
 DIST_SOURCES = $(GFermi_SOURCES) $(bezrukovFit_SOURCES) \
-	$(gauge_SOURCES) $(am__interpolation_SOURCES_DIST) \
-	$(lambda_SOURCES) $(mH_SOURCES) $(am__mHroot_SOURCES_DIST) \
-	$(mW_SOURCES) $(mZ_SOURCES) $(mb_SOURCES) $(mt_SOURCES) \
-	$(mtgl_SOURCES) $(plotyukawa_SOURCES) $(runAlpha_SOURCES) \
+	$(am__errest_SOURCES_DIST) $(gauge_SOURCES) \
+	$(am__interpolation_SOURCES_DIST) $(lambda_SOURCES) \
+	$(mH_SOURCES) $(am__mHroot_SOURCES_DIST) $(mW_SOURCES) \
+	$(mZ_SOURCES) $(mb_SOURCES) $(mt_SOURCES) $(mtgl_SOURCES) \
+	$(plotyukawa_SOURCES) $(poleRGI_SOURCES) $(runAlpha_SOURCES) \
 	$(runGL_SOURCES) $(runSM_SOURCES) $(tables_SOURCES) \
 	$(yt_SOURCES) $(yukawa_SOURCES)
 am__can_run_installinfo = \
@@ -238,6 +250,8 @@ AUTOCONF = @AUTOCONF@
 AUTOHEADER = @AUTOHEADER@
 AUTOMAKE = @AUTOMAKE@
 AWK = @AWK@
+BOOST_CPPFLAGS = @BOOST_CPPFLAGS@
+BOOST_LDFLAGS = @BOOST_LDFLAGS@
 CC = @CC@
 CCDEPMODE = @CCDEPMODE@
 CFLAGS = @CFLAGS@
@@ -347,7 +361,7 @@ top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 AUTOMAKE_OPTIONS = subdir-objects
 ACLOCAL_AMFLAGS = ${ACLOCAL_FLAGS} -I m4
-LDADD = ../mr/libmr.a
+LDADD = ../mr/libmr.la
 EX_CFLAGS = $(MR_CFLAGS) -I$(top_srcdir)/tsil-1.21 -I$(top_srcdir)/mr
 mW_SOURCES = mW.cpp
 mW_CPPFLAGS = $(EX_CFLAGS)
@@ -406,6 +420,16 @@ runSM_LDADD = $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.21 -ltsi
 runGL_SOURCES = runGL.cpp
 runGL_CPPFLAGS = $(EX_CFLAGS)
 runGL_LDADD = $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.21 -ltsil -lm
+poleRGI_SOURCES = poleRGI.cpp
+poleRGI_CPPFLAGS = $(EX_CFLAGS)
+poleRGI_LDADD = $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.21 -ltsil -lm
+
+# mratio_SOURCES =  mratio.cpp
+# mratio_CPPFLAGS = $(EX_CFLAGS) -I$(top_srcdir)/tsil-1.21 -I$(top_srcdir)/mr
+# mratio_LDADD = $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.21 -ltsil -lm
+@HAVE_BOOST_TRUE@errest_SOURCES = errest.cpp
+@HAVE_BOOST_TRUE@errest_CPPFLAGS = $(EX_CFLAGS) -I$(top_srcdir)/tsil-1.21 -I$(top_srcdir)/mr $(BOOST_CPPFLAGS)
+@HAVE_BOOST_TRUE@errest_LDADD = $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.21 -ltsil -lm $(BOOST_LDFLAGS)
 all: all-am
 
 .SUFFIXES:
@@ -452,6 +476,10 @@ bezrukovFit$(EXEEXT): $(bezrukovFit_OBJECTS) $(bezrukovFit_DEPENDENCIES) $(EXTRA
 	@rm -f bezrukovFit$(EXEEXT)
 	$(AM_V_CXXLD)$(CXXLINK) $(bezrukovFit_OBJECTS) $(bezrukovFit_LDADD) $(LIBS)
 
+errest$(EXEEXT): $(errest_OBJECTS) $(errest_DEPENDENCIES) $(EXTRA_errest_DEPENDENCIES) 
+	@rm -f errest$(EXEEXT)
+	$(AM_V_CXXLD)$(CXXLINK) $(errest_OBJECTS) $(errest_LDADD) $(LIBS)
+
 gauge$(EXEEXT): $(gauge_OBJECTS) $(gauge_DEPENDENCIES) $(EXTRA_gauge_DEPENDENCIES) 
 	@rm -f gauge$(EXEEXT)
 	$(AM_V_CXXLD)$(CXXLINK) $(gauge_OBJECTS) $(gauge_LDADD) $(LIBS)
@@ -496,6 +524,10 @@ plotyukawa$(EXEEXT): $(plotyukawa_OBJECTS) $(plotyukawa_DEPENDENCIES) $(EXTRA_pl
 	@rm -f plotyukawa$(EXEEXT)
 	$(AM_V_CXXLD)$(CXXLINK) $(plotyukawa_OBJECTS) $(plotyukawa_LDADD) $(LIBS)
 
+poleRGI$(EXEEXT): $(poleRGI_OBJECTS) $(poleRGI_DEPENDENCIES) $(EXTRA_poleRGI_DEPENDENCIES) 
+	@rm -f poleRGI$(EXEEXT)
+	$(AM_V_CXXLD)$(CXXLINK) $(poleRGI_OBJECTS) $(poleRGI_LDADD) $(LIBS)
+
 runAlpha$(EXEEXT): $(runAlpha_OBJECTS) $(runAlpha_DEPENDENCIES) $(EXTRA_runAlpha_DEPENDENCIES) 
 	@rm -f runAlpha$(EXEEXT)
 	$(AM_V_CXXLD)$(CXXLINK) $(runAlpha_OBJECTS) $(runAlpha_LDADD) $(LIBS)
@@ -528,6 +560,7 @@ distclean-compile:
 
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/GFermi-GFermi.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/bezrukovFit-bezrukovFit.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/errest-errest.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gauge-gauge.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/interpolation-interpolation.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/lambda-lambda.Po@am__quote@
@@ -539,6 +572,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/mt-mt.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/mtgl-mtgl.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/plotyukawa-plotyukawa.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/poleRGI-poleRGI.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/runAlpha-runAlpha.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/runGL-runGL.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/runSM-runSM.Po@am__quote@
@@ -589,6 +623,20 @@ bezrukovFit-bezrukovFit.obj: bezrukovFit.cpp
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='bezrukovFit.cpp' object='bezrukovFit-bezrukovFit.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(bezrukovFit_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o bezrukovFit-bezrukovFit.obj `if test -f 'bezrukovFit.cpp'; then $(CYGPATH_W) 'bezrukovFit.cpp'; else $(CYGPATH_W) '$(srcdir)/bezrukovFit.cpp'; fi`
+
+errest-errest.o: errest.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(errest_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT errest-errest.o -MD -MP -MF $(DEPDIR)/errest-errest.Tpo -c -o errest-errest.o `test -f 'errest.cpp' || echo '$(srcdir)/'`errest.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/errest-errest.Tpo $(DEPDIR)/errest-errest.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='errest.cpp' object='errest-errest.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(errest_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o errest-errest.o `test -f 'errest.cpp' || echo '$(srcdir)/'`errest.cpp
+
+errest-errest.obj: errest.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(errest_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT errest-errest.obj -MD -MP -MF $(DEPDIR)/errest-errest.Tpo -c -o errest-errest.obj `if test -f 'errest.cpp'; then $(CYGPATH_W) 'errest.cpp'; else $(CYGPATH_W) '$(srcdir)/errest.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/errest-errest.Tpo $(DEPDIR)/errest-errest.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='errest.cpp' object='errest-errest.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(errest_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o errest-errest.obj `if test -f 'errest.cpp'; then $(CYGPATH_W) 'errest.cpp'; else $(CYGPATH_W) '$(srcdir)/errest.cpp'; fi`
 
 gauge-gauge.o: gauge.cpp
 @am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gauge_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT gauge-gauge.o -MD -MP -MF $(DEPDIR)/gauge-gauge.Tpo -c -o gauge-gauge.o `test -f 'gauge.cpp' || echo '$(srcdir)/'`gauge.cpp
@@ -743,6 +791,20 @@ plotyukawa-plotyukawa.obj: plotyukawa.cpp
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='plotyukawa.cpp' object='plotyukawa-plotyukawa.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(plotyukawa_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o plotyukawa-plotyukawa.obj `if test -f 'plotyukawa.cpp'; then $(CYGPATH_W) 'plotyukawa.cpp'; else $(CYGPATH_W) '$(srcdir)/plotyukawa.cpp'; fi`
+
+poleRGI-poleRGI.o: poleRGI.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(poleRGI_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT poleRGI-poleRGI.o -MD -MP -MF $(DEPDIR)/poleRGI-poleRGI.Tpo -c -o poleRGI-poleRGI.o `test -f 'poleRGI.cpp' || echo '$(srcdir)/'`poleRGI.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/poleRGI-poleRGI.Tpo $(DEPDIR)/poleRGI-poleRGI.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='poleRGI.cpp' object='poleRGI-poleRGI.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(poleRGI_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o poleRGI-poleRGI.o `test -f 'poleRGI.cpp' || echo '$(srcdir)/'`poleRGI.cpp
+
+poleRGI-poleRGI.obj: poleRGI.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(poleRGI_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT poleRGI-poleRGI.obj -MD -MP -MF $(DEPDIR)/poleRGI-poleRGI.Tpo -c -o poleRGI-poleRGI.obj `if test -f 'poleRGI.cpp'; then $(CYGPATH_W) 'poleRGI.cpp'; else $(CYGPATH_W) '$(srcdir)/poleRGI.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/poleRGI-poleRGI.Tpo $(DEPDIR)/poleRGI-poleRGI.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='poleRGI.cpp' object='poleRGI-poleRGI.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(poleRGI_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o poleRGI-poleRGI.obj `if test -f 'poleRGI.cpp'; then $(CYGPATH_W) 'poleRGI.cpp'; else $(CYGPATH_W) '$(srcdir)/poleRGI.cpp'; fi`
 
 runAlpha-runAlpha.o: runAlpha.cpp
 @am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(runAlpha_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT runAlpha-runAlpha.o -MD -MP -MF $(DEPDIR)/runAlpha-runAlpha.Tpo -c -o runAlpha-runAlpha.o `test -f 'runAlpha.cpp' || echo '$(srcdir)/'`runAlpha.cpp
@@ -1028,10 +1090,6 @@ uninstall-am:
 	mostlyclean-generic pdf pdf-am ps ps-am tags tags-am uninstall \
 	uninstall-am
 
-
-# mratio_SOURCES =  mratio.cpp
-# mratio_CPPFLAGS = $(EX_CFLAGS) -I$(top_srcdir)/tsil-1.21 -I$(top_srcdir)/mr
-# mratio_LDADD = $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.21 -ltsil -lm
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.

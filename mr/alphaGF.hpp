@@ -95,13 +95,13 @@ public:
   void init();
   
  
-  std::complex<long double> a10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+  long double a10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
   
-  std::complex<long double> a11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+  long double a11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
   
 
-  std::complex<long double> a20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+  long double a20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 };
 
 

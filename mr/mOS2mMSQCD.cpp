@@ -22,7 +22,9 @@
 #include <tt.hpp>
 //#include "CRunDec.h"
 
-long double mOS2mMS(long double MM, long double mu2, size_t nl, size_t nh, size_t loops = 1)
+// nh - number of heavy fermions with mass M
+// nl - number of massles fermions with mass
+long double mOS2mMS(long double MM, long double mu2, size_t nl, size_t nh, size_t loops)
 {
   double NL = double(nl), NH = double (nh);
   if(loops == 1)
@@ -82,22 +84,37 @@ long double mOS2mMS(long double MM, long double mu2, size_t nl, size_t nh, size_
     return 0;
 }
 
-std::complex<long double> bb::x02(size_t nL, size_t nH, size_t boson)
+// To convert number of light and heavy generations NL,NH to
+// number of fermions we use:
+//        nl = 2*NL + NH, nh = NH for M=Mt
+//        nl = 2*NL , nh = NH for M=Mb 
+
+long double bb::x02(size_t nL, size_t nH, size_t boson)
 {     
-  return std::complex<long double>(mOS2mMS(MMb, mu2, nL, nH, 2), 0);
+  return mOS2mMS(MMb, mu2, 2*nL, nH, 2);
 }
 
-std::complex<long double> bb::x03(size_t nL, size_t nH, size_t boson)
+long double bb::x03(size_t nL, size_t nH, size_t boson)
 {     
-  return std::complex<long double>(mOS2mMS(MMb, mu2, nL, nH, 3), 0);
+  return mOS2mMS(MMb, mu2, 2*nL, nH, 3);
 }
 
-std::complex<long double> tt::x02(size_t nL, size_t nH, size_t boson)
+long double tt::x02(size_t nL, size_t nH, size_t boson)
 {     
-  return std::complex<long double>(mOS2mMS(MMb, mu2, nL + nH, nH, 2), 0);
+  return mOS2mMS(MMt, mu2, 2*nL + nH, nH, 2);
 }
 
-std::complex<long double> tt::x03(size_t nL, size_t nH, size_t boson)
+long double tt::x03(size_t nL, size_t nH, size_t boson)
 {     
-  return std::complex<long double>(mOS2mMS(MMb, mu2, nL + nH, nH, 3), 0);
+  return mOS2mMS(MMt, mu2, 2*nL + nH, nH, 3);
+}
+
+long double tt::y02(size_t nL, size_t nH, size_t boson)
+{     
+  return mOS2mMS(MMt, mu2, 2*nL + nH, nH, 2);
+}
+
+long double tt::y03(size_t nL, size_t nH, size_t boson)
+{     
+  return mOS2mMS(MMt, mu2, 2*nL + nH, nH, 3);
 }

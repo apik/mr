@@ -20,6 +20,7 @@
 
 #ifndef __CONSTANTS_HPP__
 #define __CONSTANTS_HPP__
+#include <cmath>
 const long double    Pi = M_PI;
 const long double Zeta2 = (Pi*Pi)/6.;
 const long double Zeta3 = 1.20205690315959428539973816151144999076498629234049888179227155534L;

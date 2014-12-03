@@ -1,30 +1,9 @@
-//
-// MR - 2-loop matching and 3-loop Running, including full 2-loop EW corrections
-// Copyright (C) 2014 Andrey Pikelner <pikelner@theor.jinr.ru>
-//
-// This file is part of MR.
-//
-// MR is free software: you can redistribute it and/or modify
-// it under the terms of the GNU General Public License as published by
-// the Free Software Foundation, either version 3 of the License, or
-// (at your option) any later version.
-//
-// MR is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU General Public License for more details.
-//
-// You should have received a copy of the GNU General Public License
-// along with MR.  If not, see <http://www.gnu.org/licenses/>.
-//
-
 #include <dr.hpp>
-std::complex<long double>
-dr::drgl20(size_t nL, size_t nH, size_t boson)
+long double dr::drgl20(size_t nL, size_t nH, size_t boson)
 {     
       
       
-    std::complex<long double> ardrgl[25], drglret;
+    std::complex<long double> ardrgl[24], drglret;
 
     ardrgl[1]=double(boson);
     ardrgl[2]=pow(SW,-1);
@@ -41,72 +20,67 @@ dr::drgl20(size_t nL, size_t nH, size_t boson)
     ardrgl[13]=pow(MMt,-1);
     ardrgl[14]=std::real(Tsil::B(0,0,MMt,mu2));
    ardrgl[15]=5*ardrgl[8];
-   ardrgl[16]=9*ardrgl[5];
-   ardrgl[17]=pow(ardrgl[8],2);
-   ardrgl[18]=ardrgl[17]*ardrgl[3];
-   ardrgl[19]=ardrgl[16] - ardrgl[15] + 21./4.*ardrgl[18];
-   ardrgl[19]=ardrgl[3]*ardrgl[19];
-   ardrgl[19]=3./4.*ardrgl[14] + 59./16. + ardrgl[19];
-   ardrgl[20]=3*ardrgl[8];
-   ardrgl[21]= - ardrgl[3]*ardrgl[20];
-   ardrgl[21]= - 5./2. + ardrgl[21];
-   ardrgl[21]=ardrgl[11]*ardrgl[21];
-   ardrgl[19]=5./2.*ardrgl[10] + 1./2.*ardrgl[19] + ardrgl[21];
-   ardrgl[21]=ardrgl[10]*ardrgl[3];
-   ardrgl[22]=77./8. - ardrgl[14];
-   ardrgl[22]=ardrgl[3]*ardrgl[22];
-   ardrgl[23]=ardrgl[9]*ardrgl[11]*pow(ardrgl[3],2);
-   ardrgl[22]= - 12*ardrgl[23] + 1./2.*ardrgl[22] - 2*ardrgl[21];
-   ardrgl[22]=MMt*ardrgl[22];
-   ardrgl[23]=3*ardrgl[11] - 19./8. - ardrgl[14];
-   ardrgl[23]=ardrgl[3]*ardrgl[23];
-   ardrgl[21]= - 4*ardrgl[21] + ardrgl[23];
+   ardrgl[16]=3./4.*ardrgl[8];
+   ardrgl[17]=ardrgl[9] - ardrgl[16];
+   ardrgl[17]=ardrgl[17]*ardrgl[15];
+   ardrgl[18]=pow(ardrgl[9],2);
+   ardrgl[17]=11*ardrgl[18] + ardrgl[17];
+   ardrgl[17]=ardrgl[3]*ardrgl[17];
+   ardrgl[19]=ardrgl[14]*ardrgl[9];
+   ardrgl[17]=ardrgl[19] + ardrgl[17];
+   ardrgl[20]=3./2.*ardrgl[12];
+   ardrgl[21]=9./2.*ardrgl[7] + ardrgl[20] + 9./8.;
    ardrgl[21]=ardrgl[9]*ardrgl[21];
-   ardrgl[19]=ardrgl[22] + 1./2.*ardrgl[19] + ardrgl[21];
-   ardrgl[19]=MMt*ardrgl[19];
-   ardrgl[21]=3./2.*ardrgl[12] + 9./2.*ardrgl[7];
+   ardrgl[22]=ardrgl[10]*ardrgl[9];
+   ardrgl[16]=ardrgl[11]*ardrgl[16];
+   ardrgl[16]= - 9./8.*ardrgl[6] + 3*ardrgl[22] - 3./4.*ardrgl[5] + 
+   ardrgl[16] + ardrgl[8] + ardrgl[21] + 1./4.*ardrgl[17];
+   ardrgl[17]=pow(Pi,2);
+   ardrgl[21]= - 3./32.*ardrgl[17] - 3./16.*ardrgl[10] - 1 + 5./16.*
+   ardrgl[11];
+   ardrgl[21]=MMH*ardrgl[21];
+   ardrgl[16]=1./2.*ardrgl[16] + ardrgl[21];
+   ardrgl[15]= - 19./2.*ardrgl[9] - ardrgl[15];
+   ardrgl[21]=ardrgl[9] - 1./2.*ardrgl[8];
+   ardrgl[21]=ardrgl[11]*ardrgl[21];
+   ardrgl[23]=ardrgl[3]*pow(ardrgl[8],2);
+   ardrgl[15]=3./8.*ardrgl[6] + 21./16.*ardrgl[23] + 9./4.*ardrgl[5] - 
+   ardrgl[19] + 1./4.*ardrgl[15] + 3*ardrgl[21];
    ardrgl[15]=ardrgl[3]*ardrgl[15];
-   ardrgl[15]=ardrgl[14] + 9./2. + ardrgl[15];
-   ardrgl[22]=ardrgl[9]*ardrgl[3];
-   ardrgl[15]=11./4.*ardrgl[22] + 1./4.*ardrgl[15] + 3*ardrgl[10] + 
-   ardrgl[21];
-   ardrgl[22]=1./2.*ardrgl[9];
-   ardrgl[15]=ardrgl[15]*ardrgl[22];
-   ardrgl[23]= - 3./16.*ardrgl[10] - 1;
-   ardrgl[23]=MMH*ardrgl[23];
-   ardrgl[20]=ardrgl[20] + 5./2.*MMH;
-   ardrgl[24]=ardrgl[11]*ardrgl[20];
-   ardrgl[15]=ardrgl[19] + ardrgl[15] + 1./8.*ardrgl[24] - 3./8.*
-   ardrgl[5] - 15./32.*ardrgl[18] + 1./2.*ardrgl[8] + ardrgl[23];
+   ardrgl[19]=3./4.*ardrgl[14] + 59./16. - 5*ardrgl[11];
+   ardrgl[21]=ardrgl[3]*ardrgl[9];
+   ardrgl[23]=5./4. - 4*ardrgl[21];
+   ardrgl[23]=ardrgl[10]*ardrgl[23];
+   ardrgl[15]=ardrgl[23] + 1./4.*ardrgl[19] + ardrgl[15];
+   ardrgl[19]=77./8. - ardrgl[14];
+   ardrgl[21]=ardrgl[11]*ardrgl[21];
+   ardrgl[19]= - 2*ardrgl[10] + 1./2.*ardrgl[19] - 12*ardrgl[21];
+   ardrgl[19]=3*ardrgl[19] + 29./32.*ardrgl[17];
+   ardrgl[19]=MMt*ardrgl[3]*ardrgl[19];
+   ardrgl[15]=ardrgl[19] + 3*ardrgl[15] + 35./64.*ardrgl[17];
    ardrgl[15]=MMt*ardrgl[15];
-   ardrgl[18]=ardrgl[20]*ardrgl[21];
-   ardrgl[16]= - ardrgl[16] + ardrgl[18];
-   ardrgl[16]=MMH*ardrgl[16];
-   ardrgl[18]= - 33*ardrgl[8] + 131./4.*MMH;
-   ardrgl[18]=MMH*ardrgl[18];
-   ardrgl[17]=27*ardrgl[17] + ardrgl[18];
-   ardrgl[16]=1./2.*ardrgl[17] + ardrgl[16];
-   ardrgl[17]= - ardrgl[10]*MMH;
-   ardrgl[17]=ardrgl[22] - 5./2.*ardrgl[8] + ardrgl[17];
-   ardrgl[17]=ardrgl[9]*ardrgl[17];
-   ardrgl[18]=pow(MMH,2);
-   ardrgl[19]=MMt*ardrgl[3];
-   ardrgl[20]=35./2. + 29*ardrgl[19];
-   ardrgl[20]=MMt*ardrgl[20];
-   ardrgl[20]= - 9*MMH + ardrgl[20];
-   ardrgl[20]=MMt*ardrgl[20];
-   ardrgl[20]=1./3.*ardrgl[18] + 1./4.*ardrgl[20];
-   ardrgl[20]=ardrgl[20]*pow(Pi,2);
-   ardrgl[16]=ardrgl[20] + 1./2.*ardrgl[16] + 3*ardrgl[17];
-   ardrgl[17]=ardrgl[13]*MMH*pow(ardrgl[9],2);
-   ardrgl[19]= - 3./2. + ardrgl[19];
-   ardrgl[19]=MMt*ardrgl[19];
-   ardrgl[19]=1./2.*MMH + ardrgl[19];
-   ardrgl[19]=ardrgl[6]*ardrgl[19];
-   ardrgl[18]=S2*ardrgl[18];
-   ardrgl[15]= - 243./32.*ardrgl[18] + 9./8.*ardrgl[19] - 9./32.*
-   ardrgl[17] + 3*ardrgl[15] + 1./8.*ardrgl[16];
+   ardrgl[15]=3*ardrgl[16] + ardrgl[15];
+   ardrgl[16]=pow(ardrgl[4],2);
+   ardrgl[15]=MMt*ardrgl[16]*ardrgl[15];
+   ardrgl[19]=ardrgl[13]*ardrgl[18];
+   ardrgl[19]= - 3*ardrgl[19] - 11*ardrgl[8];
+   ardrgl[20]=ardrgl[8]*ardrgl[20];
+   ardrgl[19]=ardrgl[20] + 1./2.*ardrgl[19] - 3*ardrgl[5];
+   ardrgl[20]=ardrgl[7]*ardrgl[8];
+   ardrgl[19]=9./4.*ardrgl[20] + 3./2.*ardrgl[6] + 1./2.*ardrgl[19] - 
+   ardrgl[22];
+   ardrgl[20]=15./2.*ardrgl[12] + 131./4. - 243*S2;
+   ardrgl[17]=45./8.*ardrgl[7] + 1./4.*ardrgl[20] + 1./3.*ardrgl[17];
+   ardrgl[17]=MMH*ardrgl[17];
+   ardrgl[17]=3*ardrgl[19] + ardrgl[17];
+   ardrgl[17]=MMH*ardrgl[17];
+   ardrgl[19]= - 5*ardrgl[9] + 9./2.*ardrgl[8];
+   ardrgl[19]=ardrgl[8]*ardrgl[19];
+   ardrgl[18]=ardrgl[18] + ardrgl[19];
+   ardrgl[17]=3./2.*ardrgl[18] + ardrgl[17];
+   ardrgl[16]=ardrgl[17]*ardrgl[16];
+   ardrgl[15]=1./8.*ardrgl[16] + ardrgl[15];
 
-      drglret = ardrgl[15]*pow(ardrgl[4],2)*pow(ardrgl[2],4)*ardrgl[1];
-      return drglret;
+      drglret = ardrgl[15]*pow(ardrgl[2],4)*ardrgl[1];
+      return drglret.real();
 }

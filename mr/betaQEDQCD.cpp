@@ -1,6 +1,6 @@
 #include "betaQEDQCD.hpp"
-
-std::pair<double,double> runQEDQCD(long double aStart, long double asStart, long double muStart, long double muEnd, size_t nu, size_t nd, size_t nl)
+//         QCD  &  QED
+std::pair<double,double> runQEDQCD(long double aStart, long double asStart, long double muStart, long double muEnd, size_t ng)
 {
   state_type alpha4pi(2);
   
@@ -12,7 +12,7 @@ std::pair<double,double> runQEDQCD(long double aStart, long double asStart, long
 
   
   std::cout << "End time: " << fabs(lEnd) << std::endl;
-  BetaQEDQCD bEMQCD(nu, nd, nl, lEnd < 0);
+  BetaQEDQCD bEMQCD(ng, lEnd < 0);
     
   double abs_err = 1E-6;
   double rel_err = 1E-7;

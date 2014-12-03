@@ -82,8 +82,8 @@ subdir = mr
 DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/Makefile.am \
 	$(top_srcdir)/depcomp
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
-am__aclocal_m4_deps = $(top_srcdir)/m4/root.m4 \
-	$(top_srcdir)/configure.ac
+am__aclocal_m4_deps = $(top_srcdir)/m4/ax_boost_base.m4 \
+	$(top_srcdir)/m4/root.m4 $(top_srcdir)/configure.ac
 am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
 	$(ACLOCAL_M4)
 mkinstalldirs = $(install_sh) -d
@@ -127,7 +127,8 @@ am__v_AR_0 = @echo "  AR      " $@;
 am__v_AR_1 = 
 libmr_a_AR = $(AR) $(ARFLAGS)
 libmr_a_LIBADD =
-am__objects_1 = libmr_a-tsil.$(OBJEXT) libmr_a-mOS2mMSQCD.$(OBJEXT)
+am__objects_1 = libmr_a-tsil.$(OBJEXT) libmr_a-mOS2mMSQCD.$(OBJEXT) \
+	libmr_a-pole2run.$(OBJEXT)
 am__objects_2 = libmr_a-alphaGF.$(OBJEXT) libmr_a-alphaGF10.$(OBJEXT) \
 	libmr_a-alphaGF11.$(OBJEXT) libmr_a-alphaGF20.$(OBJEXT)
 am__objects_3 = libmr_a-betaSM.$(OBJEXT) libmr_a-betaQEDQCD.$(OBJEXT) \
@@ -263,6 +264,8 @@ AUTOCONF = @AUTOCONF@
 AUTOHEADER = @AUTOHEADER@
 AUTOMAKE = @AUTOMAKE@
 AWK = @AWK@
+BOOST_CPPFLAGS = @BOOST_CPPFLAGS@
+BOOST_LDFLAGS = @BOOST_LDFLAGS@
 CC = @CC@
 CCDEPMODE = @CCDEPMODE@
 CFLAGS = @CFLAGS@
@@ -375,7 +378,7 @@ ACLOCAL_AMFLAGS = ${ACLOCAL_FLAGS} -I m4
 lib_LIBRARIES = libmr.a
 
 # Main sources
-MAINSRC = mr.hpp tsil.hpp tsil.cpp base.hpp mOS2mMSQCD.cpp
+MAINSRC = mr.hpp tsil.hpp tsil.cpp base.hpp mOS2mMSQCD.cpp pole2run.hpp pole2run.cpp
 
 # Running
 RUNSRC = betaSM.hpp betaSM.cpp betaQCD.hpp betaQEDQCD.hpp betaQEDQCD.cpp betaQCD.cpp CRunDec.cpp CRunDec.h
@@ -547,6 +550,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libmr_a-mttbarGL10.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libmr_a-mttbarGL11.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libmr_a-mttbarGL20.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libmr_a-pole2run.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libmr_a-tsil.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libmr_a-tt.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libmr_a-yuHH10.Po@am__quote@
@@ -619,6 +623,20 @@ libmr_a-mOS2mMSQCD.obj: mOS2mMSQCD.cpp
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='mOS2mMSQCD.cpp' object='libmr_a-mOS2mMSQCD.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmr_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libmr_a-mOS2mMSQCD.obj `if test -f 'mOS2mMSQCD.cpp'; then $(CYGPATH_W) 'mOS2mMSQCD.cpp'; else $(CYGPATH_W) '$(srcdir)/mOS2mMSQCD.cpp'; fi`
+
+libmr_a-pole2run.o: pole2run.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmr_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libmr_a-pole2run.o -MD -MP -MF $(DEPDIR)/libmr_a-pole2run.Tpo -c -o libmr_a-pole2run.o `test -f 'pole2run.cpp' || echo '$(srcdir)/'`pole2run.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libmr_a-pole2run.Tpo $(DEPDIR)/libmr_a-pole2run.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pole2run.cpp' object='libmr_a-pole2run.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmr_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libmr_a-pole2run.o `test -f 'pole2run.cpp' || echo '$(srcdir)/'`pole2run.cpp
+
+libmr_a-pole2run.obj: pole2run.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmr_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libmr_a-pole2run.obj -MD -MP -MF $(DEPDIR)/libmr_a-pole2run.Tpo -c -o libmr_a-pole2run.obj `if test -f 'pole2run.cpp'; then $(CYGPATH_W) 'pole2run.cpp'; else $(CYGPATH_W) '$(srcdir)/pole2run.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libmr_a-pole2run.Tpo $(DEPDIR)/libmr_a-pole2run.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pole2run.cpp' object='libmr_a-pole2run.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmr_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libmr_a-pole2run.obj `if test -f 'pole2run.cpp'; then $(CYGPATH_W) 'pole2run.cpp'; else $(CYGPATH_W) '$(srcdir)/pole2run.cpp'; fi`
 
 libmr_a-alphaGF.o: alphaGF.cpp
 @am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmr_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libmr_a-alphaGF.o -MD -MP -MF $(DEPDIR)/libmr_a-alphaGF.Tpo -c -o libmr_a-alphaGF.o `test -f 'alphaGF.cpp' || echo '$(srcdir)/'`alphaGF.cpp

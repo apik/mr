@@ -1,26 +1,5 @@
-//
-// MR - 2-loop matching and 3-loop Running, including full 2-loop EW corrections
-// Copyright (C) 2014 Andrey Pikelner <pikelner@theor.jinr.ru>
-//
-// This file is part of MR.
-//
-// MR is free software: you can redistribute it and/or modify
-// it under the terms of the GNU General Public License as published by
-// the Free Software Foundation, either version 3 of the License, or
-// (at your option) any later version.
-//
-// MR is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU General Public License for more details.
-//
-// You should have received a copy of the GNU General Public License
-// along with MR.  If not, see <http://www.gnu.org/licenses/>.
-//
-
 #include <tt.hpp>
-std::complex<long double>
-tt::xgl11(size_t nL, size_t nH, size_t boson)
+long double tt::xgl11(size_t nL, size_t nH, size_t boson)
 {     
       
       
@@ -47,62 +26,69 @@ tt::xgl11(size_t nL, size_t nH, size_t boson)
     armttbarGL[19]=protHtt0t->M(0);
     armttbarGL[20]=prot00t00->M(0);
     armttbarGL[21]=prot000t0->M(0);
-   armttbarGL[22]=2*MMH;
-   armttbarGL[23]=armttbarGL[15] + armttbarGL[19];
-   armttbarGL[24]= - 8./3.*armttbarGL[16] + armttbarGL[23];
-   armttbarGL[24]=armttbarGL[24]*armttbarGL[22];
-   armttbarGL[25]=armttbarGL[20] + armttbarGL[21];
-   armttbarGL[25]=32*armttbarGL[3] - 8./3.*armttbarGL[23] - 1./3.*
-   armttbarGL[25];
-   armttbarGL[25]=MMt*armttbarGL[25];
-   armttbarGL[26]=52*armttbarGL[8] - 17./2. - 8*armttbarGL[11];
-   armttbarGL[27]=13./3.*armttbarGL[13] + 4*armttbarGL[10];
-   armttbarGL[27]=armttbarGL[3]*armttbarGL[27];
-   armttbarGL[28]=1 + 1./2.*armttbarGL[12];
-   armttbarGL[28]=armttbarGL[12]*armttbarGL[28];
-   armttbarGL[29]=pow(Pi,2);
-   armttbarGL[24]=armttbarGL[25] + 13./3.*armttbarGL[17] - 5./12.*
-   armttbarGL[29] + armttbarGL[24] + 5./6.*armttbarGL[28] + 1./3.*
-   armttbarGL[26] + armttbarGL[27];
-   armttbarGL[24]=MMt*armttbarGL[24];
-   armttbarGL[25]=armttbarGL[5]*MMH;
-   armttbarGL[25]=armttbarGL[25] - 2;
-   armttbarGL[26]=pow(armttbarGL[10],2);
-   armttbarGL[25]=armttbarGL[26]*armttbarGL[25];
-   armttbarGL[27]=1 + armttbarGL[8];
+   armttbarGL[22]=armttbarGL[5]*MMH;
+   armttbarGL[23]=1./2.*armttbarGL[22];
+   armttbarGL[24]=armttbarGL[6] + MMH;
+   armttbarGL[24]=armttbarGL[24]*armttbarGL[23];
+   armttbarGL[25]=pow(MMH,2);
+   armttbarGL[26]=1./2.*armttbarGL[5];
+   armttbarGL[26]=armttbarGL[25]*armttbarGL[26];
+   armttbarGL[23]=2 - armttbarGL[23];
+   armttbarGL[23]=armttbarGL[10]*armttbarGL[23];
+   armttbarGL[23]=7*armttbarGL[23] - 2*armttbarGL[9] - 17*MMH + 
+   armttbarGL[26];
+   armttbarGL[23]=armttbarGL[8]*armttbarGL[23];
+   armttbarGL[26]=armttbarGL[15] + armttbarGL[19];
+   armttbarGL[27]=4*armttbarGL[16] - armttbarGL[26];
    armttbarGL[27]=MMH*armttbarGL[27];
-   armttbarGL[27]=armttbarGL[6] + armttbarGL[27] - armttbarGL[9];
-   armttbarGL[28]= - 1 - 7./2.*armttbarGL[8];
-   armttbarGL[28]=armttbarGL[10]*armttbarGL[28];
-   armttbarGL[27]= - 5*armttbarGL[14] + armttbarGL[28] + 1./2.*
-   armttbarGL[27];
-   armttbarGL[28]=1./3.*MMH;
-   armttbarGL[27]=armttbarGL[27]*armttbarGL[28];
-   armttbarGL[29]=armttbarGL[17]*pow(MMH,2);
-   armttbarGL[25]=1./6.*armttbarGL[29] + armttbarGL[27] + 
-   armttbarGL[25];
+   armttbarGL[27]=armttbarGL[27] - 13 + 4*armttbarGL[11];
+   armttbarGL[27]=MMH*armttbarGL[27];
+   armttbarGL[28]=13./2. - armttbarGL[22];
+   armttbarGL[28]=armttbarGL[14]*armttbarGL[28];
+   armttbarGL[23]=armttbarGL[23] + 5*armttbarGL[28] + armttbarGL[24] - 
+   11*armttbarGL[6] + armttbarGL[27];
+   armttbarGL[24]=1./3.*armttbarGL[22];
+   armttbarGL[22]= - 2 + armttbarGL[22];
+   armttbarGL[22]=armttbarGL[10]*armttbarGL[5]*armttbarGL[22];
+   armttbarGL[22]=armttbarGL[22] + 4./3.*armttbarGL[12] + 23./2. - 
+   armttbarGL[24];
+   armttbarGL[22]=armttbarGL[10]*armttbarGL[22];
+   armttbarGL[27]=2*MMH;
    armttbarGL[25]=armttbarGL[5]*armttbarGL[25];
-   armttbarGL[23]=4*armttbarGL[16] - armttbarGL[23];
-   armttbarGL[23]=MMH*armttbarGL[23];
-   armttbarGL[23]=armttbarGL[23] - 17*armttbarGL[8] - 13 + 4*
-   armttbarGL[11];
-   armttbarGL[23]=armttbarGL[23]*armttbarGL[28];
-   armttbarGL[27]=4./3.*armttbarGL[12] + 23./2. + 14./3.*armttbarGL[8];
-   armttbarGL[27]=armttbarGL[10]*armttbarGL[27];
-   armttbarGL[26]=armttbarGL[3]*armttbarGL[26];
-   armttbarGL[29]= - 4./3.*armttbarGL[9] - 13./3.*armttbarGL[10];
+   armttbarGL[25]= - armttbarGL[27] + 1./6.*armttbarGL[25];
+   armttbarGL[25]=armttbarGL[17]*armttbarGL[25];
+   armttbarGL[28]=pow(armttbarGL[9],2);
+   armttbarGL[29]= - 13./3.*armttbarGL[9] - 36*armttbarGL[10];
+   armttbarGL[29]=armttbarGL[10]*armttbarGL[29];
+   armttbarGL[28]= - 4./3.*armttbarGL[28] + armttbarGL[29];
+   armttbarGL[28]=armttbarGL[3]*armttbarGL[28];
+   armttbarGL[24]=7 - armttbarGL[24];
+   armttbarGL[24]=armttbarGL[9]*armttbarGL[24];
+   armttbarGL[29]=armttbarGL[18]*MMH;
+   armttbarGL[22]= - 13./6.*armttbarGL[7] + armttbarGL[28] + 
+   armttbarGL[25] + armttbarGL[22] - 4./3.*armttbarGL[29] + 1./2.*
+   armttbarGL[24] + 3*armttbarGL[13] + 1./3.*armttbarGL[23];
+   armttbarGL[23]=pow(armttbarGL[2],2);
+   armttbarGL[22]=armttbarGL[23]*armttbarGL[22];
+   armttbarGL[24]= - 8./3.*armttbarGL[16] + armttbarGL[26];
+   armttbarGL[24]=armttbarGL[24]*armttbarGL[27];
+   armttbarGL[25]= - 17./2. - 8*armttbarGL[11];
+   armttbarGL[27]=1 + 1./2.*armttbarGL[12];
+   armttbarGL[27]=armttbarGL[12]*armttbarGL[27];
+   armttbarGL[28]=pow(Pi,2);
+   armttbarGL[29]=13./3.*armttbarGL[13] + 4*armttbarGL[10];
    armttbarGL[29]=armttbarGL[3]*armttbarGL[29];
-   armttbarGL[29]=7./2. - 2./3.*armttbarGL[8] + armttbarGL[29];
-   armttbarGL[29]=armttbarGL[9]*armttbarGL[29];
-   armttbarGL[22]= - armttbarGL[17]*armttbarGL[22];
-   armttbarGL[28]= - armttbarGL[28] + MMt;
-   armttbarGL[28]=armttbarGL[18]*armttbarGL[28];
-   armttbarGL[22]=armttbarGL[25] + 4*armttbarGL[28] + armttbarGL[24] + 
-   armttbarGL[22] + armttbarGL[23] + 65./6.*armttbarGL[14] - 13./6.*
-   armttbarGL[7] + armttbarGL[29] - 36*armttbarGL[26] - 11./3.*
-   armttbarGL[6] + 3*armttbarGL[13] + armttbarGL[27];
+   armttbarGL[26]= - armttbarGL[21] - 8*armttbarGL[26] - armttbarGL[20]
+   ;
+   armttbarGL[26]=32*armttbarGL[3] + 1./3.*armttbarGL[26];
+   armttbarGL[26]=MMt*armttbarGL[26];
+   armttbarGL[24]=armttbarGL[26] + 52./3.*armttbarGL[8] + 
+   armttbarGL[29] + 13./3.*armttbarGL[17] + 4*armttbarGL[18] - 5./12.*
+   armttbarGL[28] + 5./6.*armttbarGL[27] + 1./3.*armttbarGL[25] + 
+   armttbarGL[24];
+   armttbarGL[23]=MMt*armttbarGL[23]*armttbarGL[24];
+   armttbarGL[22]=armttbarGL[23] + armttbarGL[22];
 
-      mttbarGLret = armttbarGL[22]*armttbarGL[4]*pow(armttbarGL[2],2)*
-      armttbarGL[1];
-      return mttbarGLret;
+      mttbarGLret = armttbarGL[22]*armttbarGL[4]*armttbarGL[1];
+      return mttbarGLret.real();
 }

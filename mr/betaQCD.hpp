@@ -115,14 +115,17 @@ class AlphaS
   size_t   loops;
   size_t nfFixed;
   OSinput     oi;
+  // Thresholds
+  double    mbth;
+  double    mtth;
 
 public:
 
   // Running with fixed nf
-  AlphaS(long double asMZ = pdg2014::asMZ, long double mu = pdg2014::MZ, size_t loops_ = 4, size_t nfFixed_ = 5) : asStart(asMZ), muStart(mu),loops(loops_), nfFixed(nfFixed_)
-  { 
+  // AlphaS(long double asMZ = pdg2014::asMZ, long double mu = pdg2014::MZ, size_t loops_ = 4, size_t nfFixed_ = 5) : asStart(asMZ), muStart(mu),loops(loops_), nfFixed(nfFixed_)
+  // { 
     
-  }
+  // }
 
   // Running down to bottom mass with nf=5
   // and upto Mt with threshold at Mt
@@ -130,9 +133,17 @@ public:
     : loops(loops_), asStart(asMZ), oi(oi_), nfFixed(nfFixed_)
   { 
     muStart = oi.MZ();
-
+    mbth    = oi.Mb();
+    mtth    = oi.Mt();
     // nf is not fixed
     // nfFixed = 0, default
+  }
+
+  // Same with manual thresholds for Mb and Mt
+  AlphaS(long double mu = pdg2014::MZ, long double asMZ = pdg2014::asMZ, size_t loops_ = 4, size_t nfFixed_ = 5, long double mtth_ = pdg2014::Mt) 
+    : muStart(mu), mtth(mtth_), loops(loops_), asStart(asMZ),  nfFixed(nfFixed_)
+  { 
+    mbth = 0;
   }
 
   
@@ -144,11 +155,11 @@ public:
       {
 
         // Run only down to Mb
-        if( mu < oi.Mb() ) 
+        if( mu < mbth ) 
           throw std::logic_error("ERROR: running with nf = 5 to scale mu < Mb"); 
         
         // Run only up to Mt with nf=5
-        else if( mu < oi.Mt() ) 
+        else if( mu < mtth ) 
           {
             return run(asStart, muStart, mu, 5 );
           }
@@ -156,18 +167,18 @@ public:
         // Threshold at Mt
         else 
           {
-            long double asMt5 = run(asStart, muStart, oi.Mt(), 5 );
+            long double asMt5 = run(asStart, muStart, mtth, 5 );
             
             // We use 3-loop decoupling for 4-loop running
-            long double asMt6 = as5nf2as6nf(oi.Mt(), oi.Mt(), asMt5, /* nl= */5, 3);
+            long double asMt6 = as5nf2as6nf(mtth, mtth, asMt5, /* nl= */5, 3);
             
             // Return as(nf=6,mu=Mt)
-            if (mu == oi.Mt())
+            if (mu == mtth)
               return asMt6;
 
             // Run with nf=6 up to mu > Mt
             else
-              return run(asMt6, oi.Mt(), mu, 6 );
+              return run(asMt6, mtth, mu, 6 );
               
           }
       }

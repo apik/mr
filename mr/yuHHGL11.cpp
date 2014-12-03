@@ -1,30 +1,9 @@
-//
-// MR - 2-loop matching and 3-loop Running, including full 2-loop EW corrections
-// Copyright (C) 2014 Andrey Pikelner <pikelner@theor.jinr.ru>
-//
-// This file is part of MR.
-//
-// MR is free software: you can redistribute it and/or modify
-// it under the terms of the GNU General Public License as published by
-// the Free Software Foundation, either version 3 of the License, or
-// (at your option) any later version.
-//
-// MR is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU General Public License for more details.
-//
-// You should have received a copy of the GNU General Public License
-// along with MR.  If not, see <http://www.gnu.org/licenses/>.
-//
-
 #include <HH.hpp>
-std::complex<long double>
-HH<OS>::ygl11(size_t nL, size_t nH, size_t boson)
+long double HH<OS>::ygl11(size_t nL, size_t nH, size_t boson)
 {     
       
       
-    std::complex<long double> aryuHHGL[19], yuHHGLret;
+    std::complex<long double> aryuHHGL[20], yuHHGLret;
 
     aryuHHGL[1]=double(boson);
     aryuHHGL[2]=pow(SW,-1);
@@ -38,37 +17,42 @@ HH<OS>::ygl11(size_t nL, size_t nH, size_t boson)
     aryuHHGL[10]=prottttt0->M(0);
     aryuHHGL[11]=prottttt0->Vxzuv(0);
     aryuHHGL[12]=prottttt0->Suxv(0);
-   aryuHHGL[13]=MMt*aryuHHGL[3];
-   aryuHHGL[14]=2*aryuHHGL[11];
-   aryuHHGL[15]=aryuHHGL[14] + aryuHHGL[10];
-   aryuHHGL[15]=aryuHHGL[15]*aryuHHGL[13];
-   aryuHHGL[14]= - aryuHHGL[14] - 3*aryuHHGL[10];
-   aryuHHGL[16]= - 25 + 4*aryuHHGL[7];
-   aryuHHGL[16]=aryuHHGL[3]*aryuHHGL[16];
-   aryuHHGL[17]= - 10 - 7*aryuHHGL[5];
-   aryuHHGL[17]=aryuHHGL[5]*aryuHHGL[3]*aryuHHGL[17];
-   aryuHHGL[14]=8*aryuHHGL[15] + aryuHHGL[17] + 2*aryuHHGL[14] + 
-   aryuHHGL[16];
-   aryuHHGL[15]=4*MMt;
-   aryuHHGL[14]=aryuHHGL[14]*aryuHHGL[15];
-   aryuHHGL[15]=6*aryuHHGL[9] - aryuHHGL[12];
-   aryuHHGL[15]=aryuHHGL[3]*aryuHHGL[15];
-   aryuHHGL[16]=MMH*aryuHHGL[10];
-   aryuHHGL[15]=aryuHHGL[15] + aryuHHGL[16];
-   aryuHHGL[16]=2*aryuHHGL[5];
-   aryuHHGL[17]=4 + 3*aryuHHGL[5];
-   aryuHHGL[17]=aryuHHGL[17]*aryuHHGL[16];
-   aryuHHGL[18]=pow(Pi,2);
-   aryuHHGL[14]=aryuHHGL[14] + aryuHHGL[17] - 2./3.*aryuHHGL[18] + 77./
-   2. + 4*aryuHHGL[15];
-   aryuHHGL[14]=aryuHHGL[14]*MMt;
-   aryuHHGL[13]=aryuHHGL[5]*aryuHHGL[13];
-   aryuHHGL[15]= - aryuHHGL[6]*aryuHHGL[8];
-   aryuHHGL[13]=aryuHHGL[15] - 12*aryuHHGL[13] - 1 + aryuHHGL[16];
-   aryuHHGL[13]=aryuHHGL[6]*aryuHHGL[13];
-   aryuHHGL[13]=6*aryuHHGL[13] + aryuHHGL[14];
+   aryuHHGL[13]=2*aryuHHGL[5];
+   aryuHHGL[14]=4 + 3*aryuHHGL[5];
+   aryuHHGL[13]=aryuHHGL[14]*aryuHHGL[13];
+   aryuHHGL[14]=4*aryuHHGL[3];
+   aryuHHGL[15]=aryuHHGL[5]*aryuHHGL[6];
+   aryuHHGL[16]=6*aryuHHGL[9] - aryuHHGL[12] - 18*aryuHHGL[15];
+   aryuHHGL[14]=aryuHHGL[16]*aryuHHGL[14];
+   aryuHHGL[16]=4*MMt;
+   aryuHHGL[17]=aryuHHGL[16]*aryuHHGL[3];
+   aryuHHGL[18]= - 10 - 7*aryuHHGL[5];
+   aryuHHGL[18]=aryuHHGL[5]*aryuHHGL[18];
+   aryuHHGL[18]= - 25 + aryuHHGL[18];
+   aryuHHGL[18]=aryuHHGL[18]*aryuHHGL[17];
+   aryuHHGL[19]=pow(Pi,2);
+   aryuHHGL[13]=aryuHHGL[18] - 2./3.*aryuHHGL[19] + aryuHHGL[14] + 77./
+   2. + aryuHHGL[13];
+   aryuHHGL[13]=MMt*aryuHHGL[13];
+   aryuHHGL[14]=aryuHHGL[7]*aryuHHGL[3];
+   aryuHHGL[18]= - 1 + aryuHHGL[17];
+   aryuHHGL[18]=aryuHHGL[11]*aryuHHGL[18];
+   aryuHHGL[14]=aryuHHGL[18] + aryuHHGL[14];
+   aryuHHGL[18]=pow(MMt,2);
+   aryuHHGL[18]=16*aryuHHGL[18];
+   aryuHHGL[14]=aryuHHGL[18]*aryuHHGL[14];
+   aryuHHGL[18]= - aryuHHGL[6]*aryuHHGL[8];
+   aryuHHGL[18]= - 1 + aryuHHGL[18];
+   aryuHHGL[18]=aryuHHGL[6]*aryuHHGL[18];
+   aryuHHGL[15]=aryuHHGL[18] + 2*aryuHHGL[15];
+   aryuHHGL[17]= - 3 + aryuHHGL[17];
+   aryuHHGL[17]=MMt*aryuHHGL[17];
+   aryuHHGL[17]=MMH + 2*aryuHHGL[17];
+   aryuHHGL[16]=aryuHHGL[10]*aryuHHGL[17]*aryuHHGL[16];
+   aryuHHGL[13]=aryuHHGL[16] + 6*aryuHHGL[15] + aryuHHGL[13] + 
+   aryuHHGL[14];
 
       yuHHGLret = aryuHHGL[13]*aryuHHGL[4]*pow(aryuHHGL[2],2)*
       aryuHHGL[1];
-      return yuHHGLret;
+      return yuHHGLret.real();
 }

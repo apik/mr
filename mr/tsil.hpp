@@ -43,6 +43,10 @@ extern "C"{
 #undef complex
 #endif
 
+#ifdef I
+#undef I
+#endif
+
 // Workaround using gcc extension to work both in gcc and clang
 // http://clang.llvm.org/docs/LanguageExtensions.html#initializer-lists-for-complex-numbers-in-c
 std::complex<long double> c2pp(TSIL_COMPLEX);

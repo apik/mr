@@ -1056,7 +1056,7 @@ void BetaVEV::operator() (const state_type &a, state_type &dadt, const double t)
 
 BetaVM::BetaVM(size_t NG_) : ng(NG_)
 {
-  bSM = new BetaSMFull(3,3,3,3,-1,-1,3,NG_);
+  bSM = new BetaSMFull(3,3,3,3,3,3,3,NG_);
 }
 
 
@@ -1070,8 +1070,8 @@ void BetaVM::operator() (const state_type &a, state_type &dadt, const double t)
   
   // add VEV anomalous dimension
   dadt[7] = a[7]*BetaVEV::gamv(a, ng);
-  std::cout << "dv = " << BetaVEV::gamv(a, ng) << std::endl;
-  std::cout << "8 ==" << dadt.size() << std::endl;
+  // std::cout << "dv = " << BetaVEV::gamv(a, ng) << std::endl;
+  // std::cout << "8 ==" << dadt.size() << std::endl;
   
   // add mu^2 anomalous dimension for <m>
   dadt[8] = a[8]/2.*BetaMu2::bmu2(a, ng);

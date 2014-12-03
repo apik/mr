@@ -36,23 +36,23 @@ class PoleMass
   // Mass corrections
   // 
 public:
-  virtual std::complex<long double> x10(size_t nL = 2, size_t nH = 1, size_t boson = 1) = 0;
+  virtual long double x10(size_t nL = 2, size_t nH = 1, size_t boson = 1) = 0;
   
-  virtual std::complex<long double> x11(size_t nL = 2, size_t nH = 1, size_t boson = 1) = 0;
+  virtual long double x11(size_t nL = 2, size_t nH = 1, size_t boson = 1) = 0;
 
-  virtual std::complex<long double> x20(size_t nL = 2, size_t nH = 1, size_t boson = 1) = 0;
+  virtual long double x20(size_t nL = 2, size_t nH = 1, size_t boson = 1) = 0;
 
-  virtual std::complex<long double> x01(size_t nL = 2, size_t nH = 1, size_t boson = 1)
+  virtual long double x01(size_t nL = 2, size_t nH = 1, size_t boson = 1)
   {
     std::cout << "Order a^0*as^1 is not implemented for this particle" << std::endl;
     return 0;
   }
-  virtual std::complex<long double> x02(size_t nL = 2, size_t nH = 1, size_t boson = 1)
+  virtual long double x02(size_t nL = 2, size_t nH = 1, size_t boson = 1)
   {
     std::cout << "Order a^0*as^2 is not implemented for this particle" << std::endl;
     return 0;
   }
-  virtual std::complex<long double> x03(size_t nL = 2, size_t nH = 1, size_t boson = 1)
+  virtual long double x03(size_t nL = 2, size_t nH = 1, size_t boson = 1)
   {
     std::cout << "Order a^0*as^3 is not implemented for this particle" << std::endl;
     return 0;
@@ -62,11 +62,11 @@ public:
   long double x(size_t apow, size_t aspow, size_t nL = 2, size_t nH = 1, size_t boson = 1)
   {
     if(apow == 1 && aspow == 0)
-      return x10(nL, nH, boson).real();
+      return x10(nL, nH, boson);
     if(apow == 1 && aspow == 1)
-      return x11(nL, nH, boson).real();
+      return x11(nL, nH, boson);
     if(apow == 2 && aspow == 0)
-      return x20(nL, nH, boson).real();
+      return x20(nL, nH, boson);
     return 0;
   }
   // Gaugeless limit
@@ -85,26 +85,26 @@ public:
   // 
   // virtual std::complex<long double> my01() = 0;
 
-  virtual std::complex<long double> y10(size_t nL = 2, size_t nH = 1, size_t boson = 1) = 0;
+  virtual long double y10(size_t nL = 2, size_t nH = 1, size_t boson = 1) = 0;
 
-  virtual std::complex<long double> y11(size_t nL = 2, size_t nH = 1, size_t boson = 1) = 0;
+  virtual long double y11(size_t nL = 2, size_t nH = 1, size_t boson = 1) = 0;
 
-  virtual std::complex<long double> y20(size_t nL = 2, size_t nH = 1, size_t boson = 1) = 0;
+  virtual long double y20(size_t nL = 2, size_t nH = 1, size_t boson = 1) = 0;
 
   long double y(size_t apow, size_t aspow, size_t nL = 2, size_t nH = 1, size_t boson = 1)
   {
     if(apow == 1 && aspow == 0)
-      return y10(nL, nH, boson).real();
+      return y10(nL, nH, boson);
     if(apow == 1 && aspow == 1)
-      return y11(nL, nH, boson).real();
+      return y11(nL, nH, boson);
     if(apow == 2 && aspow == 0)
-      return y20(nL, nH, boson).real();
+      return y20(nL, nH, boson);
     if(apow == 0 && aspow == 1)
-      return x01(nL, nH, boson).real();
+      return x01(nL, nH, boson);
     if(apow == 0 && aspow == 2)
-      return x02(nL, nH, boson).real();
+      return x02(nL, nH, boson);
     if(apow == 0 && aspow == 3)
-      return x03(nL, nH, boson).real();
+      return x03(nL, nH, boson);
     return 0;
   }
 

@@ -18,21 +18,20 @@
 // along with MR.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-// K. Ahnert and M. Mulansky, Odeint - Solving Ordinary Differential Equations in C++, AIP Conf. Proc. 1389, pp. 1586-1589 (2011);
-// doi:http://dx.doi.org/10.1063/1.3637934
-#ifndef __MR_HPP__
-#define __MR_HPP__
+#ifndef __POLE2RUN_HPP__
+#define __POLE2RUN_HPP__
 
-#include "WW.hpp"
-#include "ZZ.hpp"
-#include "HH.hpp"
-#include "tt.hpp"
-#include "bb.hpp"
-#include "dr.hpp"
-#include "alphaGF.hpp"
-#include "betaQCD.hpp"
-#include "betaSM.hpp"
-#include "betaQEDQCD.hpp"
-#include "pole2run.hpp"
+#include "sminput.hpp"
 
-#endif  // __MR_HPP__
+class RunUpto
+{
+  
+  long double al0;
+  long double as0;
+  long double mu0;
+public:
+  RunUpto(OSinput oi, long double al_ = pdg2014::aMZ, long double as_ = pdg2014::asMZ, long double mu_ = pdg2014::MZ);
+  
+};
+
+#endif  // __POLE2RUN_HPP__

@@ -8,6 +8,104 @@ int main (int argc, char *argv[])
   try
     {
 
+      // Jegerlehner test:
+
+      // MZ
+      // CouplingsVevMu av(
+      //                   5./3.*pow(0.3497/4./Pi,2), // GUT normalization
+      //                   pow(0.6530/4./Pi,2),
+      //                   pow(1.2200/4./Pi,2),
+      //                   pow(0.9347/4./Pi,2),
+      //                   pow(0.0238/4./Pi,2),
+      //                   pow(0.0104/4./Pi,2),
+      //                   0.8070/6.*pow(4.*Pi,-2),
+      //                   sqrt(3./0.8070)*89.096*sqrt(2.),
+      //                   89.096*sqrt(2.),
+      //                   pow(91.1876,2),
+      //                   3);
+
+      // Mt Degrassi
+      CouplingsVevMu av(
+                        5./3.*pow(0.3587/4./Pi,2), // GUT normalization
+                        pow(0.6483/4./Pi,2),
+                        pow(1.1644/4./Pi,2),
+                        pow(0.9399/4./Pi,2),
+                        0*pow(0.0238/4./Pi,2),
+                        0*pow(0.0104/4./Pi,2),
+                        0.7626/6.*pow(4.*Pi,-2),
+                        0*sqrt(3./0.7626)*97.278*sqrt(2.),
+                        97.278*sqrt(2.),
+                        pow(173.5,2),
+                        3);
+
+      
+      // Mt
+      // CouplingsVevMu av(
+      //                   5./3.*pow(0.3509/4./Pi,2), // GUT normalization
+      //                   pow(0.6496/4./Pi,2),
+      //                   pow(1.1644/4./Pi,2),
+      //                   pow(0.9002/4./Pi,2),
+      //                   pow(0.0227/4./Pi,2),
+      //                   pow(0.0104/4./Pi,2),
+      //                   0.7373/6.*pow(4.*Pi,-2),
+      //                   sqrt(3./0.7373)*89.889*sqrt(2.),
+      //                   89.889*sqrt(2.),
+      //                   pow(173.5,2),
+      //                   3);
+
+
+      long double mmt = pow(173.5,2); 
+      state_type  amt = av(mmt);
+
+      std:: cout << "g1 at mmt = " << 4.*Pi*sqrt(3/5.*amt[0]) << std::endl;
+      std:: cout << "g2        = " << 4.*Pi*sqrt(amt[1]) << std::endl;
+      std:: cout << "g3        = " << 4.*Pi*sqrt(amt[2]) << std::endl;
+      std:: cout << "yt        = " << 4.*Pi*sqrt(amt[3]) << std::endl;
+      std:: cout << "yb        = " << 4.*Pi*sqrt(amt[4]) << std::endl;
+      std:: cout << "ytau      = " << 4.*Pi*sqrt(amt[5]) << std::endl;
+      std:: cout << "lamda     = " << 6*pow(4.*Pi,2)*amt[6] << std::endl;
+      std:: cout << "v         = " << amt[7] << std::endl; 
+      std:: cout << "mu        = " << amt[8]/sqrt(2) << std::endl; 
+      std:: cout << "------------" << std::endl;
+      std:: cout << "calc v    = " << sqrt(3./(6*pow(4.*Pi,2)*amt[6]))*amt[8] << std::endl;
+      std:: cout << std::endl;
+
+      
+      long double mu0 = pow(1.1,2) * pow(10.,2*16); 
+      state_type  amu0 = av(mu0);
+
+      std:: cout << "g1 at mu0 = " << 4.*Pi*sqrt(3/5.*amu0[0]) << std::endl;
+      std:: cout << "g2        = " << 4.*Pi*sqrt(amu0[1]) << std::endl;
+      std:: cout << "g3        = " << 4.*Pi*sqrt(amu0[2]) << std::endl;
+      std:: cout << "yt        = " << 4.*Pi*sqrt(amu0[3]) << std::endl;
+      std:: cout << "yb        = " << 4.*Pi*sqrt(amu0[4]) << std::endl;
+      std:: cout << "ytau      = " << 4.*Pi*sqrt(amu0[5]) << std::endl;
+      std:: cout << "lamda     = " << 6*pow(4.*Pi,2)*amu0[6] << std::endl;
+      std:: cout << "v         = " << amu0[7] << std::endl; 
+      std:: cout << "mu        = " << amu0[8]/sqrt(2) << std::endl; 
+      std:: cout << "------------" << std::endl;
+      std:: cout << "calc v    = " << sqrt(3./(6*pow(4.*Pi,2)*amu0[6]))*amu0[8] << std::endl;
+      std:: cout << std::endl;
+      
+      
+      long double mmPlanck = pow(1.2209,2) * pow(10.,2*19); 
+      state_type  aMpl = av(mmPlanck);
+
+      std:: cout << "g1 at Mpl = " << 4.*Pi*sqrt(3/5.*aMpl[0]) << std::endl;
+      std:: cout << "g2        = " << 4.*Pi*sqrt(aMpl[1]) << std::endl;
+      std:: cout << "g3        = " << 4.*Pi*sqrt(aMpl[2]) << std::endl;
+      std:: cout << "yt        = " << 4.*Pi*sqrt(aMpl[3]) << std::endl;
+      std:: cout << "yb        = " << 4.*Pi*sqrt(aMpl[4]) << std::endl;
+      std:: cout << "ytau      = " << 4.*Pi*sqrt(aMpl[5]) << std::endl;
+      std:: cout << "lamda     = " << 6*pow(4.*Pi,2)*aMpl[6] << std::endl;
+      std:: cout << "v         = " << aMpl[7] << std::endl; 
+      std:: cout << "mu        = " << aMpl[8]/sqrt(2) << std::endl;
+      std:: cout << "------------" << std::endl;
+      std:: cout << "calc v    = " << sqrt(3./(6*pow(4.*Pi,2)*aMpl[6]))*aMpl[8] << std::endl;
+      std:: cout << std::endl;
+
+      return 0;
+      
       // Standard Model without bottom and tau Yukawa Couplings, 
       // 5 active couplings used in [arXiv:1205.2893]
       // available in F.Bezrukov code from http://www.inr.ac.ru/~fedor/SM/

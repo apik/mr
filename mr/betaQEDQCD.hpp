@@ -38,28 +38,20 @@ class BetaQEDQCD
   
   BetaQCD* pbQCD;
   
-  size_t nu,nd,nl;
+  size_t ng;
   
   bool MultiplyByMinus1;
 public:
-  BetaQEDQCD( size_t nu_,size_t nd_,size_t nl_, bool MultiplyByMinus1_ = false) : nu(nu_),nd(nd_),nl(nl_), MultiplyByMinus1(MultiplyByMinus1_){
-    pbQCD = new BetaQCD(4, nu + nd, MultiplyByMinus1);
+
+  BetaQEDQCD( size_t ng_, bool MultiplyByMinus1_ = false) : ng(ng_), MultiplyByMinus1(MultiplyByMinus1_)
+  {
+    pbQCD = new BetaQCD(4, 2*ng, MultiplyByMinus1);
   }
   
-  // double b3()
-  // {
-  //   return loops > 3 ? 
-  //     (149753./6. + 3564.*Zeta3
-  //     - (1078361./162. + 6508./27.*Zeta3)*nf
-  //     + (50065./162. + 6472./81.*Zeta3)*nf*nf
-  //      + 1093./729.*nf*nf*nf)/256. : 0;
-  // }
   void operator() (const state_type &av4pi, state_type &dadt, const double t)
   {
-
-    long double Nu = static_cast<long double>(nu);
-    long double Nd = static_cast<long double>(nd);
-    long double Nl = static_cast<long double>(nl);
+    
+    long double NG = static_cast<long double>(ng);
     
     double minusC = MultiplyByMinus1 ? -1. : 1.;
 
@@ -68,34 +60,32 @@ public:
 
     pbQCD->operator()(av4pi, dadt, t);
 
-    // std::cout << "Beta QCD:" << dadt[0]<< std::endl; 
     long double as4pi = av4pi[0], a4pi = av4pi[1];
-    // QCD beta-function
-    // dadt[0] =                   // We need -\\beta if evolve from t=0 to t < 0
-    //   minusC*((pow(as4pi,2)) * (-11 + (2/3.) * (Nd) + (2/3.) * (Nu)) + 
-    //           (pow(a4pi,2)) * ((pow(as4pi,2)) * ((-1/81.) * (Nd) + (-22/243.) * (pow(Nd,2)) + (-22/81.) * ((Nd) * (Nl))
-    //                                              + (-16/81.) * (Nu) + (-176/243.) * ((Nd) * (Nu))
-    //                                              + (-88/81.) * ((Nl) * (Nu)) + (-352/243.) * (pow(Nu,2)))) +
-    //           (pow(as4pi,2)) * ((a4pi) * ((2/9.) * (Nd) + (8/9.) * (Nu)) +
-    //                             (as4pi) * (-102 + (38/3.) * (Nd) + (38/3.) * (Nu))) + 
-    //           (pow(as4pi,3)) * ((a4pi) * ((28/27.) * (Nd) + (112/27.) * (Nu)) + 
-    //                             (as4pi) * (-2857/2. + (5033/18.) * (Nd) + (-325/54.) * (pow(Nd,2)) + (5033/18.) * (Nu)
-    //                                        + (-325/27.) * ((Nd) * (Nu)) + (-325/54.) * (pow(Nu,2)))));
 
-
-    
-    // QED beta-function
+    // 1-loop alphaEM beta-function in full SM with
+    // QCD corrections upto five loops from:
+    // Baikov, Chetyrkin, Kuhn, Rittinger, JHEP 1207 (2012) 017
+    // arXiv:1206.1284 [hep-ph]
     dadt[1] =                   // We need -\\beta if evolve from t=0 to t < 0
-      minusC*((pow(a4pi,2)) * ((4/9.) * (Nd) + (4/3.) * (Nl) + (16/9.) * (Nu))
-              // + 
-              // (pow(a4pi,2)) * ((pow(as4pi,2)) * ((500/27.) * (Nd) + (-88/81.) * (pow(Nd,2))+ (2000/27.) * (Nu)
-              //                                    + (-440/81.) * ((Nd) * (Nu)) +  (-352/81.) * (pow(Nu,2))))+
-              // (pow(a4pi,2)) * ((a4pi) * ((4/27.) *  (Nd) + (4) * (Nl) + (64/27.) * (Nu)) +
-              //                  (as4pi) * ((16/9.) * (Nd) + (64/9.) * (Nu))) +
-              // (pow(a4pi,3)) * ((as4pi) * ((-16/81.) * (Nd) + (-256/81.) * (Nu)) +
-              //                  (a4pi) * ((-2/243.) * (Nd) + (-44/729.) * (pow(Nd,2)) + (-2) * (Nl) + (-440/243.) * ((Nd) * (Nl))
-              //                            + (-44/9.) * (pow(Nl,2)) + (-128/243.) * (Nu) + (-880/729.) * ((Nd) * (Nu))
-              //                            +  (-2288/243.) * ((Nl) * (Nu)) + (-2816/729.) * (pow(Nu,2))))
+      minusC*(
+              pow(a4pi,2) *     // 1-loop pure EW
+              ( -7. + 32/9. * NG + (80/9.) *
+                as4pi * NG +    // 2-loop QCD
+                pow(as4pi,2) *  // 3-loop QCD
+                ((2500/27.) * (NG) + (-440/27.) * (pow(NG,2))) + 
+                pow(as4pi,3) *  // 4-loop QCD
+                ((209740/243.) * (NG) + (-83080/243.) * (pow(NG,2)) 
+                 + (-6160/243.) * (pow(NG,3)) + (35200/81.) * ((NG) * (Zeta3)) + 
+                 (-12160/27.) * ((pow(NG,2)) * (Zeta3))) +
+                pow(as4pi,4) *  // 5-loop QCD
+                ((13326745/1458.) * (NG) + (-1797080/243.) * (pow(NG,2)) + 
+                 (-60490/243.) * (pow(NG,3)) + (2140/81.) * (pow(NG,4)) + 
+                 (7293400/243.) * ((NG) * (Zeta3)) + (-7313200/243.) * ((pow(NG,2)) * (Zeta3)) +
+                 (262880/81.) * ((pow(NG,3)) * (Zeta3)) + (320/9.) * 
+                 ((pow(NG,4)) * (Zeta3)) + (-48400/9.) * ((NG) * (Zeta4)) +
+                 (58960/9.)  * ((pow(NG,2)) * (Zeta4)) +
+                 (-3040/3.) * ((pow(NG,3)) * (Zeta4)) + (-1255000/81.) * ((NG) * (Zeta5)) +
+                 (3322000/243.) * ((pow(NG,2)) * (Zeta5)) + (-1600/27.) * ((pow(NG,3)) * (Zeta5))))
               );
     
   }
@@ -103,7 +93,7 @@ public:
 
 
 
-std::pair<double,double> runQEDQCD(long double aStart, long double asStart, long double muStart, long double muEnd, size_t nu = 2, size_t nd = 3, size_t nl = 3);
+std::pair<double,double> runQEDQCD(long double aStart, long double asStart, long double muStart, long double muEnd, size_t ng = 3);
 
 
 
@@ -113,71 +103,38 @@ class AlphaQEDQCD
   double  aStart;
   double asStart;
   size_t   loops;
-  size_t nuFixed;
-  size_t ndFixed;
-  size_t nlFixed;
+  size_t      ng;
   OSinput     oi;
 
 public:
 
   // Running with fixed nf
-  AlphaQEDQCD(long double aMZ = pdg2014::aMZ,long double asMZ = pdg2014::asMZ, long double mu = pdg2014::MZ, size_t nuFixed_ = 2, size_t ndFixed_ = 3, size_t nlFixed_ = 6) : asStart(asMZ), muStart(mu), nuFixed(nuFixed_), ndFixed(ndFixed_), nlFixed(nlFixed_)
+  AlphaQEDQCD(long double aMZ = pdg2014::aMZ,long double asMZ = pdg2014::asMZ, long double mu = pdg2014::MZ, size_t ng_ = 3) : aStart(aMZ), asStart(asMZ), muStart(mu), ng(ng_)
   { 
     
   }
 
-  // Running down to bottom mass with nf=5
-  // and upto Mt with threshold at Mt
-  AlphaQEDQCD(OSinput oi_, long double aMZ = pdg2014::aMZ, long double asMZ = pdg2014::asMZ, size_t nuFixed_ = 0, size_t ndFixed_ = 0, size_t nlFixed_ = 0) 
-    : aStart(aMZ), asStart(asMZ), oi(oi_), nuFixed(nuFixed_), ndFixed(ndFixed_), nlFixed(nlFixed_)
-  { 
+  // Running in full SM nf=6
+  AlphaQEDQCD(OSinput oi_, long double aMZ = pdg2014::aMZ, long double asMZ = pdg2014::asMZ): aStart(aMZ), asStart(asMZ), oi(oi_)
+  {
+    ng = 3;
     muStart = oi.MZ();
-
-    // nf is not fixed
-    // nfFixed = 0, default
   }
 
   
-  double operator()(long double mu)
+  std::pair<long double,long double>  operator()(long double mu)
   {
-    
-    // Running with decoupling
-    if(nuFixed == 0 &&
-       ndFixed == 0 &&
-       nlFixed == 0)
-      {
+    return runQEDQCD(aStart, asStart, muStart, mu, ng);    
+  }
 
-        // Run only down to Mb
-        if( mu < oi.Mb() ) 
-          throw std::logic_error("ERROR: running with nf = 5 to scale mu < Mb"); 
-        
-        // Run only up to Mt with nf=5
-        else if( mu < oi.Mt() ) 
-          {
-            return run(asStart, muStart, mu, 5 );
-          }
-        
-        // Threshold at Mt
-        else 
-          {
-            long double asMt5 = run(asStart, muStart, oi.Mt(), 5 );
-            
-            // We use 3-loop decoupling for 4-loop running
-            long double asMt6 = as5nf2as6nf(oi.Mt(), oi.Mt(), asMt5, /* nl= */5, 3);
-            
-            // Return as(nf=6,mu=Mt)
-            if (mu == oi.Mt())
-              return asMt6;
+  long double QED(long double mu)
+  {
+    return runQEDQCD(aStart, asStart, muStart, mu, ng).second;
+  }
 
-            // Run with nf=6 up to mu > Mt
-            else
-              return run(asMt6, oi.Mt(), mu, 6 );
-              
-          }
-      }
-    // Running with fixed nf
-    // else
-    //   return run(asStart, muStart, mu, nfFixed);    
+  long double QCD(long double mu)
+  {
+    return runQEDQCD(aStart, asStart, muStart, mu, ng).first;
   }
 
 };

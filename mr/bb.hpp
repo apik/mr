@@ -131,51 +131,51 @@ public:
   // 
   // Mass corrections
   // 
-  std::complex<long double> x01(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+  long double x01(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
-  std::complex<long double> x02(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+  long double x02(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
-  std::complex<long double> x03(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+  long double x03(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
   
-  std::complex<long double> x10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+  long double x10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
   
-  std::complex<long double> x11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+  long double x11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
   
-  std::complex<long double> x20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+  long double x20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
   
 
   // Gaugeless limit
-  std::complex<long double> xgl01(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+  long double xgl01(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
-  std::complex<long double> xgl10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+  long double xgl10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
   
-  std::complex<long double> xgl11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+  long double xgl11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
-  std::complex<long double> xgl20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+  long double xgl20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
 
   // 
   // mass definition using Yukawa couplings 
   // mY=y/sqrt(2*sqrt(2)*GF)
   // 
-  std::complex<long double> y01(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+  long double y01(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
-  std::complex<long double> y10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+  long double y10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
-  std::complex<long double> y11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+  long double y11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
   
-  std::complex<long double> y20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+  long double y20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
 
   // Gaugeless limit
-  std::complex<long double> ygl01();
+  long double ygl01();
 
-  std::complex<long double> ygl10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+  long double ygl10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
-  std::complex<long double> ygl11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+  long double ygl11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
-  std::complex<long double> ygl20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+  long double ygl20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
 
   std::complex<long double> det(const long double & a, const long double & b, const long double & c)

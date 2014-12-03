@@ -1,12 +1,16 @@
 AUTOMAKE_OPTIONS = subdir-objects
 ACLOCAL_AMFLAGS = ${ACLOCAL_FLAGS} -I m4
 
-LDADD = ../mr/libmr.a
+LDADD = ../mr/libmr.la
 EX_CFLAGS = $(MR_CFLAGS) -I$(top_srcdir)/tsil-1.21 -I$(top_srcdir)/mr
 
-noinst_PROGRAMS = mW mZ mH mt runAlpha runSM runGL mb yukawa lambda yt gauge plotyukawa mtgl bezrukovFit GFermi tables
+noinst_PROGRAMS = mW mZ mH mt runAlpha runSM runGL mb yukawa lambda yt gauge plotyukawa mtgl bezrukovFit GFermi tables poleRGI
 if HAVE_ROOT
 noinst_PROGRAMS += mHroot interpolation
+endif 
+
+if HAVE_BOOST
+noinst_PROGRAMS += errest
 endif 
 
 mW_SOURCES =  mW.cpp
@@ -35,6 +39,7 @@ interpolation_SOURCES =  interpolation.cpp
 interpolation_CPPFLAGS = $(EX_CFLAGS) -I$(ROOTINCDIR)
 interpolation_LDADD = $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.21 -ltsil -lm -L$(ROOTLIBDIR) $(ROOTLIBS)
 endif
+
 
 mt_SOURCES =  mt.cpp
 mt_CPPFLAGS = $(EX_CFLAGS)
@@ -88,7 +93,16 @@ runGL_SOURCES =  runGL.cpp
 runGL_CPPFLAGS = $(EX_CFLAGS)
 runGL_LDADD = $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.21 -ltsil -lm
 
+poleRGI_SOURCES =  poleRGI.cpp
+poleRGI_CPPFLAGS = $(EX_CFLAGS)
+poleRGI_LDADD = $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.21 -ltsil -lm
+
 
 # mratio_SOURCES =  mratio.cpp
 # mratio_CPPFLAGS = $(EX_CFLAGS) -I$(top_srcdir)/tsil-1.21 -I$(top_srcdir)/mr
 # mratio_LDADD = $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.21 -ltsil -lm
+if HAVE_BOOST
+errest_SOURCES =  errest.cpp
+errest_CPPFLAGS = $(EX_CFLAGS) -I$(top_srcdir)/tsil-1.21 -I$(top_srcdir)/mr $(BOOST_CPPFLAGS)
+errest_LDADD = $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.21 -ltsil -lm $(BOOST_LDFLAGS)
+endif 

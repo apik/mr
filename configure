@@ -591,14 +591,6 @@ LIBOBJS
 RANLIB
 ALTMATHPATH
 LDMATH
-host_os
-host_vendor
-host_cpu
-host
-build_os
-build_vendor
-build_cpu
-build
 HAVE_MPREP_FALSE
 HAVE_MPREP_TRUE
 MPREP
@@ -619,6 +611,18 @@ ROOTEXEC
 ROOTCONF
 HAVE_ROOT_FALSE
 HAVE_ROOT_TRUE
+BOOST_LDFLAGS
+BOOST_CPPFLAGS
+host_os
+host_vendor
+host_cpu
+host
+build_os
+build_vendor
+build_cpu
+build
+HAVE_BOOST_FALSE
+HAVE_BOOST_TRUE
 am__fastdepCC_FALSE
 am__fastdepCC_TRUE
 CCDEPMODE
@@ -712,6 +716,8 @@ ac_user_opts='
 enable_option_checking
 enable_silent_rules
 enable_dependency_tracking
+with_boost
+with_boost_libdir
 with_rootsys
 with_mcc_path
 '
@@ -1354,6 +1360,15 @@ Optional Features:
 Optional Packages:
   --with-PACKAGE[=ARG]    use PACKAGE [ARG=yes]
   --without-PACKAGE       do not use PACKAGE (same as --with-PACKAGE=no)
+  --with-boost[=ARG]      use Boost library from a standard location
+                          (ARG=yes), from the specified location (ARG=<path>),
+                          or disable it (ARG=no) [ARG=yes]
+  --with-boost-libdir=LIB_DIR
+                          Force given directory for boost libraries. Note that
+                          this will override library path detection, so use
+                          this parameter only if default library detection
+                          fails and you know exactly where your boost
+                          libraries are located.
   --with-rootsys          top of the ROOT installation directory
   --with-mcc-path         build Mathematica MathLink interface [default=auto].
                           Set this to full path to mcc tool
@@ -3914,8 +3929,375 @@ fi
 
 
 
+ if false; then
+  HAVE_BOOST_TRUE=
+  HAVE_BOOST_FALSE='#'
+else
+  HAVE_BOOST_TRUE='#'
+  HAVE_BOOST_FALSE=
+fi
 
-$as_echo "#define HAVE_ROOT /**/" >>confdefs.h
+# Make sure we can run config.sub.
+$SHELL "$ac_aux_dir/config.sub" sun4 >/dev/null 2>&1 ||
+  as_fn_error $? "cannot run $SHELL $ac_aux_dir/config.sub" "$LINENO" 5
+
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking build system type" >&5
+$as_echo_n "checking build system type... " >&6; }
+if ${ac_cv_build+:} false; then :
+  $as_echo_n "(cached) " >&6
+else
+  ac_build_alias=$build_alias
+test "x$ac_build_alias" = x &&
+  ac_build_alias=`$SHELL "$ac_aux_dir/config.guess"`
+test "x$ac_build_alias" = x &&
+  as_fn_error $? "cannot guess build type; you must specify one" "$LINENO" 5
+ac_cv_build=`$SHELL "$ac_aux_dir/config.sub" $ac_build_alias` ||
+  as_fn_error $? "$SHELL $ac_aux_dir/config.sub $ac_build_alias failed" "$LINENO" 5
+
+fi
+{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_build" >&5
+$as_echo "$ac_cv_build" >&6; }
+case $ac_cv_build in
+*-*-*) ;;
+*) as_fn_error $? "invalid value of canonical build" "$LINENO" 5;;
+esac
+build=$ac_cv_build
+ac_save_IFS=$IFS; IFS='-'
+set x $ac_cv_build
+shift
+build_cpu=$1
+build_vendor=$2
+shift; shift
+# Remember, the first character of IFS is used to create $*,
+# except with old shells:
+build_os=$*
+IFS=$ac_save_IFS
+case $build_os in *\ *) build_os=`echo "$build_os" | sed 's/ /-/g'`;; esac
+
+
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking host system type" >&5
+$as_echo_n "checking host system type... " >&6; }
+if ${ac_cv_host+:} false; then :
+  $as_echo_n "(cached) " >&6
+else
+  if test "x$host_alias" = x; then
+  ac_cv_host=$ac_cv_build
+else
+  ac_cv_host=`$SHELL "$ac_aux_dir/config.sub" $host_alias` ||
+    as_fn_error $? "$SHELL $ac_aux_dir/config.sub $host_alias failed" "$LINENO" 5
+fi
+
+fi
+{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_host" >&5
+$as_echo "$ac_cv_host" >&6; }
+case $ac_cv_host in
+*-*-*) ;;
+*) as_fn_error $? "invalid value of canonical host" "$LINENO" 5;;
+esac
+host=$ac_cv_host
+ac_save_IFS=$IFS; IFS='-'
+set x $ac_cv_host
+shift
+host_cpu=$1
+host_vendor=$2
+shift; shift
+# Remember, the first character of IFS is used to create $*,
+# except with old shells:
+host_os=$*
+IFS=$ac_save_IFS
+case $host_os in *\ *) host_os=`echo "$host_os" | sed 's/ /-/g'`;; esac
+
+
+
+
+
+# Check whether --with-boost was given.
+if test "${with_boost+set}" = set; then :
+  withval=$with_boost;
+if test "$withval" = "no"; then
+want_boost="no"
+elif test "$withval" = "yes"; then
+want_boost="yes"
+ac_boost_path=""
+else
+want_boost="yes"
+ac_boost_path="$withval"
+fi
+
+else
+  want_boost="yes"
+fi
+
+
+
+
+# Check whether --with-boost-libdir was given.
+if test "${with_boost_libdir+set}" = set; then :
+  withval=$with_boost_libdir;
+if test -d "$withval"
+then
+ac_boost_lib_path="$withval"
+else
+as_fn_error $? "--with-boost-libdir expected directory name" "$LINENO" 5
+fi
+
+else
+  ac_boost_lib_path=""
+
+fi
+
+
+if test "x$want_boost" = "xyes"; then
+boost_lib_version_req=1.30
+boost_lib_version_req_shorten=`expr $boost_lib_version_req : '\([0-9]*\.[0-9]*\)'`
+boost_lib_version_req_major=`expr $boost_lib_version_req : '\([0-9]*\)'`
+boost_lib_version_req_minor=`expr $boost_lib_version_req : '[0-9]*\.\([0-9]*\)'`
+boost_lib_version_req_sub_minor=`expr $boost_lib_version_req : '[0-9]*\.[0-9]*\.\([0-9]*\)'`
+if test "x$boost_lib_version_req_sub_minor" = "x" ; then
+boost_lib_version_req_sub_minor="0"
+fi
+WANT_BOOST_VERSION=`expr $boost_lib_version_req_major \* 100000 \+  $boost_lib_version_req_minor \* 100 \+ $boost_lib_version_req_sub_minor`
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for boostlib >= $boost_lib_version_req" >&5
+$as_echo_n "checking for boostlib >= $boost_lib_version_req... " >&6; }
+succeeded=no
+
+libsubdirs="lib"
+ax_arch=`uname -m`
+case $ax_arch in
+x86_64)
+libsubdirs="lib64 libx32 lib lib64"
+;;
+ppc64|s390x|sparc64|aarch64|ppc64le)
+libsubdirs="lib64 lib lib64 ppc64le"
+;;
+esac
+
+
+libsubdirs="lib/${host_cpu}-${host_os} $libsubdirs"
+
+case ${host_cpu} in
+i?86)
+libsubdirs="lib/i386-${host_os} $libsubdirs"
+;;
+esac
+
+if test "$ac_boost_path" != ""; then
+BOOST_CPPFLAGS="-I$ac_boost_path/include"
+for ac_boost_path_tmp in $libsubdirs; do
+if test -d "$ac_boost_path"/"$ac_boost_path_tmp" ; then
+BOOST_LDFLAGS="-L$ac_boost_path/$ac_boost_path_tmp"
+break
+fi
+done
+elif test "$cross_compiling" != yes; then
+for ac_boost_path_tmp in /usr /usr/local /opt /opt/local ; do
+if test -d "$ac_boost_path_tmp/include/boost" && test -r "$ac_boost_path_tmp/include/boost"; then
+for libsubdir in $libsubdirs ; do
+if ls "$ac_boost_path_tmp/$libsubdir/libboost_"* >/dev/null 2>&1 ; then break; fi
+done
+BOOST_LDFLAGS="-L$ac_boost_path_tmp/$libsubdir"
+BOOST_CPPFLAGS="-I$ac_boost_path_tmp/include"
+break;
+fi
+done
+fi
+
+if test "$ac_boost_lib_path" != ""; then
+BOOST_LDFLAGS="-L$ac_boost_lib_path"
+fi
+
+CPPFLAGS_SAVED="$CPPFLAGS"
+CPPFLAGS="$CPPFLAGS $BOOST_CPPFLAGS"
+export CPPFLAGS
+
+LDFLAGS_SAVED="$LDFLAGS"
+LDFLAGS="$LDFLAGS $BOOST_LDFLAGS"
+export LDFLAGS
+
+
+ac_ext=cpp
+ac_cpp='$CXXCPP $CPPFLAGS'
+ac_compile='$CXX -c $CXXFLAGS $CPPFLAGS conftest.$ac_ext >&5'
+ac_link='$CXX -o conftest$ac_exeext $CXXFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
+ac_compiler_gnu=$ac_cv_cxx_compiler_gnu
+
+cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+
+#include <boost/version.hpp>
+
+int
+main ()
+{
+
+#if BOOST_VERSION >= $WANT_BOOST_VERSION
+// Everything is okay
+#else
+#  error Boost version is too
+#  old
+#endif
+
+  ;
+  return 0;
+}
+_ACEOF
+if ac_fn_cxx_try_compile "$LINENO"; then :
+
+{ $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+$as_echo "yes" >&6; }
+succeeded=yes
+found_system=yes
+
+fi
+rm -f core conftest.err conftest.$ac_objext conftest.$ac_ext
+ac_ext=c
+ac_cpp='$CPP $CPPFLAGS'
+ac_compile='$CC -c $CFLAGS $CPPFLAGS conftest.$ac_ext >&5'
+ac_link='$CC -o conftest$ac_exeext $CFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
+ac_compiler_gnu=$ac_cv_c_compiler_gnu
+
+
+
+
+if test "x$succeeded" != "xyes"; then
+_version=0
+if test "$ac_boost_path" != ""; then
+if test -d "$ac_boost_path" && test -r "$ac_boost_path"; then
+for i in `ls -d $ac_boost_path/include/boost-* 2>/dev/null`; do
+_version_tmp=`echo $i | sed "s#$ac_boost_path##" | sed 's/\/include\/boost-//' | sed 's/_/./'`
+V_CHECK=`expr $_version_tmp \> $_version`
+if test "$V_CHECK" = "1" ; then
+_version=$_version_tmp
+fi
+VERSION_UNDERSCORE=`echo $_version | sed 's/\./_/'`
+BOOST_CPPFLAGS="-I$ac_boost_path/include/boost-$VERSION_UNDERSCORE"
+done
+fi
+else
+if test "$cross_compiling" != yes; then
+for ac_boost_path in /usr /usr/local /opt /opt/local ; do
+if test -d "$ac_boost_path" && test -r "$ac_boost_path"; then
+for i in `ls -d $ac_boost_path/include/boost-* 2>/dev/null`; do
+_version_tmp=`echo $i | sed "s#$ac_boost_path##" | sed 's/\/include\/boost-//' | sed 's/_/./'`
+V_CHECK=`expr $_version_tmp \> $_version`
+if test "$V_CHECK" = "1" ; then
+_version=$_version_tmp
+best_path=$ac_boost_path
+fi
+done
+fi
+done
+
+VERSION_UNDERSCORE=`echo $_version | sed 's/\./_/'`
+BOOST_CPPFLAGS="-I$best_path/include/boost-$VERSION_UNDERSCORE"
+if test "$ac_boost_lib_path" = ""; then
+for libsubdir in $libsubdirs ; do
+if ls "$best_path/$libsubdir/libboost_"* >/dev/null 2>&1 ; then break; fi
+done
+BOOST_LDFLAGS="-L$best_path/$libsubdir"
+fi
+fi
+
+if test "x$BOOST_ROOT" != "x"; then
+for libsubdir in $libsubdirs ; do
+if ls "$BOOST_ROOT/stage/$libsubdir/libboost_"* >/dev/null 2>&1 ; then break; fi
+done
+if test -d "$BOOST_ROOT" && test -r "$BOOST_ROOT" && test -d "$BOOST_ROOT/stage/$libsubdir" && test -r "$BOOST_ROOT/stage/$libsubdir"; then
+version_dir=`expr //$BOOST_ROOT : '.*/\(.*\)'`
+stage_version=`echo $version_dir | sed 's/boost_//' | sed 's/_/./g'`
+stage_version_shorten=`expr $stage_version : '\([0-9]*\.[0-9]*\)'`
+V_CHECK=`expr $stage_version_shorten \>\= $_version`
+if test "$V_CHECK" = "1" -a "$ac_boost_lib_path" = "" ; then
+{ $as_echo "$as_me:${as_lineno-$LINENO}: We will use a staged boost library from $BOOST_ROOT" >&5
+$as_echo "$as_me: We will use a staged boost library from $BOOST_ROOT" >&6;}
+BOOST_CPPFLAGS="-I$BOOST_ROOT"
+BOOST_LDFLAGS="-L$BOOST_ROOT/stage/$libsubdir"
+fi
+fi
+fi
+fi
+
+CPPFLAGS="$CPPFLAGS $BOOST_CPPFLAGS"
+export CPPFLAGS
+LDFLAGS="$LDFLAGS $BOOST_LDFLAGS"
+export LDFLAGS
+
+ac_ext=cpp
+ac_cpp='$CXXCPP $CPPFLAGS'
+ac_compile='$CXX -c $CXXFLAGS $CPPFLAGS conftest.$ac_ext >&5'
+ac_link='$CXX -o conftest$ac_exeext $CXXFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
+ac_compiler_gnu=$ac_cv_cxx_compiler_gnu
+
+cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+
+#include <boost/version.hpp>
+
+int
+main ()
+{
+
+#if BOOST_VERSION >=
+#$WANT_BOOST_VERSION
+// Everything is okay
+#else
+#  error Boost version is too old
+#endif
+
+  ;
+  return 0;
+}
+_ACEOF
+if ac_fn_cxx_try_compile "$LINENO"; then :
+
+{ $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+$as_echo "yes" >&6; }
+succeeded=yes
+found_system=yes
+
+fi
+rm -f core conftest.err conftest.$ac_objext conftest.$ac_ext
+ac_ext=c
+ac_cpp='$CPP $CPPFLAGS'
+ac_compile='$CC -c $CFLAGS $CPPFLAGS conftest.$ac_ext >&5'
+ac_link='$CC -o conftest$ac_exeext $CFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
+ac_compiler_gnu=$ac_cv_c_compiler_gnu
+
+fi
+
+if test "$succeeded" != "yes" ; then
+if test "$_version" = "0" ; then
+{ $as_echo "$as_me:${as_lineno-$LINENO}: We could not detect the boost libraries (version $boost_lib_version_req_shorten or higher). If you have a staged boost library (still not installed) please specify \$BOOST_ROOT in your environment and do not give a PATH to --with-boost option.  If you are sure you have boost installed, then check your version number looking in <boost/version.hpp>. See http://randspringer.de/boost for more documentation." >&5
+$as_echo "$as_me: We could not detect the boost libraries (version $boost_lib_version_req_shorten or higher). If you have a staged boost library (still not installed) please specify \$BOOST_ROOT in your environment and do not give a PATH to --with-boost option.  If you are sure you have boost installed, then check your version number looking in <boost/version.hpp>. See http://randspringer.de/boost for more documentation." >&6;}
+else
+{ $as_echo "$as_me:${as_lineno-$LINENO}: Your boost libraries seems to old (version $_version)." >&5
+$as_echo "$as_me: Your boost libraries seems to old (version $_version)." >&6;}
+fi
+# execute
+# ACTION-IF-NOT-FOUND (if present):
+:
+else
+
+
+
+$as_echo "#define HAVE_BOOST /**/" >>confdefs.h
+
+# execute ACTION-IF-FOUND (if present):
+ if true; then
+  HAVE_BOOST_TRUE=
+  HAVE_BOOST_FALSE='#'
+else
+  HAVE_BOOST_TRUE='#'
+  HAVE_BOOST_FALSE=
+fi
+
+fi
+
+CPPFLAGS="$CPPFLAGS_SAVED"
+LDFLAGS="$LDFLAGS_SAVED"
+fi
+
+
 
  if false; then
   HAVE_ROOT_TRUE=
@@ -4332,76 +4714,6 @@ fi
 { $as_echo "$as_me:${as_lineno-$LINENO}: $MPREP" >&5
 $as_echo "$as_me: $MPREP" >&6;}
 
-# Make sure we can run config.sub.
-$SHELL "$ac_aux_dir/config.sub" sun4 >/dev/null 2>&1 ||
-  as_fn_error $? "cannot run $SHELL $ac_aux_dir/config.sub" "$LINENO" 5
-
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking build system type" >&5
-$as_echo_n "checking build system type... " >&6; }
-if ${ac_cv_build+:} false; then :
-  $as_echo_n "(cached) " >&6
-else
-  ac_build_alias=$build_alias
-test "x$ac_build_alias" = x &&
-  ac_build_alias=`$SHELL "$ac_aux_dir/config.guess"`
-test "x$ac_build_alias" = x &&
-  as_fn_error $? "cannot guess build type; you must specify one" "$LINENO" 5
-ac_cv_build=`$SHELL "$ac_aux_dir/config.sub" $ac_build_alias` ||
-  as_fn_error $? "$SHELL $ac_aux_dir/config.sub $ac_build_alias failed" "$LINENO" 5
-
-fi
-{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_build" >&5
-$as_echo "$ac_cv_build" >&6; }
-case $ac_cv_build in
-*-*-*) ;;
-*) as_fn_error $? "invalid value of canonical build" "$LINENO" 5;;
-esac
-build=$ac_cv_build
-ac_save_IFS=$IFS; IFS='-'
-set x $ac_cv_build
-shift
-build_cpu=$1
-build_vendor=$2
-shift; shift
-# Remember, the first character of IFS is used to create $*,
-# except with old shells:
-build_os=$*
-IFS=$ac_save_IFS
-case $build_os in *\ *) build_os=`echo "$build_os" | sed 's/ /-/g'`;; esac
-
-
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking host system type" >&5
-$as_echo_n "checking host system type... " >&6; }
-if ${ac_cv_host+:} false; then :
-  $as_echo_n "(cached) " >&6
-else
-  if test "x$host_alias" = x; then
-  ac_cv_host=$ac_cv_build
-else
-  ac_cv_host=`$SHELL "$ac_aux_dir/config.sub" $host_alias` ||
-    as_fn_error $? "$SHELL $ac_aux_dir/config.sub $host_alias failed" "$LINENO" 5
-fi
-
-fi
-{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_host" >&5
-$as_echo "$ac_cv_host" >&6; }
-case $ac_cv_host in
-*-*-*) ;;
-*) as_fn_error $? "invalid value of canonical host" "$LINENO" 5;;
-esac
-host=$ac_cv_host
-ac_save_IFS=$IFS; IFS='-'
-set x $ac_cv_host
-shift
-host_cpu=$1
-host_vendor=$2
-shift; shift
-# Remember, the first character of IFS is used to create $*,
-# except with old shells:
-host_os=$*
-IFS=$ac_save_IFS
-case $host_os in *\ *) host_os=`echo "$host_os" | sed 's/ /-/g'`;; esac
-
 
 case $host_os in
   darwin* )
@@ -4661,6 +4973,14 @@ Usually this means the macro was only invoked conditionally." "$LINENO" 5
 fi
 if test -z "${am__fastdepCC_TRUE}" && test -z "${am__fastdepCC_FALSE}"; then
   as_fn_error $? "conditional \"am__fastdepCC\" was never defined.
+Usually this means the macro was only invoked conditionally." "$LINENO" 5
+fi
+if test -z "${HAVE_BOOST_TRUE}" && test -z "${HAVE_BOOST_FALSE}"; then
+  as_fn_error $? "conditional \"HAVE_BOOST\" was never defined.
+Usually this means the macro was only invoked conditionally." "$LINENO" 5
+fi
+if test -z "${HAVE_BOOST_TRUE}" && test -z "${HAVE_BOOST_FALSE}"; then
+  as_fn_error $? "conditional \"HAVE_BOOST\" was never defined.
 Usually this means the macro was only invoked conditionally." "$LINENO" 5
 fi
 if test -z "${HAVE_ROOT_TRUE}" && test -z "${HAVE_ROOT_FALSE}"; then

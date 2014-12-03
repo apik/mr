@@ -163,23 +163,23 @@ public:
 
   // Pole -> MS
   
-  std::complex<long double> x10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+  long double x10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
   
-  std::complex<long double> x11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+  long double x11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
   
 
-  std::complex<long double> x20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+  long double x20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
 
   // Yukawa
-  std::complex<long double> y10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+  long double y10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
   
-  std::complex<long double> y11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+  long double y11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
   
 
-  std::complex<long double> y20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+  long double y20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
 };
 
@@ -230,13 +230,13 @@ public:
   
   // Pole -> MS
   
-  std::complex<long double> x10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+  long double x10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
   
-  std::complex<long double> x11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+  long double x11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
   
 
-  std::complex<long double> x20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+  long double x20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
 
 };

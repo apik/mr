@@ -1,10 +1,9 @@
 #include <ZZ.hpp>
-std::complex<long double>
-ZZ<OS>::y10(size_t nL, size_t nH, size_t boson)
+long double ZZ<OS>::y10(size_t nL, size_t nH, size_t boson)
 {     
       
       
-    std::complex<long double> aryuZZ[30], yuZZret;
+    std::complex<long double> aryuZZ[32], yuZZret;
 
     aryuZZ[1]=double(nH);
     aryuZZ[2]=double(boson);
@@ -27,79 +26,77 @@ ZZ<OS>::y10(size_t nL, size_t nH, size_t boson)
    aryuZZ[19]=pow(aryuZZ[3],2);
    aryuZZ[20]=pow(aryuZZ[5],2);
    aryuZZ[21]=5./9.*aryuZZ[19] + aryuZZ[20] - 8./9.;
-   aryuZZ[22]=aryuZZ[19] + aryuZZ[20];
-   aryuZZ[23]=aryuZZ[22]*aryuZZ[17];
-   aryuZZ[24]=MMb*aryuZZ[23];
-   aryuZZ[25]= - 3./4.*MMt - 3./2.*aryuZZ[9];
-   aryuZZ[23]=aryuZZ[25]*aryuZZ[23];
-   aryuZZ[25]=1./2.*aryuZZ[20];
-   aryuZZ[26]=aryuZZ[25] + 17./18.*aryuZZ[19];
-   aryuZZ[27]= - 8./9. - aryuZZ[26];
-   aryuZZ[27]=aryuZZ[7]*aryuZZ[27];
-   aryuZZ[23]=3./4.*aryuZZ[24] + aryuZZ[27] + aryuZZ[23] + aryuZZ[21];
-   aryuZZ[23]=MMb*aryuZZ[23];
-   aryuZZ[21]=aryuZZ[21] + 3./2.*aryuZZ[24];
-   aryuZZ[21]=aryuZZ[10]*aryuZZ[21];
-   aryuZZ[21]=aryuZZ[21] + aryuZZ[23];
-   aryuZZ[21]=aryuZZ[21]*aryuZZ[1]*aryuZZ[4];
-   aryuZZ[23]= - aryuZZ[25] - 32./9. + 7./18.*aryuZZ[19];
-   aryuZZ[24]=aryuZZ[6]*aryuZZ[23];
-   aryuZZ[24]=aryuZZ[24] + 41./36.*aryuZZ[19] - 32./9. + 1./4.*
-   aryuZZ[20];
-   aryuZZ[24]=MMt*aryuZZ[24];
-   aryuZZ[23]=aryuZZ[9]*aryuZZ[23];
-   aryuZZ[23]=aryuZZ[23] + aryuZZ[24];
-   aryuZZ[23]=aryuZZ[4]*aryuZZ[23];
-   aryuZZ[24]= - 11./9.*aryuZZ[19] + 20./9. - aryuZZ[20];
-   aryuZZ[24]=aryuZZ[8]*aryuZZ[24];
-   aryuZZ[25]=5./18.*aryuZZ[19] - 4./9. + aryuZZ[25];
-   aryuZZ[25]=aryuZZ[7]*aryuZZ[25];
-   aryuZZ[26]= - 16./9. + aryuZZ[26];
-   aryuZZ[26]=aryuZZ[6]*aryuZZ[26];
-   aryuZZ[23]=aryuZZ[23] + aryuZZ[26] + aryuZZ[25] + aryuZZ[24];
-   aryuZZ[23]=aryuZZ[1]*aryuZZ[23];
-   aryuZZ[24]=aryuZZ[22]*aryuZZ[14];
-   aryuZZ[25]= - aryuZZ[15]*aryuZZ[22];
-   aryuZZ[22]=aryuZZ[22]*MMH;
-   aryuZZ[26]=aryuZZ[12]*aryuZZ[22];
-   aryuZZ[25]=aryuZZ[24] + aryuZZ[25] + aryuZZ[26];
-   aryuZZ[25]=aryuZZ[4]*MMH*aryuZZ[25];
-   aryuZZ[26]=11./3. - 3*aryuZZ[20];
-   aryuZZ[26]=aryuZZ[26]*aryuZZ[20];
-   aryuZZ[26]=aryuZZ[26] + 11./3.*aryuZZ[19];
-   aryuZZ[26]=aryuZZ[15]*aryuZZ[26];
-   aryuZZ[24]=aryuZZ[24] - aryuZZ[26];
-   aryuZZ[26]=aryuZZ[12] + 1./8.;
-   aryuZZ[22]= - aryuZZ[26]*aryuZZ[22];
-   aryuZZ[22]=1./12.*aryuZZ[25] + 1./3.*aryuZZ[22] - 1./4.*aryuZZ[24];
-   aryuZZ[22]=aryuZZ[4]*aryuZZ[22];
-   aryuZZ[24]=pow(CW,2);
-   aryuZZ[24]=4*aryuZZ[24];
-   aryuZZ[25]=aryuZZ[24] + 1./12.*aryuZZ[19] + 29./3. - 33./4.*
-   aryuZZ[20];
-   aryuZZ[25]=aryuZZ[13]*aryuZZ[25];
-   aryuZZ[26]=3./4.*aryuZZ[18];
-   aryuZZ[27]= - aryuZZ[20]*aryuZZ[26];
+   aryuZZ[22]=1./2.*aryuZZ[20];
+   aryuZZ[23]=aryuZZ[22] + 17./18.*aryuZZ[19];
+   aryuZZ[24]= - 8./9. - aryuZZ[23];
+   aryuZZ[24]=aryuZZ[7]*aryuZZ[24];
+   aryuZZ[25]=aryuZZ[19] + aryuZZ[20];
+   aryuZZ[26]=MMt - MMb;
+   aryuZZ[26]=aryuZZ[10] - aryuZZ[9] - 1./2.*aryuZZ[26];
+   aryuZZ[26]=aryuZZ[17]*aryuZZ[25]*aryuZZ[26];
+   aryuZZ[24]=3./2.*aryuZZ[26] + aryuZZ[21] + aryuZZ[24];
+   aryuZZ[26]=aryuZZ[2]*aryuZZ[1];
+   aryuZZ[24]=aryuZZ[24]*aryuZZ[26]*MMb;
+   aryuZZ[27]= - 3*aryuZZ[20] + 11./3.;
+   aryuZZ[27]=aryuZZ[15]*aryuZZ[27];
+   aryuZZ[27]= - aryuZZ[14] + aryuZZ[27];
+   aryuZZ[27]=aryuZZ[27]*aryuZZ[20];
+   aryuZZ[28]= - aryuZZ[14] + 11./3.*aryuZZ[15];
+   aryuZZ[28]=aryuZZ[28]*aryuZZ[19];
+   aryuZZ[27]=aryuZZ[27] + aryuZZ[28];
    aryuZZ[28]= - 1 + 3./4.*aryuZZ[20];
    aryuZZ[28]=aryuZZ[28]*aryuZZ[20];
    aryuZZ[29]=5./3.*aryuZZ[19];
    aryuZZ[28]=aryuZZ[29] + 4 + aryuZZ[28];
-   aryuZZ[28]=aryuZZ[4]*aryuZZ[28];
-   aryuZZ[27]=aryuZZ[27] + aryuZZ[28];
-   aryuZZ[27]=aryuZZ[16]*aryuZZ[27];
-   aryuZZ[26]=aryuZZ[14]*aryuZZ[26];
-   aryuZZ[26]=aryuZZ[26] + aryuZZ[12];
-   aryuZZ[26]=aryuZZ[20]*aryuZZ[26];
+   aryuZZ[28]=aryuZZ[16]*aryuZZ[28];
+   aryuZZ[30]= - aryuZZ[22] - 32./9. + 7./18.*aryuZZ[19];
+   aryuZZ[31]=aryuZZ[9]*aryuZZ[1]*aryuZZ[30];
+   aryuZZ[27]=aryuZZ[31] + 1./4.*aryuZZ[27] + aryuZZ[28];
+   aryuZZ[27]=aryuZZ[2]*aryuZZ[27];
+   aryuZZ[28]=aryuZZ[6]*aryuZZ[30];
+   aryuZZ[28]=aryuZZ[28] + 41./36.*aryuZZ[19] - 32./9. + 1./4.*
+   aryuZZ[20];
+   aryuZZ[28]=MMt*aryuZZ[28];
+   aryuZZ[21]=aryuZZ[10]*aryuZZ[21];
+   aryuZZ[21]=aryuZZ[21] + aryuZZ[28];
+   aryuZZ[21]=aryuZZ[26]*aryuZZ[21];
+   aryuZZ[28]=aryuZZ[15] - aryuZZ[14];
+   aryuZZ[28]= - aryuZZ[2]*aryuZZ[28]*aryuZZ[25];
+   aryuZZ[25]=aryuZZ[25]*MMH*aryuZZ[2];
+   aryuZZ[30]=aryuZZ[12]*aryuZZ[25];
+   aryuZZ[28]=aryuZZ[28] + aryuZZ[30];
+   aryuZZ[28]=aryuZZ[4]*MMH*aryuZZ[28];
+   aryuZZ[30]=aryuZZ[12] + 1./8.;
+   aryuZZ[25]= - aryuZZ[30]*aryuZZ[25];
+   aryuZZ[21]=1./12.*aryuZZ[28] + 1./3.*aryuZZ[25] + aryuZZ[27] + 
+   aryuZZ[21] + aryuZZ[24];
+   aryuZZ[21]=aryuZZ[4]*aryuZZ[21];
+   aryuZZ[24]= - 11./9.*aryuZZ[19] + 20./9. - aryuZZ[20];
+   aryuZZ[24]=aryuZZ[8]*aryuZZ[24];
+   aryuZZ[23]= - 16./9. + aryuZZ[23];
+   aryuZZ[23]=aryuZZ[6]*aryuZZ[23];
+   aryuZZ[23]=aryuZZ[23] + aryuZZ[24];
+   aryuZZ[23]=aryuZZ[1]*aryuZZ[23];
+   aryuZZ[24]=pow(CW,2);
+   aryuZZ[25]=1./12.*aryuZZ[19] - 33./4.*aryuZZ[20] + 29./3. + 4*
+   aryuZZ[24];
+   aryuZZ[25]=aryuZZ[13]*aryuZZ[25];
+   aryuZZ[27]=aryuZZ[14] - aryuZZ[16];
+   aryuZZ[27]=aryuZZ[18]*aryuZZ[27];
+   aryuZZ[27]=3./4.*aryuZZ[27] - 209./72. + aryuZZ[12];
+   aryuZZ[27]=aryuZZ[20]*aryuZZ[27];
    aryuZZ[28]=5./72. + aryuZZ[12];
-   aryuZZ[19]=aryuZZ[28]*aryuZZ[19];
-   aryuZZ[28]=aryuZZ[29] + aryuZZ[20] - 8./3.;
+   aryuZZ[28]=aryuZZ[28]*aryuZZ[19];
+   aryuZZ[20]=aryuZZ[29] - 8./3. + aryuZZ[20];
    aryuZZ[29]=aryuZZ[8] - 1./3.;
-   aryuZZ[28]=aryuZZ[11]*aryuZZ[29]*aryuZZ[28];
-   aryuZZ[20]=8 - 209./24.*aryuZZ[20];
-   aryuZZ[19]=4./3.*aryuZZ[28] + aryuZZ[27] + aryuZZ[23] + aryuZZ[22]
-    + aryuZZ[25] + aryuZZ[24] + aryuZZ[19] + 1./3.*aryuZZ[20] + 
-   aryuZZ[26] + aryuZZ[21];
+   aryuZZ[20]=aryuZZ[11]*aryuZZ[29]*aryuZZ[20];
+   aryuZZ[24]=2./3. + aryuZZ[24];
+   aryuZZ[20]=aryuZZ[25] + aryuZZ[23] + 4./3.*aryuZZ[20] + aryuZZ[28]
+    + 4*aryuZZ[24] + aryuZZ[27];
+   aryuZZ[20]=aryuZZ[2]*aryuZZ[20];
+   aryuZZ[19]=5./18.*aryuZZ[19] - 4./9. + aryuZZ[22];
+   aryuZZ[19]=aryuZZ[7]*aryuZZ[19]*aryuZZ[26];
 
-      yuZZret = aryuZZ[19]*aryuZZ[2];
-      return yuZZret;
+      yuZZret = aryuZZ[19] + aryuZZ[20] + aryuZZ[21];
+      return yuZZret.real();
 }

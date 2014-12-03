@@ -73,8 +73,44 @@ int main (int argc, char *argv[])
                 pow(172.9,2),
                 3 // NG
                 );
+      std::cout << "Beta functions for 3-3-2 running" << std::endl;
+      CouplingsSM<3,3,3,3,-1,-1,2> a332(
+                   5./3.*pow(0.358729/4./Pi,2),
+                   pow(0.648382/4/Pi,2),
+                   pow(1.1646/4/Pi,2),
+                   pow(0.934442/4/Pi,2),
+                   0,
+                   0,
+                   0.136493/pow(4.*Pi,2),             // Lambda
+                   pow(172.9,2),
+                   3 // NG
+                   );
       std::cout << "Beta functions for 3-2-1 running" << std::endl;
-      SM_Weyl a321(
+      CouplingsSM<3,3,3,2,-1,-1,1> a321(
+                   5./3.*pow(0.358729/4./Pi,2),
+                   pow(0.648382/4/Pi,2),
+                   pow(1.1646/4/Pi,2),
+                   pow(0.934442/4/Pi,2),
+                   0,
+                   0,
+                   0.136493/pow(4.*Pi,2),             // Lambda
+                   pow(172.9,2),
+                   3 // NG
+                   );
+      std::cout << "Beta functions for 2-2-1 running" << std::endl;
+      CouplingsSM<2,2,2,2,-1,-1,1> a221(
+                   5./3.*pow(0.358729/4./Pi,2),
+                   pow(0.648382/4/Pi,2),
+                   pow(1.1646/4/Pi,2),
+                   pow(0.934442/4/Pi,2),
+                   0,
+                   0,
+                   0.136493/pow(4.*Pi,2),             // Lambda
+                   pow(172.9,2),
+                   3 // NG
+                   );
+      std::cout << "Beta functions for 1-1-1 running" << std::endl;
+      CouplingsSM<1,1,1,1,-1,-1,1> a111(
                    5./3.*pow(0.358729/4./Pi,2),
                    pow(0.648382/4/Pi,2),
                    pow(1.1646/4/Pi,2),
@@ -86,14 +122,24 @@ int main (int argc, char *argv[])
                    3 // NG
                    );
       
-      Plot2 plotWeyl("runSM_Weyl", "\\lambda running in 3-3-3 and 3-2-1 schemes", "log_10(\\mu/GeV)", "\\lambda", "3-3-3 ", "3-2-1");
+      // Plot5 plotWeyl("runSM_Weyl", "\\lambda running in 3-3-3, 3-3-2 and 3-2-1 schemes", "log_10(\\mu/GeV)", "\\lambda", "3-3-3 ", "3-3-2 ", "3-2-1", "2-2-1", "1-1-1");
 
+
+
+      std::string legends[5] = {"3-3-3 ", "3-3-2 ", "3-2-1", "2-2-1", "1-1-1"};
+      Plot<5> plotWeyl("runSM_Weyl", "\\lambda running in 3-3-3, 3-3-2 and 3-2-1 schemes", "log_10(\\mu/GeV)", "\\lambda",legends );
+
+      
       for (int lg10mu = 8; lg10mu < 19; lg10mu++)
         {
           state_type av333 = a333(pow(10.,2.*lg10mu));
+          state_type av332 = a332(pow(10.,2.*lg10mu));
           state_type av321 = a321(pow(10.,2.*lg10mu));
-          
-          plotWeyl.add(lg10mu,pow(4.*Pi,2)*av333[6],pow(4.*Pi,2)*av321[6]);
+          state_type av221 = a221(pow(10.,2.*lg10mu));
+          state_type av111 = a111(pow(10.,2.*lg10mu));
+
+          long double pltv[5] = {pow(4.*Pi,2)*av333[6], pow(4.*Pi,2)*av332[6], pow(4.*Pi,2)*av321[6], pow(4.*Pi,2)*av221[6], pow(4.*Pi,2)*av111[6]};
+          plotWeyl.add(lg10mu,pltv);
         }
 
 

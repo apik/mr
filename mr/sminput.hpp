@@ -21,25 +21,27 @@
 #ifndef __SMINPUT_HPP__
 #define __SMINPUT_HPP__
 #include "constants.hpp"
-class OSinput
+
+template<class T>
+class OSinputTemplate
 {
-  long double iMb;
-  long double iMW;
-  long double iMZ;
-  long double iMH;
-  long double iMt;
+  T iMb;
+  T iMW;
+  T iMZ;
+  T iMH;
+  T iMt;
 
 public:
-  OSinput(long double Mb_, long double MW_, long double MZ_, long double MH_, long double Mt_) : 
+  OSinputTemplate(T Mb_, T MW_, T MZ_, T MH_, T Mt_) : 
     iMb(Mb_), iMW(MW_), iMZ(MZ_), iMH(MH_), iMt(Mt_)
   {
   }
 
-  OSinput() 
+  OSinputTemplate() 
   {
   }
   
-  bool operator < (const OSinput& b) const 
+  bool operator < (const OSinputTemplate& b) const 
   {
     if(iMb < b.Mb()) return true;
     else if(iMb > b.Mb()) return false;
@@ -61,90 +63,218 @@ public:
     return false;
   }
 
-  long double MMb() const
+  T MMb() const
   {
     return iMb*iMb;
   }
-  long double MMW() const
+  T MMW() const
   {
     return iMW*iMW;
   }
-  long double MMZ() const
+  T MMZ() const
   {
     return iMZ*iMZ;
   }
-  long double MMH() const
+  T MMH() const
   {
     return iMH*iMH;
   }
-  long double MMt() const
+  T MMt() const
   {
     return iMt*iMt;
   }
 
   // Weinberg trigonometric
-  long double CW() const
+  T CW() const
   {
     return iMW/iMZ;
   }
-  long double CCW() const
+  T CCW() const
   {
     return pow(iMW/iMZ,2);
   }
-  long double SW() const
+  T SW() const
   {
     return sqrt(1-CCW());
   }
-  long double SSW() const
+  T SSW() const
   {
     return 1-CCW();
   }
 
 
-  long double Mb() const
+  T Mb() const
   {
     return iMb;
   }
-  long double MW() const
+  T MW() const
   {
     return iMW;
   }
-  long double MZ() const
+  T MZ() const
   {
     return iMZ;
   }
-  long double MH() const
+  T MH() const
   {
     return iMH;
   }
-  long double Mt() const
+  T Mt() const
   {
     return iMt;
   }
 
   // Modification
-  void setMb(long double mb)
+  void setMb(T mb)
   {
     iMb = mb;
   }
-  void setMW(long double mW)
+  void setMW(T mW)
   {
     iMW = mW;
   }
-  void setMZ(long double mZ)
+  void setMZ(T mZ)
   {
     iMZ = mZ;
   }
-  void setMH(long double mH)
+  void setMH(T mH)
   {
     iMH = mH;
   }
-  void setMt(long double mt)
+  void setMt(T mt)
   {
     iMt = mt;
   }
 
 };
+
+typedef OSinputTemplate<long double> OSinput;
+
+
+// class OSinput
+// {
+//   long double iMb;
+//   long double iMW;
+//   long double iMZ;
+//   long double iMH;
+//   long double iMt;
+
+// public:
+//   OSinput(long double Mb_, long double MW_, long double MZ_, long double MH_, long double Mt_) : 
+//     iMb(Mb_), iMW(MW_), iMZ(MZ_), iMH(MH_), iMt(Mt_)
+//   {
+//   }
+
+//   OSinput() 
+//   {
+//   }
+  
+//   bool operator < (const OSinput& b) const 
+//   {
+//     if(iMb < b.Mb()) return true;
+//     else if(iMb > b.Mb()) return false;
+//     else
+      
+//       if(iMW < b.MW()) return true;
+//       else if(iMW > b.MW()) return false;
+//       else
+        
+//         if(iMZ < b.MZ()) return true;
+//         else if(iMZ > b.MZ()) return false;
+//         else
+        
+//           if(iMH < b.MH()) return true;
+//           else if(iMH > b.MH()) return false;
+//           else
+//             if(iMt < b.Mt()) return true;
+//             else if(iMt > b.Mt()) return false;
+//     return false;
+//   }
+
+//   long double MMb() const
+//   {
+//     return iMb*iMb;
+//   }
+//   long double MMW() const
+//   {
+//     return iMW*iMW;
+//   }
+//   long double MMZ() const
+//   {
+//     return iMZ*iMZ;
+//   }
+//   long double MMH() const
+//   {
+//     return iMH*iMH;
+//   }
+//   long double MMt() const
+//   {
+//     return iMt*iMt;
+//   }
+
+//   // Weinberg trigonometric
+//   long double CW() const
+//   {
+//     return iMW/iMZ;
+//   }
+//   long double CCW() const
+//   {
+//     return pow(iMW/iMZ,2);
+//   }
+//   long double SW() const
+//   {
+//     return sqrt(1-CCW());
+//   }
+//   long double SSW() const
+//   {
+//     return 1-CCW();
+//   }
+
+
+//   long double Mb() const
+//   {
+//     return iMb;
+//   }
+//   long double MW() const
+//   {
+//     return iMW;
+//   }
+//   long double MZ() const
+//   {
+//     return iMZ;
+//   }
+//   long double MH() const
+//   {
+//     return iMH;
+//   }
+//   long double Mt() const
+//   {
+//     return iMt;
+//   }
+
+//   // Modification
+//   void setMb(long double mb)
+//   {
+//     iMb = mb;
+//   }
+//   void setMW(long double mW)
+//   {
+//     iMW = mW;
+//   }
+//   void setMZ(long double mZ)
+//   {
+//     iMZ = mZ;
+//   }
+//   void setMH(long double mH)
+//   {
+//     iMH = mH;
+//   }
+//   void setMt(long double mt)
+//   {
+//     iMt = mt;
+//   }
+
+// };
 
 class MSinput
 {
@@ -157,15 +287,16 @@ class MSinput
   long double iv;
   long double ig;
   long double igp;
-
+  // scale, usually coincide with pole masses
+  long double scale;
 public:
   MSinput(long double mb_, long double mW_, long double mZ_, long double mH_, long double mt_) : 
     imb(mb_), imW(mW_), imZ(mZ_), imH(mH_), imt(mt_)
   {
   }
   // With vev
-  MSinput(long double mb_, long double mW_, long double mZ_, long double mH_, long double mt_, long double v_) : 
-    imb(mb_), imW(mW_), imZ(mZ_), imH(mH_), imt(mt_), iv(v_)
+  MSinput(long double mb_, long double mW_, long double mZ_, long double mH_, long double mt_, long double v_, long double scale_) : 
+    imb(mb_), imW(mW_), imZ(mZ_), imH(mH_), imt(mt_), iv(v_), scale(scale_)
   {
   }
 
@@ -174,20 +305,53 @@ public:
   {
     return MSinput(mb, mW, mZ, mH, mt);
   }
-  static MSinput fromConsts(long double lam, 
-                            long double v, 
+  // static MSinput fromConsts(long double lam, 
+  //                           long double v, 
+  //                           long double yb, 
+  //                           long double yt, 
+  //                           long double g, // SU(2) 
+  //                           long double gp // U(1)
+  //                           )
+  // {
+  //   long double mb = v*yb/sqrt(2);
+  //   long double mW = v*g/2.;
+  //   long double mZ = sqrt(g*g+gp*gp)*v/2.;
+  //   long double mH = v*sqrt(2.*lam);
+  //   long double mt = v*yt/sqrt(2);
+  //   return MSinput(mb, mW, mZ, mH, mt, v);
+  // }
+
+  
+  static MSinput fromConsts(long double scale, // Input scale
+                            long double mu0,   //Higgs mass parameter
+                                               //normalized as mu0=Mh at
+                                               //tree level
+                            long double lam, 
                             long double yb, 
                             long double yt, 
-                            long double g, // SU(2) 
-                            long double gp // U(1)
+                            long double g,     // SU(2) 
+                            long double gp     // U(1)
                             )
   {
-    long double mb = v*yb/sqrt(2);
-    long double mW = v*g/2.;
-    long double mZ = sqrt(g*g+gp*gp)*v/2.;
-    long double mH = v*sqrt(2.*lam);
-    long double mt = v*yt/sqrt(2);
-    return MSinput(mb, mW, mZ, mH, mt, v);
+
+    long double vev = mu0/sqrt(2.*lam);
+    
+    long double mb = vev*yb/sqrt(2);
+    long double mW = vev*g/2.;
+    long double mZ = sqrt(g*g+gp*gp)*vev/2.;
+    long double mH = mu0;
+    long double mt = vev*yt/sqrt(2);
+    return MSinput(mb, mW, mZ, mH, mt, vev, scale);
+  }
+
+  // Scale mu^2
+  long double Q2() const
+  {
+    return scale;
+  }
+  long double vev() const
+  {
+    return iv;
   }
   // constants 
   long double g() const

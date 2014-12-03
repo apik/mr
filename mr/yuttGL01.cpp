@@ -1,6 +1,5 @@
 #include <tt.hpp>
-std::complex<long double>
-tt::ygl01(size_t nL, size_t nH, size_t boson)
+long double tt::ygl01(size_t nL, size_t nH, size_t boson)
 {     
       
       
@@ -13,5 +12,5 @@ tt::ygl01(size_t nL, size_t nH, size_t boson)
    aryuttGL[4]= - 1./3. + aryuttGL[4];
 
       yuttGLret = 4*aryuttGL[4]*aryuttGL[1];
-      return yuttGLret;
+      return yuttGLret.real();
 }

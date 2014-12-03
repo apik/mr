@@ -14,16 +14,17 @@
 // #define Mtau 1.777
 
 
-long double al(long double alMZ, long double MMZ, long double ass, long double mm, size_t Nu = 2, size_t Nd = 3, size_t Nl = 3)
+long double al(long double alMZ, long double MMZ, long double ass, long double mm, size_t Nu = 3, size_t Nd = 3, size_t Nl = 3)
 {
 
   long double nu = static_cast<long double>(Nu);
   long double nd = static_cast<long double>(Nd);
   long double nl = static_cast<long double>(Nl);
+
   
-  return alMZ/(1-alMZ/4./Pi*(
+  return alMZ/(1 - alMZ/4./Pi*(
                              7. - 4./3.*(3.*(nd + 4.*nu)/9. + nl)// -11./3.
-                             -16.*(nd+4.*nu)/27.// -80./3.
+                             -16.*(nd+4.*nu)/9.// -80./3.
                              *ass/4./Pi)*log(MMZ/mm));
 }
 
@@ -115,17 +116,24 @@ int main (int argc, char *argv[])
       asMt = asRD.AlL2AlH(pdg2014::asMZ, KPVphys.MZ(), asRD.nfMmu, KPVphys.Mt(), 4);
 
 
-      // std::pair<double,double> a2 = runQEDQCD(pdg2014::aMZ, pdg2014::asMZ, pdg2014::MZ, pdg2014::Mt);
+      std::pair<double,double> a2 = runQEDQCD(pdg2014::aMZ, pdg2014::asMZ, pdg2014::MZ, pdg2014::Mt);
 
+      AlphaQEDQCD FinAl(KPVphys);
 
-      // std::cout << " as = " << a2.first << "     1/a = " << 1./a2.second << std::endl;
-      // long double aMt2014 = al(pdg2014::aMZ, pdg2014::MZ, 0*pdg2014::asMZ, pdg2014::Mt);
-      // std::cout << "\\alpha              = " << 1./aMt2014 << std::endl;
+      std::cout << " as = " << a2.first << "     1/a = " << 1./a2.second << std::endl;
+      long double aMt2014 = al(pdg2014::aMZ, pow(pdg2014::MZ,2), pdg2014::asMZ, pow(pdg2014::Mt,2));
+      std::cout << "\\alpha              = " << 1./aMt2014 << std::endl;
+      std::cout << "\\alpha MZ           = " << 1./pdg2014::aMZ << std::endl;
 
+      std::cout << std::setprecision(10);
+      std::cout << "\\alpha MZ Final     = " << 1./FinAl.QED(pdg2014::Mt) << std::endl;
       
-      // return 0;
       
       // AlphaQEDQCD aEMQCD(KPVphys);
+
+      
+
+      // return 0;
       
       AlphaS asPik(KPVphys); 
 
@@ -135,9 +143,11 @@ int main (int argc, char *argv[])
       
       
 
-      aMt = al(aMZ, KPVphys.MMZ(), pdg2014::asMZ, KPVphys.MMt());
+      // aMt = al(aMZ, KPVphys.MMZ(), pdg2014::asMZ, KPVphys.MMt());
 
+      aMt = 1./127.72063;       // GAPP value
 
+      aMt = FinAl.QED(pdg2014::Mt);
       std::cout << "\\alpha              = " << 1./aMt << std::endl;
       std::cout << "\\alpha00              = " << 1./pdg2014::aMZ << std::endl;
       std::cout << "\\alpha10              = " << 1./al(pdg2014::aMZ, KPVphys.MMZ(), 0*pdg2014::asMZ, KPVphys.MMt()) << std::endl;
@@ -147,7 +157,7 @@ int main (int argc, char *argv[])
         {
           tt dMt  = tt(*it, it->MMt());
 
-
+          dr dR(*it, it->MMt());
 
           // Table
           std::cout << " Mt-mt = | " << it->MH()
@@ -162,6 +172,10 @@ int main (int argc, char *argv[])
 + it->Mt()*pow(asMt/4./Pi,1)*dMt.x01().real() + it->Mt()*pow(asMt/4./Pi,2)*dMt.x02().real() + it->Mt()*pow(asMt/4./Pi,3)*dMt.x03().real()
                     << std::endl;
 
+          std::cout << " dr = | " << it->MH()
+                    << " | " << pow(aMt/4./Pi,2)*dR.drgl20().real() 
+                    << " | " << pow(aMt/4./Pi,2)*dR.dr20().real() 
+                    << std::endl;
 
           std::cout << " Yt-yt *10^4= | " << it->MH()
                     << " | " << 10000*(pow(asMt/4./Pi,1)*dMt.x01().real() + pow(asMt/4./Pi,2)*dMt.x02().real() + pow(asMt/4./Pi,3)*dMt.x03().real())
@@ -178,29 +192,29 @@ int main (int argc, char *argv[])
         }
 
 
-std::cout << "\n\n Higgs: " << std::endl;
+      std::cout << "\n\n Higgs: " << std::endl;
       for (std::vector<OSinput>::iterator it = KPV.begin(); it != KPV.end(); ++it)
         {
           HH<OS> dMH  = HH<OS>(*it, it->MMt());
-
-
-
+          
+          
+          
           // Table
           std::cout << " MH-mH = | " << it->MH()
-                    // << " | " << it->Mt()*pow(asMt/4./Pi,1)*dMH.x01().real() + it->Mt()*pow(asMt/4./Pi,2)*dMH.x02().real() + it->Mt()*pow(asMt/4./Pi,3)*dMH.x03().real()
+            // << " | " << it->Mt()*pow(asMt/4./Pi,1)*dMH.x01().real() + it->Mt()*pow(asMt/4./Pi,2)*dMH.x02().real() + it->Mt()*pow(asMt/4./Pi,3)*dMH.x03().real()
                     << " | " << it->MH()*(sqrt(1 + aMt/4./Pi*dMH.x10().real()) - 1)
                     << " | " << it->MH()*(sqrt(1 + aMt/4./Pi*asMt/4./Pi*dMH.x11().real()) - 1) 
                     << " | " << it->MH()*(sqrt(1 + pow(aMt/4./Pi,2)*dMH.xgl20().real()) - 1) 
                     << " | " << it->MH()*(sqrt(1 + pow(aMt/4./Pi,2)*dMH.x20().real()) - 1) 
                     << " | " << it->MH()*(sqrt(1 + pow(aMt/4./Pi,2)*dMH.x20().real() 
-+ aMt/4./Pi*asMt/4./Pi*dMH.x11().real() 
-+ aMt/4./Pi*dMH.x10().real() ) - 1)
-// + it->Mt()*pow(asMt/4./Pi,1)*dMH.x01().real() + it->Mt()*pow(asMt/4./Pi,2)*dMH.x02().real() + it->Mt()*pow(asMt/4./Pi,3)*dMH.x03().real()
+                                               + aMt/4./Pi*asMt/4./Pi*dMH.x11().real() 
+                                               + aMt/4./Pi*dMH.x10().real() ) - 1)
+            // + it->Mt()*pow(asMt/4./Pi,1)*dMH.x01().real() + it->Mt()*pow(asMt/4./Pi,2)*dMH.x02().real() + it->Mt()*pow(asMt/4./Pi,3)*dMH.x03().real()
                     << std::endl;
-
+          
           // Table
           std::cout << " MH^2-mH^2 = | " << it->MH()
-                    // << " | " << it->Mt()*pow(asMt/4./Pi,1)*dMH.x01().real() + it->Mt()*pow(asMt/4./Pi,2)*dMH.x02().real() + it->Mt()*pow(asMt/4./Pi,3)*dMH.x03().real()
+            // << " | " << it->Mt()*pow(asMt/4./Pi,1)*dMH.x01().real() + it->Mt()*pow(asMt/4./Pi,2)*dMH.x02().real() + it->Mt()*pow(asMt/4./Pi,3)*dMH.x03().real()
                     << " | " << it->MMH()*aMt/4./Pi*dMH.x10().real()
                     << " | " << it->MMH()*aMt/4./Pi*asMt/4./Pi*dMH.x11().real()
                     << " | " << it->MMH()*pow(aMt/4./Pi,2)*dMH.xgl20().real()
@@ -208,12 +222,12 @@ std::cout << "\n\n Higgs: " << std::endl;
                     << " | " << it->MMH()*(pow(aMt/4./Pi,2)*dMH.x20().real() 
                                            + aMt/4./Pi*asMt/4./Pi*dMH.x11().real() 
                                            + aMt/4./Pi*dMH.x10().real())
-// + it->Mt()*pow(asMt/4./Pi,1)*dMH.x01().real() + it->Mt()*pow(asMt/4./Pi,2)*dMH.x02().real() + it->Mt()*pow(asMt/4./Pi,3)*dMH.x03().real()
+            // + it->Mt()*pow(asMt/4./Pi,1)*dMH.x01().real() + it->Mt()*pow(asMt/4./Pi,2)*dMH.x02().real() + it->Mt()*pow(asMt/4./Pi,3)*dMH.x03().real()
                     << std::endl;
-
-
+          
+          
           std::cout << " Lam-lam = | " << it->MH()
-                    // << " | " << pow(asMt/4./Pi,1)*dMH.x01().real() + pow(asMt/4./Pi,2)*dMH.x02().real() + pow(asMt/4./Pi,3)*dMH.x03().real()
+            // << " | " << pow(asMt/4./Pi,1)*dMH.x01().real() + pow(asMt/4./Pi,2)*dMH.x02().real() + pow(asMt/4./Pi,3)*dMH.x03().real()
                     << " | " << 10000*(aMt/4./Pi*dMH.y10().real()) 
                     << " | " << 10000*(aMt/4./Pi*asMt/4./Pi*dMH.y11().real() )
                     << " | " << 10000*(pow(aMt/4./Pi,2)*dMH.ygl20().real() )
@@ -225,8 +239,8 @@ std::cout << "\n\n Higgs: " << std::endl;
                     << std::endl;
           
         }
-
-
+      
+      
       bb dMb  = bb(KPVphys, KPVphys.MMb());
       
       
@@ -246,8 +260,9 @@ std::cout << "\n\n Higgs: " << std::endl;
       std::cout << "\\aRD_S  (\\mu = Mb) = " << asMb  << std::endl;
       std::cout << "\\aPIK_S  (\\mu = Mb) = " << asMBPIK(4.9)  << std::endl;
       
-      long double aMb = al(aMZ, KPVphys.MMZ(), asMb, KPVphys.MMb());
-      std::cout << "\\alpha as(MB)             = " << 1./aMb << std::endl;
+      long double aMb =       aMt = FinAl.QED(pdg2014::Mb);
+      // al(aMZ, KPVphys.MMZ(), asMb, KPVphys.MMb());
+      std::cout << "\\alpha a(MB)             = " << 1./aMb << std::endl;
       
       long double aMbMZ = al(aMZ, KPVphys.MMZ(), pdg2014::asMZ, KPVphys.MMb());
       std::cout << "\\alpha as(MZ)             = " << 1./aMbMZ << std::endl;

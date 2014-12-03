@@ -10,6 +10,19 @@
 #include <TApplication.h>
 #include <TFitResult.h>
 
+long double al(long double alMZ, long double MMZ, long double ass, long double mm, size_t NG = 3)
+{
+
+  long double ng = static_cast<long double>(NG);
+
+  const long double Nc = 3.;
+  
+  return alMZ/(1-alMZ/4./Pi*(
+                             7. - 4./3.*ng*(Nc*5./9. + 1)// -11./3.
+                             -16.*ng*5/27.// -80./3.
+                             *ass/4./Pi)*log(MMZ/mm));
+}
+
 
 int main (int argc, char *argv[])
 {
@@ -20,11 +33,9 @@ int main (int argc, char *argv[])
       fclose(stderr);
       long double MMt,MMW,MMZ,MMH,alphaMt,alphaS,alphaSMt;
 
+
       // Scale inv test
       long double a = 40.;
-      // Compare with:
-      alphaMt    = 1./127.72063;
-      alphaSMt   = 0.10798036651966895;
       
       // Initial input
       // OSinput KPV = OSinput(4.4, 80.385, 91.1876, 125.6, 173.5);
@@ -32,6 +43,16 @@ int main (int argc, char *argv[])
       // PDG 2014
       OSinput KPV = OSinput(pdg2014::Mb, pdg2014::MW, pdg2014::MZ, pdg2014::MH, pdg2014::Mt);
 
+      AlphaS asPik(KPV);
+      AlphaQEDQCD aPik(KPV);
+      // Compare with:
+      // alphaMt    = al(pdg2014::aMZ, KPV.MMZ(), pdg2014::asMZ, KPV.MMt());
+      alphaMt    = aPik.QED(pdg2014::Mt);
+      alphaSMt   = asPik(pdg2014::Mt);
+
+      std::cout << "as(Mt)  = " << alphaSMt << std::endl;
+      std::cout << "1/a(Mt) = " << 1./alphaMt << std::endl;
+            
       long double unitStep = 0.0001;
       long double dMtStep  = 0.51;
       long double dMHStep  = 0.4;
@@ -47,7 +68,7 @@ int main (int argc, char *argv[])
       OSinput divMH = OSinput(pdg2014::Mb, pdg2014::MW, pdg2014::MZ, pdg2014::MH + dMHStep, pdg2014::Mt);
       OSinput divMW = OSinput(pdg2014::Mb, pdg2014::MW + dMWStep, pdg2014::MZ, pdg2014::MH, pdg2014::Mt);
 
-      PoleMass* xMbase0      = new tt(KPV  , KPV.MMZ());
+      // PoleMass* xMbase0      = new tt(KPV  , KPV.MMZ());
       // tt xMttdivMt  = tt(divMt, KPV.MMZ());
       // tt xMttdivMH  = tt(divMH, KPV.MMZ());
       // tt xMttdivMW  = tt(divMW, KPV.MMZ());
@@ -55,7 +76,7 @@ int main (int argc, char *argv[])
 
       // Loop over energy scale points:
 
-      long double mm[2] = {KPV.MMZ()};// , KPV.MMt()};
+      long double mm[2] = {KPV.MMZ(), KPV.MMt()};
       
       typedef std::map<std::pair<std::string,long double>, std::vector<PoleMass*> > Mstore;
       Mstore mMap;
@@ -116,15 +137,15 @@ int main (int argc, char *argv[])
               // std::cout << (MdW - M0)/dMWStep << " * (MW - " << KPV.MW() << ") + ";
               // std::cout << M0 << std::endl;      
 
-              std::cout << "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%" << std::endl;
-              std::cout << "X_" << it->first.first 
-                        << "^{"<< apow << "," << aspow <<"}(\\mu = " 
-                        << sqrt(it->first.second) << ") & = & " << std::endl;
+              // std::cout << "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%" << std::endl;
+              // std::cout << "X_" << it->first.first 
+              //           << "^{"<< apow << "," << aspow <<"}(\\mu = " 
+              //           << sqrt(it->first.second) << ") & = & " << std::endl;
 
-              std::cout << (Mdt - M0)/dMtStep << " & \\;(M_t - " << KPV.Mt() << ") & + ";
-              std::cout << (MdH - M0)/dMHStep << " & \\;(M_H - " << KPV.MH() << ") & + ";
-              std::cout << (MdW - M0)/dMWStep << " & \\;(M_W - " << KPV.MW() << ") & + ";
-              std::cout << M0 << " \\non \\\\" << std::endl;      
+              // std::cout << (Mdt - M0)/dMtStep << " & \\;(M_t - " << KPV.Mt() << ") & + ";
+              // std::cout << (MdH - M0)/dMHStep << " & \\;(M_H - " << KPV.MH() << ") & + ";
+              // std::cout << (MdW - M0)/dMWStep << " & \\;(M_W - " << KPV.MW() << ") & + ";
+              // std::cout << M0 << " \\non \\\\" << std::endl;      
 
 
               long double Y0  = it->second[0]->y(apow,aspow);
