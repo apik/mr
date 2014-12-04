@@ -15,13 +15,13 @@ TEST_CASE
         {
           WW<MS> dMW_at_mu_eq_MW  = WW<MS>(mi, mi.mmW());
           
-          REQUIRE( dMW_at_mu_eq_MW.x10().real() == Approx( 103.739 ) );
+          REQUIRE( dMW_at_mu_eq_MW.x10() == Approx( 103.739 ) );
         }
       SECTION( "Z,\\mu=MZ" ) 
         {
           ZZ<MS> dMZ_at_mu_eq_MZ  = ZZ<MS>(mi, mi.mmZ());
           
-          REQUIRE( dMZ_at_mu_eq_MZ.x10().real() == Approx( 35.446 ) );
+          REQUIRE( dMZ_at_mu_eq_MZ.x10() == Approx( 35.446 ) );
         }
 
     }
@@ -37,13 +37,13 @@ TEST_CASE
           
           WW<MS> dMW_at_mu_eq_MW  = WW<MS>(mi, mi.mmW());
           
-          REQUIRE( dMW_at_mu_eq_MW.x20(0, 0).real() == Approx( 1.95274e6 ) );
+          REQUIRE( dMW_at_mu_eq_MW.x20(0, 0) == Approx( 1.95274e6 ) );
         }
       SECTION( "Z,\\mu=MZ" ) 
         {
           ZZ<MS> dMZ_at_mu_eq_MZ  = ZZ<MS>(mi, mi.mmZ());
        
-          REQUIRE( dMZ_at_mu_eq_MZ.x20(0, 0).real() == Approx( 1.95905e6 ).epsilon(0.00001) );
+          REQUIRE( dMZ_at_mu_eq_MZ.x20(0, 0) == Approx( 1.95905e6 ).epsilon(0.00001) );
         }
 
     }

@@ -76,13 +76,13 @@ void XW(double mb, double mW, double mZ, double mH, double mt, double mu, int nL
         MLPutFunction(stdlink, "xW", 2);
         MLPutInteger(stdlink, apow);
         MLPutInteger(stdlink, aspow);
-        MLPutReal128(stdlink, WWm.m(apow, aspow, nL, nH));
+        MLPutReal128(stdlink, WWm.x(apow, aspow, nL, nH));
         // Yukawa
         MLPutFunction(stdlink, "Rule", 2);
         MLPutFunction(stdlink, "yW", 2);
         MLPutInteger(stdlink, apow);
         MLPutInteger(stdlink, aspow);
-        MLPutReal128(stdlink, WWm.my(apow, aspow, nL, nH));
+        MLPutReal128(stdlink, WWm.y(apow, aspow, nL, nH));
       }
 }
 
@@ -102,13 +102,13 @@ void XZ(double mb, double mW, double mZ, double mH, double mt, double mu, int nL
         MLPutFunction(stdlink, "xZ", 2);
         MLPutInteger(stdlink, apow);
         MLPutInteger(stdlink, aspow);
-        MLPutReal128(stdlink, ZZm.m(apow, aspow, nL, nH));
+        MLPutReal128(stdlink, ZZm.x(apow, aspow, nL, nH));
         // Yukawa
         MLPutFunction(stdlink, "Rule", 2);
         MLPutFunction(stdlink, "yZ", 2);
         MLPutInteger(stdlink, apow);
         MLPutInteger(stdlink, aspow);
-        MLPutReal128(stdlink, ZZm.my(apow, aspow, nL, nH));
+        MLPutReal128(stdlink, ZZm.y(apow, aspow, nL, nH));
       }
 }
 
@@ -128,13 +128,13 @@ void XH(double mb, double mW, double mZ, double mH, double mt, double mu, int nL
         MLPutFunction(stdlink, "xH", 2);
         MLPutInteger(stdlink, apow);
         MLPutInteger(stdlink, aspow);
-        MLPutReal128(stdlink, HHm.m(apow, aspow, nL, nH));
+        MLPutReal128(stdlink, HHm.x(apow, aspow, nL, nH));
         // Yukawa
         MLPutFunction(stdlink, "Rule", 2);
         MLPutFunction(stdlink, "yH", 2);
         MLPutInteger(stdlink, apow);
         MLPutInteger(stdlink, aspow);
-        MLPutReal128(stdlink, HHm.my(apow, aspow, nL, nH));
+        MLPutReal128(stdlink, HHm.y(apow, aspow, nL, nH));
       }
 }
 
@@ -154,13 +154,13 @@ void Xt(double mb, double mW, double mZ, double mH, double mt, double mu, int nL
         MLPutFunction(stdlink, "xt", 2);
         MLPutInteger(stdlink, apow);
         MLPutInteger(stdlink, aspow);
-        MLPutReal128(stdlink, ttm.m(apow, aspow, nL, nH));
+        MLPutReal128(stdlink, ttm.x(apow, aspow, nL, nH));
         // Yukawa
         MLPutFunction(stdlink, "Rule", 2);
         MLPutFunction(stdlink, "yt", 2);
         MLPutInteger(stdlink, apow);
         MLPutInteger(stdlink, aspow);
-        MLPutReal128(stdlink, ttm.my(apow, aspow, nL, nH));
+        MLPutReal128(stdlink, ttm.y(apow, aspow, nL, nH));
       }
 }
 
@@ -180,13 +180,13 @@ void Xb(double mb, double mW, double mZ, double mH, double mt, double mu, int nL
         MLPutFunction(stdlink, "xb", 2);
         MLPutInteger(stdlink, apow);
         MLPutInteger(stdlink, aspow);
-        MLPutReal128(stdlink, bbm.m(apow, aspow, nL, nH));
+        MLPutReal128(stdlink, bbm.x(apow, aspow, nL, nH));
         // Yukawa
         MLPutFunction(stdlink, "Rule", 2);
         MLPutFunction(stdlink, "yb", 2);
         MLPutInteger(stdlink, apow);
         MLPutInteger(stdlink, aspow);
-        MLPutReal128(stdlink, bbm.my(apow, aspow, nL, nH));
+        MLPutReal128(stdlink, bbm.y(apow, aspow, nL, nH));
       }
 }
 
@@ -196,7 +196,7 @@ void Xb(double mb, double mW, double mZ, double mH, double mt, double mu, int nL
 
 //   WW<OS> wwm = get_WW(oi, pow(mu,2));
 
-//   MLPutReal128(stdlink, wwm.m(apow, aspow, nL, nH));
+//   MLPutReal128(stdlink, wwm.x(apow, aspow, nL, nH));
 // }
 
 // void XZ(double mb, double mW, double mZ, double mH, double mt, double mu, int apow, int aspow, int nL,int nH) 
@@ -205,7 +205,7 @@ void Xb(double mb, double mW, double mZ, double mH, double mt, double mu, int nL
 
 //   ZZ<OS> zzm = get_ZZ(oi, pow(mu,2));
 
-//   MLPutReal128(stdlink, zzm.m(apow, aspow, nL, nH));
+//   MLPutReal128(stdlink, zzm.x(apow, aspow, nL, nH));
 // }
 
 // void XH(double mb, double mW, double mZ, double mH, double mt, double mu, int apow, int aspow, int nL,int nH) 
@@ -214,7 +214,7 @@ void Xb(double mb, double mW, double mZ, double mH, double mt, double mu, int nL
 
 //   HH<OS> hhm = get_HH(oi, pow(mu,2));
 
-//   MLPutReal128(stdlink, hhm.m(apow, aspow, nL, nH));
+//   MLPutReal128(stdlink, hhm.x(apow, aspow, nL, nH));
 // }
 
 // void Xt(double mb, double mW, double mZ, double mH, double mt, double mu, int apow, int aspow, int nL,int nH) 
@@ -223,7 +223,7 @@ void Xb(double mb, double mW, double mZ, double mH, double mt, double mu, int nL
 
 //   tt ttm = get_tt(oi, pow(mu,2));
 
-//   MLPutReal128(stdlink, ttm.m(apow, aspow, nL, nH));
+//   MLPutReal128(stdlink, ttm.x(apow, aspow, nL, nH));
 // }
 
 
@@ -242,19 +242,19 @@ void XbQCD(double mb, double mW, double mZ, double mH, double mt, double mu, int
   MLPutFunction(stdlink, "xb", 2);
   MLPutInteger(stdlink, 0);
   MLPutInteger(stdlink, 1);
-  MLPutReal128(stdlink, bbm.m01(nf).real());
+  MLPutReal128(stdlink, bbm.x01(nf));
 
   MLPutFunction(stdlink, "Rule", 2);
   MLPutFunction(stdlink, "xb", 2);
   MLPutInteger(stdlink, 0);
   MLPutInteger(stdlink, 2);
-  MLPutReal128(stdlink, bbm.m02(nf).real());
+  MLPutReal128(stdlink, bbm.x02(nf));
 
   MLPutFunction(stdlink, "Rule", 2);
   MLPutFunction(stdlink, "xb", 2);
   MLPutInteger(stdlink, 0);
   MLPutInteger(stdlink, 3);
-  MLPutReal128(stdlink, bbm.m03(nf).real());
+  MLPutReal128(stdlink, bbm.x03(nf));
 
 }
 
@@ -270,19 +270,19 @@ void XtQCD(double mb, double mW, double mZ, double mH, double mt, double mu, int
   MLPutFunction(stdlink, "xt", 2);
   MLPutInteger(stdlink, 0);
   MLPutInteger(stdlink, 1);
-  MLPutReal128(stdlink, ttm.m01(nf).real());
+  MLPutReal128(stdlink, ttm.x01(nf));
 
   MLPutFunction(stdlink, "Rule", 2);
   MLPutFunction(stdlink, "xt", 2);
   MLPutInteger(stdlink, 0);
   MLPutInteger(stdlink, 2);
-  MLPutReal128(stdlink, ttm.m02(nf).real());
+  MLPutReal128(stdlink, ttm.x02(nf));
 
   MLPutFunction(stdlink, "Rule", 2);
   MLPutFunction(stdlink, "xt", 2);
   MLPutInteger(stdlink, 0);
   MLPutInteger(stdlink, 3);
-  MLPutReal128(stdlink, ttm.m03(nf).real());
+  MLPutReal128(stdlink, ttm.x03(nf));
 
 }
 

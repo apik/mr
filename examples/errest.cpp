@@ -30,16 +30,20 @@ int main (int argc, char *argv[])
       
       std::vector<OSinput> sv;
 
-      sv.push_back(OSinput(a*0, a*80.399, a*91.1876, a*125.6, a*173.5)); // A
+      sv.push_back(OSinput(0, 80.399, 91.1876, 125.6, 173.5)); // A
       // sv.push_back(OSinput(a*4.4, a*80.399, a*91.1876, a*126, a*173.9)); // B
       // sv.push_back(OSinput(a*0, a*80.399, a*91.1876, a*125, a*172.9)); // C
 
       // sv.push_back(OSinput(a*0, a*80.399, a*91.1876, a*125, a*274.1)); // C
       // sv.push_back(OSinput(a*0, a*80.399, a*91.1876, a*125, a*374.1)); // C
       // sv.push_back(OSinput(a*0, a*80.399, a*91.1876, a*125, a*474.1)); // C
-      
+
+      sv.push_back(OSinput(0, pdg2014::MW, pdg2014::MZ, pdg2014::MH, pdg2014::Mt)); // 
 
       RunUpto rr(sv[0]);
+
+      std::cout << "\n\nPDG 2014" << std::endl; 
+      RunUpto rrPDG2014(sv[1]);
       
 
       for (std::vector<OSinput>::iterator it = sv.begin(); it != sv.end(); ++it)
