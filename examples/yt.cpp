@@ -42,53 +42,53 @@ int main (int argc, char *argv[])
           tt dt  = tt(BKKS, BKKS.MMt());          
           
           plotYt.add(BKKS.MH(),
-                     pow(alphaSMt/4./Pi,1)*dt.y01().real()+
-                     pow(alphaSMt/4./Pi,2)*dt.x02().real(),
+                     pow(alphaSMt/4./Pi,1)*dt.y01()+
+                     pow(alphaSMt/4./Pi,2)*dt.x02(),
                      
-                     pow(alphaSMt/4./Pi,1)*dt.y01().real()+
-                     pow(alphaSMt/4./Pi,2)*dt.x02().real()+
-                     pow(alphaSMt/4./Pi,3)*dt.x03().real(),
+                     pow(alphaSMt/4./Pi,1)*dt.y01()+
+                     pow(alphaSMt/4./Pi,2)*dt.x02()+
+                     pow(alphaSMt/4./Pi,3)*dt.x03(),
 
-                     pow(alphaSMt/4./Pi,1)*dt.x01().real()+
-                     pow(alphaSMt/4./Pi,2)*dt.x02().real()+
-                     pow(alphaSMt/4./Pi,3)*dt.x03().real()+
-                     alpha(BKKS.Mt())/4./Pi*dt.y10().real(),
+                     pow(alphaSMt/4./Pi,1)*dt.x01()+
+                     pow(alphaSMt/4./Pi,2)*dt.x02()+
+                     pow(alphaSMt/4./Pi,3)*dt.x03()+
+                     alpha(BKKS.Mt())/4./Pi*dt.y10(),
 
-                     pow(alphaSMt/4./Pi,1)*dt.x01().real()+
-                     pow(alphaSMt/4./Pi,2)*dt.x02().real()+
-                     pow(alphaSMt/4./Pi,3)*dt.x03().real()+
-                     alpha(BKKS.Mt())/4./Pi*dt.y10().real()+
-                     alpha(BKKS.Mt())/4./Pi*alphaSMt/4./Pi*dt.y11().real(),
+                     pow(alphaSMt/4./Pi,1)*dt.x01()+
+                     pow(alphaSMt/4./Pi,2)*dt.x02()+
+                     pow(alphaSMt/4./Pi,3)*dt.x03()+
+                     alpha(BKKS.Mt())/4./Pi*dt.y10()+
+                     alpha(BKKS.Mt())/4./Pi*alphaSMt/4./Pi*dt.y11(),
 
-                     pow(alphaSMt/4./Pi,1)*dt.x01().real()+
-                     pow(alphaSMt/4./Pi,2)*dt.x02().real()+
-                     pow(alphaSMt/4./Pi,3)*dt.x03().real()+
-                     alpha(BKKS.Mt())/4./Pi*dt.y10().real()+
-                     alpha(BKKS.Mt())/4./Pi*alphaSMt/4./Pi*dt.y11().real()+
-                     pow(alpha(BKKS.Mt())/4./Pi,2)*dt.y20().real());
+                     pow(alphaSMt/4./Pi,1)*dt.x01()+
+                     pow(alphaSMt/4./Pi,2)*dt.x02()+
+                     pow(alphaSMt/4./Pi,3)*dt.x03()+
+                     alpha(BKKS.Mt())/4./Pi*dt.y10()+
+                     alpha(BKKS.Mt())/4./Pi*alphaSMt/4./Pi*dt.y11()+
+                     pow(alpha(BKKS.Mt())/4./Pi,2)*dt.y20());
 
           // plotDegr.add(BKKS.MH(),
           //              (1+
-          //               alpha(BKKS.Mt())/4./Pi*dH.lam10().real()+
-          //               alpha(BKKS.Mt())/4./Pi*alphaSMt/4./Pi*dH.lam11().real()// +
-          //               // pow(alpha(BKKS.Mt())/4./Pi,2)*dH.lam20().real()
+          //               alpha(BKKS.Mt())/4./Pi*dH.lam10()+
+          //               alpha(BKKS.Mt())/4./Pi*alphaSMt/4./Pi*dH.lam11()// +
+          //               // pow(alpha(BKKS.Mt())/4./Pi,2)*dH.lam20()
           //               )*BKKS.MMH()*1.16637e-5/sqrt(2),
           //              (1+
-          //               alpha(BKKS.Mt())/4./Pi*dH.lam10().real()+
-          //               alpha(BKKS.Mt())/4./Pi*alphaSMt/4./Pi*dH.lam11().real()+
-          //               pow(alpha(BKKS.Mt())/4./Pi,2)*dH.lam20().real())*BKKS.MMH()*1.16637e-5/sqrt(2),
+          //               alpha(BKKS.Mt())/4./Pi*dH.lam10()+
+          //               alpha(BKKS.Mt())/4./Pi*alphaSMt/4./Pi*dH.lam11()+
+          //               pow(alpha(BKKS.Mt())/4./Pi,2)*dH.lam20())*BKKS.MMH()*1.16637e-5/sqrt(2),
           //              (0.12711+0.00206*(BKKS.MH()-125.66)-0.00004*(BKKS.Mt()-173.10))
           //              );
           
           plotYtDegrPart.add(BKKS.MH(),
-                             alphaMt/4./Pi*alphaSMt/4./Pi*dt.y11().real()*BKKS.Mt()*sqrt(1.16637e-5*sqrt(8)),
-                             pow(alphaMt/4./Pi,2)*dt.y20().real()*BKKS.Mt()*sqrt(1.16637e-5*sqrt(8)),
+                             alphaMt/4./Pi*alphaSMt/4./Pi*dt.y11()*BKKS.Mt()*sqrt(1.16637e-5*sqrt(8)),
+                             pow(alphaMt/4./Pi,2)*dt.y20()*BKKS.Mt()*sqrt(1.16637e-5*sqrt(8)),
                              (-7.53 + 0.09*(BKKS.MH()-125) - 0.23*(BKKS.Mt()-173))/pow(4*Pi,3)*alphaSMt,
                              (5.22  - 0.01*(BKKS.MH()-125) + 0.15*(BKKS.Mt()-173))/pow(4*Pi,4)
                              );
           
           // std::cout << "Rundec: " << 4.*alphaSMt/4./Pi*CRunDec::fMsFromOs1(BKKS.Mt(), BKKS.Mt()) << std::endl; 
-          std::cout << "      : " << alphaSMt/4./Pi*dt.y01().real() << "  A= " << Tsil::A(BKKS.MMt(),BKKS.MMt())/BKKS.MMt() << std::endl; 
+          std::cout << "      : " << alphaSMt/4./Pi*dt.y01() << "  A= " << Tsil::A(BKKS.MMt(),BKKS.MMt())/BKKS.MMt() << std::endl; 
 
           
           

@@ -89,7 +89,7 @@ int main (int argc, char *argv[])
        OSinput DS2l(4.40, 80.385, 91.1876, mHstart + mHi*mHstep, 173.5);
        tt dtY  = tt(DS2l, DS2l.MMt());          
        
-       plotYt.add(DS2l.MH(),alphaMt/4./Pi*alphaSMt/4./Pi*dtY.y11().real());
+       plotYt.add(DS2l.MH(),alphaMt/4./Pi*alphaSMt/4./Pi*dtY.y11());
      }
 
 
@@ -103,7 +103,7 @@ int main (int argc, char *argv[])
        OSinput DS2l(4.40, 80.385, 91.1876, 125.6, 173.5);
        bb dbY  = bb(DS2l, mHstart + mHi*mHstep);          
        
-       plotYb.add(mHstart + mHi*mHstep,alphaMb/4./Pi*alphaSMb/4./Pi*dbY.y11().real());
+       plotYb.add(mHstart + mHi*mHstep,alphaMb/4./Pi*alphaSMb/4./Pi*dbY.y11());
      }
 
     }

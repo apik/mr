@@ -39,31 +39,31 @@ int main (int argc, char *argv[])
           HH<OS> dH  = HH<OS>(BKKS, BKKS.MMt());          
           
           plotLam.add(BKKS.MH(),
-                      alpha(BKKS.Mt())/4./Pi*dH.y10().real(),
-                      alpha(BKKS.Mt())/4./Pi*alphaSMt/4./Pi*dH.y11().real(),
-                      alpha(BKKS.Mt())/4./Pi*dH.y10().real()+
-                      alpha(BKKS.Mt())/4./Pi*alphaSMt/4./Pi*dH.y11().real(),
-                      alpha(BKKS.Mt())/4./Pi*dH.y10().real()+
-                      alpha(BKKS.Mt())/4./Pi*alphaSMt/4./Pi*dH.y11().real()+
-                      pow(alpha(BKKS.Mt())/4./Pi,2)*dH.y20().real());
+                      alpha(BKKS.Mt())/4./Pi*dH.y10(),
+                      alpha(BKKS.Mt())/4./Pi*alphaSMt/4./Pi*dH.y11(),
+                      alpha(BKKS.Mt())/4./Pi*dH.y10()+
+                      alpha(BKKS.Mt())/4./Pi*alphaSMt/4./Pi*dH.y11(),
+                      alpha(BKKS.Mt())/4./Pi*dH.y10()+
+                      alpha(BKKS.Mt())/4./Pi*alphaSMt/4./Pi*dH.y11()+
+                      pow(alpha(BKKS.Mt())/4./Pi,2)*dH.y20());
 
           plotDegr.add(BKKS.MH(),
                        (1+
-                        alpha(BKKS.Mt())/4./Pi*dH.y10().real()+
-                        alpha(BKKS.Mt())/4./Pi*alphaSMt/4./Pi*dH.y11().real()// +
-                        // pow(alpha(BKKS.Mt())/4./Pi,2)*dH.y20().real()
+                        alpha(BKKS.Mt())/4./Pi*dH.y10()+
+                        alpha(BKKS.Mt())/4./Pi*alphaSMt/4./Pi*dH.y11()// +
+                        // pow(alpha(BKKS.Mt())/4./Pi,2)*dH.y20()
                         )*BKKS.MMH()*1.16637e-5/sqrt(2),
                        (1+
-                        alpha(BKKS.Mt())/4./Pi*dH.y10().real()+
-                        alpha(BKKS.Mt())/4./Pi*alphaSMt/4./Pi*dH.y11().real()+
-                        pow(alpha(BKKS.Mt())/4./Pi,2)*dH.y20().real())*BKKS.MMH()*1.16637e-5/sqrt(2),
+                        alpha(BKKS.Mt())/4./Pi*dH.y10()+
+                        alpha(BKKS.Mt())/4./Pi*alphaSMt/4./Pi*dH.y11()+
+                        pow(alpha(BKKS.Mt())/4./Pi,2)*dH.y20())*BKKS.MMH()*1.16637e-5/sqrt(2),
                        (0.12711+0.00206*(BKKS.MH()-125.66)-0.00004*(BKKS.Mt()-173.10))
                        );
           
           plotDegrPart.add(BKKS.MH(),
-                       alphaMt/4./Pi*alphaSMt/4./Pi*dH.y11().real()                  
+                       alphaMt/4./Pi*alphaSMt/4./Pi*dH.y11()                  
                        *BKKS.MMH()*1.16637e-5/sqrt(2),
-                       pow(alphaMt/4./Pi,2)*dH.y20().real()*BKKS.MMH()*1.16637e-5/sqrt(2),
+                       pow(alphaMt/4./Pi,2)*dH.y20()*BKKS.MMH()*1.16637e-5/sqrt(2),
                        (-23.89 + 0.12*(BKKS.MH()-125) - 0.64*(BKKS.Mt()-173))/pow(4*Pi,3)*alphaSMt,
                        (-9.45  - 0.11*(BKKS.MH()-125) - 0.21*(BKKS.Mt()-173))/pow(4*Pi,4)
                        );

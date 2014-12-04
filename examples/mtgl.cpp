@@ -2,8 +2,6 @@
 #include <Eigen/Dense>
 #include "mr.hpp"
 
-#include "mu1/yBBmu1gl.hpp"
-#include "mu1/yTTmu1gl.hpp"
 using namespace Eigen;
 
 std::complex<long double> det(const long double & a, const long double & b, const long double & c)

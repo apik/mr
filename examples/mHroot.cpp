@@ -57,12 +57,12 @@ int main (int argc, char *argv[])
 
           HH<OS> dH  = HH<OS>(DS2l, DS2l.MMZ());          
           
-          std::cout << " Mh= " << DS2l.MH() << ", [mH/MH -1] = " << dH.x20().real() << std::endl;     
+          std::cout << " Mh= " << DS2l.MH() << ", [mH/MH -1] = " << dH.x20() << std::endl;     
           
 
           x[mHi] = MH;
 
-          y[mHi] = 1./dH.x20().real();
+          y[mHi] = 1./dH.x20();
 
         }
 
@@ -101,9 +101,9 @@ TGraph* gr = new TGraph(n,x,y);
       //     x[mHi] = DS2l.MH();
       //     y[mHi] = DS2l.MMH()*(
       //                          // alpha^2
-      //                          // pow(alphaMt/4./Pi,2)*dH.m20().real() +
+      //                          // pow(alphaMt/4./Pi,2)*dH.m20() +
       //                          // alpha*lpha_S
-      //                          alphaMt/4./Pi*as(DS2l.MMt())/4./Pi*dH.m11().real()
+      //                          alphaMt/4./Pi*as(DS2l.MMt())/4./Pi*dH.m11()
       //                          );
                                
 

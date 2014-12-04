@@ -35,18 +35,18 @@ int main (int argc, char *argv[])
 
       MH10 = sqrt(SPM.mmH() * (1 +
                                SPM.alpha()/4./Pi*H_mt.x10()
-                               ).real());
+                               ));
       
       MH11 = sqrt(SPM.mmH() * (1 +
                                SPM.alpha()/4./Pi*H_mt.x10() +
                                SPM.alpha()/4./Pi*as(Mt)/4./Pi*H_mt.x11()
-                               ).real());
+                               ));
       
       MH20 = sqrt(SPM.mmH() * (1 +
                                SPM.alpha()/4./Pi*H_mt.x10() +
                                SPM.alpha()/4./Pi*as(Mt)/4./Pi*H_mt.x11() +
                                pow(SPM.alpha()/4./Pi,2)*H_mt.x20()
-                               ).real());
+                               ));
       
       std::cout << "\n MH[ EH ]     = " << MH10 << std::endl;
       std::cout << " MW[ EW*QCD ] = " << MH11 << std::endl;
@@ -105,7 +105,7 @@ int main (int argc, char *argv[])
                                                  msi.alpha()/4./Pi*W_mt.x10() +
                                                  msi.alpha()/4./Pi*as(muIn)/4./Pi*W_mt.x11() +
                                                  pow(msi.alpha()/4./Pi,2)*W_mt.x20()
-                                                 ).real())
+                                                 ))
                 << std::endl;
 
 
@@ -151,18 +151,18 @@ int main (int argc, char *argv[])
 
           MW10 = sqrt(msMU.mmW() * (1 +
                                     msMU.alpha()/4./Pi*W_mMU.x10()
-                                    ).real());
+                                    ));
           
           MW11 = sqrt(msMU.mmW() * (1 +
                                     msMU.alpha()/4./Pi*W_mMU.x10() +
                                     msMU.alpha()/4./Pi*as(muOut)/4./Pi*W_mMU.x11()
-                                    ).real());
+                                    ));
 
           MW20 = sqrt(msMU.mmW() * (1 +
                                     msMU.alpha()/4./Pi*W_mMU.x10() +
                                     msMU.alpha()/4./Pi*as(muOut)/4./Pi*W_mMU.x11() +
                                     pow(msMU.alpha()/4./Pi,2)*W_mMU.x20()
-                                    ).real());
+                                    ));
           
           std::cout << "\n MW[ EW ]     = " << MW10 << std::endl;
           std::cout << " MW[ EW*QCD ] = " << MW11 << std::endl;

@@ -93,7 +93,7 @@ int main (int argc, char *argv[])
        long double mu = mHstart + mHi*mHstep;
        tt dtY  = tt(DS2l, mu*mu);          
        
-       std::cout << "mu= " << mu << ",  as = " << as(mu) << ",  dyt = " << dtY.y11().real() << std::endl;
+       std::cout << "mu= " << mu << ",  as = " << as(mu) << ",  dyt = " << dtY.y11() << std::endl;
        // plotYt.add(mu,a(mu)/4./Pi*dtY.y10().real(),
        //            // a(mu)/4./Pi*as(mu)/4./Pi*
        //            dtY.y11().real(),

@@ -35,17 +35,17 @@ int main (int argc, char *argv[])
 
       dW.x02();
       return 0;
-      r10 = real(alpha/4./Pi*drOS.dr10());
-      r11 = real(alpha/4./Pi*alphaS/4./Pi*drOS.dr11());
-      r20 = real(pow(alpha/4./Pi,2)*drOS.dr20());
+      r10 = alpha/4./Pi*drOS.dr10();
+      r11 = alpha/4./Pi*alphaS/4./Pi*drOS.dr11();
+      r20 = pow(alpha/4./Pi,2)*drOS.dr20();
       
-      w10 = real(alpha/4./Pi*dW.x10());
-      w11 = real(alpha/4./Pi*alphaS/4./Pi*dW.x11());
-      w20 = real(pow(alpha/4./Pi,2)*dW.x20());
+      w10 = alpha/4./Pi*dW.x10();
+      w11 = alpha/4./Pi*alphaS/4./Pi*dW.x11();
+      w20 = pow(alpha/4./Pi,2)*dW.x20();
       
-      z10 = real(alpha/4./Pi*dZ.x10());
-      z11 = real(alpha/4./Pi*alphaS/4./Pi*dZ.x11());
-      z20 = real(pow(alpha/4./Pi,2)*dZ.x20());
+      z10 = alpha/4./Pi*dZ.x10();
+      z11 = alpha/4./Pi*alphaS/4./Pi*dZ.x11();
+      z20 = pow(alpha/4./Pi,2)*dZ.x20();
       
       long double rCZ10,rCZ11,rCZ20;
 
@@ -77,7 +77,7 @@ int main (int argc, char *argv[])
       return 0;
       // 2-loop level EW
 
-      std::complex<long double> dMW,dMZ,dR;
+      long double dMW,dMZ,dR;
       dMW = 0;
       dMZ = 0;
       dR  = 0;
@@ -96,9 +96,9 @@ int main (int argc, char *argv[])
       // dR  += pow(alpha/4./Pi,2)*drOS.dr20();
 
       
-      long double drCzakon = (dR*(1 - KVPhys.MMW()/KVPhys.MMZ())/dMW/(1 - KVPhys.MMW()/KVPhys.MMZ()*dMW/dMZ) - 1.).real();
+      long double drCzakon = (dR*(1 - KVPhys.MMW()/KVPhys.MMZ())/dMW/(1 - KVPhys.MMW()/KVPhys.MMZ()*dMW/dMZ) - 1.);
 
-      long double drCzakonExp = real(dR + (dMW )*(1./KVPhys.SSW() - 2.) + (dMZ )*(1-1./KVPhys.SSW()));  
+      long double drCzakonExp = dR + (dMW )*(1./KVPhys.SSW() - 2.) + (dMZ )*(1-1./KVPhys.SSW());  
 
 
       std::cout << "rCZ = " << (drCzakonExp+ 0.05907)*10000. << std::endl;

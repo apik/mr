@@ -125,17 +125,17 @@
 
 :Begin:
 :Function: XtQCD
-:Pattern: XtQCD[mb_?NumericQ,mW_?NumericQ,mZ_?NumericQ,mH_?NumericQ,mt_?NumericQ,mu_?NumericQ,nf_Integer:5]
-:Arguments: {N[mb],N[mW],N[mZ],N[mH],N[mt],N[mu],nf}
-:ArgumentTypes: {Real64,Real64,Real64,Real64,Real64,Real64,Integer}
+:Pattern: XtQCD[mb_?NumericQ,mW_?NumericQ,mZ_?NumericQ,mH_?NumericQ,mt_?NumericQ,mu_?NumericQ,nL_Integer:2,nH_Integer:1]
+:Arguments: {N[mb],N[mW],N[mZ],N[mH],N[mt],N[mu],nL,nH}
+:ArgumentTypes: {Real64,Real64,Real64,Real64,Real64,Real64,Integer,Integer}
 :ReturnType: Manual
 :End:
 
 :Begin:
 :Function: XbQCD
-:Pattern: XbQCD[mb_?NumericQ,mW_?NumericQ,mZ_?NumericQ,mH_?NumericQ,mt_?NumericQ,mu_?NumericQ,nf_Integer:5]
-:Arguments: {N[mb],N[mW],N[mZ],N[mH],N[mt],N[mu],nf}
-:ArgumentTypes: {Real64,Real64,Real64,Real64,Real64,Real64,Integer}
+:Pattern: XbQCD[mb_?NumericQ,mW_?NumericQ,mZ_?NumericQ,mH_?NumericQ,mt_?NumericQ,mu_?NumericQ,nL_Integer:2,nH_Integer:1]
+:Arguments: {N[mb],N[mW],N[mZ],N[mH],N[mt],N[mu],nL,nH}
+:ArgumentTypes: {Real64,Real64,Real64,Real64,Real64,Real64,Integer,Integer}
 :ReturnType: Manual
 :End:
 

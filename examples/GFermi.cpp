@@ -31,20 +31,20 @@ struct DiffGF
     Gf[0] = alpha*Pi/sqrt(2)/oi.MMW()/dMyW/(1-oi.MMW()/oi.MMZ()*dMyW/dMyZ);
 
     // 1-loop level
-    dMyW += alpha/4./Pi*dW->y10().real();
-    dMyZ += alpha/4./Pi*dZ->y10().real();
+    dMyW += alpha/4./Pi*dW->y10();
+    dMyZ += alpha/4./Pi*dZ->y10();
     
     Gf[1] = alpha*Pi/sqrt(2)/oi.MMW()/dMyW/(1-oi.MMW()/oi.MMZ()*dMyW/dMyZ);
     
     // 2-loop level
-    dMyW += alpha/4./Pi*alphaS/4./Pi*dW->y11().real();
-    dMyZ += alpha/4./Pi*alphaS/4./Pi*dZ->y11().real();
+    dMyW += alpha/4./Pi*alphaS/4./Pi*dW->y11();
+    dMyZ += alpha/4./Pi*alphaS/4./Pi*dZ->y11();
     
     Gf[2] = alpha*Pi/sqrt(2)/oi.MMW()/dMyW/(1-oi.MMW()/oi.MMZ()*dMyW/dMyZ);
     
     
-    dMyW += pow(alpha/4./Pi,2)*dW->y20().real();
-    dMyZ += pow(alpha/4./Pi,2)*dZ->y20().real();
+    dMyW += pow(alpha/4./Pi,2)*dW->y20();
+    dMyZ += pow(alpha/4./Pi,2)*dZ->y20();
     
     Gf[3] = alpha*Pi/sqrt(2)/oi.MMW()/dMyW/(1-oi.MMW()/oi.MMZ()*dMyW/dMyZ);
     
@@ -125,9 +125,9 @@ int main (int argc, char *argv[])
 
       long double ali[3];
       ali[0] = alF;
-      ali[1] = alF*(1 + alF/4./Pi*aGF.a10().real());
-      ali[2] = alF*(1 + alF/4./Pi*aGF.a10().real() + alF/4./Pi*alphaSMZ/4./Pi*aGF.a11().real());
-      ali[3] = alF*(1 + alF/4./Pi*aGF.a10().real() + alF/4./Pi*alphaSMZ/4./Pi*aGF.a11().real() + pow(alF/4./Pi,2)*aGF.a20().real());
+      ali[1] = alF*(1 + alF/4./Pi*aGF.a10());
+      ali[2] = alF*(1 + alF/4./Pi*aGF.a10() + alF/4./Pi*alphaSMZ/4./Pi*aGF.a11());
+      ali[3] = alF*(1 + alF/4./Pi*aGF.a10() + alF/4./Pi*alphaSMZ/4./Pi*aGF.a11() + pow(alF/4./Pi,2)*aGF.a20());
       
       std::cout << std::setprecision(8);
       std::cout << "alpha=alpha-Born" << std::endl;
@@ -172,21 +172,21 @@ int main (int argc, char *argv[])
           Gf[0] = alpha*Pi/sqrt(2)/KVPhys.MMW()/dMyW/(1-KVPhys.MMW()/KVPhys.MMZ()*dMyW/dMyZ);
           
           // 1-loop level
-          dMyW += alpha/4./Pi*dW.y10().real();
-          dMyZ += alpha/4./Pi*dZ.y10().real();
+          dMyW += alpha/4./Pi*dW.y10();
+          dMyZ += alpha/4./Pi*dZ.y10();
           
           Gf[1] = alpha*Pi/sqrt(2)/KVPhys.MMW()/dMyW/(1-KVPhys.MMW()/KVPhys.MMZ()*dMyW/dMyZ);
           
           
           // 2-loop level
-          dMyW += alpha/4./Pi*alphaS/4./Pi*dW.y11().real();
-          dMyZ += alpha/4./Pi*alphaS/4./Pi*dZ.y11().real();
+          dMyW += alpha/4./Pi*alphaS/4./Pi*dW.y11();
+          dMyZ += alpha/4./Pi*alphaS/4./Pi*dZ.y11();
           
           Gf[2] = alpha*Pi/sqrt(2)/KVPhys.MMW()/dMyW/(1-KVPhys.MMW()/KVPhys.MMZ()*dMyW/dMyZ);
           
           
-          dMyW += pow(alpha/4./Pi,2)*dW.y20().real();
-          dMyZ += pow(alpha/4./Pi,2)*dZ.y20().real();
+          dMyW += pow(alpha/4./Pi,2)*dW.y20();
+          dMyZ += pow(alpha/4./Pi,2)*dZ.y20();
           
           Gf[3] = alpha*Pi/sqrt(2)/KVPhys.MMW()/dMyW/(1-KVPhys.MMW()/KVPhys.MMZ()*dMyW/dMyZ);
 

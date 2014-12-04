@@ -190,47 +190,10 @@ void Xb(double mb, double mW, double mZ, double mH, double mt, double mu, int nL
       }
 }
 
-// void XW(double mb, double mW, double mZ, double mH, double mt, double mu, int apow, int aspow, int nL,int nH) 
-// {
-//   OSinput oi(mb, mW, mZ, mH, mt);
-
-//   WW<OS> wwm = get_WW(oi, pow(mu,2));
-
-//   MLPutReal128(stdlink, wwm.x(apow, aspow, nL, nH));
-// }
-
-// void XZ(double mb, double mW, double mZ, double mH, double mt, double mu, int apow, int aspow, int nL,int nH) 
-// {
-//   OSinput oi(mb, mW, mZ, mH, mt);
-
-//   ZZ<OS> zzm = get_ZZ(oi, pow(mu,2));
-
-//   MLPutReal128(stdlink, zzm.x(apow, aspow, nL, nH));
-// }
-
-// void XH(double mb, double mW, double mZ, double mH, double mt, double mu, int apow, int aspow, int nL,int nH) 
-// {
-//   OSinput oi(mb, mW, mZ, mH, mt);
-
-//   HH<OS> hhm = get_HH(oi, pow(mu,2));
-
-//   MLPutReal128(stdlink, hhm.x(apow, aspow, nL, nH));
-// }
-
-// void Xt(double mb, double mW, double mZ, double mH, double mt, double mu, int apow, int aspow, int nL,int nH) 
-// {
-//   OSinput oi(mb, mW, mZ, mH, mt);
-
-//   tt ttm = get_tt(oi, pow(mu,2));
-
-//   MLPutReal128(stdlink, ttm.x(apow, aspow, nL, nH));
-// }
-
-
 
 // Pure QCD corrections
 
-void XbQCD(double mb, double mW, double mZ, double mH, double mt, double mu, int nf) 
+void XbQCD(double mb, double mW, double mZ, double mH, double mt, double mu, int nl, int nh) 
 {
   OSinput oi(mb, mW, mZ, mH, mt);
   
@@ -242,23 +205,23 @@ void XbQCD(double mb, double mW, double mZ, double mH, double mt, double mu, int
   MLPutFunction(stdlink, "xb", 2);
   MLPutInteger(stdlink, 0);
   MLPutInteger(stdlink, 1);
-  MLPutReal128(stdlink, bbm.x01(nf));
+  MLPutReal128(stdlink, bbm.x01(nl,nh));
 
   MLPutFunction(stdlink, "Rule", 2);
   MLPutFunction(stdlink, "xb", 2);
   MLPutInteger(stdlink, 0);
   MLPutInteger(stdlink, 2);
-  MLPutReal128(stdlink, bbm.x02(nf));
+  MLPutReal128(stdlink, bbm.x02(nl,nh));
 
   MLPutFunction(stdlink, "Rule", 2);
   MLPutFunction(stdlink, "xb", 2);
   MLPutInteger(stdlink, 0);
   MLPutInteger(stdlink, 3);
-  MLPutReal128(stdlink, bbm.x03(nf));
+  MLPutReal128(stdlink, bbm.x03(nl,nh));
 
 }
 
-void XtQCD(double mb, double mW, double mZ, double mH, double mt, double mu, int nf) 
+void XtQCD(double mb, double mW, double mZ, double mH, double mt, double mu, int nl, int nh) 
 {
   OSinput oi(mb, mW, mZ, mH, mt);
   
@@ -270,19 +233,19 @@ void XtQCD(double mb, double mW, double mZ, double mH, double mt, double mu, int
   MLPutFunction(stdlink, "xt", 2);
   MLPutInteger(stdlink, 0);
   MLPutInteger(stdlink, 1);
-  MLPutReal128(stdlink, ttm.x01(nf));
+  MLPutReal128(stdlink, ttm.x01(nl,nh));
 
   MLPutFunction(stdlink, "Rule", 2);
   MLPutFunction(stdlink, "xt", 2);
   MLPutInteger(stdlink, 0);
   MLPutInteger(stdlink, 2);
-  MLPutReal128(stdlink, ttm.x02(nf));
+  MLPutReal128(stdlink, ttm.x02(nl,nh));
 
   MLPutFunction(stdlink, "Rule", 2);
   MLPutFunction(stdlink, "xt", 2);
   MLPutInteger(stdlink, 0);
   MLPutInteger(stdlink, 3);
-  MLPutReal128(stdlink, ttm.x03(nf));
+  MLPutReal128(stdlink, ttm.x03(nl,nh));
 
 }
 

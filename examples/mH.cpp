@@ -41,35 +41,35 @@ int main (int argc, char *argv[])
 
       
       long double Mt = 173.10;
-      MSinput SPM = MSinput::fromConsts( 0.127,
-                                         367.241, //247.0
-                                         0, 0.936, 0.648, 0.358);
+      // MSinput SPM = MSinput::fromConsts( 0.127,
+      //                                    367.241, //247.0
+      //                                    0, 0.936, 0.648, 0.358);
 
-      std::cout << "Mb= " << SPM.mb() << std::endl; 
-      std::cout << "MW= " << SPM.mW() << std::endl; 
-      std::cout << "MZ= " << SPM.mZ() << std::endl; 
-      std::cout << "MH= " << SPM.mH() << std::endl; 
-      std::cout << "Mt= " << SPM.mt() << std::endl; 
-      std::cout << "1/al= " << 1./SPM.alpha() << std::endl; 
+      // std::cout << "Mb= " << SPM.mb() << std::endl; 
+      // std::cout << "MW= " << SPM.mW() << std::endl; 
+      // std::cout << "MZ= " << SPM.mZ() << std::endl; 
+      // std::cout << "MH= " << SPM.mH() << std::endl; 
+      // std::cout << "Mt= " << SPM.mt() << std::endl; 
+      // std::cout << "1/al= " << 1./SPM.alpha() << std::endl; 
 
       
-      HH<MS> mHH(SPM, pow(Mt,2));
-      std::cout << "1-loop \\alpha      Mh= " << SPM.mH() << ", [mH/MH -1] = " << SPM.mH()*sqrt(1 + SPM.alpha()/4./Pi*mHH.x10()) << std::endl;
+      // HH<MS> mHH(SPM, pow(Mt,2));
+      // std::cout << "1-loop \\alpha      Mh= " << SPM.mH() << ", [mH/MH -1] = " << SPM.mH()*sqrt(1 + SPM.alpha()/4./Pi*mHH.x10()) << std::endl;
 
 
-      OSinput SMH(0, 80.419, 91.188, 125.6, 172.3);
+      // OSinput SMH(0, 80.419, 91.188, 125.6, 172.3);
 
 
-      HH<OS> dHHH(SMH, SMH.MMt());
+      // HH<OS> dHHH(SMH, SMH.MMt());
 
-      std::cout << "1-loop \\alpha   [mH(mu)] = "  << sqrt(SMH.MMH()*(1+alphaMZ/4./Pi*dHHH.x10())) << std::endl;
+      // std::cout << "1-loop \\alpha   [mH(mu)] = "  << sqrt(SMH.MMH()*(1+alphaMZ/4./Pi*dHHH.x10())) << std::endl;
 
-      HH<OS> dHHH_Planck(SMH, pow(1.2209,2) * pow(10.,2*19));
-      double  alphaMpl = 1./104.82;
-      double  alphaSMpl = 0.0188966;
-      std::cout << "1-loop \\alpha   [mH(mPl)] = "  << sqrt(SMH.MMH()*(1
-                                                                       + alphaMpl/4./Pi*dHHH.x10()
-                                                                       + alphaMpl/4./Pi*alphaSMpl/4./Pi*dHHH.x11())) << std::endl;
+      // HH<OS> dHHH_Planck(SMH, pow(1.2209,2) * pow(10.,2*19));
+      // double  alphaMpl = 1./104.82;
+      // double  alphaSMpl = 0.0188966;
+      // std::cout << "1-loop \\alpha   [mH(mPl)] = "  << sqrt(SMH.MMH()*(1
+      //                                                                  + alphaMpl/4./Pi*dHHH.x10()
+      //                                                                  + alphaMpl/4./Pi*alphaSMpl/4./Pi*dHHH.x11())) << std::endl;
 
       // std::cout << "1-loop \\alpha   [mH/MH -1] = "  << SMH.MMH()*(1+alphaMZ/4./Pi*dHHH.x10()) << std::endl;
       // std::cout << "1-loop \\alpha               Mh= " << BKKS2l200.MH() << ", [mH/MH -1] = "  << alphaMZ/4./Pi*dEW200.m10() << std::endl;
