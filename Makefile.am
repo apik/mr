@@ -7,9 +7,11 @@
 ACLOCAL_AMFLAGS = ${ACLOCAL_FLAGS} -I m4
 SUBDIRS = \
 	tsil-1.21 \
+	Minuit \
 	mr \
 	examples \
-	tests 
+	tests
+
 
 if HAVE_MPREP
 SUBDIRS+=math

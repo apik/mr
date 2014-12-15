@@ -6,6 +6,9 @@ lib_LIBRARIES = libmr.a
 # Main sources
 MAINSRC = mr.hpp tsil.hpp tsil.cpp base.hpp mOS2mMSQCD.cpp pole2run.hpp pole2run.cpp
 
+# Mfitter
+MFITTERSRC = mfitter.hpp mfitter.cpp
+
 # Running
 RUNSRC = betaSM.hpp betaSM.cpp betaQCD.hpp betaQEDQCD.hpp betaQEDQCD.cpp betaQCD.cpp CRunDec.cpp CRunDec.h
 
@@ -35,17 +38,24 @@ TTMSGL = mttbarGL10.cpp mttbarGL11.cpp mttbarGL20.cpp yuttGL10.cpp yuttGL11.cpp 
 # 
 DRMSOS = dr.cpp dr10.cpp dr11.cpp dr20.cpp drgl10.cpp drgl11.cpp drgl20.cpp
 
+#
+# delta-r in MS-bar  scheme with MS-bar input
+# 
+DRMSMS = drbar10.cpp drbar11.cpp drbar20.cpp
+
 # W pole mass from MS input
 WWMS2OS = mWWos10.cpp mWWos11.cpp mWWos20.cpp
 # Z pole mass from MS input
 ZZMS2OS = mZZos10.cpp mZZos11.cpp mZZos20.cpp
 # H pole mass from MS input
 HHMS2OS = mHHos10.cpp mHHos11.cpp mHHos20.cpp
+# t pole mass from MS input
+TTMS2OS = mttos01.cpp mttos10.cpp mttos11.cpp mttos20.cpp
 
 
-libmr_a_SOURCES =    $(MAINSRC) $(ALPHAGF) $(RUNSRC) $(BBMS) $(WWMS) $(ZZMS) $(HHMS) $(TTMS)\
- $(HHMSGL) $(BBMSGL) $(TTMSGL) $(DRMSOS)\
- $(WWMS2OS) $(ZZMS2OS) $(HHMS2OS)
+libmr_a_SOURCES =    $(MAINSRC) $(MFITTERSRC) $(ALPHAGF) $(RUNSRC) $(BBMS) $(WWMS) $(ZZMS) $(HHMS) $(TTMS)\
+ $(HHMSGL) $(BBMSGL) $(TTMSGL) $(DRMSOS) $(DRMSMS)\
+ $(WWMS2OS) $(ZZMS2OS) $(HHMS2OS) $(TTMS2OS)
 
 libmr_a_CPPFLAGS = $(MR_CFLAGS) -I$(top_srcdir)/tsil-1.21
 

@@ -264,26 +264,6 @@ public:
   long double xgl11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
   long double xgl20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
-
-
-    
-  // 
-  // \lambda/sqrt(2)/GF/MMH
-  // 
-  long double y10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
-
-  long double y11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
-  
-  long double y20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
-
-  // Gaugeless limit
-
-  long double ygl10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
-
-  long double ygl11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
-
-  long double ygl20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
-  
 };
 
 

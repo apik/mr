@@ -91,7 +91,7 @@ int main (int argc, char *argv[])
      {
        OSinput DS2l(4.40, 80.385, 91.1876, 125.66, 173.5);
        long double mu = mHstart + mHi*mHstep;
-       tt dtY  = tt(DS2l, mu*mu);          
+       tt<OS> dtY(DS2l, mu*mu);          
        
        std::cout << "mu= " << mu << ",  as = " << as(mu) << ",  dyt = " << dtY.y11() << std::endl;
        // plotYt.add(mu,a(mu)/4./Pi*dtY.y10().real(),

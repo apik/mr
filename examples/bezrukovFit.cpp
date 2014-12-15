@@ -41,9 +41,9 @@ int main (int argc, char *argv[])
 
       for (std::vector<OSinput>::iterator it = sv.begin(); it != sv.end(); ++it)
         {
-          tt dMt  = tt(*it, it->MMZ());
+          tt<OS> dMt(*it, it->MMZ());
           HH<OS> dMH  = HH<OS>(*it, it->MMZ());
-          dr ddr  = dr(*it, it->MMZ());
+          dr<OS> ddr(*it, it->MMZ());
           std::cout << "sigmata   [1,0] = " << dMt.x10() << std::endl;
           std::cout << "deltayta  [1,0]= " << dMt.y10() << std::endl;
           std::cout << "sigmataaS [1,1]= " << dMt.x11() << std::endl;

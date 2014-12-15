@@ -39,7 +39,7 @@ int main (int argc, char *argv[])
         {
       
           BKKS.setMH(mHstart + mHi*mHstep);
-          tt dt  = tt(BKKS, BKKS.MMt());          
+          tt<OS> dt(BKKS, BKKS.MMt());          
           
           plotYt.add(BKKS.MH(),
                      pow(alphaSMt/4./Pi,1)*dt.y01()+

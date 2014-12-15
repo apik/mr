@@ -1,5 +1,5 @@
 #include <tt.hpp>
-long double tt::ygl20(size_t nL, size_t nH, size_t boson)
+long double tt<OS>::ygl20(size_t nL, size_t nH, size_t boson)
 {     
       
       

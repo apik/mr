@@ -27,7 +27,13 @@
 #include "constants.hpp"
 #include "base.hpp"
 
-class tt : public PoleMass
+template<class T>
+class tt
+{
+};
+
+template<>
+class tt<OS> : public PoleMass
 {
 
 long double MMb,MMt, MMH, MMW, MMZ, mu2;
@@ -221,6 +227,85 @@ std::pair<long double,long double> test2(long double epsabs = 1.E-5,long double 
 
   long double ygl20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
   
+};
+
+
+template<>
+class tt<MS> 
+{
+
+long double mmb,mmt, mmH, mmW, mmZ, mu2;
+long double s, c;
+
+  // alpha*alphaS
+  Tsil* protWt000;
+  Tsil* prot0ttHt;
+  Tsil* prot0ttZt;
+  Tsil* prot0tt0t;
+  TsilSTU* prottH0H;
+  TsilSTU* prottZ0Z;
+  // alpha^2
+  Tsil* protHHttH;
+  Tsil* protHZttZ;
+  Tsil* protHWt0W;
+  Tsil* protHttHt;
+  Tsil* protHttZt;
+  Tsil* protZZttH;
+  Tsil* protZWt0W;
+  Tsil* protZttZt;
+  Tsil* protZ0tW0;
+  Tsil* protWW00Z;
+  Tsil* protW00tW;
+  Tsil* prot00WW0;
+  TsilSTU* prot0W00;
+  TsilST* prot000;
+
+  // Gaugeless limit
+  Tsil* protH0tt0;
+  Tsil* protH0t00;
+  Tsil* prot0Htt0;
+  Tsil* prot0H0t0;
+  Tsil* prot00ttH;
+  Tsil* protHtt0t;
+  Tsil* prot00t00;
+  Tsil* prot000t0;
+  
+  TsilST* protos[28];
+
+// static const long double EPAIR2 = -1.; 
+
+public:
+  tt()
+  {
+  }
+  
+  tt(long double,long double,long double,long double,long double);
+  
+  tt(MSinput, long double);
+  
+  void init();
+
+
+  
+  
+  // 
+  // Pure QCD part m_ij=mY_ij by definition
+  // 
+  long double x01(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+
+  long double x02(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+
+  long double x03(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+
+  // 
+  // Mass corrections
+  // 
+  long double x10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+  
+  long double x11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+
+  long double x20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+
 };
 
 

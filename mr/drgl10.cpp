@@ -1,5 +1,5 @@
 #include <dr.hpp>
-long double dr::drgl10(size_t nL, size_t nH, size_t boson)
+long double dr<OS>::drgl10(size_t nL, size_t nH, size_t boson)
 {     
       
       

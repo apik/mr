@@ -27,48 +27,30 @@
 #include "constants.hpp"
 
 
+template<class T>
 class dr
 {
+};
 
-long double MMb,MMt, MMH, MMW, MMZ, mu2;
-long double SW, CW;
-
-
-public:
-dr()
+template<>
+class dr<OS>
 {
-}
-
+  
+  long double MMb,MMt, MMH, MMW, MMZ, mu2;
+  long double SW, CW;
+  
+  
+public:
+  dr()
+  {
+  }
+  
   dr(long double,long double,long double,long double,long double);
   
   dr(OSinput, long double);
   
   void init();
-
-
   
-  
-  
-
-  // 
-  // Pure QCD part m_ij=mY_ij by definition
-  // 
-  // std::complex<long double> m01();
-
-  // std::complex<long double> m02(size_t nL = 5);
-
-  // std::complex<long double> m03(size_t nL = 5);
-
-  // 
-  // Mass corrections
-  // 
-  // std::complex<long double> m10(size_t nL = 2, size_t nH = 1);
-  
-  // std::complex<long double> m11(size_t nL = 2, size_t nH = 1);
-
-  // std::complex<long double> m20(size_t nL = 2, size_t nH = 1);
-
-
   // 
   // Delta-r
   // 
@@ -86,6 +68,37 @@ dr()
 
   long double drgl20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
+  
+};
+
+
+template<>
+class dr<MS>
+{
+  
+  long double mmb,mmt, mmH, mmW, mmZ, mu2;
+  long double s, c;
+  
+  
+public:
+  dr()
+  {
+  }
+  
+  dr(long double,long double,long double,long double,long double);
+  
+  dr(MSinput, long double);
+  
+  void init();
+  
+  // 
+  // Delta-r
+  // 
+  long double dr10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+  
+  long double dr11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+
+  long double dr20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
   
 };
 

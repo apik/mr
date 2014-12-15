@@ -81,7 +81,7 @@ int main (int argc, char *argv[])
       
       for (std::vector<OSinput>::iterator it = KV.begin(); it != KV.end(); ++it)
         {
-          tt dMt  = tt(*it, it->MMt());
+          tt<OS> dMt(*it, it->MMt());
 
 
 
@@ -155,9 +155,9 @@ int main (int argc, char *argv[])
       
       for (std::vector<OSinput>::iterator it = KPV.begin(); it != KPV.end(); ++it)
         {
-          tt dMt  = tt(*it, it->MMt());
+          tt<OS> dMt(*it, it->MMt());
 
-          dr dR(*it, it->MMt());
+          dr<OS> dR(*it, it->MMt());
 
           // Table
           std::cout << " Mt-mt = | " << it->MH()

@@ -4,7 +4,7 @@ ACLOCAL_AMFLAGS = ${ACLOCAL_FLAGS} -I m4
 LDADD = ../mr/libmr.la
 EX_CFLAGS = $(MR_CFLAGS) -I$(top_srcdir)/tsil-1.21 -I$(top_srcdir)/mr
 
-noinst_PROGRAMS = mW mZ mH mt runAlpha runSM runGL mb yukawa lambda yt gauge plotyukawa mtgl bezrukovFit GFermi tables poleRGI
+noinst_PROGRAMS = mW mZ mH mt runAlpha runSM runGL mb yukawa lambda yt gauge plotyukawa mtgl bezrukovFit GFermi tables poleRGI Quad1FMain gfit gfitcfg
 if HAVE_ROOT
 noinst_PROGRAMS += mHroot interpolation
 endif 
@@ -96,6 +96,18 @@ runGL_LDADD = $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.21 -ltsi
 poleRGI_SOURCES =  poleRGI.cpp
 poleRGI_CPPFLAGS = $(EX_CFLAGS)
 poleRGI_LDADD = $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.21 -ltsil -lm
+
+Quad1FMain_SOURCES =  Quad1FMain.cpp
+Quad1FMain_CPPFLAGS = $(EX_CFLAGS)
+Quad1FMain_LDADD = $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.21 -ltsil -L$(top_srcdir)/Minuit -llcg_Minuit -lm
+
+gfit_SOURCES =  gfit.cpp
+gfit_CPPFLAGS = $(EX_CFLAGS)
+gfit_LDADD = $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.21 -ltsil -L$(top_srcdir)/Minuit -llcg_Minuit -lm
+
+gfitcfg_SOURCES =  gfitcfg.cpp
+gfitcfg_CPPFLAGS = $(EX_CFLAGS)
+gfitcfg_LDADD = $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.21 -ltsil -L$(top_srcdir)/Minuit -llcg_Minuit -lm -lyaml-cpp
 
 
 # mratio_SOURCES =  mratio.cpp

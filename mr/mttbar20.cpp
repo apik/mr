@@ -1,5 +1,5 @@
 #include <tt.hpp>
-long double tt::x20(size_t nL, size_t nH, size_t boson)
+long double tt<OS>::x20(size_t nL, size_t nH, size_t boson)
 {     
       
       

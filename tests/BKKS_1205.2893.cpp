@@ -16,7 +16,7 @@ TEST_CASE
     
   SECTION( "top,\\mu=MZ" ) 
     {
-      tt dMtZ  = tt(oi, oi.MMZ());
+      tt<OS> dMtZ(oi, oi.MMZ());
             
       REQUIRE( dMtZ.x10() == Approx( -42.1506 ) );
       REQUIRE( dMtZ.x11() == Approx(  975.307 ) );
@@ -26,7 +26,7 @@ TEST_CASE
     }
   SECTION( "top,\\mu=Mt" ) 
     {
-      tt dMtt  = tt(oi, oi.MMt());
+      tt<OS> dMtt(oi, oi.MMt());
             
       REQUIRE( dMtt.x10() == Approx( 109.666 ) );
       REQUIRE( dMtt.x11() == Approx( -417.114 ) );
@@ -36,7 +36,7 @@ TEST_CASE
     }
   SECTION( "Higgs,\\mu=Mz" ) 
     {
-      HH<OS> dMHZ  = HH<OS>(oi, oi.MMZ());
+      HH<OS> dMHZ(oi, oi.MMZ());
             
       REQUIRE( dMHZ.x10() == Approx( 159.93 ) );
       REQUIRE( dMHZ.x11() == Approx( -1527.21 ) );
@@ -46,7 +46,7 @@ TEST_CASE
     }
   SECTION( "Higgs,\\mu=Mt" ) 
     {
-      HH<OS> dMHt  = HH<OS>(oi, oi.MMt());
+      HH<OS> dMHt(oi, oi.MMt());
 
       REQUIRE( dMHt.x10() == Approx( 196.631 ) );
       REQUIRE( dMHt.x11() == Approx( -1480.94 ) );
@@ -56,14 +56,14 @@ TEST_CASE
     }
   SECTION( "\\delta-r,\\mu=Mz" ) 
     {
-      dr ddrZ  = dr(oi, oi.MMZ());
+      dr<OS> ddrZ(oi, oi.MMZ());
             
       REQUIRE( ddrZ.dr10() == Approx( -43.3796 ) );
       REQUIRE( ddrZ.dr11() == Approx(  2277.89 ) );
     }
   SECTION( "\\delta-r,\\mu=Mt" ) 
     {
-      dr ddrt  = dr(oi, oi.MMt());
+      dr<OS> ddrt(oi, oi.MMt());
             
       REQUIRE( ddrt.dr10() == Approx( 215.049 ) );
       REQUIRE( ddrt.dr11() == Approx( 472.97 ) );

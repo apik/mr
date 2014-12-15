@@ -129,60 +129,66 @@ libmr_a_AR = $(AR) $(ARFLAGS)
 libmr_a_LIBADD =
 am__objects_1 = libmr_a-tsil.$(OBJEXT) libmr_a-mOS2mMSQCD.$(OBJEXT) \
 	libmr_a-pole2run.$(OBJEXT)
-am__objects_2 = libmr_a-alphaGF.$(OBJEXT) libmr_a-alphaGF10.$(OBJEXT) \
+am__objects_2 = libmr_a-mfitter.$(OBJEXT)
+am__objects_3 = libmr_a-alphaGF.$(OBJEXT) libmr_a-alphaGF10.$(OBJEXT) \
 	libmr_a-alphaGF11.$(OBJEXT) libmr_a-alphaGF20.$(OBJEXT)
-am__objects_3 = libmr_a-betaSM.$(OBJEXT) libmr_a-betaQEDQCD.$(OBJEXT) \
+am__objects_4 = libmr_a-betaSM.$(OBJEXT) libmr_a-betaQEDQCD.$(OBJEXT) \
 	libmr_a-betaQCD.$(OBJEXT) libmr_a-CRunDec.$(OBJEXT)
-am__objects_4 = libmr_a-bb.$(OBJEXT) libmr_a-mbbbar01.$(OBJEXT) \
+am__objects_5 = libmr_a-bb.$(OBJEXT) libmr_a-mbbbar01.$(OBJEXT) \
 	libmr_a-mbbbar10.$(OBJEXT) libmr_a-mbbbar11.$(OBJEXT) \
 	libmr_a-mbbbar20.$(OBJEXT) libmr_a-yubb01.$(OBJEXT) \
 	libmr_a-yubb10.$(OBJEXT) libmr_a-yubb11.$(OBJEXT) \
 	libmr_a-yubb20.$(OBJEXT)
-am__objects_5 = libmr_a-WW.$(OBJEXT) libmr_a-mWWbar10.$(OBJEXT) \
+am__objects_6 = libmr_a-WW.$(OBJEXT) libmr_a-mWWbar10.$(OBJEXT) \
 	libmr_a-mWWbar11.$(OBJEXT) libmr_a-mWWbar20.$(OBJEXT) \
 	libmr_a-yuWW10.$(OBJEXT) libmr_a-yuWW11.$(OBJEXT) \
 	libmr_a-yuWW20.$(OBJEXT)
-am__objects_6 = libmr_a-ZZ.$(OBJEXT) libmr_a-mZZbar10.$(OBJEXT) \
+am__objects_7 = libmr_a-ZZ.$(OBJEXT) libmr_a-mZZbar10.$(OBJEXT) \
 	libmr_a-mZZbar11.$(OBJEXT) libmr_a-mZZbar20.$(OBJEXT) \
 	libmr_a-yuZZ10.$(OBJEXT) libmr_a-yuZZ11.$(OBJEXT) \
 	libmr_a-yuZZ20.$(OBJEXT)
-am__objects_7 = libmr_a-HH.$(OBJEXT) libmr_a-mHHbar10.$(OBJEXT) \
+am__objects_8 = libmr_a-HH.$(OBJEXT) libmr_a-mHHbar10.$(OBJEXT) \
 	libmr_a-mHHbar11.$(OBJEXT) libmr_a-mHHbar20.$(OBJEXT) \
 	libmr_a-yuHH10.$(OBJEXT) libmr_a-yuHH11.$(OBJEXT) \
 	libmr_a-yuHH20.$(OBJEXT)
-am__objects_8 = libmr_a-tt.$(OBJEXT) libmr_a-mttbar01.$(OBJEXT) \
+am__objects_9 = libmr_a-tt.$(OBJEXT) libmr_a-mttbar01.$(OBJEXT) \
 	libmr_a-mttbar10.$(OBJEXT) libmr_a-mttbar11.$(OBJEXT) \
 	libmr_a-mttbar20.$(OBJEXT) libmr_a-yutt01.$(OBJEXT) \
 	libmr_a-yutt10.$(OBJEXT) libmr_a-yutt11.$(OBJEXT) \
 	libmr_a-yutt20.$(OBJEXT)
-am__objects_9 = libmr_a-mHHbarGL10.$(OBJEXT) \
+am__objects_10 = libmr_a-mHHbarGL10.$(OBJEXT) \
 	libmr_a-mHHbarGL11.$(OBJEXT) libmr_a-mHHbarGL20.$(OBJEXT) \
 	libmr_a-yuHHGL10.$(OBJEXT) libmr_a-yuHHGL11.$(OBJEXT) \
 	libmr_a-yuHHGL20.$(OBJEXT)
-am__objects_10 = libmr_a-mbbbarGL10.$(OBJEXT) \
+am__objects_11 = libmr_a-mbbbarGL10.$(OBJEXT) \
 	libmr_a-mbbbarGL11.$(OBJEXT) libmr_a-mbbbarGL20.$(OBJEXT) \
 	libmr_a-yubbGL10.$(OBJEXT) libmr_a-yubbGL11.$(OBJEXT) \
 	libmr_a-yubbGL20.$(OBJEXT)
-am__objects_11 = libmr_a-mttbarGL10.$(OBJEXT) \
+am__objects_12 = libmr_a-mttbarGL10.$(OBJEXT) \
 	libmr_a-mttbarGL11.$(OBJEXT) libmr_a-mttbarGL20.$(OBJEXT) \
 	libmr_a-yuttGL10.$(OBJEXT) libmr_a-yuttGL11.$(OBJEXT) \
 	libmr_a-yuttGL20.$(OBJEXT)
-am__objects_12 = libmr_a-dr.$(OBJEXT) libmr_a-dr10.$(OBJEXT) \
+am__objects_13 = libmr_a-dr.$(OBJEXT) libmr_a-dr10.$(OBJEXT) \
 	libmr_a-dr11.$(OBJEXT) libmr_a-dr20.$(OBJEXT) \
 	libmr_a-drgl10.$(OBJEXT) libmr_a-drgl11.$(OBJEXT) \
 	libmr_a-drgl20.$(OBJEXT)
-am__objects_13 = libmr_a-mWWos10.$(OBJEXT) libmr_a-mWWos11.$(OBJEXT) \
+am__objects_14 = libmr_a-drbar10.$(OBJEXT) libmr_a-drbar11.$(OBJEXT) \
+	libmr_a-drbar20.$(OBJEXT)
+am__objects_15 = libmr_a-mWWos10.$(OBJEXT) libmr_a-mWWos11.$(OBJEXT) \
 	libmr_a-mWWos20.$(OBJEXT)
-am__objects_14 = libmr_a-mZZos10.$(OBJEXT) libmr_a-mZZos11.$(OBJEXT) \
+am__objects_16 = libmr_a-mZZos10.$(OBJEXT) libmr_a-mZZos11.$(OBJEXT) \
 	libmr_a-mZZos20.$(OBJEXT)
-am__objects_15 = libmr_a-mHHos10.$(OBJEXT) libmr_a-mHHos11.$(OBJEXT) \
+am__objects_17 = libmr_a-mHHos10.$(OBJEXT) libmr_a-mHHos11.$(OBJEXT) \
 	libmr_a-mHHos20.$(OBJEXT)
+am__objects_18 = libmr_a-mttos01.$(OBJEXT) libmr_a-mttos10.$(OBJEXT) \
+	libmr_a-mttos11.$(OBJEXT) libmr_a-mttos20.$(OBJEXT)
 am_libmr_a_OBJECTS = $(am__objects_1) $(am__objects_2) \
 	$(am__objects_3) $(am__objects_4) $(am__objects_5) \
 	$(am__objects_6) $(am__objects_7) $(am__objects_8) \
 	$(am__objects_9) $(am__objects_10) $(am__objects_11) \
 	$(am__objects_12) $(am__objects_13) $(am__objects_14) \
-	$(am__objects_15)
+	$(am__objects_15) $(am__objects_16) $(am__objects_17) \
+	$(am__objects_18)
 libmr_a_OBJECTS = $(am_libmr_a_OBJECTS)
 AM_V_P = $(am__v_P_@AM_V@)
 am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
@@ -380,6 +386,9 @@ lib_LIBRARIES = libmr.a
 # Main sources
 MAINSRC = mr.hpp tsil.hpp tsil.cpp base.hpp mOS2mMSQCD.cpp pole2run.hpp pole2run.cpp
 
+# Mfitter
+MFITTERSRC = mfitter.hpp mfitter.cpp
+
 # Running
 RUNSRC = betaSM.hpp betaSM.cpp betaQCD.hpp betaQEDQCD.hpp betaQEDQCD.cpp betaQCD.cpp CRunDec.cpp CRunDec.h
 
@@ -407,17 +416,24 @@ TTMSGL = mttbarGL10.cpp mttbarGL11.cpp mttbarGL20.cpp yuttGL10.cpp yuttGL11.cpp 
 # 
 DRMSOS = dr.cpp dr10.cpp dr11.cpp dr20.cpp drgl10.cpp drgl11.cpp drgl20.cpp
 
+#
+# delta-r in MS-bar  scheme with MS-bar input
+# 
+DRMSMS = drbar10.cpp drbar11.cpp drbar20.cpp
+
 # W pole mass from MS input
 WWMS2OS = mWWos10.cpp mWWos11.cpp mWWos20.cpp
 # Z pole mass from MS input
 ZZMS2OS = mZZos10.cpp mZZos11.cpp mZZos20.cpp
 # H pole mass from MS input
 HHMS2OS = mHHos10.cpp mHHos11.cpp mHHos20.cpp
-libmr_a_SOURCES = $(MAINSRC) $(ALPHAGF) $(RUNSRC) $(BBMS) $(WWMS) $(ZZMS) $(HHMS) $(TTMS)\
- $(HHMSGL) $(BBMSGL) $(TTMSGL) $(DRMSOS)\
- $(WWMS2OS) $(ZZMS2OS) $(HHMS2OS)
+# t pole mass from MS input
+TTMS2OS = mttos01.cpp mttos10.cpp mttos11.cpp mttos20.cpp
+libmr_a_SOURCES = $(MAINSRC) $(MFITTERSRC) $(ALPHAGF) $(RUNSRC) $(BBMS) $(WWMS) $(ZZMS) $(HHMS) $(TTMS)\
+ $(HHMSGL) $(BBMSGL) $(TTMSGL) $(DRMSOS) $(DRMSMS)\
+ $(WWMS2OS) $(ZZMS2OS) $(HHMS2OS) $(TTMS2OS)
 
-libmr_a_CPPFLAGS = $(MR_CFLAGS) -I$(top_srcdir)/tsil-1.21 -I$(top_srcdir)/mr/mu1
+libmr_a_CPPFLAGS = $(MR_CFLAGS) -I$(top_srcdir)/tsil-1.21
 all: all-am
 
 .SUFFIXES:
@@ -511,6 +527,9 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libmr_a-dr10.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libmr_a-dr11.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libmr_a-dr20.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libmr_a-drbar10.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libmr_a-drbar11.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libmr_a-drbar20.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libmr_a-drgl10.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libmr_a-drgl11.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libmr_a-drgl20.Po@am__quote@
@@ -543,6 +562,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libmr_a-mbbbarGL10.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libmr_a-mbbbarGL11.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libmr_a-mbbbarGL20.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libmr_a-mfitter.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libmr_a-mttbar01.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libmr_a-mttbar10.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libmr_a-mttbar11.Po@am__quote@
@@ -550,6 +570,10 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libmr_a-mttbarGL10.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libmr_a-mttbarGL11.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libmr_a-mttbarGL20.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libmr_a-mttos01.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libmr_a-mttos10.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libmr_a-mttos11.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libmr_a-mttos20.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libmr_a-pole2run.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libmr_a-tsil.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libmr_a-tt.Po@am__quote@
@@ -637,6 +661,20 @@ libmr_a-pole2run.obj: pole2run.cpp
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pole2run.cpp' object='libmr_a-pole2run.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmr_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libmr_a-pole2run.obj `if test -f 'pole2run.cpp'; then $(CYGPATH_W) 'pole2run.cpp'; else $(CYGPATH_W) '$(srcdir)/pole2run.cpp'; fi`
+
+libmr_a-mfitter.o: mfitter.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmr_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libmr_a-mfitter.o -MD -MP -MF $(DEPDIR)/libmr_a-mfitter.Tpo -c -o libmr_a-mfitter.o `test -f 'mfitter.cpp' || echo '$(srcdir)/'`mfitter.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libmr_a-mfitter.Tpo $(DEPDIR)/libmr_a-mfitter.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='mfitter.cpp' object='libmr_a-mfitter.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmr_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libmr_a-mfitter.o `test -f 'mfitter.cpp' || echo '$(srcdir)/'`mfitter.cpp
+
+libmr_a-mfitter.obj: mfitter.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmr_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libmr_a-mfitter.obj -MD -MP -MF $(DEPDIR)/libmr_a-mfitter.Tpo -c -o libmr_a-mfitter.obj `if test -f 'mfitter.cpp'; then $(CYGPATH_W) 'mfitter.cpp'; else $(CYGPATH_W) '$(srcdir)/mfitter.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libmr_a-mfitter.Tpo $(DEPDIR)/libmr_a-mfitter.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='mfitter.cpp' object='libmr_a-mfitter.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmr_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libmr_a-mfitter.obj `if test -f 'mfitter.cpp'; then $(CYGPATH_W) 'mfitter.cpp'; else $(CYGPATH_W) '$(srcdir)/mfitter.cpp'; fi`
 
 libmr_a-alphaGF.o: alphaGF.cpp
 @am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmr_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libmr_a-alphaGF.o -MD -MP -MF $(DEPDIR)/libmr_a-alphaGF.Tpo -c -o libmr_a-alphaGF.o `test -f 'alphaGF.cpp' || echo '$(srcdir)/'`alphaGF.cpp
@@ -1646,6 +1684,48 @@ libmr_a-drgl20.obj: drgl20.cpp
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmr_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libmr_a-drgl20.obj `if test -f 'drgl20.cpp'; then $(CYGPATH_W) 'drgl20.cpp'; else $(CYGPATH_W) '$(srcdir)/drgl20.cpp'; fi`
 
+libmr_a-drbar10.o: drbar10.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmr_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libmr_a-drbar10.o -MD -MP -MF $(DEPDIR)/libmr_a-drbar10.Tpo -c -o libmr_a-drbar10.o `test -f 'drbar10.cpp' || echo '$(srcdir)/'`drbar10.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libmr_a-drbar10.Tpo $(DEPDIR)/libmr_a-drbar10.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='drbar10.cpp' object='libmr_a-drbar10.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmr_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libmr_a-drbar10.o `test -f 'drbar10.cpp' || echo '$(srcdir)/'`drbar10.cpp
+
+libmr_a-drbar10.obj: drbar10.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmr_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libmr_a-drbar10.obj -MD -MP -MF $(DEPDIR)/libmr_a-drbar10.Tpo -c -o libmr_a-drbar10.obj `if test -f 'drbar10.cpp'; then $(CYGPATH_W) 'drbar10.cpp'; else $(CYGPATH_W) '$(srcdir)/drbar10.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libmr_a-drbar10.Tpo $(DEPDIR)/libmr_a-drbar10.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='drbar10.cpp' object='libmr_a-drbar10.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmr_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libmr_a-drbar10.obj `if test -f 'drbar10.cpp'; then $(CYGPATH_W) 'drbar10.cpp'; else $(CYGPATH_W) '$(srcdir)/drbar10.cpp'; fi`
+
+libmr_a-drbar11.o: drbar11.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmr_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libmr_a-drbar11.o -MD -MP -MF $(DEPDIR)/libmr_a-drbar11.Tpo -c -o libmr_a-drbar11.o `test -f 'drbar11.cpp' || echo '$(srcdir)/'`drbar11.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libmr_a-drbar11.Tpo $(DEPDIR)/libmr_a-drbar11.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='drbar11.cpp' object='libmr_a-drbar11.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmr_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libmr_a-drbar11.o `test -f 'drbar11.cpp' || echo '$(srcdir)/'`drbar11.cpp
+
+libmr_a-drbar11.obj: drbar11.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmr_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libmr_a-drbar11.obj -MD -MP -MF $(DEPDIR)/libmr_a-drbar11.Tpo -c -o libmr_a-drbar11.obj `if test -f 'drbar11.cpp'; then $(CYGPATH_W) 'drbar11.cpp'; else $(CYGPATH_W) '$(srcdir)/drbar11.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libmr_a-drbar11.Tpo $(DEPDIR)/libmr_a-drbar11.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='drbar11.cpp' object='libmr_a-drbar11.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmr_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libmr_a-drbar11.obj `if test -f 'drbar11.cpp'; then $(CYGPATH_W) 'drbar11.cpp'; else $(CYGPATH_W) '$(srcdir)/drbar11.cpp'; fi`
+
+libmr_a-drbar20.o: drbar20.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmr_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libmr_a-drbar20.o -MD -MP -MF $(DEPDIR)/libmr_a-drbar20.Tpo -c -o libmr_a-drbar20.o `test -f 'drbar20.cpp' || echo '$(srcdir)/'`drbar20.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libmr_a-drbar20.Tpo $(DEPDIR)/libmr_a-drbar20.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='drbar20.cpp' object='libmr_a-drbar20.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmr_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libmr_a-drbar20.o `test -f 'drbar20.cpp' || echo '$(srcdir)/'`drbar20.cpp
+
+libmr_a-drbar20.obj: drbar20.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmr_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libmr_a-drbar20.obj -MD -MP -MF $(DEPDIR)/libmr_a-drbar20.Tpo -c -o libmr_a-drbar20.obj `if test -f 'drbar20.cpp'; then $(CYGPATH_W) 'drbar20.cpp'; else $(CYGPATH_W) '$(srcdir)/drbar20.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libmr_a-drbar20.Tpo $(DEPDIR)/libmr_a-drbar20.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='drbar20.cpp' object='libmr_a-drbar20.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmr_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libmr_a-drbar20.obj `if test -f 'drbar20.cpp'; then $(CYGPATH_W) 'drbar20.cpp'; else $(CYGPATH_W) '$(srcdir)/drbar20.cpp'; fi`
+
 libmr_a-mWWos10.o: mWWos10.cpp
 @am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmr_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libmr_a-mWWos10.o -MD -MP -MF $(DEPDIR)/libmr_a-mWWos10.Tpo -c -o libmr_a-mWWos10.o `test -f 'mWWos10.cpp' || echo '$(srcdir)/'`mWWos10.cpp
 @am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libmr_a-mWWos10.Tpo $(DEPDIR)/libmr_a-mWWos10.Po
@@ -1771,6 +1851,62 @@ libmr_a-mHHos20.obj: mHHos20.cpp
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='mHHos20.cpp' object='libmr_a-mHHos20.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmr_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libmr_a-mHHos20.obj `if test -f 'mHHos20.cpp'; then $(CYGPATH_W) 'mHHos20.cpp'; else $(CYGPATH_W) '$(srcdir)/mHHos20.cpp'; fi`
+
+libmr_a-mttos01.o: mttos01.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmr_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libmr_a-mttos01.o -MD -MP -MF $(DEPDIR)/libmr_a-mttos01.Tpo -c -o libmr_a-mttos01.o `test -f 'mttos01.cpp' || echo '$(srcdir)/'`mttos01.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libmr_a-mttos01.Tpo $(DEPDIR)/libmr_a-mttos01.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='mttos01.cpp' object='libmr_a-mttos01.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmr_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libmr_a-mttos01.o `test -f 'mttos01.cpp' || echo '$(srcdir)/'`mttos01.cpp
+
+libmr_a-mttos01.obj: mttos01.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmr_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libmr_a-mttos01.obj -MD -MP -MF $(DEPDIR)/libmr_a-mttos01.Tpo -c -o libmr_a-mttos01.obj `if test -f 'mttos01.cpp'; then $(CYGPATH_W) 'mttos01.cpp'; else $(CYGPATH_W) '$(srcdir)/mttos01.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libmr_a-mttos01.Tpo $(DEPDIR)/libmr_a-mttos01.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='mttos01.cpp' object='libmr_a-mttos01.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmr_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libmr_a-mttos01.obj `if test -f 'mttos01.cpp'; then $(CYGPATH_W) 'mttos01.cpp'; else $(CYGPATH_W) '$(srcdir)/mttos01.cpp'; fi`
+
+libmr_a-mttos10.o: mttos10.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmr_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libmr_a-mttos10.o -MD -MP -MF $(DEPDIR)/libmr_a-mttos10.Tpo -c -o libmr_a-mttos10.o `test -f 'mttos10.cpp' || echo '$(srcdir)/'`mttos10.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libmr_a-mttos10.Tpo $(DEPDIR)/libmr_a-mttos10.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='mttos10.cpp' object='libmr_a-mttos10.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmr_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libmr_a-mttos10.o `test -f 'mttos10.cpp' || echo '$(srcdir)/'`mttos10.cpp
+
+libmr_a-mttos10.obj: mttos10.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmr_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libmr_a-mttos10.obj -MD -MP -MF $(DEPDIR)/libmr_a-mttos10.Tpo -c -o libmr_a-mttos10.obj `if test -f 'mttos10.cpp'; then $(CYGPATH_W) 'mttos10.cpp'; else $(CYGPATH_W) '$(srcdir)/mttos10.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libmr_a-mttos10.Tpo $(DEPDIR)/libmr_a-mttos10.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='mttos10.cpp' object='libmr_a-mttos10.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmr_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libmr_a-mttos10.obj `if test -f 'mttos10.cpp'; then $(CYGPATH_W) 'mttos10.cpp'; else $(CYGPATH_W) '$(srcdir)/mttos10.cpp'; fi`
+
+libmr_a-mttos11.o: mttos11.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmr_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libmr_a-mttos11.o -MD -MP -MF $(DEPDIR)/libmr_a-mttos11.Tpo -c -o libmr_a-mttos11.o `test -f 'mttos11.cpp' || echo '$(srcdir)/'`mttos11.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libmr_a-mttos11.Tpo $(DEPDIR)/libmr_a-mttos11.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='mttos11.cpp' object='libmr_a-mttos11.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmr_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libmr_a-mttos11.o `test -f 'mttos11.cpp' || echo '$(srcdir)/'`mttos11.cpp
+
+libmr_a-mttos11.obj: mttos11.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmr_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libmr_a-mttos11.obj -MD -MP -MF $(DEPDIR)/libmr_a-mttos11.Tpo -c -o libmr_a-mttos11.obj `if test -f 'mttos11.cpp'; then $(CYGPATH_W) 'mttos11.cpp'; else $(CYGPATH_W) '$(srcdir)/mttos11.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libmr_a-mttos11.Tpo $(DEPDIR)/libmr_a-mttos11.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='mttos11.cpp' object='libmr_a-mttos11.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmr_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libmr_a-mttos11.obj `if test -f 'mttos11.cpp'; then $(CYGPATH_W) 'mttos11.cpp'; else $(CYGPATH_W) '$(srcdir)/mttos11.cpp'; fi`
+
+libmr_a-mttos20.o: mttos20.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmr_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libmr_a-mttos20.o -MD -MP -MF $(DEPDIR)/libmr_a-mttos20.Tpo -c -o libmr_a-mttos20.o `test -f 'mttos20.cpp' || echo '$(srcdir)/'`mttos20.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libmr_a-mttos20.Tpo $(DEPDIR)/libmr_a-mttos20.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='mttos20.cpp' object='libmr_a-mttos20.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmr_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libmr_a-mttos20.o `test -f 'mttos20.cpp' || echo '$(srcdir)/'`mttos20.cpp
+
+libmr_a-mttos20.obj: mttos20.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmr_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libmr_a-mttos20.obj -MD -MP -MF $(DEPDIR)/libmr_a-mttos20.Tpo -c -o libmr_a-mttos20.obj `if test -f 'mttos20.cpp'; then $(CYGPATH_W) 'mttos20.cpp'; else $(CYGPATH_W) '$(srcdir)/mttos20.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libmr_a-mttos20.Tpo $(DEPDIR)/libmr_a-mttos20.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='mttos20.cpp' object='libmr_a-mttos20.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmr_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libmr_a-mttos20.obj `if test -f 'mttos20.cpp'; then $(CYGPATH_W) 'mttos20.cpp'; else $(CYGPATH_W) '$(srcdir)/mttos20.cpp'; fi`
 
 ID: $(am__tagged_files)
 	$(am__define_uniq_tagged_files); mkid -fID $$unique

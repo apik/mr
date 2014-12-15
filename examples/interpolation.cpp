@@ -109,10 +109,10 @@ int main (int argc, char *argv[])
           mMap[std::make_pair("H",mm[i])] = pmvHH;
 
           std::vector<PoleMass*> pmvtt(4);
-          pmvtt[0] = new tt(KPV, mm[i]);
-          pmvtt[1] = new tt(divMt, mm[i]);
-          pmvtt[2] = new tt(divMH, mm[i]);
-          pmvtt[3] = new tt(divMW, mm[i]);
+          pmvtt[0] = new tt<OS>(KPV, mm[i]);
+          pmvtt[1] = new tt<OS>(divMt, mm[i]);
+          pmvtt[2] = new tt<OS>(divMH, mm[i]);
+          pmvtt[3] = new tt<OS>(divMW, mm[i]);
           
           mMap[std::make_pair("t",mm[i])] = pmvtt;
           

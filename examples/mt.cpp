@@ -30,7 +30,7 @@ int main (int argc, char *argv[])
 
       for (std::vector<OSinput>::iterator it = KV.begin(); it != KV.end(); ++it)
         {
-          tt dMt  = tt(*it, it->MMZ());
+          tt<OS> dMt(*it, it->MMZ());
 
           dMt.test();
           

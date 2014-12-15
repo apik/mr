@@ -1,5 +1,5 @@
 #include <dr.hpp>
-long double dr::dr11(size_t nL, size_t nH, size_t boson)
+long double dr<OS>::dr11(size_t nL, size_t nH, size_t boson)
 {     
       
       

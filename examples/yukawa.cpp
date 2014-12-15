@@ -34,7 +34,7 @@ int main (int argc, char *argv[])
 
 
       // Yukawa top
-      tt dMt  = tt(KVPhys, KVPhys.MMt());
+      tt<OS> dMt(KVPhys, KVPhys.MMt());
       std::cout << "[ Top quark ]" << std::endl;
       std::cout << "Mh= " << KVPhys.MH()  << std::endl;
       std::cout << "as(MMt) = " << as(KVPhys.MMt()) << std::endl;          
@@ -66,7 +66,7 @@ int main (int argc, char *argv[])
 
       OSinput inFJ(0,80.385,91.1876,125.5,173.5);
 
-      tt topFJ(inFJ, inFJ.MMt());
+      tt<OS> topFJ(inFJ, inFJ.MMt());
 
       std::cout << "\n\n \t Jegerlehner input:" << std::endl;
       
@@ -87,7 +87,7 @@ int main (int argc, char *argv[])
    for (int mHi = 0; mHi < 13; mHi++)
      {
        OSinput DS2l(4.40, 80.385, 91.1876, mHstart + mHi*mHstep, 173.5);
-       tt dtY  = tt(DS2l, DS2l.MMt());          
+       tt<OS> dtY(DS2l, DS2l.MMt());          
        
        plotYt.add(DS2l.MH(),alphaMt/4./Pi*alphaSMt/4./Pi*dtY.y11());
      }
