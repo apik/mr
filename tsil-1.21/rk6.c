@@ -105,8 +105,8 @@ int rk6 (TSIL_DATA    *foo,
          TSIL_REAL    precision_goal, 
          int          force_step)
 {
-  static TSIL_COMPLEX startingB[2], startingS[2], startingT[6];
-  static TSIL_COMPLEX startingU[4], startingM;
+  TSIL_COMPLEX startingB[2], startingS[2], startingT[6];
+  TSIL_COMPLEX startingU[4], startingM;
   TSIL_COMPLEX k1B[2], k2B[2], k3B[2], k4B[2], k5B[2], k6B[2];
   TSIL_COMPLEX k1S[2], k2S[2], k3S[2], k4S[2], k5S[2], k6S[2];
   TSIL_COMPLEX k1T[6], k2T[6], k3T[6], k4T[6], k5T[6], k6T[6];
@@ -633,8 +633,8 @@ int rk6_STU (TSIL_DATA   *foo,
 	    TSIL_REAL    precision_goal, 
 	    int          force_step)
 {
-  static TSIL_COMPLEX startingS, startingT[6];
-  static TSIL_COMPLEX startingU;
+  TSIL_COMPLEX startingS, startingT[6];
+  TSIL_COMPLEX startingU;
 
   TSIL_COMPLEX k1S, k2S, k3S, k4S, k5S, k6S;
   /* Some wasted space here, but easier coding... */
@@ -1009,7 +1009,7 @@ int rk6_ST (TSIL_DATA *foo,
 	   TSIL_REAL precision_goal, 
 	   int force_step)
 {
-  static TSIL_COMPLEX startingS, startingT[6];
+  TSIL_COMPLEX startingS, startingT[6];
   TSIL_COMPLEX k1S, k2S, k3S, k4S, k5S, k6S;
   /* Some wasted space here, but easier coding... */
   TSIL_COMPLEX k1T[6], k2T[6], k3T[6], k4T[6], k5T[6], k6T[6];

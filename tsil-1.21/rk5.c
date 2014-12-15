@@ -61,13 +61,13 @@ void rk5 (TSIL_DATA *foo,
           TSIL_REAL sthresh,
           int RKmode)
 {
-  static TSIL_COMPLEX k1B[2], k2B[2], k3B[2], k4B[2], k5B[2];
-  static TSIL_COMPLEX k1S[2], k2S[2], k3S[2], k4S[2], k5S[2];
-  static TSIL_COMPLEX k1T[6], k2T[6], k3T[6], k4T[6], k5T[6];
-  static TSIL_COMPLEX k1U[4], k2U[4], k3U[4], k4U[4], k5U[4];
-  static TSIL_COMPLEX k1M,    k2M,    k3M,    k4M,    k5M;
-  static TSIL_COMPLEX startingB[2], startingS[2], startingT[6];
-  static TSIL_COMPLEX startingU[4], startingM;
+  TSIL_COMPLEX k1B[2], k2B[2], k3B[2], k4B[2], k5B[2];
+  TSIL_COMPLEX k1S[2], k2S[2], k3S[2], k4S[2], k5S[2];
+  TSIL_COMPLEX k1T[6], k2T[6], k3T[6], k4T[6], k5T[6];
+  TSIL_COMPLEX k1U[4], k2U[4], k3U[4], k4U[4], k5U[4];
+  TSIL_COMPLEX k1M,    k2M,    k3M,    k4M,    k5M;
+  TSIL_COMPLEX startingB[2], startingS[2], startingT[6];
+  TSIL_COMPLEX startingU[4], startingM;
 
   int i;
   TSIL_COMPLEX s, ds;
@@ -321,12 +321,12 @@ void rk5_STU (TSIL_DATA    *foo,
 	      TSIL_REAL    sthresh,
 	      int          RKmode)
 {
-  static TSIL_COMPLEX k1S, k2S, k3S, k4S, k5S;
-  static TSIL_COMPLEX k1T[6], k2T[6], k3T[6], k4T[6], k5T[6];
-  static TSIL_COMPLEX k1U, k2U, k3U, k4U, k5U;
+  TSIL_COMPLEX k1S, k2S, k3S, k4S, k5S;
+  TSIL_COMPLEX k1T[6], k2T[6], k3T[6], k4T[6], k5T[6];
+  TSIL_COMPLEX k1U, k2U, k3U, k4U, k5U;
 
-  static TSIL_COMPLEX startingS, startingT[6];
-  static TSIL_COMPLEX startingU;
+  TSIL_COMPLEX startingS, startingT[6];
+  TSIL_COMPLEX startingU;
 
   int i;
   TSIL_COMPLEX s, ds;
@@ -498,9 +498,9 @@ void rk5_ST (TSIL_DATA *foo,
 	     TSIL_REAL sthresh,
 	     int RKmode)
 {
-  static TSIL_COMPLEX k1S, k2S, k3S, k4S, k5S;
-  static TSIL_COMPLEX k1T[6], k2T[6], k3T[6], k4T[6], k5T[6];
-  static TSIL_COMPLEX startingS, startingT[6];
+  TSIL_COMPLEX k1S, k2S, k3S, k4S, k5S;
+  TSIL_COMPLEX k1T[6], k2T[6], k3T[6], k4T[6], k5T[6];
+  TSIL_COMPLEX startingS, startingT[6];
   int i;
   TSIL_COMPLEX s, ds;
   int whichS = uxv;

@@ -7,7 +7,7 @@
 ACLOCAL_AMFLAGS = ${ACLOCAL_FLAGS} -I m4
 SUBDIRS = \
 	tsil-1.21 \
-	Minuit \
+	Minuit2 \
 	mr \
 	examples \
 	tests

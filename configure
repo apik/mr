@@ -2503,7 +2503,7 @@ END
 fi
 ac_config_headers="$ac_config_headers config.h"
 
-: ${CXXFLAGS="-O3"}
+: ${CXXFLAGS="-fopenmp"}
 ac_ext=cpp
 ac_cpp='$CXXCPP $CPPFLAGS'
 ac_compile='$CXX -c $CXXFLAGS $CPPFLAGS conftest.$ac_ext >&5'
@@ -4836,7 +4836,7 @@ else
 fi
 
 
-ac_config_files="$ac_config_files Makefile tsil-1.21/Makefile mr/Makefile examples/Makefile tests/Makefile math/Makefile Minuit/Makefile"
+ac_config_files="$ac_config_files Makefile tsil-1.21/Makefile mr/Makefile examples/Makefile tests/Makefile math/Makefile Minuit2/Makefile"
 
 cat >confcache <<\_ACEOF
 # This file is a shell script that caches the results of configure
@@ -5596,7 +5596,7 @@ do
     "examples/Makefile") CONFIG_FILES="$CONFIG_FILES examples/Makefile" ;;
     "tests/Makefile") CONFIG_FILES="$CONFIG_FILES tests/Makefile" ;;
     "math/Makefile") CONFIG_FILES="$CONFIG_FILES math/Makefile" ;;
-    "Minuit/Makefile") CONFIG_FILES="$CONFIG_FILES Minuit/Makefile" ;;
+    "Minuit2/Makefile") CONFIG_FILES="$CONFIG_FILES Minuit2/Makefile" ;;
 
   *) as_fn_error $? "invalid argument: \`$ac_config_target'" "$LINENO" 5;;
   esac
