@@ -5,11 +5,12 @@
 ##
 ## Process this file with automake to produce Makefile.in
 ACLOCAL_AMFLAGS = ${ACLOCAL_FLAGS} -I m4
-SUBDIRS = \
+SUBDIRS =         \
 	tsil-1.21 \
-	Minuit2 \
-	mr \
-	examples \
+	Minuit2   \
+	yaml-cpp  \
+	mr        \
+	examples  \
 	tests
 
 
