@@ -1,4 +1,12 @@
 #include "betaQCD.hpp"
+#include <boost/numeric/odeint/integrate/integrate_adaptive.hpp>
+#include <boost/numeric/odeint/stepper/runge_kutta_cash_karp54.hpp>
+#include <boost/numeric/odeint/stepper/controlled_runge_kutta.hpp>
+
+using namespace boost::numeric::odeint;
+typedef runge_kutta_cash_karp54< state_type > error_stepper_type;
+typedef controlled_runge_kutta< error_stepper_type > controlled_stepper_type;
+
 
 double run(long double asStart, long double muStart, long double muEnd, size_t NF, size_t loops)
 {
@@ -19,11 +27,18 @@ double run(long double asStart, long double muStart, long double muEnd, size_t N
   double a_dxdt = 1.0;
   
   // OdeInt_v.1
-  controlled_stepper_standard< stepper_rk5_ck< state_type > >
-    controlled_rk5( 1E-6 , 1E-7 , 1.0 , 1.0 );
+  // controlled_stepper_standard< stepper_rk5_ck< state_type > >
+  //   controlled_rk5( 1E-6 , 1E-7 , 1.0 , 1.0 );
   
-  integrate_adaptive( controlled_rk5 ,
-                      beta4l5nf, as4pi, 0.0, fabs(lEnd), 0.01  );
+  // integrate_adaptive( controlled_rk5 ,
+  //                     beta4l5nf, as4pi, 0.0, fabs(lEnd), 0.01  );
+
+  // OdeInt_v.2
+  controlled_stepper_type 
+    controlled_stepper(default_error_checker< double , range_algebra , default_operations >
+                       ( abs_err , rel_err , a_x , a_dxdt ) );
+  integrate_adaptive( controlled_stepper , beta4l5nf , as4pi , 0.0 , fabs(lEnd) , 0.01 );
+
   
   return as4pi[0]*4.*Pi;            // We return a_S
 }

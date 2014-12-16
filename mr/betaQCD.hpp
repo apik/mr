@@ -21,17 +21,14 @@
 #ifndef __BETAQCD_HPP_
 #define __BETAQCD_HPP_
 
-#include <boost/numeric/odeint/integrator_adaptive_stepsize.hpp>
-
+                       
 #include <stdexcept>
-
+#include <vector>
 #include "sminput.hpp"
 #include "constants.hpp"
 
-
-using namespace boost::numeric::odeint;
-
 typedef std::vector<long double> state_type;
+
 
 class BetaQCD
 {

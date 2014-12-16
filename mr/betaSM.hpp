@@ -26,13 +26,17 @@
 #include <vector>
 #include <map>
 #include <cmath>
-#include <boost/numeric/odeint/integrator_adaptive_stepsize.hpp>
+#include <boost/numeric/odeint/integrate/integrate_adaptive.hpp>
+#include <boost/numeric/odeint/stepper/runge_kutta_cash_karp54.hpp>
+#include <boost/numeric/odeint/stepper/controlled_runge_kutta.hpp>
+// #include <boost/numeric/odeint/integrator_adaptive_stepsize.hpp>
 // #include <boost/numeric/odeint.hpp>
 #include "constants.hpp"
 
 using namespace boost::numeric::odeint;
-
 typedef std::vector<long double> state_type;
+typedef runge_kutta_cash_karp54< state_type > error_stepper_type;
+typedef controlled_runge_kutta< error_stepper_type > controlled_stepper_type;
 
 typedef std::vector<size_t> index_t;
 
@@ -168,39 +172,57 @@ public:
       std::cout << "\talam = " << std::setw(fw) << lam
                 << "   MU = " << std::setw(fw) << sqrt(mu0)
                 << "   NG = " << std::setw(fw) << NG <<std::endl; 
-
-       bep = new  BetaSMFull(pocoa1, pocoa2, pocoas, pocoat, pocoab, pocoatau, pocolam, NG_);
+      
+      bep = new  BetaSMFull(pocoa1, pocoa2, pocoas, pocoat, pocoab, pocoatau, pocolam, NG_);
     }
+
 
   state_type operator()(long double mu2)
   {
     
     // BetaSMFull be = BetaSMFull(pocoa1, pocoa2, pocoas, pocoat, pocoab,
     //                 pocoatau, pocolam, NG);
-
+    
     double lEnd = log(mu2/mu0);
     // Integration parameters
     // 
     // For the Runge-Kutta controller the error made during one step
     // is compared with 
-    //    eps_abs + eps_rel * ( ax * |x| + adxdt * dt * |dxdt| ). 
-    // If the error is smaller than this value the current
-    // step is accepted, otherwise it is rejected and the step size is decreased.
-    double abs_err = 1.0e-12 , rel_err = 1.0e-10 , a_x = 1.0 , a_dxdt = 1.0;
+  //    eps_abs + eps_rel * ( ax * |x| + adxdt * dt * |dxdt| ). 
+  // If the error is smaller than this value the current
+  // step is accepted, otherwise it is rejected and the step size is decreased.
+  double abs_err = 1.0e-12 , rel_err = 1.0e-10 , a_x = 1.0 , a_dxdt = 1.0;
+    state_type aSM(aSM0);    
+    // controlled_stepper_standard< stepper_rk5_ck< state_type > >
+    //   controlled_rk5( abs_err , rel_err , a_x , a_dxdt );
     
-    controlled_stepper_standard< stepper_rk5_ck< state_type > >
-      controlled_rk5( abs_err , rel_err , a_x , a_dxdt );
- 
-    state_type aSM(aSM0);
-    integrate_adaptive( controlled_rk5 , // Stepper function
+    
+    // integrate_adaptive( controlled_rk5 , // Stepper function
+    //                     *bep,            // Derivatives
+    //                     aSM,             // Initial values
+    //                     0.0,             // t0 = Log[mu0/mu0]
+    //                     lEnd,            // t  = Log[mu/mu0]
+    //                     0.0001             // Initial step size
+    //                     );
+    
+    controlled_stepper_type 
+      controlled_stepper(default_error_checker< double , range_algebra , default_operations >
+                         ( abs_err , rel_err , a_x , a_dxdt ) );
+    
+    integrate_adaptive( controlled_stepper , // Stepper function
                         *bep,            // Derivatives
                         aSM,             // Initial values
                         0.0,             // t0 = Log[mu0/mu0]
                         lEnd,            // t  = Log[mu/mu0]
                         0.0001             // Initial step size
                         );
+    
+    
+    
     return aSM; 
   }
+
+
 };
 
 
@@ -244,7 +266,8 @@ public:
        bep = new  BetaVM(NG_);
     }
 
-  state_type operator()(const long double& mu2End)
+
+state_type operator()(const long double& mu2End)
   {
     
     // BetaSMFull be = BetaSMFull(pocoa1, pocoa2, pocoas, pocoat, pocoab,
@@ -259,20 +282,35 @@ public:
     // If the error is smaller than this value the current
     // step is accepted, otherwise it is rejected and the step size is decreased.
     double abs_err = 1.0e-12 , rel_err = 1.0e-10 , a_x = 1.0 , a_dxdt = 1.0;
-    
-    controlled_stepper_standard< stepper_rk5_ck< state_type > >
-      controlled_rk5( abs_err , rel_err , a_x , a_dxdt );
+    state_type aSM(aSM0);    
+    // controlled_stepper_standard< stepper_rk5_ck< state_type > >
+    //   controlled_rk5( abs_err , rel_err , a_x , a_dxdt );
  
-    state_type aSM(aSM0);
-    integrate_adaptive( controlled_rk5 , // Stepper function
+
+    // integrate_adaptive( controlled_rk5 , // Stepper function
+    //                     *bep,            // Derivatives
+    //                     aSM,             // Initial values
+    //                     0.0,             // t0 = Log[mu0/mu0]
+    //                     lEnd,            // t  = Log[mu/mu0]
+    //                     0.0001             // Initial step size
+    //                     );
+
+    controlled_stepper_type 
+      controlled_stepper(default_error_checker< double , range_algebra , default_operations >
+                         ( abs_err , rel_err , a_x , a_dxdt ) );
+
+    integrate_adaptive( controlled_stepper , // Stepper function
                         *bep,            // Derivatives
                         aSM,             // Initial values
                         0.0,             // t0 = Log[mu0/mu0]
                         lEnd,            // t  = Log[mu/mu0]
                         0.0001             // Initial step size
                         );
+
     return aSM; 
   }
+
+
 };
 
 
@@ -331,20 +369,34 @@ public:
     // If the error is smaller than this value the current
     // step is accepted, otherwise it is rejected and the step size is decreased.
     double abs_err = 1.0e-12 , rel_err = 1.0e-10 , a_x = 1.0 , a_dxdt = 1.0;
-    
-    controlled_stepper_standard< stepper_rk5_ck< state_type > >
-      controlled_rk5( abs_err , rel_err , a_x , a_dxdt );
+    state_type aSM(aSM0);    
+    // controlled_stepper_standard< stepper_rk5_ck< state_type > >
+    //   controlled_rk5( abs_err , rel_err , a_x , a_dxdt );
  
-    state_type aSM(aSM0);
-    integrate_adaptive( controlled_rk5 , // Stepper function
+
+    // integrate_adaptive( controlled_rk5 , // Stepper function
+    //                     *bep,            // Derivatives
+    //                     aSM,             // Initial values
+    //                     0.0,             // t0 = Log[mu0/mu0]
+    //                     lEnd,            // t  = Log[mu/mu0]
+    //                     0.0001             // Initial step size
+    //                     );
+    controlled_stepper_type 
+      controlled_stepper(default_error_checker< double , range_algebra , default_operations >
+                         ( abs_err , rel_err , a_x , a_dxdt ) );
+
+    integrate_adaptive( controlled_stepper , // Stepper function
                         *bep,            // Derivatives
                         aSM,             // Initial values
                         0.0,             // t0 = Log[mu0/mu0]
                         lEnd,            // t  = Log[mu/mu0]
                         0.0001             // Initial step size
                         );
+
     return aSM; 
   }
+
+
 };
 
 

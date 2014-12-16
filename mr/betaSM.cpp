@@ -1077,5 +1077,5 @@ void BetaVM::operator() (const state_type &a, state_type &dadt, const double t)
   dadt[8] = a[8]/2.*BetaMu2::bmu2(a, ng);
 }
 
-
+// Couplings implementation
 
