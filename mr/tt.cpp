@@ -20,6 +20,9 @@
 
 #include <tt.hpp>
 #include "timer.hpp"
+#ifdef _OPENMP
+#include <omp.h>
+#endif
 
 tt<OS>::tt(OSinput sm, long double mu2_)
 {
@@ -74,22 +77,25 @@ void tt<OS>::init()
 //   Timer t1;
 
 //   int TID = 0;
-//   omp_set_num_threads(10);
+//   omp_set_num_threads(28);
 // #pragma omp parallel private(TID)
 //   {
 //     TID = omp_get_thread_num();
-//     std::cout << "Evaluating proto [" << TID << "]" <<  std::endl;
+//     // std::cout << "Evaluating proto [" << TID << "]" <<  std::endl;
 //     protos[TID]->evaluate(MMt);
     
 //   }
   
 //   t1.elapsed();
-
+  
   Timer t2;
+#ifdef _OPENMP
+#pragma omp parallel for 
+#endif
   for(int i = 0 ; i < 28; i++)
     protos[i]->evaluate(MMt);
   t2.elapsed();
-
+  
 }
 
 
@@ -158,6 +164,9 @@ void tt<MS>::init()
 //   t1.elapsed();
 
   Timer t2;
+#ifdef _OPENMP
+#pragma omp parallel for 
+#endif
   for(int i = 0 ; i < 28; i++)
     protos[i]->evaluate(mmt);
   t2.elapsed();

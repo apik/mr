@@ -21,6 +21,9 @@
 // #include <omp.h>
 #include <HH.hpp>
 #include "timer.hpp"
+#ifdef _OPENMP
+#include <omp.h>
+#endif
 
 
 // HH::HH(long double MMW_,long double MMZ_,long double MMH_,long double MMt_,long double mu2_):
@@ -88,6 +91,9 @@ void HH<OS>::init()
 //   t1.elapsed();
 
   Timer t2;
+#ifdef _OPENMP
+#pragma omp parallel for 
+#endif
   for(int i = 0 ; i < 20; i++)
     protos[i]->evaluate(MMH);
   t2.elapsed();
@@ -155,6 +161,9 @@ void HH<MS>::init()
 //   t1.elapsed();
 
   Timer t2;
+#ifdef _OPENMP
+#pragma omp parallel for 
+#endif
   for(int i = 0 ; i < 20; i++)
     protos[i]->evaluate(mmH);
   t2.elapsed();

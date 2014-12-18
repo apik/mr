@@ -21,6 +21,9 @@
 // #include <omp.h>
 #include <WW.hpp>
 #include "timer.hpp"
+#ifdef _OPENMP
+#include <omp.h>
+#endif
 
 // WW::WW(long double MMW_,long double MMZ_,long double MMH_,long double MMt_,long double mu2_):
 //   MMb(MMb_), MMW(MMW_), MMZ(MMZ_), MMH(MMH_), MMt(MMt_), mu2(mu2_)
@@ -91,6 +94,9 @@ void WW<OS>::init()
 //   t1.elapsed();
 
   Timer t2;
+#ifdef _OPENMP
+#pragma omp parallel for 
+#endif
   for(int i = 0 ; i < 24; i++)
     protos[i]->evaluate(MMW);
   t2.elapsed();
@@ -161,6 +167,9 @@ void WW<MS>::init()
 //   t1.elapsed();
 
   Timer t2;
+#ifdef _OPENMP
+#pragma omp parallel for 
+#endif
   for(int i = 0 ; i < 24; i++)
     protos[i]->evaluate(mmW);
   t2.elapsed();

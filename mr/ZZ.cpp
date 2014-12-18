@@ -21,6 +21,9 @@
 // #include <omp.h>
 #include <ZZ.hpp>
 #include "timer.hpp"
+#ifdef _OPENMP
+#include <omp.h>
+#endif
 
 // ZZ::ZZ(long double MMW_,long double MMZ_,long double MMH_,long double MMt_,long double mu2_):
 //   MMW(MMW_), MMZ(MMZ_), MMH(MMH_), MMt(MMt_), mu2(mu2_)
@@ -83,6 +86,9 @@ void ZZ<OS>::init()
 //   t1.elapsed();
 
   Timer t2;
+#ifdef _OPENMP
+#pragma omp parallel for 
+#endif
   for(int i = 0 ; i < 19; i++)
     protos[i]->evaluate(MMZ);
   t2.elapsed();
@@ -145,6 +151,9 @@ void ZZ<MS>::init()
 //   t1.elapsed();
 
   Timer t2;
+#ifdef _OPENMP
+#pragma omp parallel for 
+#endif
   for(int i = 0 ; i < 19; i++)
     protos[i]->evaluate(mmZ);
   t2.elapsed();

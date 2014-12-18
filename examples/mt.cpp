@@ -32,7 +32,7 @@ int main (int argc, char *argv[])
         {
           tt<OS> dMt(*it, it->MMZ());
 
-          dMt.test();
+          // dMt.test();
           
           std::cout << "Mh= " << it->MH()  << std::endl;
           std::cout << "as(MMt) = " << as(it->MMt()) << std::endl;          
@@ -45,7 +45,7 @@ int main (int argc, char *argv[])
           
 
           std::cout << " Full one-loop +QCD " << it->Mt()*alphaMt/4./Pi*dMt.x10() + it->Mt()*alphaS/4./Pi*dMt.x01() << std::endl;
-          dMt.test();
+          // dMt.test();
         }
       
     }
