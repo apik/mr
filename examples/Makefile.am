@@ -2,9 +2,9 @@ AUTOMAKE_OPTIONS = subdir-objects
 ACLOCAL_AMFLAGS = ${ACLOCAL_FLAGS} -I m4
 
 LDADD = ../mr/libmr.la
-EX_CFLAGS = $(MR_CFLAGS) -I$(top_srcdir)/tsil-1.21 -I$(top_srcdir)/mr -I$(top_srcdir)/Minuit2
+EX_CFLAGS = $(MR_CFLAGS) -I$(top_srcdir)/tsil-1.21 -I$(top_srcdir)/mr -I$(top_srcdir)/Minuit
 
-noinst_PROGRAMS = mW mZ mH mt runAlpha runSM runGL mb yukawa lambda yt gauge plotyukawa mtgl bezrukovFit GFermi tables poleRGI gfit gfitcfg
+noinst_PROGRAMS = mW mZ mH mt runAlpha runSM runGL mb yukawa lambda yt gauge plotyukawa mtgl bezrukovFit GFermi tables poleRGI gfitcfg gfit
 if HAVE_ROOT
 noinst_PROGRAMS += mHroot interpolation
 endif 
@@ -103,7 +103,7 @@ gfit_LDADD = $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.21 -ltsil
 
 gfitcfg_SOURCES =  gfitcfg.cpp
 gfitcfg_CPPFLAGS = $(EX_CFLAGS) -I$(top_srcdir)/yaml-cpp/include
-gfitcfg_LDADD = $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.21 -ltsil -L$(top_srcdir)/Minuit2 -lMinuit2 -lm -L$(top_srcdir)/yaml-cpp -lYAMLpp
+gfitcfg_LDADD = $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.21 -ltsil -L$(top_srcdir)/Minuit -llcg_Minuit -lm -L$(top_srcdir)/yaml-cpp -lYAMLpp
 
 
 # mratio_SOURCES =  mratio.cpp

@@ -76,28 +76,11 @@ void HH<OS>::init()
 
 
 
-//   Timer t1;
-
-//   int TID = 0;
-//   omp_set_num_threads(10);
-// #pragma omp parallel private(TID)
-//   {
-//     TID = omp_get_thread_num();
-//     std::cout << "Evaluating proto [" << TID << "]" <<  std::endl;
-//     protos[TID]->evaluate(MMt);
-    
-//   }
-  
-//   t1.elapsed();
-
-  Timer t2;
 #ifdef _OPENMP
 #pragma omp parallel for 
 #endif
   for(int i = 0 ; i < 20; i++)
     protos[i]->evaluate(MMH);
-  t2.elapsed();
-
 }
 
 
@@ -144,28 +127,10 @@ void HH<MS>::init()
   protos[19] = prot0000H = new Tsil(  0,   0,   0,   0, mmH, mu2);
 
 
-
-
-//   Timer t1;
-
-//   int TID = 0;
-//   omp_set_num_threads(10);
-// #pragma omp parallel private(TID)
-//   {
-//     TID = omp_get_thread_num();
-//     std::cout << "Evaluating proto [" << TID << "]" <<  std::endl;
-//     protos[TID]->evaluate(MMt);
-    
-//   }
-  
-//   t1.elapsed();
-
-  Timer t2;
 #ifdef _OPENMP
 #pragma omp parallel for 
 #endif
   for(int i = 0 ; i < 20; i++)
     protos[i]->evaluate(mmH);
-  t2.elapsed();
   
 }

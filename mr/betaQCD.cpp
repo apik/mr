@@ -18,7 +18,7 @@ double run(long double asStart, long double muStart, long double muEnd, size_t N
   double lEnd = 2.*log(muEnd/muStart);
 
   
-  std::cout << "End time: " << fabs(lEnd) << std::endl;
+  // std::cout << "End time: " << fabs(lEnd) << std::endl;
   BetaQCD beta4l5nf(loops, NF, lEnd < 0);
     
   double abs_err = 1E-6;

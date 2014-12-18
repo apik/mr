@@ -19,7 +19,7 @@ std::pair<double,double> runQEDQCD(long double aStart, long double asStart, long
   double lEnd = 2.*log(muEnd/muStart);
 
   
-  std::cout << "End time: " << fabs(lEnd) << std::endl;
+  // std::cout << "End time: " << fabs(lEnd) << std::endl;
   BetaQEDQCD bEMQCD(ng, lEnd < 0);
     
   double abs_err = 1E-6;

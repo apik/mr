@@ -79,28 +79,13 @@ void WW<OS>::init()
 
 
 
-//   Timer t1;
-
-//   int TID = 0;
-//   omp_set_num_threads(10);
-// #pragma omp parallel private(TID)
-//   {
-//     TID = omp_get_thread_num();
-//     std::cout << "Evaluating proto [" << TID << "]" <<  std::endl;
-//     protos[TID]->evaluate(MMt);
-    
-//   }
-  
-//   t1.elapsed();
-
-  Timer t2;
 #ifdef _OPENMP
 #pragma omp parallel for 
 #endif
   for(int i = 0 ; i < 24; i++)
     protos[i]->evaluate(MMW);
-  t2.elapsed();
-
+  
+  
 }
 
 
@@ -150,29 +135,11 @@ void WW<MS>::init()
 
 
 
-  // protos[19] = prot0W00  = new TsilSTU(0,     MMW,   0,   0, mu2);
-
-//   Timer t1;
-
-//   int TID = 0;
-//   omp_set_num_threads(10);
-// #pragma omp parallel private(TID)
-//   {
-//     TID = omp_get_thread_num();
-//     std::cout << "Evaluating proto [" << TID << "]" <<  std::endl;
-//     protos[TID]->evaluate(MMt);
-    
-//   }
-  
-//   t1.elapsed();
-
-  Timer t2;
 #ifdef _OPENMP
 #pragma omp parallel for 
 #endif
   for(int i = 0 ; i < 24; i++)
     protos[i]->evaluate(mmW);
-  t2.elapsed();
 
 }
 

@@ -1,0 +1,6 @@
+liblcg_Minuit_a-MnStrategy.o: MnStrategy.cpp /usr/include/stdc-predef.h \
+ ../Minuit/MnStrategy.h
+
+/usr/include/stdc-predef.h:
+
+../Minuit/MnStrategy.h:

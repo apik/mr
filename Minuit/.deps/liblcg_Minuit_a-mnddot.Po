@@ -1,0 +1,3 @@
+liblcg_Minuit_a-mnddot.o: mnddot.cpp /usr/include/stdc-predef.h
+
+/usr/include/stdc-predef.h:

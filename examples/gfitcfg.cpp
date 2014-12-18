@@ -29,25 +29,15 @@
 #include "mr.hpp"
 #include "mfitter.hpp"
 
-#include "Minuit2/FunctionMinimum.h"
-#include "Minuit2/MnUserParameterState.h"
-#include "Minuit2/MnPrint.h"
-#include "Minuit2/MnMigrad.h"
-#include "Minuit2/MnMinos.h"
-#include "Minuit2/MnContours.h"
-#include "Minuit2/MnPlot.h"
-#include "Minuit2/MinosError.h"
-#include "Minuit2/FCNBase.h"
-
-// #include "Minuit/FunctionMinimum.h"
-// #include "Minuit/MnUserParameterState.h"
-// #include "Minuit/MnPrint.h"
-// #include "Minuit/MnMigrad.h"
-// #include "Minuit/MnMinos.h"
-// #include "Minuit/MnContours.h"
-// #include "Minuit/MnPlot.h"
-// #include "Minuit/MinosError.h"
-// #include "Minuit/ContoursError.h"
+#include "Minuit/FunctionMinimum.h"
+#include "Minuit/MnUserParameterState.h"
+#include "Minuit/MnPrint.h"
+#include "Minuit/MnMigrad.h"
+#include "Minuit/MnMinos.h"
+#include "Minuit/MnContours.h"
+#include "Minuit/MnPlot.h"
+#include "Minuit/MinosError.h"
+#include "Minuit/ContoursError.h"
 
 #include <yaml-cpp/yaml.h>
 
@@ -119,25 +109,25 @@ int main (int argc, char *argv[])
       long double lamIN = 0.12711;
       long double mu0IN = 132.03;
                   
-      ROOT::Minuit2::MnUserParameters upar;
-      upar.Add("gp",  gpIN, 0.1);
-      upar.Add("g",   gIN,  0.1);
-      upar.Add("gs",  gsIN, 0.1);
-      upar.Add("yt",  ytIN, 0.1);
-      upar.Add("lam", lamIN,0.1);
-      upar.Add("mu0", mu0IN,0.1);
+      MnUserParameters upar;
+      upar.add("gp",  gpIN, 0.1);
+      upar.add("g",   gIN,  0.1);
+      upar.add("gs",  gsIN, 0.1);
+      upar.add("yt",  ytIN, 0.1);
+      upar.add("lam", lamIN,0.1);
+      upar.add("mu0", mu0IN,0.1);
 
       
       
       // access parameter by name to set limits...
-      upar.SetLimits("gp", gpIN-0.2, gpIN+0.2);
-      upar.SetLimits("g", gIN-0.2, gIN+0.2);
-      upar.SetLimits("gs", gsIN-0.3, gsIN+0.3);
-      upar.SetLimits("yt", ytIN-0.2, ytIN+0.2);
-      upar.SetLimits("lam", lamIN-0.5, lamIN+0.5);
-      upar.SetLimits("mu0", mu0IN-20, mu0IN+20);
+      upar.setLimits("gp", gpIN-0.2, gpIN+0.2);
+      upar.setLimits("g", gIN-0.2, gIN+0.2);
+      upar.setLimits("gs", gsIN-0.3, gsIN+0.3);
+      upar.setLimits("yt", ytIN-0.2, ytIN+0.2);
+      upar.setLimits("lam", lamIN-0.5, lamIN+0.5);
+      upar.setLimits("mu0", mu0IN-20, mu0IN+20);
 
-      ROOT::Minuit2::MnMigrad migrad(theFCN, upar);
+      MnMigrad migrad(theFCN, upar);
       
       // // fix a parameter...
       // migrad.fix("gp");
@@ -147,7 +137,7 @@ int main (int argc, char *argv[])
       // migrad.fix("mu0");      
 
       // // ... and minimize
-      ROOT::Minuit2::FunctionMinimum min = migrad();
+      FunctionMinimum min = migrad();
       
       // output
       std::cout<<"\n\n\n minimum: "<<min<<std::endl;

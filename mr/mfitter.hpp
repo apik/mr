@@ -23,7 +23,7 @@
 
 #include <vector>
 #include "sminput.hpp"
-#include "Minuit2/FCNBase.h"
+#include "Minuit/FCNBase.h"
 
 
 std::vector<long double> observables(long double,
@@ -35,7 +35,7 @@ std::vector<long double> observables(long double,
                                      long double);
 
 
-class MfitterFcn : public ROOT::Minuit2::FCNBase {
+class MfitterFcn : public FCNBase {
   
 public:
   
@@ -50,7 +50,7 @@ public:
 
   ~MfitterFcn() {}
 
-  virtual double Up() const {return theErrorDef;}
+  virtual double up() const {return theErrorDef;}
   virtual double operator()(const std::vector<double>&) const;
   
   std::vector<double> measurements() const {return theMeasurements;}

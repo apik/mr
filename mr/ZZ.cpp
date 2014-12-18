@@ -71,27 +71,11 @@ void ZZ<OS>::init()
   protos[18] = protHZ00  = new TsilSTU(MMH, MMZ,   0,  0, mu2);
 
 
-//   Timer t1;
-
-//   int TID = 0;
-//   omp_set_num_threads(10);
-// #pragma omp parallel private(TID)
-//   {
-//     TID = omp_get_thread_num();
-//     std::cout << "Evaluating proto [" << TID << "]" <<  std::endl;
-//     protos[TID]->evaluate(MMt);
-    
-//   }
-  
-//   t1.elapsed();
-
-  Timer t2;
 #ifdef _OPENMP
 #pragma omp parallel for 
 #endif
   for(int i = 0 ; i < 19; i++)
     protos[i]->evaluate(MMZ);
-  t2.elapsed();
 
 }
 
@@ -136,27 +120,11 @@ void ZZ<MS>::init()
   protos[18] = protHZ00  = new TsilSTU(mmH, mmZ,   0,  0, mu2);
 
 
-//   Timer t1;
-
-//   int TID = 0;
-//   omp_set_num_threads(10);
-// #pragma omp parallel private(TID)
-//   {
-//     TID = omp_get_thread_num();
-//     std::cout << "Evaluating proto [" << TID << "]" <<  std::endl;
-//     protos[TID]->evaluate(MMt);
-    
-//   }
-  
-//   t1.elapsed();
-
-  Timer t2;
 #ifdef _OPENMP
 #pragma omp parallel for 
 #endif
   for(int i = 0 ; i < 19; i++)
     protos[i]->evaluate(mmZ);
-  t2.elapsed();
 
 }
 
