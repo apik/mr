@@ -4,6 +4,12 @@
 
 :Evaluate:  BeginPackage["mr`"]
 
+:Evaluate:  MW::usage  = "MW[gp,g,gs,yt,lam,mu0,mu,L=2] returns pole W-boson mass MW given  MSbar parameters at scale mu at L-loop level"
+:Evaluate:  MZ::usage  = "MZ[gp,g,gs,yt,lam,mu0,mu,L=2] returns pole Z-boson mass MZ given  MSbar parameters at scale mu at L-loop level"
+:Evaluate:  MH::usage  = "MH[gp,g,gs,yt,lam,mu0,mu,L=2] returns pole H-boson mass MH given  MSbar parameters at scale mu at L-loop level"
+:Evaluate:  MT::usage  = "MT[gp,g,gs,yt,lam,mu0,mu,L=2] returns pole t-quark mass MT given  MSbar parameters at scale mu at L-loop level"
+:Evaluate:  GF::usage  = "GF[gp,g,gs,yt,lam,mu0,mu,L=2] returns Fermi constant GF given  MSbar parameters at scale mu at L-loop level"
+
 :Evaluate:  Xb::usage  = "Xb[Mb,MW,MZ,MH,Mt,mu,nL=2,nH=1]  Input is in terms of pole masses and matching scale, nL and nH are number of light and heavy quark genrations "
 
 :Evaluate:  XW::usage  = "XW[Mb,MW,MZ,MH,Mt,mu,nL=2,nH=1]  Input is in terms of pole masses and matching scale, nL and nH are number of light and heavy quark genrations "
@@ -84,10 +90,50 @@
 
 // C++ part
 :Begin:
+:Function: MW
+:Pattern: MW[gp_?NumericQ,g_?NumericQ,gs_?NumericQ,yt_?NumericQ,lam_?NumericQ,mu0_?NumericQ,mu_?NumericQ,L_Integer:2]
+:Arguments: {N[gp],N[g],N[gs],N[yt],N[lam],N[mu0],N[mu],L}
+:ArgumentTypes: {Real128,Real128,Real128,Real128,Real128,Real128,Real128,Integer}
+:ReturnType: Manual
+:End:
+
+:Begin:
+:Function: MZ
+:Pattern: MZ[gp_?NumericQ,g_?NumericQ,gs_?NumericQ,yt_?NumericQ,lam_?NumericQ,mu0_?NumericQ,mu_?NumericQ,L_Integer:2]
+:Arguments: {N[gp],N[g],N[gs],N[yt],N[lam],N[mu0],N[mu],L}
+:ArgumentTypes: {Real128,Real128,Real128,Real128,Real128,Real128,Real128,Integer}
+:ReturnType: Manual
+:End:
+
+:Begin:
+:Function: MH
+:Pattern: MH[gp_?NumericQ,g_?NumericQ,gs_?NumericQ,yt_?NumericQ,lam_?NumericQ,mu0_?NumericQ,mu_?NumericQ,L_Integer:2]
+:Arguments: {N[gp],N[g],N[gs],N[yt],N[lam],N[mu0],N[mu],L}
+:ArgumentTypes: {Real128,Real128,Real128,Real128,Real128,Real128,Real128,Integer}
+:ReturnType: Manual
+:End:
+
+:Begin:
+:Function: MT
+:Pattern: MT[gp_?NumericQ,g_?NumericQ,gs_?NumericQ,yt_?NumericQ,lam_?NumericQ,mu0_?NumericQ,mu_?NumericQ,L_Integer:2]
+:Arguments: {N[gp],N[g],N[gs],N[yt],N[lam],N[mu0],N[mu],L}
+:ArgumentTypes: {Real128,Real128,Real128,Real128,Real128,Real128,Real128,Integer}
+:ReturnType: Manual
+:End:
+
+:Begin:
+:Function: GF
+:Pattern: GF[gp_?NumericQ,g_?NumericQ,gs_?NumericQ,yt_?NumericQ,lam_?NumericQ,mu0_?NumericQ,mu_?NumericQ,L_Integer:2]
+:Arguments: {N[gp],N[g],N[gs],N[yt],N[lam],N[mu0],N[mu],L}
+:ArgumentTypes: {Real128,Real128,Real128,Real128,Real128,Real128,Real128,Integer}
+:ReturnType: Manual
+:End:
+
+:Begin:
 :Function: XW
 :Pattern: XW[mb_?NumericQ,mW_?NumericQ,mZ_?NumericQ,mH_?NumericQ,mt_?NumericQ,mu_?NumericQ,nL_Integer:2,nH_Integer:1]
 :Arguments: {N[mb],N[mW],N[mZ],N[mH],N[mt],N[mu],nL,nH}
-:ArgumentTypes: {Real64,Real64,Real64,Real64,Real64,Real64,Integer,Integer}
+:ArgumentTypes: {Real128,Real128,Real128,Real128,Real128,Real128,Integer,Integer}
 :ReturnType: Manual
 :End:
 
@@ -95,7 +141,7 @@
 :Function: XZ
 :Pattern: XZ[mb_?NumericQ,mW_?NumericQ,mZ_?NumericQ,mH_?NumericQ,mt_?NumericQ,mu_?NumericQ,nL_Integer:2,nH_Integer:1]
 :Arguments: {N[mb],N[mW],N[mZ],N[mH],N[mt],N[mu],nL,nH}
-:ArgumentTypes: {Real64,Real64,Real64,Real64,Real64,Real64,Integer,Integer}
+:ArgumentTypes: {Real128,Real128,Real128,Real128,Real128,Real128,Integer,Integer}
 :ReturnType: Manual
 :End:
 
@@ -103,7 +149,7 @@
 :Function: XH
 :Pattern: XH[mb_?NumericQ,mW_?NumericQ,mZ_?NumericQ,mH_?NumericQ,mt_?NumericQ,mu_?NumericQ,nL_Integer:2,nH_Integer:1]
 :Arguments: {N[mb],N[mW],N[mZ],N[mH],N[mt],N[mu],nL,nH}
-:ArgumentTypes: {Real64,Real64,Real64,Real64,Real64,Real64,Integer,Integer}
+:ArgumentTypes: {Real128,Real128,Real128,Real128,Real128,Real128,Integer,Integer}
 :ReturnType: Manual
 :End:
 
@@ -111,7 +157,7 @@
 :Function: Xt
 :Pattern: Xt[mb_?NumericQ,mW_?NumericQ,mZ_?NumericQ,mH_?NumericQ,mt_?NumericQ,mu_?NumericQ,nL_Integer:2,nH_Integer:1]
 :Arguments: {N[mb],N[mW],N[mZ],N[mH],N[mt],N[mu],nL,nH}
-:ArgumentTypes: {Real64,Real64,Real64,Real64,Real64,Real64,Integer,Integer}
+:ArgumentTypes: {Real128,Real128,Real128,Real128,Real128,Real128,Integer,Integer}
 :ReturnType: Manual
 :End:
 
@@ -119,7 +165,7 @@
 :Function: Xb
 :Pattern: Xb[mb_?NumericQ,mW_?NumericQ,mZ_?NumericQ,mH_?NumericQ,mt_?NumericQ,mu_?NumericQ,nL_Integer:2,nH_Integer:1]
 :Arguments: {N[mb],N[mW],N[mZ],N[mH],N[mt],N[mu],nL,nH}
-:ArgumentTypes: {Real64,Real64,Real64,Real64,Real64,Real64,Integer,Integer}
+:ArgumentTypes: {Real128,Real128,Real128,Real128,Real128,Real128,Integer,Integer}
 :ReturnType: Manual
 :End:
 
@@ -127,7 +173,7 @@
 :Function: XtQCD
 :Pattern: XtQCD[mb_?NumericQ,mW_?NumericQ,mZ_?NumericQ,mH_?NumericQ,mt_?NumericQ,mu_?NumericQ,nL_Integer:2,nH_Integer:1]
 :Arguments: {N[mb],N[mW],N[mZ],N[mH],N[mt],N[mu],nL,nH}
-:ArgumentTypes: {Real64,Real64,Real64,Real64,Real64,Real64,Integer,Integer}
+:ArgumentTypes: {Real128,Real128,Real128,Real128,Real128,Real128,Integer,Integer}
 :ReturnType: Manual
 :End:
 
@@ -135,7 +181,7 @@
 :Function: XbQCD
 :Pattern: XbQCD[mb_?NumericQ,mW_?NumericQ,mZ_?NumericQ,mH_?NumericQ,mt_?NumericQ,mu_?NumericQ,nL_Integer:2,nH_Integer:1]
 :Arguments: {N[mb],N[mW],N[mZ],N[mH],N[mt],N[mu],nL,nH}
-:ArgumentTypes: {Real64,Real64,Real64,Real64,Real64,Real64,Integer,Integer}
+:ArgumentTypes: {Real128,Real128,Real128,Real128,Real128,Real128,Integer,Integer}
 :ReturnType: Manual
 :End:
 
