@@ -299,6 +299,27 @@ public:
     imb(mb_), imW(mW_), imZ(mZ_), imH(mH_), imt(mt_), iv(v_), scale(scale_)
   {
   }
+  bool operator < (const MSinput& b) const 
+  {
+    if(imb < b.mb()) return true;
+    else if(imb > b.mb()) return false;
+    else
+      
+      if(imW < b.mW()) return true;
+      else if(imW > b.mW()) return false;
+      else
+        
+        if(imZ < b.mZ()) return true;
+        else if(imZ > b.mZ()) return false;
+        else
+        
+          if(imH < b.mH()) return true;
+          else if(imH > b.mH()) return false;
+          else
+            if(imt < b.mt()) return true;
+            else if(imt > b.mt()) return false;
+    return false;
+  }
 
   // Factory
   static MSinput fromMasses(long double mb, long double mW, long double mZ, long double mH, long double mt)

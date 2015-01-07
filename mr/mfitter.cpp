@@ -115,8 +115,9 @@ double MfitterFcn::operator()(const std::vector<double>& par) const {
   long double chi2 = 0.;
   for(unsigned int n = 0; n < theMeasurements.size(); n++) {
     chi2 += ((ob[n] - theMeasurements[n])*(ob[n] - theMeasurements[n])/theMVariances[n]);
-    std::cout << "obs = " << ob[n] << "  and mes = " << theMeasurements[n] << std::endl;
+    std::cout << "obs = " << ob[n] << "  and mes = " << theMeasurements[n] << " and var = " << theMVariances[n] << std::endl;
   }
+    std::cout << "chi2 = " << chi2 << std::endl;
 
   return chi2;
 }
