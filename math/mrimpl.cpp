@@ -7,7 +7,8 @@
 #include "HH.hpp"
 #include "tt.hpp"
 #include "dr.hpp"
-
+#include "betaSM.hpp"
+#include "betaQCD.hpp"
 
 const WW<MS> & get_WWbar(const MSinput& mi, long double mu2)
 {
@@ -111,6 +112,66 @@ const bb & get_bb(const OSinput& oi, long double mu2)
 
 typedef std::vector<std::pair<size_t,size_t> > Vpow;
 
+void MWp(long double gp, long double g, long double gs, long double yt, long double lam, long double mu0, long double mu, int L) 
+{
+  long double mu2 = pow(mu,2);
+  MSinput mi = MSinput::fromConsts(mu2, mu0, lam, 0, yt, g, gp);
+  
+  WW<MS> WWm = get_WWbar(mi, mu2);
+
+  long double aEW  = mi.alpha()/4./Pi;
+  long double aQCD = pow(gs/4./Pi,2);
+
+  MLPutFunction(stdlink,"List",2);
+
+  MLPutFunction(stdlink,"Times",2);
+  MLPutReal128(stdlink,mi.mW());
+  if ((L<3) && (L>=0)) {
+  	MLPutFunction(stdlink,"Sqrt",1);
+  	MLPutFunction(stdlink,"Plus",L+1);
+	MLPutReal128(stdlink,1.0);
+  	if (L>0) {
+		MLPutFunction(stdlink,"Times",2);
+		MLPutSymbol(stdlink,"aew");
+		MLPutReal128(stdlink,aEW*WWm.x10()); //sqrt
+	}
+  	if (L>1) {
+		MLPutFunction(stdlink,"Plus",2);
+		 MLPutFunction(stdlink,"Times",3);
+		  MLPutSymbol(stdlink,"aew");
+		  MLPutSymbol(stdlink,"as");
+		  MLPutReal128(stdlink,aEW*aQCD*WWm.x11());
+		 MLPutFunction(stdlink,"Times",3);
+		  MLPutSymbol(stdlink,"aew");
+		  MLPutSymbol(stdlink,"aew");
+		  MLPutReal128(stdlink,aEW*aEW*WWm.x20());
+	}
+   } else MLPutSymbol(stdlink,"$Failed") ;
+
+  MLPutFunction(stdlink,"Times",2);
+  MLPutReal128(stdlink,mi.mW());
+  if ((L<3) && (L>=0)) {
+  	MLPutFunction(stdlink,"Plus",L+1);
+	MLPutReal128(stdlink,1.0);
+  	if (L>0) {
+		MLPutFunction(stdlink,"Times",2);
+		MLPutSymbol(stdlink,"aew");
+		MLPutReal128(stdlink,0.5*aEW*WWm.x10()); //sqrt
+	}
+  	if (L>1) {
+		MLPutFunction(stdlink,"Plus",2);
+		 MLPutFunction(stdlink,"Times",3);
+		  MLPutSymbol(stdlink,"aew");
+		  MLPutSymbol(stdlink,"as");
+		  MLPutReal128(stdlink,0.5*aEW*aQCD*WWm.x11());
+		 MLPutFunction(stdlink,"Times",3);
+		  MLPutSymbol(stdlink,"aew");
+		  MLPutSymbol(stdlink,"aew");
+		  MLPutReal128(stdlink,aEW*aEW*(0.5*WWm.x20() - 0.125*WWm.x10()*WWm.x10()));
+	}
+   } else MLPutSymbol(stdlink,"$Failed") ;
+  
+}
 
 void MW(long double gp, long double g, long double gs, long double yt, long double lam, long double mu0, long double mu, int L) 
 {
@@ -152,6 +213,104 @@ void MZ(long double gp, long double g, long double gs, long double yt, long doub
   
 }
 
+void MZp(long double gp, long double g, long double gs, long double yt, long double lam, long double mu0, long double mu, int L) 
+{
+  long double mu2 = pow(mu,2);
+  MSinput mi = MSinput::fromConsts(mu2, mu0, lam, 0, yt, g, gp);
+  
+  ZZ<MS> ZZm = get_ZZbar(mi, mu2);
+
+  long double aEW  = mi.alpha()/4./Pi;
+  long double aQCD = pow(gs/4./Pi,2);
+
+  MLPutFunction(stdlink,"List",2);
+
+  MLPutFunction(stdlink,"Times",2);
+  MLPutReal128(stdlink,mi.mZ());
+  if ((L<3) && (L>=0)) {
+  	MLPutFunction(stdlink,"Sqrt",1);
+  	MLPutFunction(stdlink,"Plus",L+1);
+	MLPutReal128(stdlink,1.0);
+  	if (L>0) {
+		MLPutFunction(stdlink,"Times",2);
+		MLPutSymbol(stdlink,"aew");
+		MLPutReal128(stdlink,aEW*ZZm.x10()); //sqrt
+	}
+  	if (L>1) {
+		MLPutFunction(stdlink,"Plus",2);
+		 MLPutFunction(stdlink,"Times",3);
+		  MLPutSymbol(stdlink,"aew");
+		  MLPutSymbol(stdlink,"as");
+		  MLPutReal128(stdlink,aEW*aQCD*ZZm.x11());
+		 MLPutFunction(stdlink,"Times",3);
+		  MLPutSymbol(stdlink,"aew");
+		  MLPutSymbol(stdlink,"aew");
+		  MLPutReal128(stdlink,aEW*aEW*ZZm.x20());
+	}
+   } else MLPutSymbol(stdlink,"$Failed") ;
+
+  MLPutFunction(stdlink,"Times",2);
+  MLPutReal128(stdlink,mi.mZ());
+  if ((L<3) && (L>=0)) {
+  	MLPutFunction(stdlink,"Plus",L+1);
+	MLPutReal128(stdlink,1.0);
+  	if (L>0) {
+		MLPutFunction(stdlink,"Times",2);
+		MLPutSymbol(stdlink,"aew");
+		MLPutReal128(stdlink,0.5*aEW*ZZm.x10()); //sqrt
+	}
+  	if (L>1) {
+		MLPutFunction(stdlink,"Plus",2);
+		 MLPutFunction(stdlink,"Times",3);
+		  MLPutSymbol(stdlink,"aew");
+		  MLPutSymbol(stdlink,"as");
+		  MLPutReal128(stdlink,0.5*aEW*aQCD*ZZm.x11());
+		 MLPutFunction(stdlink,"Times",3);
+		  MLPutSymbol(stdlink,"aew");
+		  MLPutSymbol(stdlink,"aew");
+		  MLPutReal128(stdlink,aEW*aEW*(0.5*ZZm.x20() - 0.125*ZZm.x10()*ZZm.x10()));
+	}
+   } else MLPutSymbol(stdlink,"$Failed") ;
+  
+}
+
+
+void RunQCD(long double oscale, long double asMZ, long double MZscale, int nL, long double mtth)
+{
+	// nL - number of loops
+	// mtth - top threshold
+	AlphaS asrun(MZscale,asMZ,nL,0,mtth); 
+	MLPutReal128(stdlink,asrun(oscale));
+		
+}	
+
+void RunSM(long double gp, long double g, long double gs, long double yt, long double lam, long double mu0, long double iscale, long double oscale) 
+{
+      CouplingsMu runSM(
+                5./3.*pow(gp/4./Pi,2),
+                pow(g/4/Pi,2),
+                pow(gs/4/Pi,2),
+                pow(yt/4/Pi,2),
+                0, // yb?
+                0, // ytau?
+                lam/pow(4.*Pi,2),             // Lambda
+		mu0, /* higgs mass parameters */
+                pow(iscale,2),
+                3 // NG
+                );
+
+      state_type runCoupling = runSM(pow(oscale,2));
+      MLPutFunction(stdlink, "List", 7);
+      MLPutReal128(stdlink, 4.*Pi*sqrt(3/5.*runCoupling[0])); //gp
+      MLPutReal128(stdlink, 4.*Pi*sqrt(runCoupling[1])); //g 
+      MLPutReal128(stdlink, 4.*Pi*sqrt(runCoupling[2])); //gs
+      MLPutReal128(stdlink, 4.*Pi*sqrt(runCoupling[3])); //yt
+      MLPutReal128(stdlink, pow(4.*Pi,2)*runCoupling[6]); //lam
+      MLPutReal128(stdlink, runCoupling[7]); //mu2 ??
+      MLPutReal128(stdlink, oscale); // out scale
+		
+}
+
 void MH(long double gp, long double g, long double gs, long double yt, long double lam, long double mu0, long double mu, int L) 
 {
   long double mu2 = pow(mu,2);
@@ -171,6 +330,120 @@ void MH(long double gp, long double g, long double gs, long double yt, long doub
   MLPutReal128(stdlink, MHpole);
   
 }
+
+void MHp(long double gp, long double g, long double gs, long double yt, long double lam, long double mu0, long double mu, int L) 
+{
+  long double mu2 = pow(mu,2);
+  MSinput mi = MSinput::fromConsts(mu2, mu0, lam, 0, yt, g, gp);
+  
+  HH<MS> HHm = get_HHbar(mi, mu2);
+
+  long double aEW  = mi.alpha()/4./Pi;
+  long double aQCD = pow(gs/4./Pi,2);
+
+  MLPutFunction(stdlink,"List",2);
+
+  MLPutFunction(stdlink,"Times",2);
+  MLPutReal128(stdlink,mi.mH());
+  if ((L<3) && (L>=0)) {
+  	MLPutFunction(stdlink,"Sqrt",1);
+  	MLPutFunction(stdlink,"Plus",L+1);
+	MLPutReal128(stdlink,1.0);
+  	if (L>0) {
+		MLPutFunction(stdlink,"Times",2);
+		MLPutSymbol(stdlink,"aew");
+		MLPutReal128(stdlink,aEW*HHm.x10()); //sqrt
+	}
+  	if (L>1) {
+		MLPutFunction(stdlink,"Plus",2);
+		 MLPutFunction(stdlink,"Times",3);
+		  MLPutSymbol(stdlink,"aew");
+		  MLPutSymbol(stdlink,"as");
+		  MLPutReal128(stdlink,aEW*aQCD*HHm.x11());
+		 MLPutFunction(stdlink,"Times",3);
+		  MLPutSymbol(stdlink,"aew");
+		  MLPutSymbol(stdlink,"aew");
+		  MLPutReal128(stdlink,aEW*aEW*HHm.x20());
+	}
+   } else MLPutSymbol(stdlink,"$Failed") ;
+
+  MLPutFunction(stdlink,"Times",2);
+  MLPutReal128(stdlink,mi.mH());
+  if ((L<3) && (L>=0)) {
+  	MLPutFunction(stdlink,"Plus",L+1);
+	MLPutReal128(stdlink,1.0);
+  	if (L>0) {
+		MLPutFunction(stdlink,"Times",2);
+		MLPutSymbol(stdlink,"aew");
+		MLPutReal128(stdlink,0.5*aEW*HHm.x10()); //sqrt
+	}
+  	if (L>1) {
+		MLPutFunction(stdlink,"Plus",2);
+		 MLPutFunction(stdlink,"Times",3);
+		  MLPutSymbol(stdlink,"aew");
+		  MLPutSymbol(stdlink,"as");
+		  MLPutReal128(stdlink,0.5*aEW*aQCD*HHm.x11());
+		 MLPutFunction(stdlink,"Times",3);
+		  MLPutSymbol(stdlink,"aew");
+		  MLPutSymbol(stdlink,"aew");
+		  MLPutReal128(stdlink,aEW*aEW*(0.5*HHm.x20() - 0.125*HHm.x10()*HHm.x10()));
+	}
+   } else MLPutSymbol(stdlink,"$Failed") ;
+  
+}
+
+void MTp(long double gp, long double g, long double gs, long double yt, long double lam, long double mu0, long double mu, int L) 
+{
+  long double mu2 = pow(mu,2);
+  MSinput mi = MSinput::fromConsts(mu2, mu0, lam, 0, yt, g, gp);
+  
+  tt<MS> ttm = get_ttbar(mi, mu2);
+
+  long double aEW  = mi.alpha()/4./Pi;
+  long double aQCD = pow(gs/4./Pi,2);
+
+  MLPutFunction(stdlink,"Times",2);
+  MLPutReal128(stdlink,mi.mt());
+
+  if ((L<4) && (L>=0)) {
+  	MLPutFunction(stdlink,"Plus",L+1);
+	MLPutReal128(stdlink,1.0);
+  	if (L>0) {
+		MLPutFunction(stdlink,"Plus",2); // as + aew
+		 MLPutFunction(stdlink,"Times",2);
+		  MLPutSymbol(stdlink,"aew");
+		  MLPutReal128(stdlink,aEW*ttm.x10()); 
+		 MLPutFunction(stdlink,"Times",2);
+		  MLPutSymbol(stdlink,"as");
+		  MLPutReal128(stdlink,aQCD*ttm.x01()); 
+	}
+  	if (L>1) {
+		MLPutFunction(stdlink,"Plus",3);
+		 MLPutFunction(stdlink,"Times",3);
+		  MLPutSymbol(stdlink,"as");
+		  MLPutSymbol(stdlink,"as");
+		  MLPutReal128(stdlink,aQCD*aQCD*ttm.x02());
+		 MLPutFunction(stdlink,"Times",3);
+		  MLPutSymbol(stdlink,"aew");
+		  MLPutSymbol(stdlink,"as");
+		  MLPutReal128(stdlink,aEW*aQCD*ttm.x11());
+		 MLPutFunction(stdlink,"Times",3);
+		  MLPutSymbol(stdlink,"aew");
+		  MLPutSymbol(stdlink,"aew");
+		  MLPutReal128(stdlink,aEW*aEW*ttm.x20());
+	}
+	if (L>2) {
+		 MLPutFunction(stdlink,"Times",4);
+		  MLPutSymbol(stdlink,"as");
+		  MLPutSymbol(stdlink,"as");
+		  MLPutSymbol(stdlink,"as");
+		  MLPutReal128(stdlink,aQCD*aQCD*aQCD*ttm.x03());
+		
+		}
+   } else MLPutSymbol(stdlink,"$Failed") ;
+
+}
+
 void MT(long double gp, long double g, long double gs, long double yt, long double lam, long double mu0, long double mu, int L) 
 {
   long double mu2 = pow(mu,2);
