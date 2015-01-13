@@ -1,6 +1,0 @@
-liblcg_Minuit_a-MnTiny.o: MnTiny.cpp /usr/include/stdc-predef.h \
- ../Minuit/MnTiny.h
-
-/usr/include/stdc-predef.h:
-
-../Minuit/MnTiny.h:
