@@ -55,7 +55,7 @@ void BetaSMFull::add(std::map<index_t, long double, index_cmp_t>& m, size_t p, s
 }
 
 
-BetaSMFull::BetaSMFull(int pocoa1_, int pocoa2_, int pocoas_, int pocoat_, int pocoab_, int pocoatau_, int pocolam_,int NG_) : NG(NG_), pocoa1(pocoa1_), pocoa2(pocoa2_), pocoa3(pocoas_), pocoa4(pocoat_), pocoa5(pocoab_), pocoa6(pocoatau_), pocoa7(pocolam_)
+BetaSMFull::BetaSMFull(int pocoa1_, int pocoa2_, int pocoas_, int pocoat_, int pocoab_, int pocoatau_, int pocolam_,int NG_, bool MultiplyByMinus1_) : NG(NG_), pocoa1(pocoa1_), pocoa2(pocoa2_), pocoa3(pocoas_), pocoa4(pocoat_), pocoa5(pocoab_), pocoa6(pocoatau_), pocoa7(pocolam_), MultiplyByMinus1(MultiplyByMinus1_)
 {
   // * a1
   add(be1, pocoa1, 2, 0, 0, 0, 0, 0, 0, 1/10. + (4/3.) * (NG));
@@ -668,7 +668,8 @@ void BetaSMFull::operator() (const state_type &a, state_type &dadt, const double
   long double atau = pocoa6   < 0  ? 0 : a[5];
   long double lam  = pocoa7   < 0  ? 0 : a[6];
 
-
+  
+  
   for (std::map<index_t, long double, index_cmp_t>::iterator it = be1.begin(); it != be1.end(); ++it)
     {
       index_t ia(it->first);
@@ -725,7 +726,11 @@ void BetaSMFull::operator() (const state_type &a, state_type &dadt, const double
                                 *pow(lam,ia[6]);
     }
 
-
+  // If we need (-beta) for backward evolution
+  double minusC = MultiplyByMinus1 ? -1. : 1.;
+  for (int i = 0; i < 7; i++)
+    dadt[i] *= minusC;
+  
 }
 
 
@@ -1019,7 +1024,7 @@ long double BetaMu2::bmu2(const state_type & a, size_t NG)
   return mu2;
 }
 
-BetaMu2::BetaMu2(size_t NG_) : ng(NG_)
+BetaMu2::BetaMu2(size_t NG_, bool MultiplyByMinus1_) : ng(NG_), MultiplyByMinus1(MultiplyByMinus1_)
 {
   bSM = new BetaSMFull(3,3,3,3,3,3,3,NG_);
 }
@@ -1032,11 +1037,12 @@ void BetaMu2::operator() (const state_type &a, state_type &dadt, const double t)
   bSM->operator()(a, dadt, t);
   
   // add VEV anomalous dimension
-  dadt[7] = bmu2(a, ng);
+  double minusC = MultiplyByMinus1 ? -1. : 1.;
+  dadt[7] = minusC*bmu2(a, ng);
 }
 
 
-BetaVEV::BetaVEV(size_t NG_) : ng(NG_)
+BetaVEV::BetaVEV(size_t NG_, bool MultiplyByMinus1_) : ng(NG_), MultiplyByMinus1(MultiplyByMinus1_)
 {
   bSM = new BetaSMFull(3,3,3,3,3,3,3,NG_);
 }
@@ -1049,12 +1055,13 @@ void BetaVEV::operator() (const state_type &a, state_type &dadt, const double t)
   bSM->operator()(a, dadt, t);
 
   // add VEV anomalous dimension
-  dadt[7] = gamv(a, ng);
+  double minusC = MultiplyByMinus1 ? -1. : 1.;
+  dadt[7] = minusC*gamv(a, ng);
 }
 
 
 
-BetaVM::BetaVM(size_t NG_) : ng(NG_)
+BetaVM::BetaVM(size_t NG_, bool MultiplyByMinus1_) : ng(NG_), MultiplyByMinus1(MultiplyByMinus1_)
 {
   bSM = new BetaSMFull(3,3,3,3,3,3,3,NG_);
 }
@@ -1067,14 +1074,16 @@ void BetaVM::operator() (const state_type &a, state_type &dadt, const double t)
     throw std::logic_error("ERROR: for v.e.v. and mu^2 running 9 constants in input needed: a1,a2,as,at,ab,atau,alam,v,mu2");
   
   bSM->operator()(a, dadt, t);
+
+  double minusC = MultiplyByMinus1 ? -1. : 1.;
   
   // add VEV anomalous dimension
-  dadt[7] = a[7]*BetaVEV::gamv(a, ng);
+  dadt[7] = minusC*a[7]*BetaVEV::gamv(a, ng);
   // std::cout << "dv = " << BetaVEV::gamv(a, ng) << std::endl;
   // std::cout << "8 ==" << dadt.size() << std::endl;
   
   // add mu^2 anomalous dimension for <m>
-  dadt[8] = a[8]/2.*BetaMu2::bmu2(a, ng);
+  dadt[8] = minusC*a[8]/2.*BetaMu2::bmu2(a, ng);
 }
 
 // Couplings implementation

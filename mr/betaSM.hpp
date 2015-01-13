@@ -60,6 +60,8 @@ class BetaSMFull
 
   static const size_t maxPoco = maxBetaOrder + 2;
 
+  bool MultiplyByMinus1;
+  
   std::map<index_t, long double, index_cmp_t> be1;
   std::map<index_t, long double, index_cmp_t> be2;
   std::map<index_t, long double, index_cmp_t> be3;
@@ -75,11 +77,16 @@ class BetaSMFull
   void add(std::map<index_t, long double, index_cmp_t>&, size_t, size_t, size_t, size_t, size_t, size_t, size_t, size_t, long double);
 
 public:
-
-  // BetaSMFull(int pocoa1_, int pocoa2_, int pocoas_, int pocoat_, int pocoab_, int pocoatau_, int pocolam_);
-  BetaSMFull(int, int, int, int, int, int, int, int);
+  
+  BetaSMFull(int pocoa1_, int pocoa2_, int pocoas_, int pocoat_, int pocoab_, int pocoatau_, int pocolam_,int NG_
+             // int, int, int, int, int, int, int, int
+             , bool MultiplyByMinus1_ = false);
 
   void operator() (const state_type &, state_type &, const double);
+  void multiplyByMinus1()
+  {
+    MultiplyByMinus1 = true;
+  }
   long double betaQCD(long double);
 };
 
@@ -90,12 +97,19 @@ class BetaVEV
   BetaSMFull* bSM;
 
   size_t ng;
+  bool MultiplyByMinus1;
   
 public:
-  BetaVEV(size_t);
+  BetaVEV(size_t NG_, bool MultiplyByMinus1_ = false);
 
   static long double gamv(const state_type &, size_t);
   void operator() (const state_type &, state_type &, const double);
+
+  void multiplyByMinus1()
+  {
+    MultiplyByMinus1 = true;
+  }
+
 };
 
 
@@ -106,12 +120,19 @@ class BetaMu2
   BetaSMFull* bSM;
 
   size_t ng;
+  bool MultiplyByMinus1;
   
 public:
-  BetaMu2(size_t);
+  BetaMu2(size_t NG_, bool MultiplyByMinus1_ = false);
 
   static long double bmu2(const state_type &, size_t);
   void operator() (const state_type &, state_type &, const double);
+
+  void multiplyByMinus1()
+  {
+    MultiplyByMinus1 = true;
+  }
+
 };
 
 
@@ -123,11 +144,18 @@ class BetaVM
   size_t ng;
   
   size_t maxPower;
-
+  bool MultiplyByMinus1;
+  
 public:
-  BetaVM(size_t);
+  BetaVM(size_t NG_, bool MultiplyByMinus1_ = false);
 
   void operator() (const state_type &, state_type &, const double);
+
+  void multiplyByMinus1()
+  {
+    MultiplyByMinus1 = true;
+  }
+
 };
 
 
@@ -184,14 +212,16 @@ public:
     //                 pocoatau, pocolam, NG);
     
     double lEnd = log(mu2/mu0);
+
+    if (lEnd < 0) bep->multiplyByMinus1();
     // Integration parameters
     // 
     // For the Runge-Kutta controller the error made during one step
     // is compared with 
-  //    eps_abs + eps_rel * ( ax * |x| + adxdt * dt * |dxdt| ). 
-  // If the error is smaller than this value the current
-  // step is accepted, otherwise it is rejected and the step size is decreased.
-  double abs_err = 1.0e-12 , rel_err = 1.0e-10 , a_x = 1.0 , a_dxdt = 1.0;
+    //    eps_abs + eps_rel * ( ax * |x| + adxdt * dt * |dxdt| ). 
+    // If the error is smaller than this value the current
+    // step is accepted, otherwise it is rejected and the step size is decreased.
+    double abs_err = 1.0e-12 , rel_err = 1.0e-10 , a_x = 1.0 , a_dxdt = 1.0;
     state_type aSM(aSM0);    
     // controlled_stepper_standard< stepper_rk5_ck< state_type > >
     //   controlled_rk5( abs_err , rel_err , a_x , a_dxdt );
@@ -214,7 +244,7 @@ public:
                         aSM,             // Initial values
                         0.0,             // t0 = Log[mu0/mu0]
                         lEnd,            // t  = Log[mu/mu0]
-                        0.0001             // Initial step size
+                        0.0001           // Initial step size
                         );
     
     
@@ -274,6 +304,9 @@ state_type operator()(const long double& mu2End)
     //                 pocoatau, pocolam, NG);
 
     double lEnd = log(mu2End/mu0);
+
+    if (lEnd < 0) bep->multiplyByMinus1();
+    
     // Integration parameters
     // 
     // For the Runge-Kutta controller the error made during one step
@@ -361,6 +394,9 @@ public:
     //                 pocoatau, pocolam, NG);
 
     double lEnd = log(mu2End/mu0);
+
+    if (lEnd < 0) bep->multiplyByMinus1();
+    
     // Integration parameters
     // 
     // For the Runge-Kutta controller the error made during one step
