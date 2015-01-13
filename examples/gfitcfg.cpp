@@ -102,12 +102,20 @@ int main (int argc, char *argv[])
 
       // return 0;
       
+      /*
       long double gpIN  = 0.35761;
       long double gIN   = 0.64822;
       long double gsIN  = 1.1666;
       long double ytIN  = 0.93558;
       long double lamIN = 0.12711;
       long double mu0IN = 132.03;
+      */
+      long double gpIN  = 0.359538;
+      long double gIN   = 0.64926;
+      long double gsIN  = 1.16528;
+      long double ytIN  = 0.965045;
+      long double lamIN = 0.128159;
+      long double mu0IN = 132.563;
                   
       MnUserParameters upar;
       upar.add("gp",  gpIN, 0.1);
@@ -120,13 +128,14 @@ int main (int argc, char *argv[])
       
       
       // access parameter by name to set limits...
-      upar.setLimits("gp", gpIN-0.2, gpIN+0.2);
-      upar.setLimits("g", gIN-0.2, gIN+0.2);
-      upar.setLimits("gs", gsIN-0.3, gsIN+0.3);
-      upar.setLimits("yt", ytIN-0.2, ytIN+0.2);
-      upar.setLimits("lam", lamIN-0.5, lamIN+0.5);
-      upar.setLimits("mu0", mu0IN-20, mu0IN+20);
-
+      /*
+      upar.setLimits("gp", gpIN-0.3, gpIN+0.3);
+      upar.setLimits("g", gIN-0.5, gIN+0.5);
+      upar.setLimits("gs", gsIN-0.8, gsIN+0.8);
+      upar.setLimits("yt", ytIN-0.8, ytIN+0.8);
+      upar.setLimits("lam", lamIN-0.10, lamIN+0.10);
+      upar.setLimits("mu0", mu0IN-40, mu0IN+40);
+	*/
       MnMigrad migrad(theFCN, upar);
       
       // // fix a parameter...
@@ -137,35 +146,36 @@ int main (int argc, char *argv[])
       // migrad.fix("mu0");      
 
       // // ... and minimize
-      FunctionMinimum min = migrad();
+      FunctionMinimum min = migrad(0.000001);
       
       // output
       std::cout<<"\n\n\n minimum: "<<min<<std::endl;
 
 
-      // create MINOS error factory
-      // MnMinos minos(theFCN, min);
+       //create MINOS error factory
+       /*
+       MnMinos minos(theFCN, min);
       
-      // {
-      //   // 1-sigma MINOS errors (minimal interface)
-      //   std::pair<double,double> e0 = minos(0);
-      //   std::pair<double,double> e1 = minos(1);
-      //   std::pair<double,double> e2 = minos(2);
-      //   std::pair<double,double> e3 = minos(3);
-      //   std::pair<double,double> e4 = minos(4);
-      //   std::pair<double,double> e5 = minos(5);
+       {
+         // 1-sigma MINOS errors (minimal interface)
+         std::pair<double,double> e0 = minos(0);
+         std::pair<double,double> e1 = minos(1);
+         std::pair<double,double> e2 = minos(2);
+         std::pair<double,double> e3 = minos(3);
+         std::pair<double,double> e4 = minos(4);
+         std::pair<double,double> e5 = minos(5);
 
-      //   // output
-      //   std::cout<<"1-sigma minos errors: "<<std::endl;
-      //   std::cout<<"par0: "<<min.userState().value("gp")<<" "<<e0.first<<" "<<e0.second<<std::endl;
-      //   std::cout<<"par1: "<<min.userState().value("g")<<" "<<e1.first<<" "<<e1.second<<std::endl;
-      //   std::cout<<"par2: "<<min.userState().value("gs")<<" "<<e2.first<<" "<<e2.second<<std::endl;
-      //   std::cout<<"par3: "<<min.userState().value("yt")<<" "<<e3.first<<" "<<e3.second<<std::endl;
-      //   std::cout<<"par4: "<<min.userState().value("lam")<<" "<<e4.first<<" "<<e4.second<<std::endl;
-      //   std::cout<<"par5: "<<min.userState().value("mu0")<<" "<<e5.first<<" "<<e5.second<<std::endl;
+         // output
+         std::cout<<"1-sigma minos errors: "<<std::endl;
+         std::cout<<"par0: "<<min.userState().value("gp")<<" "<<e0.first<<" "<<e0.second<<std::endl;
+         std::cout<<"par1: "<<min.userState().value("g")<<" "<<e1.first<<" "<<e1.second<<std::endl;
+         std::cout<<"par2: "<<min.userState().value("gs")<<" "<<e2.first<<" "<<e2.second<<std::endl;
+         std::cout<<"par3: "<<min.userState().value("yt")<<" "<<e3.first<<" "<<e3.second<<std::endl;
+         std::cout<<"par4: "<<min.userState().value("lam")<<" "<<e4.first<<" "<<e4.second<<std::endl;
+         std::cout<<"par5: "<<min.userState().value("mu0")<<" "<<e5.first<<" "<<e5.second<<std::endl;
         
-      // }
-
+       }
+	*/
       
       // // starting values for initial uncertainties
       // std::vector<double> init_err; 
