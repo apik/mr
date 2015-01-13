@@ -243,7 +243,7 @@ public:
                         *bep,            // Derivatives
                         aSM,             // Initial values
                         0.0,             // t0 = Log[mu0/mu0]
-                        lEnd,            // t  = Log[mu/mu0]
+                        fabs(lEnd),            // t  = Log[mu/mu0]
                         0.0001           // Initial step size
                         );
     
@@ -336,7 +336,7 @@ state_type operator()(const long double& mu2End)
                         *bep,            // Derivatives
                         aSM,             // Initial values
                         0.0,             // t0 = Log[mu0/mu0]
-                        lEnd,            // t  = Log[mu/mu0]
+                        fabs(lEnd),            // t  = Log[mu/mu0]
                         0.0001             // Initial step size
                         );
 
@@ -425,7 +425,7 @@ public:
                         *bep,            // Derivatives
                         aSM,             // Initial values
                         0.0,             // t0 = Log[mu0/mu0]
-                        lEnd,            // t  = Log[mu/mu0]
+                        fabs(lEnd),            // t  = Log[mu/mu0]
                         0.0001             // Initial step size
                         );
 
