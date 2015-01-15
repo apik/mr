@@ -108,6 +108,7 @@ public:
   void multiplyByMinus1()
   {
     MultiplyByMinus1 = true;
+    bSM->multiplyByMinus1();
   }
 
 };
@@ -131,6 +132,7 @@ public:
   void multiplyByMinus1()
   {
     MultiplyByMinus1 = true;
+    bSM->multiplyByMinus1();
   }
 
 };
@@ -154,6 +156,7 @@ public:
   void multiplyByMinus1()
   {
     MultiplyByMinus1 = true;
+    bSM->multiplyByMinus1();
   }
 
 };
