@@ -279,7 +279,12 @@ void RunQCD(long double oscale, long double asMZ, long double MZscale, int nL, l
 {
 	// nL - number of loops
 	// mtth - top threshold
-	AlphaS asrun(MZscale,asMZ,nL,0,mtth); 
+	long double iscale = MZscale;
+	long double ialphas = asMZ;
+	AlphaS tmp(iscale,ialphas,nL,5,mtth); // 5 flavor
+	iscale = mtth;
+	ialphas = tmp(mtth);
+	AlphaS asrun(iscale,ialphas,nL,6,mtth); // 6 flavor
 	MLPutReal128(stdlink,asrun(oscale));
 		
 }	
