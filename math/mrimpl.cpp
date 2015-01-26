@@ -293,13 +293,14 @@ void RunSM(long double gp, long double g, long double gs, long double yt, long d
 {
       CouplingsMu runSM(
                 5./3.*pow(gp/4./Pi,2),
-                pow(g/4/Pi,2),
-                pow(gs/4/Pi,2),
-                pow(yt/4/Pi,2),
+                pow(g/4./Pi,2),
+                pow(gs/4./Pi,2),
+                pow(yt/4./Pi,2),
                 0, // yb?
                 0, // ytau?
                 lam/pow(4.*Pi,2),             // Lambda
-		mu0, /* higgs mass parameters */
+		pow(mu0,2), /* higgs mass parameter squared */
+		//mu0, /* higgs mass parameter squared */
                 pow(iscale,2),
                 3 // NG
                 );
@@ -311,7 +312,8 @@ void RunSM(long double gp, long double g, long double gs, long double yt, long d
       MLPutReal128(stdlink, 4.*Pi*sqrt(runCoupling[2])); //gs
       MLPutReal128(stdlink, 4.*Pi*sqrt(runCoupling[3])); //yt
       MLPutReal128(stdlink, pow(4.*Pi,2)*runCoupling[6]); //lam
-      MLPutReal128(stdlink, runCoupling[7]); //mu2 ??
+      MLPutReal128(stdlink, sqrt(runCoupling[7])); //mu2 ??
+      //MLPutReal128(stdlink, runCoupling[7]); //mu2 ??
       MLPutReal128(stdlink, oscale); // out scale
 		
 }

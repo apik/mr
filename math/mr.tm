@@ -56,6 +56,7 @@
 :Evaluate:  aQCD::usage  = "\[Alpha]_S/(4\[Pi]), running QCD constant"
 
 :Evaluate:  Gf::usage  = "G_F Fermi constant"
+:Evaluate:  h::usage  = "h - loop counter"
 
 :Evaluate:  xW::usage  = ""
 :Evaluate:  xZ::usage  = ""
