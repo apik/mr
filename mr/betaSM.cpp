@@ -1038,8 +1038,7 @@ void BetaMu2::operator() (const state_type &a, state_type &dadt, const double t)
   
   // add mu (higgs potential parameter mu^2)  anomalous dimension
   double minusC = MultiplyByMinus1 ? -1. : 1.;
-  //dadt[7] = minusC*a[7]/2.*bmu2(a, ng);
-  dadt[7] = minusC*a[7]*bmu2(a, ng);
+  dadt[7] = minusC*a[7]/2.*bmu2(a, ng);
 }
 
 
