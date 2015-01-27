@@ -60,6 +60,16 @@ const dr<MS> & get_drbar(const MSinput& mi, long double mu2)
     return directory.insert(std::make_pair(std::make_pair(mi,mu2), dr<MS>(mi,mu2))).first->second;
 }
 
+const dr<OS> & get_dr(const OSinput& oi, long double mu2)
+{
+  static std::map< std::pair<OSinput, long double>, dr<OS> > directory;
+  std::map< std::pair<OSinput, long double>, dr<OS> >::iterator i = directory.find(std::make_pair(oi,mu2));
+  if (i != directory.end())
+    return i->second;
+  else
+    return directory.insert(std::make_pair(std::make_pair(oi,mu2), dr<OS>(oi,mu2))).first->second;
+}
+
 const WW<OS> & get_WW(const OSinput& oi, long double mu2)
 {
   static std::map< std::pair<OSinput, long double>, WW<OS> > directory;
@@ -593,6 +603,34 @@ void Xt(long double mb, long double mW, long double mZ, long double mH, long dou
         MLPutInteger(stdlink, aspow);
         MLPutReal128(stdlink, ttm.y(apow, aspow, nL, nH));
       }
+}
+
+void dROS(long double mb, long double mW, long double mZ, long double mH, long double mt, long double mu, int nL,int nH) 
+{
+  OSinput oi(mb, mW, mZ, mH, mt);
+  
+  dr<OS> dros = get_dr(oi, pow(mu,2));
+
+  MLPutFunction(stdlink, "List", 3);
+
+        // dR
+        MLPutFunction(stdlink, "Rule", 2);
+        MLPutFunction(stdlink, "dr", 2);
+        MLPutInteger(stdlink, 1);
+        MLPutInteger(stdlink, 0);
+        MLPutReal128(stdlink, dros.dr10());
+
+        MLPutFunction(stdlink, "Rule", 2);
+        MLPutFunction(stdlink, "dr", 2);
+        MLPutInteger(stdlink, 1);
+        MLPutInteger(stdlink, 1);
+        MLPutReal128(stdlink, dros.dr11());
+
+        MLPutFunction(stdlink, "Rule", 2);
+        MLPutFunction(stdlink, "dr", 2);
+        MLPutInteger(stdlink, 2);
+        MLPutInteger(stdlink, 0);
+        MLPutReal128(stdlink, dros.dr20());
 }
 
 void Xb(long double mb, long double mW, long double mZ, long double mH, long double mt, long double mu, int nL,int nH) 

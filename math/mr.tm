@@ -27,6 +27,8 @@
 
 :Evaluate:  Xt::usage  = "Xt[Mb,MW,MZ,MH,Mt,mu,nL=2,nH=1]  Input is in terms of pole masses and matching scale, nL and nH are number of light and heavy quark genrations "
 
+:Evaluate:  dROS::usage  = "dROS[Mb,MW,MZ,MH,Mt,mu,nL=2,nH=1]  Input is in terms of pole masses and matching scale, nL and nH are number of light and heavy quark genrations "
+
 :Evaluate:  XbQCD::usage  = "XbQCD[Mb,MW,MZ,MH,Mt,mu,nf=5]  Pure QCD corrections, nf is a number of light quarks, default is 5." 
 
 :Evaluate:  XtQCD::usage  = "XtQCD[Mb,MW,MZ,MH,Mt,mu,nf=5]  Pure QCD corrections, nf is a number of light quarks, default is 5." 
@@ -50,6 +52,8 @@
 :Evaluate:  ab::usage  = "ab[Mb,MW,MZ,MH,Mt,mu,nL=2,nH=1]  ab=(yb/(4\[Pi]))^2"
 
 :Evaluate:  alam::usage  = "alam[Mb,MW,MZ,MH,Mt,mu,nL=2,nH=1]  alam=\[Lambda]/(4\[Pi])^2"
+
+:Evaluate:  vev::usage  = "vev[Mb,MW,MZ,MH,Mt,mu,nL=2,nH=1]  vev - running vev at scale mu"
 
 :Evaluate:  aEW::usage  = "\[Alpha]/(4\[Pi]), running EW constant"
 
@@ -212,6 +216,14 @@
 :Begin:
 :Function: Xt
 :Pattern: Xt[mb_?NumericQ,mW_?NumericQ,mZ_?NumericQ,mH_?NumericQ,mt_?NumericQ,mu_?NumericQ,nL_Integer:2,nH_Integer:1]
+:Arguments: {N[mb],N[mW],N[mZ],N[mH],N[mt],N[mu],nL,nH}
+:ArgumentTypes: {Real128,Real128,Real128,Real128,Real128,Real128,Integer,Integer}
+:ReturnType: Manual
+:End:
+
+:Begin:
+:Function: dROS
+:Pattern: dROS[mb_?NumericQ,mW_?NumericQ,mZ_?NumericQ,mH_?NumericQ,mt_?NumericQ,mu_?NumericQ,nL_Integer:2,nH_Integer:1]
 :Arguments: {N[mb],N[mW],N[mZ],N[mH],N[mt],N[mu],nL,nH}
 :ArgumentTypes: {Real128,Real128,Real128,Real128,Real128,Real128,Integer,Integer}
 :ReturnType: Manual
