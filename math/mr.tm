@@ -61,15 +61,15 @@
 // Mathematica part
 
 // Masses
-:Evaluate:  mmWMMW[mb_?NumericQ,mW_?NumericQ,mZ_?NumericQ,mH_?NumericQ,mt_?NumericQ,mu_?NumericQ,nL_Integer:2,nH_Integer:1] := (1+aEW[mu]*xW[1,0]+aEW[mu]*aQCD[mu]*xW[1,1]+aEW[mu]^2*xW[2,0])/.XW[mb,mW,mZ,mH,mt,mu,nH,nL];
+:Evaluate:  mmWMMW[mb_?NumericQ,mW_?NumericQ,mZ_?NumericQ,mH_?NumericQ,mt_?NumericQ,mu_?NumericQ,nL_Integer:2,nH_Integer:1] := (1+aEW[mu]*xW[1,0]+aEW[mu]*aQCD[mu]*xW[1,1]+aEW[mu]^2*xW[2,0])/.XW[mb,mW,mZ,mH,mt,mu,nL,nH];
 
-:Evaluate:  mmZMMZ[mb_?NumericQ,mW_?NumericQ,mZ_?NumericQ,mH_?NumericQ,mt_?NumericQ,mu_?NumericQ,nL_Integer:2,nH_Integer:1] := (1+aEW[mu]*xZ[1,0]+aEW[mu]*aQCD[mu]*xZ[1,1]+aEW[mu]^2*xZ[2,0])/.XZ[mb,mW,mZ,mH,mt,mu,nH,nL];
+:Evaluate:  mmZMMZ[mb_?NumericQ,mW_?NumericQ,mZ_?NumericQ,mH_?NumericQ,mt_?NumericQ,mu_?NumericQ,nL_Integer:2,nH_Integer:1] := (1+aEW[mu]*xZ[1,0]+aEW[mu]*aQCD[mu]*xZ[1,1]+aEW[mu]^2*xZ[2,0])/.XZ[mb,mW,mZ,mH,mt,mu,nL,nH];
 
-:Evaluate:  mmHMMH[mb_?NumericQ,mW_?NumericQ,mZ_?NumericQ,mH_?NumericQ,mt_?NumericQ,mu_?NumericQ,nL_Integer:2,nH_Integer:1] := (1+aEW[mu]*xH[1,0]+aEW[mu]*aQCD[mu]*xH[1,1]+aEW[mu]^2*xH[2,0])/.XH[mb,mW,mZ,mH,mt,mu,nH,nL];
+:Evaluate:  mmHMMH[mb_?NumericQ,mW_?NumericQ,mZ_?NumericQ,mH_?NumericQ,mt_?NumericQ,mu_?NumericQ,nL_Integer:2,nH_Integer:1] := (1+aEW[mu]*xH[1,0]+aEW[mu]*aQCD[mu]*xH[1,1]+aEW[mu]^2*xH[2,0])/.XH[mb,mW,mZ,mH,mt,mu,nL,nH];
                                                                                                                              
-:Evaluate:  mtMt[mb_?NumericQ,mW_?NumericQ,mZ_?NumericQ,mH_?NumericQ,mt_?NumericQ,mu_?NumericQ,nL_Integer:2,nH_Integer:1] := (1+aEW[mu]*xt[1,0]+aEW[mu]*aQCD[mu]*xt[1,1]+aEW[mu]^2*xt[2,0])/.Xt[mb,mW,mZ,mH,mt,mu,nH,nL];
+:Evaluate:  mtMt[mb_?NumericQ,mW_?NumericQ,mZ_?NumericQ,mH_?NumericQ,mt_?NumericQ,mu_?NumericQ,nL_Integer:2,nH_Integer:1] := (1+aEW[mu]*xt[1,0]+aEW[mu]*aQCD[mu]*xt[1,1]+aEW[mu]^2*xt[2,0])/.Xt[mb,mW,mZ,mH,mt,mu,nL,nH];
 
-:Evaluate:  mbMb[mb_?NumericQ,mW_?NumericQ,mZ_?NumericQ,mH_?NumericQ,mt_?NumericQ,mu_?NumericQ,nL_Integer:2,nH_Integer:1] := (1+aEW[mu]*xb[1,0]+aEW[mu]*aQCD[mu]*xb[1,1]+aEW[mu]^2*xb[2,0])/.Xb[mb,mW,mZ,mH,mt,mu,nH,nL];
+:Evaluate:  mbMb[mb_?NumericQ,mW_?NumericQ,mZ_?NumericQ,mH_?NumericQ,mt_?NumericQ,mu_?NumericQ,nL_Integer:2,nH_Integer:1] := (1+aEW[mu]*xb[1,0]+aEW[mu]*aQCD[mu]*xb[1,1]+aEW[mu]^2*xb[2,0])/.Xb[mb,mW,mZ,mH,mt,mu,nL,nH];
 
 // Couplings
 :Evaluate:  a1[mb_?NumericQ,mW_?NumericQ,mZ_?NumericQ,mH_?NumericQ,mt_?NumericQ,mu_?NumericQ,nL_Integer:2,nH_Integer:1] := 5/3*2^(5/2)*Gf/(4*Pi)^2*((mZ^2*(1+aEW[mu]*yZ[1,0]+aEW[mu]*aQCD[mu]*yZ[1,1]+aEW[mu]^2*yZ[2,0])/.XZ[mb,mW,mZ,mH,mt,mu,nL,nH]) - (mW^2*(1+aEW[mu]*yW[1,0]+aEW[mu]*aQCD[mu]*yW[1,1]+aEW[mu]^2*yW[2,0])/.XW[mb,mW,mZ,mH,mt,mu,nL,nH]));
