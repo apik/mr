@@ -74,6 +74,8 @@
 :Evaluate:  yt::usage  = ""
 :Evaluate:  yb::usage  = ""
 
+:Evaluate:  dr::usage  = ""
+
 :Evaluate:  Begin["`Private`"]
 
 // Mathematica part
@@ -90,6 +92,7 @@
 :Evaluate:  mbMb[mb_?NumericQ,mW_?NumericQ,mZ_?NumericQ,mH_?NumericQ,mt_?NumericQ,mu_?NumericQ,nL_Integer:2,nH_Integer:1] := (1+aEW[mu]*xb[1,0]+aEW[mu]*aQCD[mu]*xb[1,1]+aEW[mu]^2*xb[2,0])/.Xb[mb,mW,mZ,mH,mt,mu,nL,nH];
 
 // Couplings
+
 :Evaluate:  a1[mb_?NumericQ,mW_?NumericQ,mZ_?NumericQ,mH_?NumericQ,mt_?NumericQ,mu_?NumericQ,nL_Integer:2,nH_Integer:1] := 5/3*2^(5/2)*Gf/(4*Pi)^2*((mZ^2*(1+aEW[mu]*yZ[1,0]+aEW[mu]*aQCD[mu]*yZ[1,1]+aEW[mu]^2*yZ[2,0])/.XZ[mb,mW,mZ,mH,mt,mu,nL,nH]) - (mW^2*(1+aEW[mu]*yW[1,0]+aEW[mu]*aQCD[mu]*yW[1,1]+aEW[mu]^2*yW[2,0])/.XW[mb,mW,mZ,mH,mt,mu,nL,nH]));
 
 :Evaluate:  a2[mb_?NumericQ,mW_?NumericQ,mZ_?NumericQ,mH_?NumericQ,mt_?NumericQ,mu_?NumericQ,nL_Integer:2,nH_Integer:1] := 2^(5/2)*Gf/(4*Pi)^2*mW^2*(1+aEW[mu]*yW[1,0]+aEW[mu]*aQCD[mu]*yW[1,1]+aEW[mu]^2*yW[2,0])/.XW[mb,mW,mZ,mH,mt,mu,nL,nH];
@@ -99,6 +102,8 @@
 :Evaluate:  ab[mb_?NumericQ,mW_?NumericQ,mZ_?NumericQ,mH_?NumericQ,mt_?NumericQ,mu_?NumericQ,nL_Integer:2,nH_Integer:1] := 2^(3/4)*Sqrt[Gf]/(4*Pi)^2*mb*(1+aQCD[mu]*xb[0,1]+aEW[mu]*yb[1,0]+aEW[mu]*aQCD[mu]*yb[1,1]+aEW[mu]^2*yb[2,0] + aQCD[mu]^2*xb[0,2] + aQCD[mu]^3*xb[0,3])/.Xb[mb,mW,mZ,mH,mt,mu,nL,nH] /. XbQCD[mb,mW,mZ,mH,mt,mu,nL,nH];
 
 :Evaluate:  alam[mb_?NumericQ,mW_?NumericQ,mZ_?NumericQ,mH_?NumericQ,mt_?NumericQ,mu_?NumericQ,nL_Integer:2,nH_Integer:1] := 2^(-1/2)*Gf/(4*Pi)^2*mH^2*(1+aEW[mu]*yH[1,0]+aEW[mu]*aQCD[mu]*yH[1,1]+aEW[mu]^2*yH[2,0])/.XH[mb,mW,mZ,mH,mt,mu,nL,nH];
+
+:Evaluate:  vev[mb_?NumericQ,mW_?NumericQ,mZ_?NumericQ,mH_?NumericQ,mt_?NumericQ,mu_?NumericQ,nL_Integer:2,nH_Integer:1] := 2^(-1/4)/Sqrt[Gf]*Sqrt[(1+aEW[mu]*dr[1,0]+aEW[mu]*aQCD[mu]*dr[1,1]+aEW[mu]^2*dr[2,0])] /.dROS[mb,mW,mZ,mH,mt,mu,nL,nH];
 
 // C++ part
 :Begin:
