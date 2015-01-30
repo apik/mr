@@ -7,6 +7,7 @@
 #include "HH.hpp"
 #include "tt.hpp"
 #include "dr.hpp"
+#include "alphaGF.hpp"
 #include "betaSM.hpp"
 #include "betaQCD.hpp"
 
@@ -118,6 +119,16 @@ const bb & get_bb(const OSinput& oi, long double mu2)
     return i->second;
   else
     return directory.insert(std::make_pair(std::make_pair(oi,mu2), bb(oi,mu2))).first->second;
+}
+
+const alphaGF & get_aGF(const OSinput& oi, long double mu2)
+{
+  static std::map< std::pair<OSinput, long double>, alphaGF > directory;
+  std::map< std::pair<OSinput, long double>, alphaGF >::iterator i = directory.find(std::make_pair(oi,mu2));
+  if (i != directory.end())
+    return i->second;
+  else
+    return directory.insert(std::make_pair(std::make_pair(oi,mu2), alphaGF(oi,mu2))).first->second;
 }
 
 typedef std::vector<std::pair<size_t,size_t> > Vpow;
@@ -631,6 +642,35 @@ void dROS(long double mb, long double mW, long double mZ, long double mH, long d
         MLPutInteger(stdlink, 2);
         MLPutInteger(stdlink, 0);
         MLPutReal128(stdlink, dros.dr20());
+}
+
+void dalphaGF(long double mb, long double mW, long double mZ, long double mH, long double mt, long double mu, int nL,int nH) 
+{
+  OSinput oi(mb, mW, mZ, mH, mt);
+  
+  alphaGF agf = get_aGF(oi, pow(mu,2));
+
+  MLPutFunction(stdlink, "List", 3);
+
+        // dalphaGF
+        MLPutFunction(stdlink, "Rule", 2);
+        MLPutFunction(stdlink, "daGF", 2);
+        MLPutInteger(stdlink, 1);
+        MLPutInteger(stdlink, 0);
+        MLPutReal128(stdlink, agf.a10(nL,nH,1));
+
+        MLPutFunction(stdlink, "Rule", 2);
+        MLPutFunction(stdlink, "daGF", 2);
+        MLPutInteger(stdlink, 1);
+        MLPutInteger(stdlink, 1);
+        MLPutReal128(stdlink, agf.a11(nL,nH,1));
+
+        MLPutFunction(stdlink, "Rule", 2);
+        MLPutFunction(stdlink, "daGF", 2);
+        MLPutInteger(stdlink, 2);
+        MLPutInteger(stdlink, 0);
+        MLPutReal128(stdlink, agf.a20(nL,nH,1));
+
 }
 
 void Xb(long double mb, long double mW, long double mZ, long double mH, long double mt, long double mu, int nL,int nH) 

@@ -55,6 +55,10 @@
 
 :Evaluate:  vev::usage  = "vev[Mb,MW,MZ,MH,Mt,mu,nL=2,nH=1]  vev - running vev at scale mu"
 
+:Evaluate:  dalphaGF::usage  = "dalphaGF[Mb,MW,MZ,MH,Mt,mu,nL=2,nH=1] - contribution loop contribution to the relation between GF and running alpha"
+
+:Evaluate:  alphaGF::usage  = "alphaGF[Mb,MW,MZ,MH,Mt,mu,nL=2,nH=1] - running alpha in terms GF and running alpha_s" 
+
 :Evaluate:  aEW::usage  = "\[Alpha]/(4\[Pi]), running EW constant"
 
 :Evaluate:  aQCD::usage  = "\[Alpha]_S/(4\[Pi]), running QCD constant"
@@ -75,6 +79,7 @@
 :Evaluate:  yb::usage  = ""
 
 :Evaluate:  dr::usage  = ""
+:Evaluate:  daGF::usage  = ""
 
 :Evaluate:  Begin["`Private`"]
 
@@ -103,7 +108,11 @@
 
 :Evaluate:  alam[mb_?NumericQ,mW_?NumericQ,mZ_?NumericQ,mH_?NumericQ,mt_?NumericQ,mu_?NumericQ,nL_Integer:2,nH_Integer:1] := 2^(-1/2)*Gf/(4*Pi)^2*mH^2*(1+aEW[mu]*yH[1,0]+aEW[mu]*aQCD[mu]*yH[1,1]+aEW[mu]^2*yH[2,0])/.XH[mb,mW,mZ,mH,mt,mu,nL,nH];
 
+:Evaluate:  alphaGF[mb_?NumericQ,mW_?NumericQ,mZ_?NumericQ,mH_?NumericQ,mt_?NumericQ,mu_?NumericQ,nL_Integer:2,nH_Integer:1] := Module[{alGF = 2^(1/2)*Gf*mW^2*(1-mW^2/mZ^2)/Pi},alGF*(1 + h alGF/(4 Pi)*daGF[1,0] + h^2 alGF/(4 Pi)*aQCD[mu]*daGF[1,1]+ h^2 alGF^2/(4 Pi)^2*daGF[2,0])/.dalphaGF[mb,mW,mZ,mH,mt,mu,nL,nH]];
+
+
 :Evaluate:  vev[mb_?NumericQ,mW_?NumericQ,mZ_?NumericQ,mH_?NumericQ,mt_?NumericQ,mu_?NumericQ,nL_Integer:2,nH_Integer:1] := 2^(-1/4)/Sqrt[Gf]*Sqrt[(1+aEW[mu]*dr[1,0]+aEW[mu]*aQCD[mu]*dr[1,1]+aEW[mu]^2*dr[2,0])] /.dROS[mb,mW,mZ,mH,mt,mu,nL,nH];
+
 
 // C++ part
 :Begin:
@@ -229,6 +238,14 @@
 :Begin:
 :Function: dROS
 :Pattern: dROS[mb_?NumericQ,mW_?NumericQ,mZ_?NumericQ,mH_?NumericQ,mt_?NumericQ,mu_?NumericQ,nL_Integer:2,nH_Integer:1]
+:Arguments: {N[mb],N[mW],N[mZ],N[mH],N[mt],N[mu],nL,nH}
+:ArgumentTypes: {Real128,Real128,Real128,Real128,Real128,Real128,Integer,Integer}
+:ReturnType: Manual
+:End:
+
+:Begin:
+:Function: dalphaGF
+:Pattern: dalphaGF[mb_?NumericQ,mW_?NumericQ,mZ_?NumericQ,mH_?NumericQ,mt_?NumericQ,mu_?NumericQ,nL_Integer:2,nH_Integer:1]
 :Arguments: {N[mb],N[mW],N[mZ],N[mH],N[mt],N[mu],nL,nH}
 :ArgumentTypes: {Real128,Real128,Real128,Real128,Real128,Real128,Integer,Integer}
 :ReturnType: Manual
