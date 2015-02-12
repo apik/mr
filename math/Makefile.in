@@ -8,7 +8,7 @@ ALTMATHPATH=@ALTMATHPATH@
 all : mr
 
 mr : mrimpl.cpp mr.cpp 
-	$(CXX)  -I$(MATHROOT) -I../mr -I../tsil-1.21 $^  -L$(MATHROOT)$(ALTMATHPATH) $(LDMATH) -L../mr -lmr -L../tsil-1.21 -ltsil -o $@
+	$(CXX)  -fopenmp -I$(MATHROOT) -I../mr -I../tsil-1.21 $^  -L$(MATHROOT)$(ALTMATHPATH) $(LDMATH) -L../mr -lmr -L../tsil-1.21 -ltsil -o $@
 
 
 # if HAVE_MPREP

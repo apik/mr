@@ -39,14 +39,14 @@ const HH<OS> & get_HH(const OSinput& oi, long double mu2)
     return directory.insert(std::make_pair(std::make_pair(oi,mu2), HH<OS>(oi,mu2))).first->second;
 }
 
-const tt & get_tt(const OSinput& oi, long double mu2)
+const tt<OS> & get_tt(const OSinput& oi, long double mu2)
 {
-  static std::map< std::pair<OSinput, long double>, tt > directory;
-  std::map< std::pair<OSinput, long double>, tt >::iterator i = directory.find(std::make_pair(oi,mu2));
+  static std::map< std::pair<OSinput, long double>, tt<OS> > directory;
+  std::map< std::pair<OSinput, long double>, tt<OS> >::iterator i = directory.find(std::make_pair(oi,mu2));
   if (i != directory.end())
     return i->second;
   else
-    return directory.insert(std::make_pair(std::make_pair(oi,mu2), tt(oi,mu2))).first->second;
+    return directory.insert(std::make_pair(std::make_pair(oi,mu2), tt<OS>(oi,mu2))).first->second;
 }
 
 const bb & get_bb(const OSinput& oi, long double mu2)
@@ -142,7 +142,7 @@ void Xt(double mb, double mW, double mZ, double mH, double mt, double mu, int nL
 {
   OSinput oi(mb, mW, mZ, mH, mt);
   
-  tt ttm = get_tt(oi, pow(mu,2));
+  tt<OS> ttm = get_tt(oi, pow(mu,2));
 
   MLPutFunction(stdlink, "List", 6);
 
@@ -225,7 +225,7 @@ void XtQCD(double mb, double mW, double mZ, double mH, double mt, double mu, int
 {
   OSinput oi(mb, mW, mZ, mH, mt);
   
-  tt ttm = get_tt(oi, pow(mu,2));
+  tt<OS> ttm = get_tt(oi, pow(mu,2));
 
   MLPutFunction(stdlink, "List", 3);
 

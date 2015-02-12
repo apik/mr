@@ -83,7 +83,7 @@ noinst_PROGRAMS = mW$(EXEEXT) mZ$(EXEEXT) mH$(EXEEXT) mt$(EXEEXT) \
 	yukawa$(EXEEXT) lambda$(EXEEXT) yt$(EXEEXT) gauge$(EXEEXT) \
 	plotyukawa$(EXEEXT) mtgl$(EXEEXT) bezrukovFit$(EXEEXT) \
 	GFermi$(EXEEXT) tables$(EXEEXT) poleRGI$(EXEEXT) \
-	gfitcfg$(EXEEXT) gfit$(EXEEXT) $(am__EXEEXT_1) $(am__EXEEXT_2)
+	$(am__EXEEXT_1) $(am__EXEEXT_2)
 @HAVE_ROOT_TRUE@am__append_1 = mHroot interpolation
 @HAVE_BOOST_TRUE@am__append_2 = errest
 subdir = examples
@@ -115,12 +115,6 @@ am__DEPENDENCIES_1 =
 am_gauge_OBJECTS = gauge-gauge.$(OBJEXT)
 gauge_OBJECTS = $(am_gauge_OBJECTS)
 gauge_DEPENDENCIES =
-am_gfit_OBJECTS = gfit-gfit.$(OBJEXT)
-gfit_OBJECTS = $(am_gfit_OBJECTS)
-gfit_DEPENDENCIES =
-am_gfitcfg_OBJECTS = gfitcfg-gfitcfg.$(OBJEXT)
-gfitcfg_OBJECTS = $(am_gfitcfg_OBJECTS)
-gfitcfg_DEPENDENCIES =
 am__interpolation_SOURCES_DIST = interpolation.cpp
 @HAVE_ROOT_TRUE@am_interpolation_OBJECTS =  \
 @HAVE_ROOT_TRUE@	interpolation-interpolation.$(OBJEXT)
@@ -209,21 +203,20 @@ am__v_CXXLD_ = $(am__v_CXXLD_@AM_DEFAULT_V@)
 am__v_CXXLD_0 = @echo "  CXXLD   " $@;
 am__v_CXXLD_1 = 
 SOURCES = $(GFermi_SOURCES) $(bezrukovFit_SOURCES) $(errest_SOURCES) \
-	$(gauge_SOURCES) $(gfit_SOURCES) $(gfitcfg_SOURCES) \
-	$(interpolation_SOURCES) $(lambda_SOURCES) $(mH_SOURCES) \
-	$(mHroot_SOURCES) $(mW_SOURCES) $(mZ_SOURCES) $(mb_SOURCES) \
-	$(mt_SOURCES) $(mtgl_SOURCES) $(plotyukawa_SOURCES) \
-	$(poleRGI_SOURCES) $(runAlpha_SOURCES) $(runGL_SOURCES) \
-	$(runSM_SOURCES) $(tables_SOURCES) $(yt_SOURCES) \
-	$(yukawa_SOURCES)
+	$(gauge_SOURCES) $(interpolation_SOURCES) $(lambda_SOURCES) \
+	$(mH_SOURCES) $(mHroot_SOURCES) $(mW_SOURCES) $(mZ_SOURCES) \
+	$(mb_SOURCES) $(mt_SOURCES) $(mtgl_SOURCES) \
+	$(plotyukawa_SOURCES) $(poleRGI_SOURCES) $(runAlpha_SOURCES) \
+	$(runGL_SOURCES) $(runSM_SOURCES) $(tables_SOURCES) \
+	$(yt_SOURCES) $(yukawa_SOURCES)
 DIST_SOURCES = $(GFermi_SOURCES) $(bezrukovFit_SOURCES) \
-	$(am__errest_SOURCES_DIST) $(gauge_SOURCES) $(gfit_SOURCES) \
-	$(gfitcfg_SOURCES) $(am__interpolation_SOURCES_DIST) \
-	$(lambda_SOURCES) $(mH_SOURCES) $(am__mHroot_SOURCES_DIST) \
-	$(mW_SOURCES) $(mZ_SOURCES) $(mb_SOURCES) $(mt_SOURCES) \
-	$(mtgl_SOURCES) $(plotyukawa_SOURCES) $(poleRGI_SOURCES) \
-	$(runAlpha_SOURCES) $(runGL_SOURCES) $(runSM_SOURCES) \
-	$(tables_SOURCES) $(yt_SOURCES) $(yukawa_SOURCES)
+	$(am__errest_SOURCES_DIST) $(gauge_SOURCES) \
+	$(am__interpolation_SOURCES_DIST) $(lambda_SOURCES) \
+	$(mH_SOURCES) $(am__mHroot_SOURCES_DIST) $(mW_SOURCES) \
+	$(mZ_SOURCES) $(mb_SOURCES) $(mt_SOURCES) $(mtgl_SOURCES) \
+	$(plotyukawa_SOURCES) $(poleRGI_SOURCES) $(runAlpha_SOURCES) \
+	$(runGL_SOURCES) $(runSM_SOURCES) $(tables_SOURCES) \
+	$(yt_SOURCES) $(yukawa_SOURCES)
 am__can_run_installinfo = \
   case $$AM_UPDATE_INFO_DIR in \
     n|no|NO) false;; \
@@ -430,12 +423,6 @@ runGL_LDADD = $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.21 -ltsi
 poleRGI_SOURCES = poleRGI.cpp
 poleRGI_CPPFLAGS = $(EX_CFLAGS)
 poleRGI_LDADD = $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.21 -ltsil -lm
-gfit_SOURCES = gfit.cpp
-gfit_CPPFLAGS = $(EX_CFLAGS)
-gfit_LDADD = $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.21 -ltsil -L$(top_srcdir)/Minuit -llcg_Minuit -lm
-gfitcfg_SOURCES = gfitcfg.cpp
-gfitcfg_CPPFLAGS = $(EX_CFLAGS) -I$(top_srcdir)/yaml-cpp/include
-gfitcfg_LDADD = $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.21 -ltsil -L$(top_srcdir)/Minuit -llcg_Minuit -lm -L$(top_srcdir)/yaml-cpp -lYAMLpp
 
 # mratio_SOURCES =  mratio.cpp
 # mratio_CPPFLAGS = $(EX_CFLAGS) -I$(top_srcdir)/tsil-1.21 -I$(top_srcdir)/mr
@@ -496,14 +483,6 @@ errest$(EXEEXT): $(errest_OBJECTS) $(errest_DEPENDENCIES) $(EXTRA_errest_DEPENDE
 gauge$(EXEEXT): $(gauge_OBJECTS) $(gauge_DEPENDENCIES) $(EXTRA_gauge_DEPENDENCIES) 
 	@rm -f gauge$(EXEEXT)
 	$(AM_V_CXXLD)$(CXXLINK) $(gauge_OBJECTS) $(gauge_LDADD) $(LIBS)
-
-gfit$(EXEEXT): $(gfit_OBJECTS) $(gfit_DEPENDENCIES) $(EXTRA_gfit_DEPENDENCIES) 
-	@rm -f gfit$(EXEEXT)
-	$(AM_V_CXXLD)$(CXXLINK) $(gfit_OBJECTS) $(gfit_LDADD) $(LIBS)
-
-gfitcfg$(EXEEXT): $(gfitcfg_OBJECTS) $(gfitcfg_DEPENDENCIES) $(EXTRA_gfitcfg_DEPENDENCIES) 
-	@rm -f gfitcfg$(EXEEXT)
-	$(AM_V_CXXLD)$(CXXLINK) $(gfitcfg_OBJECTS) $(gfitcfg_LDADD) $(LIBS)
 
 interpolation$(EXEEXT): $(interpolation_OBJECTS) $(interpolation_DEPENDENCIES) $(EXTRA_interpolation_DEPENDENCIES) 
 	@rm -f interpolation$(EXEEXT)
@@ -583,8 +562,6 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/bezrukovFit-bezrukovFit.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/errest-errest.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gauge-gauge.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gfit-gfit.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gfitcfg-gfitcfg.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/interpolation-interpolation.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/lambda-lambda.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/mH-mH.Po@am__quote@
@@ -674,34 +651,6 @@ gauge-gauge.obj: gauge.cpp
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='gauge.cpp' object='gauge-gauge.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gauge_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o gauge-gauge.obj `if test -f 'gauge.cpp'; then $(CYGPATH_W) 'gauge.cpp'; else $(CYGPATH_W) '$(srcdir)/gauge.cpp'; fi`
-
-gfit-gfit.o: gfit.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gfit_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT gfit-gfit.o -MD -MP -MF $(DEPDIR)/gfit-gfit.Tpo -c -o gfit-gfit.o `test -f 'gfit.cpp' || echo '$(srcdir)/'`gfit.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gfit-gfit.Tpo $(DEPDIR)/gfit-gfit.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='gfit.cpp' object='gfit-gfit.o' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gfit_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o gfit-gfit.o `test -f 'gfit.cpp' || echo '$(srcdir)/'`gfit.cpp
-
-gfit-gfit.obj: gfit.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gfit_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT gfit-gfit.obj -MD -MP -MF $(DEPDIR)/gfit-gfit.Tpo -c -o gfit-gfit.obj `if test -f 'gfit.cpp'; then $(CYGPATH_W) 'gfit.cpp'; else $(CYGPATH_W) '$(srcdir)/gfit.cpp'; fi`
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gfit-gfit.Tpo $(DEPDIR)/gfit-gfit.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='gfit.cpp' object='gfit-gfit.obj' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gfit_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o gfit-gfit.obj `if test -f 'gfit.cpp'; then $(CYGPATH_W) 'gfit.cpp'; else $(CYGPATH_W) '$(srcdir)/gfit.cpp'; fi`
-
-gfitcfg-gfitcfg.o: gfitcfg.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gfitcfg_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT gfitcfg-gfitcfg.o -MD -MP -MF $(DEPDIR)/gfitcfg-gfitcfg.Tpo -c -o gfitcfg-gfitcfg.o `test -f 'gfitcfg.cpp' || echo '$(srcdir)/'`gfitcfg.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gfitcfg-gfitcfg.Tpo $(DEPDIR)/gfitcfg-gfitcfg.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='gfitcfg.cpp' object='gfitcfg-gfitcfg.o' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gfitcfg_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o gfitcfg-gfitcfg.o `test -f 'gfitcfg.cpp' || echo '$(srcdir)/'`gfitcfg.cpp
-
-gfitcfg-gfitcfg.obj: gfitcfg.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gfitcfg_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT gfitcfg-gfitcfg.obj -MD -MP -MF $(DEPDIR)/gfitcfg-gfitcfg.Tpo -c -o gfitcfg-gfitcfg.obj `if test -f 'gfitcfg.cpp'; then $(CYGPATH_W) 'gfitcfg.cpp'; else $(CYGPATH_W) '$(srcdir)/gfitcfg.cpp'; fi`
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gfitcfg-gfitcfg.Tpo $(DEPDIR)/gfitcfg-gfitcfg.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='gfitcfg.cpp' object='gfitcfg-gfitcfg.obj' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(gfitcfg_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o gfitcfg-gfitcfg.obj `if test -f 'gfitcfg.cpp'; then $(CYGPATH_W) 'gfitcfg.cpp'; else $(CYGPATH_W) '$(srcdir)/gfitcfg.cpp'; fi`
 
 interpolation-interpolation.o: interpolation.cpp
 @am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(interpolation_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT interpolation-interpolation.o -MD -MP -MF $(DEPDIR)/interpolation-interpolation.Tpo -c -o interpolation-interpolation.o `test -f 'interpolation.cpp' || echo '$(srcdir)/'`interpolation.cpp
