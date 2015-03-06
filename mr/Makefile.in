@@ -137,7 +137,7 @@ am__v_AR_1 =
 libmr_a_AR = $(AR) $(ARFLAGS)
 libmr_a_LIBADD =
 am__objects_1 = libmr_a-tsil.$(OBJEXT) libmr_a-mOS2mMSQCD.$(OBJEXT) \
-	libmr_a-pole2run.$(OBJEXT) libmr_a-solvePMS.$(OBJEXT) \
+	libmr_a-pole2run.$(OBJEXT) libmr_a-p2ms.$(OBJEXT) \
 	libmr_a-errint.$(OBJEXT)
 am__objects_2 = libmr_a-alphaGF.$(OBJEXT) libmr_a-alphaGF10.$(OBJEXT) \
 	libmr_a-alphaGF11.$(OBJEXT) libmr_a-alphaGF20.$(OBJEXT)
@@ -393,7 +393,7 @@ ACLOCAL_AMFLAGS = ${ACLOCAL_FLAGS} -I m4
 lib_LIBRARIES = libmr.a
 
 # Main sources
-MAINSRC = mr.hpp tsil.hpp tsil.cpp base.hpp mOS2mMSQCD.cpp pole2run.hpp pole2run.cpp solvePMS.hpp solvePMS.cpp errint.cpp
+MAINSRC = mr.hpp tsil.hpp tsil.cpp base.hpp mOS2mMSQCD.cpp pole2run.hpp pole2run.cpp p2ms.hpp p2ms.cpp errint.cpp
 
 # Running
 RUNSRC = betaSM.hpp betaSM.cpp betaQCD.hpp betaQEDQCD.hpp betaQEDQCD.cpp betaQCD.cpp CRunDec.cpp CRunDec.h
@@ -579,8 +579,8 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libmr_a-mttos10.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libmr_a-mttos11.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libmr_a-mttos20.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libmr_a-p2ms.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libmr_a-pole2run.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libmr_a-solvePMS.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libmr_a-tsil.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libmr_a-tt.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libmr_a-yuHH10.Po@am__quote@
@@ -668,19 +668,19 @@ libmr_a-pole2run.obj: pole2run.cpp
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmr_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libmr_a-pole2run.obj `if test -f 'pole2run.cpp'; then $(CYGPATH_W) 'pole2run.cpp'; else $(CYGPATH_W) '$(srcdir)/pole2run.cpp'; fi`
 
-libmr_a-solvePMS.o: solvePMS.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmr_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libmr_a-solvePMS.o -MD -MP -MF $(DEPDIR)/libmr_a-solvePMS.Tpo -c -o libmr_a-solvePMS.o `test -f 'solvePMS.cpp' || echo '$(srcdir)/'`solvePMS.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libmr_a-solvePMS.Tpo $(DEPDIR)/libmr_a-solvePMS.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='solvePMS.cpp' object='libmr_a-solvePMS.o' libtool=no @AMDEPBACKSLASH@
+libmr_a-p2ms.o: p2ms.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmr_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libmr_a-p2ms.o -MD -MP -MF $(DEPDIR)/libmr_a-p2ms.Tpo -c -o libmr_a-p2ms.o `test -f 'p2ms.cpp' || echo '$(srcdir)/'`p2ms.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libmr_a-p2ms.Tpo $(DEPDIR)/libmr_a-p2ms.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='p2ms.cpp' object='libmr_a-p2ms.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmr_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libmr_a-solvePMS.o `test -f 'solvePMS.cpp' || echo '$(srcdir)/'`solvePMS.cpp
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmr_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libmr_a-p2ms.o `test -f 'p2ms.cpp' || echo '$(srcdir)/'`p2ms.cpp
 
-libmr_a-solvePMS.obj: solvePMS.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmr_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libmr_a-solvePMS.obj -MD -MP -MF $(DEPDIR)/libmr_a-solvePMS.Tpo -c -o libmr_a-solvePMS.obj `if test -f 'solvePMS.cpp'; then $(CYGPATH_W) 'solvePMS.cpp'; else $(CYGPATH_W) '$(srcdir)/solvePMS.cpp'; fi`
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libmr_a-solvePMS.Tpo $(DEPDIR)/libmr_a-solvePMS.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='solvePMS.cpp' object='libmr_a-solvePMS.obj' libtool=no @AMDEPBACKSLASH@
+libmr_a-p2ms.obj: p2ms.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmr_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libmr_a-p2ms.obj -MD -MP -MF $(DEPDIR)/libmr_a-p2ms.Tpo -c -o libmr_a-p2ms.obj `if test -f 'p2ms.cpp'; then $(CYGPATH_W) 'p2ms.cpp'; else $(CYGPATH_W) '$(srcdir)/p2ms.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libmr_a-p2ms.Tpo $(DEPDIR)/libmr_a-p2ms.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='p2ms.cpp' object='libmr_a-p2ms.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmr_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libmr_a-solvePMS.obj `if test -f 'solvePMS.cpp'; then $(CYGPATH_W) 'solvePMS.cpp'; else $(CYGPATH_W) '$(srcdir)/solvePMS.cpp'; fi`
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmr_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libmr_a-p2ms.obj `if test -f 'p2ms.cpp'; then $(CYGPATH_W) 'p2ms.cpp'; else $(CYGPATH_W) '$(srcdir)/p2ms.cpp'; fi`
 
 libmr_a-errint.o: errint.cpp
 @am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmr_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libmr_a-errint.o -MD -MP -MF $(DEPDIR)/libmr_a-errint.Tpo -c -o libmr_a-errint.o `test -f 'errint.cpp' || echo '$(srcdir)/'`errint.cpp

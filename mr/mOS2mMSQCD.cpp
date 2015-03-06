@@ -98,6 +98,16 @@ long double bb::x03(size_t nL, size_t nH, size_t boson)
   return mOS2mMS(MMb, mu2, 2*nL, nH, 3);
 }
 
+long double bb::y02(size_t nL, size_t nH, size_t boson)
+{     
+  return mOS2mMS(MMb, mu2, 2*nL, nH, 2);
+}
+
+long double bb::y03(size_t nL, size_t nH, size_t boson)
+{     
+  return mOS2mMS(MMb, mu2, 2*nL, nH, 3);
+}
+
 long double tt<OS>::x02(size_t nL, size_t nH, size_t boson)
 {     
   return mOS2mMS(MMt, mu2, 2*nL + nH, nH, 2);
