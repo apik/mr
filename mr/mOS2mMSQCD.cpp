@@ -187,10 +187,10 @@ long double mMS2mOS(long double mm, long double mu2, size_t nl, size_t nh, size_
 
 long double tt<MS>::x02(size_t nL, size_t nH, size_t boson)
 {     
-  return mOS2mMS(mmt, mu2, 2*nL + nH, nH, 2);
+  return mMS2mOS(mmt, mu2, 2*nL + nH, nH, 2);
 }
 
 long double tt<MS>::x03(size_t nL, size_t nH, size_t boson)
 {     
-  return mOS2mMS(mmt, mu2, 2*nL + nH, nH, 3);
+  return mMS2mOS(mmt, mu2, 2*nL + nH, nH, 3);
 }

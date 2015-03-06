@@ -10,7 +10,8 @@ int main (int argc, char *argv[])
 
       // Input from Martin
       long double Mt = 173.10;
-      MSinput SPM = MSinput::fromConsts( pow(Mt,2), // Input scale
+      long double mt = 163.10;
+      MSinput SPM = MSinput::fromConsts( pow(mt,2), // Input scale
                                          sqrt(2.)*93.36,
                                          0.127,
                                          0, 0.936, 0.648, 0.358);
@@ -51,7 +52,54 @@ int main (int argc, char *argv[])
       std::cout << "\n MH[ EH ]     = " << MH10 << std::endl;
       std::cout << " MW[ EW*QCD ] = " << MH11 << std::endl;
       std::cout << " MH[ EW*EW ]  = " << MH20 << std::endl;
+
+
+      tt<MS> t_mt(SPM, pow(Mt,2));
       
+      
+      double Mt10,Mt11,Mt20,Mt01,Mt02,Mt03;
+
+
+      Mt01 = SPM.mt() * (
+                         // 1 +
+                         as(mt)/4./Pi*t_mt.x01()
+                         );
+      
+      Mt02 = SPM.mt() * (
+                         // 1 +
+                         pow(as(mt)/4./Pi,2)*t_mt.x02()
+                         );
+      
+      Mt03 = SPM.mt() * (
+                         // 1 +
+                         pow(as(mt)/4./Pi,3)*t_mt.x03()
+                         );
+      
+      Mt10 = SPM.mt() * (
+                               // 1 +
+                               SPM.alpha()/4./Pi*t_mt.x10()
+                               );
+      
+      Mt11 = SPM.mt() * (
+                               // 1 +
+                               // SPM.alpha()/4./Pi*t_mt.x10() +
+                               SPM.alpha()/4./Pi*as(mt)/4./Pi*t_mt.x11()
+                               );
+      
+      Mt20 = SPM.mt() * (
+                               // 1 +
+                               // SPM.alpha()/4./Pi*t_mt.x10() +
+                               // SPM.alpha()/4./Pi*as(Mt)/4./Pi*t_mt.x11() +
+                               pow(SPM.alpha()/4./Pi,2)*t_mt.x20()
+                               );
+      std::cout << "\n Mt[ QCD   ] = " << Mt01 << std::endl;
+      std::cout << " Mt[ QCD^2 ] = " << Mt02 << std::endl;
+      std::cout << " Mt[ QCD^3 ] = " << Mt03 << std::endl;
+      std::cout << " Mt[ EW ]     = " << Mt10 << std::endl;
+      std::cout << " Mt[ EW*QCD ] = " << Mt11 << std::endl;
+      std::cout << " Mt[ EW*EW ]  = " << Mt20 << std::endl;
+      
+
       
       return 0;
 

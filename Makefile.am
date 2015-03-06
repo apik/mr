@@ -7,8 +7,6 @@
 ACLOCAL_AMFLAGS = ${ACLOCAL_FLAGS} -I m4
 SUBDIRS =         \
 	tsil-1.21 \
-	Minuit    \
-	yaml-cpp  \
 	mr        \
 	examples  \
 	tests
@@ -18,5 +16,6 @@ if HAVE_MPREP
 SUBDIRS+=math
 endif
 
+EXTRA_DIST = tsil-1.21
 
 
