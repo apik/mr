@@ -78,7 +78,7 @@ RunUpto::RunUpto(OSinput oi, long double al_, long double as_, long double mu_):
   std::cout << " lam = " << alam*16*Pi*Pi << std::endl;
 
   av = new CouplingsSM<3,3,3,3,-1,-1,3>(a1,a2,aS,ayt,0,0,alam,pow(ms,2),3);
-  std::cout << " LAMMMMMMMMMMMM " << av->operator()(pow(10000,2))[6] << " ::: " << lambda(10000) << std::endl;
+  // std::cout << " LAMMMMMMMMMMMM " << av->operator()(pow(10000,2))[6] << " ::: " << lambda(10000) << std::endl;
 }
 
 state_type RunUpto::operator()(long double mu)

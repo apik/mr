@@ -16,5 +16,6 @@ if HAVE_MPREP
 SUBDIRS+=math
 endif
 
+EXTRA_DIST = tsil-1.21
 
 

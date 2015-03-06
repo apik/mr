@@ -283,8 +283,8 @@ public:
         
         plt << "label" << lcntr + 1 << " = \"" << legends[lcntr] << "\"" << std::endl;
 
-        pltstr << "     '" << fname << ".dat' using 1:2 with lines title label" << lcntr + 1 << " lt " << lcntr;
-        if (lcntr != N - 1 ) pltstr << ",\n";
+        pltstr << "     '" << fname << ".dat' using 1:" << lcntr + 2 << " with lines title label" << lcntr + 1 << " lt " << lcntr;
+        if (lcntr != N - 1 ) pltstr << ",\\\n";
         of << std::setw(fw-3) <<  "Y" << lcntr + 1;
       }
     of << std::endl;
