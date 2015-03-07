@@ -27,7 +27,7 @@
 #include "constants.hpp"
 #include "base.hpp"
 
-class bb : public PoleMass
+class bb : public PoleMassAndCouplings
 {
 
   long double MMb, MMt, MMH, MMW, MMZ, mu2;
