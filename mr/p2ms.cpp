@@ -100,19 +100,19 @@ P2MS::P2MS(const OSinput & oi_, const long double &  Gf_, const long double &  a
 {
   long double mu2 = pow(mu,2);
 
-  bp = new bb(oi, mu2);
-  wp = new WW<OS>(oi, mu2);
-  zp = new ZZ<OS>(oi, mu2);
-  hp = new HH<OS>(oi, mu2);
-  tp = new tt<OS>(oi, mu2);
-
+  bp  = new bb(oi, mu2);
+  wp  = new WW<OS>(oi, mu2);
+  zp  = new ZZ<OS>(oi, mu2);
+  hp  = new HH<OS>(oi, mu2);
+  tp  = new tt<OS>(oi, mu2);
+  drp = new dr<OS>(oi, mu2);
 
 
   DiffGF dGF(oi, Gf, as_, mu2, 3);
   tolerance tol = 1e-12;
   
   std::pair<long double, long double> found = boost::math::tools::bisect(dGF, 1./140., 1./120., tol);
-
+  
   boost::numeric::interval<long double> fint(found.first, found.second);
   
   std::cout << std::setprecision(10);
@@ -130,7 +130,8 @@ P2MS::P2MS(const OSinput & oi_, const long double &  Gf_, const long double &  a
   long double dHplus1 = 1 + aEW*hp->y10() + aEW*aQCD*hp->y11() + aEW*aEW*hp->y20();
   long double dtplus1 = 1 + aEW*tp->y10() + aEW*aQCD*tp->y11() + aEW*aEW*tp->y20()
     + aQCD*tp->y01()+ aQCD*aQCD*tp->y02()+ aQCD*aQCD*aQCD*tp->y03();
-
+  // And running vev
+  long double dRplus1 = 1 + aEW*drp->dr10() + aEW*aQCD*drp->dr11() + aEW*aEW*drp->dr20();
 
   long double gg = pow(2.,5./2.)*Gf*oi.MMW()*dWplus1;
   long double gg_ggp = pow(2.,5./2.)*Gf*oi.MMZ()*dZplus1;
@@ -140,7 +141,9 @@ P2MS::P2MS(const OSinput & oi_, const long double &  Gf_, const long double &  a
   long double aS = aQCD;
   long double ayt = pow(2.,3./2.)*Gf*oi.MMt()*pow(dtplus1,2)/16./Pi/Pi;
   long double alam = Gf/sqrt(2.)*oi.MMH()*dHplus1/16./Pi/Pi;
-  
+
+
+  long double vev2 = dRplus1/Gf/sqrt(2.);
   
   std::cout << " At matching scale mu = " << mu << std::endl;
   std::cout << " g1 = " << sqrt(3./5.*a1)*4*Pi << std::endl;
@@ -148,14 +151,18 @@ P2MS::P2MS(const OSinput & oi_, const long double &  Gf_, const long double &  a
   std::cout << " g3 = " << sqrt(aS)*4*Pi << std::endl;
   std::cout << " yt = " << sqrt(ayt)*4*Pi << std::endl;
   std::cout << " lam = " << alam*16*Pi*Pi << std::endl;
+  
+  std::cout << " vev = " << sqrt(vev2) << std::endl;
+
+  std::cout << " mu0 = " << sqrt(2.*lam())*vev() << std::endl;
    
 }
 
 
 long double P2MS::a1(size_t nL, size_t nH)
 {
-  long double dWplus1 = 1 + aEW*wp->y10() + aEW*aQCD*wp->y11() + aEW*aEW*wp->y20();
-  long double dZplus1 = 1 + aEW*zp->y10() + aEW*aQCD*zp->y11() + aEW*aEW*zp->y20();
+  long double dWplus1 = 1 + aEW*wp->y10(nL, nH) + aEW*aQCD*wp->y11(nL, nH) + aEW*aEW*wp->y20(nL, nH);
+  long double dZplus1 = 1 + aEW*zp->y10(nL, nH) + aEW*aQCD*zp->y11(nL, nH) + aEW*aEW*zp->y20(nL, nH);
   
   long double gg = pow(2.,5./2.)*Gf*oi.MMW()*dWplus1;
   long double gg_ggp = pow(2.,5./2.)*Gf*oi.MMZ()*dZplus1;
@@ -174,11 +181,9 @@ long double P2MS::g1(size_t nL, size_t nH)
 
 long double P2MS::a2(size_t nL, size_t nH)
 {
-  long double dWplus1 = 1 + aEW*wp->y10() + aEW*aQCD*wp->y11() + aEW*aEW*wp->y20();
-  long double dZplus1 = 1 + aEW*zp->y10() + aEW*aQCD*zp->y11() + aEW*aEW*zp->y20();
+  long double dWplus1 = 1 + aEW*wp->y10(nL, nH) + aEW*aQCD*wp->y11(nL, nH) + aEW*aEW*wp->y20(nL, nH);
 
   long double gg = pow(2.,5./2.)*Gf*oi.MMW()*dWplus1;
-  long double gg_ggp = pow(2.,5./2.)*Gf*oi.MMZ()*dZplus1;
   
   return gg/16./Pi/Pi;
 }
@@ -191,8 +196,8 @@ long double P2MS::g2(size_t nL, size_t nH)
 
 long double P2MS::at(size_t nL, size_t nH)
 {
-  long double dtplus1 = 1 + aEW*tp->y10() + aEW*aQCD*tp->y11() + aEW*aEW*tp->y20()
-    + aQCD*tp->y01()+ aQCD*aQCD*tp->y02()+ aQCD*aQCD*aQCD*tp->y03();
+  long double dtplus1 = 1 + aEW*tp->y10(nL, nH) + aEW*aQCD*tp->y11(nL, nH) + aEW*aEW*tp->y20(nL, nH)
+    + aQCD*tp->y01(nL, nH)+ aQCD*aQCD*tp->y02(nL, nH)+ aQCD*aQCD*aQCD*tp->y03(nL, nH);
   
   return pow(2.,3./2.)*Gf*oi.MMt()*pow(dtplus1,2)/16./Pi/Pi;
 }
@@ -206,8 +211,8 @@ long double P2MS::yt(size_t nL, size_t nH)
 
 long double P2MS::ab(size_t nL, size_t nH)
 {
-  long double dbplus1 = 1 + aEW*bp->y10() + aEW*aQCD*bp->y11() + aEW*aEW*bp->y20()
-    + aQCD*bp->y01()+ aQCD*aQCD*bp->y02()+ aQCD*aQCD*aQCD*bp->y03();
+  long double dbplus1 = 1 + aEW*bp->y10(nL, nH) + aEW*aQCD*bp->y11(nL, nH) + aEW*aEW*bp->y20(nL, nH)
+    + aQCD*bp->y01(nL, nH)+ aQCD*aQCD*bp->y02(nL, nH)+ aQCD*aQCD*aQCD*bp->y03(nL, nH);
                                                                     
   return pow(2.,3./2.)*Gf*oi.MMt()*pow(dbplus1,2)/16./Pi/Pi;
 }
@@ -221,7 +226,7 @@ long double P2MS::yb(size_t nL, size_t nH)
 
 long double P2MS::alam(size_t nL, size_t nH)
 {
-  long double dHplus1 = 1 + aEW*hp->y10() + aEW*aQCD*hp->y11() + aEW*aEW*hp->y20();
+  long double dHplus1 = 1 + aEW*hp->y10(nL, nH) + aEW*aQCD*hp->y11(nL, nH) + aEW*aEW*hp->y20(nL, nH);
   
   return Gf/sqrt(2.)*oi.MMH()*dHplus1/16./Pi/Pi;
 }
@@ -229,4 +234,39 @@ long double P2MS::alam(size_t nL, size_t nH)
 long double P2MS::lam(size_t nL, size_t nH)
 {
   return alam(nL,nH)*16*Pi*Pi;
+}
+
+
+
+long double P2MS::mu0(size_t nL, size_t nH) // tree: mu0=Mh
+{
+  return sqrt(2.*lam())*vev();
+}
+
+
+
+long double P2MS::vev(size_t nL, size_t nH)
+{
+  long double dRplus1 = 1 + aEW*drp->dr10() + aEW*aQCD*drp->dr11() + aEW*aEW*drp->dr20();
+
+  return sqrt(dRplus1/Gf/sqrt(2.));
+}
+
+
+
+// MS input for conversion OS -> MS
+
+MSinput P2MS::getMSpar()
+{
+  
+  return MSinput::fromConsts(mu, // Input scale
+                             mu0(),   //Higgs mass parameter
+                             //normalized as mu0=Mh at
+                             //tree level
+                             lam(), 
+                             yb(), 
+                             yt(), 
+                             g2(),     // SU(2) 
+                             g1()     // U(1)
+                             );
 }

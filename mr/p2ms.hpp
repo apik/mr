@@ -41,11 +41,12 @@ class P2MS
   long double   mu;
   
 
-  bb*     bp;
-  WW<OS>* wp;
-  ZZ<OS>* zp;
-  HH<OS>* hp;
-  tt<OS>* tp;
+  bb*      bp;
+  WW<OS>*  wp;
+  ZZ<OS>*  zp;
+  HH<OS>*  hp;
+  tt<OS>*  tp;
+  dr<OS>* drp;
   
   
 public:
@@ -68,8 +69,10 @@ public:
   long double  yt(size_t nL = 2, size_t nH = 1);
   long double  yb(size_t nL = 2, size_t nH = 1);
   long double lam(size_t nL = 2, size_t nH = 1);
-
+  long double mu0(size_t nL = 2, size_t nH = 1);
+  long double vev(size_t nL = 2, size_t nH = 1);
   
+  MSinput getMSpar();
 };
 
 
