@@ -38,11 +38,11 @@ struct DiffGF
   OSinput oi;
   WW<OS>* dW;
   ZZ<OS>* dZ;
-  size_t order;
+  unsigned ord;
   long double Gf0;
   long double alphaS;
   
-  DiffGF(OSinput in_, long double Gf0_, long double as_, long double mu2, size_t order_) : oi(in_), Gf0(Gf0_), alphaS(as_), order(order_)
+  DiffGF(OSinput in_, long double Gf0_, long double as_, long double mu2, unsigned order_) : oi(in_), Gf0(Gf0_), alphaS(as_), ord(order_)
   {
     dW = new WW<OS>(oi, mu2);
     dZ = new ZZ<OS>(oi, mu2);
@@ -52,30 +52,28 @@ struct DiffGF
   {
     long double dMyW = 1;
     long double dMyZ = 1;
-    long double Gf[4];
+    long double Gf;
     
-    // Tree level
-    Gf[0] = alpha*Pi/sqrt(2)/oi.MMW()/dMyW/(1-oi.MMW()/oi.MMZ()*dMyW/dMyZ);
+    if(ord & order::x10)
+      {
+        dMyW += alpha/4./Pi*dW->y10();
+        dMyZ += alpha/4./Pi*dZ->y10();
+      }
+    if(ord & order::x11)
+      {
+        dMyW += alpha/4./Pi*alphaS/4./Pi*dW->y11();
+        dMyZ += alpha/4./Pi*alphaS/4./Pi*dZ->y11();
+      }
+    if(ord & order::x20)
+      {
+        dMyW += pow(alpha/4./Pi,2)*dW->y20();
+        dMyZ += pow(alpha/4./Pi,2)*dZ->y20();
+      }
+    
 
-    // 1-loop level
-    dMyW += alpha/4./Pi*dW->y10();
-    dMyZ += alpha/4./Pi*dZ->y10();
+    Gf = alpha*Pi/sqrt(2)/oi.MMW()/dMyW/(1-oi.MMW()/oi.MMZ()*dMyW/dMyZ);
     
-    Gf[1] = alpha*Pi/sqrt(2)/oi.MMW()/dMyW/(1-oi.MMW()/oi.MMZ()*dMyW/dMyZ);
-    
-    // 2-loop level
-    dMyW += alpha/4./Pi*alphaS/4./Pi*dW->y11();
-    dMyZ += alpha/4./Pi*alphaS/4./Pi*dZ->y11();
-    
-    Gf[2] = alpha*Pi/sqrt(2)/oi.MMW()/dMyW/(1-oi.MMW()/oi.MMZ()*dMyW/dMyZ);
-    
-    
-    dMyW += pow(alpha/4./Pi,2)*dW->y20();
-    dMyZ += pow(alpha/4./Pi,2)*dZ->y20();
-    
-    Gf[3] = alpha*Pi/sqrt(2)/oi.MMW()/dMyW/(1-oi.MMW()/oi.MMZ()*dMyW/dMyZ);
-    
-    return (Gf0 - Gf[order])*pow(10,2);
+    return (Gf0 - Gf)*pow(10,2);
   }
 
 };
@@ -108,7 +106,7 @@ P2MSnLnH::P2MSnLnH(const OSinput & oi_, const long double &  Gf_, const long dou
   drp = new dr<OS>(oi, mu2);
 
 
-  DiffGF dGF(oi, Gf, as_, mu2, 3);
+  DiffGF dGF(oi, Gf, as_, mu2, order::all);
   tolerance tol = 1e-12;
   
   std::pair<long double, long double> found = boost::math::tools::bisect(dGF, 1./140., 1./120., tol);
@@ -316,7 +314,7 @@ P2MS::P2MS(const OSinput & oi_, const long double &  Gf_, const long double &  a
   drp = new dr<OS>(oi, mu2);
   
 
-  DiffGF dGF(oi, Gf, as_, mu2, 3);
+  DiffGF dGF(oi, Gf, as_, mu2, ord);
   tolerance tol = 1e-12;
   
   std::pair<long double, long double> found = boost::math::tools::bisect(dGF, 1./140., 1./120., tol);
@@ -334,10 +332,8 @@ P2MS::P2MS(const OSinput & oi_, const long double &  Gf_, const long double &  a
 
   std::cout << "Enabled corrections:" << std::endl;
 
-  size_t fw = 4;
-  
+  const size_t fw = 4;
   std::cout << "\t  |   QCD  |   EW   |  QCD^2 | EW*QCD |  EW^2  |  QCD^3 | " << std::endl;
-
   std::cout << "\t  |"
             << std::setw(fw) <<  std::internal << bool(ord & order::x01) << "    |"
             << std::setw(fw) <<  std::internal << bool(ord & order::x10) << "    |"

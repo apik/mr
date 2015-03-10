@@ -1,28 +1,23 @@
-#include <iostream>
-#include <cmath>
-#include "mr.hpp"
+// Example of Pole masses and Gf conversion to
+// set of running couplings, running Higgs mass
+// term and running vev in MS scheme
 
+#include "mr.hpp"
 
 int main (int argc, char *argv[])
 {
   try
     {
 
+      // Input: Pole masses and Fermi constant in OS scheme
       OSinput oi(pdg2014::Mb, pdg2014::MW, pdg2014::MZ, pdg2014::MH, pdg2014::Mt);
+
+      // Running QCD coupling for as(Mt) from as(MZ)
       AlphaS as(oi);
-      
-      P2MS spms(oi,pdg2014::Gf, as(oi.Mt()), oi.Mt(), order::allQCD);
 
+      // Set of all running parameters at scale Mt
+      P2MS parsMS(oi,pdg2014::Gf, as(oi.Mt()), oi.Mt(), order::all);
 
-
-
-      std::cout << "Orders all: " << std::hex << (order::x01|order::x10|order::x02|order::x11|order::x20|order::x03) <<std::endl;
-      
-      
-      std::cout << "Orders QCD all: " << std::hex << (order::x01|order::x02|order::x03) <<std::endl;
-      
-      std::cout << "Orders all EW: " << std::hex << (order::x10|order::x11|order::x20) <<std::endl;
-      
     }
   catch (std::exception &p) 
     {
