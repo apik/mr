@@ -21,7 +21,7 @@
 #ifndef __ERRINT_HPP__
 #define __ERRINT_HPP__
 
-#include <boost/numeric/interval.hpp>
+#include "boost/numeric/interval.hpp"
 #include "sminput.hpp"
 // interval type for Long Double numbers
 typedef boost::numeric::interval<long double> LDI;

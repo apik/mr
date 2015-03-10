@@ -18,8 +18,8 @@
 // along with MR.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-#include <boost/math/tools/roots.hpp>
-#include <boost/numeric/interval.hpp>
+#include "boost/math/tools/roots.hpp"
+#include "boost/numeric/interval.hpp"
 #include "p2ms.hpp"
 #include <stdexcept>
 #include "betaQCD.hpp"
