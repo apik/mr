@@ -34,5 +34,6 @@
 #include "betaSM.hpp"
 #include "betaQEDQCD.hpp"
 #include "pole2run.hpp"
+#include "p2ms.hpp"
 
 #endif  // __MR_HPP__
