@@ -27,7 +27,7 @@
 #include "constants.hpp"
 #include "base.hpp"
 
-class bb : public PoleMass
+class bb : public PoleMassAndCouplings
 {
 
   long double MMb, MMt, MMH, MMW, MMZ, mu2;
@@ -160,6 +160,10 @@ public:
   // mY=y/sqrt(2*sqrt(2)*GF)
   // 
   long double y01(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+
+  long double y02(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+
+  long double y03(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
   long double y10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
