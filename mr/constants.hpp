@@ -39,6 +39,34 @@ const long double S2    = 0.2604341376321620989557291432080307854550447788484284
 // Sp[g5*g5] = 4
 const long double EPAIR2 = -1.;
 
+// For easy enumeration through the returned couplings vector
+class couplings {
+public:
+  enum { g1, g2, gs, yt, yb, ytau, lam, mu0, vev };
+};
+
+
+class order {
+public:
+  enum {
+    
+    // tree = 0x0000,
+    // x00  = 0x0001,
+    x01  = 0x0001,              // QCD 1-loop
+    x10  = 0x0002,              // EW  1-loop
+    x02  = 0x0004,              // QCD 2-loop
+    x11  = 0x0008,              // EW*QCD
+    x20  = 0x0010,              // EW*EW
+    x03  = 0x0020,               // QCD 3-loop
+
+    // combinations
+    all     = 0x003f,           // all available corrections
+    allQCD  = 0x0025,           // Only QCD: x01,x02,x03
+    allEW   = 0x001a            // Only  EW: x10,x11,x20
+  };
+
+};
+
 
 // Latest input from:
 // Review of Particle Physics, 2014

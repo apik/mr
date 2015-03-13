@@ -33,56 +33,60 @@ class alphaGF
   long double MMb, MMt, MMH, MMW, MMZ, mu2;
   long double SW, CW;
 
-  Tsil* protWHHWW;
-  Tsil* protWHZWW;
-  Tsil* protWZZWW;
-  Tsil* protWWHHH;
-  Tsil* protWWHZZ;
-  Tsil* protWWZZH;
-  Tsil* protWtZ00;
-  Tsil* protW0HWW;
-  Tsil* protW0Htt;
-  Tsil* protW0ZWW;
-  Tsil* protW0Ztt;
-  Tsil* protW0Z00;
-  Tsil* prot0WW0W;
-  Tsil* prot0Wt0t;
-  Tsil* prot0W0Z0;
-  Tsil* prot00Wt0;
-  Tsil* prot00W00;
-  Tsil* prot00ttZ;
-  Tsil* prot00tt0;
-  Tsil* prot0000Z;
-  Tsil* prot00000;
+  Tsil* WprotWHHWW;
+  Tsil* WprotWHZWW;
+  Tsil* WprotWZZWW;
+  Tsil* WprotWWHHH;
+  Tsil* WprotWWHZZ;
+  Tsil* WprotWWZZH;
+  Tsil* WprotWtZ00;
+  Tsil* WprotW0HWW;
+  Tsil* WprotW0Htt;
+  Tsil* WprotW0ZWW;
+  Tsil* WprotW0Ztt;
+  Tsil* WprotW0Z00;
+  Tsil* Wprot0WW0W;
+  Tsil* Wprot0Wt0t;
+  Tsil* Wprot0W0Z0;
+  Tsil* Wprot00Wt0;
+  Tsil* Wprot00W00;
+  Tsil* Wprot00ttZ;
+  Tsil* Wprot00tt0;
+  Tsil* Wprot0000Z;
+  Tsil* Wprot00000;
+  TsilSTU* WprotHW00;
+  TsilSTU* WprotWH0H;
+  TsilSTU* WprotWZ0Z;
+
+  
   // ZZ part
+  Tsil* ZprotZHHZZ;
+  Tsil* ZprotZZHHH;
+  Tsil* ZprotZWHWW;
+  Tsil* ZprottZtHt;
+  Tsil* ZprotWWWWH;
+  Tsil* ZprotWWWWZ;
+  Tsil* ZprotWWWW0;
+  Tsil* ZprotWtWt0;
+  Tsil* ZprotW0W0t;
+  Tsil* ZprotW0W00;
+  Tsil* ZprotttttH;
+  Tsil* ZprotttttZ;
+  Tsil* Zprottttt0;
+  Tsil* Zprott0t0W;
+  Tsil* Zprot0000Z;
+  Tsil* Zprot0000W;
+  Tsil* Zprot00000;
+  Tsil* ZprotWZWHW;
+  TsilSTU* ZprotHZ00;
 
-  Tsil* protZHHZZ;
-  Tsil* protZZHHH;
-  Tsil* protZWHWW;
-  Tsil* prottZtHt;
-  Tsil* protWWWWH;
-  Tsil* protWWWWZ;
-  Tsil* protWWWW0;
-  Tsil* protWtWt0;
-  Tsil* protW0W0t;
-  Tsil* protW0W00;
-  Tsil* protttttH;
-  Tsil* protttttZ;
-  Tsil* prottttt0;
-  Tsil* prott0t0W;
-  // Tsil* prot0000Z;
-  Tsil* prot0000W;
-  // Tsil* prot00000;
-  Tsil* protWZWHW;
+
+
   
-  TsilSTU* protHZ00;
-
-
-  TsilSTU* protWH0H;
-  TsilSTU* protWZ0Z;
-  TsilSTU* protHW00;
   
-  TsilST* protos[41];
+  TsilSTU* Wprotos[24];
+  TsilSTU* Zprotos[19];
+  
 public:
   alphaGF()
   {

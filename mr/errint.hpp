@@ -18,22 +18,26 @@
 // along with MR.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-// K. Ahnert and M. Mulansky, Odeint - Solving Ordinary Differential Equations in C++, AIP Conf. Proc. 1389, pp. 1586-1589 (2011);
-// doi:http://dx.doi.org/10.1063/1.3637934
-#ifndef __MR_HPP__
-#define __MR_HPP__
+#ifndef __ERRINT_HPP__
+#define __ERRINT_HPP__
 
-#include "WW.hpp"
-#include "ZZ.hpp"
-#include "HH.hpp"
-#include "tt.hpp"
-#include "bb.hpp"
-#include "dr.hpp"
-#include "alphaGF.hpp"
-#include "betaQCD.hpp"
-#include "betaSM.hpp"
-#include "betaQEDQCD.hpp"
-#include "pole2run.hpp"
-#include "p2ms.hpp"
+#include "boost/numeric/interval.hpp"
+#include "sminput.hpp"
+// interval type for Long Double numbers
+typedef boost::numeric::interval<long double> LDI;
 
-#endif  // __MR_HPP__
+typedef OSinputTemplate<LDI> OSinputErr;
+
+template <class T>
+boost::numeric::interval<T> we(T mean, T err)
+{
+  return boost::numeric::interval<T>(mean - err, mean + err);
+}
+
+class WWerr
+{
+public:
+  WWerr(OSinputErr, long double);
+};
+
+#endif  // __ERRINT_HPP__

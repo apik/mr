@@ -54,7 +54,7 @@ libmr_a_SOURCES =    $(MAINSRC) $(ALPHAGF) $(RUNSRC) $(BBMS) $(WWMS) $(ZZMS) $(H
  $(HHMSGL) $(BBMSGL) $(TTMSGL) $(DRMSOS) $(DRMSMS)\
  $(WWMS2OS) $(ZZMS2OS) $(HHMS2OS) $(TTMS2OS)
 
-libmr_a_CPPFLAGS = $(MR_CFLAGS) -I$(top_srcdir)/tsil-1.21 -I$(top_srcdir)/Minuit
+libmr_a_CPPFLAGS = $(MR_CFLAGS) -I$(top_srcdir) -I$(top_srcdir)/tsil-1.21 -I$(top_srcdir)/Minuit
 
 # lib_LTLIBRARIES = libmr.la
 

@@ -2,17 +2,29 @@ AUTOMAKE_OPTIONS = subdir-objects
 ACLOCAL_AMFLAGS = ${ACLOCAL_FLAGS} -I m4
 
 LDADD = ../mr/libmr.la
-EX_CFLAGS = $(MR_CFLAGS) -I$(top_srcdir)/tsil-1.21 -I$(top_srcdir)/mr -I$(top_srcdir)/Minuit
+EX_CFLAGS = $(MR_CFLAGS) -I$(top_srcdir)/tsil-1.21 -I$(top_srcdir)/mr
 
-noinst_PROGRAMS = mW mZ mH mt runAlpha runSM runGL mb yukawa lambda yt gauge plotyukawa mtgl bezrukovFit GFermi tables poleRGI auto
+noinst_PROGRAMS = exPole2ms exPole2run mW mZ mH mt runAlpha runSM runGL mb yukawa lambda yt gauge plotyukawa mtgl bezrukovFit GFermi tables poleRGI auto
+
 if HAVE_ROOT
 noinst_PROGRAMS += mHroot interpolation
 endif 
 
-if HAVE_BOOST
-noinst_PROGRAMS += errest
-endif 
+# # if HAVE_BOOST
+# noinst_PROGRAMS += errest
+# # endif 
 
+# CPC examples
+exPole2ms_SOURCES =  exPole2ms.cpp
+exPole2ms_CPPFLAGS = $(EX_CFLAGS)
+exPole2ms_LDADD = $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.21 -ltsil -lm
+
+exPole2run_SOURCES =  exPole2run.cpp
+exPole2run_CPPFLAGS = $(EX_CFLAGS)
+exPole2run_LDADD = $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.21 -ltsil -lm
+
+
+# Old example files
 mW_SOURCES =  mW.cpp
 mW_CPPFLAGS = $(EX_CFLAGS)
 mW_LDADD = $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.21 -ltsil -lm
@@ -104,8 +116,8 @@ poleRGI_LDADD = $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.21 -lt
 # mratio_SOURCES =  mratio.cpp
 # mratio_CPPFLAGS = $(EX_CFLAGS) -I$(top_srcdir)/tsil-1.21 -I$(top_srcdir)/mr
 # mratio_LDADD = $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.21 -ltsil -lm
-if HAVE_BOOST
-errest_SOURCES =  errest.cpp
-errest_CPPFLAGS = $(EX_CFLAGS) -I$(top_srcdir)/tsil-1.21 -I$(top_srcdir)/mr $(BOOST_CPPFLAGS)
-errest_LDADD = $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.21 -ltsil -lm $(BOOST_LDFLAGS)
-endif 
+# if HAVE_BOOST
+# errest_SOURCES =  errest.cpp
+# errest_CPPFLAGS = $(EX_CFLAGS) -I$(top_srcdir)/tsil-1.21 -I$(top_srcdir)/mr $(BOOST_CPPFLAGS)
+# errest_LDADD = $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.21 -ltsil -lm $(BOOST_LDFLAGS)
+# endif 
