@@ -61,7 +61,7 @@ if test `uname -s` == "Linux" ; then
     x86_64) SystemIDList="Linux-x86-64";;
     *)      SystemIDList="Unknown";;
   esac
-  math_p1a=/opt/products/mathematica
+  math_p1a=/external_soft/Wolfram/Mathematica/
   math_p1b=/usr/local/Wolfram/Mathematica
   math_p2=SystemFiles/Links/MathLink/DeveloperKit/$SystemIDList/CompilerAdditions
   math_ps=$math_p1a/9.0/$math_p2$PATH_SEPARATOR$math_p1b/9.0/$math_p2$PATH_SEPARATOR$math_p1a/8.0/$math_p2$PATH_SEPARATOR$math_p1b/8.0/$math_p2$PATH_SEPARATOR$math_p1a/7.0/$math_p2$PATH_SEPARATOR$math_p1b/7.0/$math_p2$PATH_SEPARATOR$math_p1a/6.0/$math_p2$PATH_SEPARATOR$math_p1b/6.0/$math_p2

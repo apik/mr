@@ -285,7 +285,7 @@ public:
       std::cout << std::scientific << std::setprecision(fw-10);
       std::cout << "# [Initial values:]" << std::endl;
       std::cout << "\t  a1 = " << std::setw(fw) << a1 
-                << "   a2 = " << std::setw(fw) << a1 
+                << "   a2 = " << std::setw(fw) << a2 
                 << "   as = " << std::setw(fw) << as <<std::endl; 
       std::cout << "\t  at = " << std::setw(fw) << at 
                 << "   ab = " << std::setw(fw) << ab 
@@ -376,7 +376,7 @@ public:
       std::cout << std::scientific << std::setprecision(fw-10);
       std::cout << "# [Initial values:]" << std::endl;
       std::cout << "\t  a1 = " << std::setw(fw) << a1 
-                << "   a2 = " << std::setw(fw) << a1 
+                << "   a2 = " << std::setw(fw) << a2 
                 << "   as = " << std::setw(fw) << as <<std::endl; 
       std::cout << "\t  at = " << std::setw(fw) << at 
                 << "   ab = " << std::setw(fw) << ab 

@@ -30,13 +30,12 @@
 
 template<class T>
 class WW 
-//: public PoleMass
 {
 };
 
 
 template<>
-class WW<OS> : public PoleMass
+class WW<OS> : public PoleMassAndCouplings
 {
 
   long double MMb, MMt, MMH, MMW, MMZ, mu2;
@@ -185,7 +184,7 @@ public:
 
 
 template<>
-class WW<MS>
+class WW<MS>  : public PoleMass 
 {
 
   long double mmb, mmt, mmH, mmW, mmZ, mu2;

@@ -33,7 +33,7 @@ class tt
 };
 
 template<>
-class tt<OS> : public PoleMass
+class tt<OS> : public PoleMassAndCouplings
 {
 
 long double MMb,MMt, MMH, MMW, MMZ, mu2;
@@ -231,7 +231,7 @@ std::pair<long double,long double> test2(long double epsabs = 1.E-5,long double 
 
 
 template<>
-class tt<MS> 
+class tt<MS> : public PoleMass
 {
 
 long double mmb,mmt, mmH, mmW, mmZ, mu2;
