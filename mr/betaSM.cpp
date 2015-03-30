@@ -145,7 +145,10 @@ BetaSMFull::BetaSMFull(int pocoa1_, int pocoa2_, int pocoas_, int pocoat_, int p
   add(be3, pocoa3, 1, 0, 3, 0, 0, 0, 0, (77/45.) * (NG));
   add(be3, pocoa3, 1, 1, 2, 0, 0, 0, 0, (-1/40.) * (NG));
   add(be3, pocoa3, 2, 0, 2, 0, 0, 0, 0, (-13/120.) * (NG) + (-121/270.) * (pow(NG,2)));
-
+  // 4-loop QCD correction
+  add(be3, pocoa3, 0, 0, 5, 0, 0, 0, 0,
+      149753./6. + (8744.*pow(NG,3))/729. + NG*(-1078361./81. - (13016.*Zeta3)/27.) +
+      3564.*Zeta3 + pow(NG,2)*(100130./81. + (25888.*Zeta3)/81.));
   // * at  
   add(be4, pocoa4, 0, 0, 0, 1, 0, 0, 2, 6);
   add(be4, pocoa4, 0, 0, 0, 1, 0, 0, 3, -36);
@@ -244,7 +247,13 @@ BetaSMFull::BetaSMFull(int pocoa1_, int pocoa2_, int pocoas_, int pocoat_, int p
   add(be4, pocoa4, 2, 0, 1, 1, 0, 0, 0, -1187/300. + (5281/900.) * (NG) + (-748/75.) * ((NG) * (Zeta3)));
   add(be4, pocoa4, 2, 1, 0, 1, 0, 0, 0, 3243/1600. + (241/400.) * (NG) + (-153/200.) * (Zeta3) + (-51/25.) * ((NG) * (Zeta3)));
   add(be4, pocoa4, 3, 0, 0, 1, 0, 0, 0, 18103/24000. + (53413/10800.) * (NG) + (146/81.) * (pow(NG,2)) + (-153/1000.) * (Zeta3) + (-323/75.) * ((NG) * (Zeta3)));
-
+  // 4-loop QCD correction
+  add(be4, pocoa4, 0, 0, 4, 1, 0, 0, 0,      
+      -4603055./81. + (366892.*NG)/27. - (41936.*pow(NG,2))/243. + (5312.*pow(NG,3))/243. -
+      3520.*NG*Zeta4 + (1280.*pow(NG,2)*Zeta4)/3. - (271360.*Zeta3)/27. +
+      (136768.*NG*Zeta3)/9. - (6400.*pow(NG,2)*Zeta3)/9. - (1024.*pow(NG,3)*Zeta3)/27. +
+      17600.*Zeta5 - (73600.*NG*Zeta5)/9.);
+  
   // * ab
   add(be5, pocoa5, 0, 0, 0, 0, 1, 0, 2, 6);
   add(be5, pocoa5, 0, 0, 0, 0, 1, 0, 3, -36);
@@ -343,7 +352,13 @@ BetaSMFull::BetaSMFull(int pocoa1_, int pocoa2_, int pocoas_, int pocoat_, int p
   add(be5, pocoa5, 2, 0, 1, 0, 1, 0, 0, -449/300. + (-899/900.) * (NG) + (-44/15.) * ((NG) * (Zeta3)));
   add(be5, pocoa5, 2, 1, 0, 0, 1, 0, 0, 2763/1600. + (661/400.) * (NG) + (-9/40.) * (Zeta3) + (-3/5.) * ((NG) * (Zeta3)));
   add(be5, pocoa5, 3, 0, 0, 0, 1, 0, 0, 6383/24000. + (16201/10800.) * (NG) + (62/81.) * (pow(NG,2)) + (-9/200.) * (Zeta3) + (-19/15.) * ((NG) * (Zeta3)));
-
+  // 4-loop QCD correction
+  add(be5, pocoa5, 0, 0, 4, 1, 0, 0, 0,      
+      -4603055./81. + (366892.*NG)/27. - (41936.*pow(NG,2))/243. + (5312.*pow(NG,3))/243. -
+      3520.*NG*Zeta4 + (1280.*pow(NG,2)*Zeta4)/3. - (271360.*Zeta3)/27. +
+      (136768.*NG*Zeta3)/9. - (6400.*pow(NG,2)*Zeta3)/9. - (1024.*pow(NG,3)*Zeta3)/27. +
+      17600.*Zeta5 - (73600.*NG*Zeta5)/9.);
+  
   // * atau
   add(be6, pocoa6, 0, 0, 0, 0, 0, 1, 2, 6);
   add(be6, pocoa6, 0, 0, 0, 0, 0, 1, 3, -36);
