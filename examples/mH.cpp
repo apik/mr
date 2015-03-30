@@ -36,8 +36,8 @@ int main (int argc, char *argv[])
 
       
       
-      std::cout << "VEV = " << BetaVEV::gamv(ain,3) << std::endl;
-      std::cout << "bms = " << BetaMu2::bmu2(ain,3) << std::endl;
+      std::cout << "VEV = " << BetaSM::gamv(ain,3) << std::endl;
+      std::cout << "bms = " << BetaSM::bmu2(ain,3) << std::endl;
 
       
       long double Mt = 173.10;

@@ -225,7 +225,7 @@ long double P2MSnLnH::ab(size_t nL, size_t nH)
   long double dbplus1 = 1 + aEW*bp->y10(nL, nH) + aEW*aQCD*bp->y11(nL, nH) + aEW*aEW*bp->y20(nL, nH)
     + aQCD*bp->y01(nL, nH)+ aQCD*aQCD*bp->y02(nL, nH)+ aQCD*aQCD*aQCD*bp->y03(nL, nH);
                                                                     
-  return pow(2.,3./2.)*Gf*oi.MMt()*pow(dbplus1,2)/16./Pi/Pi;
+  return pow(2.,3./2.)*Gf*oi.MMb()*pow(dbplus1,2)/16./Pi/Pi;
 }
 
 long double P2MSnLnH::yb(size_t nL, size_t nH)
@@ -335,7 +335,7 @@ P2MS::P2MS(const OSinput & oi_, const long double &  Gf_, const long double &  a
   const size_t fw = 4;
   std::cout << "\t  |   QCD  |   EW   |  QCD^2 | EW*QCD |  EW^2  |  QCD^3 | " << std::endl;
   std::cout << "\t  |"
-            << std::setw(fw) <<  std::internal << bool(ord & order::x01) << "    |"
+            << std::setw(fw) <<  std::internal << (bool(ord & order::x01)? '+' : '-') << "    |"
             << std::setw(fw) <<  std::internal << bool(ord & order::x10) << "    |"
             << std::setw(fw) <<  std::internal << bool(ord & order::x02) << "    |"
             << std::setw(fw) <<  std::internal << bool(ord & order::x11) << "    |"
@@ -429,7 +429,7 @@ P2MS::P2MS(const OSinput & oi_, const long double &  Gf_, const long double &  a
 }
 
 
-long double P2MS::a1()
+long double P2MS::a1() const
 {
   long double gg = pow(2.,5./2.)*Gf*oi.MMW()*dWplus1;
   long double gg_ggp = pow(2.,5./2.)*Gf*oi.MMZ()*dZplus1;
@@ -437,79 +437,79 @@ long double P2MS::a1()
   return 5./3.*(gg_ggp - gg)/16./Pi/Pi;
 }
 
-long double P2MS::g1()
+long double P2MS::g1() const
 {
   return sqrt(3./5.*a1())*4*Pi;
 }
 
 
 
-long double P2MS::a2()
+long double P2MS::a2() const
 {
   long double gg = pow(2.,5./2.)*Gf*oi.MMW()*dWplus1;
   return gg/16./Pi/Pi;
 }
 
-long double P2MS::g2()
+long double P2MS::g2() const
 {
   return sqrt(a2())*4*Pi;
 }
 
-long double P2MS::as()
+long double P2MS::as() const
 {
   return aQCD;
 }
 
-long double P2MS::gs()
+long double P2MS::gs() const
 {
   return sqrt(as())*4*Pi;
 }
   
 
-long double P2MS::at()
+long double P2MS::at() const
 {
   return pow(2.,3./2.)*Gf*oi.MMt()*pow(dtplus1,2)/16./Pi/Pi;
 }
 
-long double P2MS::yt()
+long double P2MS::yt() const
 {
   return sqrt(at())*4*Pi;  
 }
 
 
 
-long double P2MS::ab()
+long double P2MS::ab() const
 {
-  return pow(2.,3./2.)*Gf*oi.MMt()*pow(dbplus1,2)/16./Pi/Pi;
+  return pow(2.,3./2.)*Gf*oi.MMb()*pow(dbplus1,2)/16./Pi/Pi;
 }
 
-long double P2MS::yb()
+long double P2MS::yb() const
 {
   return sqrt(ab())*4*Pi;  
 }
 
 
 
-long double P2MS::alam()
+long double P2MS::alam() const
 {
   return Gf/sqrt(2.)*oi.MMH()*dHplus1/16./Pi/Pi;
 }
 
-long double P2MS::lam()
+long double P2MS::lam() const
 {
   return alam()*16*Pi*Pi;
 }
 
 
 
-long double P2MS::mu0() // tree: mu0=Mh
+long double P2MS::mu0() const // tree: mu0=Mh
 {
   return sqrt(2.*lam())*vev();
 }
 
 
 
-long double P2MS::vev()
+long double P2MS::vev() const
 {
   return sqrt(dRplus1/Gf/sqrt(2.));
 }
@@ -533,7 +533,7 @@ MSinput P2MS::getMSpar()
                              );
 }
 
-std::vector<long double> P2MS::runningCouplings()
+std::vector<long double> P2MS::runningCouplings() const
 {
   std::vector<long double> g(9);
 
@@ -548,4 +548,22 @@ std::vector<long double> P2MS::runningCouplings()
   g[couplings::vev] = vev();
 
   return g;
+}
+
+
+std::vector<long double> P2MS::ai() const
+{
+  std::vector<long double> a(9);
+
+  a[couplings::g1] = a1();
+  a[couplings::g2] = a2();
+  a[couplings::gs] = as();
+  a[couplings::yt] = at();
+  a[couplings::yb] = ab();
+  a[couplings::ytau] = 0;
+  a[couplings::lam] = alam();
+  a[couplings::mu0] = mu0();
+  a[couplings::vev] = vev();
+
+  return a;
 }

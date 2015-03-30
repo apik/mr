@@ -113,27 +113,34 @@ public:
        const long double &  mu_ = pdg2014::MZ,
        unsigned ord_ = order::x01|order::x10|order::x02|order::x11|order::x20|order::x03 );
   
-  long double   a1();
-  long double   a2();
-  long double   as();
-  long double   at();
-  long double   ab();
-  long double alam();
+  long double   a1() const;
+  long double   a2() const;
+  long double   as() const;
+  long double   at() const;
+  long double   ab() const;
+  long double alam() const;
   
   
-  long double  g1();
-  long double  g2();
-  long double  gs();
-  long double  yt();
-  long double  yb();
-  long double lam();
-  long double mu0();
-  long double vev();
+  long double  g1() const;
+  long double  g2() const;
+  long double  gs() const;
+  long double  yt() const;
+  long double  yb() const;
+  long double lam() const;
+  long double mu0() const;
+  long double vev() const;
   
   MSinput getMSpar();
 
-  std::vector<long double> runningCouplings();
+  std::vector<long double> runningCouplings() const;
 
+  std::vector<long double> ai() const;
+    
+  long double scale() const
+  {
+    return mu;
+  };
+  
 };
 
 

@@ -6,9 +6,9 @@ EX_CFLAGS = $(MR_CFLAGS) -I$(top_srcdir)/tsil-1.21 -I$(top_srcdir)/mr
 
 noinst_PROGRAMS = exPole2ms exPole2run mW mZ mH mt runAlpha runSM runGL mb yukawa lambda yt gauge plotyukawa mtgl bezrukovFit GFermi tables poleRGI auto
 
-if HAVE_ROOT
-noinst_PROGRAMS += mHroot interpolation
-endif 
+# if HAVE_ROOT
+# noinst_PROGRAMS += mHroot interpolation
+# endif 
 
 # # if HAVE_BOOST
 # noinst_PROGRAMS += errest

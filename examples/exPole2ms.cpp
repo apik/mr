@@ -16,8 +16,21 @@ int main (int argc, char *argv[])
       AlphaS as(oi);
 
       // Set of all running parameters at scale Mt
-      P2MS parsMS(oi,pdg2014::Gf, as(oi.Mt()), oi.Mt(), order::all);
+      P2MS pMSmt(oi,pdg2014::Gf, as(oi.Mt()), oi.Mt(), order::all);
 
+      // Set of all running parameters at scale MZ
+      P2MS pMSmZ(oi,pdg2014::Gf, as(oi.MZ()), oi.MZ(), order::all);
+
+      
+      // Input at mu=MZ for running as in [hep-ph]1208.3357
+      std::cout << "alpha(1) = " << pMSmZ.a1()*4*Pi << std::endl
+                << "alpha(2) = " << pMSmZ.a2()*4*Pi << std::endl
+                << "alpha(3) = " << pMSmZ.as()*4*Pi << std::endl
+                << "alpha(t) = " << pMSmZ.at()*4*Pi << std::endl
+                << "alpha(b) = " << pMSmZ.ab()*4*Pi << std::endl
+                << "4*Pi*lam = " << pMSmZ.alam()*pow(4*Pi,2) << std::endl;
+        
+      
     }
   catch (std::exception &p) 
     {

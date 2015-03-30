@@ -139,6 +139,9 @@ int main (int argc, char *argv[])
                 << "          " << 1./ali[3] << " : Total " << std::endl;
 
 
+
+
+      // Compare with expansion in aF
       return 0;
 
       long double alphaTree = 1./137.234;
