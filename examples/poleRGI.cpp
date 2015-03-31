@@ -107,7 +107,9 @@ int main (int argc, char *argv[])
       double muIn = 91.1876;
 
       
-      CouplingsMu av(
+      Couplings<3,3,3,
+                3,3,3,
+                3,3,0> av(
                      5./3.*pow(0.3497/4./Pi,2), // GUT normalization
                      pow(0.6530/4./Pi,2),
                      pow(1.2200/4./Pi,2),
@@ -117,6 +119,7 @@ int main (int argc, char *argv[])
                      0.8070/6.*pow(4.*Pi,-2),
                      // no vev in input
                      89.096*sqrt(2.),
+                     0,
                      pow(muIn,2),
                      3);
       

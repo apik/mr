@@ -25,7 +25,9 @@ int main (int argc, char *argv[])
       //                   3);
 
       // Mt Degrassi
-      CouplingsVevMu av(
+      Couplings<3,3,3,
+                3,3,3,
+                3,3,3> av(
                         5./3.*pow(0.3587/4./Pi,2), // GUT normalization
                         pow(0.6483/4./Pi,2),
                         pow(1.1644/4./Pi,2),
@@ -33,8 +35,8 @@ int main (int argc, char *argv[])
                         0*pow(0.0238/4./Pi,2),
                         0*pow(0.0104/4./Pi,2),
                         0.7626/6.*pow(4.*Pi,-2),
-                        0*sqrt(3./0.7626)*97.278*sqrt(2.),
                         97.278*sqrt(2.),
+                        0*sqrt(3./0.7626)*97.278*sqrt(2.),
                         pow(173.5,2),
                         3);
 

@@ -29,7 +29,7 @@ int main (int argc, char *argv[])
       // std::cout << "1-loop \\alpha      Mh= " << ACOVH80.MH()  << ", [mH/MH -1] = " << alphaMZ/4./Pi*dMH80.m10(0,0) << std::endl;
       // std::cout << "1-loop \\alpha      Mh= " << ACOVH200.MH() << ", [mH/MH -1] = " << alphaMZ/4./Pi*dMH200.m10(0,0) << std::endl;
 
-      BetaVEV bv(3);
+
 
       double vi[8] = {1.,2.,3.,4.,5.,6.,7.,8.}; 
       state_type ain(vi, vi + 8);
