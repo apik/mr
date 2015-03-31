@@ -1061,77 +1061,6 @@ long double BetaSM::bmu2(const state_type & a, size_t NG, int poco)
   return mu2;
 }
 
-BetaMu2::BetaMu2(size_t NG_, bool MultiplyByMinus1_) : ng(NG_), MultiplyByMinus1(MultiplyByMinus1_)
-{
-  bSM = new BetaSMFull(3,3,3,3,3,3,3,NG_);
-}
-
-void BetaMu2::operator() (const state_type &a, state_type &dadt, const double t)
-{
-  if(a.size() != 8)
-    throw std::logic_error("ERROR: for mu^2 running 8 constants in input needed: a1,a2,as,at,ab,atau,alam,mu2");
-
-  bSM->operator()(a, dadt, t);
-  
-  // add VEV anomalous dimension
-  double minusC = MultiplyByMinus1 ? -1. : 1.;
-  dadt[7] = minusC*BetaSM::bmu2(a, ng);
-}
-
-
-BetaVEV::BetaVEV(size_t NG_, bool MultiplyByMinus1_) : ng(NG_), MultiplyByMinus1(MultiplyByMinus1_)
-{
-  bSM = new BetaSMFull(3,3,3,3,3,3,3,NG_);
-}
-
-void BetaVEV::operator() (const state_type &a, state_type &dadt, const double t)
-{
-  if(a.size() != 8)
-    throw std::logic_error("ERROR: for v.e.v. running 8 constants in input needed: a1,a2,as,at,ab,atau,alam,v");
-
-  bSM->operator()(a, dadt, t);
-
-  // add VEV anomalous dimension
-  double minusC = MultiplyByMinus1 ? -1. : 1.;
-  dadt[7] = minusC*BetaSM::gamv(a, ng);
-}
-
-
-
-BetaVM::BetaVM(size_t NG_, bool MultiplyByMinus1_) : ng(NG_), MultiplyByMinus1(MultiplyByMinus1_)
-{
-  bSM = new BetaSMFull(3,3,3,3,3,3,3,NG_);
-}
-
-
-void BetaVM::operator() (const state_type &a, state_type &dadt, const double t)
-{
-
-  if(a.size() != 9)
-    throw std::logic_error("ERROR: for v.e.v. and mu^2 running 9 constants in input needed: a1,a2,as,at,ab,atau,alam,v,mu2");
-  
-  bSM->operator()(a, dadt, t);
-
-  double minusC = MultiplyByMinus1 ? -1. : 1.;
-  
-  // add VEV anomalous dimension
-  dadt[7] = minusC*a[7]*BetaSM::gamv(a, ng);
-  // std::cout << "dv = " << BetaVEV::gamv(a, ng) << std::endl;
-  // std::cout << "8 ==" << dadt.size() << std::endl;
-  
-  // add mu^2 anomalous dimension for <m>
-  dadt[8] = minusC*a[8]/2.*BetaSM::bmu2(a, ng);
-}
-
-
-
-
-
-
-
-
-
-// Couplings implementation
 
 BetaSM::BetaSM(int pocoa1_, int pocoa2_, int pocoas_, int pocoat_, int pocoab_, int pocoatau_, int pocolam_, int pocomu2_, int pocovev_, size_t NG_, bool MultiplyByMinus1_) : ng(NG_), pocoa1(pocoa1_), pocoa2(pocoa2_), pocoa3(pocoas_), pocoa4(pocoat_), pocoa5(pocoab_), pocoa6(pocoatau_), pocoa7(pocolam_), pocoa8(pocomu2_), pocoa9(pocovev_), MultiplyByMinus1(MultiplyByMinus1_)
 {
@@ -1143,18 +1072,14 @@ void BetaSM::operator() (const state_type &a, state_type &dadt, const double t)
 {
 
   if(a.size() != 9)
-    throw std::logic_error("ERROR: for v.e.v. and mu^2 running 9 constants in input needed: a1,a2,as,at,ab,atau,alam,v,mu2");
+    throw std::logic_error("ERROR: for v.e.v. and mu^2 running 9 constants in input needed: a1,a2,as,at,ab,atau,alam,mu2,v");
   
   bSM->operator()(a, dadt, t);
 
   double minusC = MultiplyByMinus1 ? -1. : 1.;
-  
-  // add VEV anomalous dimension
-
-  // std::cout << "dv = " << BetaVEV::gamv(a, ng) << std::endl;
-  // std::cout << "8 ==" << dadt.size() << std::endl;
-  
+    
   // add mu^2 anomalous dimension for <m>
   dadt[7] = minusC*a[7]/2.*bmu2(a, ng, pocoa8);
+  // add VEV anomalous dimension
   dadt[8] = minusC*a[8]*gamv(a, ng, pocoa9);
 }

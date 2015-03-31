@@ -568,8 +568,8 @@ public:
     //    eps_abs + eps_rel * ( ax * |x| + adxdt * dt * |dxdt| ). 
     // If the error is smaller than this value the current
     // step is accepted, otherwise it is rejected and the step size is decreased.
-    double abs_err = 1.0e-12 , rel_err = 1.0e-10 , a_x = 1.0 , a_dxdt = 1.0;
-    state_type aSM(aSM0);    
+    double abs_err = 1.0e-12 , rel_err = 1.0e-5 , a_x = 1.0 , a_dxdt = 1.0;
+    state_type aSM(aSM0);
 
     controlled_stepper_type 
       controlled_stepper(default_error_checker< double , range_algebra , default_operations >
@@ -580,7 +580,7 @@ public:
                         aSM,             // Initial values
                         0.0,             // t0 = Log[mu0/mu0]
                         fabs(lEnd),      // t  = Log[mu/mu0]
-                        0.0001           // Initial step size
+                        0.001           // Initial step size
                         );
     
     return aSM; 

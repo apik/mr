@@ -4,7 +4,7 @@ ACLOCAL_AMFLAGS = ${ACLOCAL_FLAGS} -I m4
 LDADD = ../mr/libmr.la
 EX_CFLAGS = $(MR_CFLAGS) -I$(top_srcdir)/tsil-1.21 -I$(top_srcdir)/mr
 
-noinst_PROGRAMS = exPole2ms exPole2run mW mZ mH mt runAlpha runSM runGL mb yukawa lambda yt gauge plotyukawa mtgl bezrukovFit GFermi tables poleRGI auto
+noinst_PROGRAMS = exPole2ms exPole2run exMHcrit mW mZ mH mt runAlpha runSM runGL mb yukawa lambda yt gauge mtgl bezrukovFit GFermi tables poleRGI auto
 
 # if HAVE_ROOT
 # noinst_PROGRAMS += mHroot interpolation
@@ -22,6 +22,10 @@ exPole2ms_LDADD = $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.21 -
 exPole2run_SOURCES =  exPole2run.cpp
 exPole2run_CPPFLAGS = $(EX_CFLAGS)
 exPole2run_LDADD = $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.21 -ltsil -lm
+
+exMHcrit_SOURCES =  exMHcrit.cpp
+exMHcrit_CPPFLAGS = $(EX_CFLAGS)
+exMHcrit_LDADD = $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.21 -ltsil -lm
 
 
 # Old example files
@@ -80,10 +84,6 @@ yt_LDADD = $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.21 -ltsil -
 bezrukovFit_SOURCES =  bezrukovFit.cpp
 bezrukovFit_CPPFLAGS = $(EX_CFLAGS)
 bezrukovFit_LDADD = $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.21 -ltsil -lm
-
-plotyukawa_SOURCES =  plotyukawa.cpp
-plotyukawa_CPPFLAGS = $(EX_CFLAGS)
-plotyukawa_LDADD = $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.21 -ltsil -lm
 
 gauge_SOURCES =  gauge.cpp
 gauge_CPPFLAGS = $(EX_CFLAGS)

@@ -87,6 +87,9 @@ namespace pdg2014
   
   const double  aMZ = 1./127.940;
   const double asMZ = 0.1185;
+
+  // Planck mass
+  const double  Mpl = 1.22093e19;
 }
 
 
