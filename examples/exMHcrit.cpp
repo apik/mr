@@ -16,8 +16,8 @@ int main (int argc, char *argv[])
       // Set of all running parameters at scale Mt
       P2MS pMSmt(oi,pdg2014::Gf, as(oi.Mt()), oi.Mt(), order::all);
 
-      std::cout << "Critical Higgs mass at lambda(Mpl)=0 is " << critMH(oi, pdg2014::Mpl) << std::endl;
-        
+      std::cout << "Critical Higgs mass at lambda(Mpl)=0 is " << critMH_scaleNotFixed(oi, pdg2014::Mpl) << std::endl;
+
     }
   catch (std::exception &p) 
     {

@@ -4,7 +4,7 @@ ACLOCAL_AMFLAGS = ${ACLOCAL_FLAGS} -I m4
 LDADD = ../mr/libmr.la
 EX_CFLAGS = $(MR_CFLAGS) -I$(top_srcdir)/tsil-1.21 -I$(top_srcdir)/mr
 
-noinst_PROGRAMS = exPole2ms exPole2run exMHcrit mW mZ mH mt runAlpha runSM runGL mb yukawa lambda yt gauge mtgl bezrukovFit GFermi tables poleRGI auto
+noinst_PROGRAMS = exPole2ms exPole2run exMHcrit exMtcrit mW mZ mH mt runAlpha runSM runGL mb yukawa lambda yt gauge mtgl bezrukovFit GFermi tables poleRGI auto
 
 # if HAVE_ROOT
 # noinst_PROGRAMS += mHroot interpolation
@@ -27,6 +27,9 @@ exMHcrit_SOURCES =  exMHcrit.cpp
 exMHcrit_CPPFLAGS = $(EX_CFLAGS)
 exMHcrit_LDADD = $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.21 -ltsil -lm
 
+exMtcrit_SOURCES =  exMtcrit.cpp
+exMtcrit_CPPFLAGS = $(EX_CFLAGS)
+exMtcrit_LDADD = $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.21 -ltsil -lm
 
 # Old example files
 mW_SOURCES =  mW.cpp
