@@ -34,7 +34,7 @@ TEST_CASE
   REQUIRE( (4.*Pi*sqrt(avMpl[2])) == Approx( 0.4873 ).epsilon( 0.0001 ) );
   REQUIRE( (4.*Pi*sqrt(avMpl[3])) == Approx( 0.3825 ).epsilon( 0.0001 ) );
   REQUIRE( (16.*Pi*Pi*avMpl[6])   == Approx(-0.0143 ).epsilon( 0.0001 ));
-  REQUIRE( avMpl[7]               == Approx( 139.4  ).epsilon( 0.0001 )); // In
+  REQUIRE( avMpl[7]               == Approx( 139.4  ).epsilon( 0.01 )); // In
                                                                           // original
                                                                           // paper
                                                                           // there
@@ -76,6 +76,6 @@ TEST_CASE
   REQUIRE( (4.*Pi*sqrt(avMpl[2])) == Approx( 0.4873 ).epsilon( 0.0001 ) );
   REQUIRE( (4.*Pi*sqrt(avMpl[3])) == Approx( 0.3813 ).epsilon( 0.0001 ) );
   REQUIRE( (16.*Pi*Pi*avMpl[6])   == Approx(-0.0113 ).epsilon( 0.0001 ));
-  REQUIRE( avMpl[7]               == Approx( 140.3  ).epsilon( 0.0001 ));
+  REQUIRE( avMpl[7]               == Approx( 140.3  ).epsilon( 0.01 ));
 
 }

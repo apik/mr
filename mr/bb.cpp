@@ -73,7 +73,9 @@ void bb<MS>::init()
   
   c = sqrt(mmW/mmZ);
   s = sqrt(1-mmW/mmZ);
-  
+
+  prot0bb0b = new Tsil(   0, mmb, mmb,   0, mmb, mu2);
+    
   // Timer t2;
   prot0bb0b->evaluate(mmb);
   // t2.elapsed();

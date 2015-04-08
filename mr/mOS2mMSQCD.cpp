@@ -390,16 +390,23 @@ long double mMS2mOS(long double mm, long double mu2, size_t nl, size_t nh, size_
     return 0;
 }
 
+// bottom
 long double bb<MS>::x02(size_t nL, size_t nH, size_t boson)
 {     
-  return mMS2mOS(mmt, mu2, 2*nL, nH, 2);
+  return mMS2mOS(mmb, mu2, 2*nL, nH, 2);
 }
 
 long double bb<MS>::x03(size_t nL, size_t nH, size_t boson)
 {     
-  return mMS2mOS(mmt, mu2, 2*nL, nH, 3);
+  return mMS2mOS(mmb, mu2, 2*nL, nH, 3);
 }
 
+long double bb<MS>::x04(size_t nL, size_t nH, size_t boson)
+{     
+  return mMS2mOS(mmb, mu2, 2*nL, nH, 4);
+}
+
+// top
 long double tt<MS>::x02(size_t nL, size_t nH, size_t boson)
 {     
   return mMS2mOS(mmt, mu2, 2*nL + nH, nH, 2);
@@ -408,5 +415,10 @@ long double tt<MS>::x02(size_t nL, size_t nH, size_t boson)
 long double tt<MS>::x03(size_t nL, size_t nH, size_t boson)
 {     
   return mMS2mOS(mmt, mu2, 2*nL + nH, nH, 3);
+}
+
+long double tt<MS>::x04(size_t nL, size_t nH, size_t boson)
+{     
+  return mMS2mOS(mmt, mu2, 2*nL + nH, nH, 4);
 }
 
