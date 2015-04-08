@@ -35,17 +35,17 @@ class tt
 template<>
 class tt<OS> : public PoleMass
 {
-
-long double MMb,MMt, MMH, MMW, MMZ, mu2;
-long double SW, CW;
-
-// alpha*alphaS
-Tsil* protWt000;
-Tsil* prot0ttHt;
-Tsil* prot0ttZt;
-Tsil* prot0tt0t;
-TsilSTU* prottH0H;
-TsilSTU* prottZ0Z;
+  
+  long double MMb,MMt, MMH, MMW, MMZ, mu2;
+  long double SW, CW;
+  
+  // alpha*alphaS
+  Tsil* protWt000;
+  Tsil* prot0ttHt;
+  Tsil* prot0ttZt;
+  Tsil* prot0tt0t;
+  TsilSTU* prottH0H;
+  TsilSTU* prottZ0Z;
   // alpha^2
   Tsil* protHHttH;
   Tsil* protHZttZ;
@@ -72,10 +72,8 @@ TsilSTU* prottZ0Z;
   Tsil* prot00t00;
   Tsil* prot000t0;
 
-TsilST* protos[28];
-
-// static const long double EPAIR2 = -1.; 
-
+  TsilST* protos[28];
+  
 public:
 tt()
 {
@@ -87,91 +85,6 @@ tt()
   
   void init();
 
-
-  
-  
-  std::complex<long double> Mfin1(TSIL_REAL x, TSIL_REAL y, TSIL_REAL z, TSIL_REAL u, TSIL_REAL v)
-  {
-    TSIL_DATA    result;
-    TSIL_SetParameters (&result, x, y, z, u, v, mu2); 
-    TSIL_Evaluate( &result, MMt); 
-    return TSIL_GetFunction(&result, "M");
-  }
-
-  std::complex<long double> Vfin1(TSIL_REAL x, TSIL_REAL z, TSIL_REAL u, TSIL_REAL v)
-  {
-    TSIL_DATA    result;
-
-    TSIL_SetParametersSTU (&result, x, z, u, v, mu2); 
-    TSIL_Evaluate( &result, MMt); 
-    return TSIL_GetBoldFunction(&result, "Vxzuv",0);
-  }
-
-  std::complex<long double> Ufin1(TSIL_REAL x, TSIL_REAL z, TSIL_REAL u, TSIL_REAL v)
-  {
-    TSIL_DATA    result;
-
-    TSIL_SetParametersSTU (&result, x, z, u, v, mu2); 
-    TSIL_Evaluate( &result, MMt); 
-    return TSIL_GetBoldFunction(&result, "Uxzuv",0);
-  }
-
-  std::complex<long double> Tfin1(TSIL_REAL x, TSIL_REAL u, TSIL_REAL v)
-  {
-    TSIL_DATA    result;
-
-    TSIL_SetParametersST (&result, x, u, v, mu2); 
-    TSIL_Evaluate( &result, MMt); 
-    return TSIL_GetBoldFunction(&result, "Txuv",0);
-  }
-
-  std::complex<long double> Sfin1(TSIL_REAL x, TSIL_REAL u, TSIL_REAL v)
-  {
-    TSIL_DATA    result;
-
-    TSIL_SetParametersST (&result, x, u, v, mu2); 
-    TSIL_Evaluate( &result, MMt); 
-    return TSIL_GetBoldFunction(&result, "Sxuv",0);
-  }
-
-  
-void test()
-{
-    std::vector<std::complex<long double> > diffMfin;
-    std::vector<std::complex<long double> > diffVfin;
-    std::vector<std::complex<long double> > diffUfin;
-    std::vector<std::complex<long double> > diffTfin;
-    std::vector<std::complex<long double> > diffSfin;
-    std::vector<std::complex<long double> > diffIfin;
-
-#include "testtt.hpp"
-// #include "testyt.hpp"
-// #include "testttgl.hpp"
-// #include "testytgl.hpp"
-
-for(int i = 0; i < diffMfin.size(); i++)
-  std::cout << "Test diffMfin[" << i << "]= " << diffMfin[i] << std::endl;
-
-
-for(int i = 0; i < diffVfin.size(); i++)
-  std::cout << "Test diffVfin[" << i << "]= " << diffVfin[i] << std::endl;
-
-
-    for(int i = 0; i < diffUfin.size(); i++)
-      std::cout << "Test diffUfin[" << i << "]= " << diffUfin[i] << std::endl;
-
-
-    for(int i = 0; i < diffTfin.size(); i++)
-      std::cout << "Test diffTfin[" << i << "]= " << diffTfin[i] << std::endl;
-
-
-    for(int i = 0; i < diffSfin.size(); i++)
-      std::cout << "Test diffSfin[" << i << "]= " << diffSfin[i] << std::endl;
-
-
-  }
-
-std::pair<long double,long double> test2(long double epsabs = 1.E-5,long double epsrel=0.001);
   // 
   // Pure QCD part m_ij=mY_ij by definition
   // 
@@ -180,6 +93,8 @@ std::pair<long double,long double> test2(long double epsabs = 1.E-5,long double 
   long double x02(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
   long double x03(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+
+  long double x04(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
   // 
   // Mass corrections
@@ -211,6 +126,9 @@ std::pair<long double,long double> test2(long double epsabs = 1.E-5,long double 
   
   long double y03(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
+  long double y04(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+
+  // EW
   long double y10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
   long double y11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
@@ -296,6 +214,8 @@ public:
   long double x02(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
   long double x03(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+
+  long double x04(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
   // 
   // Mass corrections

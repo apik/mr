@@ -61,6 +61,8 @@ public:
 
   long double x03(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
+  long double x04(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+
   
   long double x10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
   
@@ -88,6 +90,8 @@ public:
   long double y02(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
   long double y03(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+
+  long double y04(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
   long double y10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
@@ -142,6 +146,8 @@ public:
   long double x02(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
   long double x03(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+
+  long double x04(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
   // 
   // Mass corrections
