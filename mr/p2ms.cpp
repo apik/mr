@@ -98,7 +98,7 @@ P2MSnLnH::P2MSnLnH(const OSinput & oi_, const long double &  Gf_, const long dou
 {
   long double mu2 = pow(mu,2);
 
-  bp  = new bb(oi, mu2);
+  bp  = new bb<OS>(oi, mu2);
   wp  = new WW<OS>(oi, mu2);
   zp  = new ZZ<OS>(oi, mu2);
   hp  = new HH<OS>(oi, mu2);
@@ -306,7 +306,7 @@ P2MS::P2MS(const OSinput & oi_, const long double &  Gf_, const long double &  a
 {
   long double mu2 = pow(mu,2);
   
-  bp  = new bb(oi, mu2);
+  bp  = new bb<OS>(oi, mu2);
   wp  = new WW<OS>(oi, mu2);
   zp  = new ZZ<OS>(oi, mu2);
   hp  = new HH<OS>(oi, mu2);

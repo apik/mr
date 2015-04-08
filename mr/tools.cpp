@@ -22,15 +22,9 @@
 #include "boost/numeric/interval.hpp"
 #include "tools.hpp"
 #include "p2ms.hpp"
-// #include <stdexcept>
+
 #include "betaQCD.hpp"
 #include "betaSM.hpp"
-// #include "betaQEDQCD.hpp"
-// #include "bb.hpp" 
-// #include "WW.hpp"
-// #include "ZZ.hpp"
-// #include "HH.hpp"
-// #include "tt.hpp" 
 
 
 
@@ -311,7 +305,6 @@ struct MH_functor2 : Functor<double>
 long double critMH_scaleNotFixed(const OSinput& oi, long double mu)
 {
   
-  
   Eigen::VectorXd x(2);
   x(0) = oi.MH();
   x(1) = log10(pow(mu,2));
@@ -326,8 +319,8 @@ long double critMH_scaleNotFixed(const OSinput& oi, long double mu)
   std::cout << "Max fev= " << lm.parameters.maxfev << std::endl;
 
   int ret = lm.minimize(x);
-  std::cout << lm.iter << std::endl;
-  std::cout << "Minimum " << ret << std::endl;
+  std::cout << "Affter " << lm.iter << " iterations," << std::endl;
+  std::cout << "Status: " << ret << std::endl;
   
   std::cout << "x that minimizes the function: " << x << std::endl;
 

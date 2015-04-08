@@ -1,5 +1,5 @@
 #include <bb.hpp>
-long double bb::ygl20(size_t nL, size_t nH, size_t boson)
+long double bb<OS>::ygl20(size_t nL, size_t nH, size_t boson)
 {     
       
       

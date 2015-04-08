@@ -22,7 +22,7 @@
 #include <tt.hpp>
 
 // nh - number of heavy fermions with mass M
-// nl - number of massles fermions with mass
+// nl - number of massles fermions
 long double mOS2mMS(long double MM, long double mu2, size_t nl, size_t nh, size_t loops)
 {
   double NL = double(nl), NH = double (nh);
@@ -88,22 +88,22 @@ long double mOS2mMS(long double MM, long double mu2, size_t nl, size_t nh, size_
 //        nl = 2*NL + NH, nh = NH for M=Mt
 //        nl = 2*NL , nh = NH for M=Mb 
 
-long double bb::x02(size_t nL, size_t nH, size_t boson)
+long double bb<OS>::x02(size_t nL, size_t nH, size_t boson)
 {     
   return mOS2mMS(MMb, mu2, 2*nL, nH, 2);
 }
 
-long double bb::x03(size_t nL, size_t nH, size_t boson)
+long double bb<OS>::x03(size_t nL, size_t nH, size_t boson)
 {     
   return mOS2mMS(MMb, mu2, 2*nL, nH, 3);
 }
 
-long double bb::y02(size_t nL, size_t nH, size_t boson)
+long double bb<OS>::y02(size_t nL, size_t nH, size_t boson)
 {     
   return mOS2mMS(MMb, mu2, 2*nL, nH, 2);
 }
 
-long double bb::y03(size_t nL, size_t nH, size_t boson)
+long double bb<OS>::y03(size_t nL, size_t nH, size_t boson)
 {     
   return mOS2mMS(MMb, mu2, 2*nL, nH, 3);
 }
@@ -194,6 +194,15 @@ long double mMS2mOS(long double mm, long double mu2, size_t nl, size_t nh, size_
     return 0;
 }
 
+long double bb<MS>::x02(size_t nL, size_t nH, size_t boson)
+{     
+  return mMS2mOS(mmt, mu2, 2*nL, nH, 2);
+}
+
+long double bb<MS>::x03(size_t nL, size_t nH, size_t boson)
+{     
+  return mMS2mOS(mmt, mu2, 2*nL, nH, 3);
+}
 
 long double tt<MS>::x02(size_t nL, size_t nH, size_t boson)
 {     
@@ -204,3 +213,4 @@ long double tt<MS>::x03(size_t nL, size_t nH, size_t boson)
 {     
   return mMS2mOS(mmt, mu2, 2*nL + nH, nH, 3);
 }
+

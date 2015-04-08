@@ -1,5 +1,5 @@
 #include <bb.hpp>
-long double bb::y11(size_t nL, size_t nH, size_t boson)
+long double bb<OS>::y11(size_t nL, size_t nH, size_t boson)
 {     
       
       

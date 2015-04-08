@@ -45,7 +45,7 @@ int main (int argc, char *argv[])
 
 
       // Yukawa bottom
-      bb dMb  = bb(KVPhys, KVPhys.MMb());
+      bb<OS> dMb(KVPhys, KVPhys.MMb());
       std::cout << "[ Bottom quark ]" << std::endl;
       std::cout << "\t1-loop \\alpha         " << alphaMb/4./Pi*dMb.y10() << std::endl;
       std::cout << "\t1-loop \\alpha_S       " << alphaSMb/4./Pi*dMb.y01() << std::endl;
@@ -101,7 +101,7 @@ int main (int argc, char *argv[])
    for (int mHi = 0; mHi < 100; mHi++)
      {
        OSinput DS2l(4.40, 80.385, 91.1876, 125.6, 173.5);
-       bb dbY  = bb(DS2l, mHstart + mHi*mHstep);          
+       bb<OS> dbY(DS2l, mHstart + mHi*mHstep);          
        
        plotYb.add(mHstart + mHi*mHstep,alphaMb/4./Pi*alphaSMb/4./Pi*dbY.y11());
      }

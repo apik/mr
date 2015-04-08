@@ -241,7 +241,7 @@ int main (int argc, char *argv[])
         }
       
       
-      bb dMb  = bb(KPVphys, KPVphys.MMb());
+      bb<OS> dMb(KPVphys, KPVphys.MMb());
       
       
       // PDG2014

@@ -71,6 +71,7 @@ long double critMt(const OSinput&, long double);
 
 
 long double critMH2(const OSinput&, long double);
+
 long double critMH_scaleNotFixed(const OSinput&, long double);
 
 long double critMt_scaleNotFixed(const OSinput&, long double);

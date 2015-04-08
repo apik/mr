@@ -30,7 +30,7 @@ int main (int argc, char *argv[])
       
       for (int i = 0; i < 3; i++)
         {
-          bb dMb  = bb(*KV[i], KV[i]->MMb());
+          bb<OS> dMb(*KV[i], KV[i]->MMb());
           std::cout << "Mh= " << KV[i]->MH()  << std::endl;
           std::cout << "as(MMt) = " << as(KV[i]->MMt()) << std::endl;          
           std::cout << "\t1-loop \\alpha         " << // KV[i]->Mb()*

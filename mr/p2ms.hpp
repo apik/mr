@@ -41,7 +41,7 @@ class P2MSnLnH
   long double   mu;
   
 
-  bb*      bp;
+  bb<OS>*  bp;
   WW<OS>*  wp;
   ZZ<OS>*  zp;
   HH<OS>*  hp;
@@ -89,7 +89,7 @@ class P2MS
   long double   mu;
   
 
-  bb*      bp;
+  bb<OS>*  bp;
   WW<OS>*  wp;
   ZZ<OS>*  zp;
   HH<OS>*  hp;
