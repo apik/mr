@@ -4,7 +4,9 @@ ACLOCAL_AMFLAGS = ${ACLOCAL_FLAGS} -I m4
 lib_LIBRARIES = libmr.a
 
 # Main sources
-MAINSRC = mr.hpp tsil.hpp tsil.cpp base.hpp mOS2mMSQCD.cpp pole2run.hpp pole2run.cpp p2ms.hpp p2ms.cpp tools.hpp tools.cpp errint.cpp
+MAINSRC = mr.hpp tsil.hpp tsil.cpp base.hpp mOS2mMSQCD.cpp pole2run.hpp pole2run.cpp p2ms.hpp p2ms.cpp tools.hpp tools.cpp
+
+MAINHPP =  constants.hpp sminput.hpp timer.hpp  tsil.hpp  dr.hpp operators.hpp
 
 # Running
 RUNSRC = betaSM.hpp betaSM.cpp betaQCD.hpp betaQEDQCD.hpp betaQEDQCD.cpp betaQCD.cpp CRunDec.cpp CRunDec.h
@@ -50,7 +52,7 @@ HHMS2OS = mHHos10.cpp mHHos11.cpp mHHos20.cpp
 TTMS2OS = mttos01.cpp mttos10.cpp mttos11.cpp mttos20.cpp
 
 
-libmr_a_SOURCES =    $(MAINSRC) $(ALPHAGF) $(RUNSRC) $(BBMS) $(WWMS) $(ZZMS) $(HHMS) $(TTMS)\
+libmr_a_SOURCES =    $(MAINSRC) $(MAINHPP) $(ALPHAGF) $(RUNSRC) $(BBMS) $(WWMS) $(ZZMS) $(HHMS) $(TTMS)\
  $(HHMSGL) $(BBMSGL) $(TTMSGL) $(DRMSOS) $(DRMSMS)\
  $(WWMS2OS) $(ZZMS2OS) $(HHMS2OS) $(TTMS2OS)
 

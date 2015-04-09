@@ -2,7 +2,7 @@ AUTOMAKE_OPTIONS = subdir-objects
 ACLOCAL_AMFLAGS = ${ACLOCAL_FLAGS} -I m4
 
 LDADD = ../mr/libmr.la
-EX_CFLAGS = $(MR_CFLAGS) -I$(top_srcdir)/tsil-1.21 -I$(top_srcdir)/mr
+EX_CFLAGS = $(MR_CFLAGS) -I$(top_srcdir)/tsil-1.21 -I$(top_srcdir)/mr -I$(top_srcdir)/Eigen
 
 noinst_PROGRAMS = exPole2ms exPole2run exMHcrit exMtcrit mW mZ mH mt runAlpha runSM runGL mb yukawa lambda yt gauge mtgl bezrukovFit GFermi tables poleRGI auto
 
@@ -32,7 +32,7 @@ exMtcrit_CPPFLAGS = $(EX_CFLAGS)
 exMtcrit_LDADD = $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.21 -ltsil -lm
 
 # Old example files
-mW_SOURCES =  mW.cpp
+mW_SOURCES =  mW.cpp gnuplot.hpp
 mW_CPPFLAGS = $(EX_CFLAGS)
 mW_LDADD = $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.21 -ltsil -lm
 

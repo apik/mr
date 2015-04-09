@@ -142,6 +142,18 @@ AM_V_CXXLD = $(am__v_CXXLD_@AM_V@)
 am__v_CXXLD_ = $(am__v_CXXLD_@AM_DEFAULT_V@)
 am__v_CXXLD_0 = @echo "  CXXLD   " $@;
 am__v_CXXLD_1 = 
+COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
+	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+AM_V_CC = $(am__v_CC_@AM_V@)
+am__v_CC_ = $(am__v_CC_@AM_DEFAULT_V@)
+am__v_CC_0 = @echo "  CC      " $@;
+am__v_CC_1 = 
+CCLD = $(CC)
+LINK = $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
+AM_V_CCLD = $(am__v_CCLD_@AM_V@)
+am__v_CCLD_ = $(am__v_CCLD_@AM_DEFAULT_V@)
+am__v_CCLD_0 = @echo "  CCLD    " $@;
+am__v_CCLD_1 = 
 SOURCES = $(testsuite_SOURCES)
 DIST_SOURCES = $(testsuite_SOURCES)
 am__can_run_installinfo = \
@@ -289,7 +301,7 @@ AUTOMAKE_OPTIONS = subdir-objects
 ACLOCAL_AMFLAGS = ${ACLOCAL_FLAGS} -I m4
 LDADD = ../mr/libmr.a
 EX_CFLAGS = $(MR_CFLAGS) -I$(top_srcdir)/tsil-1.21 -I$(top_srcdir)/mr -I$(top_srcdir)/Eigen
-testsuite_SOURCES = testsuite.cpp BKKS_1205.2893.cpp JKV_0105304.cpp JKV_0212319.cpp MWeqMZ.cpp mPlanck.cpp RunDec.cpp mOSmMS_QCD.cpp
+testsuite_SOURCES = testsuite.cpp BKKS_1205.2893.cpp JKV_0105304.cpp JKV_0212319.cpp MWeqMZ.cpp mPlanck.cpp RunDec.cpp mOSmMS_QCD.cpp catch.hpp
 testsuite_CPPFLAGS = $(EX_CFLAGS)
 testsuite_LDADD = $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.21 -ltsil -lm
 all: all-am

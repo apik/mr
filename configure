@@ -4429,6 +4429,8 @@ esac
 
 { $as_echo "$as_me:${as_lineno-$LINENO}: $host_os" >&5
 $as_echo "$as_me: $host_os" >&6;}
+{ $as_echo "$as_me:${as_lineno-$LINENO}: $LDMATH" >&5
+$as_echo "$as_me: $LDMATH" >&6;}
 
 if test -n "$ac_tool_prefix"; then
   # Extract the first word of "${ac_tool_prefix}ranlib", so it can be a program name with args.

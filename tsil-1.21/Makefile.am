@@ -50,7 +50,6 @@ lib_LIBRARIES = libtsil.a
 
 libtsil_a_SOURCES =   initialize.c \
 		    evaluate.c \
-		    fevaluate.c \
 		    generic.c \
 		    rk6.c \
 		    rk5.c \
@@ -79,8 +78,8 @@ libtsil_a_SOURCES =   initialize.c \
 	   	    analyticM.c \
 	   	    setTbar.c \
 	    	    setV.c \
-	    	    setbold.c
-
+	    	    setbold.c \
+                    internal.h tsil.h tsil_build.h tsil_funcs.h tsil_global.h tsil_names.h tsil_params.h
 
 
 libtsil_a_CFLAGS = $(TSIL_RESCALE) $(TSIL_SIZE) $(TSIL_OPT)

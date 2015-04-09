@@ -49,14 +49,14 @@ const tt<OS> & get_tt(const OSinput& oi, long double mu2)
     return directory.insert(std::make_pair(std::make_pair(oi,mu2), tt<OS>(oi,mu2))).first->second;
 }
 
-const bb & get_bb(const OSinput& oi, long double mu2)
+const bb<OS> & get_bb(const OSinput& oi, long double mu2)
 {
-  static std::map< std::pair<OSinput, long double>, bb > directory;
-  std::map< std::pair<OSinput, long double>, bb >::iterator i = directory.find(std::make_pair(oi,mu2));
+  static std::map< std::pair<OSinput, long double>, bb<OS> > directory;
+  std::map< std::pair<OSinput, long double>, bb<OS> >::iterator i = directory.find(std::make_pair(oi,mu2));
   if (i != directory.end())
     return i->second;
   else
-    return directory.insert(std::make_pair(std::make_pair(oi,mu2), bb(oi,mu2))).first->second;
+    return directory.insert(std::make_pair(std::make_pair(oi,mu2), bb<OS>(oi,mu2))).first->second;
 }
 
 typedef std::vector<std::pair<size_t,size_t> > Vpow;
@@ -168,7 +168,7 @@ void Xb(double mb, double mW, double mZ, double mH, double mt, double mu, int nL
 {
   OSinput oi(mb, mW, mZ, mH, mt);
   
-  bb bbm = get_bb(oi, pow(mu,2));
+  bb<OS> bbm = get_bb(oi, pow(mu,2));
 
   MLPutFunction(stdlink, "List", 6);
 
@@ -197,7 +197,7 @@ void XbQCD(double mb, double mW, double mZ, double mH, double mt, double mu, int
 {
   OSinput oi(mb, mW, mZ, mH, mt);
   
-  bb bbm = get_bb(oi, pow(mu,2));
+  bb<OS> bbm = get_bb(oi, pow(mu,2));
 
   MLPutFunction(stdlink, "List", 3);
 

@@ -121,6 +121,7 @@ case $host_os in
 esac
 
 AC_MSG_NOTICE([$host_os])
+AC_MSG_NOTICE([$LDMATH])
 
 AC_PROG_RANLIB
 dnl LT_INIT
