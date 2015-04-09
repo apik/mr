@@ -35,6 +35,14 @@ By Bernd A. Kniehl, Andrey F. Pikelner, Oleg L. Veretin.
 
 ### Additional tools 
 
+Two-loop massive self-energy integrals evaluated numerically using TSIL
+library:
+
+* *[TSIL: A Program for the calculation of two-loop self-energy
+integrals.](http://inspirehep.net/record/675010)
+By Stephen P. Martin, David G. Robertson.
+Comput.Phys.Commun. 174 (2006) 133-151.*
+
 Effective potential up to three loops in SM in gaugless limit:
 
 *  *[Three-loop Standard Model effective potential at leading order in

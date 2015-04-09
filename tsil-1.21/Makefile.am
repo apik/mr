@@ -1,3 +1,7 @@
+AUTOMAKE_OPTIONS = subdir-objects
+ACLOCAL_AMFLAGS = ${ACLOCAL_FLAGS} -I m4
+
+lib_LIBRARIES = libtsil.a
 ####################################################################
 # 
 #    Makefile for TSIL (Two-loop Self-energy Integral Library)
@@ -44,73 +48,39 @@
 ####################################################################
 ####################################################################
 
-CFLAGS	= $(TSIL_RESCALE) $(TSIL_SIZE) $(TSIL_OPT)
-LDFLAGS	= 
-LIBS	= -L. -ltsil -lm
-ARFLAGS = -rus
-
-TSIL_SRCS = initialize.c \
-	    evaluate.c \
-	    fevaluate.c \
-	    generic.c \
-	    rk6.c \
-	    rk5.c \
-	    functions.c \
-	    dilog.c \
-	    trilog.c \
-	    dBds.c \
-	    dSds.c \
-	    dTds.c \
-	    dUds.c \
-	    dsMds.c \
-	    initB.c \
-	    initS.c \
-	    initT.c \
-	    initU.c \
-	    initV.c \
-	    initM.c \
-	    special.c \
-	    analyticAB.c \
-	    analyticI.c \
-	    analyticS.c \
-	    analyticT.c \
-	    analyticTbar.c \
-	    analyticU.c \
-	    analyticV.c \
-	    analyticM.c \
-	    setTbar.c \
-	    setV.c \
-	    setbold.c
-
-TSIL_OBJS = $(TSIL_SRCS:.c=.o)
-
-MAIN_OBJ = basecalc.o
-
-TEST_SRC = testprog.c
-
-TEST_OBJ = $(TEST_SRC:.c=.o)
-
-all:	libtsil.a
-
-libtsil.a: $(TSIL_OBJS)
-	$(AR) $(ARFLAGS) $@ $?
-
-$(TEST_OBJ):	$(TEST_SRC)
-	$(CC) -c $(CFLAGS) $(TSIL_TESTOPT) $(TEST_SRC)
-
-tidy:
-	rm -rf core* a.out *~
-
-clean:
-	rm -rf core* a.out tsil tsil.tst *~ *.o *.T libtsil.a
+libtsil_a_SOURCES =   initialize.c \
+		    evaluate.c \
+		    fevaluate.c \
+		    generic.c \
+		    rk6.c \
+		    rk5.c \
+		    functions.c \
+		    dilog.c \
+		    trilog.c \
+		    dBds.c \
+		    dSds.c \
+		    dTds.c \
+		    dUds.c \
+		    dsMds.c \
+		    initB.c \
+		    initS.c \
+		    initT.c \
+		    initU.c \
+		    initV.c \
+		    initM.c \
+		    special.c \
+		    analyticAB.c \
+                    analyticI.c \
+		    analyticS.c \
+		    analyticT.c \
+		    analyticTbar.c \
+		    analyticU.c \
+	   	    analyticV.c \
+	   	    analyticM.c \
+	   	    setTbar.c \
+	    	    setV.c \
+	    	    setbold.c
 
 
-# ===== Header dependencies: =====
 
-generic.o initialize.o: tsil_params.h
-
-$(TSIL_OBJS):	internal.h tsil.h tsil_funcs.h tsil_global.h
-
-tsil_main.o:	tsil.h
-
-$(TEST_OBJ):	tsil_testparams.h internal.h tsil.h
+libtsil_a_CFLAGS = $(TSIL_RESCALE) $(TSIL_SIZE) $(TSIL_OPT)

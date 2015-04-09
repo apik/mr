@@ -51,17 +51,21 @@ public:
   enum {
     
     // tree = 0x0000,
-    // x00  = 0x0001,
     x01  = 0x0001,              // QCD 1-loop
     x10  = 0x0002,              // EW  1-loop
     x02  = 0x0004,              // QCD 2-loop
     x11  = 0x0008,              // EW*QCD
     x20  = 0x0010,              // EW*EW
     x03  = 0x0020,               // QCD 3-loop
+    x04  = 0x0040,               // QCD 4-loop
+    // x  = 0x0080, 
+    // x  = 0x0100, 
+    // x  = 0x0200, 
 
     // combinations
     all     = 0x003f,           // all available corrections
-    allQCD  = 0x0025,           // Only QCD: x01,x02,x03
+    QCD3l   = 0x0025,           // Only QCD: x01,x02,x03
+    allQCD  = 0x0065,           // Only QCD: x01,x02,x03,x04
     allEW   = 0x001a            // Only  EW: x10,x11,x20
   };
 
@@ -111,6 +115,9 @@ namespace pdg2012
   
   const double  aMZ = 1./127.944;
   const double asMZ = 0.1184;
+
+  // Planck mass
+  const double  Mpl = 1.22093e19;
 }
 
 
@@ -132,6 +139,9 @@ namespace pdg2010
   
   const double  aMZ = 1./127.916;
   const double asMZ = 0.1184;
+
+  // Planck mass
+  const double  Mpl = 1.22093e19;
 }
 
 
