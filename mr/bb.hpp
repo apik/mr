@@ -109,11 +109,11 @@ public:
 
   long double ygl20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
-
   std::complex<long double> det(const long double & a, const long double & b, const long double & c)
   {
     return 1./(a*a + b*b + c*c - 2*a*b - 2*b*c - 2*c*a);
   }
+
   
 };
 
@@ -158,6 +158,10 @@ public:
 
   long double x20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
   
+  std::complex<long double> det(const long double & a, const long double & b, const long double & c)
+  {
+    return 1./(a*a + b*b + c*c - 2*a*b - 2*b*c - 2*c*a);
+  }
 };
 
 

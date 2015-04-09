@@ -50,11 +50,13 @@ ZZMS2OS = mZZos10.cpp mZZos11.cpp mZZos20.cpp
 HHMS2OS = mHHos10.cpp mHHos11.cpp mHHos20.cpp
 # t pole mass from MS input
 TTMS2OS = mttos01.cpp mttos10.cpp mttos11.cpp mttos20.cpp
+# b pole mass from MS input
+BBMS2OS = mbbos01.cpp mbbos10.cpp mbbos11.cpp mbbos20.cpp
 
 
 libmr_a_SOURCES =    $(MAINSRC) $(MAINHPP) $(ALPHAGF) $(RUNSRC) $(BBMS) $(WWMS) $(ZZMS) $(HHMS) $(TTMS)\
  $(HHMSGL) $(BBMSGL) $(TTMSGL) $(DRMSOS) $(DRMSMS)\
- $(WWMS2OS) $(ZZMS2OS) $(HHMS2OS) $(TTMS2OS)
+ $(WWMS2OS) $(ZZMS2OS) $(HHMS2OS) $(TTMS2OS) $(BBMS2OS)
 
 libmr_a_CPPFLAGS = $(MR_CFLAGS) -I$(top_srcdir) -I$(top_srcdir)/tsil-1.21 -I$(top_srcdir)/Eigen
 
