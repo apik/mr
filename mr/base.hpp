@@ -36,12 +36,13 @@ class PoleMass
   // Mass corrections
   // 
 public:
+
   virtual long double x10(size_t nL = 2, size_t nH = 1, size_t boson = 1) = 0;
   
   virtual long double x11(size_t nL = 2, size_t nH = 1, size_t boson = 1) = 0;
-  
+
   virtual long double x20(size_t nL = 2, size_t nH = 1, size_t boson = 1) = 0;
-  
+
   virtual long double x01(size_t nL = 2, size_t nH = 1, size_t boson = 1)
   {
     std::cout << "Order a^0*as^1 is not implemented for this particle" << std::endl;
@@ -57,7 +58,12 @@ public:
     std::cout << "Order a^0*as^3 is not implemented for this particle" << std::endl;
     return 0;
   }
-  
+  virtual long double x04(size_t nL = 2, size_t nH = 1, size_t boson = 1)
+  {
+    std::cout << "Order a^0*as^4 is not implemented for this particle" << std::endl;
+    return 0;
+  }
+
   // and meta method
   long double x(size_t apow, size_t aspow, size_t nL = 2, size_t nH = 1, size_t boson = 1)
   {
@@ -73,6 +79,8 @@ public:
       return x02(nL, nH, boson);
     if(apow == 0 && aspow == 3)
       return x03(nL, nH, boson);
+    if(apow == 0 && aspow == 4)
+      return x04(nL, nH, boson);
     return 0;
   }
   // Gaugeless limit
@@ -91,6 +99,22 @@ public:
   // 
   // virtual std::complex<long double> my01() = 0;
 
+
+  // Gaugeless limit
+  // virtual std::complex<long double> mygl01();
+
+  // virtual std::complex<long double> mygl10(size_t nL = 2, size_t nH = 1);
+
+  // virtual std::complex<long double> mygl11(size_t nL = 2, size_t nH = 1);
+
+  // virtual std::complex<long double> mygl20(size_t nL = 2, size_t nH = 1);
+
+
+};
+
+class PoleMassAndCouplings : public PoleMass
+{
+public:
   virtual long double y10(size_t nL = 2, size_t nH = 1, size_t boson = 1) = 0;
 
   virtual long double y11(size_t nL = 2, size_t nH = 1, size_t boson = 1) = 0;
@@ -111,17 +135,10 @@ public:
       return x02(nL, nH, boson);
     if(apow == 0 && aspow == 3)
       return x03(nL, nH, boson);
+    if(apow == 0 && aspow == 4)
+      return x04(nL, nH, boson);
     return 0;
   }
-
-  // Gaugeless limit
-  // virtual std::complex<long double> mygl01();
-
-  // virtual std::complex<long double> mygl10(size_t nL = 2, size_t nH = 1);
-
-  // virtual std::complex<long double> mygl11(size_t nL = 2, size_t nH = 1);
-
-  // virtual std::complex<long double> mygl20(size_t nL = 2, size_t nH = 1);
 
 
 };

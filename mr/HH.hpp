@@ -1,4 +1,4 @@
-//
+////
 // MR - 2-loop matching and 3-loop Running, including full 2-loop EW corrections
 // Copyright (C) 2014 Andrey Pikelner <pikelner@theor.jinr.ru>
 //
@@ -28,12 +28,12 @@
 #include "base.hpp"
 
 template<class T>
-class HH : public PoleMass
+class HH 
 {
 };
 
 template<>
-class HH<OS> : public PoleMass
+class HH<OS> : public PoleMassAndCouplings
 {
 
   long double MMb, MMt, MMH, MMW, MMZ, mu2;
@@ -125,7 +125,7 @@ public:
 
 
 template<>
-class HH<MS>
+class HH<MS> : public PoleMass
 {
 
   long double mmb, mmt, mmH, mmW, mmZ, mu2;
@@ -167,7 +167,7 @@ public:
   
   void init();
 
-  long double x01(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+//  long double x01(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
   
   long double x10(size_t nL = 2, size_t nH = 1, size_t boson = 1);

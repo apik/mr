@@ -33,7 +33,7 @@ class bb
 };
 
 template<>
-class bb<OS> : public PoleMass
+class bb<OS> : public PoleMassAndCouplings
 {
 
   long double MMb, MMt, MMH, MMW, MMZ, mu2;
@@ -119,7 +119,7 @@ public:
 
 
 template<>
-class bb<MS> 
+class bb<MS> : public PoleMass
 {
 
   long double mmb,mmt, mmH, mmW, mmZ, mu2;
