@@ -1,4 +1,4 @@
-AC_INIT([Standard Model 3-loop running and 2-loop matching], [0.1], [pikelner@theor.jinr.ru],
+AC_INIT([Standard Model 3-loop running and 2-loop matching], [1.0], [pikelner@theor.jinr.ru],
              [mr], [http://theor.jinr.ru/~pikelner/])
 AC_PREREQ([2.59])
 AC_CONFIG_MACRO_DIR([m4])

@@ -29,7 +29,7 @@
 #include "ZZ.hpp"
 #include "HH.hpp"
 #include "tt.hpp" 
-
+#include "alphaGF.hpp"
 
 
 struct DiffGF
@@ -78,7 +78,6 @@ struct DiffGF
 
 };
 
-
 class tolerance {
 public:
   tolerance(long double eps) :
@@ -93,6 +92,99 @@ private:
 
 
 
+long double AlphaSolve::operator()(const long double& mu2 )
+{
+  DiffGF dGF(oi, Gf0, alphaS, mu2, ord);
+  tolerance tol = 1e-12;
+  
+  std::pair<long double, long double> found = boost::math::tools::bisect(dGF, 1./140., 1./120., tol);
+  
+  boost::numeric::interval<long double> fint(found.first, found.second);
+  
+  std::cout << std::setprecision(10);
+  std::cout << "==> 1/alpha = [" << 1./found.first << ',' << 1./found.second << "]\n";
+  
+  return boost::numeric::median(fint);;
+}
+
+
+long double AlphaGF::operator()(const long double& mu2 )
+{
+  
+  alphaGF aGF  = alphaGF(oi, mu2);
+  
+  long double daGF = 1;
+  
+  // Tree level
+  long double alF = sqrt(2)*Gf0*oi.MMW()/Pi*(1-oi.MMW()/oi.MMZ());
+  
+  if(ord & order::x10)
+    {
+      daGF += alF/4./Pi*aGF.a10();;
+    }
+  if(ord & order::x11)
+    {
+      daGF += alF/4./Pi*alphaS/4./Pi*aGF.a11();
+    }
+  if(ord & order::x20)
+    {
+      daGF += pow(alF/4./Pi,2)*aGF.a20();
+    }
+
+
+  std::cout << " From GF: " << alF*daGF << std::endl;
+  return alF*daGF;
+}
+
+
+struct DiffDR
+{
+  
+  OSinput oi;
+  dr<OS>* dR;
+  unsigned ord;
+  long double Gf0;
+  long double alphaS;
+  
+  DiffDR(OSinput in_, long double Gf0_, long double as_, long double mu2, unsigned order_) : oi(in_), Gf0(Gf0_), alphaS(as_), ord(order_)
+  {
+    dR = new dr<OS>(oi, mu2);
+  }
+  
+  long double operator()(long double alpha)
+  {
+    long double dMyR = 1;
+    long double Gf;
+    
+    if(ord & order::x10)
+      {
+        dMyR += alpha/4./Pi*dR->dr10();
+      }
+    if(ord & order::x11)
+      {
+        dMyR += alpha/4./Pi*alphaS/4./Pi*dR->dr11();
+      }
+    if(ord & order::x20)
+      {
+        dMyR += pow(alpha/4./Pi,2)*dR->dr20();
+      }
+    
+    long double alphaTH=1./137.;
+    
+    Gf = alphaTH*Pi/sqrt(2)/oi.MMW()/(1-oi.MMW()/oi.MMZ());
+    
+    return (Gf0 - Gf)*pow(10,2);
+  }
+
+};
+
+
+
+
+
+
+
+
 
 P2MSnLnH::P2MSnLnH(const OSinput & oi_, const long double &  Gf_, const long double &  as_,const long double &  mu_): oi(oi_), Gf(Gf_), aQCD(as_/4./Pi), mu(mu_)
 {
@@ -104,6 +196,7 @@ P2MSnLnH::P2MSnLnH(const OSinput & oi_, const long double &  Gf_, const long dou
   hp  = new HH<OS>(oi, mu2);
   tp  = new tt<OS>(oi, mu2);
   drp = new dr<OS>(oi, mu2);
+
 
 
   DiffGF dGF(oi, Gf, as_, mu2, order::all);
@@ -312,7 +405,37 @@ P2MS::P2MS(const OSinput & oi_, const long double &  Gf_, const long double &  a
   hp  = new HH<OS>(oi, mu2);
   tp  = new tt<OS>(oi, mu2);
   drp = new dr<OS>(oi, mu2);
+
+  // std::cout << "Before!!!!!!!" << std::endl;
+  // {
+  //   DiffGF dGF(oi, pdg2014::Gf, as_, mu2, order::all);
+  //   tolerance tol = 1e-12;
+    
+  //   std::pair<long double, long double> found = boost::math::tools::bisect(dGF, 1./140., 1./120., tol);
+    
+  //   boost::numeric::interval<long double> fint(found.first, found.second);
+    
+  //   std::cout << std::setprecision(10);
+  //   std::cout << "=GF=> 1/alpha = [" << 1./found.first << ',' << 1./found.second << "]\n";
+    
+  // }
   
+  // {
+  //   DiffDR dDR(oi, pdg2014::Gf, as_, mu2, order::all);
+
+
+  //   std::cout << "diff: " << dDR(1/137.) << std::endl;
+  //   tolerance tol = 1e-12;
+    
+  //   std::pair<long double, long double> found = boost::math::tools::bisect(dDR, 1./140., 1./120., tol);
+    
+  //   boost::numeric::interval<long double> fint(found.first, found.second);
+    
+  //   std::cout << std::setprecision(10);
+  //   std::cout << "=DR=> 1/alpha = [" << 1./found.first << ',' << 1./found.second << "]\n";
+    
+  // }
+  // std::cout << "After!!!!!!!" << std::endl;
 
   DiffGF dGF(oi, Gf, as_, mu2, ord);
   tolerance tol = 1e-12;
@@ -323,9 +446,16 @@ P2MS::P2MS(const OSinput & oi_, const long double &  Gf_, const long double &  a
   
   std::cout << std::setprecision(10);
   std::cout << "==> 1/alpha = [" << 1./found.first << ',' << 1./found.second << "]\n";
-  
 
   aEW  = boost::numeric::median(fint)/4./Pi;
+
+  AlphaSolve ass(oi, Gf, as_, ord);
+
+  AlphaGF ass2(oi, Gf, as_, ord);
+
+  aEW = ass2(mu2);
+  
+  aEW = ass(mu2);
 
   std::cout << "alpha/4/pi = " << aEW << std::endl;
 

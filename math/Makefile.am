@@ -14,4 +14,4 @@ mr_LDADD = $(MR_LIBS) -L$(MATHROOT)$(ALTMATHPATH) ${LDMATH} -L$(top_srcdir)/mr -
 
 mr.cpp: mr.tm
 	$(MPREP) $? -o $@
-EXTRA_DIST = mr.tm
+EXTRA_DIST = mr.tm mr.m

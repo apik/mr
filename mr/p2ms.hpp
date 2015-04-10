@@ -31,6 +31,59 @@
 #include "dr.hpp"
 
 
+
+// Alpha from solution of (eq.31) [hep-ph/1503.02138]
+class AlphaSolve
+{
+  
+  OSinput oi;
+  unsigned ord;
+  long double Gf0;
+  long double alphaS;
+  
+  long double alpha0;
+  
+public:
+  AlphaSolve(const OSinput & in_,
+             const long double &  Gf0_ = pdg2014::Gf,
+             const long double &  as_ = pdg2014::asMZ,
+             unsigned order_ = 
+             order::x01|order::x10|order::x02|
+             order::x11|order::x20|order::x03): oi(in_), Gf0(Gf0_), alphaS(as_), ord(order_)
+  {
+  }
+
+  long double operator()(const long double& mu2 );
+  
+};
+
+// Alpha from solution of (eq.33) [hep-ph/1503.02138]
+class AlphaGF
+{
+  OSinput oi;
+  unsigned ord;
+  long double Gf0;
+  long double alphaS;
+  
+  long double alpha0;
+  
+public:
+  AlphaGF(const OSinput & in_,
+          const long double &  Gf0_ = pdg2014::Gf,
+          const long double &  as_ = pdg2014::asMZ,
+          unsigned order_ = 
+          order::x01|order::x10|order::x02|
+          order::x11|order::x20|order::x03): oi(in_), Gf0(Gf0_), alphaS(as_), ord(order_)
+  {
+    
+  }
+
+  long double operator()(const long double& mu2 );
+};
+
+
+
+
 class P2MSnLnH
 {
   OSinput       oi;

@@ -23,7 +23,7 @@
 #include <iostream>
 class PoleMass
 {
-    // 
+  // 
   // Pure QCD part m_ij=mY_ij by definition
   // 
   // virtual std::complex<long double> m01();
