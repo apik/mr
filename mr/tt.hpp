@@ -28,12 +28,12 @@
 #include "base.hpp"
 
 template<class T>
-class tt
+class tt 
 {
 };
 
 template<>
-class tt<OS> : public PoleMass
+class tt<OS> : public PoleMassAndCouplings
 {
   
   long double MMb,MMt, MMH, MMW, MMZ, mu2;
@@ -149,7 +149,7 @@ tt()
 
 
 template<>
-class tt<MS> 
+class tt<MS> : public PoleMass
 {
 
 long double mmb,mmt, mmH, mmW, mmZ, mu2;

@@ -33,7 +33,7 @@ class bb
 };
 
 template<>
-class bb<OS> : public PoleMass
+class bb<OS> : public PoleMassAndCouplings
 {
 
   long double MMb, MMt, MMH, MMW, MMZ, mu2;
@@ -109,17 +109,17 @@ public:
 
   long double ygl20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
-
   std::complex<long double> det(const long double & a, const long double & b, const long double & c)
   {
     return 1./(a*a + b*b + c*c - 2*a*b - 2*b*c - 2*c*a);
   }
+
   
 };
 
 
 template<>
-class bb<MS> 
+class bb<MS> : public PoleMass
 {
 
   long double mmb,mmt, mmH, mmW, mmZ, mu2;
@@ -158,6 +158,10 @@ public:
 
   long double x20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
   
+  std::complex<long double> det(const long double & a, const long double & b, const long double & c)
+  {
+    return 1./(a*a + b*b + c*c - 2*a*b - 2*b*c - 2*c*a);
+  }
 };
 
 
