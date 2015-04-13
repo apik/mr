@@ -160,6 +160,130 @@ long double mOS2mMS(long double MM, long double mu2, size_t nl, size_t nh, size_
     return 0;
 }
 
+
+
+// Botom mass in nf=6 scheme with explicit dependence on top quark
+// mass
+//
+//    M - Pole mass of b-quark
+//    LmuM=Log(mu^2/M^2)
+//
+//    x=M_t/M
+//
+// 
+long double mOS2mMSnm(long double MM, long double x, long double mu2, size_t nl_,size_t nm_, size_t nh_, size_t loops)
+{
+  double nl = double(nl_), nm = double (nm_), nh = double (nh_);
+  
+  long double LmuM = log(mu2/MM);
+  
+  
+  if(loops == 1)
+    {
+      long double zm1l =
+        (
+         - 16./3.
+         );
+      
+      zm1l +=
+        + LmuM * (
+                  - 4
+                  );
+      return zm1l;
+    }
+  else if(loops == 2)
+    {
+      long double zm2l =
+        (
+         - 3305./18.
+         + 8./3.*Zeta3
+         - 64./3.*Zeta2
+         - 32./3.*Zeta2*log(2.)
+         );
+      
+      zm2l +=  nm * (
+                     + 71./9.
+                     + 16./3.*Zeta2
+                     - 16*x*Zeta2
+                     + 8*pow(x,2)
+                     - 16*pow(x,3)*Zeta2
+                     + 16./3.*pow(x,4)*Zeta2
+                     + 16./3.*log(x)*pow(x,2)
+                     - 16./3.*log(x)*log(1 - x)
+                     + 16./3.*log(x)*log(1 - x)*x
+                     + 16./3.*log(x)*log(1 - x)*pow(x,3)
+                     - 16./3.*log(x)*log(1 - x)*pow(x,4)
+                     - 16./3.*log(x)*log(1 + x)
+                     - 16./3.*log(x)*log(1 + x)*x
+                     - 16./3.*log(x)*log(1 + x)*pow(x,3)
+                     );
+  
+      zm2l +=  nm * (
+                     - 16./3.*log(x)*log(1 + x)*pow(x,4)
+                     + 16./3.*pow(log(x),2)*pow(x,4)
+                     - 16./3.*Li2( - x).real()
+                     - 16./3.*Li2( - x).real()*x
+                     - 16./3.*Li2( - x).real()*pow(x,3)
+                     - 16./3.*Li2( - x).real()*pow(x,4)
+                     - 16./3.*Li2(x).real()
+                     + 16./3.*Li2(x).real()*x
+                     + 16./3.*Li2(x).real()*pow(x,3)
+                     - 16./3.*Li2(x).real()*pow(x,4)
+                     );
+  
+      zm2l +=  nl * (
+                     + 71./9.
+                     + 16./3.*Zeta2
+                     );
+      
+      zm2l +=  nh * (
+                     + 143./9.
+                     - 32./3.*Zeta2
+                     );
+      
+      zm2l +=  LmuM * (
+                       - 314./3.
+                       );
+  
+      zm2l +=  LmuM*nm * (
+                          + 52./9.
+                          );
+  
+      zm2l +=  LmuM*nl * (
+                          + 52./9.
+                          );
+  
+      zm2l +=  LmuM*nh * (
+                          + 52./9.
+                          );
+  
+      zm2l +=  pow(LmuM,2) * (
+                              - 14
+                              );
+      
+      zm2l +=  pow(LmuM,2)*nm * (
+                                 + 4./3.
+                                 );
+      
+      zm2l +=  pow(LmuM,2)*nl * (
+                                 + 4./3.
+                                 );
+      
+      zm2l +=  pow(LmuM,2)*nh * (
+                                 + 4./3.
+                                 );
+
+      return zm2l;
+    }
+  else
+    return 0;
+}
+
+
+
+
+
+
 // To convert number of light and heavy generations NL,NH to
 // number of fermions we use:
 //        nl = 2*NL + NH, nh = NH for M=Mt
