@@ -6,7 +6,7 @@ lib_LIBRARIES = libmr.a
 # Main sources
 MAINSRC = mr.hpp tsil.hpp tsil.cpp base.hpp mOS2mMSQCD.cpp pole2run.hpp pole2run.cpp p2ms.hpp p2ms.cpp tools.hpp tools.cpp
 
-MAINHPP =  constants.hpp sminput.hpp timer.hpp  tsil.hpp  dr.hpp operators.hpp
+MAINHPP =  constants.hpp sminput.hpp timer.hpp  tsil.hpp  dr.hpp operators.hpp logger.hpp
 
 # Running
 RUNSRC = betaSM.hpp betaSM.cpp betaQCD.hpp betaQEDQCD.hpp betaQEDQCD.cpp betaQCD.cpp
