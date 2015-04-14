@@ -45,7 +45,7 @@ public:
 
   virtual long double x01(size_t nL = 2, size_t nH = 1, size_t boson = 1)
   {
-    lout(logERROR) << "Order a^0*as^1 is not implemented for this particle";
+    lout(logERROR) << "Order a^0*as^1 is not implemented for this particle" << std::endl;
     return 0;
   }
   virtual long double x02(size_t nL = 2, size_t nH = 1, size_t boson = 1)

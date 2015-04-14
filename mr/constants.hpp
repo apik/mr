@@ -51,22 +51,22 @@ public:
   enum {
     
     // tree = 0x0000,
-    x01  = 0x0001,              // QCD 1-loop
-    x10  = 0x0002,              // EW  1-loop
-    x02  = 0x0004,              // QCD 2-loop
-    x11  = 0x0008,              // EW*QCD
-    x20  = 0x0010,              // EW*EW
-    x03  = 0x0020,               // QCD 3-loop
-    x04  = 0x0040,               // QCD 4-loop
+    x01  = 0x0001,              // QCD 1-loop  [0000001b]
+    x10  = 0x0002,              // EW  1-loop  [0000010b]
+    x02  = 0x0004,              // QCD 2-loop  [0000100b]
+    x11  = 0x0008,              // EW*QCD      [0001000b]
+    x20  = 0x0010,              // EW*EW       [0010000b]
+    x03  = 0x0020,               // QCD 3-loop [0100000b]
+    x04  = 0x0040,               // QCD 4-loop [1000000b]
     // x  = 0x0080, 
     // x  = 0x0100, 
     // x  = 0x0200, 
 
     // combinations
-    all     = 0x003f,           // all available corrections
-    QCD3l   = 0x0025,           // Only QCD: x01,x02,x03
-    allQCD  = 0x0065,           // Only QCD: x01,x02,x03,x04
-    allEW   = 0x001a            // Only  EW: x10,x11,x20
+    all     = 0x007f,           // all available corrections [1111111b]
+    QCD3l   = 0x0025,           // Only QCD: x01,x02,x03     [0100101b]
+    allQCD  = 0x0065,           // Only QCD: x01,x02,x03,x04 [1100101b]
+    allEW   = 0x001a            // Only  EW: x10,x11,x20     [0011010b]
   };
 
 };

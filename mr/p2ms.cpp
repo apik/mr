@@ -102,7 +102,7 @@ long double AlphaSolve::operator()(const long double& mu2 )
   boost::numeric::interval<long double> fint(found.first, found.second);
   
   std::cout << std::setprecision(10);
-  std::cout << "==> 1/alpha = [" << 1./found.first << ',' << 1./found.second << "]\n";
+  lout(logDEBUG) << "==> 1/alpha = [" << 1./found.first << ',' << 1./found.second << "]";
   
   return boost::numeric::median(fint);;
 }
@@ -131,59 +131,9 @@ long double AlphaGF::operator()(const long double& mu2 )
       daGF += pow(alF/4./Pi,2)*aGF.a20();
     }
 
-
-  std::cout << " From GF: " << alF*daGF << std::endl;
+  lout(logDEBUG) << " Alpha from GF: " << alF*daGF << std::endl;
   return alF*daGF;
 }
-
-
-struct DiffDR
-{
-  
-  OSinput oi;
-  dr<OS>* dR;
-  unsigned ord;
-  long double Gf0;
-  long double alphaS;
-  
-  DiffDR(OSinput in_, long double Gf0_, long double as_, long double mu2, unsigned order_) : oi(in_), Gf0(Gf0_), alphaS(as_), ord(order_)
-  {
-    dR = new dr<OS>(oi, mu2);
-  }
-  
-  long double operator()(long double alpha)
-  {
-    long double dMyR = 1;
-    long double Gf;
-    
-    if(ord & order::x10)
-      {
-        dMyR += alpha/4./Pi*dR->dr10();
-      }
-    if(ord & order::x11)
-      {
-        dMyR += alpha/4./Pi*alphaS/4./Pi*dR->dr11();
-      }
-    if(ord & order::x20)
-      {
-        dMyR += pow(alpha/4./Pi,2)*dR->dr20();
-      }
-    
-    long double alphaTH=1./137.;
-    
-    Gf = alphaTH*Pi/sqrt(2)/oi.MMW()/(1-oi.MMW()/oi.MMZ());
-    
-    return (Gf0 - Gf)*pow(10,2);
-  }
-
-};
-
-
-
-
-
-
-
 
 
 P2MSnLnH::P2MSnLnH(const OSinput & oi_, const long double &  Gf_, const long double &  as_,const long double &  mu_): oi(oi_), Gf(Gf_), aQCD(as_/4./Pi), mu(mu_)
@@ -406,75 +356,33 @@ P2MS::P2MS(const OSinput & oi_, const long double &  Gf_, const long double &  a
   tp  = new tt<OS>(oi, mu2);
   drp = new dr<OS>(oi, mu2);
 
-  // std::cout << "Before!!!!!!!" << std::endl;
-  // {
-  //   DiffGF dGF(oi, pdg2014::Gf, as_, mu2, order::all);
-  //   tolerance tol = 1e-12;
-    
-  //   std::pair<long double, long double> found = boost::math::tools::bisect(dGF, 1./140., 1./120., tol);
-    
-  //   boost::numeric::interval<long double> fint(found.first, found.second);
-    
-  //   std::cout << std::setprecision(10);
-  //   std::cout << "=GF=> 1/alpha = [" << 1./found.first << ',' << 1./found.second << "]\n";
-    
-  // }
-  
-  // {
-  //   DiffDR dDR(oi, pdg2014::Gf, as_, mu2, order::all);
 
-
-  //   std::cout << "diff: " << dDR(1/137.) << std::endl;
-  //   tolerance tol = 1e-12;
-    
-  //   std::pair<long double, long double> found = boost::math::tools::bisect(dDR, 1./140., 1./120., tol);
-    
-  //   boost::numeric::interval<long double> fint(found.first, found.second);
-    
-  //   std::cout << std::setprecision(10);
-  //   std::cout << "=DR=> 1/alpha = [" << 1./found.first << ',' << 1./found.second << "]\n";
-    
-  // }
-  // std::cout << "After!!!!!!!" << std::endl;
-
-  DiffGF dGF(oi, Gf, as_, mu2, ord);
-  tolerance tol = 1e-12;
-  
-  std::pair<long double, long double> found = boost::math::tools::bisect(dGF, 1./140., 1./120., tol);
-  
-  boost::numeric::interval<long double> fint(found.first, found.second);
-  
-  std::cout << std::setprecision(10);
-  std::cout << "==> 1/alpha = [" << 1./found.first << ',' << 1./found.second << "]\n";
-
-  aEW  = boost::numeric::median(fint)/4./Pi;
 
   AlphaSolve ass(oi, Gf, as_, ord);
 
   AlphaGF ass2(oi, Gf, as_, ord);
 
-  aEW = ass2(mu2);
+  aEW = ass2(mu2)/4./Pi;
   
-  aEW = ass(mu2);
-
-  std::cout << "alpha/4/pi = " << aEW << std::endl;
-
-
-  std::cout << "Enabled corrections:" << std::endl;
-
+  aEW = ass(mu2)/4./Pi;
+ 
   const size_t fw = 4;
-  std::cout << "\t  |   QCD  |   EW   |  QCD^2 | EW*QCD |  EW^2  |  QCD^3 | " << std::endl;
-  std::cout << "\t  |"
-            << std::setw(fw) <<  std::internal << (bool(ord & order::x01)? '+' : '-') << "    |"
-            << std::setw(fw) <<  std::internal << bool(ord & order::x10) << "    |"
-            << std::setw(fw) <<  std::internal << bool(ord & order::x02) << "    |"
-            << std::setw(fw) <<  std::internal << bool(ord & order::x11) << "    |"
-            << std::setw(fw) <<  std::internal << bool(ord & order::x20) << "    |"
-            << std::setw(fw) <<  std::internal << bool(ord & order::x03) << "    |"
-            << std::endl;
-
+  lout(logINFO) << "\t  ---------------------------------------------------------------- ";
+  lout(logINFO) << "\t  |                     Enabled corrections                      | ";
+  lout(logINFO) << "\t  ---------------------------------------------------------------- ";
+  lout(logINFO) << "\t  |   QCD  |   EW   |  QCD^2 | EW*QCD |  EW^2  |  QCD^3 |  QCD^4 | ";
+  lout(logINFO) << "\t  |"
+                << std::setw(fw) <<  std::internal << (bool(ord & order::x01)? '+' : '-') << "    |"
+                << std::setw(fw) <<  std::internal << (bool(ord & order::x10)? '+' : '-') << "    |"
+                << std::setw(fw) <<  std::internal << (bool(ord & order::x02)? '+' : '-') << "    |"
+                << std::setw(fw) <<  std::internal << (bool(ord & order::x11)? '+' : '-') << "    |"
+                << std::setw(fw) <<  std::internal << (bool(ord & order::x20)? '+' : '-') << "    |"
+                << std::setw(fw) <<  std::internal << (bool(ord & order::x03)? '+' : '-') << "    |"
+                << std::setw(fw) <<  std::internal << (bool(ord & order::x04)? '+' : '-') << "    |";
+  lout(logINFO) << "\t  ---------------------------------------------------------------- ";
   
-  
+  lout(logINFO) << "Using 1/alpha = " << 1./(4.*Pi*aEW);
+  lout(logINFO) << "Matching scale mu = " << mu; 
 
   dbplus1 = 1;
   dWplus1 = 1;
@@ -530,6 +438,12 @@ P2MS::P2MS(const OSinput & oi_, const long double &  Gf_, const long double &  a
       dtplus1 += aQCD*aQCD*aQCD*tp->y03();
       
     }
+  if(ord & order::x04)
+    {
+      dbplus1 += aQCD*aQCD*aQCD*aQCD*bp->y04();
+      dtplus1 += aQCD*aQCD*aQCD*aQCD*tp->y04();
+      
+    }
   
 
   
@@ -545,16 +459,16 @@ P2MS::P2MS(const OSinput & oi_, const long double &  Gf_, const long double &  a
 
   long double vev2 = dRplus1/Gf/sqrt(2.);
   
-  std::cout << " At matching scale mu = " << mu << std::endl;
-  std::cout << " g1 = " << sqrt(3./5.*a1)*4*Pi << std::endl;
-  std::cout << " g2 = " << sqrt(a2)*4*Pi << std::endl;
-  std::cout << " g3 = " << sqrt(aS)*4*Pi << std::endl;
-  std::cout << " yt = " << sqrt(ayt)*4*Pi << std::endl;
-  std::cout << " lam = " << alam*16*Pi*Pi << std::endl;
+  lout(logDEBUG) << " At matching scale mu = " << mu ;
+  lout(logDEBUG) << " g1 = " << sqrt(3./5.*a1)*4*Pi;
+  lout(logDEBUG) << " g2 = " << sqrt(a2)*4*Pi;
+  lout(logDEBUG) << " g3 = " << sqrt(aS)*4*Pi;
+  lout(logDEBUG) << " yt = " << sqrt(ayt)*4*Pi;
+  lout(logDEBUG) << " lam = " << alam*16*Pi*Pi;
   
-  std::cout << " vev = " << sqrt(vev2) << std::endl;
+  lout(logDEBUG) << " vev = " << sqrt(vev2);
 
-  std::cout << " mu0 = " << sqrt(2.*lam())*vev() << std::endl;
+  lout(logDEBUG) << " mu0 = " << sqrt(2.*lam())*vev();
    
 }
 

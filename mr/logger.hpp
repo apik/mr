@@ -46,6 +46,7 @@ public:
     _buffer << value;
     return *this;
   }
+  logIt & operator<<(std::ostream& (*fun)(std::ostream&)) { std::cout << std::endl; }
   
   ~logIt()
   {
@@ -66,3 +67,5 @@ extern loglevel_e loglevel;
   else logIt(level)
 
 #endif
+
+
