@@ -55,6 +55,15 @@ const tt<MS> & get_ttbar(const MSinput& mi, long double mu2)
     return directory.insert(std::make_pair(std::make_pair(mi,mu2), tt<MS>(mi,mu2))).first->second;
 }
 
+const bb<MS> & get_bbbar(const MSinput& mi, long double mu2)
+{
+  static std::map< std::pair<MSinput, long double>, bb<MS> > directory;
+  std::map< std::pair<MSinput, long double>, bb<MS> >::iterator i = directory.find(std::make_pair(mi,mu2));
+  if (i != directory.end())
+    return i->second;
+  else
+    return directory.insert(std::make_pair(std::make_pair(mi,mu2), bb<MS>(mi,mu2))).first->second;
+}
 const dr<MS> & get_drbar(const MSinput& mi, long double mu2)
 {
   static std::map< std::pair<MSinput, long double>, dr<MS> > directory;
@@ -279,6 +288,51 @@ void XMTQCD(long double gp, long double g, long double gs, long double yb, long 
 	}
  }
 
+void XMB(long double gp, long double g, long double gs, long double yb, long double yt, long double lam, long double mu0, long double mu) 
+{
+  long double mu2 = pow(mu,2);
+
+  MSinput mi = MSinput::fromConsts(mu2, mu0, lam, yb, yt, g, gp);
+  
+  bb<MS> bbm = get_bbbar(mi, mu2);
+
+
+  MLPutFunction(stdlink, "List", 3);
+
+
+  for(size_t apow = 1; apow <=2; apow++)
+    for(size_t aspow = 0; aspow + apow <=2; aspow++)
+	{
+		MLPutFunction(stdlink, "Rule", 2);
+		MLPutFunction(stdlink, "xMB", 2);
+		MLPutInteger(stdlink, apow);
+		MLPutInteger(stdlink, aspow);
+  		MLPutReal128(stdlink, bbm.x(apow,aspow));
+	}
+ }
+
+
+void XMBQCD(long double gp, long double g, long double gs, long double yb, long double yt, long double lam, long double mu0, long double mu) 
+{
+  long double mu2 = pow(mu,2);
+
+  MSinput mi = MSinput::fromConsts(mu2, mu0, lam, yb, yt, g, gp);
+  
+  bb<MS> bbm = get_bbbar(mi, mu2);
+
+
+  MLPutFunction(stdlink, "List", 2);
+
+
+  for(size_t aspow = 1; aspow <=2; aspow++)
+	{
+		MLPutFunction(stdlink, "Rule", 2);
+		MLPutFunction(stdlink, "xMB", 2);
+		MLPutInteger(stdlink, 0);
+		MLPutInteger(stdlink, aspow);
+  		MLPutReal128(stdlink, bbm.x(0,aspow));
+	}
+ }
 
 
 void RunQCDnf6(long double oscale, long double asMZ, long double MZscale, int nL, long double mtpole, long double mtth)

@@ -15,6 +15,7 @@
 :Evaluate:  MW::usage  = "MW[gp,g,gs,yb,yt,lam,m,scale] returns pole W-boson mass MW given  MSbar parameters at specified scale at 2-loop level"
 :Evaluate:  MZ::usage  = "MZ[gp,g,gs,yb,yt,lam,m,scale] returns pole Z-boson mass MZ given  MSbar parameters at specified scale at 2-loop level"
 :Evaluate:  MH::usage  = "MH[gp,g,gs,yb,yt,lam,m,scale] returns pole H-boson mass MH given  MSbar parameters at specified scale at 2-loop level"
+:Evaluate:  MB::usage  = "MB[gp,g,gs,yb,yt,lam,m,scale] returns pole b-quark mass MB given  MSbar parameters at specified scale at 2-loop level"
 :Evaluate:  MT::usage  = "MT[gp,g,gs,yb,yt,lam,m,scale] returns pole t-quark mass MT given  MSbar parameters at specified scale at 2-loop level + 3-loop QCD"
 :Evaluate:  GF::usage  = "GF[gp,g,gs,yb,yt,lam,m,scale] returns Fermi constant GF given  MSbar parameters at specified scale at 2-loop level"
 
@@ -26,6 +27,9 @@
 
 :Evaluate:  XMT::usage  = "XMT[gp,g,gs,yb,yt,lam,m,scale] returns electroweak contributions to the pole top quark mass MT given  MSbar parameters at specified scale"
 :Evaluate:  XMTQCD::usage  = "XMT[gp,g,gs,yb,yt,lam,m,scale] returns pure QCD contributions to the pole top quark mass MT given  MSbar parameters at specified scale"
+
+:Evaluate:  XMB::usage  = "XMB[gp,g,gs,yb,yt,lam,m,scale] returns electroweak contributions to the pole top quark mass MB given  MSbar parameters at specified scale"
+:Evaluate:  XMBQCD::usage  = "XMB[gp,g,gs,yb,yt,lam,m,scale] returns pure QCD contributions to the pole top quark mass MB given  MSbar parameters at specified scale"
 
 
 :Evaluate:  Xb::usage  = "Xb[Mb,MW,MZ,MH,Mt,scale,nL=2,nH=1]  Input is in terms of pole masses and matching scale, nL and nH are number of light and heavy quark genrations "
@@ -78,6 +82,8 @@
 :Evaluate:  xMMH::usage  = "xMH[a,b] represents a coefficient of aEW^a * aQCD^b in the relation between the pole mass MH^2 and running parameters" 
 :Evaluate:  xMT::usage  = "xMT[a,b] represents a coefficient of aEW^a * aQCD^b in the relation between the pole mass MT and running parameters"
 :Evaluate:  xMTQCD::usage  = "xMTQCD[0,b] represents a coefficient of pure QCD contribution aQCD^b in the relation between the pole mass MT and running parameters"
+:Evaluate:  xMB::usage  = "xMB[a,b] represents a coefficient of aEW^a * aQCD^b in the relation between the pole mass MB and running parameters"
+:Evaluate:  xMBQCD::usage  = "xMBQCD[0,b] represents a coefficient of pure QCD contribution aQCD^b in the relation between the pole mass MB and running parameters"
 :Evaluate:  xdRbar::usage  = "xdRbar[a,b] represents a coefficient of aEW^a * aQCD^b in the relation between GF and running parameters (vev, etc)"
 
 :Evaluate:   RunQCDnf6[oscale_?NumericQ,asMZ_?NumericQ,MZscale_?NumericQ,nL_Integer,mtpole_?NumericQ] := RunQCDnf6[oscale, asMZ, MZscale,nL,mtpole,mtpole] /; 1<=nL<=4
@@ -344,6 +350,29 @@
 			Return[ MT[ Sequence @@ pars, opt ] ],
 			(* else *) Print[" Not All parameters specified ", pars, " from ", runpars]]];
 
+:Evaluate:  Options[MB] = { "IncludedCorrections" -> { 
+						      QCD[1],  
+						      QCD[2],  
+						   (*   QCD[3],  *)
+						       EW[1],  
+						       EW[2],
+						       MIXED[1,1]
+						     }};
+
+:Evaluate:  MB[G1_?NumericQ,G2_?NumericQ,GS__?NumericQ,YB_?NumericQ,YT_?NumericQ,LAM_?NumericQ,M_?NumericQ,SC_?NumericQ, OptionsPattern[]] := Block[{lal,las,vev,lc,aEW,aQCD,mt,res, 
+			cr = Map[(#->xMB[Sequence @@ # ]) &, OptionValue["IncludedCorrections"]],
+			pars = {G1,G2,GS,YB,YT,LAM,M,SC} },
+			(* loop corrections *)	lc = Join[XMB[ Sequence @@ pars], XMBQCD[ Sequence @@ pars]];
+			{aEW, aQCD} = {G1^2*G2^2/(G1^2 + G2^2), GS^2}/(16 Pi^2);
+			vev = Sqrt[M^2/LAM/2]; mb = YB * vev / Sqrt[2];
+			res = mb * (1 + FromCoefficientRules[cr, {lal,las}]) /. lc  /. {lal->aEW, las -> aQCD};
+			Return[ res ];
+			];	
+
+:Evaluate:  MB[runpars_List, opt:OptionsPattern[]]:= Block[{pars = {g1,g2,gs,yb,yt,lam,m,scale} /. runpars},
+			(* check numeric *) If [ And @@ NumericQ /@ pars, 
+			Return[ MB[ Sequence @@ pars, opt ] ],
+			(* else *) Print[" Not All parameters specified ", pars, " from ", runpars]]];
 
 :Evaluate:  Options[GF] = { "IncludedCorrections" -> { 
 						       EW[1],  
@@ -432,6 +461,21 @@
 :End:
 
 
+:Begin:
+:Function: XMB
+:Pattern: XMB[gp_?NumericQ,g_?NumericQ,gs_?NumericQ,yb_?NumericQ,yt_?NumericQ,lam_?NumericQ,m_?NumericQ,scale_?NumericQ]
+:Arguments: {N[gp],N[g],N[gs],N[yb],N[yt],N[lam],N[m],N[scale]}
+:ArgumentTypes: {Real128,Real128,Real128,Real128,Real128,Real128,Real128,Real128}
+:ReturnType: Manual
+:End:
+
+:Begin:
+:Function: XMBQCD
+:Pattern: XMBQCD[gp_?NumericQ,g_?NumericQ,gs_?NumericQ,yb_?NumericQ,yt_?NumericQ,lam_?NumericQ,m_?NumericQ,scale_?NumericQ]
+:Arguments: {N[gp],N[g],N[gs],N[yb],N[yt],N[lam],N[m],N[scale]}
+:ArgumentTypes: {Real128,Real128,Real128,Real128,Real128,Real128,Real128,Real128}
+:ReturnType: Manual
+:End:
 
 
 
