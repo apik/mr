@@ -20,10 +20,10 @@
 
 #ifndef __BASE_HPP__
 #define __BASE_HPP__
-#include <iostream>
+#include "logger.hpp"
 class PoleMass
 {
-    // 
+  // 
   // Pure QCD part m_ij=mY_ij by definition
   // 
   // virtual std::complex<long double> m01();
@@ -45,22 +45,22 @@ public:
 
   virtual long double x01(size_t nL = 2, size_t nH = 1, size_t boson = 1)
   {
-    std::cout << "Order a^0*as^1 is not implemented for this particle" << std::endl;
+    lout(logERROR) << "Order a^0*as^1 is not implemented for this particle" << std::endl;
     return 0;
   }
   virtual long double x02(size_t nL = 2, size_t nH = 1, size_t boson = 1)
   {
-    std::cout << "Order a^0*as^2 is not implemented for this particle" << std::endl;
+    lout(logERROR) << "Order a^0*as^2 is not implemented for this particle";
     return 0;
   }
   virtual long double x03(size_t nL = 2, size_t nH = 1, size_t boson = 1)
   {
-    std::cout << "Order a^0*as^3 is not implemented for this particle" << std::endl;
+    lout(logERROR) << "Order a^0*as^3 is not implemented for this particle";
     return 0;
   }
   virtual long double x04(size_t nL = 2, size_t nH = 1, size_t boson = 1)
   {
-    std::cout << "Order a^0*as^4 is not implemented for this particle" << std::endl;
+    lout(logERROR) << "Order a^0*as^4 is not implemented for this particle";
     return 0;
   }
 

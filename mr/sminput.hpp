@@ -137,9 +137,10 @@ public:
   {
     iMZ = mZ;
   }
-  void setMH(T mH)
+  OSinputTemplate<T>& setMH(T mH)
   {
     iMH = mH;
+    return *this;
   }
   void setMt(T mt)
   {

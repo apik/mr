@@ -23,6 +23,8 @@
 
 #include <iostream>
 #include <ctime>
+#include "logger.hpp"
+
 class Timer
 {
   std::clock_t    start;
@@ -33,7 +35,7 @@ public:
    
   void elapsed()
   {
-    std::cout << "Time: " << (std::clock() - start) / (double)(CLOCKS_PER_SEC / 1000) << " ms" << std::endl;
+    lout(logDEBUG) << "Time: " << (std::clock() - start) / (double)(CLOCKS_PER_SEC / 1000) << " ms" << std::endl;
   }
 };
 

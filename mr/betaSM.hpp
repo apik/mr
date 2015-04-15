@@ -192,10 +192,7 @@ public:
 
   state_type operator()(long double mu2)
   {
-    
-    // BetaSMFull be = BetaSMFull(pocoa1, pocoa2, pocoas, pocoat, pocoab,
-    //                 pocoatau, pocolam, NG);
-    
+        
     double lEnd = log(mu2/mu0);
 
     if (lEnd < 0) bep->multiplyByMinus1();
@@ -253,19 +250,19 @@ public:
     aSM0.push_back(vev);
     
     const size_t fw = 20;
-    std::cout << std::scientific << std::setprecision(fw-10);
-    std::cout << "# [Initial values:]" << std::endl;
-    std::cout << "\t  a1 = " << std::setw(fw) << a1 
-              << "   a2 = " << std::setw(fw) << a2 
-              << "   as = " << std::setw(fw) << as <<std::endl; 
-    std::cout << "\t  at = " << std::setw(fw) << at 
-              << "   ab = " << std::setw(fw) << ab 
-              << " atau = " << std::setw(fw) << atau <<std::endl; 
-    std::cout << "\talam = " << std::setw(fw) << lam
-              << "  vev = " << std::setw(fw) << vev
-              << "  mu2 = " << std::setw(fw) << mu2 <<std::endl; 
-    std::cout << "\t  MU = " << std::setw(fw) << sqrt(mu0)
-              << "   NG = " << std::setw(fw) << NG <<std::endl; 
+    lout(logINFO) << std::scientific << std::setprecision(fw-10);
+    lout(logINFO) << "# [Initial values:]";
+    lout(logINFO) << "\t  a1 = " << std::setw(fw) << a1 
+                  << "   a2 = " << std::setw(fw) << a2 
+                  << "   as = " << std::setw(fw) << as;
+    lout(logINFO) << "\t  at = " << std::setw(fw) << at 
+                  << "   ab = " << std::setw(fw) << ab 
+                  << " atau = " << std::setw(fw) << atau;
+    lout(logINFO) << "\talam = " << std::setw(fw) << lam
+                  << "  vev = " << std::setw(fw) << vev
+                  << "  mu2 = " << std::setw(fw) << mu2;
+    lout(logINFO) << "\t  MU = " << std::setw(fw) << sqrt(mu0)
+                  << "   NG = " << std::setw(fw) <<  NG; 
     
     bep = new  BetaSM(pocoa1, pocoa2, pocoas, pocoat, pocoab, pocoatau, pocolam, pocomu2, pocovev, NG_);
   }
@@ -278,30 +275,21 @@ public:
     mu0 = pow(pi.scale(),2);
 
     aSM0 = pi.ai();
-    // aSM0.push_back(a1);
-    // aSM0.push_back(a2);
-    // aSM0.push_back(as);
-    // aSM0.push_back(at);
-    // aSM0.push_back(ab);
-    // aSM0.push_back(atau);
-    // aSM0.push_back(lam);
-    // aSM0.push_back(mu2);
-    // aSM0.push_back(vev);
     
     const size_t fw = 20;
-    std::cout << std::scientific << std::setprecision(fw-10);
-    std::cout << "# [Initial values:]" << std::endl;
-    std::cout << "\t  a1 = " << std::setw(fw) << aSM0[0] 
-              << "   a2 = " << std::setw(fw) << aSM0[1]  
-              << "   as = " << std::setw(fw) << aSM0[2]  <<std::endl; 
-    std::cout << "\t  at = " << std::setw(fw) << aSM0[3]  
-              << "   ab = " << std::setw(fw) << aSM0[4]  
-              << " atau = " << std::setw(fw) << aSM0[5]  <<std::endl; 
-    std::cout << "\talam = " << std::setw(fw) << aSM0[6] 
-              << "  vev = " << std::setw(fw) << aSM0[8] 
-              << "  mu2 = " << std::setw(fw) << aSM0[7]  <<std::endl; 
-    std::cout << "\t  MU = " << std::setw(fw) << sqrt(mu0)
-              << "   NG = " << std::setw(fw) << NG <<std::endl; 
+    lout(logINFO) << std::scientific << std::setprecision(fw-10);
+    lout(logINFO) << "# [Initial values:]";
+    lout(logINFO) << "\t  a1 = " << std::setw(fw) << aSM0[0] 
+                  << "   a2 = " << std::setw(fw) << aSM0[1]  
+                  << "   as = " << std::setw(fw) << aSM0[2];
+    lout(logINFO) << "\t  at = " << std::setw(fw) << aSM0[3]  
+                  << "   ab = " << std::setw(fw) << aSM0[4]  
+                  << " atau = " << std::setw(fw) << aSM0[5];
+    lout(logINFO) << "\talam = " << std::setw(fw) << aSM0[6] 
+                  << "  vev = " << std::setw(fw) << aSM0[8] 
+                  << "  mu2 = " << std::setw(fw) << aSM0[7];
+    lout(logINFO) << "\t  MU = " << std::setw(fw) << sqrt(mu0)
+                  << "   NG = " << std::setw(fw) << NG;
     
     bep = new  BetaSM(pocoa1, pocoa2, pocoas, pocoat, pocoab, pocoatau, pocolam, pocomu2, pocovev, NG_);
   }

@@ -405,3 +405,5 @@ long double critMt_scaleNotFixed(const OSinput& oi, long double mu)
 
 }
 
+
+loglevel_e loglevel = logERROR;
