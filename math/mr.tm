@@ -209,7 +209,7 @@
 :Evaluate:  Options[ab] = { "IncludedCorrections" -> { 
 						       QCD[1],  
 						       QCD[2],  
-						       QCD[3],  
+						       (* QCD[3], *)
 						       EW[1],  
 						       EW[2],
 						       MIXED[1,1]
@@ -217,6 +217,7 @@
 
 :Evaluate:  ab[mb_?NumericQ,mW_?NumericQ,mZ_?NumericQ,mH_?NumericQ,mt_?NumericQ,scale_?NumericQ,nL_Integer:2,nH_Integer:1,OptionsPattern[]] := Block[ 
 				{lal,las,crulesb = Map[(#->yB[Sequence @@ # ]) &, OptionValue["IncludedCorrections"]] },
+				DebugPrint["ab corrections:", crulesb];
 				2^(3/2)*Gf/(4*Pi)^2*mb^2*((1+FromCoefficientRules[crulesb,{lal,las}])/.Xb[mb,mW,mZ,mH,mt,scale,nL,nH] /. XbQCD[mb,mW,mZ,mH,mt,scale,nL,nH])^2 /. {lal -> aEW[scale], las->aQCD[scale]}];
 
 :Evaluate:  Options[alam] = { "IncludedCorrections" -> { 
