@@ -168,15 +168,14 @@ long double mOS2mMS(long double MM, long double mu2, size_t nl, size_t nh, size_
 //    M - Pole mass of b-quark
 //    LmuM=Log(mu^2/M^2)
 //
-//    x=M_t/M
-//
+//   xx=M_t^2/M^2
 // 
-long double mOS2mMSnm(long double MM, long double x, long double mu2, size_t nl_,size_t nm_, size_t nh_, size_t loops)
+long double mOS2mMSnm(long double MM, long double xx, long double mu2, size_t nl_,size_t nm_, size_t nh_, size_t loops)
 {
   double nl = double(nl_), nm = double (nm_), nh = double (nh_);
   
   long double LmuM = log(mu2/MM);
-  
+  std::complex<long double> x = sqrt(xx);
   
   if(loops == 1)
     {
@@ -193,7 +192,7 @@ long double mOS2mMSnm(long double MM, long double x, long double mu2, size_t nl_
     }
   else if(loops == 2)
     {
-      long double zm2l =
+	    std::complex<long double> zm2l =
         (
          - 3305./18.
          + 8./3.*Zeta3
@@ -221,14 +220,14 @@ long double mOS2mMSnm(long double MM, long double x, long double mu2, size_t nl_
       zm2l +=  nm * (
                      - 16./3.*log(x)*log(1 + x)*pow(x,4)
                      + 16./3.*pow(log(x),2)*pow(x,4)
-                     - 16./3.*Li2( - x).real()
-                     - 16./3.*Li2( - x).real()*x
-                     - 16./3.*Li2( - x).real()*pow(x,3)
-                     - 16./3.*Li2( - x).real()*pow(x,4)
-                     - 16./3.*Li2(x).real()
-                     + 16./3.*Li2(x).real()*x
-                     + 16./3.*Li2(x).real()*pow(x,3)
-                     - 16./3.*Li2(x).real()*pow(x,4)
+                     - 16./3.*Li2( - x)
+                     - 16./3.*Li2( - x)*x
+                     - 16./3.*Li2( - x)*pow(x,3)
+                     - 16./3.*Li2( - x)*pow(x,4)
+                     - 16./3.*Li2(x)
+                     + 16./3.*Li2(x)*x
+                     + 16./3.*Li2(x)*pow(x,3)
+                     - 16./3.*Li2(x)*pow(x,4)
                      );
   
       zm2l +=  nl * (
@@ -273,7 +272,8 @@ long double mOS2mMSnm(long double MM, long double x, long double mu2, size_t nl_
                                  + 4./3.
                                  );
 
-      return zm2l;
+
+      return zm2l.real();
     }
   else
     return 0;
@@ -288,10 +288,10 @@ long double mOS2mMSnm(long double MM, long double x, long double mu2, size_t nl_
 // number of fermions we use:
 //        nl = 2*NL + NH, nh = NH for M=Mt
 //        nl = 2*NL , nh = NH for M=Mb 
-
+// 2-loop bb.x02 incorporates contribution due to heavy top
 long double bb<OS>::x02(size_t nL, size_t nH, size_t boson)
 {     
-  return mOS2mMS(MMb, mu2, 2*nL, nH, 2);
+  return mOS2mMSnm(MMb, MMt/MMb, mu2, 2*nL, 1, nH, 2);
 }
 
 long double bb<OS>::x03(size_t nL, size_t nH, size_t boson)
