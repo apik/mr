@@ -168,15 +168,14 @@ long double mOS2mMS(long double MM, long double mu2, size_t nl, size_t nh, size_
 //    M - Pole mass of b-quark
 //    LmuM=Log(mu^2/M^2)
 //
-//    x=M_t/M
-//
+//   xx=M_t^2/M^2
 // 
-long double mOS2mMSnm(long double MM, long double x, long double mu2, size_t nl_,size_t nm_, size_t nh_, size_t loops)
+long double mOS2mMSnm(long double MM, long double xx, long double mu2, size_t nl_,size_t nm_, size_t nh_, size_t loops)
 {
   double nl = double(nl_), nm = double (nm_), nh = double (nh_);
   
   long double LmuM = log(mu2/MM);
-  
+  std::complex<long double> x = sqrt(xx);
   
   if(loops == 1)
     {
@@ -300,10 +299,10 @@ long double mOS2mMSnm(long double MM, long double x, long double mu2, size_t nl_
 // number of fermions we use:
 //        nl = 2*NL + NH, nh = NH for M=Mt
 //        nl = 2*NL , nh = NH for M=Mb 
-
+// 2-loop bb.x02 incorporates contribution due to heavy top
 long double bb<OS>::x02(size_t nL, size_t nH, size_t boson)
 {     
-  return mOS2mMS(MMb, mu2, 2*nL, nH, 2);
+  return mOS2mMSnm(MMb, MMt/MMb, mu2, 2*nL, 1, nH, 2);
 }
 
 long double bb<OS>::x03(size_t nL, size_t nH, size_t boson)
@@ -532,16 +531,17 @@ long double mMS2mOS(long double mm, long double mu2, size_t nl, size_t nh, size_
 //    M - Pole mass of b-quark
 //    Lmumb=Log(mu^2/mb^2)
 //
-//    x=m_t/m
+//    xx=m_t^2/m_b^2
 //
 // 
-long double mMS2mOSnm(long double mm, long double x, long double mu2, size_t nl_,size_t nm_, size_t nh_, size_t loops)
+long double mMS2mOSnm(long double mm, long double xx, long double mu2, size_t nl_,size_t nm_, size_t nh_, size_t loops)
 {
   double nl = double(nl_), nm = double (nm_), nh = double (nh_);
   
   long double Lmumb = log(mu2/mm);
   long double mb = sqrt(mm);
-  long double mt = x*mb;
+  std::complex<long double> x = sqrt(xx);
+  //long double mt = x.real()*mb;
   
   if(loops == 1)
     {
@@ -567,34 +567,34 @@ long double mMS2mOSnm(long double mm, long double x, long double mu2, size_t nl_
       zm2l += nm *
          (
           - 71./9.
-          - 16./3.*pow(mb,-4)*pow(mt,4)*Zeta2
-          + 16*pow(mb,-3)*pow(mt,3)*Zeta2
-          - 8*pow(mb,-2)*pow(mt,2)
+          - 16./3.*pow(x,4)*Zeta2 //pow(mb,-4)*pow(mt,4)*Zeta2
+          + 16*pow(x,3)*Zeta2 //pow(mb,-3)*pow(mt,3)*Zeta2
+          - 8*pow(x,2) //pow(mb,-2)*pow(mt,2)
           - 16./3.*Zeta2
           - 52./9.*Lmumb
           - 4./3.*pow(Lmumb,2)
           + 16*x*Zeta2
-          - 16./3.*log(x)*pow(mb,-2)*pow(mt,2)
+          - 16./3.*log(x)*pow(x,2) //pow(mb,-2)*pow(mt,2)
           + 16./3.*log(x)*log(1 - x)
-          + 16./3.*log(x)*log(1 - x)*pow(mb,-4)*pow(mt,4)
-          - 16./3.*log(x)*log(1 - x)*pow(mb,-3)*pow(mt,3)
+          + 16./3.*log(x)*log(1 - x)*pow(x,4) // pow(mb,-4)*pow(mt,4)
+          - 16./3.*log(x)*log(1 - x)*pow(x,3) //pow(mb,-3)*pow(mt,3)
           - 16./3.*log(x)*log(1 - x)*x
           + 16./3.*log(x)*log(1 + x)
           );
       
       zm2l += nm * 
         (
-         + 16./3.*log(x)*log(1 + x)*pow(mb,-4)*pow(mt,4)
-         + 16./3.*log(x)*log(1 + x)*pow(mb,-3)*pow(mt,3)
+         + 16./3.*log(x)*log(1 + x)*pow(x,4) // pow(mb,-4)*pow(mt,4)
+         + 16./3.*log(x)*log(1 + x)*pow(x,3) // pow(mb,-3)*pow(mt,3)
          + 16./3.*log(x)*log(1 + x)*x
-         - 16./3.*pow(log(x),2)*pow(mb,-4)*pow(mt,4)
+         - 16./3.*pow(log(x),2)*pow(x,4) // pow(mb,-4)*pow(mt,4)
          + 16./3.*Li2( - x)
-         + 16./3.*Li2( - x)*pow(mb,-4)*pow(mt,4)
-         + 16./3.*Li2( - x)*pow(mb,-3)*pow(mt,3)
+         + 16./3.*Li2( - x)*pow(x,4) // pow(mb,-4)*pow(mt,4)
+         + 16./3.*Li2( - x)*pow(x,3) // pow(mb,-3)*pow(mt,3)
          + 16./3.*Li2( - x)*x
          + 16./3.*Li2(x)
-         + 16./3.*Li2(x)*pow(mb,-4)*pow(mt,4)
-         - 16./3.*Li2(x)*pow(mb,-3)*pow(mt,3)
+         + 16./3.*Li2(x)*pow(x,4) // pow(mb,-4)*pow(mt,4)
+         - 16./3.*Li2(x)*pow(x,3) //pow(mb,-3)*pow(mt,3)
          - 16./3.*Li2(x)*x
          );
       
@@ -621,7 +621,8 @@ long double mMS2mOSnm(long double mm, long double x, long double mu2, size_t nl_
 // bottom
 long double bb<MS>::x02(size_t nL, size_t nH, size_t boson)
 {     
-  return mMS2mOS(mmb, mu2, 2*nL, nH, 2);
+  //return mMS2mOS(mmb, mu2, 2*nL, nH, 2);
+  return mMS2mOSnm(mmb, mmt/mmb, mu2, 2*nL, 1, nH, 2);
 }
 
 long double bb<MS>::x03(size_t nL, size_t nH, size_t boson)
