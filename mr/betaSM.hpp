@@ -26,11 +26,11 @@
 #include <vector>
 #include <map>
 #include <cmath>
+
 #include "boost/numeric/odeint/integrate/integrate_adaptive.hpp"
 #include "boost/numeric/odeint/stepper/runge_kutta_cash_karp54.hpp"
 #include "boost/numeric/odeint/stepper/controlled_runge_kutta.hpp"
-// #include <boost/numeric/odeint/integrator_adaptive_stepsize.hpp>
-// #include <boost/numeric/odeint.hpp>
+
 #include "constants.hpp"
 #include "p2ms.hpp"
 
@@ -313,16 +313,39 @@ public:
     double abs_err = 1.0e-12 , rel_err = 1.0e-5 , a_x = 1.0 , a_dxdt = 1.0;
     state_type aSM(aSM0);
 
+    lout(logDEBUG) << "                                             ";
+    lout(logDEBUG) << "couplings values passed to the beta-functions";
+    lout(logDEBUG) << "Initial scale mu0=" << sqrt(mu0);
+    lout(logDEBUG) << "a1=" << aSM[0];
+    lout(logDEBUG) << "a2=" << aSM[1];
+    lout(logDEBUG) << "a3=" << aSM[2];
+    lout(logDEBUG) << "at=" << aSM[3];
+    lout(logDEBUG) << "ab=" << aSM[4];
+    lout(logDEBUG) << "al=" << aSM[6];
+    lout(logDEBUG) << "mu=" << aSM[7];
+    lout(logDEBUG) << "                                             ";
+
+    state_type bSM;
+    bep->operator()(aSM, bSM, 0);
+
+    lout(logDEBUG) << "Starting values for Beta                     ";
+    lout(logDEBUG) << "b1=" << bSM[0];
+    lout(logDEBUG) << "b2=" << bSM[1];
+    lout(logDEBUG) << "b3=" << bSM[2];
+    lout(logDEBUG) << "bt=" << bSM[3];
+    lout(logDEBUG) << "bb=" << bSM[4];
+    lout(logDEBUG) << "bl=" << bSM[6];
+    
     controlled_stepper_type 
       controlled_stepper(default_error_checker< double , range_algebra , default_operations >
                          ( abs_err , rel_err , a_x , a_dxdt ) );
     
     integrate_adaptive( controlled_stepper , // Stepper function
-                        *bep,            // Derivatives
-                        aSM,             // Initial values
-                        0.0,             // t0 = Log[mu0/mu0]
-                        fabs(lEnd),      // t  = Log[mu/mu0]
-                        0.001           // Initial step size
+                        *bep,                // Derivatives
+                        aSM,                 // Initial values
+                        0.0,                 // t0 = Log[mu0/mu0]
+                        fabs(lEnd),          // t  = Log[mu/mu0]
+                        0.001                // Initial step size
                         );
     
     return aSM; 

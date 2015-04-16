@@ -9,7 +9,7 @@ int main (int argc, char *argv[])
   try
     {
       // Default log level is logERROR
-      // loglevel = logINFO;
+      loglevel = logDEBUG;
             
       // Input: Pole masses and Fermi constant in OS scheme
       OSinput oi(pdg2014::Mb, pdg2014::MW, pdg2014::MZ, pdg2014::MH, pdg2014::Mt);
@@ -42,15 +42,55 @@ int main (int argc, char *argv[])
       
       // Evolve to the Planck scale
       state_type avMpl = av(pdg2014::Mpl);
-
-
+      
       Couplings<3,3,3,
-                3,3,-1,
-                3,0,0> avP2MS(pMSmt);
+                3,0,-1,
+                3,3,0> avP2MS(pMSmt);
       
-      state_type avMplP2MS = avP2MS(pdg2014::Mpl);
+      // state_type avMplP2MS = avP2MS(pdg2014::Mpl);
       
-      std::cout << "Higgs mass term at Planck scale " << avMplP2MS[7] << std::endl;
+      // std::cout << "Higgs mass term at Planck scale " << avMplP2MS[7] << std::endl;
+      
+
+      lout(logINFO) << "Prepared for plotting!";
+      std::ofstream fout("cEvol.dat");
+
+      std::ofstream fClear("cClear.dat");
+      for (double muPow = 2.; muPow <= 15.; muPow+=0.5)
+        {
+
+          Couplings<3,3,3,
+                    3,0,-1,
+                    3,3,0> aClear(pMSmt);
+      
+          state_type vClear = aClear(pow(10,muPow));
+
+          state_type v = avP2MS(pow(10,muPow));
+          
+          lout(logINFO) << "Scale is 10^" << muPow;
+          fout << pow(10,muPow) << " "
+               << v[0]          << " "
+               << v[1]          << " "
+               << v[2]          << " "
+               << v[3]          << " "
+               << v[4]          << " "
+            // << v[5]          << " "
+               << v[6]          << " "
+               << v[7]/1000. << std::endl;
+
+
+          fClear << pow(10,muPow) << " "
+               << vClear[0]          << " "
+               << vClear[1]          << " "
+               << vClear[2]          << " "
+               << vClear[3]          << " "
+               << vClear[4]          << " "
+            // << vClear[5]          << " "
+               << vClear[6]          << " "
+               << vClear[7]/1000. << std::endl;
+        }
+      
+      
       
     }
   catch (std::exception &p) 
