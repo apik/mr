@@ -87,10 +87,17 @@ public:
              bool MultiplyByMinus1_ = false);
 
   void operator() (const state_type &, state_type &, const double);
-  void multiplyByMinus1()
+  // void multiplyByMinus1()
+  // {
+  //   MultiplyByMinus1 = true;
+  // }
+
+  // Forward direction, dir=False
+  void setEvolutionDirection(bool dir)
   {
-    MultiplyByMinus1 = true;
+    MultiplyByMinus1 = dir;
   }
+
   long double betaQCD(long double);
 };
 
@@ -126,10 +133,16 @@ public:
 
   void operator() (const state_type &, state_type &, const double);
   
-  void multiplyByMinus1()
+  // void multiplyByMinus1()
+  // {
+  //   MultiplyByMinus1 = true;
+  //   bSM->multiplyByMinus1();
+  // }
+
+  void setEvolutionDirection(bool dir)
   {
-    MultiplyByMinus1 = true;
-    bSM->multiplyByMinus1();
+    MultiplyByMinus1 = dir;
+    bSM->setEvolutionDirection(dir);
   }
 
   static long double bmu2(const state_type &a, size_t NG, int poco = 3);
@@ -195,7 +208,9 @@ public:
         
     double lEnd = log(mu2/mu0);
 
-    if (lEnd < 0) bep->multiplyByMinus1();
+    // if (lEnd < 0) bep->multiplyByMinus1();
+    bep->setEvolutionDirection(lEnd < 0);
+
     // Integration parameters
     // 
     // For the Runge-Kutta controller the error made during one step
@@ -301,7 +316,8 @@ public:
     
     double lEnd = log(mu2End/mu0);
 
-    if (lEnd < 0) bep->multiplyByMinus1();
+    // if (lEnd < 0) bep->multiplyByMinus1();
+    bep->setEvolutionDirection(lEnd < 0);
     
     // Integration parameters
     // 
@@ -325,7 +341,7 @@ public:
     lout(logDEBUG) << "mu=" << aSM[7];
     lout(logDEBUG) << "                                             ";
 
-    state_type bSM;
+    state_type bSM(aSM.size());
     bep->operator()(aSM, bSM, 0);
 
     lout(logDEBUG) << "Starting values for Beta                     ";
@@ -357,8 +373,9 @@ public:
     
     double lEnd = log(mu2End/mu0);
 
-    if (lEnd < 0) bep->multiplyByMinus1();
-    
+    // if (lEnd < 0) bep->multiplyByMinus1();
+    bep->setEvolutionDirection(lEnd < 0);
+
     // Integration parameters
     // 
     // For the Runge-Kutta controller the error made during one step

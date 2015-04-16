@@ -145,4 +145,15 @@ namespace pdg2010
 }
 
 
+// Type of evolution
+class evolution {
+public:
+  enum {
+    forward   = false,          // mean that we do not need to multiply beta-functions by (-1)
+    backward  = true            // need to multiply beta-functions by (-1)
+  };
+
+};
+
+
 #endif  // __CONSTANTS_HPP__

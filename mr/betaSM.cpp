@@ -1075,9 +1075,9 @@ void BetaSM::operator() (const state_type &a, state_type &dadt, const double t)
     throw std::logic_error("ERROR: for v.e.v. and mu^2 running 9 constants in input needed: a1,a2,as,at,ab,atau,alam,mu2,v");
   
   bSM->operator()(a, dadt, t);
-
+  
   double minusC = MultiplyByMinus1 ? -1. : 1.;
-    
+  
   // add mu^2 anomalous dimension for <m>
   dadt[7] = minusC*a[7]/2.*bmu2(a, ng, pocoa8);
   // add VEV anomalous dimension
