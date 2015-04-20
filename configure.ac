@@ -1,5 +1,5 @@
 AC_INIT([Standard Model 3-loop running and 2-loop matching], [1.0], [pikelner@theor.jinr.ru],
-             [mr], [http://theor.jinr.ru/~pikelner/])
+             [mr], [http://apik.github.io/mr/])
 AC_PREREQ([2.59])
 AC_CONFIG_MACRO_DIR([m4])
 dnl AM_INIT_AUTOMAKE([1.8 -Wall no-define])
@@ -9,26 +9,15 @@ AC_CONFIG_HEADERS([config.h])
 AC_PROG_CXX
 AC_PROG_CC
 
-dnl AM_CONDITIONAL(HAVE_BOOST, false)
-dnl AX_BOOST_BASE([1.30], AM_CONDITIONAL(HAVE_BOOST, true), [])
-
-dnl AC_DEFINE([HAVE_ROOT], [], [CERN ROOT installation found])
-dnl ROOT_PATH(, AC_DEFINE([HAVE_ROOT]))
-AM_CONDITIONAL(HAVE_ROOT, false)
-ROOT_PATH(, AM_CONDITIONAL(HAVE_ROOT, true))
-
-
-AC_MSG_NOTICE([-------------- Testing math.])
 
 AC_ARG_WITH([mcc-path],
             [AS_HELP_STRING([--with-mcc-path],
-            [build Mathematica MathLink interface @<:@default=auto@:>@. Set this to full path to mcc tool])],
+            [build Mathematica MathLink interface @<:@default=auto@:>@. Set this to full path to directory containing mcc and mprep tools])],
             [test "x$with_mcc_path" == "xyes" && with_mcc_path=auto],
             [with_mcc_path=auto])
 
-AC_MSG_NOTICE([test "x$with_mcc_path" == "xyes" && with_mcc_path=auto])
-
-# ------------------------- # -------------------------
+# ------------------------- 
+# -------------------------
 if test "x$with_mcc_path" == "xauto" ; then
 AC_MSG_CHECKING([for mcc in system path])
 AC_PATH_PROGS_FEATURE_CHECK([MCC], [mcc mcc9.0 mcc8.0 mcc7.0 mcc6.0 ],
@@ -88,11 +77,12 @@ else
     fi
   fi
 fi
-# ------------------------- # ------------------------- # -------------------------
-dnl AM_CONDITIONAL(HAVE_MCC,   test "x$with_mcc_path" != "xno" && test "x$ac_cv_path_MCC"   != "x")
+# ------------------------- 
+# ------------------------- 
+# -------------------------
 AM_CONDITIONAL(HAVE_MPREP, test "x$with_mcc_path" != "xno" && test "x$ac_cv_path_MPREP" != "x")
 
-AC_MSG_NOTICE([$MPREP])
+dnl AC_MSG_NOTICE([$MPREP])
 
 AC_CANONICAL_HOST       
 case $host_os in        
@@ -120,12 +110,8 @@ case $host_os in
     ;;
 esac
 
-AC_MSG_NOTICE([$host_os])
-AC_MSG_NOTICE([$LDMATH])
 
 AC_PROG_RANLIB
-dnl LT_INIT
 
-dnl PKG_CHECK_MODULES(SM3R2M, ginac >= 1.3.7)
 AC_CONFIG_FILES(Makefile tsil-1.21/Makefile mr/Makefile examples/Makefile tests/Makefile math/Makefile)
 AC_OUTPUT

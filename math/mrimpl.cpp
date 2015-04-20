@@ -386,6 +386,49 @@ void RunSM(long double gp, long double g, long double gs, long double yb, long d
 		
 }
 
+void RunSMwithBetas(long double gp, long double g, long double gs, long double yb, long double yt, long double lam, long double mu0, long double iscale, long double oscale) 
+{
+      Couplings<3,3,3,3,3,3,3,3,3> runSM(
+                5./3.*pow(gp/4./Pi,2),
+                pow(g/4./Pi,2),
+                pow(gs/4./Pi,2),
+                pow(yt/4./Pi,2),
+                pow(yb/4./Pi,2), // yb?
+                0, // ytau?
+                lam/pow(4.*Pi,2),             // Lambda
+		mu0, /* higgs mass parameter*/
+		0, /* higgs vev */
+                pow(iscale,2),
+                3 // NG
+                );
+
+      std::pair<state_type, state_type> runCouplingAndBeta = runSM.AandB(pow(oscale,2));
+      MLPutFunction(stdlink, "List", 8);
+      MLPutFunction(stdlink, "List", 2);
+      MLPutReal128(stdlink, 4.*Pi*sqrt(3/5.*runCouplingAndBeta.first[0])); //gp
+      MLPutReal128(stdlink, runCouplingAndBeta.second[0]); //gp
+      MLPutFunction(stdlink, "List", 2);
+      MLPutReal128(stdlink, 4.*Pi*sqrt(runCouplingAndBeta.first[1])); //g 
+      MLPutReal128(stdlink, runCouplingAndBeta.second[1]); //gp
+      MLPutFunction(stdlink, "List", 2);
+      MLPutReal128(stdlink, 4.*Pi*sqrt(runCouplingAndBeta.first[2])); //gs
+      MLPutReal128(stdlink, runCouplingAndBeta.second[2]); //gp
+      MLPutFunction(stdlink, "List", 2);
+      MLPutReal128(stdlink, 4.*Pi*sqrt(runCouplingAndBeta.first[4])); //yb
+      MLPutReal128(stdlink, runCouplingAndBeta.second[4]); //gp
+      MLPutFunction(stdlink, "List", 2);
+      MLPutReal128(stdlink, 4.*Pi*sqrt(runCouplingAndBeta.first[3])); //yt
+      MLPutReal128(stdlink, runCouplingAndBeta.second[3]); //gp
+      MLPutFunction(stdlink, "List", 2);
+      MLPutReal128(stdlink, pow(4.*Pi,2)*runCouplingAndBeta.first[6]); //lam
+      MLPutReal128(stdlink, runCouplingAndBeta.second[6]); //gp
+      MLPutFunction(stdlink, "List", 2);
+      MLPutReal128(stdlink, runCouplingAndBeta.first[7]); //m ??
+      MLPutReal128(stdlink, runCouplingAndBeta.second[7]); //gp
+      MLPutReal128(stdlink, oscale); // out scale
+		
+}
+
 void RunSMcouplings(long double gp, long double g, long double gs, long double yb, long double yt, long double lam, long double iscale, long double oscale, int loop) 
 {
 

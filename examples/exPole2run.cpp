@@ -9,7 +9,7 @@ int main (int argc, char *argv[])
   try
     {
       // Default log level is logERROR
-      loglevel = logDEBUG;
+      // loglevel = logDEBUG;
             
       // Input: Pole masses and Fermi constant in OS scheme
       OSinput oi(pdg2014::Mb, pdg2014::MW, pdg2014::MZ, pdg2014::MH, pdg2014::Mt);
@@ -19,10 +19,6 @@ int main (int argc, char *argv[])
 
       // Set of all running parameters at scale Mt
       P2MS pMSmt(oi,pdg2014::Gf, as(oi.Mt()), oi.Mt(), order::all);
-
-      // Set of all running parameters at scale MZ
-      P2MS pMSmZ(oi,pdg2014::Gf, as(oi.MZ()), oi.MZ(), order::all);
-
 
       // Initial values input by hand
       Couplings<3,3,3,
@@ -40,17 +36,14 @@ int main (int argc, char *argv[])
                           pow(173.34,2)
                           );
       
-      // Evolve to the Planck scale
-      state_type avMpl = av(pdg2014::Mpl);
-      
       Couplings<3,3,3,
                 3,0,-1,
                 3,3,0> avP2MS(pMSmt);
       
-
+      
       lout(logINFO) << "Prepared for plotting!";
       std::ofstream fout("cEvol.dat");
-
+      
       // Header
       fout << "# scale a1 a2 a3 at ab alam mu0/1000\n";
       for (double muPow = 2.; muPow <= 20.; muPow+=0.5)
@@ -58,16 +51,16 @@ int main (int argc, char *argv[])
 
           lout(logINFO) << "Scale is 10^" << muPow;
 
-          state_type v = avP2MS(pow(10,muPow));
+          state_type v = avP2MS(pow(10,2*muPow));
           
-          fout << pow(10,muPow) << " "
-               << v[0]          << " "
-               << v[1]          << " "
-               << v[2]          << " "
-               << v[3]          << " "
-               << v[4]          << " "
+          fout << muPow << " "
+               << sqrt(v[0])*4.*Pi          << " "
+               << sqrt(v[1])*4.*Pi          << " "
+               << sqrt(v[2])*4.*Pi          << " "
+               << sqrt(v[3])*4.*Pi          << " "
+               << sqrt(v[4])*4.*Pi          << " "
             // << v[5]          << " "
-               << v[6]          << " "
+               << v[6]*16.*Pi*Pi            << " "
                << v[7]/1000. << std::endl;
 
         }
