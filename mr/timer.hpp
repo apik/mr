@@ -35,7 +35,20 @@ public:
    
   void elapsed()
   {
-    lout(logDEBUG) << "Time: " << (std::clock() - start) / (double)(CLOCKS_PER_SEC / 1000) << " ms" << std::endl;
+    lout(logDEBUG) << "Time: " << (std::clock() - start) / (double)(CLOCKS_PER_SEC / 1000) << " ms";
+  }
+  
+  void inMs()
+  {
+    std::cout << "Time: " << (std::clock() - start) / (double)(CLOCKS_PER_SEC / 1000) << " ms" << std::endl;
+  }
+  void inSec()
+  {
+    std::cout << "Time: " << (std::clock() - start) / (double)(CLOCKS_PER_SEC) << " s" << std::endl;
+  }
+  void inMin()
+  {
+    std::cout << "Time: " << (std::clock() - start) / (double)(CLOCKS_PER_SEC * 60) << " min" << std::endl;
   }
 };
 

@@ -23,8 +23,6 @@
 #include "tools.hpp"
 #include "p2ms.hpp"
 
-#include "betaQCD.hpp"
-#include "betaSM.hpp"
 
 
 
@@ -70,12 +68,40 @@ struct LambdaAtMuMH
 
 };
 
+struct bLambdaAtMuMH
+{
+  
+  OSinput oi;
+  long double mu2;
+  long double asMt;
+  
+  bLambdaAtMuMH(OSinput in_, long double mu2_) : oi(in_), mu2(mu2_)
+  {
+    AlphaS as(oi);
+    asMt = as(oi.Mt());
+  }
+  
+  long double operator()(long double MH)
+  {
+    oi.setMH(MH);
+    // Set of all running parameters at scale Mt
+    P2MS pMSmt(oi,pdg2014::Gf, asMt, oi.Mt(), order::all);
+
+    Couplings<3,3,3,
+              3,3,-1,
+              3,0,0> avP2MS(pMSmt);
+
+    return avP2MS.AandB(mu2).second[couplings::lam];
+  }
+
+};
+
 
 
 long double critMH(const OSinput& oi, long double mu)
 {
-  LambdaAtMuMH lambdaMPL(oi, pow(mu,2));
-  tolerance tol = 1e-12;
+  bLambdaAtMuMH lambdaMPL(oi, pow(mu,2));
+  tolerance tol = 1e-8;
 
   // Finding bounds with different lambda sign
   long double startLam = lambdaMPL(oi.MH());
@@ -84,23 +110,25 @@ long double critMH(const OSinput& oi, long double mu)
   // inputs than we should increase MH by 10GeV before we finish with
   // positive, but not rising to Landau pole lambda
 
-  if(startLam < 0)
-    {
-      // We already know lower bound on Higgs mass
-      leftMH = oi.MH();
+  // if(startLam < 0)
+  //   {
+  //     // We already know lower bound on Higgs mass
+  //     leftMH = oi.MH();
 
-      rightMH = oi.MH() + 10.;  // 10 GeV larger
-      while(lambdaMPL(rightMH) < 0) rightMH += 10.;
-    }
-  else
-    {
-      // We already know upper bound on Higgs mass
-      rightMH = oi.MH();
+  //     rightMH = oi.MH() + 10.;  // 10 GeV larger
+  //     while(lambdaMPL(rightMH) < 0) rightMH += 10.;
+  //   }
+  // else
+  //   {
+  //     // We already know upper bound on Higgs mass
+  //     rightMH = oi.MH();
       
-      leftMH = oi.MH() - 10.;  // 10 GeV larger
-      while(lambdaMPL(leftMH) > 0) leftMH -= 10.;
-    }
+  //     leftMH = oi.MH() - 10.;  // 10 GeV larger
+  //     while(lambdaMPL(leftMH) > 0) leftMH -= 10.;
+  //   }
 
+  leftMH = 120;
+  rightMH = 130;
   std::cout <<"Bisection for Higgs mass in interval [" << leftMH << ", " << rightMH << "]" << std::endl;
   std::pair<long double, long double> MHcritInterval = boost::math::tools::bisect(lambdaMPL, leftMH, rightMH, tol);
   
@@ -123,13 +151,16 @@ struct LambdaAtMuMt
   
   LambdaAtMuMt(OSinput in_, long double mu2_) : oi(in_), mu2(mu2_)
   {
-    AlphaS as(oi);
-    asMt = as(oi.Mt());
   }
   
   long double operator()(long double Mt)
   {
+
     oi.setMt(Mt);
+    AlphaS as(oi);
+    asMt = as(oi.Mt());
+
+
     // Set of all running parameters at scale Mt
     P2MS pMSmt(oi,pdg2014::Gf, asMt, oi.Mt(), order::all);
 
@@ -142,12 +173,41 @@ struct LambdaAtMuMt
 
 };
 
+struct bLambdaAtMuMt
+{
+  
+  OSinput oi;
+  long double mu2;
+  long double asMt;
+  
+  bLambdaAtMuMt(OSinput in_, long double mu2_) : oi(in_), mu2(mu2_)
+  {
+  }
+  
+  long double operator()(long double Mt)
+  {
+    oi.setMt(Mt);
+    AlphaS as(oi);
+    asMt = as(oi.Mt());
+
+    // Set of all running parameters at scale Mt
+    P2MS pMSmt(oi,pdg2014::Gf, asMt, oi.Mt(), order::all);
+
+    Couplings<3,3,3,
+              3,3,-1,
+              3,0,0> avP2MS(pMSmt);
+
+    return avP2MS.AandB(mu2).second[couplings::lam];
+  }
+
+};
+
 
 
 long double critMt(const OSinput& oi, long double mu)
 {
-  LambdaAtMuMt lambdaMPL(oi, pow(mu,2));
-  tolerance tol = 1e-12;
+  bLambdaAtMuMt lambdaMPL(oi, pow(mu,2));
+  tolerance tol = 1e-8;
 
   // Finding bounds with different lambda sign
   long double startLam = lambdaMPL(oi.Mt());
@@ -157,26 +217,30 @@ long double critMt(const OSinput& oi, long double mu)
   // positive, but not rising to Landau pole lambda
 
   // For larger Mt beta_lam(\mu)=0 for smaller \mu
-  if(startLam < 0)
-    {
 
-      std::cout << "Starting value for lambda is negative, decreasing Top mass" << std::endl;
-      // We already know upper bound on Top mass
-      rightMt = oi.Mt();
+  // if(startLam < 0)
+  //   {
 
-      leftMt = oi.Mt() - 10.;  // 10 GeV larger
-      while(lambdaMPL(leftMt) < 0) leftMt -= 10.;
-    }
-  else
-    {
+  //     std::cout << "Starting value for lambda is negative, decreasing Top mass" << std::endl;
+  //     // We already know upper bound on Top mass
+  //     rightMt = oi.Mt();
 
-      std::cout << "Starting value for lambda is positive, increasing Top mass" << std::endl;
-      // We already know upper bound on Higgs mass
-      leftMt = oi.Mt();
+  //     leftMt = oi.Mt() - 10.;  // 10 GeV larger
+  //     while(lambdaMPL(leftMt) < 0) leftMt -= 10.;
+  //   }
+  // else
+  //   {
+
+  //     std::cout << "Starting value for lambda is positive, increasing Top mass" << std::endl;
+  //     // We already know upper bound on Higgs mass
+  //     leftMt = oi.Mt();
       
-      rightMt = oi.Mt() + 10.;  // 10 GeV larger
-      while(lambdaMPL(rightMt) > 0) rightMt += 10.;
-    }
+  //     rightMt = oi.Mt() + 10.;  // 10 GeV larger
+  //     while(lambdaMPL(rightMt) > 0) rightMt += 10.;
+  //   }
+  
+  leftMt = 169;
+  rightMt = 171;
 
   std::cout <<"\n\n*******\n\tBisection for Top mass in interval [" << leftMt << ", " << rightMt << "]" << std::endl << std::endl << std::endl;
   std::pair<long double, long double> MtcritInterval = boost::math::tools::bisect(lambdaMPL, leftMt, rightMt, tol);
@@ -332,20 +396,63 @@ long double critMH_scaleNotFixed(const OSinput& oi, long double mu)
 
 
 
+// 
+//    <BoundT> - is functor type for boundary condition
+// 
+//    <Mt_Stability is> criterium for absolute stability
+//    lambda=beta_lambda=0
+// 
+//    <Mt_Instability> corresponds to border between instability 
+//    and meta-stability regions
+//    beta_lambda=0, lambda=lambda_min, where lambda_min is
+//   such that tunneling rate P(lambda)=1
+// 
+// template <typename BoundT>
+// std::pair<long double,long double> critMt_scaleNotFixed(const OSinput& oi, long double mu, long double alphaS)
+// {
+  
+  
+//   Eigen::VectorXd x(2);
+//   x(0) = oi.Mt();
+//   x(1) = log10(pow(mu,2));
+  
+//   BoundT functor(oi, alphaS);
+//   Eigen::NumericalDiff<BoundT> numDiff(functor);
+//   Eigen::LevenbergMarquardt<Eigen::NumericalDiff<BoundT>,double> lm(numDiff);
+//   lm.parameters.maxfev = 200;
+//   lm.parameters.xtol = 1.0e-12;
+//   lm.parameters.epsfcn = 1.0e-5;
+
+//   int ret = lm.minimize(x);
+//   lout(logINFO) << "Number of function evaluations" << lm.iter;
+//   lout(logINFO) << "Status of minimization        " << ret;
+
+//   if (ret != 2) 
+//     lout(logERROR) << "Minimization problems, status: " << ret;
+
+//   lout(logINFO)  << "Mt           = " << x(0);
+//   lout(logINFO)  << "log10(mu^2)  = " << x(1);
+//   lout(logDEBUG) << "lambda       = " << lm.fvec(0);
+//   lout(logDEBUG) << "beta(lambda) = " << lm.fvec(1);
+//   // lout(logDEBUG) << "Mt(f)        = " << lm.fvec(2);
+  
+//   return std::pair<long double,long double>(x(0), x(1));
+// }
 
 
-
-
-struct Mt_functor2 : Functor<double>
+// Meta-stability - Stability bound
+struct Mt_pointFunctor : Functor<double>
 {
   OSinput oi;
   long double asMt;
   
-  Mt_functor2(void): Functor<double>(2,2) {}
+  Mt_pointFunctor(void): Functor<double>(1,2) {}
 
-  Mt_functor2(const OSinput& in_) : oi(in_),Functor<double>(2,2)
+  // Explicit dependence on asMZ is usefull for plots 
+  // depending on asMZ errors
+  Mt_pointFunctor(const OSinput& in_, long double alphaS = pdg2014::asMZ) : oi(in_),Functor<double>(1,2)
   {
-    AlphaS as(oi);
+    AlphaS as(oi,alphaS);
     asMt = as(oi.Mt());
   }
 
@@ -354,8 +461,8 @@ struct Mt_functor2 : Functor<double>
 
 
     OSinput oiMt(oi);
-    // double MH = x(0);
-    oiMt.setMt(x(0));
+    // double Mt = x(0);
+    // oiMt.setMt(x(0));
     // Set of all running parameters at scale Mt
     P2MS pMSmt(oiMt,pdg2014::Gf, asMt, oiMt.Mt(), order::all);
     
@@ -364,46 +471,152 @@ struct Mt_functor2 : Functor<double>
               3,0,0> avP2MS(pMSmt);
 
     
-    long double mu2 = pow(10.,x(1));
+    long double mu2 = pow(10.,x(0));
     
+    lout(logDEBUG) << "Instability scale Lambda_I = " << sqrt(mu2);
+
     // quadratical difference from zero
     std::pair<state_type, state_type> ab = avP2MS.AandB(mu2);
-    fvec(0) = pow(ab.first[couplings::lam],2);
-    fvec(1) = pow(ab.second[couplings::lam],2);
+    fvec(0) = pow(ab.first[couplings::lam],1);
+    fvec(1) = pow(ab.second[couplings::lam],1);
 
+    lout(logDEBUG) << "lam  = " << ab.first[couplings::lam];
+    lout(logDEBUG) << "blam = " << ab.second[couplings::lam];
+    // We are interested in minimal Mt 
+    // corresponding to border of Stability
+    // fvec(2) = pow(x(0),2);
     return 0;
   }
 };
 
 
+long double critMt_test(const OSinput& oi, long double mu, long double alphaS)
+{
+  
+  
+  Eigen::VectorXd x(1);
+  x(0) = log10(pow(mu,2));
+  
+  Mt_pointFunctor functor(oi, alphaS);
+
+  Eigen::HybridNonLinearSolver<Mt_pointFunctor> solver(functor);
+  int ret = solver.hybrd1(x);
+
+  // Eigen::NumericalDiff<BoundT> numDiff(functor);
+  // Eigen::LevenbergMarquardt<Eigen::NumericalDiff<BoundT>,double> lm(numDiff);
+  // solver.parameters.maxfev = 200;
+  // solver.parameters.xtol = 1.0e-12;
+  // solver.parameters.epsfcn = 1.0e-5;
+
+  // int ret = lm.minimize(x);
+  lout(logINFO) << "Number of function evaluations" << solver.iter;
+  lout(logINFO) << "Status of minimization        " << ret;
+
+  if (ret != 2) 
+    lout(logERROR) << "Minimization problems, status: " << ret;
+
+  lout(logINFO)  << "log10(mu^2)  = " << x(0);
+  lout(logDEBUG) << "lambda       = " << solver.fvec(0);
+  // lout(logDEBUG) << "beta(lambda) = " << solver.fvec(1);
+  // lout(logDEBUG) << "Mt(f)        = " << lm.fvec(2);
+  
+  return x(0);
+}
 
 
-long double critMt_scaleNotFixed(const OSinput& oi, long double mu)
+template <typename BoundT>
+std::pair<long double,long double> critMt_scaleNotFixed(const OSinput& oi, long double mu, long double alphaS)
 {
   
   
   Eigen::VectorXd x(2);
   x(0) = oi.Mt();
   x(1) = log10(pow(mu,2));
-  std::cout << "x: " << x << std::endl;
   
-  Mt_functor2 functor(oi);
-  Eigen::NumericalDiff<Mt_functor2> numDiff(functor);
-  Eigen::LevenbergMarquardt<Eigen::NumericalDiff<Mt_functor2>,double> lm(numDiff);
-  lm.parameters.maxfev = 200;
-  lm.parameters.xtol = 1.0e-13;
-  lm.parameters.epsfcn = 1.0e-6;
-  std::cout << "Max fev= " << lm.parameters.maxfev << std::endl;
+  BoundT functor(oi, alphaS);
 
-  int ret = lm.minimize(x);
-  std::cout << lm.iter << std::endl;
-  std::cout << "Minimum " << ret << std::endl;
+  Eigen::HybridNonLinearSolver<BoundT> solver(functor);
+  int ret = solver.hybrd1(x);
+
+  lout(logINFO) << "Number of function evaluations" << solver.iter;
+  lout(logINFO) << "Status of minimization        " << ret;
+
+  if (ret != 2) 
+    lout(logERROR) << "Minimization problems, status: " << ret;
+
+  lout(logINFO)  << "Mt           = " << x(0);
+  lout(logINFO)  << "log10(mu^2)  = " << x(1);
+  lout(logDEBUG) << "lambda       = " << solver.fvec(0);
+  lout(logDEBUG) << "beta(lambda) = " << solver.fvec(1);
   
-  std::cout << "x that minimizes the function: " << x << std::endl;
-
-  return x(0);
-
+  return std::pair<long double,long double>(x(0), x(1));
 }
 
+template std::pair<long double,long double> critMt_scaleNotFixed<Mt_Stability>(const OSinput&, long double, long double);
+// template std::pair<long double,long double> critMt_scaleNotFixed<Mt_StabilityScale>(const OSinput&, long double, long double);
+template std::pair<long double,long double> critMt_scaleNotFixed<Mt_Instability>(const OSinput&, long double, long double);
+
+template<typename BoundT>
+std::pair<long double, int> critMH0(const OSinput& oi, long double mu, long double aSMZ)
+{
+  
+  Eigen::VectorXd x(1);
+  x(0) = oi.MH();
+
+  BoundT functor(oi, mu, aSMZ);
+
+  Eigen::HybridNonLinearSolver<BoundT> solver(functor);
+  solver.diag.setConstant(1, 1.);
+  solver.useExternalScaling = true;
+  solver.parameters.xtol = 1.0e-12;
+  solver.parameters.epsfcn = 1.0e-5;
+
+  int ret = solver.solveNumericalDiff(x);
+
+  lout(logINFO) << "Number of function evaluations" << solver.iter;
+  lout(logINFO) << "Status of minimization        " << ret;
+  lout(logINFO) << "MH           = " << x(0);
+  
+  if (ret != 2) 
+    lout(logERROR) << "Minimization problems, status: " << ret;
+  
+  return std::make_pair(x(0), ret);
+}
+
+
+template<typename BoundT>
+std::pair<long double, int> critMt0(const OSinput& oi, long double mu, long double aSMZ)
+{
+  
+  Eigen::VectorXd x(1);
+  x(0) = oi.Mt();
+
+  BoundT functor(oi, mu, aSMZ);
+
+  Eigen::HybridNonLinearSolver<BoundT> solver(functor);
+  solver.diag.setConstant(1, 1.);
+  solver.useExternalScaling = true;
+  solver.parameters.xtol = 1.0e-12;
+  solver.parameters.epsfcn = 1.0e-5;
+
+  int ret = solver.solveNumericalDiff(x);
+
+  lout(logINFO) << "Number of function evaluations" << solver.iter;
+  lout(logINFO) << "Status of minimization        " << ret;
+  lout(logINFO) << "Mt           = " << x(0);
+  
+  if (ret != 2) 
+    lout(logERROR) << "Minimization problems, status: " << ret;
+  
+  return std::make_pair(x(0), ret);
+}
+
+// H
+// template std::pair<long double, int> critMH0<MH_Lambda0>(const OSinput&, long double, long double);
+template std::pair<long double, int> critMH0<MH_Beta0>(const OSinput&, long double, long double);
+
+// t
+template std::pair<long double, int> critMt0<Mt_Lambda0>(const OSinput&, long double, long double );
+template std::pair<long double, int> critMt0<Mt_Beta0>(const OSinput&, long double, long double);
 
 loglevel_e loglevel = logERROR;

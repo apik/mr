@@ -7,6 +7,9 @@ int main (int argc, char *argv[])
 {
   try
     {
+      // Default log level is logERROR
+      loglevel = logDEBUG;
+
       // Input: Pole masses and Fermi constant in OS scheme
       OSinput oi(pdg2014::Mb, pdg2014::MW, pdg2014::MZ, pdg2014::MH, pdg2014::Mt);
 

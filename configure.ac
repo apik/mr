@@ -5,7 +5,7 @@ AC_CONFIG_MACRO_DIR([m4])
 dnl AM_INIT_AUTOMAKE([1.8 -Wall no-define])
 AM_INIT_AUTOMAKE([foreign subdir-objects])
 AC_CONFIG_HEADERS([config.h])
-: ${CXXFLAGS="-fopenmp"}
+: ${CXXFLAGS="-fopenmp -O3"}
 AC_PROG_CXX
 AC_PROG_CC
 

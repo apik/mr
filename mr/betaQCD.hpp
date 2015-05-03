@@ -118,12 +118,6 @@ class AlphaS
 
 public:
 
-  // Running with fixed nf
-  // AlphaS(long double asMZ = pdg2014::asMZ, long double mu = pdg2014::MZ, size_t loops_ = 4, size_t nfFixed_ = 5) : asStart(asMZ), muStart(mu),loops(loops_), nfFixed(nfFixed_)
-  // { 
-    
-  // }
-
   // Running down to bottom mass with nf=5
   // and upto Mt with threshold at Mt
   AlphaS(OSinput oi_, long double asMZ = pdg2014::asMZ, size_t loops_ = 4, size_t nfFixed_ = 0) 
