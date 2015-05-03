@@ -4,8 +4,12 @@ AC_PREREQ([2.59])
 AC_CONFIG_MACRO_DIR([m4])
 dnl AM_INIT_AUTOMAKE([1.8 -Wall no-define])
 AM_INIT_AUTOMAKE([foreign subdir-objects])
+
+dnl AC_MSG_CHECKING([for OpenMP support])
+AX_OPENMP()
+
 AC_CONFIG_HEADERS([config.h])
-: ${CXXFLAGS="-fopenmp -O3"}
+: ${CXXFLAGS="-fopenmp -O1"}
 AC_PROG_CXX
 AC_PROG_CC
 
