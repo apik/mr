@@ -40,6 +40,15 @@ int main (int argc, char *argv[])
                 << "alpha(b) = " << pMSmt.ab()*4*Pi << std::endl
                 << "lambda   = " << pMSmt.alam()*pow(4*Pi,2) << std::endl;
 
+      std::cout << std::endl;
+      std::cout << "g_1 = " << sqrt(pMSmt.a1())*4*Pi << std::endl
+                << "g_2 = " << sqrt(pMSmt.a2())*4*Pi << std::endl
+                << "g_s = " << sqrt(pMSmt.as())*4*Pi << std::endl
+                << "y_t = " << sqrt(pMSmt.at())*4*Pi << std::endl
+                << "y_b = " << sqrt(pMSmt.ab())*4*Pi << std::endl
+                << "lambda   = " << pMSmt.alam()*pow(4*Pi,2) << std::endl
+                << "mu0 = " << pMSmt.mu0() << std::endl;
+
       
     }
   catch (std::exception &p) 

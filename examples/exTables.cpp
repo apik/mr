@@ -42,9 +42,10 @@ int main (int argc, char *argv[])
 
       // PDG2012 input for MH values from table ...
       std::vector<OSinput> oiMH;
-      oiMH.push_back(oi.setMH(124));
-      oiMH.push_back(oi.setMH(125));
-      oiMH.push_back(oi.setMH(126));
+      oiMH.push_back(oi);
+      // oiMH.push_back(oi.setMH(124));
+      // oiMH.push_back(oi.setMH(125));
+      // oiMH.push_back(oi.setMH(126));
 
       // And for physical value MH=125.66
       OSinput oiMHphys = oi.setMH(125.66);
@@ -89,7 +90,7 @@ int main (int argc, char *argv[])
 //       KPV.push_back(OSinput(kmb*4.9, pdg2014::MW, pdg2014::MZ, 125, pdg2014::Mt));
 //       KPV.push_back(OSinput(kmb*4.9, pdg2014::MW, pdg2014::MZ, 126, pdg2014::Mt));
 
-//       OSinput KPVphys = OSinput(4.9, pdg2014::MW, pdg2014::MZ, pdg2014::MH, pdg2014::Mt);
+      OSinput KPVphys = OSinput(4.9, pdg2014::MW, pdg2014::MZ, pdg2014::MH, pdg2014::Mt);
 
 
 //       // PDG2014
@@ -226,7 +227,7 @@ int main (int argc, char *argv[])
 //         }
       
       
-//       bb<OS> dMb(KPVphys, KPVphys.MMb());
+      bb<OS> dMb(KPVphys, KPVphys.MMt());
       
       
 //       // PDG2014
@@ -234,50 +235,57 @@ int main (int argc, char *argv[])
 //       // asRD.nfMmu[0].Mth = KPVphys.Mt();
 //       // asRD.nfMmu[0].muth = KPVphys.Mt();
       
-//       CRunDec asRD5(5);      
+      // CRunDec asRD5(5);      
       
       
-//       long double asMb = asRD5.AlphasExact(pdg2014::asMZ, KPVphys.MZ(), KPVphys.Mb(), 4);
+      // long double asMb = asRD5.AlphasExact(pdg2014::asMZ, KPVphys.MZ(), KPVphys.Mb(), 4);
 
-//       AlphaS  asMBPIK(KPVphys);
+      AlphaS  asMBPIK(KPVphys);
 
-//       std::cout << "PDG2014" << std::endl;
-//       std::cout << "\\aRD_S  (\\mu = Mb) = " << asMb  << std::endl;
-//       std::cout << "\\aPIK_S  (\\mu = Mb) = " << asMBPIK(4.9)  << std::endl;
       
-//       long double aMb =       aMt = FinAl.QED(pdg2014::Mb);
-//       // al(aMZ, KPVphys.MMZ(), asMb, KPVphys.MMb());
-//       std::cout << "\\alpha a(MB)             = " << 1./aMb << std::endl;
+      // long double asMb = asMBPIK(4.9);
+      long double asMb = as(oi.Mt());
+
+      // std::cout << "PDG2014" << std::endl;
+      // std::cout << "\\aRD_S  (\\mu = Mb) = " << asMb  << std::endl;
+      // std::cout << "\\aPIK_S  (\\mu = Mb) = " << asMBPIK(4.9)  << std::endl;
       
-//       long double aMbMZ = al(aMZ, KPVphys.MMZ(), pdg2014::asMZ, KPVphys.MMb());
-//       std::cout << "\\alpha as(MZ)             = " << 1./aMbMZ << std::endl;
+      // long double aMb =
+      //   aMt = FinAl.QED(pdg2014::Mb);
+      // // al(aMZ, KPVphys.MMZ(), asMb, KPVphys.MMb());
+      // std::cout << "\\alpha a(MB)             = " << 1./aMb << std::endl;
+      
+      // long double aMbMZ = al(aMZ, KPVphys.MMZ(), pdg2014::asMZ, KPVphys.MMb());
+      // std::cout << "\\alpha as(MZ)             = " << 1./aMbMZ << std::endl;
 
       
 //       // Table
-//       std::cout << " Mb-mb = | " << KPVphys.Mb()
-//                 << " | " << KPVphys.Mb()*pow(asMb/4./Pi,1)*dMb.x01() + KPVphys.Mb()*pow(asMb/4./Pi,2)*dMb.x02() + KPVphys.Mb()*pow(asMb/4./Pi,3)*dMb.x03()
-//                 << " | " << KPVphys.Mb()*aMb/4./Pi*dMb.x10() 
-//                 << " | " << KPVphys.Mb()*aMb/4./Pi*asMb/4./Pi*dMb.x11() 
-//                 << " | " << KPVphys.Mb()*pow(aMb/4./Pi,2)*dMb.xgl20() 
-//                 << " | " << KPVphys.Mb()*pow(aMb/4./Pi,2)*dMb.x20() 
-//                 << " | " << KPVphys.Mb()*pow(aMb/4./Pi,2)*dMb.x20() 
-//         + KPVphys.Mb()*aMb/4./Pi*asMb/4./Pi*dMb.x11() 
-//         + KPVphys.Mb()*aMb/4./Pi*dMb.x10() 
-//         + KPVphys.Mb()*pow(asMb/4./Pi,1)*dMb.x01() + KPVphys.Mb()*pow(asMb/4./Pi,2)*dMb.x02() + KPVphys.Mb()*pow(asMb/4./Pi,3)*dMb.x03()
-//                     << std::endl;
+      // std::cout << " Mb-mb = | " << KPVphys.Mb()
+      //           << " | " << KPVphys.Mb()*pow(asMb/4./Pi,1)*dMb.x01() + KPVphys.Mb()*pow(asMb/4./Pi,2)*dMb.x02() + KPVphys.Mb()*pow(asMb/4./Pi,3)*dMb.x03()
+      //           << " | " << KPVphys.Mb()*aMb/4./Pi*dMb.x10() 
+      //           << " | " << KPVphys.Mb()*aMb/4./Pi*asMb/4./Pi*dMb.x11() 
+      //           << " | " << KPVphys.Mb()*pow(aMb/4./Pi,2)*dMb.xgl20() 
+      //           << " | " << KPVphys.Mb()*pow(aMb/4./Pi,2)*dMb.x20() 
+      //           << " | " << KPVphys.Mb()*pow(aMb/4./Pi,2)*dMb.x20() 
+      //   + KPVphys.Mb()*aMb/4./Pi*asMb/4./Pi*dMb.x11() 
+      //   + KPVphys.Mb()*aMb/4./Pi*dMb.x10() 
+      //   + KPVphys.Mb()*pow(asMb/4./Pi,1)*dMb.x01() + KPVphys.Mb()*pow(asMb/4./Pi,2)*dMb.x02() + KPVphys.Mb()*pow(asMb/4./Pi,3)*dMb.x03()
+      //               << std::endl;
 
 
-//       std::cout << " Yb-yb = | "
-//                 << " | " << pow(asMb/4./Pi,1)*dMb.y01() + pow(asMb/4./Pi,2)*dMb.x02() + pow(asMb/4./Pi,3)*dMb.x03()
-//                 << " | " << aMb/4./Pi*dMb.y10() 
-//                 << " | " << aMb/4./Pi*asMb/4./Pi*dMb.y11() 
-//                 << " | " << pow(aMb/4./Pi,2)*dMb.ygl20() 
-//                 << " | " << pow(aMb/4./Pi,2)*dMb.y20() 
-//                 << " | " << pow(aMb/4./Pi,2)*dMb.y20() 
-//         + aMb/4./Pi*asMb/4./Pi*dMb.y11() 
-//         + aMb/4./Pi*dMb.y10() 
-//         + pow(asMb/4./Pi,1)*dMb.y01() + pow(asMb/4./Pi,2)*dMb.x02() + pow(asMb/4./Pi,3)*dMb.x03()
-//                     << std::endl;
+      std::cout << " Yb-yb = | "
+                << " | " << pow(asMb/4./Pi,1)*dMb.y01() + pow(asMb/4./Pi,2)*dMb.x02() // +
+                                                                                      // pow(asMb/4./Pi,3)*dMb.x03()
+                << " | " << pow(asMb/4./Pi,1)*dMb.y01() + pow(asMb/4./Pi,2)*dMb.y02() // + pow(asMb/4./Pi,3)*dMb.x03()
+        //         << " | " << aMb/4./Pi*dMb.y10() 
+        //         << " | " << aMb/4./Pi*asMb/4./Pi*dMb.y11() 
+        //         << " | " << pow(aMb/4./Pi,2)*dMb.ygl20() 
+        //         << " | " << pow(aMb/4./Pi,2)*dMb.y20() 
+        //         << " | " << pow(aMb/4./Pi,2)*dMb.y20() 
+        // + aMb/4./Pi*asMb/4./Pi*dMb.y11() 
+        // + aMb/4./Pi*dMb.y10() 
+        // + pow(asMb/4./Pi,1)*dMb.y01() + pow(asMb/4./Pi,2)*dMb.x02() + pow(asMb/4./Pi,3)*dMb.x03()
+                    << std::endl;
 
 
       

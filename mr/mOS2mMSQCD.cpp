@@ -317,7 +317,8 @@ long double bb<OS>::x04(size_t nL, size_t nH, size_t boson)
 
 long double bb<OS>::y02(size_t nL, size_t nH, size_t boson)
 {     
-  return mOS2mMS(MMb, mu2, 2*nL, nH, 2);
+  // return mOS2mMS(MMb, mu2, 2*nL, nH, 2);
+  return mOS2mMSnm(MMb, MMt/MMb, mu2, 2*nL, 1, nH, 2);
 }
 
 long double bb<OS>::y03(size_t nL, size_t nH, size_t boson)

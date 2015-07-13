@@ -4,7 +4,7 @@ ACLOCAL_AMFLAGS = ${ACLOCAL_FLAGS} -I m4
 LDADD = ../mr/libmr.la
 EX_CFLAGS = $(MR_CFLAGS) -I$(top_srcdir)/tsil-1.21 -I$(top_srcdir)/mr -I$(top_srcdir)/Eigen
 
-noinst_PROGRAMS = exPole2ms exPole2run exMHcrit exMtcrit exTables exPhaseDiagram
+noinst_PROGRAMS = exPole2ms exPole2run exMHcrit exMtcrit exTables exTadpoles exPhaseDiagram exPole2fixed
 
 # if HAVE_ROOT
 # noinst_PROGRAMS += mHroot interpolation
@@ -23,6 +23,10 @@ exPole2run_SOURCES =  exPole2run.cpp
 exPole2run_CPPFLAGS = $(EX_CFLAGS)
 exPole2run_LDADD = $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.21 -ltsil -lm
 
+exPole2fixed_SOURCES =  exPole2fixed.cpp
+exPole2fixed_CPPFLAGS = $(EX_CFLAGS)
+exPole2fixed_LDADD = $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.21 -ltsil -lm
+
 exPhaseDiagram_SOURCES =  exPhaseDiagram.cpp
 exPhaseDiagram_CPPFLAGS = $(EX_CFLAGS)
 exPhaseDiagram_LDADD = $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.21 -ltsil -lm
@@ -38,3 +42,7 @@ exMtcrit_LDADD = $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.21 -l
 exTables_SOURCES =  exTables.cpp
 exTables_CPPFLAGS = $(EX_CFLAGS)
 exTables_LDADD = $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.21 -ltsil -lm
+
+exTadpoles_SOURCES =  exTadpoles.cpp
+exTadpoles_CPPFLAGS = $(EX_CFLAGS)
+exTadpoles_LDADD = $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.21 -ltsil -lm

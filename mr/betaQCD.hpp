@@ -152,16 +152,17 @@ public:
         // Run only up to Mt with nf=5
         else if( mu < mtth ) 
           {
-            return run(asStart, muStart, mu, 5 );
+            return run(asStart, muStart, mu, 5, loops );
           }
         
         // Threshold at Mt
         else 
           {
-            long double asMt5 = run(asStart, muStart, mtth, 5 );
+            long double asMt5 = run(asStart, muStart, mtth, 5, loops );
             
-            // We use 3-loop decoupling for 4-loop running
-            long double asMt6 = as5nf2as6nf(mtth, mtth, asMt5, /* nl= */5, 3);
+            // We use (L-1)-loop decoupling for L-loop running
+            long double asMt6 =
+              as5nf2as6nf(mtth, mtth, asMt5, /* nl= */5, loops - 1);
             
             // Return as(nf=6,mu=Mt)
             if (mu == mtth)
@@ -169,19 +170,13 @@ public:
 
             // Run with nf=6 up to mu > Mt
             else
-              return run(asMt6, mtth, mu, 6 );
+              return run(asMt6, mtth, mu, 6, loops );
               
           }
       }
     // Running with fixed nf
     else
-      return run(asStart, muStart, mu, nfFixed);    
-  }
-
-
-  long double upto(long double mu2)
-  {
-    
+      return run(asStart, muStart, mu, nfFixed), loops;    
   }
 
 };

@@ -37,7 +37,7 @@ struct Functor
   typedef _Scalar Scalar;
   enum {
     InputsAtCompileTime = NX,
-        ValuesAtCompileTime = NY
+    ValuesAtCompileTime = NY
   };
   typedef Eigen::Matrix<Scalar,InputsAtCompileTime,1> InputType;
   typedef Eigen::Matrix<Scalar,ValuesAtCompileTime,1> ValueType;
