@@ -660,7 +660,7 @@ BetaSMFull::BetaSMFull(int pocoa1_, int pocoa2_, int pocoas_, int pocoat_, int p
 }
 
 
-void BetaSMFull::operator() (const state_type &a, state_type &dadt, const double t)
+void BetaSMFull::operator() (const SMCouplings &a, SMCouplings &dadt, const double t)
 {
   // 
   //    - couplings: a1->a[0], a2->a[1], as->a[2], at->a[3], ab->a[4], atau->a[5], lam->a[6]
@@ -754,7 +754,7 @@ void BetaSMFull::operator() (const state_type &a, state_type &dadt, const double
 // VEV gamma_{v^2}
 // 
 
-long double BetaSM::gamv(const state_type &a, size_t NG, int poco)
+long double BetaSM::gamv(const SMCouplings &a, size_t NG, int poco)
 {
   long double gamV = 0;
   
@@ -965,7 +965,7 @@ long double BetaSM::gamv(const state_type &a, size_t NG, int poco)
 
 
 
-long double BetaSM::bmu2(const state_type & a, size_t NG, int poco)
+long double BetaSM::bmu2(const SMCouplings & a, size_t NG, int poco)
 {
   long double mu2 =  0;
 
@@ -1068,7 +1068,7 @@ BetaSM::BetaSM(int pocoa1_, int pocoa2_, int pocoas_, int pocoat_, int pocoab_, 
 }
 
 
-void BetaSM::operator() (const state_type &a, state_type &dadt, const double t)
+void BetaSM::operator() (const SMCouplings &a, SMCouplings &dadt, const SMCouplings t)
 {
 
   if(a.size() != 9)

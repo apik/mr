@@ -53,7 +53,7 @@ struct LambdaAtMuMH
     asMt = as(oi.Mt());
   }
   
-  long double operator()(long double MH)
+  SMCouplings::value_type operator()(long double MH)
   {
     oi.setMH(MH);
     // Set of all running parameters at scale Mt
@@ -81,7 +81,7 @@ struct bLambdaAtMuMH
     asMt = as(oi.Mt());
   }
   
-  long double operator()(long double MH)
+  SMCouplings::value_type operator()(MRt MH)
   {
     oi.setMH(MH);
     // Set of all running parameters at scale Mt
@@ -93,19 +93,18 @@ struct bLambdaAtMuMH
 
     return avP2MS.AandB(mu2).second[couplings::lam];
   }
-
+  typedef SMCouplings::value_type value_type;
 };
 
 
-
-long double critMH(const OSinput& oi, long double mu)
+MRt critMH(const OSinput& oi, long double mu)
 {
   bLambdaAtMuMH lambdaMPL(oi, pow(mu,2));
   tolerance tol = 1e-8;
-
+  
   // Finding bounds with different lambda sign
-  long double startLam = lambdaMPL(oi.MH());
-  long double leftMH, rightMH;
+  SMCouplings::value_type startLam = lambdaMPL(oi.MH());
+  MRt leftMH, rightMH;
   // If initial lambda is negative which is true for most of realistic SM
   // inputs than we should increase MH by 10GeV before we finish with
   // positive, but not rising to Landau pole lambda
@@ -130,16 +129,16 @@ long double critMH(const OSinput& oi, long double mu)
   leftMH = 120;
   rightMH = 130;
   std::cout <<"Bisection for Higgs mass in interval [" << leftMH << ", " << rightMH << "]" << std::endl;
-  std::pair<long double, long double> MHcritInterval = boost::math::tools::bisect(lambdaMPL, leftMH, rightMH, tol);
+  std::pair<MRt,MRt> MHcritInterval = boost::math::tools::bisect(lambdaMPL, leftMH, rightMH, tol);
   
-  boost::numeric::interval<long double> MHint(MHcritInterval.first, MHcritInterval.second);
+  boost::numeric::interval<MRt> MHint(MHcritInterval.first, MHcritInterval.second);
   
   std::cout << std::setprecision(10);
   std::cout << "==> critical MH  at [lambda(Mpl)=0] = [" << MHcritInterval.first << ',' << MHcritInterval.second << "]\n";
   
-
+  
   return boost::numeric::median(MHint);
-
+  
 }
 
 struct LambdaAtMuMt
@@ -153,7 +152,7 @@ struct LambdaAtMuMt
   {
   }
   
-  long double operator()(long double Mt)
+  SMCouplings::value_type operator()(long double Mt)
   {
 
     oi.setMt(Mt);
@@ -184,7 +183,7 @@ struct bLambdaAtMuMt
   {
   }
   
-  long double operator()(long double Mt)
+  SMCouplings::value_type operator()(long double Mt)
   {
     oi.setMt(Mt);
     AlphaS as(oi);
@@ -210,7 +209,7 @@ long double critMt(const OSinput& oi, long double mu)
   tolerance tol = 1e-8;
 
   // Finding bounds with different lambda sign
-  long double startLam = lambdaMPL(oi.Mt());
+  SMCouplings::value_type startLam = lambdaMPL(oi.Mt());
   long double leftMt, rightMt;
   // If initial lambda is negative which is true for most of realistic SM
   // inputs than we should decrease Mt by 10GeV before we finish with
@@ -271,7 +270,7 @@ struct MH_functor : Functor<double>
     asMt = as(oi.Mt());
   }
 
-  int operator()(const Eigen::VectorXd &x, Eigen::VectorXd &fvec) const
+  int operator()(const Eigen::VectorXd &x, EigenVec &fvec) const
   {
 
 
@@ -337,7 +336,7 @@ struct MH_functor2 : Functor<double>
     asMt = as(oi.Mt());
   }
 
-  int operator()(const Eigen::VectorXd &x, Eigen::VectorXd &fvec) const
+  int operator()(const Eigen::VectorXd &x, EigenVec &fvec) const
   {
 
 
@@ -355,7 +354,7 @@ struct MH_functor2 : Functor<double>
     long double mu2 = pow(10.,x(1));
     
     // quadratical difference from zero
-    std::pair<state_type, state_type> ab = avP2MS.AandB(mu2);
+    std::pair<SMCouplings, SMCouplings> ab = avP2MS.AandB(mu2);
     fvec(0) = pow(ab.first[couplings::lam],2);
     fvec(1) = pow(ab.second[couplings::lam],2);
 
@@ -456,7 +455,7 @@ struct Mt_pointFunctor : Functor<double>
     asMt = as(oi.Mt());
   }
 
-  int operator()(const Eigen::VectorXd &x, Eigen::VectorXd &fvec) const
+  int operator()(const Eigen::VectorXd &x, EigenVec &fvec) const
   {
 
 
@@ -476,7 +475,7 @@ struct Mt_pointFunctor : Functor<double>
     lout(logDEBUG) << "Instability scale Lambda_I = " << sqrt(mu2);
 
     // quadratical difference from zero
-    std::pair<state_type, state_type> ab = avP2MS.AandB(mu2);
+    std::pair<SMCouplings, SMCouplings> ab = avP2MS.AandB(mu2);
     fvec(0) = pow(ab.first[couplings::lam],1);
     fvec(1) = pow(ab.second[couplings::lam],1);
 

@@ -44,8 +44,8 @@ class RunUpto
 public:
   RunUpto(OSinput oi, long double al_ = pdg2014::aMZ, long double as_ = pdg2014::asMZ, long double mu_ = pdg2014::MZ);
   
-  long double lambda(long double mu);
-  state_type operator()(long double mu);
+  SMCouplings::value_type lambda(SMCouplings::value_type mu);
+  SMCouplings operator()(SMCouplings::value_type mu);
 };
 
 #endif  // __POLE2RUN_HPP__

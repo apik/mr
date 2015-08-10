@@ -21,6 +21,7 @@
 #ifndef __P2MS_HPP__
 #define __P2MS_HPP__
 
+#include "tdecl.hpp"
 #include "sminput.hpp"
 
 #include "WW.hpp"
@@ -187,7 +188,7 @@ public:
 
   std::vector<long double> runningCouplings() const;
 
-  std::vector<long double> ai() const;
+  SMCouplings ai() const;
     
   long double scale() const
   {

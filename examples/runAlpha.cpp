@@ -81,7 +81,27 @@ int main (int argc, char *argv[])
 
 
       long double aMt5,aMt6,ak6;
+
+
+      std::cout <<  "1-loop decoupling " <<std::endl;
+      aMt5 = run(pdg2014::asMZ, pdg2014::MZ, pdg2014::Mt, 5 , 4);
       
+      aMt6 = as5nf2as6nf(pdg2014::Mt, pdg2014::Mt, aMt5, /* nl= */5, 1);
+      
+      ak6 = run(aMt6, pdg2014::Mt, 100000, 6 );
+
+      std::cout << " at5 = " << aMt5 << "  at6 = " << aMt6  << "  ak6 = " << ak6 << std::endl;
+
+      std::cout <<  "2-loop decoupling " <<std::endl;
+      aMt5 = run(pdg2014::asMZ, pdg2014::MZ, pdg2014::Mt, 5 , 4);
+      
+      aMt6 = as5nf2as6nf(pdg2014::Mt, pdg2014::Mt, aMt5, /* nl= */5, 2);
+      
+      ak6 = run(aMt6, pdg2014::Mt, 100000, 6 );
+
+      std::cout << " at5 = " << aMt5 << "  at6 = " << aMt6  << "  ak6 = " << ak6 << std::endl;
+
+      std::cout <<  "3-loop decoupling " <<std::endl;
       aMt5 = run(pdg2014::asMZ, pdg2014::MZ, pdg2014::Mt, 5 , 4);
       
       aMt6 = as5nf2as6nf(pdg2014::Mt, pdg2014::Mt, aMt5, /* nl= */5, 3);
@@ -89,9 +109,17 @@ int main (int argc, char *argv[])
       ak6 = run(aMt6, pdg2014::Mt, 100000, 6 );
 
       std::cout << " at5 = " << aMt5 << "  at6 = " << aMt6  << "  ak6 = " << ak6 << std::endl;
-      
-      std::cout << " aoi = " << aoi(50.) << std::endl;
 
+      std::cout <<  "4-loop decoupling " <<std::endl;
+      aMt5 = run(pdg2014::asMZ, pdg2014::MZ, pdg2014::Mt, 5 , 4);
+      
+      aMt6 = as5nf2as6nf(pdg2014::Mt, pdg2014::Mt, aMt5, /* nl= */5, 4);
+      
+      ak6 = run(aMt6, pdg2014::Mt, 100000, 6 );
+
+      std::cout << " at5 = " << aMt5 << "  at6 = " << aMt6  << "  ak6 = " << ak6 << std::endl;
+
+      std::cout << " aoi = " << aoi(50.) << std::endl;
       
     }
   catch (std::exception &p) 

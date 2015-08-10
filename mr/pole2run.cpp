@@ -81,13 +81,13 @@ RunUpto::RunUpto(OSinput oi, long double al_, long double as_, long double mu_):
   // std::cout << " LAMMMMMMMMMMMM " << av->operator()(pow(10000,2))[6] << " ::: " << lambda(10000) << std::endl;
 }
 
-state_type RunUpto::operator()(long double mu)
+SMCouplings RunUpto::operator()(SMCouplings::value_type mu)
 {  
   return av->operator()(pow(mu,2));
 }
 
 
-long double RunUpto::lambda(long double mu)
+SMCouplings::value_type RunUpto::lambda(SMCouplings::value_type mu)
 {
   return av->operator()(pow(mu,2))[6];
 }

@@ -595,9 +595,9 @@ std::vector<long double> P2MS::runningCouplings() const
 }
 
 
-std::vector<long double> P2MS::ai() const
+SMCouplings P2MS::ai() const
 {
-  std::vector<long double> a(9);
+  SMCouplings a(9);
 
   a[couplings::g1] = a1();
   a[couplings::g2] = a2();

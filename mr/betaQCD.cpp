@@ -1,3 +1,23 @@
+//
+// MR - 2-loop matching and 3-loop Running, including full 2-loop EW corrections
+// Copyright (C) 2014 Andrey Pikelner <pikelner@theor.jinr.ru>
+//
+// This file is part of MR.
+//
+// MR is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// MR is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with MR.  If not, see <http://www.gnu.org/licenses/>.
+//
+
 #include "betaQCD.hpp"
 #include "boost/numeric/odeint/integrate/integrate_adaptive.hpp"
 #include "boost/numeric/odeint/stepper/runge_kutta_cash_karp54.hpp"
@@ -26,13 +46,6 @@ double run(long double asStart, long double muStart, long double muEnd, size_t N
   double a_x = 1.0;
   double a_dxdt = 1.0;
   
-  // OdeInt_v.1
-  // controlled_stepper_standard< stepper_rk5_ck< state_type > >
-  //   controlled_rk5( 1E-6 , 1E-7 , 1.0 , 1.0 );
-  
-  // integrate_adaptive( controlled_rk5 ,
-  //                     beta4l5nf, as4pi, 0.0, fabs(lEnd), 0.01  );
-
   // OdeInt_v.2
   controlled_stepper_type 
     controlled_stepper(default_error_checker< double , range_algebra , default_operations >

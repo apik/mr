@@ -60,7 +60,6 @@
 #include <sstream>
 #include <stdexcept>
 #include <algorithm>
-
 // #included from: catch_compiler_capabilities.h
 #define TWOBLUECUBES_CATCH_COMPILER_CAPABILITIES_HPP_INCLUDED
 

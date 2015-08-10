@@ -18,18 +18,11 @@
 // along with MR.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-// #include <omp.h>
 #include <ZZ.hpp>
 #include "timer.hpp"
 #ifdef _OPENMP
 #include <omp.h>
 #endif
-
-// ZZ::ZZ(long double MMW_,long double MMZ_,long double MMH_,long double MMt_,long double mu2_):
-//   MMW(MMW_), MMZ(MMZ_), MMH(MMH_), MMt(MMt_), mu2(mu2_)
-// {
-//   init(MMW, MMZ, MMH, MMt, mu2);
-// }
 
 ZZ<OS>::ZZ(OSinput sm, long double mu2_)
 {

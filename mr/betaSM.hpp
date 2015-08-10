@@ -31,13 +31,22 @@
 #include "boost/numeric/odeint/stepper/runge_kutta_cash_karp54.hpp"
 #include "boost/numeric/odeint/stepper/controlled_runge_kutta.hpp"
 
+#include "tdecl.hpp"
+#include "logger.hpp"
+// #include <boost/multiprecision/cpp_dec_float.hpp>
+// #include <boost/multiprecision/float128.hpp>
 #include "constants.hpp"
 #include "p2ms.hpp"
 
+
 using namespace boost::numeric::odeint;
-typedef std::vector<long double> state_type;
-typedef runge_kutta_cash_karp54< state_type > error_stepper_type;
+
+
+// typedef boost::multiprecision::cpp_dec_float_50 mp_50;
+typedef runge_kutta_cash_karp54< SMCouplings,SMCouplings::value_type// ,SMCouplings,SMCouplings
+                                 > error_stepper_type;
 typedef controlled_runge_kutta< error_stepper_type > controlled_stepper_type;
+
 
 typedef std::vector<size_t> index_t;
 
@@ -86,7 +95,7 @@ public:
              int NG_,
              bool MultiplyByMinus1_ = false);
 
-  void operator() (const state_type &, state_type &, const double);
+  void operator() (const SMCouplings &, SMCouplings &, SMCouplings::value_type);
   // void multiplyByMinus1()
   // {
   //   MultiplyByMinus1 = true;
@@ -131,7 +140,7 @@ public:
          int pocolam_, int pocomu2_, int pocovev_,
          size_t NG_ = 3, bool MultiplyByMinus1_ = false);
 
-  void operator() (const state_type &, state_type &, const double);
+  void operator() (const SMCouplings &, const SMCouplings &, const double);
   
   // void multiplyByMinus1()
   // {
@@ -145,8 +154,8 @@ public:
     bSM->setEvolutionDirection(dir);
   }
 
-  static long double bmu2(const state_type &a, size_t NG, int poco = 3);
-  static long double gamv(const state_type &a, size_t NG, int poco = 3);
+  static SMCouplings::value_type bmu2(const SMCouplings &a, size_t NG, int poco = 3);
+  static SMCouplings::value_type gamv(const SMCouplings &a, size_t NG, int poco = 3);
 
 };
 
@@ -169,7 +178,7 @@ class CouplingsSM
 {
   
   double      mu0;
-  state_type aSM0;
+  SMCouplings aSM0;
   size_t       NG;
   BetaSMFull*   bep;
 
@@ -203,10 +212,10 @@ public:
     }
 
 
-  state_type operator()(long double mu2)
+  SMCouplings operator()(SMCouplings::value_type mu2)
   {
         
-    double lEnd = log(mu2/mu0);
+    SMCouplings::value_type lEnd = log(mu2/mu0);
 
     // if (lEnd < 0) bep->multiplyByMinus1();
     bep->setEvolutionDirection(lEnd < 0);
@@ -218,19 +227,19 @@ public:
     //    eps_abs + eps_rel * ( ax * |x| + adxdt * dt * |dxdt| ). 
     // If the error is smaller than this value the current
     // step is accepted, otherwise it is rejected and the step size is decreased.
-    double abs_err = 1.0e-12 , rel_err = 1.0e-10 , a_x = 1.0 , a_dxdt = 1.0;
-    state_type aSM(aSM0);    
-
+    SMCouplings::value_type abs_err = 1.0e-22 , rel_err = 1.0e-20 , a_x = 1.0 , a_dxdt = 1.0;
+    SMCouplings aSM(aSM0);    
+    
     controlled_stepper_type 
-      controlled_stepper(default_error_checker< double , range_algebra , default_operations >
+      controlled_stepper(default_error_checker< SMCouplings::value_type, range_algebra, default_operations>
                          ( abs_err , rel_err , a_x , a_dxdt ) );
     
     integrate_adaptive( controlled_stepper , // Stepper function
                         *bep,            // Derivatives
                         aSM,             // Initial values
-                        0.0,             // t0 = Log[mu0/mu0]
-                        fabs(lEnd),      // t  = Log[mu/mu0]
-                        0.0001           // Initial step size
+                        Rt(0.0),             // t0 = Log[mu0/mu0]
+                        Rt(fabs(lEnd)),      // t  = Log[mu/mu0]
+                        Rt(0.0001)           // Initial step size
                         );
     return aSM; 
   }
@@ -246,7 +255,7 @@ class Couplings
 {
   
   double      mu0;
-  state_type aSM0;
+  SMCouplings aSM0;
   size_t       NG;
   BetaSM*     bep;
   
@@ -311,10 +320,10 @@ public:
 
 
   
-  state_type operator()(const long double& mu2End)
+  SMCouplings operator()(const long double& mu2End)
   {
     
-    double lEnd = log(mu2End/mu0);
+    SMCouplings::value_type lEnd = log(mu2End/mu0);
 
     // if (lEnd < 0) bep->multiplyByMinus1();
     bep->setEvolutionDirection(lEnd < 0);
@@ -326,8 +335,8 @@ public:
     //    eps_abs + eps_rel * ( ax * |x| + adxdt * dt * |dxdt| ). 
     // If the error is smaller than this value the current
     // step is accepted, otherwise it is rejected and the step size is decreased.
-    double abs_err = 1.0e-12 , rel_err = 1.0e-5 , a_x = 1.0 , a_dxdt = 1.0;
-    state_type aSM(aSM0);
+    SMCouplings::value_type  abs_err = 1.0e-12 , rel_err = 1.0e-5 , a_x = 1.0 , a_dxdt = 1.0;
+    SMCouplings aSM(aSM0);
 
     lout(logDEBUG) << "                                             ";
     lout(logDEBUG) << "couplings values passed to the beta-functions";
@@ -341,7 +350,7 @@ public:
     lout(logDEBUG) << "mu=" << aSM[7];
     lout(logDEBUG) << "                                             ";
 
-    state_type bSM(aSM.size());
+    SMCouplings bSM(aSM.size());
     bep->operator()(aSM, bSM, 0);
 
     lout(logDEBUG) << "Starting values for Beta                     ";
@@ -353,22 +362,22 @@ public:
     lout(logDEBUG) << "bl=" << bSM[6];
     
     controlled_stepper_type 
-      controlled_stepper(default_error_checker< double , range_algebra , default_operations >
+      controlled_stepper(default_error_checker< SMCouplings::value_type , range_algebra , default_operations >
                          ( abs_err , rel_err , a_x , a_dxdt ) );
     
     integrate_adaptive( controlled_stepper , // Stepper function
                         *bep,                // Derivatives
                         aSM,                 // Initial values
-                        0.0,                 // t0 = Log[mu0/mu0]
-                        fabs(lEnd),          // t  = Log[mu/mu0]
-                        0.001                // Initial step size
+                        Rt(0.0),                 // t0 = Log[mu0/mu0]
+                        Rt(fabs(lEnd)),          // t  = Log[mu/mu0]
+                        Rt(0.001)                // Initial step size
                         );
     
     return aSM; 
   }
 
   // return couplings and its beta-functions
-  std::pair<state_type, state_type> AandB(const long double& mu2End)
+  std::pair<SMCouplings, SMCouplings> AandB(const long double& mu2End)
   {
     
     double lEnd = log(mu2End/mu0);
@@ -383,11 +392,11 @@ public:
     //    eps_abs + eps_rel * ( ax * |x| + adxdt * dt * |dxdt| ). 
     // If the error is smaller than this value the current
     // step is accepted, otherwise it is rejected and the step size is decreased.
-    double abs_err = 1.0e-12 , rel_err = 1.0e-5 , a_x = 1.0 , a_dxdt = 1.0;
-    state_type aSM(aSM0);
+    SMCouplings::value_type abs_err = 1.0e-12 , rel_err = 1.0e-5 , a_x = 1.0 , a_dxdt = 1.0;
+    SMCouplings aSM(aSM0);
 
     controlled_stepper_type 
-      controlled_stepper(default_error_checker< double , range_algebra , default_operations >
+      controlled_stepper(default_error_checker< SMCouplings::value_type , range_algebra , default_operations >
                          ( abs_err , rel_err , a_x , a_dxdt ) );
     
     integrate_adaptive( controlled_stepper , // Stepper function
@@ -399,7 +408,7 @@ public:
                         );
 
     // beta-functions
-    state_type bSM(aSM0.size());
+    SMCouplings bSM(aSM0.size());
 
     bep->operator()(aSM,bSM,0);
     

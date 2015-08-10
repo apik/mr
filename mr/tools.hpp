@@ -30,6 +30,9 @@
 #include <unsupported/Eigen/NonLinearOptimization>
 #include <unsupported/Eigen/NumericalDiff>
 
+typedef Eigen::Matrix<SMCouplings::value_type, Eigen::Dynamic,1> EigenVec;
+
+
 // Generic functor
 template<typename _Scalar, int NX = Eigen::Dynamic, int NY = Eigen::Dynamic>
 struct Functor
@@ -68,7 +71,7 @@ struct Mt_Stability : Functor<double>
   {
   }
 
-  int operator()(const Eigen::VectorXd &x, Eigen::VectorXd &fvec) const
+  int operator()(const Eigen::VectorXd &x, EigenVec &fvec) const
   {
     OSinput oiMt(oi);
     oiMt.setMt(x(0));
@@ -86,7 +89,7 @@ struct Mt_Stability : Functor<double>
     lout(logDEBUG) << "Instability scale Lambda_I = " << sqrt(mu2);
 
 
-    std::pair<state_type, state_type> ab = avP2MS.AandB(mu2);
+    std::pair<SMCouplings, SMCouplings> ab = avP2MS.AandB(mu2);
     fvec(0) = pow(ab.first[couplings::lam],1);
     fvec(1) = pow(ab.second[couplings::lam],1);
 
@@ -113,7 +116,7 @@ struct Mt_Instability : Functor<double>
   {
   }
 
-  int operator()(const Eigen::VectorXd &x, Eigen::VectorXd &fvec) const
+  int operator()(const Eigen::VectorXd &x, EigenVec &fvec) const
   {
     OSinput oiMt(oi);
     oiMt.setMt(x(0));
@@ -131,7 +134,7 @@ struct Mt_Instability : Functor<double>
     lout(logDEBUG) << "Instability scale Lambda_I = " << sqrt(mu2);
 
 
-    std::pair<state_type, state_type> ab = avP2MS.AandB(mu2);
+    std::pair<SMCouplings, SMCouplings> ab = avP2MS.AandB(mu2);
 
     // eq.from 1408.0292
     long double LamMin = 1./(-14.53 - 0.153*log(sqrt(mu2)));
@@ -161,7 +164,8 @@ struct Mt_Lambda0 : Functor<double>
   {
   }
 
-  int operator()(const Eigen::VectorXd &x, Eigen::VectorXd &fvec) const
+  // int operator()(const Eigen::VectorXd &x, Eigen::VectorXd &fvec) const
+  int operator()(const Eigen::VectorXd &x, EigenVec &fvec) const
   {
     OSinput oiMt(oi);
     oiMt.setMt(x(0));
@@ -175,12 +179,12 @@ struct Mt_Lambda0 : Functor<double>
               3,0,0> avP2MS(pMSmt);
 
     
-    long double mu2 = pow(mu,2);
+    long double  mu2 = pow(mu,2);
     
     lout(logDEBUG) << "Zero of \\lambda at Lambda_I = " << mu;
 
     // quadratical difference from zero
-    state_type a = avP2MS(mu2);
+    SMCouplings a = avP2MS(mu2);
     fvec(0) = a[couplings::lam];
 
     lout(logDEBUG) << "lam  = " << a[couplings::lam];
@@ -203,7 +207,7 @@ struct Mt_Beta0 : Functor<double>
   {
   }
 
-  int operator()(const Eigen::VectorXd &x, Eigen::VectorXd &fvec) const
+  int operator()(const Eigen::VectorXd &x, EigenVec  &fvec) const
   {
     OSinput oiMt(oi);
     oiMt.setMt(x(0));
@@ -223,7 +227,7 @@ struct Mt_Beta0 : Functor<double>
     lout(logDEBUG) << "Zero of \\lambda at Lambda_I = " << mu;
 
     // quadratical difference from zero
-    std::pair<state_type, state_type> ab = avP2MS.AandB(mu2);
+    std::pair<SMCouplings, SMCouplings> ab = avP2MS.AandB(mu2);
     fvec(0) = ab.second[couplings::lam]; // beta = 0
 
     lout(logDEBUG) << "\\beta_lam  = " << ab.second[couplings::lam];
@@ -248,7 +252,7 @@ struct MH_Beta0 : Functor<double>
     asMt = as(oi.Mt());
   }
 
-  int operator()(const Eigen::VectorXd &x, Eigen::VectorXd &fvec) const
+  int operator()(const Eigen::VectorXd &x, EigenVec &fvec) const
   {
 
     OSinput oiMH(oi);
@@ -267,7 +271,7 @@ struct MH_Beta0 : Functor<double>
     lout(logDEBUG) << "Zero of \\lambda at Lambda_I = " << mu;
 
     // quadratical difference from zero
-    std::pair<state_type, state_type> ab = avP2MS.AandB(mu2);
+    std::pair<SMCouplings, SMCouplings> ab = avP2MS.AandB(mu2);
     fvec(0) = ab.second[couplings::lam]; // beta = 0
 
     lout(logDEBUG) << "\\beta_lam  = " << ab.second[couplings::lam];
@@ -276,7 +280,7 @@ struct MH_Beta0 : Functor<double>
 };
 
 
-long double critMH(const OSinput&, long double);
+MRt critMH(const OSinput&, long double);
 
 long double critMt(const OSinput&, long double);
 
