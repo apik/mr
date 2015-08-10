@@ -1,4 +1,9 @@
+---  
+layout: default
+title: Welcome
+posts: 5
 ---
+
 
 {% highlight ruby %}
 def print_hi(name)
@@ -7,12 +12,6 @@ def print_hi(name)
   print_hi('Tom')
   #=> prints 'Hi, Tom' to STDOUT.
 {% endhighlight %}
-  
-layout: default
-title: Welcome
-posts: 5
----
-
 
 
 The project is called {{ site.github.project_title }}
