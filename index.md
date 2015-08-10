@@ -2,7 +2,7 @@
 layout: default
 ---
 	
-[mr:Matching and Running](http://apik.github.io/mr) is a C++ package for NNLO Standard Model stability analysis. It includes full two-loop electroweak threshold corrections connecting input in terms of pole masses with running couplings and three-loop renormalization group equations withh additional higher order QCD corrections for evolution of running couplings up to a needed scale.
+[mr:Matching and Running](http://apik.github.io/mr) is a C++ package for NNLO Standard Model stability analysis. It includes full two-loop electroweak threshold corrections connecting input in terms of pole masses with running couplings and three-loop renormalization group equations with additional higher order QCD corrections for evolution of running couplings up to a needed scale.
 
 <iframe src="http://ghbtns.com/github-btn.html?user=apik&amp;repo=mr&amp;type=watch&amp;count=true&amp;size=large"
   allowtransparency="true" frameborder="0" scrolling="0" width="170" height="30"></iframe><br/>
@@ -12,10 +12,28 @@ layout: default
 
 
 <figure>
-  <img src="plots/gauge123.png" alt="Running SM couplings up to a Planck scale">
-  <figcaption>Running SM couplings up to a Planck scale. <a href="plots/gauge123.svg">[SVG]</a>,<a href="plots/gauge123.svg">[EPS]</a></figcaption>	
+  <img src="plots/gauge123.png" alt="Gauge couplings unification region">
+  <figcaption>Gauge couplings unification region.<br>
+    <a href="plots/gauge123.svg">[SVG]</a> <a href="plots/gauge123.pdf">[PDF]</a></figcaption>	
 </figure>	      	
 
+<figure>
+  <img src="plots/cEvol.png" alt="Standard Model couplings running up to a Planck scale.">
+  <figcaption>Standard Model couplings running up to a Planck scale.<br>
+    <a href="plots/cEvol.svg">[SVG]</a>,<a href="plots/cEvol.pdf">[PDF]</a></figcaption>	
+</figure>	      	
+
+<figure>
+  <img src="plots/stable.png" alt="Phase diagram in terms of top and Higgs mass.">
+  <figcaption>Phase plot in terms of top and Higgs mass.<br>
+    <a href="plots/stable.svg">[SVG]</a>,<a href="plots/stable.pdf">[PDF]</a></figcaption>	
+</figure>	      	
+
+For example application see:
+
+*[Fate of the Universe: Gauge Independence and Advanced Precision.](http://inspirehep.net/record/1385870)
+By A.V. Bednyakov, B.A. Kniehl, A.F. Pikelner, O.L. Veretin.
+arXiv:1507.08833 [hep-ph].*
 
 ## Installation
 
@@ -26,11 +44,11 @@ $ git clone https://github.com/apik/mr.git
 $ cd mr
 ~~~
 
-Downloading tarball and extracting:
+Or downloading tarball and extracting:
 
 ~~~
-$ git clone https://github.com/apik/mr.git
-$ cd mr
+$ curl -OL https://github.com/
+$ tar zxf 
 ~~~
 
 {% highlight ruby %}
