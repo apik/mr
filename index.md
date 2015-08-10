@@ -55,6 +55,12 @@ Solo supports lists, `<hr>`s, `<table>`s,
 <pre>code blocks with syntax highlighting.</pre>
 ~~~
 
+
+~~~bash
+$ make
+$ make install
+~~~
+
 ### Keep Solo up to date
 
 Instead of downloading, you can [fork Solo](https://github.com/chibicode/solo/fork) and use the "upstream" strategy described on [this page](https://help.github.com/articles/fork-a-repo) to keep Solo up to date.
