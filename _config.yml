@@ -1,3 +1,3 @@
 name: mr
 markdown: redcarpet
-basename: /mr
+baseurl:  /mr
