@@ -1,12 +1,21 @@
 ---
 layout: default
 ---
-	
+* * * * *
+<table style="width:100%">
+  <tr>
+    <td align="center"><a href="#plots">Plots</a></td>
+    <td align="center"><a href="#install">Installation</a></td>
+    <td align="center"><a href="#usage">Usage</a></td>
+    <td align="center"><a href="#refs">References</a></td>
+  </tr>
+</table>
 [mr:Matching and Running](http://apik.github.io/mr) is a C++ package for NNLO Standard Model stability analysis. It includes full two-loop electroweak threshold corrections connecting input in terms of pole masses with running couplings and three-loop renormalization group equations with additional higher order QCD corrections for evolution of running couplings up to a needed scale.
 
 <iframe src="http://ghbtns.com/github-btn.html?user=apik&amp;repo=mr&amp;type=watch&amp;count=true&amp;size=large"
   allowtransparency="true" frameborder="0" scrolling="0" width="170" height="30"></iframe><br/>
 
+<A NAME="plots"></A>
 
 ## Sample plots
 
@@ -35,6 +44,8 @@ For example application see:
 By A.V. Bednyakov, B.A. Kniehl, A.F. Pikelner, O.L. Veretin.
 arXiv:1507.08833 [hep-ph].*
 
+<A NAME="install"></A>
+
 ## Installation
 
 From github repository using git:
@@ -51,25 +62,55 @@ $ curl -OL https://github.com/
 $ tar zxf 
 ~~~
 
-{% highlight ruby %}
-def print_hi(name)
-puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-{% endhighlight %}
+<A NAME="usage"></A>
 
+## Usage
+
+Main use case is the following chain of procedure calls. At first step using input in terms of pole masses and Fermi constant obtain running couplings at specified matching scale. 
 
 {% highlight c++ %}
-int aa(int b,char c)
-{
-return 0;
-}
-// comment
+// Input in terms of pole masses
+OSinput oi(pdg2014::Mb, pdg2014::MW, pdg2014::MZ, pdg2014::MH, pdg2014::Mt);
+// Running QCD coupling as(Mt) from as(MZ)
+AlphaS as(oi);
+// Set of all running parameters at scale Mt
+P2MS pMSmt(oi,pdg2014::Gf, as(oi.Mt()), oi.Mt(), order::all);
+// Running Yukawa top at top mass
+std::cout << sqrt(pMSmZ.at())*4*Pi << std::endl
 {% endhighlight %}
 
+At the next step we perform  evolution from matching scale up to scale
+of interest.  We use  3-loop RGE  for all  SM couplings  except Yukawa
+tau.  Two  last  parameters  specify orders  for  running  Higgs  mass
+parameter  and   vacuum  expectation  value.
+{%   highlight  c++  %}
+Couplings<3,3,3,3,3,0,3,3,0>  av(pMSmt);
+//  vector of  couplings  at scale  mu=10^19
+SMCouplings  v  =  avP2MS(pow(10,2*19));
+std::cout  << sqrt(v[couplings::yt])*4.*Pi << std::endl;
+{% endhighlight %}
+
+Now it is easy to find critical values for top quark mass from condition when lambda goes to zero at fixed scale:
+{%highlight c++ %}
+// Critical Top mass for lambda(Mpl)=0
+std::cout << critMt_scaleNotFixed(oi, pdg2014::Mpl) << std::endl;
+{%endhighlight %}
+
+Or more complicated one when condition when lambda goes to zero with its beta-function
+simultaneously:
+{%highlight c++ %}
+// Initial values for Mt and scale 
+std::pair<long double,long double> metaStable_Stable(oi.Mt(), pdg2014::Mpl);
+metaStable_Stable = critMt_scaleNotFixed<Mt_Stability>(oi, metaStable_Stable.second, pdg2014::asMZ);
+// Critical top mass
+std::cout << metaStable_Stable.first << std::endl;
+// lambda and beta lambda goes to zero at scale 
+std::cout << metaStable_Stable.second << std::endl;
+{%endhighlight %}
 
 * * * * *
+
+<A NAME="refs"></A>
 
 ## References
 
@@ -121,7 +162,7 @@ By J.A.M. Vermaseren, S.A. Larin, T. van Ritbergen.
 Phys.Lett. B405 (1997) 327-333.*
 
 ## Contacts
-
+Andrey Pikelner, *pikelner[at]theor.jinr.ru*
 
 ### License
 
