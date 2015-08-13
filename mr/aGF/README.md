@@ -1,6 +1,14 @@
 
-M   - is an on-shell mass
-m   - runnig MS mass
-Xij - function of MS masses
+###running EM constant in terms of pole masses and Fermi constant
 
-M = m (1 + as*X01 + al*X10 + al*as*X11 + al^2*X20 + ...)
+**M**      - is an **on-shell** mass
+
+**m(mu)**  - runnig **MS** mass
+
+**a_ij**   - functions of **OS** masses
+
+**aw(mu)** - EM running coupling (alEM/4/Pi)
+
+**as(mu)** - QCD running coupling (alS/4/Pi)
+
+**`aw(mu) = awBorn (1 + aw*a_10 + aw*as*a_11 + aw^2*a_20 + ...)`**

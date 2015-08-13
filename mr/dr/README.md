@@ -1,6 +1,16 @@
 
-M   - is an on-shell mass
-m   - runnig MS mass
-Xij - function of MS masses
+###running vacuum expectation value (delta-r) in terms of OS and MS masses
 
-M = m (1 + as*X01 + al*X10 + al*as*X11 + al^2*X20 + ...)
+**aw(mu)** - EM running coupling (alEM/4/Pi)
+
+**as(mu)** - QCD running coupling (alS/4/Pi)
+
+**DR_ij**  - functions of **OS** masses
+
+**`dr(mu) = awBorn (1 + aw*DR_10 + aw*as*DR_11 + aw^2*DR_20 + ...)`**
+
+**dr_ij**  - functions of **MS** masses
+
+**`dr(mu) = awBorn (1 + aw*dr_10 + aw*as*dr_11 + aw^2*dr_20 + ...)`**
+
+

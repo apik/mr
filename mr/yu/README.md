@@ -1,6 +1,9 @@
+###Corrections to MS coupling in terms of OS masses
 
-M   - is an on-shell mass
-m   - runnig MS mass
-Xij - function of MS masses
+**Y_ij**   - functions of **OS** masses
 
-M = m (1 + as*X01 + al*X10 + al*as*X11 + al^2*X20 + ...)
+**aw(mu)** - EM running coupling (alEM/4/Pi)
+
+**as(mu)** - QCD running coupling (alS/4/Pi)
+
+**`delta = 1 + as*Y_01 + aw*Y_10 + aw*as*Y_11 + aw^2*Y_20 + ...`**
