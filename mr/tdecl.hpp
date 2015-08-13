@@ -21,7 +21,7 @@
 #ifndef __TDECL_HPP__
 #define __TDECL_HPP__
 // #include <boost/multiprecision/cpp_dec_float.hpp>
-#include <boost/multiprecision/float128.hpp>
+// #include <boost/multiprecision/float128.hpp>
 
 // double version
 // typedef std::vector<long double> SMCouplings;
@@ -29,10 +29,11 @@
 
 // Type for couplings and multiprecision versions for couplings values
 // at poles
-typedef boost::multiprecision::float128 Rt;
+typedef long double Rt;
 
 // Type for masses
-typedef boost::multiprecision::float128 MRt;
+typedef long double MRt;
+
 // typedef double mp_50;
 typedef std::vector<Rt> SMCouplings;
 

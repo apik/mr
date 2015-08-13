@@ -30,8 +30,9 @@
 #include <unsupported/Eigen/NonLinearOptimization>
 #include <unsupported/Eigen/NumericalDiff>
 
-typedef Eigen::Matrix<SMCouplings::value_type, Eigen::Dynamic,1> EigenVec;
+typedef Eigen::Matrix<SMCouplings::value_type, Eigen::Dynamic,1> EigenCVec;
 
+typedef Eigen::Matrix<MRt, Eigen::Dynamic,1> EigenMVec;
 
 // Generic functor
 template<typename _Scalar, int NX = Eigen::Dynamic, int NY = Eigen::Dynamic>
@@ -58,20 +59,20 @@ struct Functor
 
 
 // Meta-stability - Stability bound
-struct Mt_Stability : Functor<double>
+struct Mt_Stability : Functor<MRt>
 {
   OSinput oi;
   long double aSMZ;
   
-  Mt_Stability(void): Functor<double>(2,2) {}
+  Mt_Stability(void): Functor<MRt>(2,2) {}
 
   // Explicit dependence on asMZ is usefull for plots 
   // depending on asMZ errors
-  Mt_Stability(const OSinput& in_, long double alphaS_ = pdg2014::asMZ) : oi(in_), aSMZ(alphaS_), Functor<double>(2,2)
+  Mt_Stability(const OSinput& in_, long double alphaS_ = pdg2014::asMZ) : oi(in_), aSMZ(alphaS_), Functor<MRt>(2,2)
   {
   }
 
-  int operator()(const Eigen::VectorXd &x, EigenVec &fvec) const
+  int operator()(const EigenMVec &x, EigenCVec &fvec) const
   {
     OSinput oiMt(oi);
     oiMt.setMt(x(0));
@@ -103,20 +104,20 @@ struct Mt_Stability : Functor<double>
 
 
 // Criterium for Meta-stability-Instability bound
-struct Mt_Instability : Functor<double>
+struct Mt_Instability : Functor<MRt>
 {
   OSinput oi;
   long double aSMZ;
   
-  Mt_Instability(void): Functor<double>(2,2) {}
+  Mt_Instability(void): Functor<MRt>(2,2) {}
   
   // Explicit dependence on asMZ is usefull for plots 
   // depending on asMZ errors
-  Mt_Instability(const OSinput& in_, long double alphaS_ = pdg2014::asMZ) : oi(in_), aSMZ(alphaS_), Functor<double>(2,2)
+  Mt_Instability(const OSinput& in_, long double alphaS_ = pdg2014::asMZ) : oi(in_), aSMZ(alphaS_), Functor<MRt>(2,2)
   {
   }
 
-  int operator()(const Eigen::VectorXd &x, EigenVec &fvec) const
+  int operator()(const EigenMVec &x, EigenCVec &fvec) const
   {
     OSinput oiMt(oi);
     oiMt.setMt(x(0));
@@ -151,21 +152,21 @@ struct Mt_Instability : Functor<double>
 
 
 // Meta-stability - Stability bound
-struct Mt_Lambda0 : Functor<double>
+struct Mt_Lambda0 : Functor<MRt>
 {
   OSinput oi;
   long double mu;
   long double aSMZ;
-  Mt_Lambda0(void): Functor<double>(1,1) {}
+  Mt_Lambda0(void): Functor<MRt>(1,1) {}
 
   // Explicit dependence on asMZ is usefull for plots 
   // depending on asMZ errors
-  Mt_Lambda0(const OSinput& in_, long double mu_, long double alphaS_ = pdg2014::asMZ) : oi(in_), mu(mu_), aSMZ(alphaS_), Functor<double>(1,1)
+  Mt_Lambda0(const OSinput& in_, long double mu_, long double alphaS_ = pdg2014::asMZ) : oi(in_), mu(mu_), aSMZ(alphaS_), Functor<MRt>(1,1)
   {
   }
 
   // int operator()(const Eigen::VectorXd &x, Eigen::VectorXd &fvec) const
-  int operator()(const Eigen::VectorXd &x, EigenVec &fvec) const
+  int operator()(const EigenMVec &x, EigenCVec &fvec) const
   {
     OSinput oiMt(oi);
     oiMt.setMt(x(0));
@@ -193,21 +194,21 @@ struct Mt_Lambda0 : Functor<double>
 };
 
 // Meta-stability - Stability bound
-struct Mt_Beta0 : Functor<double>
+struct Mt_Beta0 : Functor<MRt>
 {
   OSinput oi;
   long double mu;
   long double aSMZ;
 
-  Mt_Beta0(void): Functor<double>(1,1) {}
+  Mt_Beta0(void): Functor<MRt>(1,1) {}
 
   // Explicit dependence on asMZ is usefull for plots 
   // depending on asMZ errors
-  Mt_Beta0(const OSinput& in_, long double mu_, long double alphaS_ = pdg2014::asMZ) : oi(in_), mu(mu_), aSMZ(alphaS_), Functor<double>(1,1)
+  Mt_Beta0(const OSinput& in_, long double mu_, long double alphaS_ = pdg2014::asMZ) : oi(in_), mu(mu_), aSMZ(alphaS_), Functor<MRt>(1,1)
   {
   }
 
-  int operator()(const Eigen::VectorXd &x, EigenVec  &fvec) const
+  int operator()(const EigenMVec &x, EigenCVec  &fvec) const
   {
     OSinput oiMt(oi);
     oiMt.setMt(x(0));
@@ -236,23 +237,23 @@ struct Mt_Beta0 : Functor<double>
 };
 
 // Meta-stability - Stability bound
-struct MH_Beta0 : Functor<double>
+struct MH_Beta0 : Functor<MRt>
 {
   OSinput oi;
   long double asMt;
   long double mu;
 
-  MH_Beta0(void): Functor<double>(1,1) {}
+  MH_Beta0(void): Functor<MRt>(1,1) {}
 
   // Explicit dependence on asMZ is usefull for plots 
   // depending on asMZ errors
-  MH_Beta0(const OSinput& in_, long double mu_, long double alphaS = pdg2014::asMZ) : oi(in_), mu(mu_), Functor<double>(1,1)
+  MH_Beta0(const OSinput& in_, long double mu_, long double alphaS = pdg2014::asMZ) : oi(in_), mu(mu_), Functor<MRt>(1,1)
   {
     AlphaS as(oi,alphaS);
     asMt = as(oi.Mt());
   }
 
-  int operator()(const Eigen::VectorXd &x, EigenVec &fvec) const
+  int operator()(const EigenMVec &x, EigenCVec &fvec) const
   {
 
     OSinput oiMH(oi);

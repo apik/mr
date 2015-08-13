@@ -256,21 +256,21 @@ long double critMt(const OSinput& oi, long double mu)
 
 
 
-struct MH_functor : Functor<double>
+struct MH_functor : Functor<MRt>
 {
   OSinput oi;
   long double mu2;
   long double asMt;
   
-  MH_functor(void): Functor<double>(1,1) {}
+  MH_functor(void): Functor<MRt>(1,1) {}
 
-  MH_functor(const OSinput& in_, long double mu2_) : oi(in_), mu2(mu2_), Functor<double>(1,1)
+  MH_functor(const OSinput& in_, long double mu2_) : oi(in_), mu2(mu2_), Functor<MRt>(1,1)
   {
     AlphaS as(oi);
     asMt = as(oi.Mt());
   }
 
-  int operator()(const Eigen::VectorXd &x, EigenVec &fvec) const
+  int operator()(const EigenMVec &x, EigenCVec &fvec) const
   {
 
 
@@ -298,13 +298,13 @@ long double critMH2(const OSinput& oi, long double mu)
 {
   
   
-  Eigen::VectorXd x(1);
+  EigenMVec x(1);
   x(0) = oi.MH();
   std::cout << "x: " << x << std::endl;
   
   MH_functor functor(oi, pow(mu,2));
   Eigen::NumericalDiff<MH_functor> numDiff(functor);
-  Eigen::LevenbergMarquardt<Eigen::NumericalDiff<MH_functor>,double> lm(numDiff);
+  Eigen::LevenbergMarquardt<Eigen::NumericalDiff<MH_functor>, MRt> lm(numDiff);
   lm.parameters.maxfev = 200;
   lm.parameters.xtol = 1.0e-12;
   lm.parameters.epsfcn = 1.0e-5;
@@ -323,20 +323,20 @@ long double critMH2(const OSinput& oi, long double mu)
 
 
 
-struct MH_functor2 : Functor<double>
+struct MH_functor2 : Functor<MRt>
 {
   OSinput oi;
   long double asMt;
   
-  MH_functor2(void): Functor<double>(2,2) {}
+  MH_functor2(void): Functor<MRt>(2,2) {}
 
-  MH_functor2(const OSinput& in_) : oi(in_),Functor<double>(2,2)
+  MH_functor2(const OSinput& in_) : oi(in_),Functor<MRt>(2,2)
   {
     AlphaS as(oi);
     asMt = as(oi.Mt());
   }
 
-  int operator()(const Eigen::VectorXd &x, EigenVec &fvec) const
+  int operator()(const EigenMVec &x, EigenCVec &fvec) const
   {
 
 
@@ -368,14 +368,14 @@ struct MH_functor2 : Functor<double>
 long double critMH_scaleNotFixed(const OSinput& oi, long double mu)
 {
   
-  Eigen::VectorXd x(2);
+  EigenMVec x(2);
   x(0) = oi.MH();
   x(1) = log10(pow(mu,2));
   std::cout << "x: " << x << std::endl;
   
   MH_functor2 functor(oi);
   Eigen::NumericalDiff<MH_functor2> numDiff(functor);
-  Eigen::LevenbergMarquardt<Eigen::NumericalDiff<MH_functor2>,double> lm(numDiff);
+  Eigen::LevenbergMarquardt<Eigen::NumericalDiff<MH_functor2>,MRt> lm(numDiff);
   lm.parameters.maxfev = 200;
   lm.parameters.xtol = 1.0e-13;
   lm.parameters.epsfcn = 1.0e-6;
@@ -440,22 +440,22 @@ long double critMH_scaleNotFixed(const OSinput& oi, long double mu)
 
 
 // Meta-stability - Stability bound
-struct Mt_pointFunctor : Functor<double>
+struct Mt_pointFunctor : Functor<MRt>
 {
   OSinput oi;
   long double asMt;
   
-  Mt_pointFunctor(void): Functor<double>(1,2) {}
+  Mt_pointFunctor(void): Functor<MRt>(1,2) {}
 
   // Explicit dependence on asMZ is usefull for plots 
   // depending on asMZ errors
-  Mt_pointFunctor(const OSinput& in_, long double alphaS = pdg2014::asMZ) : oi(in_),Functor<double>(1,2)
+  Mt_pointFunctor(const OSinput& in_, long double alphaS = pdg2014::asMZ) : oi(in_),Functor<MRt>(1,2)
   {
     AlphaS as(oi,alphaS);
     asMt = as(oi.Mt());
   }
 
-  int operator()(const Eigen::VectorXd &x, EigenVec &fvec) const
+  int operator()(const EigenMVec &x, EigenCVec &fvec) const
   {
 
 
@@ -493,12 +493,12 @@ long double critMt_test(const OSinput& oi, long double mu, long double alphaS)
 {
   
   
-  Eigen::VectorXd x(1);
+  EigenMVec x(1);
   x(0) = log10(pow(mu,2));
   
   Mt_pointFunctor functor(oi, alphaS);
 
-  Eigen::HybridNonLinearSolver<Mt_pointFunctor> solver(functor);
+  Eigen::HybridNonLinearSolver<Mt_pointFunctor, MRt> solver(functor);
   int ret = solver.hybrd1(x);
 
   // Eigen::NumericalDiff<BoundT> numDiff(functor);
@@ -528,13 +528,13 @@ std::pair<long double,long double> critMt_scaleNotFixed(const OSinput& oi, long 
 {
   
   
-  Eigen::VectorXd x(2);
+  EigenMVec x(2);
   x(0) = oi.Mt();
   x(1) = log10(pow(mu,2));
   
   BoundT functor(oi, alphaS);
 
-  Eigen::HybridNonLinearSolver<BoundT> solver(functor);
+  Eigen::HybridNonLinearSolver<BoundT, MRt> solver(functor);
   int ret = solver.hybrd1(x);
 
   lout(logINFO) << "Number of function evaluations" << solver.iter;
@@ -559,12 +559,12 @@ template<typename BoundT>
 std::pair<long double, int> critMH0(const OSinput& oi, long double mu, long double aSMZ)
 {
   
-  Eigen::VectorXd x(1);
+  EigenMVec x(1);
   x(0) = oi.MH();
 
   BoundT functor(oi, mu, aSMZ);
 
-  Eigen::HybridNonLinearSolver<BoundT> solver(functor);
+  Eigen::HybridNonLinearSolver<BoundT, MRt> solver(functor);
   solver.diag.setConstant(1, 1.);
   solver.useExternalScaling = true;
   solver.parameters.xtol = 1.0e-12;
@@ -587,12 +587,12 @@ template<typename BoundT>
 std::pair<long double, int> critMt0(const OSinput& oi, long double mu, long double aSMZ)
 {
   
-  Eigen::VectorXd x(1);
+  EigenMVec x(1);
   x(0) = oi.Mt();
 
   BoundT functor(oi, mu, aSMZ);
 
-  Eigen::HybridNonLinearSolver<BoundT> solver(functor);
+  Eigen::HybridNonLinearSolver<BoundT, MRt> solver(functor);
   solver.diag.setConstant(1, 1.);
   solver.useExternalScaling = true;
   solver.parameters.xtol = 1.0e-12;

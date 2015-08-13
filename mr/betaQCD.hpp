@@ -176,7 +176,7 @@ public:
       }
     // Running with fixed nf
     else
-      return run(asStart, muStart, mu, nfFixed), loops;    
+      return run(asStart, muStart, mu, nfFixed, loops);    
   }
 
 };

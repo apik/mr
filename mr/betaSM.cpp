@@ -660,7 +660,7 @@ BetaSMFull::BetaSMFull(int pocoa1_, int pocoa2_, int pocoas_, int pocoat_, int p
 }
 
 
-void BetaSMFull::operator() (const SMCouplings &a, SMCouplings &dadt, const double t)
+void BetaSMFull::operator() (const SMCouplings &a, SMCouplings &dadt, const Rt t)
 {
   // 
   //    - couplings: a1->a[0], a2->a[1], as->a[2], at->a[3], ab->a[4], atau->a[5], lam->a[6]
@@ -1068,7 +1068,7 @@ BetaSM::BetaSM(int pocoa1_, int pocoa2_, int pocoas_, int pocoat_, int pocoab_, 
 }
 
 
-void BetaSM::operator() (const SMCouplings &a, SMCouplings &dadt, const SMCouplings t)
+void BetaSM::operator() (const SMCouplings &a, SMCouplings &dadt, const Rt t)
 {
 
   if(a.size() != 9)

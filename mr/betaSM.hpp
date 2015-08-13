@@ -140,7 +140,7 @@ public:
          int pocolam_, int pocomu2_, int pocovev_,
          size_t NG_ = 3, bool MultiplyByMinus1_ = false);
 
-  void operator() (const SMCouplings &, const SMCouplings &, const double);
+  void operator() (const SMCouplings &, SMCouplings &, const Rt);
   
   // void multiplyByMinus1()
   // {
@@ -402,9 +402,9 @@ public:
     integrate_adaptive( controlled_stepper , // Stepper function
                         *bep,            // Derivatives
                         aSM,             // Initial values
-                        0.0,             // t0 = Log[mu0/mu0]
-                        fabs(lEnd),      // t  = Log[mu/mu0]
-                        0.001           // Initial step size
+                        Rt(0.0),             // t0 = Log[mu0/mu0]
+                        Rt(fabs(lEnd)),      // t  = Log[mu/mu0]
+                        Rt(0.001)           // Initial step size
                         );
 
     // beta-functions
