@@ -553,7 +553,7 @@ long double mMS2mOSnm(long double mm, long double xx, long double mu2, size_t nl
          );
       return zm1l.real();
     }
-  if(loops == 2)
+  else if(loops == 2)
     {
       std::complex<long double> zm2l =  
         (
@@ -616,6 +616,8 @@ long double mMS2mOSnm(long double mm, long double xx, long double mu2, size_t nl
          );
       return zm2l.real();
     }
+  else
+    return 0;
 }
 
 

@@ -4,7 +4,7 @@ ACLOCAL_AMFLAGS = ${ACLOCAL_FLAGS} -I m4
 lib_LIBRARIES = libmr.a
 
 # Main sources
-MAINSRC = mr.hpp tsil.hpp tsil.cpp base.hpp mOS2mMSQCD.cpp pole2run.hpp pole2run.cpp p2ms.hpp p2ms.cpp tools.hpp tools.cpp
+MAINSRC = mr.hpp tsil.hpp tsil.cpp base.hpp mOS2mMSQCD.cpp p2ms.hpp p2ms.cpp tools.hpp tools.cpp
 
 MAINHPP =  constants.hpp sminput.hpp timer.hpp  tsil.hpp  dr.hpp operators.hpp logger.hpp
 
@@ -19,11 +19,11 @@ ALPHAGF = alphaGF.hpp alphaGF.cpp aGF/alphaGF10.cpp aGF/alphaGF11.cpp aGF/alphaG
 # 
 # MS-bar masses and constants
 #
-BBMS = bb.hpp bb.cpp mM/mbbbar01.cpp mM/mbbbar10.cpp mM/mbbbar11.cpp mM/mbbbar20.cpp yu/yubb01.cpp yu/yubb10.cpp yu/yubb11.cpp yu/yubb20.cpp
-WWMS = WW.hpp WW.cpp mM/mWWbar10.cpp mM/mWWbar11.cpp mM/mWWbar20.cpp yu/yuWW10.cpp yu/yuWW11.cpp yu/yuWW20.cpp
-ZZMS = ZZ.hpp ZZ.cpp mM/mZZbar10.cpp mM/mZZbar11.cpp mM/mZZbar20.cpp yu/yuZZ10.cpp yu/yuZZ11.cpp yu/yuZZ20.cpp
-HHMS = HH.hpp HH.cpp mM/mHHbar10.cpp mM/mHHbar11.cpp mM/mHHbar20.cpp yu/yuHH10.cpp yu/yuHH11.cpp yu/yuHH20.cpp
-TTMS = tt.hpp tt.cpp mM/mttbar01.cpp mM/mttbar10.cpp mM/mttbar11.cpp mM/mttbar20.cpp yu/yutt01.cpp yu/yutt10.cpp yu/yutt11.cpp yu/yutt20.cpp
+BBMS = bb.hpp bb.cpp mMSmOS/mbbbar01.cpp mMSmOS/mbbbar10.cpp mMSmOS/mbbbar11.cpp mMSmOS/mbbbar20.cpp yu/yubb01.cpp yu/yubb10.cpp yu/yubb11.cpp yu/yubb20.cpp
+WWMS = WW.hpp WW.cpp mMSmOS/mWWbar10.cpp mMSmOS/mWWbar11.cpp mMSmOS/mWWbar20.cpp yu/yuWW10.cpp yu/yuWW11.cpp yu/yuWW20.cpp
+ZZMS = ZZ.hpp ZZ.cpp mMSmOS/mZZbar10.cpp mMSmOS/mZZbar11.cpp mMSmOS/mZZbar20.cpp yu/yuZZ10.cpp yu/yuZZ11.cpp yu/yuZZ20.cpp
+HHMS = HH.hpp HH.cpp mMSmOS/mHHbar10.cpp mMSmOS/mHHbar11.cpp mMSmOS/mHHbar20.cpp yu/yuHH10.cpp yu/yuHH11.cpp yu/yuHH20.cpp
+TTMS = tt.hpp tt.cpp mMSmOS/mttbar01.cpp mMSmOS/mttbar10.cpp mMSmOS/mttbar11.cpp mMSmOS/mttbar20.cpp yu/yutt01.cpp yu/yutt10.cpp yu/yutt11.cpp yu/yutt20.cpp
 
 # 
 # Gauge-less limit
@@ -43,15 +43,15 @@ DRMSOS = dr.cpp dr/dr10.cpp dr/dr11.cpp dr/dr20.cpp dr/drgl10.cpp dr/drgl11.cpp 
 DRMSMS = dr/drbar10.cpp dr/drbar11.cpp dr/drbar20.cpp
 
 # W pole mass from MS input
-WWMS2OS = Mm/mWWos10.cpp Mm/mWWos11.cpp Mm/mWWos20.cpp
+WWMS2OS = mOSmMS/mWWos10.cpp mOSmMS/mWWos11.cpp mOSmMS/mWWos20.cpp
 # Z pole mass from MS input
-ZZMS2OS = Mm/mZZos10.cpp Mm/mZZos11.cpp Mm/mZZos20.cpp
+ZZMS2OS = mOSmMS/mZZos10.cpp mOSmMS/mZZos11.cpp mOSmMS/mZZos20.cpp
 # H pole mass from MS input
-HHMS2OS = Mm/mHHos10.cpp Mm/mHHos11.cpp Mm/mHHos20.cpp
+HHMS2OS = mOSmMS/mHHos10.cpp mOSmMS/mHHos11.cpp mOSmMS/mHHos20.cpp
 # t pole mass from MS input
-TTMS2OS = Mm/mttos01.cpp Mm/mttos10.cpp Mm/mttos11.cpp Mm/mttos20.cpp
+TTMS2OS = mOSmMS/mttos01.cpp mOSmMS/mttos10.cpp mOSmMS/mttos11.cpp mOSmMS/mttos20.cpp
 # b pole mass from MS input
-BBMS2OS = Mm/mbbos01.cpp Mm/mbbos10.cpp Mm/mbbos11.cpp Mm/mbbos20.cpp
+BBMS2OS = mOSmMS/mbbos01.cpp mOSmMS/mbbos10.cpp mOSmMS/mbbos11.cpp mOSmMS/mbbos20.cpp
 
 
 libmr_a_SOURCES =    $(MAINSRC) $(MAINHPP) $(ALPHAGF) $(RUNSRC) $(BBMS) $(WWMS) $(ZZMS) $(HHMS) $(TTMS)\

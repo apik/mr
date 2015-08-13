@@ -9,7 +9,7 @@ dnl AC_MSG_CHECKING([for OpenMP support])
 AX_OPENMP()
 
 AC_CONFIG_HEADERS([config.h])
-: ${CXXFLAGS="-fopenmp -O1"}
+: ${CXXFLAGS="-fopenmp -O0"}
 AC_PROG_CXX
 AC_PROG_CC
 

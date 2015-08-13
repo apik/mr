@@ -46,7 +46,7 @@ public:
     _buffer << value;
     return *this;
   }
-  logIt & operator<<(std::ostream& (*fun)(std::ostream&)) { std::cout << std::endl; }
+  logIt & operator<<(std::ostream& (*fun)(std::ostream&)) { std::cout << std::endl; return *this;}
   
   ~logIt()
   {
