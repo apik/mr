@@ -6,7 +6,9 @@ EX_CFLAGS = $(MR_CFLAGS) -I$(top_srcdir)/tsil-1.21 -I$(top_srcdir)/mr -I$(top_sr
 
 noinst_PROGRAMS = testsuite
 
-testsuite_SOURCES =  testsuite.cpp BKKS_1205.2893.cpp JKV_0105304.cpp JKV_0212319.cpp MWeqMZ.cpp mPlanck.cpp RunDec.cpp mOSmMS_QCD.cpp catch.hpp
+TEST_FILES = tst-BKKS_1205.2893.cpp  tst-JKV_0105304.cpp  tst-JKV_0212319.cpp  tst-mOSmMS_QCD.cpp  tst-mPlanck.cpp  tst-MWeqMZ.cpp  tst-RunDec.cpp
+
+testsuite_SOURCES =  testsuite.cpp  catch.hpp $(TEST_FILES)
 testsuite_CPPFLAGS = $(EX_CFLAGS)
 testsuite_LDADD = $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.21 -ltsil -lm
 
