@@ -1,6 +1,8 @@
 #include "catch.hpp"
 #include "mr.hpp"
 
+using namespace mr;
+
 ///////////////////////////////////////////////////////////////////////////////
 TEST_CASE
 (
@@ -27,7 +29,7 @@ TEST_CASE
   
   
   long double mmPlanck = pow(1.2209,2) * pow(10.,2*19); 
-  state_type avMpl = av(mmPlanck);
+  SMCouplings avMpl = av(mmPlanck);
   
   REQUIRE( (4.*Pi*sqrt(avMpl[0])) == Approx( 0.6154 ).epsilon( 0.0001 ) );
   REQUIRE( (4.*Pi*sqrt(avMpl[1])) == Approx( 0.5055 ).epsilon( 0.0001 ) );
@@ -69,7 +71,7 @@ TEST_CASE
   
   
   long double mmPlanck = pow(1.2209,2) * pow(10.,2*19); 
-  state_type avMpl = av(mmPlanck);
+  SMCouplings avMpl = av(mmPlanck);
   
   REQUIRE( (4.*Pi*sqrt(avMpl[0])) == Approx( 0.6133 ).epsilon( 0.0001 ) );
   REQUIRE( (4.*Pi*sqrt(avMpl[1])) == Approx( 0.5057 ).epsilon( 0.0001 ) );
