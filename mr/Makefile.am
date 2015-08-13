@@ -13,45 +13,45 @@ RUNSRC = betaSM.hpp betaSM.cpp betaQCD.hpp betaQEDQCD.hpp betaQEDQCD.cpp betaQCD
 
 
 # alpha from G-Fermi and pole masses
-ALPHAGF = alphaGF.hpp alphaGF.cpp alphaGF10.cpp alphaGF11.cpp alphaGF20.cpp
+ALPHAGF = alphaGF.hpp alphaGF.cpp aGF/alphaGF10.cpp aGF/alphaGF11.cpp aGF/alphaGF20.cpp
 
 
 # 
 # MS-bar masses and constants
 #
-BBMS = bb.hpp bb.cpp mbbbar01.cpp mbbbar10.cpp mbbbar11.cpp mbbbar20.cpp yubb01.cpp yubb10.cpp yubb11.cpp yubb20.cpp
-WWMS = WW.hpp WW.cpp mWWbar10.cpp mWWbar11.cpp mWWbar20.cpp yuWW10.cpp yuWW11.cpp yuWW20.cpp
-ZZMS = ZZ.hpp ZZ.cpp mZZbar10.cpp mZZbar11.cpp mZZbar20.cpp yuZZ10.cpp yuZZ11.cpp yuZZ20.cpp
-HHMS = HH.hpp HH.cpp mHHbar10.cpp mHHbar11.cpp mHHbar20.cpp yuHH10.cpp yuHH11.cpp yuHH20.cpp
-TTMS = tt.hpp tt.cpp mttbar01.cpp mttbar10.cpp mttbar11.cpp mttbar20.cpp yutt01.cpp yutt10.cpp yutt11.cpp yutt20.cpp
+BBMS = bb.hpp bb.cpp mM/mbbbar01.cpp mM/mbbbar10.cpp mM/mbbbar11.cpp mM/mbbbar20.cpp yu/yubb01.cpp yu/yubb10.cpp yu/yubb11.cpp yu/yubb20.cpp
+WWMS = WW.hpp WW.cpp mM/mWWbar10.cpp mM/mWWbar11.cpp mM/mWWbar20.cpp yu/yuWW10.cpp yu/yuWW11.cpp yu/yuWW20.cpp
+ZZMS = ZZ.hpp ZZ.cpp mM/mZZbar10.cpp mM/mZZbar11.cpp mM/mZZbar20.cpp yu/yuZZ10.cpp yu/yuZZ11.cpp yu/yuZZ20.cpp
+HHMS = HH.hpp HH.cpp mM/mHHbar10.cpp mM/mHHbar11.cpp mM/mHHbar20.cpp yu/yuHH10.cpp yu/yuHH11.cpp yu/yuHH20.cpp
+TTMS = tt.hpp tt.cpp mM/mttbar01.cpp mM/mttbar10.cpp mM/mttbar11.cpp mM/mttbar20.cpp yu/yutt01.cpp yu/yutt10.cpp yu/yutt11.cpp yu/yutt20.cpp
 
 # 
 # Gauge-less limit
 # 
-HHMSGL = mHHbarGL10.cpp mHHbarGL11.cpp mHHbarGL20.cpp yuHHGL10.cpp yuHHGL11.cpp yuHHGL20.cpp
-BBMSGL = mbbbarGL10.cpp mbbbarGL11.cpp mbbbarGL20.cpp yubbGL10.cpp yubbGL11.cpp yubbGL20.cpp
-TTMSGL = mttbarGL10.cpp mttbarGL11.cpp mttbarGL20.cpp yuttGL10.cpp yuttGL11.cpp yuttGL20.cpp 
+HHMSGL = gl/mHHbarGL10.cpp gl/mHHbarGL11.cpp gl/mHHbarGL20.cpp yugl/yuHHGL10.cpp yugl/yuHHGL11.cpp yugl/yuHHGL20.cpp
+BBMSGL = gl/mbbbarGL10.cpp gl/mbbbarGL11.cpp gl/mbbbarGL20.cpp yugl/yubbGL10.cpp yugl/yubbGL11.cpp yugl/yubbGL20.cpp
+TTMSGL = gl/mttbarGL10.cpp gl/mttbarGL11.cpp gl/mttbarGL20.cpp yugl/yuttGL10.cpp yugl/yuttGL11.cpp yugl/yuttGL20.cpp 
 
 #
 # delta-r in MS-bar  scheme with OS input
 # 
-DRMSOS = dr.cpp dr10.cpp dr11.cpp dr20.cpp drgl10.cpp drgl11.cpp drgl20.cpp
+DRMSOS = dr.cpp dr/dr10.cpp dr/dr11.cpp dr/dr20.cpp dr/drgl10.cpp dr/drgl11.cpp dr/drgl20.cpp
 
 #
 # delta-r in MS-bar  scheme with MS-bar input
 # 
-DRMSMS = drbar10.cpp drbar11.cpp drbar20.cpp
+DRMSMS = dr/drbar10.cpp dr/drbar11.cpp dr/drbar20.cpp
 
 # W pole mass from MS input
-WWMS2OS = mWWos10.cpp mWWos11.cpp mWWos20.cpp
+WWMS2OS = Mm/mWWos10.cpp Mm/mWWos11.cpp Mm/mWWos20.cpp
 # Z pole mass from MS input
-ZZMS2OS = mZZos10.cpp mZZos11.cpp mZZos20.cpp
+ZZMS2OS = Mm/mZZos10.cpp Mm/mZZos11.cpp Mm/mZZos20.cpp
 # H pole mass from MS input
-HHMS2OS = mHHos10.cpp mHHos11.cpp mHHos20.cpp
+HHMS2OS = Mm/mHHos10.cpp Mm/mHHos11.cpp Mm/mHHos20.cpp
 # t pole mass from MS input
-TTMS2OS = mttos01.cpp mttos10.cpp mttos11.cpp mttos20.cpp
+TTMS2OS = Mm/mttos01.cpp Mm/mttos10.cpp Mm/mttos11.cpp Mm/mttos20.cpp
 # b pole mass from MS input
-BBMS2OS = mbbos01.cpp mbbos10.cpp mbbos11.cpp mbbos20.cpp
+BBMS2OS = Mm/mbbos01.cpp Mm/mbbos10.cpp Mm/mbbos11.cpp Mm/mbbos20.cpp
 
 
 libmr_a_SOURCES =    $(MAINSRC) $(MAINHPP) $(ALPHAGF) $(RUNSRC) $(BBMS) $(WWMS) $(ZZMS) $(HHMS) $(TTMS)\
