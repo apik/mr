@@ -1,6 +1,8 @@
 #include <HH.hpp>
-long double HH<OS>::ygl10(size_t nL, size_t nH, size_t boson)
-{     
+namespace mr
+{
+  long double HH<OS>::ygl10(size_t nL, size_t nH, size_t boson)
+  {     
       
       
     std::complex<long double> aryuHHGL[11], yuHHGLret;
@@ -13,17 +15,18 @@ long double HH<OS>::ygl10(size_t nL, size_t nH, size_t boson)
     aryuHHGL[6]=pow(MMH,-1);
     aryuHHGL[7]=Tsil::A(MMt,mu2);
     aryuHHGL[8]=std::real(Tsil::B(0,0,MMH,mu2));
-   aryuHHGL[9]=MMt*aryuHHGL[6];
-   aryuHHGL[9]=1./2. - 2*aryuHHGL[9];
-   aryuHHGL[9]=aryuHHGL[5]*aryuHHGL[9];
-   aryuHHGL[9]= - 1./4. + aryuHHGL[9];
-   aryuHHGL[9]=MMt*aryuHHGL[9];
-   aryuHHGL[9]=aryuHHGL[9] - 1./2.*aryuHHGL[7];
-   aryuHHGL[10]=3*aryuHHGL[8] + 1 + 9*aryuHHGL[4];
-   aryuHHGL[10]=MMH*aryuHHGL[10];
-   aryuHHGL[9]=3*aryuHHGL[9] + 1./8.*aryuHHGL[10];
+    aryuHHGL[9]=MMt*aryuHHGL[6];
+    aryuHHGL[9]=1./2. - 2*aryuHHGL[9];
+    aryuHHGL[9]=aryuHHGL[5]*aryuHHGL[9];
+    aryuHHGL[9]= - 1./4. + aryuHHGL[9];
+    aryuHHGL[9]=MMt*aryuHHGL[9];
+    aryuHHGL[9]=aryuHHGL[9] - 1./2.*aryuHHGL[7];
+    aryuHHGL[10]=3*aryuHHGL[8] + 1 + 9*aryuHHGL[4];
+    aryuHHGL[10]=MMH*aryuHHGL[10];
+    aryuHHGL[9]=3*aryuHHGL[9] + 1./8.*aryuHHGL[10];
 
-      yuHHGLret = aryuHHGL[9]*aryuHHGL[3]*pow(aryuHHGL[2],2)*
+    yuHHGLret = aryuHHGL[9]*aryuHHGL[3]*pow(aryuHHGL[2],2)*
       aryuHHGL[1];
-      return yuHHGLret.real();
-}
+    return yuHHGLret.real();
+  }
+} // namespace mr

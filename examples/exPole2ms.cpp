@@ -4,6 +4,8 @@
 
 #include "mr.hpp"
 
+using namespace mr;
+
 int main (int argc, char *argv[])
 {
   try

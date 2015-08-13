@@ -24,57 +24,60 @@
 #include <iostream>
 #include <sstream>
 
-enum loglevel_e
-  {logERROR, logWARNING, logINFO, logDEBUG, logDEBUG1, logDEBUG2, logDEBUG3, logDEBUG4};
-
-class logIt
+namespace mr
 {
-public:
-  logIt(loglevel_e _loglevel = logERROR) {
+  enum loglevel_e
+    {logERROR, logWARNING, logINFO, logDEBUG};
 
-    if (_loglevel == logERROR)
-      _buffer << "[ERROR]:    " ;
-    else if (_loglevel == logWARNING)
-      _buffer << "[WARNING]:  " ;
-    else if (_loglevel == logINFO)
-      _buffer << "[INFO]:     " ;
-    else if (_loglevel == logDEBUG)
-      _buffer << "[DEBUG]:    " ;
-    else
-      {
-        _buffer << "[DBG" <<  (_loglevel - logDEBUG) << "]"
-                << std::string(
-                               _loglevel > logDEBUG
-                               ? (_loglevel - logDEBUG) * 4
-                               : 1
-                               , ' ');
-      }
-  }
-  
-  template <typename T>
-  logIt & operator<<(T const & value)
+  class logIt
   {
-    _buffer << value;
-    return *this;
-  }
-  logIt & operator<<(std::ostream& (*fun)(std::ostream&)) { std::cout << std::endl; return *this;}
-  
-  ~logIt()
-  {
-    _buffer << std::endl;
-    std::cerr << _buffer.str();
-  }
-  
-private:
-  std::ostringstream _buffer;
-};
+  public:
+    logIt(loglevel_e _loglevel = logERROR) {
 
-extern loglevel_e loglevel;
+      if (_loglevel == logERROR)
+        _buffer << "[ERROR]:    " ;
+      else if (_loglevel == logWARNING)
+        _buffer << "[WARNING]:  " ;
+      else if (_loglevel == logINFO)
+        _buffer << "[INFO]:     " ;
+      else if (_loglevel == logDEBUG)
+        _buffer << "[DEBUG]:    " ;
+      else
+        {
+          _buffer << "[DBG" <<  (_loglevel - logDEBUG) << "]"
+                  << std::string(
+                                 _loglevel > logDEBUG
+                                 ? (_loglevel - logDEBUG) * 4
+                                 : 1
+                                 , ' ');
+        }
+    }
+  
+    template <typename T>
+    logIt & operator << (T const & value)
+    {
+      _buffer << value;
+      return *this;
+    }
+    logIt & operator << (std::ostream& (*fun)(std::ostream&)) { std::cout << std::endl; return *this;}
+  
+    ~logIt()
+    {
+      _buffer << std::endl;
+      std::cerr << _buffer.str();
+    }
+  
+  private:
+    std::ostringstream _buffer;
+  };
 
-#define lout(level)       \
-  if (level > loglevel) ; \
+  extern loglevel_e loglevel;
+
+} // namespace mr
+
+#define lout(level)                             \
+  if (level > loglevel) ;                       \
   else logIt(level)
-
 #endif
 
 

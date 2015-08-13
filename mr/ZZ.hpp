@@ -27,118 +27,121 @@
 #include "constants.hpp"
 #include "base.hpp"
 
-template<class T>
-class ZZ 
+namespace mr
 {
-};
-
-template<>
-class ZZ<OS> : public PoleMassAndCouplings
-{
-
-  long double MMb, MMt, MMH, MMW, MMZ, mu2;
-  long double SW, CW;
-
-  Tsil* protZHHZZ;
-  Tsil* protZZHHH;
-  Tsil* protZWHWW;
-  Tsil* prottZtHt;
-  Tsil* protWWWWH;
-  Tsil* protWWWWZ;
-  Tsil* protWWWW0;
-  Tsil* protWtWt0;
-  Tsil* protW0W0t;
-  Tsil* protW0W00;
-  Tsil* protttttH;
-  Tsil* protttttZ;
-  Tsil* prottttt0;
-  Tsil* prott0t0W;
-  Tsil* prot0000Z;
-  Tsil* prot0000W;
-  Tsil* prot00000;
-  Tsil* protWZWHW;
-  TsilSTU* protHZ00;
-  
-  TsilST* protos[19];
-public:
-  ZZ()
+  template<class T>
+  class ZZ 
   {
-  }
+  };
 
-  ZZ(long double,long double,long double,long double,long double);
-
-  ZZ(OSinput, long double);
-
-  void init();
-  
-  long double x10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
-
-  
-  long double x11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
-  
-
-  long double x20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
-
-
-  long double y10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
-
-  
-  long double y11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
-  
-
-  long double y20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
-    
-};
-
-template<>
-class ZZ<MS> : public PoleMass
-{
-
-  long double mmb, mmt, mmH, mmW, mmZ, mu2;
-  long double s, c;
-
-  Tsil* protZHHZZ;
-  Tsil* protZZHHH;
-  Tsil* protZWHWW;
-  Tsil* prottZtHt;
-  Tsil* protWWWWH;
-  Tsil* protWWWWZ;
-  Tsil* protWWWW0;
-  Tsil* protWtWt0;
-  Tsil* protW0W0t;
-  Tsil* protW0W00;
-  Tsil* protttttH;
-  Tsil* protttttZ;
-  Tsil* prottttt0;
-  Tsil* prott0t0W;
-  Tsil* prot0000Z;
-  Tsil* prot0000W;
-  Tsil* prot00000;
-  Tsil* protWZWHW;
-  TsilSTU* protHZ00;
-  
-  TsilST* protos[19];
-public:
-  ZZ()
+  template<>
+  class ZZ<OS> : public PoleMassAndCouplings
   {
-  }
 
-  ZZ(long double,long double,long double,long double,long double);
+    long double MMb, MMt, MMH, MMW, MMZ, mu2;
+    long double SW, CW;
 
-  ZZ(MSinput, long double);
+    Tsil* protZHHZZ;
+    Tsil* protZZHHH;
+    Tsil* protZWHWW;
+    Tsil* prottZtHt;
+    Tsil* protWWWWH;
+    Tsil* protWWWWZ;
+    Tsil* protWWWW0;
+    Tsil* protWtWt0;
+    Tsil* protW0W0t;
+    Tsil* protW0W00;
+    Tsil* protttttH;
+    Tsil* protttttZ;
+    Tsil* prottttt0;
+    Tsil* prott0t0W;
+    Tsil* prot0000Z;
+    Tsil* prot0000W;
+    Tsil* prot00000;
+    Tsil* protWZWHW;
+    TsilSTU* protHZ00;
+  
+    TsilST* protos[19];
+  public:
+    ZZ()
+    {
+    }
 
-  void init();
+    ZZ(long double,long double,long double,long double,long double);
 
+    ZZ(OSinput, long double);
 
-  long double x10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+    void init();
+  
+    long double x10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
   
-  long double x11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+    long double x11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
   
 
-  long double x20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+    long double x20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+
+
+    long double y10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+
+  
+    long double y11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+  
+
+    long double y20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+    
+  };
+
+  template<>
+  class ZZ<MS> : public PoleMass
+  {
+
+    long double mmb, mmt, mmH, mmW, mmZ, mu2;
+    long double s, c;
+
+    Tsil* protZHHZZ;
+    Tsil* protZZHHH;
+    Tsil* protZWHWW;
+    Tsil* prottZtHt;
+    Tsil* protWWWWH;
+    Tsil* protWWWWZ;
+    Tsil* protWWWW0;
+    Tsil* protWtWt0;
+    Tsil* protW0W0t;
+    Tsil* protW0W00;
+    Tsil* protttttH;
+    Tsil* protttttZ;
+    Tsil* prottttt0;
+    Tsil* prott0t0W;
+    Tsil* prot0000Z;
+    Tsil* prot0000W;
+    Tsil* prot00000;
+    Tsil* protWZWHW;
+    TsilSTU* protHZ00;
+  
+    TsilST* protos[19];
+  public:
+    ZZ()
+    {
+    }
+
+    ZZ(long double,long double,long double,long double,long double);
+
+    ZZ(MSinput, long double);
+
+    void init();
+
+
+    long double x10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+
+  
+    long double x11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+  
+
+    long double x20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
     
-};
+  };
+} // namespace mr
 
 #endif  //  __ZZ_HPP__

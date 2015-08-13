@@ -27,166 +27,168 @@
 #include "constants.hpp"
 #include "base.hpp"
 
-template<class T>
-class HH 
+namespace mr
 {
-};
-
-template<>
-class HH<OS> : public PoleMassAndCouplings
-{
-
-  long double MMb, MMt, MMH, MMW, MMZ, mu2;
-  long double SW, CW;
-  
-  Tsil* protHHHHH;
-  Tsil* protHZHZZ;
-  Tsil* protHWHWW;
-  Tsil* protHtHtt;
-  Tsil* protZZZZH;
-  Tsil* protZWZWW;
-  Tsil* protZtZtt;
-  Tsil* protWWWWH;
-  Tsil* protWWWWZ;
-  Tsil* protWWWW0;
-  Tsil* protWtWt0;
-  Tsil* protttttH;
-  Tsil* protttttZ;
-  Tsil* prottttt0;
-  TsilSTU* protZZ00;
-  TsilSTU* protWW00;
-  
-  // Gaugeless limit
-  Tsil* prot0H0H0;
-  Tsil* prot0t0tt;
-  Tsil* prot0t0t0;
-  Tsil* prot0000H;
-
-  TsilST* protos[20];
-public:
-  HH()
+  template<class T>
+  class HH 
   {
-  }
+  };
 
-
-  HH(long double,long double,long double,long double,long double);
-  
-  HH(OSinput, long double);
-  
-  void init();
-
-  long double Q()
+  template<>
+  class HH<OS> : public PoleMassAndCouplings
   {
-    return sqrt(mu2);
-  }
 
-  long double QQ()
-  {
-    return mu2;
-  }
+    long double MMb, MMt, MMH, MMW, MMZ, mu2;
+    long double SW, CW;
+  
+    Tsil* protHHHHH;
+    Tsil* protHZHZZ;
+    Tsil* protHWHWW;
+    Tsil* protHtHtt;
+    Tsil* protZZZZH;
+    Tsil* protZWZWW;
+    Tsil* protZtZtt;
+    Tsil* protWWWWH;
+    Tsil* protWWWWZ;
+    Tsil* protWWWW0;
+    Tsil* protWtWt0;
+    Tsil* protttttH;
+    Tsil* protttttZ;
+    Tsil* prottttt0;
+    TsilSTU* protZZ00;
+    TsilSTU* protWW00;
+  
+    // Gaugeless limit
+    Tsil* prot0H0H0;
+    Tsil* prot0t0tt;
+    Tsil* prot0t0t0;
+    Tsil* prot0000H;
+
+    TsilST* protos[20];
+  public:
+    HH()
+    {
+    }
+
+
+    HH(long double,long double,long double,long double,long double);
+  
+    HH(OSinput, long double);
+  
+    void init();
+
+    long double Q()
+    {
+      return sqrt(mu2);
+    }
+
+    long double QQ()
+    {
+      return mu2;
+    }
   
   
-  long double x10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+    long double x10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
   
-  long double x11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+    long double x11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
   
 
-  long double x20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+    long double x20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
 
-  // Gaugeless limit
-  long double xgl10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+    // Gaugeless limit
+    long double xgl10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
   
-  long double xgl11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+    long double xgl11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
-  long double xgl20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+    long double xgl20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
 
     
-  // 
-  // \lambda/sqrt(2)/GF/MMH
-  // 
-  long double y10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+    // 
+    // \lambda/sqrt(2)/GF/MMH
+    // 
+    long double y10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
-  long double y11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+    long double y11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
   
-  long double y20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+    long double y20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
-  // Gaugeless limit
+    // Gaugeless limit
 
-  long double ygl10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+    long double ygl10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
-  long double ygl11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+    long double ygl11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
-  long double ygl20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+    long double ygl20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
   
-};
+  };
 
 
-template<>
-class HH<MS> : public PoleMass
-{
-
-  long double mmb, mmt, mmH, mmW, mmZ, mu2;
-  long double s, c;
-  
-  Tsil* protHHHHH;
-  Tsil* protHZHZZ;
-  Tsil* protHWHWW;
-  Tsil* protHtHtt;
-  Tsil* protZZZZH;
-  Tsil* protZWZWW;
-  Tsil* protZtZtt;
-  Tsil* protWWWWH;
-  Tsil* protWWWWZ;
-  Tsil* protWWWW0;
-  Tsil* protWtWt0;
-  Tsil* protttttH;
-  Tsil* protttttZ;
-  Tsil* prottttt0;
-  TsilSTU* protZZ00;
-  TsilSTU* protWW00;
-  
-  // Gaugeless limit
-  Tsil* prot0H0H0;
-  Tsil* prot0t0tt;
-  Tsil* prot0t0t0;
-  Tsil* prot0000H;
-
-  TsilST* protos[20];
-public:
-  HH()
+  template<>
+  class HH<MS> : public PoleMass
   {
-  }
 
-
-  HH(long double,long double,long double,long double,long double);
+    long double mmb, mmt, mmH, mmW, mmZ, mu2;
+    long double s, c;
   
-  HH(MSinput, long double);
+    Tsil* protHHHHH;
+    Tsil* protHZHZZ;
+    Tsil* protHWHWW;
+    Tsil* protHtHtt;
+    Tsil* protZZZZH;
+    Tsil* protZWZWW;
+    Tsil* protZtZtt;
+    Tsil* protWWWWH;
+    Tsil* protWWWWZ;
+    Tsil* protWWWW0;
+    Tsil* protWtWt0;
+    Tsil* protttttH;
+    Tsil* protttttZ;
+    Tsil* prottttt0;
+    TsilSTU* protZZ00;
+    TsilSTU* protWW00;
   
-  void init();
+    // Gaugeless limit
+    Tsil* prot0H0H0;
+    Tsil* prot0t0tt;
+    Tsil* prot0t0t0;
+    Tsil* prot0000H;
 
-//  long double x01(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+    TsilST* protos[20];
+  public:
+    HH()
+    {
+    }
+
+
+    HH(long double,long double,long double,long double,long double);
+  
+    HH(MSinput, long double);
+  
+    void init();
+
+    //  long double x01(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
   
-  long double x10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+    long double x10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
   
-  long double x11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+    long double x11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
   
 
-  long double x20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+    long double x20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
 
-  // Gaugeless limit
-  long double xgl10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+    // Gaugeless limit
+    long double xgl10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
   
-  long double xgl11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+    long double xgl11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
-  long double xgl20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
-};
+    long double xgl20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+  };
 
-
+} // namespace mr
 
 #endif  //  __HH_HPP__

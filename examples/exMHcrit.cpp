@@ -1,7 +1,8 @@
 #include <iostream>
 #include <cmath>
 #include "mr.hpp"
-#include "tools.hpp"
+
+using namespace mr;
 
 int main (int argc, char *argv[])
 {

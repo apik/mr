@@ -22,54 +22,47 @@
 #include "timer.hpp"
 
 
-
-dr<OS>::dr(OSinput sm, long double mu2_)
+namespace mr
 {
-  MMb = sm.MMb();
-  MMW = sm.MMW();
-  MMZ = sm.MMZ();
-  MMH = sm.MMH();
-  MMt = sm.MMt();
-  mu2 = mu2_;
+  dr<OS>::dr(OSinput sm, long double mu2_)
+  {
+    MMb = sm.MMb();
+    MMW = sm.MMW();
+    MMZ = sm.MMZ();
+    MMH = sm.MMH();
+    MMt = sm.MMt();
+    mu2 = mu2_;
 
-  init();
-}
+    init();
+  }
 
 
-void dr<OS>::init()
-{
+  void dr<OS>::init()
+  {
   
-  CW = sqrt(MMW/MMZ);
-  SW = sqrt(1-MMW/MMZ);
+    CW = sqrt(MMW/MMZ);
+    SW = sqrt(1-MMW/MMZ);
  
-}
+  }
 
-dr<MS>::dr(MSinput sm, long double mu2_)
-{
-  mmb = sm.mmb();
-  mmW = sm.mmW();
-  mmZ = sm.mmZ();
-  mmH = sm.mmH();
-  mmt = sm.mmt();
-  mu2 = mu2_;
+  dr<MS>::dr(MSinput sm, long double mu2_)
+  {
+    mmb = sm.mmb();
+    mmW = sm.mmW();
+    mmZ = sm.mmZ();
+    mmH = sm.mmH();
+    mmt = sm.mmt();
+    mu2 = mu2_;
 
-  init();
-}
+    init();
+  }
 
 
-void dr<MS>::init()
-{
+  void dr<MS>::init()
+  {
   
-  c = sqrt(mmW/mmZ);
-  s = sqrt(1-mmW/mmZ);
+    c = sqrt(mmW/mmZ);
+    s = sqrt(1-mmW/mmZ);
  
-}
-
-
-
- 
-
-
-
-
-
+  }
+} // namespace mr

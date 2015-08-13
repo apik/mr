@@ -1,8 +1,8 @@
 #include <iostream>
 #include <cmath>
 #include "mr.hpp"
-#include "tools.hpp"
-#include "gnuplot.hpp"
+
+using namespace mr;
 
 int main (int argc, char *argv[])
 {
@@ -42,53 +42,53 @@ int main (int argc, char *argv[])
       
       
       lout(logINFO) << "Prepared for plotting!";
-      std::ofstream fout("cEvol.dat");
+      // std::ofstream fout("cEvol.dat");
       
-      // Header
-      fout << "# scale a1 a2 a3 at ab alam mu0/1000\n";
-      for (double muPow = 2.; muPow <= 20.; muPow+=0.5)
-        {
+      // // Header
+      // fout << "# scale a1 a2 a3 at ab alam mu0/1000\n";
+      // for (double muPow = 2.; muPow <= 20.; muPow+=0.5)
+      //   {
 
-          lout(logINFO) << "Scale is 10^" << muPow;
+      //     lout(logINFO) << "Scale is 10^" << muPow;
 
-          state_type v = avP2MS(pow(10,2*muPow));
+      //     state_type v = avP2MS(pow(10,2*muPow));
           
-          fout << muPow << " "
-               << sqrt(v[0])*4.*Pi          << " "
-               << sqrt(v[1])*4.*Pi          << " "
-               << sqrt(v[2])*4.*Pi          << " "
-               << sqrt(v[3])*4.*Pi          << " "
-               << sqrt(v[4])*4.*Pi          << " "
-            // << v[5]          << " "
-               << v[6]*16.*Pi*Pi            << " "
-               << v[7]/1000. << std::endl;
+      //     fout << muPow << " "
+      //          << sqrt(v[0])*4.*Pi          << " "
+      //          << sqrt(v[1])*4.*Pi          << " "
+      //          << sqrt(v[2])*4.*Pi          << " "
+      //          << sqrt(v[3])*4.*Pi          << " "
+      //          << sqrt(v[4])*4.*Pi          << " "
+      //       // << v[5]          << " "
+      //          << v[6]*16.*Pi*Pi            << " "
+      //          << v[7]/1000. << std::endl;
 
-        }
+      //   }
 
 
-      lout(logINFO) << "Zoom for gauge couplings unification";
-      std::ofstream zout("cZoom.dat");
+      // lout(logINFO) << "Zoom for gauge couplings unification";
+      // std::ofstream zout("cZoom.dat");
       
-      // Header
-      zout << "# scale a1 a2 a3 at ab alam mu0/1000\n";
-      for (double muPow = 13.; muPow <= 13.1; muPow += 0.01)
-        {
+      // // Header
+      // zout << "# scale a1 a2 a3 at ab alam mu0/1000\n";
+      // for (double muPow = 13.; muPow <= 13.1; muPow += 0.01)
+      //   {
 
-          lout(logINFO) << "Scale is 10^" << muPow;
+      //     lout(logINFO) << "Scale is 10^" << muPow;
           
-          state_type v = avP2MS(pow(10,2*muPow));
+      //     state_type v = avP2MS(pow(10,2*muPow));
           
-          zout << muPow << " "
-               << v[couplings::g1]*4.*Pi          << " "
-               << v[couplings::g2]*4.*Pi          << " "
-               << v[couplings::gs]*4.*Pi          << " "
-               << v[couplings::yt]*4.*Pi          << " "
-               << v[couplings::yb]*4.*Pi          << " "
-            // << v[couplings::ytau]*4.*Pi        << " "
-               << v[couplings::lam]*16.*Pi*Pi            << " "
-               << v[couplings::mu0]/1000. << std::endl;
+      //     zout << muPow << " "
+      //          << v[couplings::g1]*4.*Pi          << " "
+      //          << v[couplings::g2]*4.*Pi          << " "
+      //          << v[couplings::gs]*4.*Pi          << " "
+      //          << v[couplings::yt]*4.*Pi          << " "
+      //          << v[couplings::yb]*4.*Pi          << " "
+      //       // << v[couplings::ytau]*4.*Pi        << " "
+      //          << v[couplings::lam]*16.*Pi*Pi            << " "
+      //          << v[couplings::mu0]/1000. << std::endl;
           
-        }
+      //   }
 
       
       

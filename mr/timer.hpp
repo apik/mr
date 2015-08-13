@@ -25,31 +25,34 @@
 #include <ctime>
 #include "logger.hpp"
 
-class Timer
+namespace mr
 {
-  std::clock_t    start;
-public:
-  Timer():start(std::clock())
+  class Timer
   {
-  }
+    std::clock_t    start;
+  public:
+    Timer():start(std::clock())
+    {
+    }
    
-  void elapsed()
-  {
-    lout(logDEBUG) << "Time: " << (std::clock() - start) / (double)(CLOCKS_PER_SEC / 1000) << " ms";
-  }
+    void elapsed()
+    {
+      lout(logDEBUG) << "Time: " << (std::clock() - start) / (double)(CLOCKS_PER_SEC / 1000) << " ms";
+    }
   
-  void inMs()
-  {
-    std::cout << "Time: " << (std::clock() - start) / (double)(CLOCKS_PER_SEC / 1000) << " ms" << std::endl;
-  }
-  void inSec()
-  {
-    std::cout << "Time: " << (std::clock() - start) / (double)(CLOCKS_PER_SEC) << " s" << std::endl;
-  }
-  void inMin()
-  {
-    std::cout << "Time: " << (std::clock() - start) / (double)(CLOCKS_PER_SEC * 60) << " min" << std::endl;
-  }
-};
+    void inMs()
+    {
+      std::cout << "Time: " << (std::clock() - start) / (double)(CLOCKS_PER_SEC / 1000) << " ms" << std::endl;
+    }
+    void inSec()
+    {
+      std::cout << "Time: " << (std::clock() - start) / (double)(CLOCKS_PER_SEC) << " s" << std::endl;
+    }
+    void inMin()
+    {
+      std::cout << "Time: " << (std::clock() - start) / (double)(CLOCKS_PER_SEC * 60) << " min" << std::endl;
+    }
+  };
+} // namespace mr
 
 #endif  // __TIMER_HPP__

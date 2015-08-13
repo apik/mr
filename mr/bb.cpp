@@ -22,61 +22,64 @@
 #include "timer.hpp"
 
 
-bb<OS>::bb(long double MMb_, long double MMW_,long double MMZ_,long double MMH_,long double MMt_,long double mu2_):
-  MMb(MMb_), MMW(MMW_), MMZ(MMZ_), MMH(MMH_), MMt(MMt_), mu2(mu2_)
+namespace mr
 {
-  init(MMb, MMW, MMZ, MMH, MMt, mu2);
-}
+  bb<OS>::bb(long double MMb_, long double MMW_,long double MMZ_,long double MMH_,long double MMt_,long double mu2_):
+    MMb(MMb_), MMW(MMW_), MMZ(MMZ_), MMH(MMH_), MMt(MMt_), mu2(mu2_)
+  {
+    init(MMb, MMW, MMZ, MMH, MMt, mu2);
+  }
 
-bb<OS>::bb(OSinput sm, long double mu2_)
-{
-  MMb = sm.MMb();
-  MMW = sm.MMW();
-  MMZ = sm.MMZ();
-  MMH = sm.MMH();
-  MMt = sm.MMt();
-  mu2 = mu2_;
+  bb<OS>::bb(OSinput sm, long double mu2_)
+  {
+    MMb = sm.MMb();
+    MMW = sm.MMW();
+    MMZ = sm.MMZ();
+    MMH = sm.MMH();
+    MMt = sm.MMt();
+    mu2 = mu2_;
 
-  init(sm.MMb(),sm.MMW(), sm.MMZ(), sm.MMH(), sm.MMt(), mu2_);
-}
+    init(sm.MMb(),sm.MMW(), sm.MMZ(), sm.MMH(), sm.MMt(), mu2_);
+  }
 
 
-void bb<OS>::init(long double MMb_, long double MMW_,long double MMZ_,long double MMH_,long double MMt_,long double mu2_)
-{
+  void bb<OS>::init(long double MMb_, long double MMW_,long double MMZ_,long double MMH_,long double MMt_,long double mu2_)
+  {
   
-  CW = sqrt(MMW/MMZ);
-  SW = sqrt(1-MMW/MMZ);
+    CW = sqrt(MMW/MMZ);
+    SW = sqrt(1-MMW/MMZ);
   
-  prot0bb0b = new Tsil(   0, MMb, MMb,   0, MMb, mu2);
+    prot0bb0b = new Tsil(   0, MMb, MMb,   0, MMb, mu2);
 
-  // Timer t2;
-  prot0bb0b->evaluate(MMb);
-  // t2.elapsed();
+    // Timer t2;
+    prot0bb0b->evaluate(MMb);
+    // t2.elapsed();
 
-}
+  }
 
-bb<MS>::bb(MSinput sm, long double mu2_)
-{
-  mmb = sm.mmb();
-  mmW = sm.mmW();
-  mmZ = sm.mmZ();
-  mmH = sm.mmH();
-  mmt = sm.mmt();
-  mu2 = mu2_;
+  bb<MS>::bb(MSinput sm, long double mu2_)
+  {
+    mmb = sm.mmb();
+    mmW = sm.mmW();
+    mmZ = sm.mmZ();
+    mmH = sm.mmH();
+    mmt = sm.mmt();
+    mu2 = mu2_;
 
-  init();
-}
+    init();
+  }
 
 
-void bb<MS>::init()
-{
+  void bb<MS>::init()
+  {
   
-  c = sqrt(mmW/mmZ);
-  s = sqrt(1-mmW/mmZ);
+    c = sqrt(mmW/mmZ);
+    s = sqrt(1-mmW/mmZ);
 
-  prot0bb0b = new Tsil(   0, mmb, mmb,   0, mmb, mu2);
+    prot0bb0b = new Tsil(   0, mmb, mmb,   0, mmb, mu2);
     
-  // Timer t2;
-  prot0bb0b->evaluate(mmb);
-  // t2.elapsed();
-}
+    // Timer t2;
+    prot0bb0b->evaluate(mmb);
+    // t2.elapsed();
+  }
+} // namespace mr
