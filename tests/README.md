@@ -1,3 +1,32 @@
+##Test set
+
+Test prepared with the help of
+[catch](https://github.com/philsquared/Catch) library. 
+
+To list available tests use 
+```
+./testsuite -l
+```
+To run all test silently use 
+```
+./testsuite -l
+```
+To see not only errors but also succesfully passed tests use
+```
+./testsuite -s
+```
+Each test is supplied with its own tag, which can be used to run
+selected test. For example to run tests with tag `[MS]` use
+```
+./testsuite "[MS]"
+```
+For other options use help with
+```
+./testsuite -h
+```
+
+##Available tests
+
 * `tst-MWeqMZ.cpp`
 
     Test for equality of corrections to MW and MZ in limit of equal masses MW=MZ, Mb=Mt
