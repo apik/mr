@@ -20,7 +20,7 @@
 
 #include <iostream>
 #include <stdexcept>
-#include "betaSM.hpp"
+#include "smRGE.hpp"
 
 namespace mr
 {

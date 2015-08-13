@@ -22,8 +22,7 @@
 #include "boost/numeric/interval.hpp"
 #include "p2ms.hpp"
 #include <stdexcept>
-#include "betaQCD.hpp"
-#include "betaQEDQCD.hpp"
+#include "alphas.hpp"
 #include "bb.hpp" 
 #include "WW.hpp"
 #include "ZZ.hpp"

@@ -9,7 +9,7 @@ MAINSRC = mr.hpp tsil.hpp tsil.cpp base.hpp mOS2mMSQCD.cpp p2ms.hpp p2ms.cpp too
 MAINHPP =  constants.hpp sminput.hpp timer.hpp  tsil.hpp  dr.hpp operators.hpp logger.hpp
 
 # Running
-RUNSRC = betaSM.hpp betaSM.cpp betaQCD.hpp betaQEDQCD.hpp betaQEDQCD.cpp betaQCD.cpp
+RUNSRC = smRGE.hpp smRGE.cpp alphas.hpp alphas.cpp
 
 
 # alpha from G-Fermi and pole masses

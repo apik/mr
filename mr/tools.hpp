@@ -22,8 +22,8 @@
 #define __TOOLS_HPP__
 
 #include "sminput.hpp"
-#include "betaQCD.hpp"
-#include "betaSM.hpp"
+#include "alphas.hpp"
+#include "smRGE.hpp"
 
 #include <Eigen/Dense>
 
