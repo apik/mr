@@ -44,15 +44,17 @@ namespace mr
     long double alphaS;
   
     long double alpha0;
-  
+    Tolerance tol;
+
   public:
-    AlphaSolve(const OSinput & in_,
+    AlphaSolve(const OSinput & in_, double tol_ = 10e-9,
                const long double &  Gf0_ = pdg2014::Gf,
                const long double &  as_ = pdg2014::asMZ,
                unsigned order_ = 
                order::x01|order::x10|order::x02|
-               order::x11|order::x20|order::x03): oi(in_), Gf0(Gf0_), alphaS(as_), ord(order_)
+               order::x11|order::x20|order::x03): oi(in_), tol(Tolerance(tol_)), Gf0(Gf0_), alphaS(as_), ord(order_)
     {
+      // tol = tol_;
     }
 
     long double operator()(const long double& mu2 );
@@ -66,16 +68,17 @@ namespace mr
     unsigned ord;
     long double Gf0;
     long double alphaS;
-  
+    
     long double alpha0;
-  
+    Tolerance tol;
+
   public:
-    AlphaGF(const OSinput & in_,
+    AlphaGF(const OSinput & in_, double tol_ = 10e-9,
             const long double &  Gf0_ = pdg2014::Gf,
             const long double &  as_ = pdg2014::asMZ,
             unsigned order_ = 
             order::x01|order::x10|order::x02|
-            order::x11|order::x20|order::x03): oi(in_), Gf0(Gf0_), alphaS(as_), ord(order_)
+            order::x11|order::x20|order::x03): oi(in_), tol(Tolerance(tol_)), Gf0(Gf0_), alphaS(as_), ord(order_)
     {
     
     }

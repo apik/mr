@@ -13,6 +13,17 @@ AC_CONFIG_HEADERS([config.h])
 AC_PROG_CXX
 AC_PROG_CC
 
+AM_CONDITIONAL(HAVE_LIBGSL, false)
+AC_CHECK_LIB([m],[cos])
+AC_CHECK_LIB([gslcblas],[cblas_dgemm])
+AC_CHECK_LIB([gsl],[gsl_blas_dgemm],[LIBGSL=true])
+
+AM_CONDITIONAL([HAVE_LIBGSL], [test x$LIBGSL = xtrue])
+dnl AC_MSG_NOTICE([$HAVE_LIBGSL])
+
+dnl AM_CONDITIONAL([HAVE_LIBGSL], [test x$HAVE_LIBGSL_TRUEx = xtrue])
+
+
 
 AC_ARG_WITH([mcc-path],
             [AS_HELP_STRING([--with-mcc-path],

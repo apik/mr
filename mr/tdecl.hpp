@@ -38,4 +38,20 @@ typedef long double MRt;
 typedef std::vector<Rt> SMCouplings;
 
 
+//
+// Tolerance class for root-finding algorithms
+//
+class Tolerance {
+public:
+  Tolerance(long double eps) :
+    _eps(eps) {
+  }
+  bool operator()(long double a, long double b) {
+    return (fabs(b - a) <= _eps);
+  }
+private:
+  long double _eps;
+};
+
+
 #endif  // __TDECL_HPP__
