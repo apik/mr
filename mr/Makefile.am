@@ -58,19 +58,5 @@ libmr_a_SOURCES =    $(MAINSRC) $(MAINHPP) $(ALPHAGF) $(RUNSRC) $(BBMS) $(WWMS) 
  $(HHMSGL) $(BBMSGL) $(TTMSGL) $(DRMSOS) $(DRMSMS)\
  $(WWMS2OS) $(ZZMS2OS) $(HHMS2OS) $(TTMS2OS) $(BBMS2OS)
 
-libmr_a_CPPFLAGS = $(MR_CFLAGS) -I$(top_srcdir) -I$(top_srcdir)/tsil-1.21 -I$(top_srcdir)/Eigen
-
-# lib_LTLIBRARIES = libmr.la
-
-# libmr_la_SOURCES =    $(MAINSRC) $(RUNSRC) $(BBMS) $(WWMS) $(ZZMS) $(HHMS) $(TTMS)\
-#  $(HHMSGL) $(BBMSGL) $(TTMSGL) $(DRMSOS)\
-#  $(WWMS2OS) $(ZZMS2OS) $(HHMS2OS)
-
-
-# libmr_la_CPPFLAGS = $(MR_CFLAGS) -I$(top_srcdir)/tsil-1.21
-
-
-
-
-# mr_LDADD = $(MR_LIBS) -L$(top_srcdir)/tsil-1.1 -ltsil -lm
+libmr_a_CPPFLAGS = $(MR_CFLAGS) -I$(top_srcdir) -I$(top_srcdir)/tsil-1.3 -I$(top_srcdir)/Eigen
 

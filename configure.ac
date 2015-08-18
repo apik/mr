@@ -6,10 +6,10 @@ dnl AM_INIT_AUTOMAKE([1.8 -Wall no-define])
 AM_INIT_AUTOMAKE([foreign subdir-objects])
 
 dnl AC_MSG_CHECKING([for OpenMP support])
-AX_OPENMP()
+AC_OPENMP()
 
 AC_CONFIG_HEADERS([config.h])
-: ${CXXFLAGS="-fopenmp -O0"}
+: ${CXXFLAGS="-O0"}
 AC_PROG_CXX
 AC_PROG_CC
 
@@ -128,5 +128,5 @@ esac
 
 AC_PROG_RANLIB
 
-AC_CONFIG_FILES(Makefile tsil-1.21/Makefile mr/Makefile examples/Makefile tests/Makefile math/Makefile)
+AC_CONFIG_FILES(Makefile tsil-1.3/Makefile mr/Makefile examples/Makefile tests/Makefile math/Makefile)
 AC_OUTPUT
