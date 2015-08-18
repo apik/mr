@@ -26,9 +26,10 @@
 
 namespace mr
 {
+
   enum loglevel_e
     {logERROR, logWARNING, logINFO, logDEBUG};
-
+  
   class logIt
   {
   public:
@@ -72,8 +73,10 @@ namespace mr
   };
 
   extern loglevel_e loglevel;
-
+  
 } // namespace mr
+
+
 
 #define lout(level)                             \
   if (level > loglevel) ;                       \

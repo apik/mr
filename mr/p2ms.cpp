@@ -395,4 +395,8 @@ namespace mr
 
     return a;
   }
+
+  // logger
+  loglevel_e loglevel = logERROR;
+
 } // namespace mr
