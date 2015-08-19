@@ -79,7 +79,9 @@ libtsil_a_SOURCES =   initialize.c \
 	   	    setTbar.c \
 	    	    setV.c \
 	    	    setbold.c \
-                    internal.h tsil.h tsil_build.h tsil_funcs.h tsil_global.h tsil_names.h tsil_params.h
+                    internal.h tsil.h tsil_funcs.h tsil_global.h tsil_names.h tsil_params.h
 
 
 libtsil_a_CFLAGS = $(TSIL_RESCALE) $(TSIL_SIZE) $(TSIL_OPT)
+
+EXTRA_DIST = CHANGELOG.txt  ISSUES.txt  LICENSE.txt  README.txt  foo.txt

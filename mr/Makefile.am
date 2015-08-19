@@ -4,7 +4,7 @@ ACLOCAL_AMFLAGS = ${ACLOCAL_FLAGS} -I m4
 lib_LIBRARIES = libmr.a
 
 # Main sources
-MAINSRC = mr.hpp tsil.hpp tsil.cpp base.hpp mOS2mMSQCD.cpp p2ms.hpp p2ms.cpp
+MAINSRC = mr.hpp tsil.hpp tsil.cpp base.hpp tdecl.hpp mOS2mMSQCD.cpp p2ms.hpp p2ms.cpp
 
 MAINHPP =  constants.hpp sminput.hpp timer.hpp  tsil.hpp  dr.hpp operators.hpp logger.hpp
 
@@ -58,5 +58,6 @@ libmr_a_SOURCES =    $(MAINSRC) $(MAINHPP) $(ALPHAGF) $(RUNSRC) $(BBMS) $(WWMS) 
  $(HHMSGL) $(BBMSGL) $(TTMSGL) $(DRMSOS) $(DRMSMS)\
  $(WWMS2OS) $(ZZMS2OS) $(HHMS2OS) $(TTMS2OS) $(BBMS2OS)
 
-libmr_a_CPPFLAGS = $(MR_CFLAGS) -I$(top_srcdir) -I$(top_srcdir)/tsil-1.3 -I$(top_srcdir)/Eigen
+libmr_a_CPPFLAGS = $(MR_CFLAGS) -I$(top_srcdir) -I$(top_srcdir)/tsil-1.3
 
+EXTRA_DIST = aGF/README.md dr/README.md gl/README.md mMSmOS/README.md mOSmMS/README.md yu/README.md yugl/README.md

@@ -8,8 +8,10 @@
 #include "tt.hpp"
 #include "dr.hpp"
 #include "alphaGF.hpp"
-#include "betaSM.hpp"
-#include "betaQCD.hpp"
+#include "smRGE.hpp"
+#include "alphas.hpp"
+
+using namespace mr;
 
 typedef CouplingsSM<3,3,3,3,3,3,3> SM_3;
 typedef CouplingsSM<2,2,2,2,2,2,2> SM_2;
@@ -373,7 +375,7 @@ void RunSM(long double gp, long double g, long double gs, long double yb, long d
                 3 // NG
                 );
 
-      state_type runCoupling = runSM(pow(oscale,2));
+      SMCouplings runCoupling = runSM(pow(oscale,2));
       MLPutFunction(stdlink, "List", 8);
       MLPutReal128(stdlink, 4.*Pi*sqrt(3/5.*runCoupling[0])); //gp
       MLPutReal128(stdlink, 4.*Pi*sqrt(runCoupling[1])); //g 
@@ -402,7 +404,7 @@ void RunSMwithBetas(long double gp, long double g, long double gs, long double y
                 3 // NG
                 );
 
-      std::pair<state_type, state_type> runCouplingAndBeta = runSM.AandB(pow(oscale,2));
+      std::pair<SMCouplings, SMCouplings> runCouplingAndBeta = runSM.AandB(pow(oscale,2));
       MLPutFunction(stdlink, "List", 8);
       MLPutFunction(stdlink, "List", 2);
       MLPutReal128(stdlink, 4.*Pi*sqrt(3/5.*runCouplingAndBeta.first[0])); //gp
@@ -432,7 +434,7 @@ void RunSMwithBetas(long double gp, long double g, long double gs, long double y
 void RunSMcouplings(long double gp, long double g, long double gs, long double yb, long double yt, long double lam, long double iscale, long double oscale, int loop) 
 {
 
-      state_type runCoupling;
+      SMCouplings runCoupling;
 
       switch(loop)
       {

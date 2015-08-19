@@ -9,25 +9,18 @@ dnl AC_MSG_CHECKING([for OpenMP support])
 AC_OPENMP()
 
 AC_CONFIG_HEADERS([config.h])
-: ${CXXFLAGS="-O0"}
+dnl : ${CXXFLAGS="-O0"}
 AC_PROG_CXX
 AC_PROG_CC
 
-AM_CONDITIONAL(HAVE_LIBGSL, false)
-AC_CHECK_LIB([m],[cos])
-AC_CHECK_LIB([gslcblas],[cblas_dgemm])
-AC_CHECK_LIB([gsl],[gsl_blas_dgemm],[LIBGSL=true])
-
-AM_CONDITIONAL([HAVE_LIBGSL], [test x$LIBGSL = xtrue])
-dnl AC_MSG_NOTICE([$HAVE_LIBGSL])
-
-dnl AM_CONDITIONAL([HAVE_LIBGSL], [test x$HAVE_LIBGSL_TRUEx = xtrue])
-
+AC_LANG([C++])
+AC_CHECK_HEADERS([Eigen/Dense])
+AM_CONDITIONAL(HAVE_EIGEN, test "x$ac_cv_header_Eigen_Dense" != "xno")
 
 
 AC_ARG_WITH([mcc-path],
             [AS_HELP_STRING([--with-mcc-path],
-            [build Mathematica MathLink interface @<:@default=auto@:>@. Set this to full path to directory containing mcc and mprep tools])],
+            [build Mathematica MathLink interface @<:@default=auto@:>@. Set this to full path to directory containing mcc and mprep tools for example /Applications/Mathematica.app/SystemFiles/Links/MathLink/DeveloperKit/MacOSX-x86-64/CompilerAdditions])],
             [test "x$with_mcc_path" == "xyes" && with_mcc_path=auto],
             [with_mcc_path=auto])
 
@@ -97,7 +90,7 @@ fi
 # -------------------------
 AM_CONDITIONAL(HAVE_MPREP, test "x$with_mcc_path" != "xno" && test "x$ac_cv_path_MPREP" != "x")
 
-dnl AC_MSG_NOTICE([$MPREP])
+AC_MSG_NOTICE([$MPREP])
 
 AC_CANONICAL_HOST       
 case $host_os in        

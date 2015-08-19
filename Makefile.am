@@ -16,6 +16,6 @@ if HAVE_MPREP
 SUBDIRS+=math
 endif
 
-EXTRA_DIST = Eigen boost
+EXTRA_DIST = boost
 
 

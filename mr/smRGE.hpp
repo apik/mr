@@ -239,7 +239,7 @@ namespace mr
                           *bep,            // Derivatives
                           aSM,             // Initial values
                           Rt(0.0),             // t0 = Log[mu0/mu0]
-                          Rt(fabs(lEnd)),      // t  = Log[mu/mu0]
+                          Rt(std::abs(lEnd)),      // t  = Log[mu/mu0]
                           Rt(0.0001)           // Initial step size
                           );
       return aSM; 
@@ -370,7 +370,7 @@ namespace mr
                           *bep,                // Derivatives
                           aSM,                 // Initial values
                           Rt(0.0),                 // t0 = Log[mu0/mu0]
-                          Rt(fabs(lEnd)),          // t  = Log[mu/mu0]
+                          Rt(std::abs(lEnd)),          // t  = Log[mu/mu0]
                           Rt(0.001)                // Initial step size
                           );
     

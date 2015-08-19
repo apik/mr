@@ -2,7 +2,7 @@ AUTOMAKE_OPTIONS = subdir-objects
 ACLOCAL_AMFLAGS = ${ACLOCAL_FLAGS} -I m4
 
 LDADD = ../mr/libmr.la
-EX_CFLAGS = $(MR_CFLAGS) -I$(top_srcdir)/tsil-1.3 -I$(top_srcdir)/mr -I$(top_srcdir)/Eigen
+EX_CFLAGS = $(MR_CFLAGS) -I$(top_srcdir)/tsil-1.3 -I$(top_srcdir)/mr
 
 noinst_PROGRAMS = ex1Xij ex2Pole2ms ex3Pole2msRun 
 
@@ -19,3 +19,4 @@ ex3Pole2msRun_SOURCES =  ex3Pole2msRun.cpp
 ex3Pole2msRun_CPPFLAGS = $(EX_CFLAGS)
 ex3Pole2msRun_LDADD = $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.3 -ltsil -lm
 
+EXTRA_DIST = Readme.md

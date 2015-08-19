@@ -47,7 +47,7 @@ public:
     _eps(eps) {
   }
   bool operator()(long double a, long double b) {
-    return (fabs(b - a) <= _eps);
+    return (std::abs(b - a) <= _eps);
   }
 private:
   long double _eps;
