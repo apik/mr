@@ -1,0 +1,55 @@
+KNOWN ISSUES
+------------
+
+Please send any bug reports to the authors at the email addresses in
+README.txt!
+
+1. The compiler optimization flags have been set to -O3 in the
+   Makefile.  The only platform/compilers for which this is known to
+   cause problems are
+
+   (1) The Apple LLVM compiler v6.0 that ships with Xcode tools v6.1
+   and later (at least through v6.3.2).  In this case erroneous code
+   is produced for optimization levels other than -O0 (although -O0 is
+   fine).  Note that this compiler works fine with TSIL_DOUBLE data at
+   all optimization levels.
+
+   (2) icc v12.1.4 under RedHat Linux and for TSIL_LONG datatypes.  In
+   this case erroneous code is produced for optimization levels other
+   than -O0 (although -O0 is fine).  Note that this compiler works
+   fine with TSIL_DOUBLE data at all optimization levels.
+
+   (2) gcc v2.96, also under RedHat Linux. Again, erroneous code is
+   produced for optimization levels other than -O0. Later versions of
+   gcc are fine with -O3, however.
+
+   However, if anomalous results (very long computation times and/or
+   wrong results) are encountered, the user may wish to test whether
+   these can be eliminated by using -O0 instead of -O3.  The speed
+   penalty for -O0 is not excessive.
+
+   (In one known case -- system running Red Hat 4.1.2-52 with gcc
+   4.1.2 -- erroneous code is produced for TSIL_LONG data and -O0,
+   though not for any other optimization level. TSIL_DOUBLE data works
+   fine at all optimization levels.)
+
+2. The test suite can and will result in a few WARNs and even FAILs
+   being reported. This is because some of the cases tested have large
+   mass hierarchies, where some of the functions are very sensitive to
+   roundoff errors.
+
+   Most commonly, with TSIL_LONG data one obtains 313 PASSes and 7
+   WARNs.  With TSIL_DOUBLE data one obtains 303 PASSes, 16 WARNs, and
+   1 FAIL.
+
+3. If warning messages become annoying, they can be turned off with
+
+      TSIL_WarnsOff ();
+
+   Alternatively, one can redirect stderr to a file; e.g. if using
+   ksh/bash
+
+      ./tsil 1 2 3 4 5 10 1 > out 2> errmsgs
+
+   would place the standard output in a file "out" and warnings and
+   errors in "errmsgs".

@@ -1,0 +1,14 @@
+
+###Pole mass in terms of running masses and couplings
+
+**M**      - is an **on-shell** mass
+
+**m(mu)**  - runnig **MS** mass
+
+**x_ij**   - functions of **MS** masses
+
+**aw(mu)** - EM running coupling (alEM/4/Pi)
+
+**as(mu)** - QCD running coupling (alS/4/Pi)
+
+**`M = m (1 + as*x_01 + aw*x_10 + aw*as*x_11 + aw^2*x_20 + ...)`**
