@@ -33,8 +33,6 @@
 
 #include "tdecl.hpp"
 #include "logger.hpp"
-// #include <boost/multiprecision/cpp_dec_float.hpp>
-// #include <boost/multiprecision/float128.hpp>
 #include "constants.hpp"
 #include "p2ms.hpp"
 
@@ -43,8 +41,8 @@ namespace mr
   using namespace boost::numeric::odeint;
 
 
-  // typedef boost::multiprecision::cpp_dec_float_50 mp_50;
-  typedef runge_kutta_cash_karp54< SMCouplings,SMCouplings::value_type// ,SMCouplings,SMCouplings
+
+  typedef runge_kutta_cash_karp54< SMCouplings,SMCouplings::value_type
                                    > error_stepper_type;
   typedef controlled_runge_kutta< error_stepper_type > controlled_stepper_type;
 
@@ -67,10 +65,6 @@ namespace mr
   {
 
     int NG;
-    // Maximal numer of loops available for beta-functions
-    static const size_t maxBetaOrder = 3;
-
-    static const size_t maxPoco = maxBetaOrder + 2;
 
     bool MultiplyByMinus1;
   
@@ -97,10 +91,6 @@ namespace mr
                bool MultiplyByMinus1_ = false);
 
     void operator() (const SMCouplings &, SMCouplings &, SMCouplings::value_type);
-    // void multiplyByMinus1()
-    // {
-    //   MultiplyByMinus1 = true;
-    // }
 
     // Forward direction, dir=False
     void setEvolutionDirection(bool dir)
@@ -129,9 +119,8 @@ namespace mr
     size_t maxPower;
     bool MultiplyByMinus1;
   
-    // int pocoa1, pocoa2, pocoas, pocoat, pocoab, pocoatau, pocolam;
     int pocoa1, pocoa2, pocoa3, pocoa4, pocoa5, pocoa6, pocoa7, pocoa8, pocoa9;
-
+    
     void add(std::map<index_t, long double, index_cmp_t>&, size_t, size_t, size_t, size_t, size_t, size_t, size_t, size_t, long double);
 
   public:
@@ -143,12 +132,6 @@ namespace mr
 
     void operator() (const SMCouplings &, SMCouplings &, const Rt);
   
-    // void multiplyByMinus1()
-    // {
-    //   MultiplyByMinus1 = true;
-    //   bSM->multiplyByMinus1();
-    // }
-
     void setEvolutionDirection(bool dir)
     {
       MultiplyByMinus1 = dir;
@@ -177,12 +160,12 @@ namespace mr
   template < int pocoa1, int pocoa2, int pocoas, int pocoat, int pocoab, int pocoatau, int pocolam > 
   class CouplingsSM
   {
-  
+    
     double      mu0;
     SMCouplings aSM0;
     size_t       NG;
     BetaSMFull*   bep;
-
+    
   public:
   
     CouplingsSM(double a1, double a2, double as, double at, double ab, double atau, double lam, double mu0_, size_t NG_) : mu0(mu0_), NG(NG_)
@@ -218,7 +201,6 @@ namespace mr
         
       SMCouplings::value_type lEnd = log(mu2/mu0);
 
-      // if (lEnd < 0) bep->multiplyByMinus1();
       bep->setEvolutionDirection(lEnd < 0);
 
       // Integration parameters
@@ -236,10 +218,10 @@ namespace mr
                            ( abs_err , rel_err , a_x , a_dxdt ) );
     
       integrate_adaptive( controlled_stepper , // Stepper function
-                          *bep,            // Derivatives
-                          aSM,             // Initial values
+                          *bep,                // Derivatives
+                          aSM,                 // Initial values
                           Rt(0.0),             // t0 = Log[mu0/mu0]
-                          Rt(std::abs(lEnd)),      // t  = Log[mu/mu0]
+                          Rt(std::abs(lEnd)),  // t  = Log[mu/mu0]
                           Rt(0.0001)           // Initial step size
                           );
       return aSM; 
@@ -326,7 +308,6 @@ namespace mr
     
       SMCouplings::value_type lEnd = log(mu2End/mu0);
 
-      // if (lEnd < 0) bep->multiplyByMinus1();
       bep->setEvolutionDirection(lEnd < 0);
     
       // Integration parameters
@@ -383,7 +364,6 @@ namespace mr
     
       double lEnd = log(mu2End/mu0);
 
-      // if (lEnd < 0) bep->multiplyByMinus1();
       bep->setEvolutionDirection(lEnd < 0);
 
       // Integration parameters
@@ -401,11 +381,11 @@ namespace mr
                            ( abs_err , rel_err , a_x , a_dxdt ) );
     
       integrate_adaptive( controlled_stepper , // Stepper function
-                          *bep,            // Derivatives
-                          aSM,             // Initial values
+                          *bep,                // Derivatives
+                          aSM,                 // Initial values
                           Rt(0.0),             // t0 = Log[mu0/mu0]
                           Rt(fabs(lEnd)),      // t  = Log[mu/mu0]
-                          Rt(0.001)           // Initial step size
+                          Rt(0.001)            // Initial step size
                           );
 
       // beta-functions

@@ -1,15 +1,42 @@
 mr
 ==
 
-Mathching &amp; Running
+**Mathching &amp; Running** is a set of tools for NNLO Standard Model
+vacuum stability analysis. It includes three-loop
+renormalization-group equations for Standard Model couplings with
+four-loop additions and two-loop thershold corrections.
 
-`cd test
-`
 
- 
+## Installation
 
-> ./testsuite
+for git version
 
+    $ git clone https://github.com/apik/mr.git
+    $ cd mr
+    $ autoreconf -i
+    $ ./configure
+    $ make
+
+or for prepared package
+
+    $ curl -OL
+    $ tar -xf 
+    $ cd mr-*.*
+    $ ./configure
+    $ make
+
+To enable *Mathematica* interface coigure **mr** with full path to
+    directory containing both of **mcc** and **mprep** tools. For example `/Applications/Mathematica.app/SystemFiles/Links/MathLink/DeveloperKit/MacOSX-x86-64/CompilerAdditions` 
+
+    $ ./configure
+    --with-mcc-path=/Applications/Mathematica.app/SystemFiles/Links/MathLink/DeveloperKit/MacOSX-x86-64/CompilerAdditions
+
+## Usage
+
+Just include in your code
+
+    #include <mr.hpp>
+    using namespace mr;
 
 * * * * *
 

@@ -16,6 +16,11 @@ if HAVE_MPREP
 SUBDIRS+=math
 endif
 
-EXTRA_DIST = boost
+pkgconfigdir = $(libdir)/pkgconfig
+pkgconfig_DATA = mr.pc
 
+EXTRA_DIST = boost mr.pc.i
+DISTCLEANFILES = mr.pc
+
+$(pkgconfig_DATA): config.status
 

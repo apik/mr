@@ -61,3 +61,27 @@ libmr_a_SOURCES =    $(MAINSRC) $(MAINHPP) $(ALPHAGF) $(RUNSRC) $(BBMS) $(WWMS) 
 libmr_a_CPPFLAGS = $(MR_CFLAGS) -I$(top_srcdir) -I$(top_srcdir)/tsil-1.3
 
 EXTRA_DIST = aGF/README.md dr/README.md gl/README.md mMSmOS/README.md mOSmMS/README.md yu/README.md yugl/README.md
+
+pkginclude_HEADERS = \
+HH.hpp \
+WW.hpp \
+ZZ.hpp \
+alphaGF.hpp \
+alphas.hpp \
+base.hpp \
+bb.hpp \
+constants.hpp \
+dr.hpp \
+logger.hpp \
+mr.hpp \
+operators.hpp \
+p2ms.hpp \
+smRGE.hpp \
+sminput.hpp \
+tdecl.hpp \
+timer.hpp \
+tsil.hpp \
+tt.hpp
+
+
+

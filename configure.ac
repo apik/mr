@@ -2,14 +2,13 @@ AC_INIT([Standard Model 3-loop running and 2-loop matching], [1.0], [pikelner@th
              [mr], [http://apik.github.io/mr/])
 AC_PREREQ([2.59])
 AC_CONFIG_MACRO_DIR([m4])
-dnl AM_INIT_AUTOMAKE([1.8 -Wall no-define])
+
 AM_INIT_AUTOMAKE([foreign subdir-objects])
 
-dnl AC_MSG_CHECKING([for OpenMP support])
 AC_OPENMP()
 
 AC_CONFIG_HEADERS([config.h])
-dnl : ${CXXFLAGS="-O0"}
+: ${CXXFLAGS="-O0"}
 AC_PROG_CXX
 AC_PROG_CC
 
@@ -90,8 +89,6 @@ fi
 # -------------------------
 AM_CONDITIONAL(HAVE_MPREP, test "x$with_mcc_path" != "xno" && test "x$ac_cv_path_MPREP" != "x")
 
-AC_MSG_NOTICE([$MPREP])
-
 AC_CANONICAL_HOST       
 case $host_os in        
   darwin* )   
@@ -121,5 +118,5 @@ esac
 
 AC_PROG_RANLIB
 
-AC_CONFIG_FILES(Makefile tsil-1.3/Makefile mr/Makefile examples/Makefile tests/Makefile math/Makefile)
+AC_CONFIG_FILES(Makefile tsil-1.3/Makefile mr/Makefile examples/Makefile tests/Makefile math/Makefile mr.pc)
 AC_OUTPUT

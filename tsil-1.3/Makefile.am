@@ -85,3 +85,5 @@ libtsil_a_SOURCES =   initialize.c \
 libtsil_a_CFLAGS = $(TSIL_RESCALE) $(TSIL_SIZE) $(TSIL_OPT)
 
 EXTRA_DIST = CHANGELOG.txt  ISSUES.txt  LICENSE.txt  README.txt  foo.txt
+
+pkginclude_HEADERS = tsil.h 
