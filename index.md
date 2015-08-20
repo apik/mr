@@ -48,6 +48,8 @@ arXiv:1507.08833 [hep-ph].*
 
 ## Installation
 
+Latest release is available from [github release page](https://github.com/apik/mr/releases/latest)
+
 From github repository using git:
 
 ~~~
