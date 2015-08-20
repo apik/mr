@@ -53,13 +53,19 @@ From github repository using git:
 ~~~
 $ git clone https://github.com/apik/mr.git
 $ cd mr
+$ autoreconf -i
+$ ./configure
+$ make && make install
 ~~~
 
 Or downloading tarball and extracting:
 
 ~~~
-$ curl -OL https://github.com/
-$ tar zxf 
+$ curl -OL https://github.com/apik/mr/releases/download/v1.0/mr-1.0.tar.gz
+$ tar zxf mr-1.0.tar.gz
+$ cd mr-1.0
+$ ./configure
+$ make && make install
 ~~~
 
 <A NAME="usage"></A>
