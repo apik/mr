@@ -19,7 +19,7 @@ endif
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = mr.pc
 
-EXTRA_DIST = boost mr.pc.i
+EXTRA_DIST = boost mr.pc.in
 DISTCLEANFILES = mr.pc
 
 $(pkgconfig_DATA): config.status

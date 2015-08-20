@@ -25,11 +25,11 @@ or for prepared package
     $ ./configure
     $ make
 
-To enable *Mathematica* interface coigure **mr** with full path to
-    directory containing both of **mcc** and **mprep** tools. For example `/Applications/Mathematica.app/SystemFiles/Links/MathLink/DeveloperKit/MacOSX-x86-64/CompilerAdditions` 
+To enable *Mathematica* interface configure **mr** with full path to
+    directory containing both of **mcc** and **mprep** tools. For example 
 
-    $ ./configure
-    --with-mcc-path=/Applications/Mathematica.app/SystemFiles/Links/MathLink/DeveloperKit/MacOSX-x86-64/CompilerAdditions
+    $ ./configure --with-mcc-path=/Applications/Mathematica.app/SystemFiles/Links/MathLink/DeveloperKit/MacOSX-x86-64/CompilerAdditions
+
 
 ## Usage
 
@@ -38,7 +38,25 @@ Just include in your code
     #include <mr.hpp>
     using namespace mr;
 
+And compile with flags
+
+    $ pkg-config --cflags --libs mr
+
+Sample applications are in `examples` directory
+
+
+### Tests
+
+Due to differen architectures for package installation there is a set
+of tests. Running
+
+     $ ./testsuite
+
+in `tests` directory prepare results of numerous tests.
+
 * * * * *
+
+## References
 
 ### SM running
 
