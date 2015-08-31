@@ -1,8 +1,8 @@
 AUTOMAKE_OPTIONS = subdir-objects
 ACLOCAL_AMFLAGS = ${ACLOCAL_FLAGS} -I m4
 
-LDADD = ../mr/libmr.a
-EX_CFLAGS = $(MR_CFLAGS) -I$(top_srcdir)/tsil-1.3 -I$(top_srcdir)/mr
+LDADD = ../mr/libmr.a 
+EX_CFLAGS = $(OPENMP_CFLAGS) $(MR_CFLAGS) -I$(top_srcdir)/tsil-1.3 -I$(top_srcdir)/mr
 
 noinst_PROGRAMS = testsuite
 
@@ -13,6 +13,6 @@ TEST_FILES += tst-mOSmMS_QCD.cpp
 endif
 
 testsuite_SOURCES =  testsuite.cpp  catch.hpp $(TEST_FILES)
-testsuite_CPPFLAGS = $(EX_CFLAGS)
-testsuite_LDADD = $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.3 -ltsil -lm
+testsuite_CPPFLAGS = $(EX_CFLAGS) 
+testsuite_LDADD = $(OPENMP_CFLAGS) $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.3 -ltsil -lm
 
