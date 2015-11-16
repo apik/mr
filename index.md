@@ -42,7 +42,7 @@ For example application see:
 
 *[Fate of the Universe: Gauge Independence and Advanced Precision.](http://inspirehep.net/record/1385870)
 By A.V. Bednyakov, B.A. Kniehl, A.F. Pikelner, O.L. Veretin.
-arXiv:1507.08833 [hep-ph].*
+Phys.Rev.Lett. 115 (2015) 20, 201802.*
 
 <A NAME="install"></A>
 
