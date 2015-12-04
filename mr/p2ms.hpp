@@ -110,54 +110,6 @@ public:
 
 
 
-
-  class P2MSnLnH
-  {
-    OSinput       oi;
-    
-    long double  aEW;
-    long double aQCD;
-    long double   Gf;
-    long double   mu;
-  
-
-    bb<OS>*  bp;
-    WW<OS>*  wp;
-    ZZ<OS>*  zp;
-    HH<OS>*  hp;
-    tt<OS>*  tp;
-    dr<OS>* drp;
-  
-  
-  public:
-    P2MSnLnH(const OSinput & oi_,
-             const long double &  Gf_ = pdg2014::Gf,
-             const long double &  as_ = pdg2014::asMZ,
-             const long double &  mu_ = pdg2014::MZ );
-
-    long double   a1(size_t nL = 2, size_t nH = 1);
-    long double   a2(size_t nL = 2, size_t nH = 1);
-    long double   as(size_t nL = 2, size_t nH = 1);
-    long double   at(size_t nL = 2, size_t nH = 1);
-    long double   ab(size_t nL = 2, size_t nH = 1);
-    long double alam(size_t nL = 2, size_t nH = 1);
-
-  
-    long double  g1(size_t nL = 2, size_t nH = 1);
-    long double  g2(size_t nL = 2, size_t nH = 1);
-    long double  gs(size_t nL = 2, size_t nH = 1);
-    long double  yt(size_t nL = 2, size_t nH = 1);
-    long double  yb(size_t nL = 2, size_t nH = 1);
-    long double lam(size_t nL = 2, size_t nH = 1);
-    long double mu0(size_t nL = 2, size_t nH = 1);
-    long double vev(size_t nL = 2, size_t nH = 1);
-  
-    MSinput getMSpar();
-
-    std::vector<long double> runningCouplings();
-  };
-
-
   // SM version with fixed nL=2, nH=1
   template<class AlphaT>
   class P2MS
@@ -237,16 +189,9 @@ public:
     tp  = new tt<OS>(oi, mu2);
     drp = new dr<OS>(oi, mu2);
 
-    AlphaT ass(oi, 10e-9, Gf, as_, ord);
-
-    // 
-    // Alternative alpha from GF
-    // 
-
-    // AlphaGF ass(oi, 10e-9, Gf, as_, ord);
-
+    AlphaT alpha(oi, 10e-9, Gf, as_, ord);
   
-    aEW = ass(mu2)/4./Pi;
+    aEW = alpha(mu2)/4./Pi;
  
     const size_t fw = 4;
     lout(logINFO) << "\t  ---------------------------------------------------------------- ";
