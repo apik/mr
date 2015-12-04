@@ -18,7 +18,7 @@ int main (int argc, char *argv[])
       AlphaS as(oi);
 
       // Set of all running parameters at scale Mt
-      P2MS pMSmt(oi,pdg2014::Gf, as(oi.Mt()), oi.Mt(), order::all);
+      P2MS<AlphaSolve> pMSmt(oi,pdg2014::Gf, as(oi.Mt()), oi.Mt(), order::all);
 
       // Initial values input by hand
       Couplings<3,3,3,

@@ -275,8 +275,8 @@ namespace mr
     }
 
     // Constructor from Pole mass input
-  
-    Couplings(const P2MS& pi, size_t NG_ = 3) : NG(NG_)
+    template<class T>
+    Couplings(const P2MS<T>& pi, size_t NG_ = 3) : NG(NG_)
     {
 
       mu0 = pow(pi.scale(),2);
