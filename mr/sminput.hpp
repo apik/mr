@@ -127,26 +127,30 @@ namespace mr
     }
 
     // Modification
-    void setMb(T mb)
+    OSinputTemplate<T>& setMb(T mb)
     {
       iMb = mb;
+      return *this;
     }
-    void setMW(T mW)
+    OSinputTemplate<T>& setMW(T mW)
     {
       iMW = mW;
+      return *this;
     }
-    void setMZ(T mZ)
+    OSinputTemplate<T>& setMZ(T mZ)
     {
       iMZ = mZ;
+      return *this;
     }
     OSinputTemplate<T>& setMH(T mH)
     {
       iMH = mH;
       return *this;
     }
-    void setMt(T mt)
+    OSinputTemplate<T>& setMt(T mt)
     {
       iMt = mt;
+      return *this;
     }
 
   };
