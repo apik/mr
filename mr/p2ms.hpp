@@ -309,7 +309,7 @@ public:
   template<class AlphaT>
   long double P2MS<AlphaT>::g1() const
   {
-    return sqrt(3./5.*a1())*4*Pi;
+    return sqrt(a1())*4*Pi;
   }
 
 
@@ -398,16 +398,16 @@ public:
   MSinput P2MS<AlphaT>::getMSpar()
   {
   
-    return MSinput::fromConsts(mu, // Input scale
-                               mu0(),   //Higgs mass parameter
-                               //normalized as mu0=Mh at
-                               //tree level
-                               lam(), 
-                               yb(), 
-                               yt(), 
-                               g2(),     // SU(2) 
-                               g1()     // U(1)
-                               );
+    return MSinput::fromCouplings(g1(),     // U(1) 3/5
+                                  g2(),     // SU(2) 
+                                  yb(), 
+                                  yt(), 
+                                  lam(), 
+                                  mu0(),   // Higgs mass parameter
+                                           // normalized as mu0=Mh at
+                                           // tree level
+                                  mu);     // Input scale
+
   }
 
   template<class AlphaT>
