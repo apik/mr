@@ -21,7 +21,7 @@ int main (int argc, char *argv[])
       P2MS<AlphaSolve> pMSmt(oi,pdg2014::Gf, as(oi.Mt()), oi.Mt(), order::all);
 
       // Initial values input by hand
-      Couplings<3,3,3,
+      ParametersSM<3,3,3,
         3,3,-1,
         3,3,0> av(
                   5./3.*pow(0.35830/4./Pi,2), // GUT normalization
@@ -37,7 +37,7 @@ int main (int argc, char *argv[])
                   );
       
       // Initial values for running, input from pole masses
-      Couplings<3,3,3,
+      ParametersSM<3,3,3,
         3,0,-1,
         3,3,0> avP2MS(pMSmt);
       
@@ -56,7 +56,7 @@ int main (int argc, char *argv[])
                     << " ab = " << av[couplings::yb]
                     << " atau = " << av[couplings::ytau]
                     << " alam = " << av[couplings::lam]
-                    << " mu0 = " << av[couplings::mu0] << std::endl;
+                    << " mphi = " << av[couplings::mphi] << std::endl;
         }      
       
     }

@@ -49,7 +49,7 @@ int main (int argc, char *argv[])
                 << "y_t = " << sqrt(pMSmt.at())*4*Pi << std::endl
                 << "y_b = " << sqrt(pMSmt.ab())*4*Pi << std::endl
                 << "lambda   = " << pMSmt.alam()*pow(4*Pi,2) << std::endl
-                << "mu0 = " << pMSmt.mu0() << std::endl;
+                << "mphi = " << pMSmt.mphi() << std::endl;
 
       
     }

@@ -361,7 +361,7 @@ void RunQCD(long double oscale, long double as0, long double iscale, int nL, int
 
 void RunSM(long double g1, long double g2, long double gs, long double yb, long double yt, long double lam, long double mu0, long double iscale, long double oscale) 
 {
-      Couplings<3,3,3,3,3,3,3,3,3> runSM(
+      ParametersSM<3,3,3,3,3,3,3,3,3> runSM(
                 pow(g1/4./Pi,2),
                 pow(g2/4./Pi,2),
                 pow(gs/4./Pi,2),
@@ -390,7 +390,7 @@ void RunSM(long double g1, long double g2, long double gs, long double yb, long 
 
 void RunSMwithBetas(long double g1, long double g2, long double gs, long double yb, long double yt, long double lam, long double mu0, long double iscale, long double oscale) 
 {
-      Couplings<3,3,3,3,3,3,3,3,3> runSM(
+      ParametersSM<3,3,3,3,3,3,3,3,3> runSM(
                 pow(g1/4./Pi,2),
                 pow(g2/4./Pi,2),
                 pow(gs/4./Pi,2),
@@ -425,8 +425,8 @@ void RunSMwithBetas(long double g1, long double g2, long double gs, long double 
       MLPutReal128(stdlink, pow(4.*Pi,2)*runCouplingAndBeta.first[6]); //lam
       MLPutReal128(stdlink, runCouplingAndBeta.second[6]);             //lam
       MLPutFunction(stdlink, "List", 2);
-      MLPutReal128(stdlink, runCouplingAndBeta.first[7]);              //m0 ??
-      MLPutReal128(stdlink, runCouplingAndBeta.second[7]);             //m0
+      MLPutReal128(stdlink, runCouplingAndBeta.first[7]);              //muphi
+      MLPutReal128(stdlink, runCouplingAndBeta.second[7]);             //muphi
       MLPutReal128(stdlink, oscale); // out scale
 		
 }
