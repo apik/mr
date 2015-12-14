@@ -154,14 +154,14 @@ public:
     long double alam() const;
   
   
-    long double  g1() const;
-    long double  g2() const;
-    long double  gs() const;
-    long double  yt() const;
-    long double  yb() const;
-    long double lam() const;
-    long double mu0() const;
-    long double vev() const;
+    long double  g1()  const;
+    long double  g2()  const;
+    long double  gs()  const;
+    long double  yt()  const;
+    long double  yb()  const;
+    long double lam()  const;
+    long double mphi() const;
+    long double vev()  const;
   
     MSinput getMSpar();
 
@@ -378,7 +378,7 @@ public:
 
 
   template<class AlphaT>
-  long double P2MS<AlphaT>::mu0() const // tree: mu0=Mh
+  long double P2MS<AlphaT>::mphi() const // tree: mu0=Mh
   {
     return sqrt(2.*lam())*vev();
   }
@@ -403,7 +403,7 @@ public:
                                   yb(), 
                                   yt(), 
                                   lam(), 
-                                  mu0(),   // Higgs mass parameter
+                                  mphi(),   // Higgs mass parameter
                                            // normalized as mu0=Mh at
                                            // tree level
                                   mu);     // Input scale
@@ -422,7 +422,7 @@ public:
     g[couplings::yb] = yb();
     g[couplings::ytau] = 0;
     g[couplings::lam] = lam();
-    g[couplings::mu0] = mu0();
+    g[couplings::mphi] = mphi();
     g[couplings::vev] = vev();
 
     return g;
@@ -441,7 +441,7 @@ public:
     a[couplings::yb] = ab();
     a[couplings::ytau] = 0;
     a[couplings::lam] = alam();
-    a[couplings::mu0] = mu0();
+    a[couplings::mphi] = mphi();
     a[couplings::vev] = vev();
 
     return a;

@@ -753,7 +753,7 @@ namespace mr
 
 
   //
-  // VEV gamma_{v^2}
+  // VEV gamma_{v}, hep-ph:1310.3806, eq.10
   // 
 
   long double BetaSM::gamv(const SMCouplings &a, size_t NG, int poco)
@@ -966,35 +966,38 @@ namespace mr
   }
 
 
-
-  long double BetaSM::bmu2(const SMCouplings & a, size_t NG, int poco)
+  // 
+  //   gam_{m^2} = d log(m^2)/dt
+  //   hep-ph:1303.4364, eq.15,16,17
+  // 
+  long double BetaSM::gamm2(const SMCouplings & a, size_t NG, int poco)
   {
-    long double mu2 =  0;
+    long double gamMphi2 =  0;
 
     if(poco >= 1)
       {
-        mu2 += ( a[5] + 3*a[4] + 3*a[3] - 9./4.*a[1] - 9./20.*a[0] );
+        gamMphi2 += ( a[5] + 3*a[4] + 3*a[3] - 9./4.*a[1] - 9./20.*a[0] );
       
-        mu2 +=  + a[6] * ( 6 );
+        gamMphi2 +=  + a[6] * ( 6 );
       }
     if(poco >= 2)
       {
       
-        mu2 +=  +  (  - 9./4.*pow(a[5],2) - 27./4.*pow(a[4],2) - 
+        gamMphi2 +=  +  (  - 9./4.*pow(a[5],2) - 27./4.*pow(a[4],2) - 
                       21./2.*a[3]*a[4] - 27./4.*pow(a[3],2) + 20*a[2]*a[4] + 20*a[2]*a[3] + 15./8.
                       *a[1]*a[5] + 45./8.*a[1]*a[4] + 45./8.*a[1]*a[3] - 385./32.*pow(a[1],2) + 
                       5./2.*pow(a[1],2)*NG + 15./8.*a[0]*a[5] + 5./8.*a[0]*a[4] + 17./8.*a[0]*
                       a[3] + 9./16.*a[0]*a[1] + 471./800.*pow(a[0],2) + 1./2.*pow(a[0],2)*NG );
 
-        mu2 +=  + a[6] * (  - 12*a[5] - 36*a[4] - 36*a[3] + 36*a[1] + 
+        gamMphi2 +=  + a[6] * (  - 12*a[5] - 36*a[4] - 36*a[3] + 36*a[1] + 
                             36./5.*a[0] );
   
-        mu2 +=  + pow(a[6],2) * (  - 30 );
+        gamMphi2 +=  + pow(a[6],2) * (  - 30 );
       }
     if(poco >= 3)
       {
       
-        mu2 +=  +  (  - 233./16.*pow(a[5],3) + 72*a[4]*pow(a[5],2)
+        gamMphi2 +=  +  (  - 233./16.*pow(a[5],3) + 72*a[4]*pow(a[5],2)
                       + 72*pow(a[4],2)*a[5] + 1605./16.*pow(a[4],3)
                       + 72*a[3]*pow(a[5],2) + 21./2.*a[3]*a[4]*a[5]
                       + 4047./16.*a[3]*pow(a[4],2) + 72*pow(a[3],2)*a[5]
@@ -1012,7 +1015,7 @@ namespace mr
                       - 489./4.*a[1]*a[2]*a[4] - 489./4.*a[1]*a[2]*a[3] + 108*a[1]*a[2]*Zeta3*a[4] + 
                       108*a[1]*a[2]*Zeta3*a[3] );
   
-        mu2 +=  +  (  - 255./128.*pow(a[1],2)*a[5] - 765./128.*
+        gamMphi2 +=  +  (  - 255./128.*pow(a[1],2)*a[5] - 765./128.*
                       pow(a[1],2)*a[4] - 765./128.*pow(a[1],2)*a[3] - 81./4.*pow(a[1],2)*Zeta3
                       *a[5] - 243./4.*pow(a[1],2)*Zeta3*a[4] - 243./4.*pow(a[1],2)*Zeta3*
                       a[3] - 21./8.*pow(a[1],2)*NG*a[5] - 63./8.*pow(a[1],2)*NG*a[4] - 63./8.
@@ -1029,7 +1032,7 @@ namespace mr
                       Zeta3*a[5] + 351./10.*a[0]*a[1]*Zeta3*a[3] + 8073./320.*a[0]*pow(a[1],2)
                       - 243./16.*a[0]*pow(a[1],2)*Zeta3 );
 
-        mu2 +=  +  ( 63./20.*a[0]*pow(a[1],2)*NG - 9./5.*a[0]*pow(a[1],2)*NG*Zeta3
+        gamMphi2 +=  +  ( 63./20.*a[0]*pow(a[1],2)*NG - 9./5.*a[0]*pow(a[1],2)*NG*Zeta3
                      - 32463./3200.*pow(a[0],2)*a[5] - 79207./9600.*
                      pow(a[0],2)*a[4] - 123103./9600.*pow(a[0],2)*a[3] - 27./20.*pow(a[0],2)*
                      Zeta3*a[5] - 21./20.*pow(a[0],2)*Zeta3*a[4] - 447./100.*pow(a[0],2)*
@@ -1041,7 +1044,7 @@ namespace mr
                      + 35./12.*pow(a[0],3)*NG - 57./25.*pow(a[0],3)*NG*
                      Zeta3 + 7./9.*pow(a[0],3)*pow(NG,2) );
 
-        mu2 +=  + a[6] * ( 261./4.*pow(a[5],2) - 108*a[4]*a[5] + 
+        gamMphi2 +=  + a[6] * ( 261./4.*pow(a[5],2) - 108*a[4]*a[5] + 
                            351./4.*pow(a[4],2) - 108*a[3]*a[5] - 315./2.*a[3]*a[4] + 351./4.*pow(a[3],2)
                            + 72*Zeta3*pow(a[5],2) + 216*Zeta3*pow(a[4],2) - 216*Zeta3
                            *a[3]*a[4] + 216*Zeta3*pow(a[3],2) - 612*a[2]*a[4] - 612*a[2]*a[3] + 576*a[2]*
@@ -1054,13 +1057,13 @@ namespace mr
                            800.*pow(a[0],2) - 162./25.*pow(a[0],2)*Zeta3 - 153./10.*pow(a[0],2)
                            *NG );
   
-        mu2 +=  + pow(a[6],2) * ( 99./2.*a[5] + 297./2.*a[4] + 297./
+        gamMphi2 +=  + pow(a[6],2) * ( 99./2.*a[5] + 297./2.*a[4] + 297./
                                   2.*a[3] - 63*a[1] - 108*a[1]*Zeta3 - 63./5.*a[0] - 108./5.*a[0]*Zeta3 );
   
-        mu2 +=  + pow(a[6],3) * ( 1026 );
+        gamMphi2 +=  + pow(a[6],3) * ( 1026 );
       }
       
-    return mu2;
+    return gamMphi2;
   }
 
 
@@ -1080,9 +1083,11 @@ namespace mr
   
     double minusC = MultiplyByMinus1 ? -1. : 1.;
   
-    // add mu^2 anomalous dimension for <m>
-    dadt[7] = minusC*a[7]/2.*bmu2(a, ng, pocoa8);
-    // add VEV anomalous dimension
+    // add mu^2 
+    // dm/dt = (m/2)*gam_m^2
+    dadt[7] = minusC*a[7]/2.*gamm2(a, ng, pocoa8);
+    // add VEV: 
+    // dv/dt = v*gam_v  
     dadt[8] = minusC*a[8]*gamv(a, ng, pocoa9);
   }
 } // namespace mr

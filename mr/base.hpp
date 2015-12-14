@@ -24,7 +24,7 @@
 
 namespace mr
 {
-  class PoleMass
+  class BaseMass
   {
     // 
     // Pure QCD part m_ij=mY_ij by definition
@@ -121,7 +121,7 @@ namespace mr
 
   };
 
-  class PoleMassAndCouplings : public PoleMass
+  class PoleMassAndCouplings : public BaseMass
   {
   public:
     virtual long double y10(size_t nL = 2, size_t nH = 1, size_t boson = 1) = 0;

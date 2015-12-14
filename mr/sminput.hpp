@@ -21,6 +21,7 @@
 #ifndef __SMINPUT_HPP__
 #define __SMINPUT_HPP__
 #include "constants.hpp"
+#include <stdexcept>
 
 namespace mr
 {

@@ -68,19 +68,19 @@ namespace mr
 
     bool MultiplyByMinus1;
   
-    std::map<index_t, long double, index_cmp_t> be1;
-    std::map<index_t, long double, index_cmp_t> be2;
-    std::map<index_t, long double, index_cmp_t> be3;
-    std::map<index_t, long double, index_cmp_t> be4;
-    std::map<index_t, long double, index_cmp_t> be5;
-    std::map<index_t, long double, index_cmp_t> be6;
-    std::map<index_t, long double, index_cmp_t> be7;
+    std::map<index_t, Rt, index_cmp_t> be1;
+    std::map<index_t, Rt, index_cmp_t> be2;
+    std::map<index_t, Rt, index_cmp_t> be3;
+    std::map<index_t, Rt, index_cmp_t> be4;
+    std::map<index_t, Rt, index_cmp_t> be5;
+    std::map<index_t, Rt, index_cmp_t> be6;
+    std::map<index_t, Rt, index_cmp_t> be7;
   
     // int pocoa1, pocoa2, pocoas, pocoat, pocoab, pocoatau, pocolam;
     int pocoa1, pocoa2, pocoa3, pocoa4, pocoa5, pocoa6, pocoa7;
     size_t maxPower;
 
-    void add(std::map<index_t, long double, index_cmp_t>&, size_t, size_t, size_t, size_t, size_t, size_t, size_t, size_t, long double);
+    void add(std::map<index_t, Rt, index_cmp_t>&, size_t, size_t, size_t, size_t, size_t, size_t, size_t, size_t, Rt);
 
   public:
   
@@ -98,7 +98,7 @@ namespace mr
       MultiplyByMinus1 = dir;
     }
 
-    long double betaQCD(long double);
+    Rt betaQCD(Rt);
   };
 
 
@@ -121,7 +121,7 @@ namespace mr
   
     int pocoa1, pocoa2, pocoa3, pocoa4, pocoa5, pocoa6, pocoa7, pocoa8, pocoa9;
     
-    void add(std::map<index_t, long double, index_cmp_t>&, size_t, size_t, size_t, size_t, size_t, size_t, size_t, size_t, long double);
+    void add(std::map<index_t, Rt, index_cmp_t>&, size_t, size_t, size_t, size_t, size_t, size_t, size_t, size_t, Rt);
 
   public:
   
@@ -138,7 +138,7 @@ namespace mr
       bSM->setEvolutionDirection(dir);
     }
 
-    static SMCouplings::value_type bmu2(const SMCouplings &a, size_t NG, int poco = 3);
+    static SMCouplings::value_type gamm2(const SMCouplings &a, size_t NG, int poco = 3);
     static SMCouplings::value_type gamv(const SMCouplings &a, size_t NG, int poco = 3);
 
   };
@@ -152,7 +152,7 @@ namespace mr
 
 
 
-
+ 
 
   // 
   // Couplings class
@@ -161,14 +161,14 @@ namespace mr
   class CouplingsSM
   {
     
-    double      mu0;
+    Rt      mu0;
     SMCouplings aSM0;
     size_t       NG;
     BetaSMFull*   bep;
     
   public:
   
-    CouplingsSM(double a1, double a2, double as, double at, double ab, double atau, double lam, double mu0_, size_t NG_) : mu0(mu0_), NG(NG_)
+    CouplingsSM(Rt a1, Rt a2, Rt as, Rt at, Rt ab, Rt atau, Rt lam, Rt mu0_, size_t NG_) : mu0(mu0_), NG(NG_)
     {
 
       aSM0.push_back(a1);
@@ -231,19 +231,20 @@ namespace mr
   };
 
 
-
-
+  // 
+  // Couplings and parameters
+  // including [m] and [vev]
   template < int pocoa1, int pocoa2, int pocoas, int pocoat, int pocoab, int pocoatau, int pocolam, int pocomu2, int pocovev > 
-  class Couplings
+  class ParametersSM
   {
   
-    double      mu0;
+    Rt           mu0;
     SMCouplings aSM0;
-    size_t       NG;
-    BetaSM*     bep;
+    size_t        NG;
+    BetaSM*      bep;
   
   public:
-    Couplings(double a1, double a2, double as, double at, double ab, double atau, double lam, double mu2, double vev, double mu0_, size_t NG_ = 3) : mu0(mu0_), NG(NG_)
+    ParametersSM(Rt a1, Rt a2, Rt as, Rt at, Rt ab, Rt atau, Rt lam, Rt mphi, Rt vev, Rt mu0_, size_t NG_ = 3) : mu0(mu0_), NG(NG_)
     {
     
       aSM0.push_back(a1);
@@ -253,7 +254,7 @@ namespace mr
       aSM0.push_back(ab);
       aSM0.push_back(atau);
       aSM0.push_back(lam);
-      aSM0.push_back(mu2);
+      aSM0.push_back(mphi);
       aSM0.push_back(vev);
     
       const size_t fw = 20;
@@ -267,7 +268,7 @@ namespace mr
                     << " atau = " << std::setw(fw) << atau;
       lout(logINFO) << "\talam = " << std::setw(fw) << lam
                     << "  vev = " << std::setw(fw) << vev
-                    << "  mu2 = " << std::setw(fw) << mu2;
+                    << " mphi = " << std::setw(fw) << mphi;
       lout(logINFO) << "\t  MU = " << std::setw(fw) << sqrt(mu0)
                     << "   NG = " << std::setw(fw) <<  NG; 
     
@@ -276,7 +277,7 @@ namespace mr
 
     // Constructor from Pole mass input
     template<class T>
-    Couplings(const P2MS<T>& pi, size_t NG_ = 3) : NG(NG_)
+    ParametersSM(const P2MS<T>& pi, size_t NG_ = 3) : NG(NG_)
     {
 
       mu0 = pow(pi.scale(),2);
@@ -294,7 +295,7 @@ namespace mr
                     << " atau = " << std::setw(fw) << aSM0[5];
       lout(logINFO) << "\talam = " << std::setw(fw) << aSM0[6] 
                     << "  vev = " << std::setw(fw) << aSM0[8] 
-                    << "  mu2 = " << std::setw(fw) << aSM0[7];
+                    << " mphi = " << std::setw(fw) << aSM0[7];
       lout(logINFO) << "\t  MU = " << std::setw(fw) << sqrt(mu0)
                     << "   NG = " << std::setw(fw) << NG;
     
@@ -303,7 +304,7 @@ namespace mr
 
 
   
-    SMCouplings operator()(const long double& mu2End)
+    SMCouplings operator()(const Rt& mu2End)
     {
     
       SMCouplings::value_type lEnd = log(mu2End/mu0);
@@ -350,19 +351,19 @@ namespace mr
       integrate_adaptive( controlled_stepper , // Stepper function
                           *bep,                // Derivatives
                           aSM,                 // Initial values
-                          Rt(0.0),                 // t0 = Log[mu0/mu0]
-                          Rt(std::abs(lEnd)),          // t  = Log[mu/mu0]
-                          Rt(0.001)                // Initial step size
+                          Rt(0.0),             // t0 = Log[mu0/mu0]
+                          Rt(std::abs(lEnd)),  // t  = Log[mu/mu0]
+                          Rt(0.001)            // Initial step size
                           );
     
       return aSM; 
     }
 
     // return couplings and its beta-functions
-    std::pair<SMCouplings, SMCouplings> AandB(const long double& mu2End)
+    std::pair<SMCouplings, SMCouplings> AandB(const Rt& mu2End)
     {
     
-      double lEnd = log(mu2End/mu0);
+      Rt lEnd = log(mu2End/mu0);
 
       bep->setEvolutionDirection(lEnd < 0);
 

@@ -45,7 +45,7 @@ namespace mr
   // For easy enumeration through the returned couplings vector
   class couplings {
   public:
-    enum { g1, g2, gs, yt, yb, ytau, lam, mu0, vev };
+    enum { g1, g2, gs, yt, yb, ytau, lam, mphi, vev };
   };
 
   

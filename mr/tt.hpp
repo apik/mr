@@ -152,7 +152,7 @@ namespace mr
 
 
   template<>
-  class tt<MS> : public PoleMass
+  class tt<MS> : public BaseMass
   {
 
     long double mmb,mmt, mmH, mmW, mmZ, mu2;
