@@ -175,7 +175,7 @@ int main (int argc, char *argv[])
       AlphaS as(oi);
 
       // From the same OS input ass in first part obtain MS masses 
-      P2MS pMSmt(oi,pdg2014::Gf, as(oi.Mt()), oi.Mt(), order::all);
+      P2MS<AlphaGF> pMSmt(oi,pdg2014::Gf, as(oi.Mt()), oi.Mt(), order::all);
     
     
       MSinput mi(pMSmt.getMSpar());

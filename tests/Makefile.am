@@ -16,3 +16,4 @@ testsuite_SOURCES =  testsuite.cpp  catch.hpp $(TEST_FILES)
 testsuite_CPPFLAGS = $(EX_CFLAGS) 
 testsuite_LDADD = $(OPENMP_CFLAGS) $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.3 -ltsil -lm
 
+EXTRA_DIST = README.md

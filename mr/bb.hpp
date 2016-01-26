@@ -111,6 +111,7 @@ namespace mr
 
     long double ygl20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
+  private:
     std::complex<long double> det(const long double & a, const long double & b, const long double & c)
     {
       return 1./(a*a + b*b + c*c - 2*a*b - 2*b*c - 2*c*a);
@@ -121,7 +122,7 @@ namespace mr
 
 
   template<>
-  class bb<MS> : public PoleMass
+  class bb<MS> : public BaseMass
   {
 
     long double mmb,mmt, mmH, mmW, mmZ, mu2;
@@ -159,7 +160,8 @@ namespace mr
     long double x11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
     long double x20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
-  
+
+  private:  
     std::complex<long double> det(const long double & a, const long double & b, const long double & c)
     {
       return 1./(a*a + b*b + c*c - 2*a*b - 2*b*c - 2*c*a);

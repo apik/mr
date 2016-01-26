@@ -14,24 +14,24 @@
 			     RunSMcouplings[pars_,oscale,L] returns a list {g1 -> ..., g2 -> ..., ..., scale -> oscale} of running parameters given as a  list pars, L-loop RGES are used";
 
 
-:Evaluate:  MW::usage  = "MW[gp,g,gs,yb,yt,lam,m,scale] returns pole W-boson mass MW given  MSbar parameters at specified scale at 2-loop level"
-:Evaluate:  MZ::usage  = "MZ[gp,g,gs,yb,yt,lam,m,scale] returns pole Z-boson mass MZ given  MSbar parameters at specified scale at 2-loop level"
-:Evaluate:  MH::usage  = "MH[gp,g,gs,yb,yt,lam,m,scale] returns pole H-boson mass MH given  MSbar parameters at specified scale at 2-loop level"
-:Evaluate:  MB::usage  = "MB[gp,g,gs,yb,yt,lam,m,scale] returns pole b-quark mass MB given  MSbar parameters at specified scale at 2-loop level"
-:Evaluate:  MT::usage  = "MT[gp,g,gs,yb,yt,lam,m,scale] returns pole t-quark mass MT given  MSbar parameters at specified scale at 2-loop level + 3-loop QCD"
-:Evaluate:  GF::usage  = "GF[gp,g,gs,yb,yt,lam,m,scale] returns Fermi constant GF given  MSbar parameters at specified scale at 2-loop level"
+:Evaluate:  MW::usage  = "MW[g1,g2,gs,yb,yt,lam,m,scale] returns pole W-boson mass MW given  MSbar parameters at specified scale at 2-loop level"
+:Evaluate:  MZ::usage  = "MZ[g1,g2,gs,yb,yt,lam,m,scale] returns pole Z-boson mass MZ given  MSbar parameters at specified scale at 2-loop level"
+:Evaluate:  MH::usage  = "MH[g1,g2,gs,yb,yt,lam,m,scale] returns pole H-boson mass MH given  MSbar parameters at specified scale at 2-loop level"
+:Evaluate:  MB::usage  = "MB[g1,g2,gs,yb,yt,lam,m,scale] returns pole b-quark mass MB given  MSbar parameters at specified scale at 2-loop level"
+:Evaluate:  MT::usage  = "MT[g1,g2,gs,yb,yt,lam,m,scale] returns pole t-quark mass MT given  MSbar parameters at specified scale at 2-loop level + 3-loop QCD"
+:Evaluate:  GF::usage  = "GF[g1,g2,gs,yb,yt,lam,m,scale] returns Fermi constant GF given  MSbar parameters at specified scale at 2-loop level"
 
 
-:Evaluate:  XMMW::usage  = "XMMW[gp,g,gs,yb,yt,lam,m,scale] returns contributions to the pole W-boson mass MW^2 given  MSbar parameters at specified scale"
-:Evaluate:  XMMZ::usage  = "XMMZ[gp,g,gs,yb,yt,lam,m,scale] returns contributions to the pole Z-boson mass MZ^2 given  MSbar parameters at specified scale"
-:Evaluate:  XMMH::usage  = "XMMH[gp,g,gs,yb,yt,lam,m,scale] returns contributions to the pole H-boson mass MH^2 given  MSbar parameters at specified scale"
-:Evaluate:  XdRbar::usage  = "XdRbar[gp,g,gs,yb,yt,lam,m,scale] returns contributions to the Fermi constant GF - running vev relation given  MSbar parameters at specified scale"
+:Evaluate:  XMMW::usage  = "XMMW[g1,g2,gs,yb,yt,lam,m,scale] returns contributions to the pole W-boson mass MW^2 given  MSbar parameters at specified scale"
+:Evaluate:  XMMZ::usage  = "XMMZ[g1,g2,gs,yb,yt,lam,m,scale] returns contributions to the pole Z-boson mass MZ^2 given  MSbar parameters at specified scale"
+:Evaluate:  XMMH::usage  = "XMMH[g1,g2,gs,yb,yt,lam,m,scale] returns contributions to the pole H-boson mass MH^2 given  MSbar parameters at specified scale"
+:Evaluate:  XdRbar::usage  = "XdRbar[g1,g2,gs,yb,yt,lam,m,scale] returns contributions to the Fermi constant GF - running vev relation given  MSbar parameters at specified scale"
 
-:Evaluate:  XMT::usage  = "XMT[gp,g,gs,yb,yt,lam,m,scale] returns electroweak contributions to the pole top quark mass MT given  MSbar parameters at specified scale"
-:Evaluate:  XMTQCD::usage  = "XMT[gp,g,gs,yb,yt,lam,m,scale] returns pure QCD contributions to the pole top quark mass MT given  MSbar parameters at specified scale"
+:Evaluate:  XMT::usage  = "XMT[g1,g2,gs,yb,yt,lam,m,scale] returns electroweak contributions to the pole top quark mass MT given  MSbar parameters at specified scale"
+:Evaluate:  XMTQCD::usage  = "XMT[g1,g2,gs,yb,yt,lam,m,scale] returns pure QCD contributions to the pole top quark mass MT given  MSbar parameters at specified scale"
 
-:Evaluate:  XMB::usage  = "XMB[gp,g,gs,yb,yt,lam,m,scale] returns electroweak contributions to the pole top quark mass MB given  MSbar parameters at specified scale"
-:Evaluate:  XMBQCD::usage  = "XMB[gp,g,gs,yb,yt,lam,m,scale] returns pure QCD contributions to the pole top quark mass MB given  MSbar parameters at specified scale"
+:Evaluate:  XMB::usage  = "XMB[g1,g2,gs,yb,yt,lam,m,scale] returns electroweak contributions to the pole bottom quark mass MB given  MSbar parameters at specified scale"
+:Evaluate:  XMBQCD::usage  = "XMB[g1,g2,gs,yb,yt,lam,m,scale] returns pure QCD contributions to the pole bottom quark mass MB given  MSbar parameters at specified scale"
 
 
 :Evaluate:  Xb::usage  = "Xb[Mb,MW,MZ,MH,Mt,scale,nL=2,nH=1]  Input is in terms of pole masses and matching scale, nL and nH are number of light and heavy quark genrations "
@@ -94,7 +94,7 @@
 
 :Evaluate:  daGF::usage  = "daGF[a,b] represents a coefficient of aEW^a * aQCD^b in the relation between the running electromagnetic alpha and Fermi constant GF. Note that aEW should be again expressed in terms of Fermi constant"
 
-:Evaluate:   g1::usage  = "running U(1) coupling"
+:Evaluate:   g1::usage  = "running U(1) coupling, g1=Sqrt[5/3] gp"
 :Evaluate:   g2::usage  = "running SU(2) coupling"
 :Evaluate:   gs::usage  = "running SU(3) strong coupling"
 :Evaluate:   yt::usage  = "running top Yukawa coupling"
@@ -269,11 +269,11 @@
 						       MIXED[1,1]
 						     }};
 
-:Evaluate:  MW[G1_?NumericQ,G2_?NumericQ,GS__?NumericQ,YB_?NumericQ,YT_?NumericQ,LAM_?NumericQ,M_?NumericQ,SC_?NumericQ,OptionsPattern[]] := Block[{lal,las,vev,lc,aEW,aQCD,mW,res, 
+:Evaluate:  MW[G1_?NumericQ,G2_?NumericQ,GS__?NumericQ,YB_?NumericQ,YT_?NumericQ,LAM_?NumericQ,M_?NumericQ,SC_?NumericQ,OptionsPattern[]] := Block[{lal,las,vev,lc,aEW,aQCD,mW,res,Gp=Sqrt[3/5]G1,  
 				cr = Map[(#->xMMW[Sequence @@ # ]) &, OptionValue["IncludedCorrections"]],
 				pars = {G1,G2,GS,YB,YT,LAM,M,SC}}, (* loop corrections *)	lc = XMMW[ Sequence @@ pars];
 				vev = Sqrt[M^2/LAM/2]; mW = G2 * vev/2.0;
-				{aEW, aQCD} = {G1^2*G2^2/(G1^2 + G2^2), GS^2}/(16 Pi^2);
+				{aEW, aQCD} = {Gp^2*G2^2/(Gp^2 + G2^2), GS^2}/(16 Pi^2);
 				res = mW * Sqrt[1 + FromCoefficientRules[cr, {lal,las}]] /. lc  /. {lal->aEW, las -> aQCD};
 				Return[ res ]
 			];	
@@ -291,12 +291,12 @@
 						     }};
 
 
-:Evaluate:  MZ[G1_?NumericQ,G2_?NumericQ,GS__?NumericQ,YB_?NumericQ,YT_?NumericQ,LAM_?NumericQ,M_?NumericQ,SC_?NumericQ, OptionsPattern[]] := Block[{lal,las,vev,lc,aEW,aQCD,mZ, res,
+:Evaluate:  MZ[G1_?NumericQ,G2_?NumericQ,GS__?NumericQ,YB_?NumericQ,YT_?NumericQ,LAM_?NumericQ,M_?NumericQ,SC_?NumericQ, OptionsPattern[]] := Block[{lal,las,vev,lc,aEW,aQCD,mZ, res,Gp=Sqrt[3/5]G1, 
 			cr = Map[(#->xMMZ[Sequence @@ # ]) &, OptionValue["IncludedCorrections"]],
 			pars = {G1,G2,GS,YB,YT,LAM,M,SC} },
 			(* loop corrections *)	lc = XMMZ[ Sequence @@ pars];
-			vev = Sqrt[M^2/LAM/2]; mZ = Sqrt[G1^2 + G2^2] * vev/2.0;
-			{aEW, aQCD} = {G1^2*G2^2/(G1^2 + G2^2), GS^2}/(16 Pi^2);
+			vev = Sqrt[M^2/LAM/2]; mZ = Sqrt[Gp^2 + G2^2] * vev/2.0;
+			{aEW, aQCD} = {Gp^2*G2^2/(Gp^2 + G2^2), GS^2}/(16 Pi^2);
 			res = mZ * Sqrt[1 + FromCoefficientRules[cr, {lal,las}]] /. lc  /. {lal->aEW, las -> aQCD};
 			Return[res]]	
 
@@ -313,11 +313,11 @@
 						       MIXED[1,1]
 						     }};
 
-:Evaluate:  MH[G1_?NumericQ,G2_?NumericQ,GS__?NumericQ,YB_?NumericQ,YT_?NumericQ,LAM_?NumericQ,M_?NumericQ,SC_?NumericQ, OptionsPattern[]] := Block[{lal,las,vev,lc,aEW,aQCD,res, 
+:Evaluate:  MH[G1_?NumericQ,G2_?NumericQ,GS__?NumericQ,YB_?NumericQ,YT_?NumericQ,LAM_?NumericQ,M_?NumericQ,SC_?NumericQ, OptionsPattern[]] := Block[{lal,las,vev,lc,aEW,aQCD,res,Gp=Sqrt[3/5]G1, 
 			cr = Map[(#->xMMH[Sequence @@ # ]) &, OptionValue["IncludedCorrections"]],
 			pars = {G1,G2,GS,YB,YT,LAM,M,SC} },
 			(* loop corrections *)	lc = XMMH[ Sequence @@ pars];
-			{aEW, aQCD} = {G1^2*G2^2/(G1^2 + G2^2), GS^2}/(16 Pi^2);
+			{aEW, aQCD} = {Gp^2*G2^2/(Gp^2 + G2^2), GS^2}/(16 Pi^2);
 			res = M * Sqrt[1 + FromCoefficientRules[cr, {lal,las}]] /. lc  /. {lal->aEW, las -> aQCD};
 			Return[res]]	
 
@@ -337,11 +337,11 @@
 						       MIXED[1,1]
 						     }};
 
-:Evaluate:  MT[G1_?NumericQ,G2_?NumericQ,GS__?NumericQ,YB_?NumericQ,YT_?NumericQ,LAM_?NumericQ,M_?NumericQ,SC_?NumericQ, OptionsPattern[]] := Block[{lal,las,vev,lc,aEW,aQCD,mt,res, 
+:Evaluate:  MT[G1_?NumericQ,G2_?NumericQ,GS__?NumericQ,YB_?NumericQ,YT_?NumericQ,LAM_?NumericQ,M_?NumericQ,SC_?NumericQ, OptionsPattern[]] := Block[{lal,las,vev,lc,aEW,aQCD,mt,res,Gp=Sqrt[3/5]G1, 
 			cr = Map[(#->xMT[Sequence @@ # ]) &, OptionValue["IncludedCorrections"]],
 			pars = {G1,G2,GS,YB,YT,LAM,M,SC} },
 			(* loop corrections *)	lc = Join[XMT[ Sequence @@ pars], XMTQCD[ Sequence @@ pars]];
-			{aEW, aQCD} = {G1^2*G2^2/(G1^2 + G2^2), GS^2}/(16 Pi^2);
+			{aEW, aQCD} = {Gp^2*G2^2/(Gp^2 + G2^2), GS^2}/(16 Pi^2);
 			vev = Sqrt[M^2/LAM/2]; mt = YT * vev / Sqrt[2];
 			res = mt * (1 + FromCoefficientRules[cr, {lal,las}]) /. lc  /. {lal->aEW, las -> aQCD};
 			Return[ res ];
@@ -361,11 +361,11 @@
 						       MIXED[1,1]
 						     }};
 
-:Evaluate:  MB[G1_?NumericQ,G2_?NumericQ,GS__?NumericQ,YB_?NumericQ,YT_?NumericQ,LAM_?NumericQ,M_?NumericQ,SC_?NumericQ, OptionsPattern[]] := Block[{lal,las,vev,lc,aEW,aQCD,mt,res, 
+:Evaluate:  MB[G1_?NumericQ,G2_?NumericQ,GS__?NumericQ,YB_?NumericQ,YT_?NumericQ,LAM_?NumericQ,M_?NumericQ,SC_?NumericQ, OptionsPattern[]] := Block[{lal,las,vev,lc,aEW,aQCD,mt,res,Gp=Sqrt[3/5]G1,  
 			cr = Map[(#->xMB[Sequence @@ # ]) &, OptionValue["IncludedCorrections"]],
 			pars = {G1,G2,GS,YB,YT,LAM,M,SC} },
 			(* loop corrections *)	lc = Join[XMB[ Sequence @@ pars], XMBQCD[ Sequence @@ pars]];
-			{aEW, aQCD} = {G1^2*G2^2/(G1^2 + G2^2), GS^2}/(16 Pi^2);
+			{aEW, aQCD} = {Gp^2*G2^2/(Gp^2 + G2^2), GS^2}/(16 Pi^2);
 			vev = Sqrt[M^2/LAM/2]; mb = YB * vev / Sqrt[2];
 			res = mb * (1 + FromCoefficientRules[cr, {lal,las}]) /. lc  /. {lal->aEW, las -> aQCD};
 			Return[ res ];
@@ -382,10 +382,10 @@
 						       MIXED[1,1]
 						     }};
 
-:Evaluate:  GF[G1_?NumericQ,G2_?NumericQ,GS__?NumericQ,YB_?NumericQ,YT_?NumericQ,LAM_?NumericQ,M_?NumericQ,SC_?NumericQ, OptionsPattern[]] := Block[{res,lal,las,vv,lc,aEW,aQCD,gf, 
+:Evaluate:  GF[G1_?NumericQ,G2_?NumericQ,GS__?NumericQ,YB_?NumericQ,YT_?NumericQ,LAM_?NumericQ,M_?NumericQ,SC_?NumericQ, OptionsPattern[]] := Block[{res,lal,las,vv,lc,aEW,aQCD,gf,Gp=Sqrt[3/5]G1,  
 			cr = Map[(#->xdRbar[Sequence @@ # ]) &, OptionValue["IncludedCorrections"]], pars = {G1,G2,GS,YB,YT,LAM,M,SC} },
 			(* loop corrections *)	lc = XdRbar[ Sequence @@ pars];
-			{aEW, aQCD} = {G1^2*G2^2/(G1^2 + G2^2), GS^2}/(16 Pi^2);
+			{aEW, aQCD} = {Gp^2*G2^2/(Gp^2 + G2^2), GS^2}/(16 Pi^2);
 			vv = M^2/LAM/2; gf = 1/Sqrt[2]/vv; 
 			res = gf * (1 + FromCoefficientRules[cr, {lal,las}])  /. lc /. {lal->aEW, las -> aQCD}; 
 			Return[res];
@@ -420,7 +420,7 @@
 // C++ part
 :Begin:
 :Function: XMMW
-:Pattern: XMMW[gp_?NumericQ,g_?NumericQ,gs_?NumericQ,yb_?NumericQ,yt_?NumericQ,lam_?NumericQ,m_?NumericQ,scale_?NumericQ]
+:Pattern: XMMW[g1_?NumericQ,g2_?NumericQ,gs_?NumericQ,yb_?NumericQ,yt_?NumericQ,lam_?NumericQ,m_?NumericQ,scale_?NumericQ]
 :Arguments: {N[gp],N[g],N[gs],N[yb],N[yt],N[lam],N[m],N[scale]}
 :ArgumentTypes: {Real128,Real128,Real128,Real128,Real128,Real128,Real128,Real128}
 :ReturnType: Manual

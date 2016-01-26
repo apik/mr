@@ -29,7 +29,9 @@ namespace mr
   const long double Zeta3 = 1.20205690315959428539973816151144999076498629234049888179227155534L;
   const long double Zeta4 = (Pi*Pi*Pi*Pi)/90.;
   const long double Zeta5 = 1.03692775514336992633136548645703416805708091950191281197419267790L;
-  
+  const long double Zeta6 = (Pi*Pi*Pi*Pi*Pi*Pi)/945.;
+  const long double Zeta7 = 1.00834927738192282683979754984979675959986356056523870641728313657L;
+
   // a4 = Li[4,1/2]
   const long double a4    = 0.5174790616738993863307581618988629456223774751413792582443193479770L;
   // a5 = Li[5,1/2]
@@ -45,7 +47,7 @@ namespace mr
   // For easy enumeration through the returned couplings vector
   class couplings {
   public:
-    enum { g1, g2, gs, yt, yb, ytau, lam, mu0, vev };
+    enum { g1, g2, gs, yt, yb, ytau, lam, mphi, vev };
   };
 
   

@@ -19,10 +19,10 @@ int main (int argc, char *argv[])
       AlphaS as(oi);
       
       // Set of all running parameters at scale Mt
-      P2MS pMSmt(oi,pdg2014::Gf, as(oi.Mt()), oi.Mt(), order::all);
+      P2MS<AlphaGF> pMSmt(oi,pdg2014::Gf, as(oi.Mt()), oi.Mt(), order::all);
 
       // Set of all running parameters at scale MZ
-      P2MS pMSmZ(oi,pdg2014::Gf, as(oi.MZ()), oi.MZ(), order::all);
+      P2MS<AlphaGF> pMSmZ(oi,pdg2014::Gf, as(oi.MZ()), oi.MZ(), order::all);
 
       
       // Input at mu=MZ for running as in [hep-ph]1208.3357
@@ -49,7 +49,7 @@ int main (int argc, char *argv[])
                 << "y_t = " << sqrt(pMSmt.at())*4*Pi << std::endl
                 << "y_b = " << sqrt(pMSmt.ab())*4*Pi << std::endl
                 << "lambda   = " << pMSmt.alam()*pow(4*Pi,2) << std::endl
-                << "mu0 = " << pMSmt.mu0() << std::endl;
+                << "mphi = " << pMSmt.mphi() << std::endl;
 
       
     }

@@ -93,7 +93,7 @@ namespace mr
   };
 
   template<>
-  class ZZ<MS> : public PoleMass
+  class ZZ<MS> : public BaseMass
   {
 
     long double mmb, mmt, mmH, mmW, mmZ, mu2;

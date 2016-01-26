@@ -8,7 +8,7 @@ AM_INIT_AUTOMAKE([foreign subdir-objects])
 AC_OPENMP()
 
 AC_CONFIG_HEADERS([config.h])
-: ${CXXFLAGS="-O0"}
+dnl : ${CXXFLAGS="-O0"}
 AC_PROG_CXX
 AC_PROG_CC
 
