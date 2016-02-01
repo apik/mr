@@ -98,24 +98,6 @@ SMCouplings  v  =  avP2MS(pow(10,2*19));
 std::cout  << sqrt(v[couplings::yt])*4.*Pi << std::endl;
 {% endhighlight %}
 
-Now it is easy to find critical values for top quark mass from condition when lambda goes to zero at fixed scale:
-{%highlight c++ %}
-// Critical Top mass for lambda(Mpl)=0
-std::cout << critMt_scaleNotFixed(oi, pdg2014::Mpl) << std::endl;
-{%endhighlight %}
-
-Or more complicated one when condition when lambda goes to zero with its beta-function
-simultaneously:
-{%highlight c++ %}
-// Initial values for Mt and scale 
-std::pair<long double,long double> metaStable_Stable(oi.Mt(), pdg2014::Mpl);
-metaStable_Stable = critMt_scaleNotFixed<Mt_Stability>(oi, metaStable_Stable.second, pdg2014::asMZ);
-// Critical top mass
-std::cout << metaStable_Stable.first << std::endl;
-// lambda and beta lambda goes to zero at scale 
-std::cout << metaStable_Stable.second << std::endl;
-{%endhighlight %}
-
 * * * * *
 
 <A NAME="refs"></A>
