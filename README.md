@@ -55,7 +55,10 @@ of tests. Running
 in `tests` directory prepare results of numerous tests.
 
 * * * * *
+### File structure
 
+
+* * * * *
 ## References
 
 ### SM running
