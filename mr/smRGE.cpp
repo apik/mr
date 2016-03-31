@@ -147,10 +147,36 @@ namespace mr
     add(be3, pocoa3, 1, 0, 3, 0, 0, 0, 0, (77/45.) * (NG));
     add(be3, pocoa3, 1, 1, 2, 0, 0, 0, 0, (-1/40.) * (NG));
     add(be3, pocoa3, 2, 0, 2, 0, 0, 0, 0, (-13/120.) * (NG) + (-121/270.) * (pow(NG,2)));
-    // 4-loop QCD correction
+
+    // 4-loop pure QCD correction
     add(be3, pocoa3, 0, 0, 5, 0, 0, 0, 0,
         149753./6. + (8744.*pow(NG,3))/729. + NG*(-1078361./81. - (13016.*Zeta3)/27.) +
         3564.*Zeta3 + pow(NG,2)*(100130./81. + (25888.*Zeta3)/81.));
+    
+    // 4-loop QCD EW corrections 
+    add(be3, pocoa3, 0, 0, 4, 1, 0, 0, 0, 
+        9959./9. - 272.*Zeta3- 3250./27.*NG);
+
+    // [Bednyakov,Pikelner]
+    add(be3, pocoa3, 0, 0, 3, 2, 0, 0, 0, 
+        -1271./3. + 104.*Zeta3);
+
+    // [Zoller]
+    // add(be3, pocoa3, 0, 0, 3, 2, 0, 0, 0, 
+    //     -1273./3. + 112.*Zeta3);
+
+    add(be3, pocoa3, 0, 0, 2, 3, 0, 0, 0, 423./4. + 6.*Zeta3);
+    add(be3, pocoa3, 0, 0, 2, 2, 0, 0, 1,  30.);
+    add(be3, pocoa3, 0, 0, 2, 1, 0, 0, 2, -36.);
+
+    // 5-loop pure QCD correction, you can repace zeroes with numbers if they become available
+    add(be3, pocoa3, 0, 0, 6, 0, 0, 0, 0,
+        0.*pow(NG,4) +
+        0.*pow(NG,3) +
+        0.*pow(NG,2) +
+        0.*pow(NG,1) +
+        0.*pow(NG,0));
+    
     // * at  
     add(be4, pocoa4, 0, 0, 0, 1, 0, 0, 2, 6);
     add(be4, pocoa4, 0, 0, 0, 1, 0, 0, 3, -36);
