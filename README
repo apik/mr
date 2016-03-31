@@ -31,6 +31,10 @@ or for prepared package
 
     $ ./configure --with-mcc-path=/Applications/Mathematica.app/SystemFiles/Links/MathLink/DeveloperKit/MacOSX-x86-64/CompilerAdditions
 
+    If you use Mathematica 10 on Linux use additional option --enable-math10
+
+    $ ./configure --enable-math10 --with-mcc-path=/opt/mathematica/10.0/SystemFiles/Links/MathLink/DeveloperKit/Linux-x86-64/CompilerAdditions
+
 After successfull compilation 'libmr.a' library will be prepared in directory 'mr/' and after successfull installation all header files will be placed to '$PREFIX/include' and library to '$PREFIX/lib'. Prefix may be set at coonfigure step with './configure --prefix=<PATH>'.
 
 Usage:
