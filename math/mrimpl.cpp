@@ -811,6 +811,75 @@ void XtQCD(long double mb, long double mW, long double mZ, long double mH, long 
 
 }
 
+
+// P2MS interface
+void ConstantsFromPoleMasses(long double Mb, long double MW, long double MZ, long double MH, long double Mt, long double mu, int ordEW, int ordMixed, int ordQCD) 
+{
+  OSinput oi(Mb, MW, MZ, MH, Mt);
+  
+  AlphaS as(oi);
+
+  unsigned calc_ord = 0;
+  if(ordEW >= 1)
+    calc_ord |= order::x10;
+  if(ordEW >= 2)
+    calc_ord |= order::x20;
+
+  if(ordMixed >= 2)
+    calc_ord |= order::x11;
+
+  if(ordQCD >= 1)
+    calc_ord |= order::x01;
+  if(ordQCD >= 2)
+    calc_ord |= order::x02;
+  if(ordQCD >= 3)
+    calc_ord |= order::x03;
+  if(ordQCD >= 4)
+    calc_ord |= order::x04;
+
+  
+  P2MS<AlphaGF> pMS(oi,pdg2014::Gf, as(mu), mu, calc_ord);
+
+  bb<OS> bbm = get_bb(oi, pow(mu,2));
+
+  MLPutFunction(stdlink, "List", 7);
+
+  // MLPutFunction(stdlink, "List", 3);
+  // MLPutInteger(stdlink, ordEW);
+  // MLPutInteger(stdlink, ordMixed);
+  // MLPutInteger(stdlink, ordQCD);
+
+  MLPutFunction(stdlink, "Rule", 2);
+  MLPutSymbol(stdlink, "a10");
+  MLPutReal128(stdlink, pMS.a1());
+
+  MLPutFunction(stdlink, "Rule", 2);
+  MLPutSymbol(stdlink, "a20");
+  MLPutReal128(stdlink, pMS.a2());
+
+  MLPutFunction(stdlink, "Rule", 2);
+  MLPutSymbol(stdlink, "as0");
+  MLPutReal128(stdlink, pMS.as());
+
+  MLPutFunction(stdlink, "Rule", 2);
+  MLPutSymbol(stdlink, "at0");
+  MLPutReal128(stdlink, pMS.at());
+
+  MLPutFunction(stdlink, "Rule", 2);
+  MLPutSymbol(stdlink, "ab0");
+  MLPutReal128(stdlink, pMS.ab());
+
+  MLPutFunction(stdlink, "Rule", 2);
+  MLPutSymbol(stdlink, "alam0");
+  MLPutReal128(stdlink, pMS.alam());
+
+  MLPutFunction(stdlink, "Rule", 2);
+  MLPutSymbol(stdlink, "mphi0");
+  MLPutReal128(stdlink, pMS.mphi());
+
+}
+
+
 int main(int argc, char* argv[]) 
 {
   return MLMain(argc, argv);
