@@ -1,4 +1,4 @@
-AC_INIT([Standard Model 3-loop running and 2-loop matching], [1.01], [pikelner@theor.jinr.ru],
+AC_INIT([Standard Model 3-loop running and 2-loop matching], [1.1], [pikelner@theor.jinr.ru],
              [mr], [http://apik.github.io/mr/])
 AC_PREREQ([2.59])
 AC_CONFIG_MACRO_DIR([m4])
@@ -8,7 +8,7 @@ AM_INIT_AUTOMAKE([foreign subdir-objects])
 AC_OPENMP()
 
 AC_CONFIG_HEADERS([config.h])
-: ${CXXFLAGS="-O0"}
+dnl : ${CXXFLAGS="-O0"}
 AC_PROG_CXX
 AC_PROG_CC
 
