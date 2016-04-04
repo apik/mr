@@ -11,6 +11,6 @@ It will produce something like:
    1 + 185.3545315192623037 aEW[173] - 19207.76644304067410 aEW[173]  + 563.188663413438646 aEW[173] aQCD[173]
 
 For examples on how to apply mathematica interface see examples in notebook 'mr-usage.nb' 
-available from https://github.com/apik/mr/releases/download/1.2/mr-usage.nb
+available from https://github.com/apik/mr/releases/download/v1.2.1/mr-usage.nb
 
 RGE equations needed for couplings evolution placed in file 'rge.m'
