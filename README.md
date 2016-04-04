@@ -1,5 +1,5 @@
-# Solo 
+# MR
 
-[Solo](http://chibicode.github.io/solo) is a Jekyll theme that supports **single-page websites** only, but supports them well. Yes, it's responsive.
+Web page for MR package
 
-### [Demo & Documentation &rarr;](http://chibicode.github.io/solo)
+Base on [Solo](http://chibicode.github.io/solo) 

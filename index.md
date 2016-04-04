@@ -63,9 +63,9 @@ $ make && make install
 Or downloading tarball and extracting:
 
 ~~~
-$ curl -OL https://github.com/apik/mr/releases/download/v1.0/mr-1.0.tar.gz
-$ tar zxf mr-1.0.tar.gz
-$ cd mr-1.0
+$ curl -OL https://github.com/apik/mr/releases/download/v1.2.1/mr-1.2.1.tar.gz
+$ tar zxf mr-1.2.1.tar.gz
+$ cd mr-1.2.1
 $ ./configure
 $ make && make install
 ~~~
