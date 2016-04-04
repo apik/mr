@@ -60,7 +60,7 @@ libmr_a_SOURCES =    $(MAINSRC) $(MAINHPP) $(ALPHAGF) $(RUNSRC) $(BBMS) $(WWMS) 
 
 libmr_a_CPPFLAGS = $(MR_CFLAGS) -I$(top_srcdir)/tsil-1.3 $(OPENMP_CFLAGS)
 
-EXTRA_DIST = aGF/README.md dr/README.md gl/README.md mMSmOS/README.md mOSmMS/README.md yu/README.md yugl/README.md
+EXTRA_DIST = aGF/README dr/README gl/README mMSmOS/README mOSmMS/README yu/README yugl/README
 
 pkginclude_HEADERS = \
 HH.hpp \
