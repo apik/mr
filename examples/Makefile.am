@@ -21,4 +21,4 @@ ex3Pole2msRun_SOURCES =  ex3Pole2msRun.cpp
 ex3Pole2msRun_CPPFLAGS = $(EXCPPFLAGS)
 ex3Pole2msRun_LDADD = $(EXLDDFLAGS)
 
-EXTRA_DIST = Readme.md
+EXTRA_DIST = README
