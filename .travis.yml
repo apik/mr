@@ -5,6 +5,7 @@ language: cpp
 branches:
   only:
     - develop
+    - master
 
 matrix:
   include:
@@ -13,8 +14,11 @@ matrix:
 
 script:
   - autoreconf -iv
-  - ./configure 
+  - mkdir build
+  - ./configure --prefix=$PWD/build 
   - make CFLAGS='-g -O0 -w' CXXFLAGS='-g -O0 -w'
+  - make install
+  - make dist
   - tests/testsuite
 
 notifications:
