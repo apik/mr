@@ -1,4 +1,4 @@
-AC_INIT([Standard Model 3-loop running and 2-loop matching], [1.3.0], [pikelner@theor.jinr.ru],
+AC_INIT([Standard Model 3-loop running and 2-loop matching], [1.3.1], [pikelner@theor.jinr.ru],
              [mr], [http://apik.github.io/mr/])
 AC_PREREQ([2.59])
 AC_CONFIG_MACRO_DIR([m4])
