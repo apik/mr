@@ -21,8 +21,8 @@ for git version
 
 or for prepared package
 
-    $ curl -OL https://github.com/apik/mr/releases/download/v1.01/mr-1.01.tar.gz
-    $ tar -zxf mr-1.01.tar.gz
+    $ curl -OL https://github.com/apik/mr/releases/download/v1.3.1/mr-1.3.1.tar.gz
+    $ tar -zxf mr-1.3.1.tar.gz
     $ cd mr-1.01
     $ ./configure
     $ make && make install
