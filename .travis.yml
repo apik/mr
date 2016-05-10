@@ -9,13 +9,13 @@ branches:
 matrix:
   include:
     - compiler: gcc
-    # - compiler: clang
+    # - compiler: clanggit 
 
 script:
   - autoreconf -iv
   - ./configure 
   - make CFLAGS='-g -O0 -w' CXXFLAGS='-g -O0 -w'
-  # - make check
+  - tests/testsuite
 
 notifications:
   email: false
