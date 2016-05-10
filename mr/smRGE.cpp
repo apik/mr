@@ -150,8 +150,8 @@ namespace mr
 
     // 4-loop pure QCD correction
     add(be3, pocoa3, 0, 0, 5, 0, 0, 0, 0,
-        149753./6. + (8744.*pow(NG,3))/729. + NG*(-1078361./81. - (13016.*Zeta3)/27.) +
-        3564.*Zeta3 + pow(NG,2)*(100130./81. + (25888.*Zeta3)/81.));
+        -(149753./6. + (8744.*pow(NG,3))/729. + NG*(-1078361./81. - (13016.*Zeta3)/27.) +
+          3564.*Zeta3 + pow(NG,2)*(100130./81. + (25888.*Zeta3)/81.)));
     
     // 4-loop QCD EW corrections 
     add(be3, pocoa3, 0, 0, 4, 1, 0, 0, 0, 
@@ -169,13 +169,13 @@ namespace mr
     add(be3, pocoa3, 0, 0, 2, 2, 0, 0, 1,  30.);
     add(be3, pocoa3, 0, 0, 2, 1, 0, 0, 2, -36.);
 
-    // 5-loop pure QCD correction, you can repace zeroes with numbers if they become available
+    // 5-loop pure QCD correction, Baikov,Chetyrkin,Kuhn LL2016
     add(be3, pocoa3, 0, 0, 6, 0, 0, 0, 0,
-        0.*pow(NG,4) +
-        0.*pow(NG,3) +
-        0.*pow(NG,2) +
-        0.*pow(NG,1) +
-        0.*pow(NG,0));
+        - (1205./2916. - 152./81.*Zeta3)*pow(2*NG,4)
+        - (-630559./5832. - 48722./243.*Zeta3 + 1618./27.*Zeta4 + 460./9.*Zeta5)*pow(2*NG,3)
+        - (25960913./1944. + 698531./81.*Zeta3 - 10526./9.*Zeta4 - 381760./81.*Zeta5)*pow(2*NG,2)
+        - (-336460813./1944. - 4811164./81.*Zeta3 + 33935./6.*Zeta4 + 1358995./27.*Zeta5)*pow(2*NG,1)
+        - (8157455./16. + 621885./2.*Zeta3 - 88209./2.*Zeta4 - 288090.*Zeta5)*pow(2*NG,0));
     
     // * at  
     add(be4, pocoa4, 0, 0, 0, 1, 0, 0, 2, 6);
