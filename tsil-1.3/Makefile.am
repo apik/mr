@@ -28,7 +28,7 @@ lib_LIBRARIES = libtsil.a
 # GNU C Compiler:
 # ===============
  CC		= gcc
- TSIL_OPT	= -O3 -funroll-loops 
+ TSIL_OPT	= -funroll-loops 
 #
 ################### INSTALLATION DIRECTORIES #######################
 #
