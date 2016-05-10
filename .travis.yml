@@ -1,0 +1,21 @@
+sudo: false
+language: cpp
+
+# whitelist
+branches:
+  only:
+    - develop
+
+matrix:
+  include:
+    - compiler: gcc
+    - compiler: clang
+
+script:
+  - autoreconf -iv
+  - ./configure 
+  - make
+  - make check
+
+notifications:
+  email: false
