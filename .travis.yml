@@ -1,0 +1,25 @@
+sudo: false
+language: cpp
+
+# whitelist
+branches:
+  only:
+    - develop
+    - master
+
+matrix:
+  include:
+    - compiler: gcc
+    # - compiler: clanggit 
+
+script:
+  - autoreconf -iv
+  - mkdir build
+  - ./configure --prefix=$PWD/build 
+  - make CFLAGS='-g -O0 -w' CXXFLAGS='-g -O0 -w'
+  - make install
+  - make dist
+  - tests/testsuite
+
+notifications:
+  email: false

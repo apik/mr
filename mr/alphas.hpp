@@ -63,11 +63,21 @@ namespace mr
          + (50065./162. + 6472./81.*Zeta3)*nf*nf
          + 1093./729.*nf*nf*nf) : 0;
     }
+    double b4()
+    {
+      return loops > 4 ? 
+        (1205./2916. - 152./81.*Zeta3)*pow(nf,4) +
+        (-630559./5832. - 48722./243.*Zeta3 + 1618./27.*Zeta4 + 460./9.*Zeta5)*pow(nf,3) + 
+        (25960913./1944. + 698531./81.*Zeta3 - 10526./9.*Zeta4 - 381760./81.*Zeta5)*pow(nf,2) +
+        (-336460813./1944. - 4811164./81.*Zeta3 + 33935./6.*Zeta4 + 1358995./27.*Zeta5)*pow(nf,1) +
+        (8157455./16. + 621885./2.*Zeta3 - 88209./2.*Zeta4 - 288090.*Zeta5)*pow(nf,0) : 0;
+    }
+
     void operator() (const SMCouplings &a, SMCouplings &dadt, const double t)
     {
       double minusC = MultiplyByMinus1 ? -1. : 1.;
       dadt[0] =  minusC         // We need -\\beta if evolve from t=0 to t < 0
-        *(-b0()*pow(a[0],2) - b1()*pow(a[0],3) - b2()*pow(a[0],4) - b3()*pow(a[0],5));
+        *(-b0()*pow(a[0],2) - b1()*pow(a[0],3) - b2()*pow(a[0],4) - b3()*pow(a[0],5) - b4()*pow(a[0],6));
     }
   };
 

@@ -1,5 +1,5 @@
 ##
-## Makefile.am for SM3r2m
+## Makefile.am for mr
 ##
 ## written by Andrey Pikelner
 ##
@@ -19,7 +19,7 @@ endif
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = mr.pc
 
-EXTRA_DIST = boost mr.pc.in
+EXTRA_DIST = boost mr.pc.in README.md
 DISTCLEANFILES = mr.pc
 
 $(pkgconfig_DATA): config.status

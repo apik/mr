@@ -104,7 +104,7 @@ namespace mr
 
 
   template<>
-  class WW<MS> : public PoleMass
+  class WW<MS> : public BaseMass
   {
 
     long double mmb, mmt, mmH, mmW, mmZ, mu2;

@@ -127,7 +127,7 @@ namespace mr
 
 
   template<>
-  class HH<MS> : public PoleMass
+  class HH<MS> : public BaseMass
   {
 
     long double mmb, mmt, mmH, mmW, mmZ, mu2;
@@ -181,12 +181,6 @@ namespace mr
     long double x20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
 
-    // Gaugeless limit
-    long double xgl10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
-  
-    long double xgl11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
-
-    long double xgl20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
   };
 
 } // namespace mr

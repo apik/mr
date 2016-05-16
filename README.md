@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/apik/mr.svg)](https://travis-ci.org/apik/mr)
+
 mr
 ==
 
@@ -15,21 +17,22 @@ for git version
     $ cd mr
     $ autoreconf -i
     $ ./configure
-    $ make
+    $ make && make install
 
 or for prepared package
 
-    $ curl -OL
-    $ tar -xf 
-    $ cd mr-*.*
+    $ curl -OL https://github.com/apik/mr/releases/download/v1.3.2/mr-1.3.2.tar.gz
+    $ tar -zxf mr-1.3.2.tar.gz
+    $ cd mr-1.01
     $ ./configure
-    $ make
+    $ make && make install
 
 To enable *Mathematica* interface configure **mr** with full path to
     directory containing both of **mcc** and **mprep** tools. For example 
 
     $ ./configure --with-mcc-path=/Applications/Mathematica.app/SystemFiles/Links/MathLink/DeveloperKit/MacOSX-x86-64/CompilerAdditions
 
+After successfull compilation `libmr` library will be prepared in directory `mr/` and after successfull installation all header files will be placed to `$PREFIX/include` and library to `$PREFIX/lib`. Prefix may be set at coonfigure step with `./configure --prefix=<PATH>`.
 
 ## Usage
 
@@ -55,7 +58,57 @@ of tests. Running
 in `tests` directory prepare results of numerous tests.
 
 * * * * *
+### Package structure
+```
+boost               - OdeInt library (part of boost)
+examples            - examples of library usage in C++ applications
+math                - Mathematica interface
+ |_ mrimpl.cpp      - mathlink functions implementation
+ |_ mr.m            - test file for Mathematica interface
+ |_ mr.tm           - mathlink definitions
+mr                  - mr library source files
+ |_ aGF/            - EW corrections to relation between Gf and aEM
+ |_ dr/             - EW corrections to delta-r
+ |_ gl/             - gaugeless limit for MS mass in terms of OS 
+ |_ mMSmOS          - MS masses in tems of OS masses
+ |_ mOSmMS/         - OS masses in tems of MS masses
+ |_ yu/             - EW corrections to couplings
+ |_ yugl/           - EW corrections to couplings in gaugless limit
+ |_ HH.cpp          - corrections to X_H and Y_H source
+ |_ HH.hpp          - corrections to X_H and Y_H header
+ |_ WW.cpp          - corrections to X_W and Y_W source
+ |_ WW.hpp          - corrections to X_W and Y_W source
+ |_ ZZ.cpp          - corrections to X_Z and Y_Z source
+ |_ ZZ.hpp          - corrections to X_Z and Y_Z source
+ |_ alphaGF.cpp     - running aEM from Gf and pole masses source 
+ |_ alphaGF.hpp     - running aEM from Gf and pole masses header
+ |_ alphas.cpp      - QCD coupling evolution and matching source 
+ |_ alphas.hpp      - QCD coupling evolution and matching header
+ |_ base.hpp        - base class for all EW corrections classes
+ |_ bb.cpp          - corrections to X_b and Y_b source
+ |_ bb.hpp          - corrections to X_b and Y_b source
+ |_ constants.hpp   - numerical constants and PDG input
+ |_ dr.cpp          - Corrections to delta-r source
+ |_ dr.hpp          - Corrections to delta-r header
+ |_ logger.hpp      - simple logging facility
+ |_ mOS2mMSQCD.cpp  - QCD corrections to relation between OS and MS masses
+ |_ mr.hpp          - main header to include in user progrm
+ |_ operators.hpp   - arithmetic operations with complex types
+ |_ p2ms.cpp        - extraction running couplings from OS input source
+ |_ p2ms.hpp        - extraction running couplings from OS input header
+ |_ smRGE.cpp       - SM beta functions and evolution source
+ |_ smRGE.hpp       - SM beta functions and evolution header
+ |_ sminput.hpp     - simple type for manipulation with input
+ |_ tdecl.hpp       - declaration of types used in library
+ |_ timer.hpp       - simple timer implementation
+ |_ tsil.cpp        - TSIL integral library interface source
+ |_ tsil.hpp        - TSIL integral library interface header
+ |_ tt.cpp          - Corrections to X_t and Y_t source
+ |_ tt.hpp          - Corrections to X_t and Y_t header
+tests               - tests for package consistency check
+```
 
+* * * * *
 ## References
 
 ### SM running

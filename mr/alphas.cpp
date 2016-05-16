@@ -40,7 +40,6 @@ namespace mr
     double lEnd = 2.*log(muEnd/muStart);
 
   
-    // std::cout << "End time: " << fabs(lEnd) << std::endl;
     BetaQCD beta4l5nf(loops, NF, lEnd < 0);
     
     double abs_err = 1E-6;

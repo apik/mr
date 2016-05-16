@@ -21,6 +21,7 @@
 #ifndef __SMINPUT_HPP__
 #define __SMINPUT_HPP__
 #include "constants.hpp"
+#include <stdexcept>
 
 namespace mr
 {
@@ -127,26 +128,30 @@ namespace mr
     }
 
     // Modification
-    void setMb(T mb)
+    OSinputTemplate<T>& setMb(T mb)
     {
       iMb = mb;
+      return *this;
     }
-    void setMW(T mW)
+    OSinputTemplate<T>& setMW(T mW)
     {
       iMW = mW;
+      return *this;
     }
-    void setMZ(T mZ)
+    OSinputTemplate<T>& setMZ(T mZ)
     {
       iMZ = mZ;
+      return *this;
     }
     OSinputTemplate<T>& setMH(T mH)
     {
       iMH = mH;
       return *this;
     }
-    void setMt(T mt)
+    OSinputTemplate<T>& setMt(T mt)
     {
       iMt = mt;
+      return *this;
     }
 
   };
@@ -168,14 +173,16 @@ namespace mr
     long double igp;
     // scale, usually coincide with pole masses
     long double scale;
+
+    bool onlyMasses;
   public:
     MSinput(long double mb_, long double mW_, long double mZ_, long double mH_, long double mt_) : 
-      imb(mb_), imW(mW_), imZ(mZ_), imH(mH_), imt(mt_)
+      imb(mb_), imW(mW_), imZ(mZ_), imH(mH_), imt(mt_), onlyMasses(true)
     {
     }
     // With vev
     MSinput(long double mb_, long double mW_, long double mZ_, long double mH_, long double mt_, long double v_, long double scale_) : 
-      imb(mb_), imW(mW_), imZ(mZ_), imH(mH_), imt(mt_), iv(v_), scale(scale_)
+      imb(mb_), imW(mW_), imZ(mZ_), imH(mH_), imt(mt_), iv(v_), scale(scale_), onlyMasses(false)
     {
     }
     bool operator < (const MSinput& b) const 
@@ -200,46 +207,31 @@ namespace mr
       return false;
     }
 
-    // Factory
+    // Factory to construct from running masses
     static MSinput fromMasses(long double mb, long double mW, long double mZ, long double mH, long double mt)
     {
       return MSinput(mb, mW, mZ, mH, mt);
     }
-    // static MSinput fromConsts(long double lam, 
-    //                           long double v, 
-    //                           long double yb, 
-    //                           long double yt, 
-    //                           long double g, // SU(2) 
-    //                           long double gp // U(1)
-    //                           )
-    // {
-    //   long double mb = v*yb/sqrt(2);
-    //   long double mW = v*g/2.;
-    //   long double mZ = sqrt(g*g+gp*gp)*v/2.;
-    //   long double mH = v*sqrt(2.*lam);
-    //   long double mt = v*yt/sqrt(2);
-    //   return MSinput(mb, mW, mZ, mH, mt, v);
-    // }
 
-  
-    static MSinput fromConsts(long double scale, // Input scale
-                              long double mu0,   //Higgs mass parameter
-                              //normalized as mu0=Mh at
-                              //tree level
-                              long double lam, 
-                              long double yb, 
-                              long double yt, 
-                              long double g,     // SU(2) 
-                              long double gp     // U(1)
-                              )
+    // Factory to construct from running couplings
+    static MSinput fromCouplings(long double g1,     // U(1)  g1 = sqrt(5/3)*gp
+                                 long double g2,     // SU(2) g2 = g
+                                 long double yb, 
+                                 long double yt, 
+                                 long double lam, 
+                                 long double mphi,  //Higgs mass parameter
+                                                    //normalized as mphi=Mh at
+                                                    //tree level
+                                 long double scale) // Input scale
+                                 
     {
-
-      long double vev = mu0/sqrt(2.*lam);
-    
+      
+      long double vev = mphi/sqrt(2.*lam);
+      
       long double mb = vev*yb/sqrt(2);
-      long double mW = vev*g/2.;
-      long double mZ = sqrt(g*g+gp*gp)*vev/2.;
-      long double mH = mu0;
+      long double mW = vev*g2/2.;
+      long double mZ = sqrt(g2*g2+g1*g1*3./5.)*vev/2.;
+      long double mH = mphi;
       long double mt = vev*yt/sqrt(2);
       return MSinput(mb, mW, mZ, mH, mt, vev, scale);
     }
@@ -247,20 +239,26 @@ namespace mr
     // Scale mu^2
     long double Q2() const
     {
-      return scale;
+      if(! onlyMasses)
+        return scale;
+      else
+        throw std::logic_error("ERROR: not availbale when constructed from masses");
     }
     long double vev() const
     {
-      return iv;
+      if(! onlyMasses)
+        return iv;
+      else
+        throw std::logic_error("ERROR: not availbale when constructed from masses");
     }
     // constants 
     long double g() const
     {
-      return 2.*imW/iv;
+      return 2.*imW/vev();
     }
     long double gp() const
     {
-      return 2.*sqrt(imZ*imZ-imW*imW)/iv;
+      return 2.*sqrt(imZ*imZ-imW*imW)/vev();
     }
     long double alpha() const
     {
@@ -329,26 +327,30 @@ namespace mr
     }
 
     // modification
-    void setmb(long double mb)
+    MSinput& setmb(long double mb)
     {
       imb = mb;
+      return *this;
     }
-    void setmW(long double mW)
+    MSinput& setmW(long double mW)
     {
       imW = mW;
+      return *this;
     }
-    void setmZ(long double mZ)
+    MSinput& setmZ(long double mZ)
     {
       imZ = mZ;
+      return *this;
     }
     MSinput& setmH(long double mH)
     {
       imH = mH;
       return *this;
     }
-    void setmt(long double mt)
+    MSinput& setmt(long double mt)
     {
       imt = mt;
+      return *this;
     }
 
   };

@@ -148,10 +148,10 @@ const alphaGF & get_aGF(const OSinput& oi, long double mu2)
 
 typedef std::vector<std::pair<size_t,size_t> > Vpow;
 
-void XMMW(long double gp, long double g, long double gs, long double yb, long double yt, long double lam, long double mu0, long double mu) 
+void XMMW(long double g1, long double g2, long double gs, long double yb, long double yt, long double lam, long double mu0, long double mu) 
 {
   long double mu2 = pow(mu,2);
-  MSinput mi = MSinput::fromConsts(mu2, mu0, lam, yb, yt, g, gp);
+  MSinput mi = MSinput::fromCouplings(g1, g2, yb, yt, lam, mu0, mu);
   
   WW<MS> WWm = get_WWbar(mi, mu2);
 
@@ -170,10 +170,10 @@ void XMMW(long double gp, long double g, long double gs, long double yb, long do
 	}
  }
 
-void XMMZ(long double gp, long double g, long double gs, long double yb, long double yt, long double lam, long double mu0, long double mu) 
+void XMMZ(long double g1, long double g2, long double gs, long double yb, long double yt, long double lam, long double mu0, long double mu) 
 {
   long double mu2 = pow(mu,2);
-  MSinput mi = MSinput::fromConsts(mu2, mu0, lam, yb, yt, g, gp);
+  MSinput mi = MSinput::fromCouplings(g1, g2, yb, yt, lam, mu0, mu);
   
   ZZ<MS> ZZm = get_ZZbar(mi, mu2);
 
@@ -191,10 +191,10 @@ void XMMZ(long double gp, long double g, long double gs, long double yb, long do
   		MLPutReal128(stdlink, ZZm.x(apow,aspow));
 	}
 }
-void XMMH(long double gp, long double g, long double gs, long double yb, long double yt, long double lam, long double mu0, long double mu) 
+void XMMH(long double g1, long double g2, long double gs, long double yb, long double yt, long double lam, long double mu0, long double mu) 
 {
   long double mu2 = pow(mu,2);
-  MSinput mi = MSinput::fromConsts(mu2, mu0, lam, yb, yt, g, gp);
+  MSinput mi = MSinput::fromCouplings(g1, g2, yb, yt, lam, mu0, mu);
   
   HH<MS> HHm = get_HHbar(mi, mu2);
 
@@ -214,10 +214,10 @@ void XMMH(long double gp, long double g, long double gs, long double yb, long do
 }
 
 
-void XdRbar(long double gp, long double g, long double gs, long double yb, long double yt, long double lam, long double mu0, long double mu) 
+void XdRbar(long double g1, long double g2, long double gs, long double yb, long double yt, long double lam, long double mu0, long double mu) 
 {
   long double mu2 = pow(mu,2);
-  MSinput mi = MSinput::fromConsts(mu2, mu0, lam, yb, yt, g, gp);
+  MSinput mi = MSinput::fromCouplings(g1, g2, yb, yt, lam, mu0, mu);
   
   dr<MS> drm = get_drbar(mi, mu2);
 
@@ -244,11 +244,11 @@ void XdRbar(long double gp, long double g, long double gs, long double yb, long 
 }
 
 
-void XMT(long double gp, long double g, long double gs, long double yb, long double yt, long double lam, long double mu0, long double mu) 
+void XMT(long double g1, long double g2, long double gs, long double yb, long double yt, long double lam, long double mu0, long double mu) 
 {
   long double mu2 = pow(mu,2);
 
-  MSinput mi = MSinput::fromConsts(mu2, mu0, lam, yb, yt, g, gp);
+  MSinput mi = MSinput::fromCouplings(g1, g2, yb, yt, lam, mu0, mu);
   
   tt<MS> ttm = get_ttbar(mi, mu2);
 
@@ -268,11 +268,11 @@ void XMT(long double gp, long double g, long double gs, long double yb, long dou
  }
 
 
-void XMTQCD(long double gp, long double g, long double gs, long double yb, long double yt, long double lam, long double mu0, long double mu) 
+void XMTQCD(long double g1, long double g2, long double gs, long double yb, long double yt, long double lam, long double mu0, long double mu) 
 {
   long double mu2 = pow(mu,2);
 
-  MSinput mi = MSinput::fromConsts(mu2, mu0, lam, yb, yt, g, gp);
+  MSinput mi = MSinput::fromCouplings(g1, g2, yb, yt, lam, mu0, mu);
   
   tt<MS> ttm = get_ttbar(mi, mu2);
 
@@ -290,11 +290,11 @@ void XMTQCD(long double gp, long double g, long double gs, long double yb, long 
 	}
  }
 
-void XMB(long double gp, long double g, long double gs, long double yb, long double yt, long double lam, long double mu0, long double mu) 
+void XMB(long double g1, long double g2, long double gs, long double yb, long double yt, long double lam, long double mu0, long double mu) 
 {
   long double mu2 = pow(mu,2);
 
-  MSinput mi = MSinput::fromConsts(mu2, mu0, lam, yb, yt, g, gp);
+  MSinput mi = MSinput::fromCouplings(g1, g2, yb, yt, lam, mu0, mu);
   
   bb<MS> bbm = get_bbbar(mi, mu2);
 
@@ -314,11 +314,11 @@ void XMB(long double gp, long double g, long double gs, long double yb, long dou
  }
 
 
-void XMBQCD(long double gp, long double g, long double gs, long double yb, long double yt, long double lam, long double mu0, long double mu) 
+void XMBQCD(long double g1, long double g2, long double gs, long double yb, long double yt, long double lam, long double mu0, long double mu) 
 {
   long double mu2 = pow(mu,2);
 
-  MSinput mi = MSinput::fromConsts(mu2, mu0, lam, yb, yt, g, gp);
+  MSinput mi = MSinput::fromCouplings(g1, g2, yb, yt, lam, mu0, mu);
   
   bb<MS> bbm = get_bbbar(mi, mu2);
 
@@ -359,11 +359,11 @@ void RunQCD(long double oscale, long double as0, long double iscale, int nL, int
 		
 }	
 
-void RunSM(long double gp, long double g, long double gs, long double yb, long double yt, long double lam, long double mu0, long double iscale, long double oscale) 
+void RunSM(long double g1, long double g2, long double gs, long double yb, long double yt, long double lam, long double mu0, long double iscale, long double oscale) 
 {
-      Couplings<3,3,3,3,3,3,3,3,3> runSM(
-                5./3.*pow(gp/4./Pi,2),
-                pow(g/4./Pi,2),
+      ParametersSM<3,3,3,3,3,3,3,3,3> runSM(
+                pow(g1/4./Pi,2),
+                pow(g2/4./Pi,2),
                 pow(gs/4./Pi,2),
                 pow(yt/4./Pi,2),
                 pow(yb/4./Pi,2), // yb?
@@ -377,8 +377,8 @@ void RunSM(long double gp, long double g, long double gs, long double yb, long d
 
       SMCouplings runCoupling = runSM(pow(oscale,2));
       MLPutFunction(stdlink, "List", 8);
-      MLPutReal128(stdlink, 4.*Pi*sqrt(3/5.*runCoupling[0])); //gp
-      MLPutReal128(stdlink, 4.*Pi*sqrt(runCoupling[1])); //g 
+      MLPutReal128(stdlink, 4.*Pi*sqrt(runCoupling[0])); //g1
+      MLPutReal128(stdlink, 4.*Pi*sqrt(runCoupling[1])); //g2 
       MLPutReal128(stdlink, 4.*Pi*sqrt(runCoupling[2])); //gs
       MLPutReal128(stdlink, 4.*Pi*sqrt(runCoupling[4])); //yb
       MLPutReal128(stdlink, 4.*Pi*sqrt(runCoupling[3])); //yt
@@ -388,11 +388,11 @@ void RunSM(long double gp, long double g, long double gs, long double yb, long d
 		
 }
 
-void RunSMwithBetas(long double gp, long double g, long double gs, long double yb, long double yt, long double lam, long double mu0, long double iscale, long double oscale) 
+void RunSMwithBetas(long double g1, long double g2, long double gs, long double yb, long double yt, long double lam, long double mu0, long double iscale, long double oscale) 
 {
-      Couplings<3,3,3,3,3,3,3,3,3> runSM(
-                5./3.*pow(gp/4./Pi,2),
-                pow(g/4./Pi,2),
+      ParametersSM<3,3,3,3,3,3,3,3,3> runSM(
+                pow(g1/4./Pi,2),
+                pow(g2/4./Pi,2),
                 pow(gs/4./Pi,2),
                 pow(yt/4./Pi,2),
                 pow(yb/4./Pi,2), // yb?
@@ -407,31 +407,31 @@ void RunSMwithBetas(long double gp, long double g, long double gs, long double y
       std::pair<SMCouplings, SMCouplings> runCouplingAndBeta = runSM.AandB(pow(oscale,2));
       MLPutFunction(stdlink, "List", 8);
       MLPutFunction(stdlink, "List", 2);
-      MLPutReal128(stdlink, 4.*Pi*sqrt(3/5.*runCouplingAndBeta.first[0])); //gp
-      MLPutReal128(stdlink, runCouplingAndBeta.second[0]); //gp
+      MLPutReal128(stdlink, 4.*Pi*sqrt(runCouplingAndBeta.first[0]));  //g1
+      MLPutReal128(stdlink, runCouplingAndBeta.second[0]);             //g1
       MLPutFunction(stdlink, "List", 2);
-      MLPutReal128(stdlink, 4.*Pi*sqrt(runCouplingAndBeta.first[1])); //g 
-      MLPutReal128(stdlink, runCouplingAndBeta.second[1]); //gp
+      MLPutReal128(stdlink, 4.*Pi*sqrt(runCouplingAndBeta.first[1]));  //g2 
+      MLPutReal128(stdlink, runCouplingAndBeta.second[1]);             //g2
       MLPutFunction(stdlink, "List", 2);
-      MLPutReal128(stdlink, 4.*Pi*sqrt(runCouplingAndBeta.first[2])); //gs
-      MLPutReal128(stdlink, runCouplingAndBeta.second[2]); //gp
+      MLPutReal128(stdlink, 4.*Pi*sqrt(runCouplingAndBeta.first[2]));  //gs
+      MLPutReal128(stdlink, runCouplingAndBeta.second[2]);             //gs
       MLPutFunction(stdlink, "List", 2);
-      MLPutReal128(stdlink, 4.*Pi*sqrt(runCouplingAndBeta.first[4])); //yb
-      MLPutReal128(stdlink, runCouplingAndBeta.second[4]); //gp
+      MLPutReal128(stdlink, 4.*Pi*sqrt(runCouplingAndBeta.first[4]));  //yb
+      MLPutReal128(stdlink, runCouplingAndBeta.second[4]);             //yb
       MLPutFunction(stdlink, "List", 2);
-      MLPutReal128(stdlink, 4.*Pi*sqrt(runCouplingAndBeta.first[3])); //yt
-      MLPutReal128(stdlink, runCouplingAndBeta.second[3]); //gp
+      MLPutReal128(stdlink, 4.*Pi*sqrt(runCouplingAndBeta.first[3]));  //yt
+      MLPutReal128(stdlink, runCouplingAndBeta.second[3]);             //yt
       MLPutFunction(stdlink, "List", 2);
       MLPutReal128(stdlink, pow(4.*Pi,2)*runCouplingAndBeta.first[6]); //lam
-      MLPutReal128(stdlink, runCouplingAndBeta.second[6]); //gp
+      MLPutReal128(stdlink, runCouplingAndBeta.second[6]);             //lam
       MLPutFunction(stdlink, "List", 2);
-      MLPutReal128(stdlink, runCouplingAndBeta.first[7]); //m ??
-      MLPutReal128(stdlink, runCouplingAndBeta.second[7]); //gp
+      MLPutReal128(stdlink, runCouplingAndBeta.first[7]);              //muphi
+      MLPutReal128(stdlink, runCouplingAndBeta.second[7]);             //muphi
       MLPutReal128(stdlink, oscale); // out scale
 		
 }
 
-void RunSMcouplings(long double gp, long double g, long double gs, long double yb, long double yt, long double lam, long double iscale, long double oscale, int loop) 
+void RunSMcouplings(long double g1, long double g2, long double gs, long double yb, long double yt, long double lam, long double iscale, long double oscale, int loop) 
 {
 
       SMCouplings runCoupling;
@@ -441,8 +441,8 @@ void RunSMcouplings(long double gp, long double g, long double gs, long double y
 	      case 1:
 		{
 		      SM_1 runSM1(
-                		5./3.*pow(gp/4./Pi,2),
-                		pow(g/4./Pi,2),
+                		pow(g1/4./Pi,2),
+                		pow(g2/4./Pi,2),
                 		pow(gs/4./Pi,2),
                 		pow(yt/4./Pi,2),
                 		pow(yb/4./Pi,2), // yb?
@@ -457,8 +457,8 @@ void RunSMcouplings(long double gp, long double g, long double gs, long double y
 	      case 2:
 		{
 		      SM_2 runSM2(
-                		5./3.*pow(gp/4./Pi,2),
-                		pow(g/4./Pi,2),
+                		pow(g1/4./Pi,2),
+                		pow(g2/4./Pi,2),
                 		pow(gs/4./Pi,2),
                 		pow(yt/4./Pi,2),
                 		pow(yb/4./Pi,2), // yb?
@@ -473,8 +473,8 @@ void RunSMcouplings(long double gp, long double g, long double gs, long double y
 	      case 3:
 		 {
 		      SM_3 runSM3(
-                		5./3.*pow(gp/4./Pi,2),
-                		pow(g/4./Pi,2),
+                		pow(g1/4./Pi,2),
+                		pow(g2/4./Pi,2),
                 		pow(gs/4./Pi,2),
                 		pow(yt/4./Pi,2),
                 		pow(yb/4./Pi,2), // yb?
@@ -489,8 +489,8 @@ void RunSMcouplings(long double gp, long double g, long double gs, long double y
 	      default:
 		 {
 		      SM_3 runSM(
-                		5./3.*pow(gp/4./Pi,2),
-                		pow(g/4./Pi,2),
+                		pow(g1/4./Pi,2),
+                		pow(g2/4./Pi,2),
                 		pow(gs/4./Pi,2),
                 		pow(yt/4./Pi,2),
                 		pow(yb/4./Pi,2), // yb?
@@ -505,8 +505,8 @@ void RunSMcouplings(long double gp, long double g, long double gs, long double y
 	}	
 
       MLPutFunction(stdlink, "List", 7);
-      MLPutReal128(stdlink, 4.*Pi*sqrt(3/5.*runCoupling[0])); //gp
-      MLPutReal128(stdlink, 4.*Pi*sqrt(runCoupling[1])); //g 
+      MLPutReal128(stdlink, 4.*Pi*sqrt(runCoupling[0])); //g1
+      MLPutReal128(stdlink, 4.*Pi*sqrt(runCoupling[1])); //g2 
       MLPutReal128(stdlink, 4.*Pi*sqrt(runCoupling[2])); //gs
       MLPutReal128(stdlink, 4.*Pi*sqrt(runCoupling[4])); //yb
       MLPutReal128(stdlink, 4.*Pi*sqrt(runCoupling[3])); //yt
@@ -810,6 +810,75 @@ void XtQCD(long double mb, long double mW, long double mZ, long double mH, long 
   MLPutReal128(stdlink, ttm.x04(nl,nh));
 
 }
+
+
+// P2MS interface
+void ConstantsFromPoleMasses(long double Mb, long double MW, long double MZ, long double MH, long double Mt, long double mu, int ordEW, int ordMixed, int ordQCD) 
+{
+  OSinput oi(Mb, MW, MZ, MH, Mt);
+  
+  AlphaS as(oi);
+
+  unsigned calc_ord = 0;
+  if(ordEW >= 1)
+    calc_ord |= order::x10;
+  if(ordEW >= 2)
+    calc_ord |= order::x20;
+
+  if(ordMixed >= 2)
+    calc_ord |= order::x11;
+
+  if(ordQCD >= 1)
+    calc_ord |= order::x01;
+  if(ordQCD >= 2)
+    calc_ord |= order::x02;
+  if(ordQCD >= 3)
+    calc_ord |= order::x03;
+  if(ordQCD >= 4)
+    calc_ord |= order::x04;
+
+  
+  P2MS<AlphaGF> pMS(oi,pdg2014::Gf, as(mu), mu, calc_ord);
+
+  bb<OS> bbm = get_bb(oi, pow(mu,2));
+
+  MLPutFunction(stdlink, "List", 7);
+
+  // MLPutFunction(stdlink, "List", 3);
+  // MLPutInteger(stdlink, ordEW);
+  // MLPutInteger(stdlink, ordMixed);
+  // MLPutInteger(stdlink, ordQCD);
+
+  MLPutFunction(stdlink, "Rule", 2);
+  MLPutSymbol(stdlink, "a10");
+  MLPutReal128(stdlink, pMS.a1());
+
+  MLPutFunction(stdlink, "Rule", 2);
+  MLPutSymbol(stdlink, "a20");
+  MLPutReal128(stdlink, pMS.a2());
+
+  MLPutFunction(stdlink, "Rule", 2);
+  MLPutSymbol(stdlink, "as0");
+  MLPutReal128(stdlink, pMS.as());
+
+  MLPutFunction(stdlink, "Rule", 2);
+  MLPutSymbol(stdlink, "at0");
+  MLPutReal128(stdlink, pMS.at());
+
+  MLPutFunction(stdlink, "Rule", 2);
+  MLPutSymbol(stdlink, "ab0");
+  MLPutReal128(stdlink, pMS.ab());
+
+  MLPutFunction(stdlink, "Rule", 2);
+  MLPutSymbol(stdlink, "alam0");
+  MLPutReal128(stdlink, pMS.alam());
+
+  MLPutFunction(stdlink, "Rule", 2);
+  MLPutSymbol(stdlink, "mphi0");
+  MLPutReal128(stdlink, pMS.mphi());
+
+}
+
 
 int main(int argc, char* argv[]) 
 {

@@ -1,4 +1,4 @@
-AC_INIT([Standard Model 3-loop running and 2-loop matching], [1.0], [pikelner@theor.jinr.ru],
+AC_INIT([Standard Model 3-loop running and 2-loop matching], [1.3.2], [pikelner@theor.jinr.ru],
              [mr], [http://apik.github.io/mr/])
 AC_PREREQ([2.59])
 AC_CONFIG_MACRO_DIR([m4])
@@ -8,7 +8,7 @@ AM_INIT_AUTOMAKE([foreign subdir-objects])
 AC_OPENMP()
 
 AC_CONFIG_HEADERS([config.h])
-: ${CXXFLAGS="-O0"}
+dnl : ${CXXFLAGS="-O0"}
 AC_PROG_CXX
 AC_PROG_CC
 
@@ -22,6 +22,13 @@ AC_ARG_WITH([mcc-path],
             [build Mathematica MathLink interface @<:@default=auto@:>@. Set this to full path to directory containing mcc and mprep tools for example /Applications/Mathematica.app/SystemFiles/Links/MathLink/DeveloperKit/MacOSX-x86-64/CompilerAdditions])],
             [test "x$with_mcc_path" == "xyes" && with_mcc_path=auto],
             [with_mcc_path=auto])
+
+
+AC_ARG_ENABLE([math10],
+            [AS_HELP_STRING([--enable-math10],
+            [if set build MathLink interface for Mathematica 10 on Linux machine @<:@default=no@:>@.])],
+            [enable_math10=yes],
+            [enable_math10=no])
 
 # ------------------------- 
 # -------------------------
@@ -98,7 +105,11 @@ case $host_os in
           AC_SUBST(ALTMATHPATH)  
           ;;
   linux*)
-          LDMATH="-lML64i3 -lm -lpthread -lrt -lstdc++"
+          if test "x$enable_math10" != "xyes" ; then
+            LDMATH=" -lML64i3 -lm -lpthread -lrt -lstdc++"
+          else        
+            LDMATH=" -lML64i4 -lstdc++ -lpthread -lm -lrt -ldl -luuid"
+          fi          
           AC_SUBST(LDMATH)  
           ALTMATHPATH=""
           AC_SUBST(ALTMATHPATH)  

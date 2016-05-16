@@ -28,7 +28,7 @@ lib_LIBRARIES = libtsil.a
 # GNU C Compiler:
 # ===============
  CC		= gcc
- TSIL_OPT	= -O3 -funroll-loops 
+ TSIL_OPT	= -funroll-loops 
 #
 ################### INSTALLATION DIRECTORIES #######################
 #
@@ -84,6 +84,6 @@ libtsil_a_SOURCES =   initialize.c \
 
 libtsil_a_CFLAGS = $(TSIL_RESCALE) $(TSIL_SIZE) $(TSIL_OPT)
 
-EXTRA_DIST = CHANGELOG.txt  ISSUES.txt  LICENSE.txt  README.txt  foo.txt
+EXTRA_DIST = CHANGELOG.txt  ISSUES.txt  LICENSE.txt  README.txt
 
 pkginclude_HEADERS = tsil.h 

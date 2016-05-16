@@ -1,9 +1,0 @@
-###Corrections to MS coupling in terms of OS masses
-
-**Y_ij**   - functions of **OS** masses
-
-**aw(mu)** - EM running coupling (alEM/4/Pi)
-
-**as(mu)** - QCD running coupling (alS/4/Pi)
-
-**`delta = 1 + as*Y_01 + aw*Y_10 + aw*as*Y_11 + aw^2*Y_20 + ...`**
