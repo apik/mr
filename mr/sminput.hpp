@@ -212,26 +212,26 @@ namespace mr
     {
       return MSinput(mb, mW, mZ, mH, mt);
     }
-  
+
     // Factory to construct from running couplings
     static MSinput fromCouplings(long double g1,     // U(1)  g1 = sqrt(5/3)*gp
                                  long double g2,     // SU(2) g2 = g
                                  long double yb, 
                                  long double yt, 
                                  long double lam, 
-                                 long double mu0,   //Higgs mass parameter
-                                                    //normalized as mu0=Mh at
+                                 long double mphi,  //Higgs mass parameter
+                                                    //normalized as mphi=Mh at
                                                     //tree level
                                  long double scale) // Input scale
                                  
     {
       
-      long double vev = mu0/sqrt(2.*lam);
+      long double vev = mphi/sqrt(2.*lam);
       
       long double mb = vev*yb/sqrt(2);
       long double mW = vev*g2/2.;
       long double mZ = sqrt(g2*g2+g1*g1*3./5.)*vev/2.;
-      long double mH = mu0;
+      long double mH = mphi;
       long double mt = vev*yt/sqrt(2);
       return MSinput(mb, mW, mZ, mH, mt, vev, scale);
     }
