@@ -110,7 +110,7 @@ namespace mr
     
     if(ord & order::x10)
       {
-        daGF += alF/4./Pi*aGF.a10();;
+        daGF += alF/4./Pi*aGF.a10();
       }
     if(ord & order::x11)
       {
