@@ -11,7 +11,10 @@ layout: default
   </tr>
 </table>
 [mr:Matching and Running](http://apik.github.io/mr) is a C++ package for NNLO Standard Model stability analysis. It includes full two-loop electroweak threshold corrections connecting input in terms of pole masses with running couplings and three-loop renormalization group equations with additional higher order QCD corrections for evolution of running couplings up to a needed scale.<br>
-For package overview see [hep-ph/1601.08143](http://inspirehep.net/record/1418484).
+For package overview see *[mr: a C++ library for the matching and running of the Standard Model parameters](http://inspirehep.net/record/1418484)
+By Bernd A. Kniehl, Andrey F. Pikelner, Oleg L. Veretin.
+Comput.Phys.Commun. 206 (2016) 84-96.*
+
 <iframe src="http://ghbtns.com/github-btn.html?user=apik&amp;repo=mr&amp;type=watch&amp;count=true&amp;size=large"
   allowtransparency="true" frameborder="0" scrolling="0" width="170" height="30"></iframe><br/>
 
