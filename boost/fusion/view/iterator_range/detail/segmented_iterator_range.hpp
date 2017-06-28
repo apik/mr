@@ -8,7 +8,6 @@
 #define BOOST_FUSION_SEGMENTED_ITERATOR_RANGE_HPP_INCLUDED
 
 #include <boost/fusion/support/config.hpp>
-#include <boost/detail/workaround.hpp>
 #include <boost/mpl/assert.hpp>
 #include <boost/type_traits/add_const.hpp>
 #include <boost/type_traits/remove_reference.hpp>
@@ -49,8 +48,8 @@ namespace boost { namespace fusion
     }
 
     template <typename Sequence, typename T>
-    BOOST_CXX14_CONSTEXPR BOOST_FUSION_GPU_ENABLED
-    inline typename
+    BOOST_FUSION_GPU_ENABLED
+    typename
         lazy_enable_if<
             traits::is_sequence<Sequence>
           , result_of::push_back<Sequence const, T>
@@ -58,8 +57,8 @@ namespace boost { namespace fusion
     push_back(Sequence const& seq, T const& x);
 
     template <typename Sequence, typename T>
-    BOOST_CXX14_CONSTEXPR BOOST_FUSION_GPU_ENABLED
-    inline typename
+    BOOST_FUSION_GPU_ENABLED
+    typename
         lazy_enable_if<
             traits::is_sequence<Sequence>
           , result_of::push_front<Sequence const, T>
@@ -153,7 +152,7 @@ namespace boost { namespace fusion { namespace detail
             >
         type;
 
-        BOOST_CONSTEXPR BOOST_FUSION_GPU_ENABLED
+        BOOST_FUSION_GPU_ENABLED
         static type call(Stack const& stack)
         {
             //return segment_sequence(
@@ -200,7 +199,7 @@ namespace boost { namespace fusion { namespace detail
             >
         type;
 
-        BOOST_CONSTEXPR BOOST_FUSION_GPU_ENABLED
+        BOOST_FUSION_GPU_ENABLED
         static type call(Stack const& stack)
         {
             // return iterator_range(begin(car(cdr(stack_begin))), end(front(car(stack_begin))));
@@ -213,7 +212,7 @@ namespace boost { namespace fusion { namespace detail
     {
         typedef typename Stack::cdr_type type; // nil_
 
-        BOOST_CONSTEXPR BOOST_FUSION_GPU_ENABLED
+        BOOST_FUSION_GPU_ENABLED
         static type call(Stack const &stack)
         {
             return stack.cdr;
@@ -299,7 +298,7 @@ namespace boost { namespace fusion { namespace detail
             >
         type;
 
-        BOOST_CONSTEXPR BOOST_FUSION_GPU_ENABLED
+        BOOST_FUSION_GPU_ENABLED
         static type call(Stack const& stack)
         {
             //  return segment_sequence(
@@ -346,7 +345,7 @@ namespace boost { namespace fusion { namespace detail
             >
         type;
 
-        BOOST_CONSTEXPR BOOST_FUSION_GPU_ENABLED
+        BOOST_FUSION_GPU_ENABLED
         static type call(Stack const& stack)
         {
             // return iterator_range(begin(front(car(stack_end))), begin(car(cdr(stack_end))));
@@ -359,7 +358,7 @@ namespace boost { namespace fusion { namespace detail
     {
         typedef typename Stack::cdr_type type; // nil_
 
-        BOOST_CONSTEXPR BOOST_FUSION_GPU_ENABLED
+        BOOST_FUSION_GPU_ENABLED
         static type call(Stack const& stack)
         {
             return stack.cdr;
@@ -410,14 +409,11 @@ namespace boost { namespace fusion { namespace detail
     template <
         typename StackBegin
       , typename StackEnd
-      , bool SameSegment
-#if !(BOOST_WORKAROUND(BOOST_GCC, >= 40000) && BOOST_WORKAROUND(BOOST_GCC, < 40200))
-          = result_of::equal_to<
+      , bool SameSegment =
+            result_of::equal_to<
                 typename StackBegin::car_type::begin_type
               , typename StackEnd::car_type::begin_type
-            >::type::value
-#endif
-    >
+            >::type::value>
     struct make_segmented_range_reduce2
     {
         typedef
@@ -441,7 +437,7 @@ namespace boost { namespace fusion { namespace detail
             >
         type;
 
-        BOOST_CONSTEXPR BOOST_FUSION_GPU_ENABLED
+        BOOST_FUSION_GPU_ENABLED
         static type call(StackBegin stack_begin, StackEnd stack_end)
         {
             //return segment_sequence(
@@ -475,7 +471,7 @@ namespace boost { namespace fusion { namespace detail
             typename impl::type
         type;
 
-        BOOST_CONSTEXPR BOOST_FUSION_GPU_ENABLED
+        BOOST_FUSION_GPU_ENABLED
         static type call(StackBegin stack_begin, StackEnd stack_end)
         {
             return impl::call(stack_begin.cdr, stack_end.cdr);
@@ -484,14 +480,7 @@ namespace boost { namespace fusion { namespace detail
 
     template <typename StackBegin, typename StackEnd, int StackBeginSize, int StackEndSize>
     struct make_segmented_range_reduce
-      : make_segmented_range_reduce2<StackBegin, StackEnd
-#if BOOST_WORKAROUND(BOOST_GCC, >= 40000) && BOOST_WORKAROUND(BOOST_GCC, < 40200)
-          , result_of::equal_to<
-                typename StackBegin::car_type::begin_type
-              , typename StackEnd::car_type::begin_type
-            >::type::value
-#endif
-        >
+      : make_segmented_range_reduce2<StackBegin, StackEnd>
     {};
 
     template <typename StackBegin, typename StackEnd>
@@ -512,7 +501,7 @@ namespace boost { namespace fusion { namespace detail
             segment_sequence<segment_type>
         type;
 
-        BOOST_CONSTEXPR BOOST_FUSION_GPU_ENABLED
+        BOOST_FUSION_GPU_ENABLED
         static type call(StackBegin stack_begin, StackEnd stack_end)
         {
             //return segment_sequence(
@@ -542,7 +531,7 @@ namespace boost { namespace fusion { namespace detail
 
         typedef typename impl::type type;
 
-        BOOST_CONSTEXPR BOOST_FUSION_GPU_ENABLED
+        BOOST_FUSION_GPU_ENABLED
         static type call(Begin const& begin, End const& end)
         {
             return impl::call(

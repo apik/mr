@@ -28,8 +28,9 @@ namespace boost { namespace fusion { namespace extension
 
            typedef typename impl::type type;
 
-           BOOST_CONSTEXPR BOOST_FUSION_GPU_ENABLED
-           static type
+           BOOST_FUSION_GPU_ENABLED
+           static
+           type
            call(It const& it)
            {
                return impl::call(*it.seq);

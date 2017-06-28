@@ -6,7 +6,7 @@ EXCPPFLAGS = $(MR_CFLAGS) -I$(top_srcdir)/tsil-1.3 -I$(top_srcdir)/mr $(OPENMP_C
 
 EXLDDFLAGS = $(OPENMP_CFLAGS) $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.3 -ltsil -lm
 
-noinst_PROGRAMS = ex1Xij ex2Pole2ms ex3Pole2msRun critquarks phasedb
+noinst_PROGRAMS = ex1Xij ex2Pole2ms ex3Pole2msRun
 
 # CPC examples
 ex1Xij_SOURCES =  ex1Xij.cpp
@@ -20,15 +20,6 @@ ex2Pole2ms_LDADD = $(EXLDDFLAGS)
 ex3Pole2msRun_SOURCES =  ex3Pole2msRun.cpp
 ex3Pole2msRun_CPPFLAGS = $(EXCPPFLAGS)
 ex3Pole2msRun_LDADD = $(EXLDDFLAGS)
-
-
-critquarks_SOURCES =  critquarks.cpp tools.cpp
-critquarks_CPPFLAGS = $(EXCPPFLAGS)
-critquarks_LDADD = $(EXLDDFLAGS)
-
-phasedb_SOURCES =  phasedb.cpp
-phasedb_CPPFLAGS = $(EXCPPFLAGS)
-phasedb_LDADD = $(EXLDDFLAGS)
 
 
 EXTRA_DIST = README

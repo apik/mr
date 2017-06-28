@@ -1,46 +1,53 @@
 /*=============================================================================
-    Copyright (c) 2014 Kohei Takahashi
+    Copyright (c) 2001-2011 Joel de Guzman
 
     Distributed under the Boost Software License, Version 1.0. (See accompanying
     file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
 ==============================================================================*/
-#ifndef FUSION_SET_FORWARD_11062014_1720
-#define FUSION_SET_FORWARD_11062014_1720
+#if !defined(FUSION_SET_FORWARD_09162005_1102)
+#define FUSION_SET_FORWARD_09162005_1102
 
-#include <boost/config.hpp>
 #include <boost/fusion/support/config.hpp>
-#include <boost/fusion/container/vector/detail/config.hpp>
+#include <boost/fusion/container/set/limits.hpp>
+#include <boost/preprocessor/repetition/enum_params_with_a_default.hpp>
 
-#if !defined(BOOST_FUSION_HAS_VARIADIC_VECTOR) \
-  || (defined(__WAVE__) && defined(BOOST_FUSION_CREATE_PREPROCESSED_FILES))
-# if defined(BOOST_FUSION_HAS_VARIADIC_SET)
-#   undef BOOST_FUSION_HAS_VARIADIC_SET
-# endif
+#if !defined(BOOST_FUSION_DONT_USE_PREPROCESSED_FILES)
+#include <boost/fusion/container/set/detail/preprocessed/set_fwd.hpp>
 #else
-# if !defined(BOOST_FUSION_HAS_VARIADIC_SET)
-#   define BOOST_FUSION_HAS_VARIADIC_SET
-# endif
+#if defined(__WAVE__) && defined(BOOST_FUSION_CREATE_PREPROCESSED_FILES)
+#pragma wave option(preserve: 2, line: 0, output: "detail/preprocessed/set" FUSION_MAX_SET_SIZE_STR "_fwd.hpp")
 #endif
 
-///////////////////////////////////////////////////////////////////////////////
-// With no variadics, we will use the C++03 version
-///////////////////////////////////////////////////////////////////////////////
-#if !defined(BOOST_FUSION_HAS_VARIADIC_SET)
-# include <boost/fusion/container/set/detail/cpp03/set_fwd.hpp>
-#else
+/*=============================================================================
+    Copyright (c) 2001-2011 Joel de Guzman
 
-///////////////////////////////////////////////////////////////////////////////
-// C++11 interface
-///////////////////////////////////////////////////////////////////////////////
+    Distributed under the Boost Software License, Version 1.0. (See accompanying
+    file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
+
+    This is an auto-generated file. Do not edit!
+==============================================================================*/
+
+#if defined(__WAVE__) && defined(BOOST_FUSION_CREATE_PREPROCESSED_FILES)
+#pragma wave option(preserve: 1)
+#endif
+
 namespace boost { namespace fusion
 {
+    struct void_;
     struct set_tag;
     struct set_iterator_tag;
 
-    template <typename ...T>
+    template <
+        BOOST_PP_ENUM_PARAMS_WITH_A_DEFAULT(
+            FUSION_MAX_SET_SIZE, typename T, void_)
+    >
     struct set;
 }}
 
-#endif
+#if defined(__WAVE__) && defined(BOOST_FUSION_CREATE_PREPROCESSED_FILES)
+#pragma wave option(output: null)
 #endif
 
+#endif // BOOST_FUSION_DONT_USE_PREPROCESSED_FILES
+
+#endif

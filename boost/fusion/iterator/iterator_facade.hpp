@@ -14,7 +14,6 @@
 #include <boost/fusion/support/category_of.hpp>
 #include <boost/type_traits/is_same.hpp>
 #include <boost/mpl/assert.hpp>
-#include <boost/mpl/if.hpp>
 
 namespace boost { namespace fusion
 {
@@ -55,14 +54,5 @@ namespace boost { namespace fusion
         {};
     };
 }}
-
-#ifdef BOOST_FUSION_WORKAROUND_FOR_LWG_2408
-namespace std
-{
-    template <typename Derived, typename Category>
-    struct iterator_traits< ::boost::fusion::iterator_facade<Derived, Category> >
-    { };
-}
-#endif
 
 #endif

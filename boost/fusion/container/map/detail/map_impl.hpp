@@ -33,24 +33,24 @@ namespace boost { namespace fusion { namespace detail
         static int const index = index_;
         static int const size = 0;
 
-        BOOST_CONSTEXPR BOOST_FUSION_GPU_ENABLED
-        map_impl() BOOST_NOEXCEPT {}
+        BOOST_FUSION_GPU_ENABLED
+        map_impl() {}
 
         template <typename Iterator>
-        BOOST_CONSTEXPR BOOST_FUSION_GPU_ENABLED
-        map_impl(Iterator const&, map_impl_from_iterator) BOOST_NOEXCEPT
+        BOOST_FUSION_GPU_ENABLED
+        map_impl(Iterator const&, map_impl_from_iterator)
         {}
 
         template <typename Iterator>
-        BOOST_CXX14_CONSTEXPR BOOST_FUSION_GPU_ENABLED
-        void assign(Iterator const&, map_impl_from_iterator) BOOST_NOEXCEPT
+        BOOST_FUSION_GPU_ENABLED
+        void assign(Iterator const&, map_impl_from_iterator)
         {}
 
-        BOOST_CXX14_CONSTEXPR BOOST_FUSION_GPU_ENABLED
+        BOOST_FUSION_GPU_ENABLED
         void get();
-        BOOST_CXX14_CONSTEXPR BOOST_FUSION_GPU_ENABLED
+        BOOST_FUSION_GPU_ENABLED
         void get_val();
-        BOOST_CXX14_CONSTEXPR BOOST_FUSION_GPU_ENABLED
+        BOOST_FUSION_GPU_ENABLED
         void get_key();
     };
 
@@ -71,54 +71,54 @@ namespace boost { namespace fusion { namespace detail
         typedef typename Pair::first_type key_type;
         typedef typename Pair::second_type value_type;
 
-        BOOST_CONSTEXPR BOOST_FUSION_GPU_ENABLED
+        BOOST_FUSION_GPU_ENABLED
         map_impl()
           : rest_type(), element()
         {}
 
-        BOOST_CONSTEXPR BOOST_FUSION_GPU_ENABLED
+        BOOST_FUSION_GPU_ENABLED
         map_impl(map_impl const& rhs)
           : rest_type(rhs.get_base()), element(rhs.element)
         {}
 
-        BOOST_CXX14_CONSTEXPR BOOST_FUSION_GPU_ENABLED
+        BOOST_FUSION_GPU_ENABLED
         map_impl(map_impl&& rhs)
-          : rest_type(BOOST_FUSION_FWD_ELEM(rest_type, *static_cast<rest_type*>(&rhs)))
-          , element(BOOST_FUSION_FWD_ELEM(Pair, rhs.element))
+          : rest_type(std::forward<rest_type>(*static_cast<rest_type*>(&rhs)))
+          , element(std::forward<Pair>(rhs.element))
         {}
 
         template <typename ...U>
-        BOOST_CONSTEXPR BOOST_FUSION_GPU_ENABLED
+        BOOST_FUSION_GPU_ENABLED
         map_impl(map_impl<index, U...> const& rhs)
           : rest_type(rhs.get_base()), element(rhs.element)
         {}
 
-        BOOST_CONSTEXPR BOOST_FUSION_GPU_ENABLED
+        BOOST_FUSION_GPU_ENABLED
         map_impl(typename detail::call_param<Pair>::type element_
           , typename detail::call_param<T>::type... rest)
           : rest_type(rest...), element(element_)
         {}
 
-        BOOST_CXX14_CONSTEXPR BOOST_FUSION_GPU_ENABLED
+        BOOST_FUSION_GPU_ENABLED
         map_impl(Pair&& element_, T&&... rest)
-          : rest_type(BOOST_FUSION_FWD_ELEM(T, rest)...)
-          , element(BOOST_FUSION_FWD_ELEM(Pair, element_))
+          : rest_type(std::forward<T>(rest)...)
+          , element(std::forward<Pair>(element_))
         {}
 
         template <typename Iterator>
-        BOOST_CONSTEXPR BOOST_FUSION_GPU_ENABLED
+        BOOST_FUSION_GPU_ENABLED
         map_impl(Iterator const& iter, map_impl_from_iterator fi)
           : rest_type(fusion::next(iter), fi)
           , element(*iter)
         {}
 
-        BOOST_CXX14_CONSTEXPR BOOST_FUSION_GPU_ENABLED
+        BOOST_FUSION_GPU_ENABLED
         rest_type& get_base()
         {
             return *this;
         }
 
-        BOOST_CONSTEXPR BOOST_FUSION_GPU_ENABLED
+        BOOST_FUSION_GPU_ENABLED
         rest_type const& get_base() const
         {
             return *this;
@@ -138,28 +138,28 @@ namespace boost { namespace fusion { namespace detail
         BOOST_FUSION_GPU_ENABLED
         mpl::identity<key_type> get_key(mpl::int_<index>) const;
 
-        BOOST_CONSTEXPR BOOST_FUSION_GPU_ENABLED
+        BOOST_FUSION_GPU_ENABLED
         typename cref_result<value_type>::type
         get(mpl::identity<key_type>) const
         {
             return element.second;
         }
 
-        BOOST_CXX14_CONSTEXPR BOOST_FUSION_GPU_ENABLED
+        BOOST_FUSION_GPU_ENABLED
         typename ref_result<value_type>::type
         get(mpl::identity<key_type>)
         {
             return element.second;
         }
 
-        BOOST_CONSTEXPR BOOST_FUSION_GPU_ENABLED
+        BOOST_FUSION_GPU_ENABLED
         typename cref_result<pair_type>::type
         get(mpl::int_<index>) const
         {
             return element;
         }
 
-        BOOST_CXX14_CONSTEXPR BOOST_FUSION_GPU_ENABLED
+        BOOST_FUSION_GPU_ENABLED
         typename ref_result<pair_type>::type
         get(mpl::int_<index>)
         {
@@ -167,7 +167,7 @@ namespace boost { namespace fusion { namespace detail
         }
 
         template <typename ...U>
-        BOOST_CXX14_CONSTEXPR BOOST_FUSION_GPU_ENABLED
+        BOOST_FUSION_GPU_ENABLED
         map_impl& operator=(map_impl<index, U...> const& rhs)
         {
             rest_type::operator=(rhs);
@@ -175,7 +175,7 @@ namespace boost { namespace fusion { namespace detail
             return *this;
         }
 
-        BOOST_CXX14_CONSTEXPR BOOST_FUSION_GPU_ENABLED
+        BOOST_FUSION_GPU_ENABLED
         map_impl& operator=(map_impl const& rhs)
         {
             rest_type::operator=(rhs);
@@ -183,16 +183,16 @@ namespace boost { namespace fusion { namespace detail
             return *this;
         }
 
-        BOOST_CXX14_CONSTEXPR BOOST_FUSION_GPU_ENABLED
+        BOOST_FUSION_GPU_ENABLED
         map_impl& operator=(map_impl&& rhs)
         {
             rest_type::operator=(std::forward<map_impl>(rhs));
-            element = BOOST_FUSION_FWD_ELEM(Pair, rhs.element);
+            element = std::forward<Pair>(rhs.element);
             return *this;
         }
 
         template <typename Iterator>
-        BOOST_CXX14_CONSTEXPR BOOST_FUSION_GPU_ENABLED
+        BOOST_FUSION_GPU_ENABLED
         void assign(Iterator const& iter, map_impl_from_iterator fi)
         {
             rest_type::assign(fusion::next(iter), fi);

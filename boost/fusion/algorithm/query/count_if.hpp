@@ -26,8 +26,9 @@ namespace boost { namespace fusion
     }
 
     template <typename Sequence, typename F>
-    BOOST_CONSTEXPR BOOST_FUSION_GPU_ENABLED
-    inline typename
+    BOOST_FUSION_GPU_ENABLED
+    inline 
+    typename
         enable_if<
             traits::is_sequence<Sequence>
           , int

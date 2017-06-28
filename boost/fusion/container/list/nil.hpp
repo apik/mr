@@ -32,16 +32,16 @@ namespace boost { namespace fusion
         typedef void_ cdr_type;
 
         BOOST_CONSTEXPR BOOST_FUSION_GPU_ENABLED
-        nil_() BOOST_NOEXCEPT {}
+        nil_() {}
 
         template <typename Iterator>
         BOOST_CONSTEXPR BOOST_FUSION_GPU_ENABLED
-        nil_(Iterator const& /*iter*/, mpl::true_ /*this_is_an_iterator*/) BOOST_NOEXCEPT
+        nil_(Iterator const& /*iter*/, mpl::true_ /*this_is_an_iterator*/)
         {}
 
         template <typename Iterator>
-        BOOST_CXX14_CONSTEXPR BOOST_FUSION_GPU_ENABLED
-        void assign_from_iter(Iterator const& /*iter*/) BOOST_NOEXCEPT
+        BOOST_FUSION_GPU_ENABLED
+        void assign_from_iter(Iterator const& /*iter*/)
         {
         }
     };

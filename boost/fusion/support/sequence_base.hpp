@@ -8,7 +8,6 @@
 #if !defined(FUSION_SEQUENCE_BASE_04182005_0737)
 #define FUSION_SEQUENCE_BASE_04182005_0737
 
-#include <boost/config.hpp>
 #include <boost/fusion/support/config.hpp>
 #include <boost/mpl/begin_end_fwd.hpp>
 
@@ -23,22 +22,22 @@ namespace boost { namespace fusion
     template <typename Sequence>
     struct sequence_base
     {
-        BOOST_CONSTEXPR BOOST_FUSION_GPU_ENABLED
+        BOOST_FUSION_GPU_ENABLED
         Sequence const&
-        derived() const BOOST_NOEXCEPT
+        derived() const
         {
             return static_cast<Sequence const&>(*this);
         }
 
-        BOOST_CXX14_CONSTEXPR BOOST_FUSION_GPU_ENABLED
+        BOOST_FUSION_GPU_ENABLED
         Sequence&
-        derived() BOOST_NOEXCEPT
+        derived()
         {
             return static_cast<Sequence&>(*this);
         }
 
-        BOOST_CONSTEXPR BOOST_FUSION_GPU_ENABLED
-        operator detail::from_sequence_convertible_type() const BOOST_NOEXCEPT
+        BOOST_FUSION_GPU_ENABLED
+        operator detail::from_sequence_convertible_type()const
         {
             return detail::from_sequence_convertible_type();
         }

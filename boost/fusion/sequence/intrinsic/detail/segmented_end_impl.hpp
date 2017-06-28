@@ -48,18 +48,11 @@ namespace boost { namespace fusion { namespace detail
         typedef iterator_range<end_type, end_type>  pair_type;
         typedef cons<pair_type, Stack>              type;
 
-        BOOST_CONSTEXPR BOOST_FUSION_GPU_ENABLED
-        static pair_type make_pair(end_type end)
-        {
-            return pair_type(end, end);
-        }
-
-        BOOST_CONSTEXPR BOOST_FUSION_GPU_ENABLED
+        BOOST_FUSION_GPU_ENABLED
         static type call(Sequence & seq, Stack stack)
         {
-            return type(
-                make_pair(fusion::end(fusion::segments(seq))),
-                stack);
+            end_type end = fusion::end(fusion::segments(seq));
+            return type(pair_type(end, end), stack);
         }
     };
 

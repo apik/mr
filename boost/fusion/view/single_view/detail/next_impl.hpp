@@ -35,14 +35,11 @@ namespace boost { namespace fusion
                     typename mpl::next<typename Iterator::position>::type>
                 type;
 
-                BOOST_CONSTEXPR BOOST_FUSION_GPU_ENABLED
+                BOOST_FUSION_GPU_ENABLED
                 static type
                 call(Iterator const& i)
                 {
-                    // Workaround for ICE on GCC 4.0.0.
-                    // see https://svn.boost.org/trac/boost/ticket/5808
-                    typedef typename type::position position;
-                    BOOST_STATIC_ASSERT((position::value < 2));
+                    BOOST_STATIC_ASSERT((type::position::value < 2));
                     return type(i.view);
                 }
             };

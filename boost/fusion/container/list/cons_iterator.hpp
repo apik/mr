@@ -36,8 +36,8 @@ namespace boost { namespace fusion
             typename add_const<Cons>::type> 
         identity;
 
-        BOOST_CONSTEXPR BOOST_FUSION_GPU_ENABLED
-        explicit cons_iterator(cons_type& in_cons) BOOST_NOEXCEPT
+        BOOST_FUSION_GPU_ENABLED
+        explicit cons_iterator(cons_type& in_cons)
             : cons(in_cons) {}
 
         cons_type& cons;
@@ -55,57 +55,47 @@ namespace boost { namespace fusion
         typedef cons_iterator_identity<
             add_const<nil_>::type> 
         identity;
-
         BOOST_CONSTEXPR BOOST_FUSION_GPU_ENABLED
-        nil_iterator() BOOST_NOEXCEPT {}
+        nil_iterator() {}
         BOOST_CONSTEXPR BOOST_FUSION_GPU_ENABLED
-        explicit nil_iterator(nil_ const&) BOOST_NOEXCEPT {}
+        explicit nil_iterator(nil_ const&) {}
     };
 
     template <>
     struct cons_iterator<nil_> : nil_iterator 
     {
         BOOST_CONSTEXPR BOOST_FUSION_GPU_ENABLED
-        cons_iterator() BOOST_NOEXCEPT {}
+        cons_iterator() {}
         BOOST_CONSTEXPR BOOST_FUSION_GPU_ENABLED
-        explicit cons_iterator(nil_ const&) BOOST_NOEXCEPT {}
+        explicit cons_iterator(nil_ const&) {}
     };
 
     template <>
     struct cons_iterator<nil_ const> : nil_iterator 
     {
         BOOST_CONSTEXPR BOOST_FUSION_GPU_ENABLED
-        cons_iterator() BOOST_NOEXCEPT {}
+        cons_iterator() {}
         BOOST_CONSTEXPR BOOST_FUSION_GPU_ENABLED
-        explicit cons_iterator(nil_ const&) BOOST_NOEXCEPT {}
+        explicit cons_iterator(nil_ const&) {}
     };
 
     template <>
     struct cons_iterator<list<> > : nil_iterator 
     {
         BOOST_CONSTEXPR BOOST_FUSION_GPU_ENABLED
-        cons_iterator() BOOST_NOEXCEPT {}
+        cons_iterator() {}
         BOOST_CONSTEXPR BOOST_FUSION_GPU_ENABLED
-        explicit cons_iterator(nil_ const&) BOOST_NOEXCEPT {}
+        explicit cons_iterator(nil_ const&) {}
     };
 
     template <>
     struct cons_iterator<list<> const> : nil_iterator 
     {
         BOOST_CONSTEXPR BOOST_FUSION_GPU_ENABLED
-        cons_iterator() BOOST_NOEXCEPT {}
+        cons_iterator() {}
         BOOST_CONSTEXPR BOOST_FUSION_GPU_ENABLED
-        explicit cons_iterator(nil_ const&) BOOST_NOEXCEPT {}
+        explicit cons_iterator(nil_ const&) {}
     };
 }}
-
-#ifdef BOOST_FUSION_WORKAROUND_FOR_LWG_2408
-namespace std
-{
-    template <typename Cons>
-    struct iterator_traits< ::boost::fusion::cons_iterator<Cons> >
-    { };
-}
-#endif
 
 #endif

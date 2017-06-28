@@ -20,6 +20,5 @@
 #include <boost/fusion/sequence/intrinsic/value_at.hpp>
 #include <boost/fusion/sequence/intrinsic/at_key.hpp>
 #include <boost/fusion/sequence/intrinsic/value_at_key.hpp>
-#include <boost/fusion/sequence/intrinsic/swap.hpp>
 
 #endif

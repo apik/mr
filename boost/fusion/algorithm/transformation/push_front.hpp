@@ -27,8 +27,9 @@ namespace boost { namespace fusion
     }
 
     template <typename Sequence, typename T>
-    BOOST_CXX14_CONSTEXPR BOOST_FUSION_GPU_ENABLED
-    inline typename
+    BOOST_FUSION_GPU_ENABLED
+    inline 
+    typename
         lazy_enable_if<
             traits::is_sequence<Sequence>
           , result_of::push_front<Sequence const, T>

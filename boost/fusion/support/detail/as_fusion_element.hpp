@@ -11,10 +11,6 @@
 #include <boost/fusion/support/config.hpp>
 #include <boost/ref.hpp>
 
-#ifndef BOOST_NO_CXX11_HDR_FUNCTIONAL
-#include <functional>
-#endif
-
 namespace boost { namespace fusion { namespace detail
 {
     template <typename T>
@@ -28,14 +24,6 @@ namespace boost { namespace fusion { namespace detail
     {
         typedef T& type;
     };
-
-#ifndef BOOST_NO_CXX11_HDR_FUNCTIONAL
-    template <typename T>
-    struct as_fusion_element<std::reference_wrapper<T> >
-    {
-        typedef T& type;
-    };
-#endif
 
     template <typename T, int N>
     struct as_fusion_element<T[N]>

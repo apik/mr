@@ -19,4 +19,4 @@ mr_LDADD = $(OPENMP_CFLAGS) $(MR_LIBS) -L$(MATHROOT)$(ALTMATHPATH) ${LDMATH} -L$
 mr.cpp: mr.tm
 	$(MPREP) $? -o $@
 
-EXTRA_DIST = mr.tm mr.m
+EXTRA_DIST = mr.tm mr.m rge.m README

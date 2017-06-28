@@ -11,8 +11,9 @@
 #include <boost/fusion/support/config.hpp>
 #include <boost/config.hpp>
 
-#if (defined(BOOST_NO_CXX11_VARIADIC_TEMPLATES)   \
-  || defined(BOOST_NO_CXX11_FUNCTION_TEMPLATE_DEFAULT_ARGS))   \
+#if (defined(BOOST_NO_CXX11_DECLTYPE)             \
+  || defined(BOOST_NO_CXX11_VARIADIC_TEMPLATES)   \
+  || defined(BOOST_NO_CXX11_RVALUE_REFERENCES))   \
   || (defined(__WAVE__) && defined(BOOST_FUSION_CREATE_PREPROCESSED_FILES))
 # if defined(BOOST_FUSION_HAS_VARIADIC_DEQUE)
 #   undef BOOST_FUSION_HAS_VARIADIC_DEQUE
@@ -23,15 +24,8 @@
 # endif
 #endif
 
-// MSVC variadics at this point in time is not ready yet (ICE!)
-#if BOOST_WORKAROUND(BOOST_MSVC, BOOST_TESTED_AT(1900))
-# if defined(BOOST_FUSION_HAS_VARIADIC_DEQUE)
-#   undef BOOST_FUSION_HAS_VARIADIC_DEQUE
-# endif
-#endif
-
 ///////////////////////////////////////////////////////////////////////////////
-// With no variadics, we will use the C++03 version
+// With no decltype and variadics, we will use the C++03 version
 ///////////////////////////////////////////////////////////////////////////////
 #if !defined(BOOST_FUSION_HAS_VARIADIC_DEQUE)
 # include <boost/fusion/container/deque/detail/cpp03/deque_fwd.hpp>
