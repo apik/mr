@@ -813,11 +813,11 @@ void XtQCD(long double mb, long double mW, long double mZ, long double mH, long 
 
 
 // P2MS interface
-void ConstantsFromPoleMasses(long double Mb, long double MW, long double MZ, long double MH, long double Mt, long double mu, int ordEW, int ordMixed, int ordQCD) 
+void ConstantsFromPoleMasses(long double Mb, long double MW, long double MZ, long double MH, long double Mt, long double mu, long double asMZ, int ordEW, int ordMixed, int ordQCD) 
 {
   OSinput oi(Mb, MW, MZ, MH, Mt);
   
-  AlphaS as(oi);
+  AlphaS as(oi,asMZ);
 
   unsigned calc_ord = 0;
   if(ordEW >= 1)

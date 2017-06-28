@@ -4,7 +4,7 @@
 
 :Evaluate:  BeginPackage["mr`"]
 
-:Evaluate:  P2MS::usage  = "P2MS[Mb,MW,MZ,MH,Mt,scale] return running couplings at fixed scale for pole masses input, default options are EW->2, Mixed->2, QCD->4. This mean number of loops to include in evaluation of each contribution."
+:Evaluate:  P2MS::usage  = "P2MS[Mb,MW,MZ,MH,Mt,scale] return running couplings at fixed scale for pole masses input, default options are asMZ -> 0.1185, EW->2, Mixed->2, QCD->4. This mean number of loops to include in evaluation of each contribution."
 
 :Evaluate:  RunQCDnf6::usage  = "RunQCDnf6[oscale,asMZ, MZscale, L, Mtpole, mtth] evaluate alphas at specified oscale in n=6 QCD given asMZ at MZscale (nf=5) with L-loop RGE with top (with Mtpole) threshold evaluated at mtth, if last argument is not specified it is assumed that mtth = Mtpole"
 :Evaluate:  RunQCD::usage  = "RunQCD[oscale,as0,inscale,L,nf] run as from the inscale to oscale in nf flavour QCD at L-loops given as(inscale) = as0"
@@ -118,9 +118,9 @@
 :Evaluate:  EW[x_] = {x,0}; QCD[x_] = {0,x}; MIXED[x_,y_]={x,y};
 
 // P2MS
-:Evaluate:  Options[P2MS] = { "EW" -> 2, "Mixed" -> 2, "QCD" -> 4};
+:Evaluate:  Options[P2MS] = { "EW" -> 2, "Mixed" -> 2, "QCD" -> 4, "asMZ" -> 0.1185};
 
-:Evaluate:  P2MS[Mb_?NumericQ,MW_?NumericQ,MZ_?NumericQ,MH_?NumericQ,Mt_?NumericQ,scale_?NumericQ, OptionsPattern[]] := P2MSimpl[Mb,MW,MZ,MH,Mt,scale,OptionValue["EW"],OptionValue["Mixed"],OptionValue["QCD"]]
+:Evaluate:  P2MS[Mb_?NumericQ,MW_?NumericQ,MZ_?NumericQ,MH_?NumericQ,Mt_?NumericQ,scale_?NumericQ, OptionsPattern[]] := P2MSimpl[Mb,MW,MZ,MH,Mt,scale,OptionValue["asMZ"],OptionValue["EW"],OptionValue["Mixed"],OptionValue["QCD"]]
 
                                                      
 
@@ -613,9 +613,9 @@
 
 :Begin:
 :Function: ConstantsFromPoleMasses
-:Pattern: P2MSimpl[Mb_?NumericQ,MW_?NumericQ,MZ_?NumericQ,MH_?NumericQ,Mt_?NumericQ,scale_?NumericQ,lEW_Integer:2,lMixed_Integer:2,lQCD_Integer:4]
-:Arguments: {N[Mb],N[MW],N[MZ],N[MH],N[Mt],N[scale],lEW,lMixed,lQCD}
-:ArgumentTypes: {Real128,Real128,Real128,Real128,Real128,Real128,Integer,Integer,Integer}
+:Pattern: P2MSimpl[Mb_?NumericQ,MW_?NumericQ,MZ_?NumericQ,MH_?NumericQ,Mt_?NumericQ,scale_?NumericQ,asMZ_?NumericQ,lEW_Integer:2,lMixed_Integer:2,lQCD_Integer:4]
+:Arguments: {N[Mb],N[MW],N[MZ],N[MH],N[Mt],N[scale],N[asMZ],lEW,lMixed,lQCD}
+:ArgumentTypes: {Real128,Real128,Real128,Real128,Real128,Real128,Real128,Integer,Integer,Integer}
 :ReturnType: Manual
 :End:
 
