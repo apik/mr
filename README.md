@@ -1,6 +1,4 @@
-[![Build Status](https://travis-ci.org/apik/mr.svg)](https://travis-ci.org/apik/mr)
-
-mr
+mr [![Build Status](https://travis-ci.org/apik/mr.svg)](https://travis-ci.org/apik/mr)
 ==
 
 **Mathching &amp; Running** is a set of tools for NNLO Standard Model
