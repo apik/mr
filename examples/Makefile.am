@@ -2,9 +2,9 @@ AUTOMAKE_OPTIONS = subdir-objects
 ACLOCAL_AMFLAGS = ${ACLOCAL_FLAGS} -I m4
 
 LDADD = ../mr/libmr.la
-EXCPPFLAGS = $(MR_CFLAGS) -I$(top_srcdir)/tsil-1.3 -I$(top_srcdir)/mr $(OPENMP_CFLAGS)
+EXCPPFLAGS = -g $(MR_CFLAGS) -I$(top_srcdir)/tsil-1.3 -I$(top_srcdir)/mr $(OPENMP_CFLAGS)
 
-EXLDDFLAGS = $(OPENMP_CFLAGS) $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.3 -ltsil -lm
+EXLDDFLAGS = $(OPENMP_CFLAGS) $(MR_LIBS) -L$(top_srcdir)/mr -lmr -L$(top_srcdir)/tsil-1.3 -ltsil -lm 
 
 noinst_PROGRAMS = ex1Xij ex2Pole2ms ex3Pole2msRun
 

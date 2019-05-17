@@ -45,36 +45,98 @@ namespace mr
     CW = sqrt(MMW/MMZ);
     SW = sqrt(1-MMW/MMZ);
   
-    protos[0] = protHHHHH = new Tsil(MMH, MMH, MMH, MMH, MMH, mu2);
-    protos[1] = protHZHZZ = new Tsil(MMH, MMZ, MMH, MMZ, MMZ, mu2);
-    protos[2] = protHWHWW = new Tsil(MMH, MMW, MMH, MMW, MMW, mu2);
-    protos[3] = protHtHtt = new Tsil(MMH, MMt, MMH, MMt, MMt, mu2);
-    protos[4] = protZZZZH = new Tsil(MMZ, MMZ, MMZ, MMZ, MMH, mu2);
-    protos[5] = protZWZWW = new Tsil(MMZ, MMW, MMZ, MMW, MMW, mu2);
-    protos[6] = protZtZtt = new Tsil(MMZ, MMt, MMZ, MMt, MMt, mu2);
-    protos[7] = protWWWWH = new Tsil(MMW, MMW, MMW, MMW, MMH, mu2);
-    protos[8] = protWWWWZ = new Tsil(MMW, MMW, MMW, MMW, MMZ, mu2);
-    protos[9] = protWWWW0 = new Tsil(MMW, MMW, MMW, MMW,   0, mu2);
-    protos[10] = protWtWt0 = new Tsil(MMW, MMt, MMW, MMt,   0, mu2);
-    protos[11] = protttttH = new Tsil(MMt, MMt, MMt, MMt, MMH, mu2);
-    protos[12] = protttttZ = new Tsil(MMt, MMt, MMt, MMt, MMZ, mu2);
-    protos[13] = prottttt0 = new Tsil(MMt, MMt, MMt, MMt,   0, mu2);
-    protos[14] = protZZ00 = new TsilSTU(MMZ, MMZ,    0,   0, mu2);
-    protos[15] = protWW00 = new TsilSTU(MMW, MMW,    0,   0, mu2);
+    protHHHHH = std::unique_ptr<Tsil>(new Tsil(MMH, MMH, MMH, MMH, MMH, mu2) );
+    protHZHZZ = std::unique_ptr<Tsil>(new Tsil(MMH, MMZ, MMH, MMZ, MMZ, mu2) );
+    protHWHWW = std::unique_ptr<Tsil>(new Tsil(MMH, MMW, MMH, MMW, MMW, mu2) );
+    protHtHtt = std::unique_ptr<Tsil>(new Tsil(MMH, MMt, MMH, MMt, MMt, mu2) );
+    protZZZZH = std::unique_ptr<Tsil>(new Tsil(MMZ, MMZ, MMZ, MMZ, MMH, mu2) );
+    protZWZWW = std::unique_ptr<Tsil>(new Tsil(MMZ, MMW, MMZ, MMW, MMW, mu2) );
+    protZtZtt = std::unique_ptr<Tsil>(new Tsil(MMZ, MMt, MMZ, MMt, MMt, mu2) );
+    protWWWWH = std::unique_ptr<Tsil>(new Tsil(MMW, MMW, MMW, MMW, MMH, mu2) );
+    protWWWWZ = std::unique_ptr<Tsil>(new Tsil(MMW, MMW, MMW, MMW, MMZ, mu2) );
+    protWWWW0 = std::unique_ptr<Tsil>(new Tsil(MMW, MMW, MMW, MMW,   0, mu2) );
+    protWtWt0 = std::unique_ptr<Tsil>(new Tsil(MMW, MMt, MMW, MMt,   0, mu2) );
+    protttttH = std::unique_ptr<Tsil>(new Tsil(MMt, MMt, MMt, MMt, MMH, mu2) );
+    protttttZ = std::unique_ptr<Tsil>(new Tsil(MMt, MMt, MMt, MMt, MMZ, mu2) );
+    prottttt0 = std::unique_ptr<Tsil>(new Tsil(MMt, MMt, MMt, MMt,   0, mu2) );
+    protZZ00 = std::unique_ptr<TsilSTU>(new TsilSTU(MMZ, MMZ,    0,   0, mu2) );
+    protWW00 = std::unique_ptr<TsilSTU>(new TsilSTU(MMW, MMW,    0,   0, mu2) );
 
-    protos[16] = prot0H0H0 = new Tsil(  0, MMH,   0, MMH,   0, mu2);
-    protos[17] = prot0t0tt = new Tsil(  0, MMt,   0, MMt, MMt, mu2);
-    protos[18] = prot0t0t0 = new Tsil(  0, MMt,   0, MMt,   0, mu2);
-    protos[19] = prot0000H = new Tsil(  0,   0,   0,   0, MMH, mu2);
+    prot0H0H0 = std::unique_ptr<Tsil>(new Tsil(  0, MMH,   0, MMH,   0, mu2) );
+    prot0t0tt = std::unique_ptr<Tsil>(new Tsil(  0, MMt,   0, MMt, MMt, mu2) );
+    prot0t0t0 = std::unique_ptr<Tsil>(new Tsil(  0, MMt,   0, MMt,   0, mu2) );
+    prot0000H = std::unique_ptr<Tsil>(new Tsil(  0,   0,   0,   0, MMH, mu2) );
 
-
-
-
+    Timer t;
 #ifdef _OPENMP
-#pragma omp parallel for 
+#pragma omp parallel sections
+    {
+#pragma omp section
+    protHHHHH->evaluate(MMH);
+#pragma omp section
+    protHZHZZ->evaluate(MMH);
+#pragma omp section
+    protHWHWW->evaluate(MMH);
+#pragma omp section
+    protHtHtt->evaluate(MMH);
+#pragma omp section
+    protZZZZH->evaluate(MMH);
+#pragma omp section
+    protZWZWW->evaluate(MMH);
+#pragma omp section
+    protZtZtt->evaluate(MMH);
+#pragma omp section
+    protWWWWH->evaluate(MMH);
+#pragma omp section
+    protWWWWZ->evaluate(MMH);
+#pragma omp section
+    protWWWW0->evaluate(MMH);
+#pragma omp section
+    protWtWt0->evaluate(MMH);
+#pragma omp section
+    protttttH->evaluate(MMH);
+#pragma omp section
+    protttttZ->evaluate(MMH);
+#pragma omp section
+    prottttt0->evaluate(MMH);
+#pragma omp section
+    protZZ00 ->evaluate(MMH);
+#pragma omp section
+    protWW00 ->evaluate(MMH);
+
+#pragma omp section
+    prot0H0H0->evaluate(MMH);
+#pragma omp section
+    prot0t0tt->evaluate(MMH);
+#pragma omp section
+    prot0t0t0->evaluate(MMH);
+#pragma omp section
+    prot0000H->evaluate(MMH);
+    }
+#else
+    protHHHHH->evaluate(MMH);
+    protHZHZZ->evaluate(MMH);
+    protHWHWW->evaluate(MMH);
+    protHtHtt->evaluate(MMH);
+    protZZZZH->evaluate(MMH);
+    protZWZWW->evaluate(MMH);
+    protZtZtt->evaluate(MMH);
+    protWWWWH->evaluate(MMH);
+    protWWWWZ->evaluate(MMH);
+    protWWWW0->evaluate(MMH);
+    protWtWt0->evaluate(MMH);
+    protttttH->evaluate(MMH);
+    protttttZ->evaluate(MMH);
+    prottttt0->evaluate(MMH);
+    protZZ00 ->evaluate(MMH);
+    protWW00 ->evaluate(MMH);
+
+    prot0H0H0->evaluate(MMH);
+    prot0t0tt->evaluate(MMH);
+    prot0t0t0->evaluate(MMH);
+    prot0000H->evaluate(MMH);
 #endif
-    for(int i = 0 ; i < 20; i++)
-      protos[i]->evaluate(MMH);
+    t.elapsed();
   }
 
 
@@ -98,34 +160,99 @@ namespace mr
     c = sqrt(mmW/mmZ);
     s = sqrt(1-mmW/mmZ);
   
-    protos[0] = protHHHHH = new Tsil(mmH, mmH, mmH, mmH, mmH, mu2);
-    protos[1] = protHZHZZ = new Tsil(mmH, mmZ, mmH, mmZ, mmZ, mu2);
-    protos[2] = protHWHWW = new Tsil(mmH, mmW, mmH, mmW, mmW, mu2);
-    protos[3] = protHtHtt = new Tsil(mmH, mmt, mmH, mmt, mmt, mu2);
-    protos[4] = protZZZZH = new Tsil(mmZ, mmZ, mmZ, mmZ, mmH, mu2);
-    protos[5] = protZWZWW = new Tsil(mmZ, mmW, mmZ, mmW, mmW, mu2);
-    protos[6] = protZtZtt = new Tsil(mmZ, mmt, mmZ, mmt, mmt, mu2);
-    protos[7] = protWWWWH = new Tsil(mmW, mmW, mmW, mmW, mmH, mu2);
-    protos[8] = protWWWWZ = new Tsil(mmW, mmW, mmW, mmW, mmZ, mu2);
-    protos[9] = protWWWW0 = new Tsil(mmW, mmW, mmW, mmW,   0, mu2);
-    protos[10] = protWtWt0 = new Tsil(mmW, mmt, mmW, mmt,   0, mu2);
-    protos[11] = protttttH = new Tsil(mmt, mmt, mmt, mmt, mmH, mu2);
-    protos[12] = protttttZ = new Tsil(mmt, mmt, mmt, mmt, mmZ, mu2);
-    protos[13] = prottttt0 = new Tsil(mmt, mmt, mmt, mmt,   0, mu2);
-    protos[14] = protZZ00 = new TsilSTU(mmZ, mmZ,    0,   0, mu2);
-    protos[15] = protWW00 = new TsilSTU(mmW, mmW,    0,   0, mu2);
+    protHHHHH = std::unique_ptr<Tsil>(new Tsil(mmH, mmH, mmH, mmH, mmH, mu2) );
+    protHZHZZ = std::unique_ptr<Tsil>(new Tsil(mmH, mmZ, mmH, mmZ, mmZ, mu2) );
+    protHWHWW = std::unique_ptr<Tsil>(new Tsil(mmH, mmW, mmH, mmW, mmW, mu2) );
+    protHtHtt = std::unique_ptr<Tsil>(new Tsil(mmH, mmt, mmH, mmt, mmt, mu2) );
+    protZZZZH = std::unique_ptr<Tsil>(new Tsil(mmZ, mmZ, mmZ, mmZ, mmH, mu2) );
+    protZWZWW = std::unique_ptr<Tsil>(new Tsil(mmZ, mmW, mmZ, mmW, mmW, mu2) );
+    protZtZtt = std::unique_ptr<Tsil>(new Tsil(mmZ, mmt, mmZ, mmt, mmt, mu2) );
+    protWWWWH = std::unique_ptr<Tsil>(new Tsil(mmW, mmW, mmW, mmW, mmH, mu2) );
+    protWWWWZ = std::unique_ptr<Tsil>(new Tsil(mmW, mmW, mmW, mmW, mmZ, mu2) );
+    protWWWW0 = std::unique_ptr<Tsil>(new Tsil(mmW, mmW, mmW, mmW,   0, mu2) );
+    protWtWt0 = std::unique_ptr<Tsil>(new Tsil(mmW, mmt, mmW, mmt,   0, mu2) );
+    protttttH = std::unique_ptr<Tsil>(new Tsil(mmt, mmt, mmt, mmt, mmH, mu2) );
+    protttttZ = std::unique_ptr<Tsil>(new Tsil(mmt, mmt, mmt, mmt, mmZ, mu2) );
+    prottttt0 = std::unique_ptr<Tsil>(new Tsil(mmt, mmt, mmt, mmt,   0, mu2) );
+    protZZ00 = std::unique_ptr<TsilSTU>(new TsilSTU(mmZ, mmZ,    0,   0, mu2) );
+    protWW00 = std::unique_ptr<TsilSTU>(new TsilSTU(mmW, mmW,    0,   0, mu2) );
 
-    protos[16] = prot0H0H0 = new Tsil(  0, mmH,   0, mmH,   0, mu2);
-    protos[17] = prot0t0tt = new Tsil(  0, mmt,   0, mmt, mmt, mu2);
-    protos[18] = prot0t0t0 = new Tsil(  0, mmt,   0, mmt,   0, mu2);
-    protos[19] = prot0000H = new Tsil(  0,   0,   0,   0, mmH, mu2);
+    prot0H0H0 = std::unique_ptr<Tsil>(new Tsil(  0, mmH,   0, mmH,   0, mu2) );
+    prot0t0tt = std::unique_ptr<Tsil>(new Tsil(  0, mmt,   0, mmt, mmt, mu2) );
+    prot0t0t0 = std::unique_ptr<Tsil>(new Tsil(  0, mmt,   0, mmt,   0, mu2) );
+    prot0000H = std::unique_ptr<Tsil>(new Tsil(  0,   0,   0,   0, mmH, mu2) );
 
 
+
+    Timer t;
 #ifdef _OPENMP
-#pragma omp parallel for 
+#pragma omp parallel sections
+    {
+#pragma omp section
+    protHHHHH->evaluate(mmH);
+#pragma omp section
+    protHZHZZ->evaluate(mmH);
+#pragma omp section
+    protHWHWW->evaluate(mmH);
+#pragma omp section
+    protHtHtt->evaluate(mmH);
+#pragma omp section
+    protZZZZH->evaluate(mmH);
+#pragma omp section
+    protZWZWW->evaluate(mmH);
+#pragma omp section
+    protZtZtt->evaluate(mmH);
+#pragma omp section
+    protWWWWH->evaluate(mmH);
+#pragma omp section
+    protWWWWZ->evaluate(mmH);
+#pragma omp section
+    protWWWW0->evaluate(mmH);
+#pragma omp section
+    protWtWt0->evaluate(mmH);
+#pragma omp section
+    protttttH->evaluate(mmH);
+#pragma omp section
+    protttttZ->evaluate(mmH);
+#pragma omp section
+    prottttt0->evaluate(mmH);
+#pragma omp section
+    protZZ00->evaluate(mmH);
+#pragma omp section
+    protWW00->evaluate(mmH);
+
+#pragma omp section
+    prot0H0H0->evaluate(mmH);
+#pragma omp section
+    prot0t0tt->evaluate(mmH);
+#pragma omp section
+    prot0t0t0->evaluate(mmH);
+#pragma omp section
+    prot0000H->evaluate(mmH);
+    }
+#else
+    protHHHHH->evaluate(mmH);
+    protHZHZZ->evaluate(mmH);
+    protHWHWW->evaluate(mmH);
+    protHtHtt->evaluate(mmH);
+    protZZZZH->evaluate(mmH);
+    protZWZWW->evaluate(mmH);
+    protZtZtt->evaluate(mmH);
+    protWWWWH->evaluate(mmH);
+    protWWWWZ->evaluate(mmH);
+    protWWWW0->evaluate(mmH);
+    protWtWt0->evaluate(mmH);
+    protttttH->evaluate(mmH);
+    protttttZ->evaluate(mmH);
+    prottttt0->evaluate(mmH);
+    protZZ00->evaluate(mmH);
+    protWW00->evaluate(mmH);
+
+    prot0H0H0->evaluate(mmH);
+    prot0t0tt->evaluate(mmH);
+    prot0t0t0->evaluate(mmH);
+    prot0000H->evaluate(mmH);
 #endif
-    for(int i = 0 ; i < 20; i++)
-      protos[i]->evaluate(mmH);
-  
+    t.elapsed();
   }
 } // namespace mr

@@ -38,8 +38,8 @@ int main (int argc, char *argv[])
       
       // Initial values for running, input from pole masses
       ParametersSM<3,3,3,
-        3,0,-1,
-        3,3,0> avP2MS(pMSmt);
+                   3,0,-1,
+                   3,3,0> avP2MS(pMSmt);
       
       std::cout << std::setprecision(3);
       

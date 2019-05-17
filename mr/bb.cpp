@@ -49,11 +49,11 @@ namespace mr
     CW = sqrt(MMW/MMZ);
     SW = sqrt(1-MMW/MMZ);
   
-    prot0bb0b = new Tsil(   0, MMb, MMb,   0, MMb, mu2);
+    this->prot0bb0b = std::unique_ptr<Tsil>(new Tsil(   0, MMb, MMb,   0, MMb, mu2));
 
-    // Timer t2;
+    Timer t;
     prot0bb0b->evaluate(MMb);
-    // t2.elapsed();
+    t.elapsed();
 
   }
 
@@ -76,10 +76,9 @@ namespace mr
     c = sqrt(mmW/mmZ);
     s = sqrt(1-mmW/mmZ);
 
-    prot0bb0b = new Tsil(   0, mmb, mmb,   0, mmb, mu2);
-    
-    // Timer t2;
+    prot0bb0b = std::unique_ptr<Tsil>(new Tsil(   0, mmb, mmb,   0, mmb, mu2));
+    Timer t;
     prot0bb0b->evaluate(mmb);
-    // t2.elapsed();
+    t.elapsed();
   }
 } // namespace mr

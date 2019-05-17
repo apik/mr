@@ -43,39 +43,39 @@ namespace mr
     long double SW, CW;
   
     // alpha*alphaS
-    Tsil* protWt000;
-    Tsil* prot0ttHt;
-    Tsil* prot0ttZt;
-    Tsil* prot0tt0t;
-    TsilSTU* prottH0H;
-    TsilSTU* prottZ0Z;
+    std::unique_ptr<Tsil> protWt000;
+    std::unique_ptr<Tsil> prot0ttHt;
+    std::unique_ptr<Tsil> prot0ttZt;
+    std::unique_ptr<Tsil> prot0tt0t;
+    std::unique_ptr<TsilSTU> prottH0H;
+    std::unique_ptr<TsilSTU> prottZ0Z;
     // alpha^2
-    Tsil* protHHttH;
-    Tsil* protHZttZ;
-    Tsil* protHWt0W;
-    Tsil* protHttHt;
-    Tsil* protHttZt;
-    Tsil* protZZttH;
-    Tsil* protZWt0W;
-    Tsil* protZttZt;
-    Tsil* protZ0tW0;
-    Tsil* protWW00Z;
-    Tsil* protW00tW;
-    Tsil* prot00WW0;
-    TsilSTU* prot0W00;
-    TsilST* prot000;
+    std::unique_ptr<Tsil> protHHttH;
+    std::unique_ptr<Tsil> protHZttZ;
+    std::unique_ptr<Tsil> protHWt0W;
+    std::unique_ptr<Tsil> protHttHt;
+    std::unique_ptr<Tsil> protHttZt;
+    std::unique_ptr<Tsil> protZZttH;
+    std::unique_ptr<Tsil> protZWt0W;
+    std::unique_ptr<Tsil> protZttZt;
+    std::unique_ptr<Tsil> protZ0tW0;
+    std::unique_ptr<Tsil> protWW00Z;
+    std::unique_ptr<Tsil> protW00tW;
+    std::unique_ptr<Tsil> prot00WW0;
+    std::unique_ptr<TsilSTU> prot0W00;
+    std::unique_ptr<TsilST> prot000;
 
     // Gaugeless limit
-    Tsil* protH0tt0;
-    Tsil* protH0t00;
-    Tsil* prot0Htt0;
-    Tsil* prot0H0t0;
-    Tsil* prot00ttH;
-    Tsil* protHtt0t;
-    Tsil* prot00t00;
-    Tsil* prot000t0;
+    std::unique_ptr<Tsil> protH0tt0;
+    std::unique_ptr<Tsil> protH0t00;
+    std::unique_ptr<Tsil> prot0Htt0;
+    std::unique_ptr<Tsil> prot0H0t0;
+    std::unique_ptr<Tsil> prot00ttH;
+    std::unique_ptr<Tsil> protHtt0t;
+    std::unique_ptr<Tsil> prot00t00;
+    std::unique_ptr<Tsil> prot000t0;
 
-    TsilST* protos[28];
+    // std::unique_ptr<TsilST> protos[28];
   
   public:
     tt()
@@ -159,39 +159,39 @@ namespace mr
     long double s, c;
 
     // alpha*alphaS
-    Tsil* protWt000;
-    Tsil* prot0ttHt;
-    Tsil* prot0ttZt;
-    Tsil* prot0tt0t;
-    TsilSTU* prottH0H;
-    TsilSTU* prottZ0Z;
+    std::unique_ptr<Tsil> protWt000;
+    std::unique_ptr<Tsil> prot0ttHt;
+    std::unique_ptr<Tsil> prot0ttZt;
+    std::unique_ptr<Tsil> prot0tt0t;
+    std::unique_ptr<TsilSTU> prottH0H;
+    std::unique_ptr<TsilSTU> prottZ0Z;
     // alpha^2
-    Tsil* protHHttH;
-    Tsil* protHZttZ;
-    Tsil* protHWt0W;
-    Tsil* protHttHt;
-    Tsil* protHttZt;
-    Tsil* protZZttH;
-    Tsil* protZWt0W;
-    Tsil* protZttZt;
-    Tsil* protZ0tW0;
-    Tsil* protWW00Z;
-    Tsil* protW00tW;
-    Tsil* prot00WW0;
-    TsilSTU* prot0W00;
-    TsilST* prot000;
+    std::unique_ptr<Tsil> protHHttH;
+    std::unique_ptr<Tsil> protHZttZ;
+    std::unique_ptr<Tsil> protHWt0W;
+    std::unique_ptr<Tsil> protHttHt;
+    std::unique_ptr<Tsil> protHttZt;
+    std::unique_ptr<Tsil> protZZttH;
+    std::unique_ptr<Tsil> protZWt0W;
+    std::unique_ptr<Tsil> protZttZt;
+    std::unique_ptr<Tsil> protZ0tW0;
+    std::unique_ptr<Tsil> protWW00Z;
+    std::unique_ptr<Tsil> protW00tW;
+    std::unique_ptr<Tsil> prot00WW0;
+    std::unique_ptr<TsilSTU> prot0W00;
+    std::unique_ptr<TsilST> prot000;
 
     // Gaugeless limit
-    Tsil* protH0tt0;
-    Tsil* protH0t00;
-    Tsil* prot0Htt0;
-    Tsil* prot0H0t0;
-    Tsil* prot00ttH;
-    Tsil* protHtt0t;
-    Tsil* prot00t00;
-    Tsil* prot000t0;
+    std::unique_ptr<Tsil> protH0tt0;
+    std::unique_ptr<Tsil> protH0t00;
+    std::unique_ptr<Tsil> prot0Htt0;
+    std::unique_ptr<Tsil> prot0H0t0;
+    std::unique_ptr<Tsil> prot00ttH;
+    std::unique_ptr<Tsil> protHtt0t;
+    std::unique_ptr<Tsil> prot00t00;
+    std::unique_ptr<Tsil> prot000t0;
   
-    TsilST* protos[28];
+    // std::unique_ptr<TsilST> protos[28];
 
     // static const long double EPAIR2 = -1.; 
 

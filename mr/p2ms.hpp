@@ -120,14 +120,6 @@ public:
     long double aQCD;
     long double   Gf;
     long double   mu;
-  
-
-    bb<OS>*  bp;
-    WW<OS>*  wp;
-    ZZ<OS>*  zp;
-    HH<OS>*  hp;
-    tt<OS>*  tp;
-    dr<OS>* drp;
 
     // corrections
     long double dbplus1;
@@ -182,12 +174,12 @@ public:
   {
     long double mu2 = pow(mu,2);
   
-    bp  = new bb<OS>(oi, mu2);
-    wp  = new WW<OS>(oi, mu2);
-    zp  = new ZZ<OS>(oi, mu2);
-    hp  = new HH<OS>(oi, mu2);
-    tp  = new tt<OS>(oi, mu2);
-    drp = new dr<OS>(oi, mu2);
+    bb<OS> ibb(oi, mu2);
+    WW<OS> iww(oi, mu2);
+    ZZ<OS> izz(oi, mu2);
+    HH<OS> ihh(oi, mu2);
+    tt<OS> itt(oi, mu2);
+    dr<OS> idr(oi, mu2);
 
     AlphaT alpha(oi, 10e-9, Gf, as_, ord);
   
@@ -223,52 +215,52 @@ public:
 
     if(ord & order::x01)
       {
-        dbplus1 += aQCD*bp->y01();
-        dtplus1 += aQCD*tp->y01();
+        dbplus1 += aQCD*ibb.y01();
+        dtplus1 += aQCD*itt.y01();
       }
     if(ord & order::x10)
       {
-        dbplus1 += aEW*bp->y10();
-        dWplus1 += aEW*wp->y10();
-        dZplus1 += aEW*zp->y10();
-        dHplus1 += aEW*hp->y10();
-        dtplus1 += aEW*tp->y10();
-        dRplus1 += aEW*drp->dr10();
+        dbplus1 += aEW*ibb.y10();
+        dWplus1 += aEW*iww.y10();
+        dZplus1 += aEW*izz.y10();
+        dHplus1 += aEW*ihh.y10();
+        dtplus1 += aEW*itt.y10();
+        dRplus1 += aEW*idr.dr10();
       }
     if(ord & order::x02)
       {
-        dbplus1 += aQCD*aQCD*bp->y02();
-        dtplus1 += aQCD*aQCD*tp->y02();
+        dbplus1 += aQCD*aQCD*ibb.y02();
+        dtplus1 += aQCD*aQCD*itt.y02();
       }
     if(ord & order::x11)
       {
-        dbplus1 += aEW*aQCD*bp->y11();
-        dWplus1 += aEW*aQCD*wp->y11();
-        dZplus1 += aEW*aQCD*zp->y11();
-        dHplus1 += aEW*aQCD*hp->y11();
-        dtplus1 += aEW*aQCD*tp->y11();
-        dRplus1 += aEW*aQCD*drp->dr11();
+        dbplus1 += aEW*aQCD*ibb.y11();
+        dWplus1 += aEW*aQCD*iww.y11();
+        dZplus1 += aEW*aQCD*izz.y11();
+        dHplus1 += aEW*aQCD*ihh.y11();
+        dtplus1 += aEW*aQCD*itt.y11();
+        dRplus1 += aEW*aQCD*idr.dr11();
       }
     if(ord & order::x20)
       {
-        dbplus1 += aEW*aEW*bp->y20();
-        dWplus1 += aEW*aEW*wp->y20();
-        dZplus1 += aEW*aEW*zp->y20();
-        dHplus1 += aEW*aEW*hp->y20();
-        dtplus1 += aEW*aEW*tp->y20();
-        dRplus1 += aEW*aEW*drp->dr20();
+        dbplus1 += aEW*aEW*ibb.y20();
+        dWplus1 += aEW*aEW*iww.y20();
+        dZplus1 += aEW*aEW*izz.y20();
+        dHplus1 += aEW*aEW*ihh.y20();
+        dtplus1 += aEW*aEW*itt.y20();
+        dRplus1 += aEW*aEW*idr.dr20();
 
       }
     if(ord & order::x03)
       {
-        dbplus1 += aQCD*aQCD*aQCD*bp->y03();
-        dtplus1 += aQCD*aQCD*aQCD*tp->y03();
+        dbplus1 += aQCD*aQCD*aQCD*ibb.y03();
+        dtplus1 += aQCD*aQCD*aQCD*itt.y03();
       
       }
     if(ord & order::x04)
       {
-        dbplus1 += aQCD*aQCD*aQCD*aQCD*bp->y04();
-        dtplus1 += aQCD*aQCD*aQCD*aQCD*tp->y04();
+        dbplus1 += aQCD*aQCD*aQCD*aQCD*ibb.y04();
+        dtplus1 += aQCD*aQCD*aQCD*aQCD*itt.y04();
       
       }
   
@@ -294,7 +286,7 @@ public:
     lout(logDEBUG) << " vev = " << sqrt(vev2);
     
     lout(logDEBUG) << " mu0 = " << sqrt(2.*lam())*vev();
-   
+
   }
 
   template<class AlphaT>

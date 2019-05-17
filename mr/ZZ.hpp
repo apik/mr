@@ -41,27 +41,27 @@ namespace mr
     long double MMb, MMt, MMH, MMW, MMZ, mu2;
     long double SW, CW;
 
-    Tsil* protZHHZZ;
-    Tsil* protZZHHH;
-    Tsil* protZWHWW;
-    Tsil* prottZtHt;
-    Tsil* protWWWWH;
-    Tsil* protWWWWZ;
-    Tsil* protWWWW0;
-    Tsil* protWtWt0;
-    Tsil* protW0W0t;
-    Tsil* protW0W00;
-    Tsil* protttttH;
-    Tsil* protttttZ;
-    Tsil* prottttt0;
-    Tsil* prott0t0W;
-    Tsil* prot0000Z;
-    Tsil* prot0000W;
-    Tsil* prot00000;
-    Tsil* protWZWHW;
-    TsilSTU* protHZ00;
-  
-    TsilST* protos[19];
+    std::unique_ptr<Tsil> protZHHZZ;
+    std::unique_ptr<Tsil> protZZHHH;
+    std::unique_ptr<Tsil> protZWHWW;
+    std::unique_ptr<Tsil> prottZtHt;
+    std::unique_ptr<Tsil> protWWWWH;
+    std::unique_ptr<Tsil> protWWWWZ;
+    std::unique_ptr<Tsil> protWWWW0;
+    std::unique_ptr<Tsil> protWtWt0;
+    std::unique_ptr<Tsil> protW0W0t;
+    std::unique_ptr<Tsil> protW0W00;
+    std::unique_ptr<Tsil> protttttH;
+    std::unique_ptr<Tsil> protttttZ;
+    std::unique_ptr<Tsil> prottttt0;
+    std::unique_ptr<Tsil> prott0t0W;
+    std::unique_ptr<Tsil> prot0000Z;
+    std::unique_ptr<Tsil> prot0000W;
+    std::unique_ptr<Tsil> prot00000;
+    std::unique_ptr<Tsil> protWZWHW;
+    std::unique_ptr<TsilSTU> protHZ00;
+
+
   public:
     ZZ()
     {
@@ -99,27 +99,26 @@ namespace mr
     long double mmb, mmt, mmH, mmW, mmZ, mu2;
     long double s, c;
 
-    Tsil* protZHHZZ;
-    Tsil* protZZHHH;
-    Tsil* protZWHWW;
-    Tsil* prottZtHt;
-    Tsil* protWWWWH;
-    Tsil* protWWWWZ;
-    Tsil* protWWWW0;
-    Tsil* protWtWt0;
-    Tsil* protW0W0t;
-    Tsil* protW0W00;
-    Tsil* protttttH;
-    Tsil* protttttZ;
-    Tsil* prottttt0;
-    Tsil* prott0t0W;
-    Tsil* prot0000Z;
-    Tsil* prot0000W;
-    Tsil* prot00000;
-    Tsil* protWZWHW;
-    TsilSTU* protHZ00;
+    std::unique_ptr<Tsil> protZHHZZ;
+    std::unique_ptr<Tsil> protZZHHH;
+    std::unique_ptr<Tsil> protZWHWW;
+    std::unique_ptr<Tsil> prottZtHt;
+    std::unique_ptr<Tsil> protWWWWH;
+    std::unique_ptr<Tsil> protWWWWZ;
+    std::unique_ptr<Tsil> protWWWW0;
+    std::unique_ptr<Tsil> protWtWt0;
+    std::unique_ptr<Tsil> protW0W0t;
+    std::unique_ptr<Tsil> protW0W00;
+    std::unique_ptr<Tsil> protttttH;
+    std::unique_ptr<Tsil> protttttZ;
+    std::unique_ptr<Tsil> prottttt0;
+    std::unique_ptr<Tsil> prott0t0W;
+    std::unique_ptr<Tsil> prot0000Z;
+    std::unique_ptr<Tsil> prot0000W;
+    std::unique_ptr<Tsil> prot00000;
+    std::unique_ptr<Tsil> protWZWHW;
+    std::unique_ptr<TsilSTU> protHZ00;
   
-    TsilST* protos[19];
   public:
     ZZ()
     {
@@ -136,7 +135,7 @@ namespace mr
 
   
     long double x11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
-  
+    
 
     long double x20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 

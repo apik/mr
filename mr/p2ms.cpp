@@ -36,38 +36,48 @@ namespace mr
   {
     
     OSinput oi;
-    WW<OS>* dW;
-    ZZ<OS>* dZ;
+
     unsigned ord;
     long double Gf0;
     long double alphaS;
-    
+
+    // Precalculated set of corrections
+    long double Wy10, Wy11, Wy20, Zy10, Zy11, Zy20;
+
     DiffGF(OSinput in_, long double Gf0_, long double as_, long double mu2, unsigned order_) : oi(in_), Gf0(Gf0_), alphaS(as_), ord(order_)
     {
-      dW = new WW<OS>(oi, mu2);
-      dZ = new ZZ<OS>(oi, mu2);
+      WW<OS> dW(oi, mu2);
+      ZZ<OS> dZ(oi, mu2);
+
+      Wy10 = dW.y10();
+      Wy11 = dW.y11();
+      Wy20 = dW.y20();
+
+      Zy10 = dZ.y10();
+      Zy11 = dZ.y11();
+      Zy20 = dZ.y20();
     }
-  
+
     long double operator()(long double alpha)
     {
       long double dMyW = 1;
       long double dMyZ = 1;
       long double Gf;
-    
+
       if(ord & order::x10)
         {
-          dMyW += alpha/4./Pi*dW->y10();
-          dMyZ += alpha/4./Pi*dZ->y10();
+          dMyW += alpha/4./Pi*Wy10;
+          dMyZ += alpha/4./Pi*Zy10;
         }
       if(ord & order::x11)
         {
-          dMyW += alpha/4./Pi*alphaS/4./Pi*dW->y11();
-          dMyZ += alpha/4./Pi*alphaS/4./Pi*dZ->y11();
+          dMyW += alpha/4./Pi*alphaS/4./Pi*Wy11;
+          dMyZ += alpha/4./Pi*alphaS/4./Pi*Zy11;
         }
       if(ord & order::x20)
         {
-          dMyW += pow(alpha/4./Pi,2)*dW->y20();
-          dMyZ += pow(alpha/4./Pi,2)*dZ->y20();
+          dMyW += pow(alpha/4./Pi,2)*Wy20;
+          dMyZ += pow(alpha/4./Pi,2)*Zy20;
         }
     
 

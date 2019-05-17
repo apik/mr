@@ -41,7 +41,7 @@ namespace mr
     long double MMb, MMt, MMH, MMW, MMZ, mu2;
     long double SW, CW;
 
-    Tsil* prot0bb0b;
+    std::unique_ptr<Tsil> prot0bb0b;
 
   public:
     bb()
@@ -128,7 +128,7 @@ namespace mr
     long double mmb,mmt, mmH, mmW, mmZ, mu2;
     long double s, c;
   
-    Tsil* prot0bb0b;
+    std::unique_ptr<Tsil> prot0bb0b;
 
   public:
     bb()
