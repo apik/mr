@@ -34,18 +34,18 @@ namespace mr
 
   std::complex<long double> Li2(std::complex<long double> z)
   {
-    return TSIL_Dilog(z.real()+1.0I*z.imag());
+    return TSIL_Dilog(*((TSIL_COMPLEX*) (&z)));
   }
 
   std::complex<long double> Li3(std::complex<long double> z)
   {
-    return TSIL_Trilog(z.real()+1.0I*z.imag());
+    return TSIL_Trilog(*((TSIL_COMPLEX*) (&z)));
   }
 
   std::complex<long double> acc(std::complex<long double> z)
-  {    return z;  }  
+  {    return z;  }
 
   std::complex<long double> inv(std::complex<long double> z)
-  {    return std::complex<long double>(1.,0)/z;  }  
+  {    return std::complex<long double>(1.,0)/z;  }
 
 } // namespace mr

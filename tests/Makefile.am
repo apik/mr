@@ -6,7 +6,7 @@ EX_CFLAGS = $(OPENMP_CFLAGS) $(MR_CFLAGS) -I$(top_srcdir)/tsil-1.3 -I$(top_srcdi
 
 noinst_PROGRAMS = testsuite
 
-TEST_FILES = tst-BKKS_1205.2893.cpp  tst-JKV_0105304.cpp  tst-JKV_0212319.cpp  tst-mPlanck.cpp  tst-MWeqMZ.cpp  tst-RunDec.cpp
+TEST_FILES = tst-BKKS_1205.2893.cpp  tst-JKV_0105304.cpp  tst-JKV_0212319.cpp  tst-mPlanck.cpp  tst-MWeqMZ.cpp  tst-RunDec.cpp  tst-PolyLog.cpp
 
 if HAVE_EIGEN
 TEST_FILES += tst-mOSmMS_QCD.cpp

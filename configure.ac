@@ -8,11 +8,13 @@ AM_INIT_AUTOMAKE([foreign subdir-objects])
 AC_OPENMP()
 
 AC_CONFIG_HEADERS([config.h])
+${CXXFLAGS="$CXXFLAGS -std=c++11"}
 dnl : ${CXXFLAGS="-O0"}
 AC_PROG_CXX
 AC_PROG_CC
 
 AC_LANG([C++])
+AX_CXX_COMPILE_STDCXX(11, noext, mandatory)
 AC_CHECK_HEADERS([Eigen/Dense])
 AM_CONDITIONAL(HAVE_EIGEN, test "x$ac_cv_header_Eigen_Dense" != "xno")
 
