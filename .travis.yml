@@ -1,16 +1,13 @@
 sudo: false
 language: cpp
+dist: bionic
+compiler: gcc
 
 # whitelist
 branches:
   only:
     - develop
     - master
-
-matrix:
-  include:
-    - compiler: gcc
-    # - compiler: clanggit 
 
 script:
   - autoreconf -iv
