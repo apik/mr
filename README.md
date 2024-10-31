@@ -19,9 +19,9 @@ for git version
 
 or for prepared package
 
-    $ curl -OL https://github.com/apik/mr/releases/download/v1.3.2/mr-1.3.2.tar.gz
-    $ tar -zxf mr-1.3.2.tar.gz
-    $ cd mr-1.01
+    $ curl -OL https://github.com/apik/mr/releases/download/v1.4/mr-1.4.tar.gz
+    $ tar -zxf mr-1.4.tar.gz
+    $ cd mr-1.4
     $ ./configure
     $ make && make install
 
