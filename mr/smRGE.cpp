@@ -1121,7 +1121,7 @@ namespace mr
 
   BetaSM::BetaSM(int pocoa1_, int pocoa2_, int pocoas_, int pocoat_, int pocoab_, int pocoatau_, int pocolam_, int pocomu2_, int pocovev_, size_t NG_, bool MultiplyByMinus1_) : ng(NG_), pocoa1(pocoa1_), pocoa2(pocoa2_), pocoa3(pocoas_), pocoa4(pocoat_), pocoa5(pocoab_), pocoa6(pocoatau_), pocoa7(pocolam_), pocoa8(pocomu2_), pocoa9(pocovev_), MultiplyByMinus1(MultiplyByMinus1_)
   {
-    bSM = new BetaSMFull(pocoa1,pocoa2,pocoa3,pocoa4,pocoa5,pocoa6,pocoa7,NG_);
+    bSM = std::unique_ptr<BetaSMFull>(new BetaSMFull(pocoa1,pocoa2,pocoa3,pocoa4,pocoa5,pocoa6,pocoa7,NG_));
   }
 
 

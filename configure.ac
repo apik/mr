@@ -1,4 +1,4 @@
-AC_INIT([Standard Model 3-loop running and 2-loop matching], [1.3.2], [pikelner@theor.jinr.ru],
+AC_INIT([Standard Model 3-loop running and 2-loop matching], [1.4], [pikelner@theor.jinr.ru],
              [mr], [http://apik.github.io/mr/])
 AC_PREREQ([2.59])
 AC_CONFIG_MACRO_DIR([m4])
@@ -8,16 +8,16 @@ AM_INIT_AUTOMAKE([foreign subdir-objects])
 AC_OPENMP()
 
 AC_CONFIG_HEADERS([config.h])
-${CXXFLAGS="$CXXFLAGS -std=c++11"}
-dnl : ${CXXFLAGS="-O0"}
+${CXXFLAGS="$CXXFLAGS -std=c++14"}
 AC_PROG_CXX
 AC_PROG_CC
 
 AC_LANG([C++])
-AX_CXX_COMPILE_STDCXX(11, noext, mandatory)
+
 AC_CHECK_HEADERS([Eigen/Dense])
 AM_CONDITIONAL(HAVE_EIGEN, test "x$ac_cv_header_Eigen_Dense" != "xno")
 
+AX_BOOST_BASE([1.70],, [AC_MSG_ERROR([mr needs Boost, but it was not found in your system])])
 
 AC_ARG_WITH([mcc-path],
             [AS_HELP_STRING([--with-mcc-path],

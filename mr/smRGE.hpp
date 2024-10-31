@@ -49,7 +49,7 @@ namespace mr
 
   typedef std::vector<size_t> index_t;
 
-  struct index_cmp_t : std::binary_function<index_t, index_t, bool> {
+  struct index_cmp_t : std::function<bool(index_t, index_t)> {
     bool operator ()(index_t const& a, index_t const& b) const {
       for (index_t::size_type i = 0; i < a.size(); ++i)
         if (a[i] != b[i])
@@ -76,7 +76,6 @@ namespace mr
     std::map<index_t, Rt, index_cmp_t> be6;
     std::map<index_t, Rt, index_cmp_t> be7;
   
-    // int pocoa1, pocoa2, pocoas, pocoat, pocoab, pocoatau, pocolam;
     int pocoa1, pocoa2, pocoa3, pocoa4, pocoa5, pocoa6, pocoa7;
     size_t maxPower;
 
@@ -113,7 +112,7 @@ namespace mr
   class BetaSM
   {
 
-    BetaSMFull* bSM;
+    std::unique_ptr<BetaSMFull> bSM;
     size_t ng;
   
     size_t maxPower;
@@ -144,16 +143,6 @@ namespace mr
   };
 
 
-
-
-
-
-
-
-
-
- 
-
   // 
   // Couplings class
   // 
@@ -161,10 +150,10 @@ namespace mr
   class CouplingsSM
   {
     
-    Rt      mu0;
-    SMCouplings aSM0;
-    size_t       NG;
-    BetaSMFull*   bep;
+    Rt                            mu0;
+    SMCouplings                  aSM0;
+    size_t                         NG;
+    std::unique_ptr<BetaSMFull>   bep;
     
   public:
   
@@ -192,7 +181,7 @@ namespace mr
                 << "   MU = " << std::setw(fw) << sqrt(mu0)
                 << "   NG = " << std::setw(fw) << NG <<std::endl; 
       
-      bep = new  BetaSMFull(pocoa1, pocoa2, pocoas, pocoat, pocoab, pocoatau, pocolam, NG_);
+      bep = std::unique_ptr<BetaSMFull>(new  BetaSMFull(pocoa1, pocoa2, pocoas, pocoat, pocoab, pocoatau, pocolam, NG_));
     }
 
 
@@ -238,10 +227,10 @@ namespace mr
   class ParametersSM
   {
   
-    Rt           mu0;
-    SMCouplings aSM0;
-    size_t        NG;
-    BetaSM*      bep;
+    Rt                      mu0;
+    SMCouplings            aSM0;
+    size_t                   NG;
+    std::unique_ptr<BetaSM> bep;
   
   public:
     ParametersSM(Rt a1, Rt a2, Rt as, Rt at, Rt ab, Rt atau, Rt lam, Rt mphi, Rt vev, Rt mu0_, size_t NG_ = 3) : mu0(mu0_), NG(NG_)
@@ -272,7 +261,7 @@ namespace mr
       lout(logINFO) << "\t  MU = " << std::setw(fw) << sqrt(mu0)
                     << "   NG = " << std::setw(fw) <<  NG; 
     
-      bep = new  BetaSM(pocoa1, pocoa2, pocoas, pocoat, pocoab, pocoatau, pocolam, pocomu2, pocovev, NG_);
+      bep = std::unique_ptr<BetaSM>(new BetaSM(pocoa1, pocoa2, pocoas, pocoat, pocoab, pocoatau, pocolam, pocomu2, pocovev, NG_));
     }
 
     // Constructor from Pole mass input
@@ -299,7 +288,7 @@ namespace mr
       lout(logINFO) << "\t  MU = " << std::setw(fw) << sqrt(mu0)
                     << "   NG = " << std::setw(fw) << NG;
     
-      bep = new  BetaSM(pocoa1, pocoa2, pocoas, pocoat, pocoab, pocoatau, pocolam, pocomu2, pocovev, NG_);
+      bep = std::unique_ptr<BetaSM>(new  BetaSM(pocoa1, pocoa2, pocoas, pocoat, pocoab, pocoatau, pocolam, pocomu2, pocovev, NG_));
     }
 
 
@@ -349,7 +338,7 @@ namespace mr
                            ( abs_err , rel_err , a_x , a_dxdt ) );
     
       integrate_adaptive( controlled_stepper , // Stepper function
-                          *bep,                // Derivatives
+                          std::ref(*bep),                // Derivatives
                           aSM,                 // Initial values
                           Rt(0.0),             // t0 = Log[mu0/mu0]
                           Rt(std::abs(lEnd)),  // t  = Log[mu/mu0]
