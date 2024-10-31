@@ -1,9 +1,9 @@
 #include <bb.hpp>
-long double bb::ygl01(size_t nL, size_t nH, size_t boson)
+double bb::ygl01(size_t nL, size_t nH, size_t boson)
 {     
       
       
-    std::complex<long double> aryubbGL[5], yubbGLret;
+    std::complex<double> aryubbGL[5], yubbGLret;
 
     aryubbGL[1]=double(boson);
     aryubbGL[2]=Tsil::A(MMb,mu2);

@@ -26,7 +26,7 @@
 
 namespace mr
 {
-  tt<OS>::tt(OSinput sm, long double mu2_)
+  tt<OS>::tt(OSinput sm, double mu2_)
   {
     MMb = sm.MMb();
     MMW = sm.MMW();
@@ -176,7 +176,7 @@ namespace mr
   }
 
 
-  tt<MS>::tt(MSinput sm, long double mu2_)
+  tt<MS>::tt(MSinput sm, double mu2_)
   {
     mmb = sm.mmb();
     mmW = sm.mmW();

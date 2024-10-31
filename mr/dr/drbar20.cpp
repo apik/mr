@@ -1,11 +1,11 @@
 #include <dr.hpp>
 namespace mr
 {
-  long double dr<MS>::dr20(size_t nL, size_t nH, size_t boson)
+  double dr<MS>::dr20(size_t nL, size_t nH, size_t boson)
   {     
       
       
-    std::complex<long double> ardrbar[200], drbarret;
+    std::complex<double> ardrbar[200], drbarret;
 
     ardrbar[1]=double(nL + nH);
     ardrbar[2]=pow(s,-1);

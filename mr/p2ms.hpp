@@ -44,10 +44,10 @@ namespace mr
   protected:
     OSinput oi;
     unsigned ord;
-    long double Gf0;
-    long double alphaS;
+    double Gf0;
+    double alphaS;
     
-    long double alpha0;
+    double alpha0;
 
     Tolerance tol;
     static Tolerance getTolerance(double tol_)
@@ -57,8 +57,8 @@ namespace mr
 
   public:
     AlphaBase(const OSinput & in_, double tol_ = 10e-9,
-              const long double &  Gf0_ = pdg2014::Gf,
-              const long double &  as_ = pdg2014::asMZ,
+              const double &  Gf0_ = pdg2014::Gf,
+              const double &  as_ = pdg2014::asMZ,
               unsigned order_ = 
               order::x01|order::x10|order::x02|
               order::x11|order::x20|order::x03): oi(in_), tol(getTolerance(tol_)), Gf0(Gf0_), alphaS(as_), ord(order_)
@@ -66,7 +66,7 @@ namespace mr
      
     }
 
-    virtual long double operator()(const long double& mu2 ) = 0;
+    virtual double operator()(const double& mu2 ) = 0;
     
   };
 
@@ -77,8 +77,8 @@ namespace mr
   
   public:
     AlphaSolve(const OSinput & in_, double tol_ = 10e-9,
-               const long double &  Gf0_ = pdg2014::Gf,
-               const long double &  as_ = pdg2014::asMZ,
+               const double &  Gf0_ = pdg2014::Gf,
+               const double &  as_ = pdg2014::asMZ,
                unsigned order_ = 
                order::x01|order::x10|order::x02|
                order::x11|order::x20|order::x03): AlphaBase(in_, tol_, Gf0_, as_,order_)
@@ -86,7 +86,7 @@ namespace mr
      
     }
 
-    long double operator()(const long double& mu2 );
+    double operator()(const double& mu2 );
     
   };
 
@@ -96,8 +96,8 @@ namespace mr
   
 public:
     AlphaGF(const OSinput & in_, double tol_ = 10e-9,
-            const long double &  Gf0_ = pdg2014::Gf,
-            const long double &  as_ = pdg2014::asMZ,
+            const double &  Gf0_ = pdg2014::Gf,
+            const double &  as_ = pdg2014::asMZ,
             unsigned order_ = 
             order::x01|order::x10|order::x02|
             order::x11|order::x20|order::x03): AlphaBase(in_, tol_, Gf0_, as_,order_)
@@ -105,7 +105,7 @@ public:
     
     }
 
-    long double operator()(const long double& mu2 );
+    double operator()(const double& mu2 );
   };
 
 
@@ -116,52 +116,52 @@ public:
   {
     OSinput       oi;
     
-    long double  aEW;
-    long double aQCD;
-    long double   Gf;
-    long double   mu;
+    double  aEW;
+    double aQCD;
+    double   Gf;
+    double   mu;
 
     // corrections
-    long double dbplus1;
-    long double dWplus1;
-    long double dZplus1;
-    long double dHplus1;
-    long double dtplus1;
-    long double dRplus1;
+    double dbplus1;
+    double dWplus1;
+    double dZplus1;
+    double dHplus1;
+    double dtplus1;
+    double dRplus1;
 
     unsigned ord;
 
   public:
     P2MS(const OSinput & oi_,
-         const long double &  Gf_ = pdg2014::Gf,
-         const long double &  as_ = pdg2014::asMZ,
-         const long double &  mu_ = pdg2014::MZ,
+         const double &  Gf_ = pdg2014::Gf,
+         const double &  as_ = pdg2014::asMZ,
+         const double &  mu_ = pdg2014::MZ,
          unsigned ord_ = order::x01|order::x10|order::x02|order::x11|order::x20|order::x03 );
   
-    long double   a1() const;
-    long double   a2() const;
-    long double   as() const;
-    long double   at() const;
-    long double   ab() const;
-    long double alam() const;
+    double   a1() const;
+    double   a2() const;
+    double   as() const;
+    double   at() const;
+    double   ab() const;
+    double alam() const;
   
   
-    long double  g1()  const;
-    long double  g2()  const;
-    long double  gs()  const;
-    long double  yt()  const;
-    long double  yb()  const;
-    long double lam()  const;
-    long double mphi() const;
-    long double vev()  const;
+    double  g1()  const;
+    double  g2()  const;
+    double  gs()  const;
+    double  yt()  const;
+    double  yb()  const;
+    double lam()  const;
+    double mphi() const;
+    double vev()  const;
   
     MSinput getMSpar();
 
-    std::vector<long double> runningCouplings() const;
+    std::vector<double> runningCouplings() const;
 
     SMCouplings ai() const;
     
-    long double scale() const
+    double scale() const
     {
       return mu;
     }
@@ -170,9 +170,9 @@ public:
   
   // SM NH and NL fixed
   template<class AlphaT>
-  P2MS<AlphaT>::P2MS(const OSinput & oi_, const long double &  Gf_, const long double &  as_,const long double &  mu_, unsigned ord_): oi(oi_), Gf(Gf_), aQCD(as_/4./Pi), mu(mu_), ord(ord_)
+  P2MS<AlphaT>::P2MS(const OSinput & oi_, const double &  Gf_, const double &  as_,const double &  mu_, unsigned ord_): oi(oi_), Gf(Gf_), aQCD(as_/4./Pi), mu(mu_), ord(ord_)
   {
-    long double mu2 = pow(mu,2);
+    double mu2 = pow(mu,2);
   
     bb<OS> ibb(oi, mu2);
     WW<OS> iww(oi, mu2);
@@ -264,17 +264,17 @@ public:
       
       }
   
-    long double gg = pow(2.,5./2.)*Gf*oi.MMW()*dWplus1;
-    long double gg_ggp = pow(2.,5./2.)*Gf*oi.MMZ()*dZplus1;
+    double gg = pow(2.,5./2.)*Gf*oi.MMW()*dWplus1;
+    double gg_ggp = pow(2.,5./2.)*Gf*oi.MMZ()*dZplus1;
   
-    long double a1 = 5./3.*(gg_ggp - gg)/16./Pi/Pi;
-    long double a2 = gg/16./Pi/Pi;
-    long double aS = aQCD;
-    long double ayt = pow(2.,3./2.)*Gf*oi.MMt()*pow(dtplus1,2)/16./Pi/Pi;
-    long double alam = Gf/sqrt(2.)*oi.MMH()*dHplus1/16./Pi/Pi;
+    double a1 = 5./3.*(gg_ggp - gg)/16./Pi/Pi;
+    double a2 = gg/16./Pi/Pi;
+    double aS = aQCD;
+    double ayt = pow(2.,3./2.)*Gf*oi.MMt()*pow(dtplus1,2)/16./Pi/Pi;
+    double alam = Gf/sqrt(2.)*oi.MMH()*dHplus1/16./Pi/Pi;
 
 
-    long double vev2 = dRplus1/Gf/sqrt(2.);
+    double vev2 = dRplus1/Gf/sqrt(2.);
   
     lout(logDEBUG) << " At matching scale mu = " << mu ;
     lout(logDEBUG) << " g1 = " << sqrt(3./5.*a1)*4*Pi;
@@ -290,94 +290,94 @@ public:
   }
 
   template<class AlphaT>
-  long double P2MS<AlphaT>::a1() const
+  double P2MS<AlphaT>::a1() const
   {
-    long double gg = pow(2.,5./2.)*Gf*oi.MMW()*dWplus1;
-    long double gg_ggp = pow(2.,5./2.)*Gf*oi.MMZ()*dZplus1;
+    double gg = pow(2.,5./2.)*Gf*oi.MMW()*dWplus1;
+    double gg_ggp = pow(2.,5./2.)*Gf*oi.MMZ()*dZplus1;
   
     return 5./3.*(gg_ggp - gg)/16./Pi/Pi;
   }
 
   template<class AlphaT>
-  long double P2MS<AlphaT>::g1() const
+  double P2MS<AlphaT>::g1() const
   {
     return sqrt(a1())*4*Pi;
   }
 
 
   template<class AlphaT>
-  long double P2MS<AlphaT>::a2() const
+  double P2MS<AlphaT>::a2() const
   {
-    long double gg = pow(2.,5./2.)*Gf*oi.MMW()*dWplus1;
+    double gg = pow(2.,5./2.)*Gf*oi.MMW()*dWplus1;
     return gg/16./Pi/Pi;
   }
 
   template<class AlphaT>
-  long double P2MS<AlphaT>::g2() const
+  double P2MS<AlphaT>::g2() const
   {
     return sqrt(a2())*4*Pi;
   }
 
   template<class AlphaT>
-  long double P2MS<AlphaT>::as() const
+  double P2MS<AlphaT>::as() const
   {
     return aQCD;
   }
 
   template<class AlphaT>
-  long double P2MS<AlphaT>::gs() const
+  double P2MS<AlphaT>::gs() const
   {
     return sqrt(as())*4*Pi;
   }
   
   template<class AlphaT>
-  long double P2MS<AlphaT>::at() const
+  double P2MS<AlphaT>::at() const
   {
     return pow(2.,3./2.)*Gf*oi.MMt()*pow(dtplus1,2)/16./Pi/Pi;
   }
 
   template<class AlphaT>
-  long double P2MS<AlphaT>::yt() const
+  double P2MS<AlphaT>::yt() const
   {
     return sqrt(at())*4*Pi;  
   }
 
 
   template<class AlphaT>
-  long double P2MS<AlphaT>::ab() const
+  double P2MS<AlphaT>::ab() const
   {
     return pow(2.,3./2.)*Gf*oi.MMb()*pow(dbplus1,2)/16./Pi/Pi;
   }
 
   template<class AlphaT>
-  long double P2MS<AlphaT>::yb() const
+  double P2MS<AlphaT>::yb() const
   {
     return sqrt(ab())*4*Pi;  
   }
 
 
   template<class AlphaT>
-  long double P2MS<AlphaT>::alam() const
+  double P2MS<AlphaT>::alam() const
   {
     return Gf/sqrt(2.)*oi.MMH()*dHplus1/16./Pi/Pi;
   }
 
   template<class AlphaT>
-  long double P2MS<AlphaT>::lam() const
+  double P2MS<AlphaT>::lam() const
   {
     return alam()*16*Pi*Pi;
   }
 
 
   template<class AlphaT>
-  long double P2MS<AlphaT>::mphi() const // tree: mu0=Mh
+  double P2MS<AlphaT>::mphi() const // tree: mu0=Mh
   {
     return sqrt(2.*lam())*vev();
   }
 
 
   template<class AlphaT>
-  long double P2MS<AlphaT>::vev() const
+  double P2MS<AlphaT>::vev() const
   {
     return sqrt(dRplus1/Gf/sqrt(2.));
   }
@@ -403,9 +403,9 @@ public:
   }
 
   template<class AlphaT>
-  std::vector<long double> P2MS<AlphaT>::runningCouplings() const
+  std::vector<double> P2MS<AlphaT>::runningCouplings() const
   {
-    std::vector<long double> g(9);
+    std::vector<double> g(9);
 
     g[couplings::g1] = g1();
     g[couplings::g2] = g2();

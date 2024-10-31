@@ -38,13 +38,13 @@ namespace mr
     OSinput oi;
 
     unsigned ord;
-    long double Gf0;
-    long double alphaS;
+    double Gf0;
+    double alphaS;
 
     // Precalculated set of corrections
-    long double Wy10, Wy11, Wy20, Zy10, Zy11, Zy20;
+    double Wy10, Wy11, Wy20, Zy10, Zy11, Zy20;
 
-    DiffGF(OSinput in_, long double Gf0_, long double as_, long double mu2, unsigned order_) : oi(in_), Gf0(Gf0_), alphaS(as_), ord(order_)
+    DiffGF(OSinput in_, double Gf0_, double as_, double mu2, unsigned order_) : oi(in_), Gf0(Gf0_), alphaS(as_), ord(order_)
     {
       WW<OS> dW(oi, mu2);
       ZZ<OS> dZ(oi, mu2);
@@ -58,11 +58,11 @@ namespace mr
       Zy20 = dZ.y20();
     }
 
-    long double operator()(long double alpha)
+    double operator()(double alpha)
     {
-      long double dMyW = 1;
-      long double dMyZ = 1;
-      long double Gf;
+      double dMyW = 1;
+      double dMyZ = 1;
+      double Gf;
 
       if(ord & order::x10)
         {
@@ -91,15 +91,15 @@ namespace mr
   
 
   
-  long double AlphaSolve::operator()(const long double& mu2 )
+  double AlphaSolve::operator()(const double& mu2 )
   {
     DiffGF dGF(oi, Gf0, alphaS, mu2, ord);
 
     boost::uintmax_t max_iter=50;
-    std::pair<long double, long double> found = 
-      boost::math::tools::toms748_solve(dGF, 1./140.l, 1./120.l, tol, max_iter);
+    std::pair<double, double> found = 
+      boost::math::tools::toms748_solve(dGF, 1./140., 1./120., tol, max_iter);
   
-    boost::numeric::interval<long double> fint(found.first, found.second);
+    boost::numeric::interval<double> fint(found.first, found.second);
   
     std::cout << std::setprecision(10);
     lout(logDEBUG) << "==> 1/alpha = [" << 1./found.first << ',' << 1./found.second << "]";
@@ -108,15 +108,15 @@ namespace mr
   }
 
   
-  long double AlphaGF::operator()(const long double& mu2 )
+  double AlphaGF::operator()(const double& mu2 )
   {
     
     alphaGF aGF  = alphaGF(oi, mu2);
     
-    long double daGF = 1;
+    double daGF = 1;
     
     // Tree level
-    long double alF = sqrt(2)*Gf0*oi.MMW()/Pi*(1-oi.MMW()/oi.MMZ());
+    double alF = sqrt(2)*Gf0*oi.MMW()/Pi*(1-oi.MMW()/oi.MMZ());
     
     if(ord & order::x10)
       {

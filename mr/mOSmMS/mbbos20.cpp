@@ -1,11 +1,11 @@
 #include <bb.hpp>
 namespace mr
 {
-  long double bb<MS>::x20(size_t nL, size_t nH, size_t boson)
+  double bb<MS>::x20(size_t nL, size_t nH, size_t boson)
   {     
       
       
-    std::complex<long double> armbbos[232], mbbosret;
+    std::complex<double> armbbos[232], mbbosret;
 
     armbbos[1]=double(nL + nH);
     armbbos[2]=pow(s,-1);

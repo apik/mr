@@ -1,11 +1,11 @@
 #include <ZZ.hpp>
 namespace mr
 {
-  long double ZZ<OS>::y10(size_t nL, size_t nH, size_t boson)
+  double ZZ<OS>::y10(size_t nL, size_t nH, size_t boson)
   {     
       
       
-    std::complex<long double> aryuZZ[32], yuZZret;
+    std::complex<double> aryuZZ[32], yuZZret;
 
     aryuZZ[1]=double(nH);
     aryuZZ[2]=double(boson);

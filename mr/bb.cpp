@@ -24,13 +24,13 @@
 
 namespace mr
 {
-  bb<OS>::bb(long double MMb_, long double MMW_,long double MMZ_,long double MMH_,long double MMt_,long double mu2_):
+  bb<OS>::bb(double MMb_, double MMW_,double MMZ_,double MMH_,double MMt_,double mu2_):
     MMb(MMb_), MMW(MMW_), MMZ(MMZ_), MMH(MMH_), MMt(MMt_), mu2(mu2_)
   {
     init(MMb, MMW, MMZ, MMH, MMt, mu2);
   }
 
-  bb<OS>::bb(OSinput sm, long double mu2_)
+  bb<OS>::bb(OSinput sm, double mu2_)
   {
     MMb = sm.MMb();
     MMW = sm.MMW();
@@ -43,7 +43,7 @@ namespace mr
   }
 
 
-  void bb<OS>::init(long double MMb_, long double MMW_,long double MMZ_,long double MMH_,long double MMt_,long double mu2_)
+  void bb<OS>::init(double MMb_, double MMW_,double MMZ_,double MMH_,double MMt_,double mu2_)
   {
   
     CW = sqrt(MMW/MMZ);
@@ -57,7 +57,7 @@ namespace mr
 
   }
 
-  bb<MS>::bb(MSinput sm, long double mu2_)
+  bb<MS>::bb(MSinput sm, double mu2_)
   {
     mmb = sm.mmb();
     mmW = sm.mmW();

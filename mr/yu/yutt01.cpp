@@ -1,11 +1,11 @@
 #include <tt.hpp>
 namespace mr
 {
-  long double tt<OS>::y01(size_t nL, size_t nH, size_t boson)
+  double tt<OS>::y01(size_t nL, size_t nH, size_t boson)
   {     
       
       
-    std::complex<long double> aryutt[5], yuttret;
+    std::complex<double> aryutt[5], yuttret;
 
     aryutt[1]=double(boson);
     aryutt[2]=Tsil::A(MMt,mu2);

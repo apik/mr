@@ -23,10 +23,10 @@
 
 
 // Type for couplings 
-typedef long double Rt;
+typedef double Rt;
 
 // Type for masses
-typedef long double MRt;
+typedef double MRt;
 
 // Couplings set
 typedef std::vector<Rt> SMCouplings;
@@ -37,14 +37,14 @@ typedef std::vector<Rt> SMCouplings;
 //
 class Tolerance {
 public:
-  Tolerance(long double eps) :
+  Tolerance(double eps) :
     _eps(eps) {
   }
-  bool operator()(long double a, long double b) {
+  bool operator()(double a, double b) {
     return (std::abs(b - a) <= _eps);
   }
 private:
-  long double _eps;
+  double _eps;
 };
 
 

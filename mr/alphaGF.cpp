@@ -27,7 +27,7 @@
 
 namespace mr
 {
-  alphaGF::alphaGF(OSinput sm, long double mu2_)
+  alphaGF::alphaGF(OSinput sm, double mu2_)
   {
     MMb = sm.MMb();
     MMW = sm.MMW();

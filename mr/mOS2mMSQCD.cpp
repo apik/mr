@@ -26,12 +26,12 @@ namespace mr
 {
   // nh - number of heavy fermions with mass M
   // nl - number of massles fermions
-  long double mOS2mMS(long double MM, long double mu2, size_t nl, size_t nh, size_t loops)
+  double mOS2mMS(double MM, double mu2, size_t nl, size_t nh, size_t loops)
   {
     double NL = double(nl), NH = double (nh);
     if(loops == 1)
       {
-        long double mOS2mMS1 =   + log(mu2/MM) * (  - 4 );
+        double mOS2mMS1 =   + log(mu2/MM) * (  - 4 );
       
         mOS2mMS1 +=  - 16./3.;
 
@@ -39,7 +39,7 @@ namespace mr
       }
     else if(loops == 2)
       {
-        long double mOS2mMS2 =   + log(mu2/MM) * (  - 314./3. + 52./9.*NL + 52./9.*NH );
+        double mOS2mMS2 =   + log(mu2/MM) * (  - 314./3. + 52./9.*NL + 52./9.*NH );
 
         mOS2mMS2 +=  + pow(log(mu2/MM),2) * (  - 14 + 4./3.*NL + 4./3.*NH );
 
@@ -51,7 +51,7 @@ namespace mr
       }
     else if(loops == 3)
       {
-        long double mOS2mMS3 = + log(mu2/MM) * (  - 42650./9. + 48*Zeta3 + 14164./27.*NL + 448./9.*NL
+        double mOS2mMS3 = + log(mu2/MM) * (  - 42650./9. + 48*Zeta3 + 14164./27.*NL + 448./9.*NL
                                                   *Zeta3 - 712./81.*pow(NL,2) + 18052./27.*NH + 448./9.*NH*Zeta3 - 
                                                   2288./81.*NH*NL - 1576./81.*pow(NH,2) );
       
@@ -84,7 +84,7 @@ namespace mr
       }
     else if(loops == 4)
       {
-        long double mOS2mMS4 = + log(mu2/MM) * (  - 839677./3. + 141056./9.*a4 + 17632./27.*pow(
+        double mOS2mMS4 = + log(mu2/MM) * (  - 839677./3. + 141056./9.*a4 + 17632./27.*pow(
                                                                                                 log(2.),4) - 157960./27.*Zeta5 + 197780./9.*Zeta4 - 75032./27.*Zeta3 + 
                                                   11149742./243.*NL - 44032./27.*NL*a4 - 5504./81.*NL*pow(log(2.),4)
                                                   - 27920./27.*NL*Zeta5 - 206200./27.*NL*Zeta4 + 84584./9.*NL*Zeta3
@@ -142,9 +142,9 @@ namespace mr
         // nf^1,nf^0 from arXiv:1502.01030 [hep-ph]
 
 
-        const long double zm4_3 = -1744.8; // +/- 21.5
-        const long double zm4_4 = -1267.0; // +/- 21.5
-        const long double zm4_5 = -859.96; // +/- 21.5
+        const double zm4_3 = -1744.8; // +/- 21.5
+        const double zm4_4 = -1267.0; // +/- 21.5
+        const double zm4_5 = -859.96; // +/- 21.5
 
         if (NH==1)
           if (NL == 3)
@@ -172,16 +172,16 @@ namespace mr
   //
   //   xx=M_t^2/M^2
   // 
-  long double mOS2mMSnm(long double MM, long double xx, long double mu2, size_t nl_,size_t nm_, size_t nh_, size_t loops)
+  double mOS2mMSnm(double MM, double xx, double mu2, size_t nl_,size_t nm_, size_t nh_, size_t loops)
   {
     double nl = double(nl_), nm = double (nm_), nh = double (nh_);
   
-    long double LmuM = log(mu2/MM);
-    std::complex<long double> x = sqrt(xx);
+    double LmuM = log(mu2/MM);
+    std::complex<double> x = sqrt(xx);
   
     if(loops == 1)
       {
-        std::complex<long double> zm1l =
+        std::complex<double> zm1l =
           (
            - 16./3.
            );
@@ -194,7 +194,7 @@ namespace mr
       }
     else if(loops == 2)
       {
-        std::complex<long double> zm2l =
+        std::complex<double> zm2l =
           (
            - 3305./18.
            + 8./3.*Zeta3
@@ -302,63 +302,63 @@ namespace mr
   //        nl = 2*NL + NH, nh = NH for M=Mt
   //        nl = 2*NL , nh = NH for M=Mb 
   // 2-loop bb.x02 incorporates contribution due to heavy top
-  long double bb<OS>::x02(size_t nL, size_t nH, size_t boson)
+  double bb<OS>::x02(size_t nL, size_t nH, size_t boson)
   {     
     return mOS2mMSnm(MMb, MMt/MMb, mu2, 2*nL, 1, nH, 2);
   }
 
-  long double bb<OS>::x03(size_t nL, size_t nH, size_t boson)
+  double bb<OS>::x03(size_t nL, size_t nH, size_t boson)
   {     
     return mOS2mMS(MMb, mu2, 2*nL, nH, 3);
   }
 
-  long double bb<OS>::x04(size_t nL, size_t nH, size_t boson)
+  double bb<OS>::x04(size_t nL, size_t nH, size_t boson)
   {     
     return mOS2mMS(MMb, mu2, 2*nL, nH, 4);
   }
 
-  long double bb<OS>::y02(size_t nL, size_t nH, size_t boson)
+  double bb<OS>::y02(size_t nL, size_t nH, size_t boson)
   {     
     // return mOS2mMS(MMb, mu2, 2*nL, nH, 2);
     return mOS2mMSnm(MMb, MMt/MMb, mu2, 2*nL, 1, nH, 2);
   }
 
-  long double bb<OS>::y03(size_t nL, size_t nH, size_t boson)
+  double bb<OS>::y03(size_t nL, size_t nH, size_t boson)
   {     
     return mOS2mMS(MMb, mu2, 2*nL, nH, 3);
   }
 
-  long double bb<OS>::y04(size_t nL, size_t nH, size_t boson)
+  double bb<OS>::y04(size_t nL, size_t nH, size_t boson)
   {     
     return mOS2mMS(MMb, mu2, 2*nL, nH, 4);
   }
 
-  long double tt<OS>::x02(size_t nL, size_t nH, size_t boson)
+  double tt<OS>::x02(size_t nL, size_t nH, size_t boson)
   {     
     return mOS2mMS(MMt, mu2, 2*nL + nH, nH, 2);
   }
 
-  long double tt<OS>::x03(size_t nL, size_t nH, size_t boson)
+  double tt<OS>::x03(size_t nL, size_t nH, size_t boson)
   {     
     return mOS2mMS(MMt, mu2, 2*nL + nH, nH, 3);
   }
 
-  long double tt<OS>::x04(size_t nL, size_t nH, size_t boson)
+  double tt<OS>::x04(size_t nL, size_t nH, size_t boson)
   {     
     return mOS2mMS(MMt, mu2, 2*nL + nH, nH, 4);
   }
 
-  long double tt<OS>::y02(size_t nL, size_t nH, size_t boson)
+  double tt<OS>::y02(size_t nL, size_t nH, size_t boson)
   {     
     return mOS2mMS(MMt, mu2, 2*nL + nH, nH, 2);
   }
 
-  long double tt<OS>::y03(size_t nL, size_t nH, size_t boson)
+  double tt<OS>::y03(size_t nL, size_t nH, size_t boson)
   {     
     return mOS2mMS(MMt, mu2, 2*nL + nH, nH, 3);
   }
 
-  long double tt<OS>::y04(size_t nL, size_t nH, size_t boson)
+  double tt<OS>::y04(size_t nL, size_t nH, size_t boson)
   {     
     return mOS2mMS(MMt, mu2, 2*nL + nH, nH, 4);
   }
@@ -367,12 +367,12 @@ namespace mr
 
   // Inverted relations
   // Pole mass M as function of running m(mu) and scale mu
-  long double mMS2mOS(long double mm, long double mu2, size_t nl, size_t nh, size_t loops)
+  double mMS2mOS(double mm, double mu2, size_t nl, size_t nh, size_t loops)
   {
     double NL = double(nl), NH = double (nh);
     if(loops == 1)
       {
-        long double mMS2mOS1 =   + log(mu2/mm) * (  4 );
+        double mMS2mOS1 =   + log(mu2/mm) * (  4 );
       
         mMS2mOS1 +=  16./3.;
 
@@ -380,7 +380,7 @@ namespace mr
       }
     else if(loops == 2)
       {
-        long double mMS2mOS2 =   + log(mu2/mm) * ( 346./3. - 52./9.*NL - 52./9.*NH );
+        double mMS2mOS2 =   + log(mu2/mm) * ( 346./3. - 52./9.*NL - 52./9.*NH );
       
         mMS2mOS2 +=  + pow(log(mu2/mm),2) * ( 30 - 4./3.*NL - 4./3.*NH );
       
@@ -393,7 +393,7 @@ namespace mr
       }
     else if(loops == 3)
       {
-        long double mMS2mOS3 =   + log(mu2/mm) * ( 45854./9. - 208./3.*Zeta3 - 4756./9.*NL - 448./9.*NL
+        double mMS2mOS3 =   + log(mu2/mm) * ( 45854./9. - 208./3.*Zeta3 - 4756./9.*NL - 448./9.*NL
                                                    *Zeta3 + 712./81.*pow(NL,2) - 6628./9.*NH - 448./9.*NH*Zeta3 + 
                                                    2288./81.*NH*NL + 1576./81.*pow(NH,2) );
       
@@ -426,7 +426,7 @@ namespace mr
       }
     else if(loops == 4)
       {
-        long double mMS2mOS4 = + log(mu2/mm) * ( 23003021./81. - 179968./9.*a4 - 22496./27.*pow(
+        double mMS2mOS4 = + log(mu2/mm) * ( 23003021./81. - 179968./9.*a4 - 22496./27.*pow(
                                                                                                 log(2.),4) + 267080./27.*Zeta5 - 252340./9.*Zeta4 + 59192./27.*Zeta3 - 
                                                  10895302./243.*NL + 48128./27.*NL*a4 + 6016./81.*NL*pow(log(2.),4)
                                                  + 27920./27.*NL*Zeta5 + 245240./27.*NL*Zeta4 - 10792*NL*Zeta3 + 
@@ -504,13 +504,13 @@ namespace mr
 
       
 
-        const long double cm4_3 = 1691.2; // +/- 21.5
-        const long double cm4_4 = 1224.0; // +/- 21.5
-        const long double cm4_5 = 827.37; // +/- 21.5
+        const double cm4_3 = 1691.2; // +/- 21.5
+        const double cm4_4 = 1224.0; // +/- 21.5
+        const double cm4_5 = 827.37; // +/- 21.5
 
-        const long double zm4_3 = -1744.8; // +/- 21.5
-        const long double zm4_4 = -1267.0; // +/- 21.5
-        const long double zm4_5 = -859.96; // +/- 21.5
+        const double zm4_3 = -1744.8; // +/- 21.5
+        const double zm4_4 = -1267.0; // +/- 21.5
+        const double zm4_5 = -859.96; // +/- 21.5
 
         if (NH==1)
           if (NL == 3)
@@ -537,18 +537,18 @@ namespace mr
   //    xx=m_t^2/m_b^2
   //
   // 
-  long double mMS2mOSnm(long double mm, long double xx, long double mu2, size_t nl_,size_t nm_, size_t nh_, size_t loops)
+  double mMS2mOSnm(double mm, double xx, double mu2, size_t nl_,size_t nm_, size_t nh_, size_t loops)
   {
     double nl = double(nl_), nm = double (nm_), nh = double (nh_);
   
-    long double Lmumb = log(mu2/mm);
-    long double mb = sqrt(mm);
-    std::complex<long double> x = sqrt(xx);
-    //long double mt = x.real()*mb;
+    double Lmumb = log(mu2/mm);
+    double mb = sqrt(mm);
+    std::complex<double> x = sqrt(xx);
+    //double mt = x.real()*mb;
   
     if(loops == 1)
       {
-        std::complex<long double> zm1l = 
+        std::complex<double> zm1l = 
           (
            + 16./3.
            + 4*Lmumb
@@ -557,7 +557,7 @@ namespace mr
       }
     else if(loops == 2)
       {
-        std::complex<long double> zm2l =  
+        std::complex<double> zm2l =  
           (
            + 3049./18.
            - 8./3.*Zeta3
@@ -624,34 +624,34 @@ namespace mr
 
 
   // bottom
-  long double bb<MS>::x02(size_t nL, size_t nH, size_t boson)
+  double bb<MS>::x02(size_t nL, size_t nH, size_t boson)
   {     
     //return mMS2mOS(mmb, mu2, 2*nL, nH, 2);
     return mMS2mOSnm(mmb, mmt/mmb, mu2, 2*nL, 1, nH, 2);
   }
 
-  long double bb<MS>::x03(size_t nL, size_t nH, size_t boson)
+  double bb<MS>::x03(size_t nL, size_t nH, size_t boson)
   {     
     return mMS2mOS(mmb, mu2, 2*nL, nH, 3);
   }
 
-  long double bb<MS>::x04(size_t nL, size_t nH, size_t boson)
+  double bb<MS>::x04(size_t nL, size_t nH, size_t boson)
   {     
     return mMS2mOS(mmb, mu2, 2*nL, nH, 4);
   }
 
   // top
-  long double tt<MS>::x02(size_t nL, size_t nH, size_t boson)
+  double tt<MS>::x02(size_t nL, size_t nH, size_t boson)
   {     
     return mMS2mOS(mmt, mu2, 2*nL + nH, nH, 2);
   }
 
-  long double tt<MS>::x03(size_t nL, size_t nH, size_t boson)
+  double tt<MS>::x03(size_t nL, size_t nH, size_t boson)
   {     
     return mMS2mOS(mmt, mu2, 2*nL + nH, nH, 3);
   }
 
-  long double tt<MS>::x04(size_t nL, size_t nH, size_t boson)
+  double tt<MS>::x04(size_t nL, size_t nH, size_t boson)
   {     
     return mMS2mOS(mmt, mu2, 2*nL + nH, nH, 4);
   }

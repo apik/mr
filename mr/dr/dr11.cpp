@@ -1,11 +1,11 @@
 #include <dr.hpp>
 namespace mr
 {
-  long double dr<OS>::dr11(size_t nL, size_t nH, size_t boson)
+  double dr<OS>::dr11(size_t nL, size_t nH, size_t boson)
   {     
       
       
-    std::complex<long double> ardr[13], drret;
+    std::complex<double> ardr[13], drret;
 
     ardr[1]=double(nH);
     ardr[2]=pow(CW,-1);

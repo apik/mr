@@ -1,11 +1,11 @@
 #include <HH.hpp>
 namespace mr
 {
-  long double HH<OS>::x10(size_t nL, size_t nH, size_t boson)
+  double HH<OS>::x10(size_t nL, size_t nH, size_t boson)
   {     
       
       
-    std::complex<long double> armHHbar[26], mHHbarret;
+    std::complex<double> armHHbar[26], mHHbarret;
 
     armHHbar[1]=double(nH);
     armHHbar[2]=double(boson);

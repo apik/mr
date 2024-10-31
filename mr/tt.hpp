@@ -39,8 +39,8 @@ namespace mr
   class tt<OS> : public PoleMassAndCouplings
   {
   
-    long double MMb,MMt, MMH, MMW, MMZ, mu2;
-    long double SW, CW;
+    double MMb,MMt, MMH, MMW, MMZ, mu2;
+    double SW, CW;
   
     // alpha*alphaS
     std::unique_ptr<Tsil> protWt000;
@@ -82,71 +82,71 @@ namespace mr
     {
     }
 
-    tt(long double,long double,long double,long double,long double);
+    tt(double,double,double,double,double);
   
-    tt(OSinput, long double);
+    tt(OSinput, double);
   
     void init();
 
     // 
     // Pure QCD part m_ij=mY_ij by definition
     // 
-    long double x01(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+    double x01(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
-    long double x02(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+    double x02(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
-    long double x03(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+    double x03(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
-    long double x04(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+    double x04(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
     // 
     // Mass corrections
     // 
-    long double x10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+    double x10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
   
-    long double x11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+    double x11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
-    long double x20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+    double x20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
 
     // Gaugeless limit
-    long double xgl01(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+    double xgl01(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
-    long double xgl10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+    double xgl10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
   
-    long double xgl11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+    double xgl11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
-    long double xgl20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+    double xgl20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
   
 
     // 
     // mass definition using Yukawa couplings 
     // mY=y/sqrt(2*sqrt(2)*GF)
     // 
-    long double y01(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+    double y01(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
-    long double y02(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+    double y02(size_t nL = 2, size_t nH = 1, size_t boson = 1);
   
-    long double y03(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+    double y03(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
-    long double y04(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+    double y04(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
     // EW
-    long double y10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+    double y10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
-    long double y11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+    double y11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
-    long double y20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+    double y20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
 
     // Gaugeless limit
-    long double ygl01(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+    double ygl01(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
-    long double ygl10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+    double ygl10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
-    long double ygl11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+    double ygl11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
-    long double ygl20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+    double ygl20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
   
   };
 
@@ -155,8 +155,8 @@ namespace mr
   class tt<MS> : public BaseMass
   {
 
-    long double mmb,mmt, mmH, mmW, mmZ, mu2;
-    long double s, c;
+    double mmb,mmt, mmH, mmW, mmZ, mu2;
+    double s, c;
 
     // alpha*alphaS
     std::unique_ptr<Tsil> protWt000;
@@ -193,16 +193,16 @@ namespace mr
   
     // std::unique_ptr<TsilST> protos[28];
 
-    // static const long double EPAIR2 = -1.; 
+    // static const double EPAIR2 = -1.; 
 
   public:
     tt()
     {
     }
   
-    tt(long double,long double,long double,long double,long double);
+    tt(double,double,double,double,double);
   
-    tt(MSinput, long double);
+    tt(MSinput, double);
   
     void init();
 
@@ -212,22 +212,22 @@ namespace mr
     // 
     // Pure QCD part m_ij=mY_ij by definition
     // 
-    long double x01(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+    double x01(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
-    long double x02(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+    double x02(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
-    long double x03(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+    double x03(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
-    long double x04(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+    double x04(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
     // 
     // Mass corrections
     // 
-    long double x10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+    double x10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
   
-    long double x11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+    double x11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
-    long double x20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+    double x20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
   };
 } // namespace mr

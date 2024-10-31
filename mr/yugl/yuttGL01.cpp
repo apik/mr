@@ -1,9 +1,9 @@
 #include <tt.hpp>
-long double tt::ygl01(size_t nL, size_t nH, size_t boson)
+double tt::ygl01(size_t nL, size_t nH, size_t boson)
 {     
       
       
-    std::complex<long double> aryuttGL[5], yuttGLret;
+    std::complex<double> aryuttGL[5], yuttGLret;
 
     aryuttGL[1]=double(boson);
     aryuttGL[2]=Tsil::A(MMt,mu2);

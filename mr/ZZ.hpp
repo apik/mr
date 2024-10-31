@@ -38,8 +38,8 @@ namespace mr
   class ZZ<OS> : public PoleMassAndCouplings
   {
 
-    long double MMb, MMt, MMH, MMW, MMZ, mu2;
-    long double SW, CW;
+    double MMb, MMt, MMH, MMW, MMZ, mu2;
+    double SW, CW;
 
     std::unique_ptr<Tsil> protZHHZZ;
     std::unique_ptr<Tsil> protZZHHH;
@@ -67,28 +67,28 @@ namespace mr
     {
     }
 
-    ZZ(long double,long double,long double,long double,long double);
+    ZZ(double,double,double,double,double);
 
-    ZZ(OSinput, long double);
+    ZZ(OSinput, double);
 
     void init();
   
-    long double x10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+    double x10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
   
-    long double x11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+    double x11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
   
 
-    long double x20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+    double x20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
 
-    long double y10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+    double y10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
   
-    long double y11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+    double y11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
   
 
-    long double y20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+    double y20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
     
   };
 
@@ -96,8 +96,8 @@ namespace mr
   class ZZ<MS> : public BaseMass
   {
 
-    long double mmb, mmt, mmH, mmW, mmZ, mu2;
-    long double s, c;
+    double mmb, mmt, mmH, mmW, mmZ, mu2;
+    double s, c;
 
     std::unique_ptr<Tsil> protZHHZZ;
     std::unique_ptr<Tsil> protZZHHH;
@@ -124,20 +124,20 @@ namespace mr
     {
     }
 
-    ZZ(long double,long double,long double,long double,long double);
+    ZZ(double,double,double,double,double);
 
-    ZZ(MSinput, long double);
+    ZZ(MSinput, double);
 
     void init();
 
 
-    long double x10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+    double x10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
   
-    long double x11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+    double x11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
     
 
-    long double x20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+    double x20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
     
   };

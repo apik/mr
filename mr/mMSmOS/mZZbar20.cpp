@@ -1,11 +1,11 @@
 #include <ZZ.hpp>
 namespace mr
 {
-  long double ZZ<OS>::x20(size_t nL, size_t nH, size_t boson)
+  double ZZ<OS>::x20(size_t nL, size_t nH, size_t boson)
   {     
       
       
-    std::complex<long double> armZZbar[577], mZZbarret;
+    std::complex<double> armZZbar[577], mZZbarret;
 
     armZZbar[1]=double(nL + nH);
     armZZbar[2]=pow(CW,-1);

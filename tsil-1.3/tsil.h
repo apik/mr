@@ -7,6 +7,7 @@
 #define TSIL_H
 
 #define TSIL_VERSION "1.3"
+#define TSIL_SIZE_DOUBLE
 
 #ifdef __cplusplus
 extern "C" {

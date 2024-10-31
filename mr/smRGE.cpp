@@ -24,7 +24,7 @@
 
 namespace mr
 {
-  void BetaSMFull::add(std::map<index_t, long double, index_cmp_t>& m, size_t p, size_t ia1, size_t ia2, size_t ias, size_t iat, size_t iab, size_t iatau, size_t ilam, long double c)
+  void BetaSMFull::add(std::map<index_t, double, index_cmp_t>& m, size_t p, size_t ia1, size_t ia2, size_t ias, size_t iat, size_t iab, size_t iatau, size_t ilam, double c)
   {
     if (ia1 + ia2 + ias + iat + iab + iatau + ilam <= p + 1 ) // 
       {
@@ -729,17 +729,17 @@ namespace mr
     dadt[5] = 0;                // beta atau
     dadt[6] = 0;                // beta lam
 
-    long double a1   = pocoa1   < 0  ? 0 : a[0];
-    long double a2   = pocoa2   < 0  ? 0 : a[1];
-    long double as   = pocoa3   < 0  ? 0 : a[2];
-    long double at   = pocoa4   < 0  ? 0 : a[3];
-    long double ab   = pocoa5   < 0  ? 0 : a[4];
-    long double atau = pocoa6   < 0  ? 0 : a[5];
-    long double lam  = pocoa7   < 0  ? 0 : a[6];
+    double a1   = pocoa1   < 0  ? 0 : a[0];
+    double a2   = pocoa2   < 0  ? 0 : a[1];
+    double as   = pocoa3   < 0  ? 0 : a[2];
+    double at   = pocoa4   < 0  ? 0 : a[3];
+    double ab   = pocoa5   < 0  ? 0 : a[4];
+    double atau = pocoa6   < 0  ? 0 : a[5];
+    double lam  = pocoa7   < 0  ? 0 : a[6];
 
   
   
-    for (std::map<index_t, long double, index_cmp_t>::iterator it = be1.begin(); it != be1.end(); ++it)
+    for (std::map<index_t, double, index_cmp_t>::iterator it = be1.begin(); it != be1.end(); ++it)
       {
         index_t ia(it->first);
         dadt[0] += (it->second)*pow(a1,ia[0])*pow(a2,ia[1])*pow(as,ia[2])
@@ -747,7 +747,7 @@ namespace mr
           *pow(lam,ia[6]);
       }
 
-    for (std::map<index_t, long double, index_cmp_t>::iterator it = be2.begin(); it != be2.end(); ++it)
+    for (std::map<index_t, double, index_cmp_t>::iterator it = be2.begin(); it != be2.end(); ++it)
       {
         index_t ia(it->first);
         dadt[1] += (it->second)*pow(a1,ia[0])*pow(a2,ia[1])*pow(as,ia[2])
@@ -755,7 +755,7 @@ namespace mr
           *pow(lam,ia[6]);
       }
 
-    for (std::map<index_t, long double, index_cmp_t>::iterator it = be3.begin(); it != be3.end(); ++it)
+    for (std::map<index_t, double, index_cmp_t>::iterator it = be3.begin(); it != be3.end(); ++it)
       {
         index_t ia(it->first);
         dadt[2] += (it->second)*pow(a1,ia[0])*pow(a2,ia[1])*pow(as,ia[2])
@@ -763,7 +763,7 @@ namespace mr
           *pow(lam,ia[6]);
       }
 
-    for (std::map<index_t, long double, index_cmp_t>::iterator it = be4.begin(); it != be4.end(); ++it)
+    for (std::map<index_t, double, index_cmp_t>::iterator it = be4.begin(); it != be4.end(); ++it)
       {
         index_t ia(it->first);
         dadt[3] += (it->second)*pow(a1,ia[0])*pow(a2,ia[1])*pow(as,ia[2])
@@ -771,7 +771,7 @@ namespace mr
           *pow(lam,ia[6]);
       }
 
-    for (std::map<index_t, long double, index_cmp_t>::iterator it = be5.begin(); it != be5.end(); ++it)
+    for (std::map<index_t, double, index_cmp_t>::iterator it = be5.begin(); it != be5.end(); ++it)
       {
         index_t ia(it->first);
         dadt[4] += (it->second)*pow(a1,ia[0])*pow(a2,ia[1])*pow(as,ia[2])
@@ -779,7 +779,7 @@ namespace mr
           *pow(lam,ia[6]);
       }
 
-    for (std::map<index_t, long double, index_cmp_t>::iterator it = be6.begin(); it != be6.end(); ++it)
+    for (std::map<index_t, double, index_cmp_t>::iterator it = be6.begin(); it != be6.end(); ++it)
       {
         index_t ia(it->first);
         dadt[5] += (it->second)*pow(a1,ia[0])*pow(a2,ia[1])*pow(as,ia[2])
@@ -787,7 +787,7 @@ namespace mr
           *pow(lam,ia[6]);
       }
 
-    for (std::map<index_t, long double, index_cmp_t>::iterator it = be7.begin(); it != be7.end(); ++it)
+    for (std::map<index_t, double, index_cmp_t>::iterator it = be7.begin(); it != be7.end(); ++it)
       {
         index_t ia(it->first);
         dadt[6] += (it->second)*pow(a1,ia[0])*pow(a2,ia[1])*pow(as,ia[2])
@@ -808,9 +808,9 @@ namespace mr
   // VEV gamma_{v}, hep-ph:1310.3806, eq.10
   // 
 
-  long double BetaSM::gamv(const SMCouplings &a, size_t NG, int poco)
+  double BetaSM::gamv(const SMCouplings &a, size_t NG, int poco)
   {
-    long double gamV = 0;
+    double gamV = 0;
   
     if(poco >= 1)
       {
@@ -1022,9 +1022,9 @@ namespace mr
   //   gam_{m^2} = d log(m^2)/dt
   //   hep-ph:1303.4364, eq.15,16,17
   // 
-  long double BetaSM::gamm2(const SMCouplings & a, size_t NG, int poco)
+  double BetaSM::gamm2(const SMCouplings & a, size_t NG, int poco)
   {
-    long double gamMphi2 =  0;
+    double gamMphi2 =  0;
 
     if(poco >= 1)
       {

@@ -36,45 +36,45 @@ namespace mr
     // 
   public:
 
-    virtual long double x10(size_t nL = 2, size_t nH = 1, size_t boson = 1) = 0;
+    virtual double x10(size_t nL = 2, size_t nH = 1, size_t boson = 1) = 0;
   
-    virtual long double x11(size_t nL = 2, size_t nH = 1, size_t boson = 1) = 0;
+    virtual double x11(size_t nL = 2, size_t nH = 1, size_t boson = 1) = 0;
 
-    virtual long double x20(size_t nL = 2, size_t nH = 1, size_t boson = 1) = 0;
+    virtual double x20(size_t nL = 2, size_t nH = 1, size_t boson = 1) = 0;
 
-    virtual long double x01(size_t nL = 2, size_t nH = 1, size_t boson = 1)
+    virtual double x01(size_t nL = 2, size_t nH = 1, size_t boson = 1)
     {
       lout(logERROR) << "Order a^0*as^1 is not implemented for this particle" << std::endl;
       return 0;
     }
-    virtual long double x02(size_t nL = 2, size_t nH = 1, size_t boson = 1)
+    virtual double x02(size_t nL = 2, size_t nH = 1, size_t boson = 1)
     {
       lout(logERROR) << "Order a^0*as^2 is not implemented for this particle" << std::endl;
       return 0;
     }
-    virtual long double x03(size_t nL = 2, size_t nH = 1, size_t boson = 1)
+    virtual double x03(size_t nL = 2, size_t nH = 1, size_t boson = 1)
     {
       lout(logERROR) << "Order a^0*as^3 is not implemented for this particle" << std::endl;
       return 0;
     }
-    virtual long double x04(size_t nL = 2, size_t nH = 1, size_t boson = 1)
+    virtual double x04(size_t nL = 2, size_t nH = 1, size_t boson = 1)
     {
       lout(logERROR) << "Order a^0*as^4 is not implemented for this particle" << std::endl;
       return 0;
     }
 
     // Gauge-less limit
-    virtual long double xgl10(size_t nL = 2, size_t nH = 1, size_t boson = 1)
+    virtual double xgl10(size_t nL = 2, size_t nH = 1, size_t boson = 1)
     {
       lout(logERROR) << "Gauge-less limit at order a^1*as^0 is not implemented for this particle" << std::endl;
       return 0;
     }
-    virtual long double xgl11(size_t nL = 2, size_t nH = 1, size_t boson = 1)
+    virtual double xgl11(size_t nL = 2, size_t nH = 1, size_t boson = 1)
     {
       lout(logERROR) << "Gauge-less limit at order a^1*as^1 is not implemented for this particle" << std::endl;
       return 0;
     }
-    virtual long double xgl20(size_t nL = 2, size_t nH = 1, size_t boson = 1)
+    virtual double xgl20(size_t nL = 2, size_t nH = 1, size_t boson = 1)
     {
       lout(logERROR) << "Gauge-less limit at order a^2*as^0 is not implemented for this particle" << std::endl;
       return 0;
@@ -82,7 +82,7 @@ namespace mr
 
 
     // And meta method
-    long double x(size_t apow, size_t aspow, size_t nL = 2, size_t nH = 1, size_t boson = 1)
+    double x(size_t apow, size_t aspow, size_t nL = 2, size_t nH = 1, size_t boson = 1)
     {
       if(apow == 1 && aspow == 0)
         return x10(nL, nH, boson);
@@ -101,7 +101,7 @@ namespace mr
       return 0;
     }
 
-    long double xgl(size_t apow, size_t aspow, size_t nL = 2, size_t nH = 1, size_t boson = 1)
+    double xgl(size_t apow, size_t aspow, size_t nL = 2, size_t nH = 1, size_t boson = 1)
     {
       if(apow == 1 && aspow == 0)
         return xgl10(nL, nH, boson);
@@ -125,30 +125,30 @@ namespace mr
   class PoleMassAndCouplings : public BaseMass
   {
   public:
-    virtual long double y10(size_t nL = 2, size_t nH = 1, size_t boson = 1) = 0;
+    virtual double y10(size_t nL = 2, size_t nH = 1, size_t boson = 1) = 0;
 
-    virtual long double y11(size_t nL = 2, size_t nH = 1, size_t boson = 1) = 0;
+    virtual double y11(size_t nL = 2, size_t nH = 1, size_t boson = 1) = 0;
 
-    virtual long double y20(size_t nL = 2, size_t nH = 1, size_t boson = 1) = 0;
+    virtual double y20(size_t nL = 2, size_t nH = 1, size_t boson = 1) = 0;
 
     // Gauge-less limit
-    virtual long double ygl10(size_t nL = 2, size_t nH = 1, size_t boson = 1)
+    virtual double ygl10(size_t nL = 2, size_t nH = 1, size_t boson = 1)
     {
       lout(logERROR) << "Gauge-less limit at order a^1*as^0 is not implemented for this particle" << std::endl;
       return 0;
     }
-    virtual long double ygl11(size_t nL = 2, size_t nH = 1, size_t boson = 1)
+    virtual double ygl11(size_t nL = 2, size_t nH = 1, size_t boson = 1)
     {
       lout(logERROR) << "Gauge-less limit at order a^1*as^1 is not implemented for this particle" << std::endl;
       return 0;
     }
-    virtual long double ygl20(size_t nL = 2, size_t nH = 1, size_t boson = 1)
+    virtual double ygl20(size_t nL = 2, size_t nH = 1, size_t boson = 1)
     {
       lout(logERROR) << "Gauge-less limit at order a^2*as^0 is not implemented for this particle" << std::endl;
       return 0;
     }
 
-    long double y(size_t apow, size_t aspow, size_t nL = 2, size_t nH = 1, size_t boson = 1)
+    double y(size_t apow, size_t aspow, size_t nL = 2, size_t nH = 1, size_t boson = 1)
     {
       if(apow == 1 && aspow == 0)
         return y10(nL, nH, boson);
@@ -167,7 +167,7 @@ namespace mr
       return 0;
     }
     
-    long double ygl(size_t apow, size_t aspow, size_t nL = 2, size_t nH = 1, size_t boson = 1)
+    double ygl(size_t apow, size_t aspow, size_t nL = 2, size_t nH = 1, size_t boson = 1)
     {
       if(apow == 1 && aspow == 0)
         return ygl10(nL, nH, boson);

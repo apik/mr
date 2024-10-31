@@ -1,11 +1,11 @@
 #include <dr.hpp>
 namespace mr
 {
-  long double dr<OS>::drgl20(size_t nL, size_t nH, size_t boson)
+  double dr<OS>::drgl20(size_t nL, size_t nH, size_t boson)
   {     
       
       
-    std::complex<long double> ardrgl[24], drglret;
+    std::complex<double> ardrgl[24], drglret;
 
     ardrgl[1]=double(boson);
     ardrgl[2]=pow(SW,-1);

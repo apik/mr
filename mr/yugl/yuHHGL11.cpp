@@ -1,11 +1,11 @@
 #include <HH.hpp>
 namespace mr
 {
-  long double HH<OS>::ygl11(size_t nL, size_t nH, size_t boson)
+  double HH<OS>::ygl11(size_t nL, size_t nH, size_t boson)
   {     
       
       
-    std::complex<long double> aryuHHGL[20], yuHHGLret;
+    std::complex<double> aryuHHGL[20], yuHHGLret;
 
     aryuHHGL[1]=double(boson);
     aryuHHGL[2]=pow(SW,-1);

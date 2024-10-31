@@ -1,11 +1,11 @@
 #include <HH.hpp>
 namespace mr
 {
-  long double HH<MS>::x10(size_t nL, size_t nH, size_t boson)
+  double HH<MS>::x10(size_t nL, size_t nH, size_t boson)
   {     
       
       
-    std::complex<long double> armHHos[22], mHHosret;
+    std::complex<double> armHHos[22], mHHosret;
 
     armHHos[1]=double(nH);
     armHHos[2]=Tsil::B(mmt,mmt,mmH,mu2);

@@ -32,8 +32,8 @@ namespace mr
   class alphaGF
   {
 
-    long double MMb, MMt, MMH, MMW, MMZ, mu2;
-    long double SW, CW;
+    double MMb, MMt, MMH, MMW, MMZ, mu2;
+    double SW, CW;
 
     std::unique_ptr<Tsil> WprotWHHWW;
     std::unique_ptr<Tsil> WprotWHZWW;
@@ -87,20 +87,20 @@ namespace mr
     {
     }
 
-    alphaGF(long double,long double,long double,long double,long double);
+    alphaGF(double,double,double,double,double);
 
-    alphaGF(OSinput, long double);
+    alphaGF(OSinput, double);
 
     void init();
   
  
-    long double a10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+    double a10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
   
-    long double a11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+    double a11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
   
 
-    long double a20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+    double a20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
   };
 } // namespace mr
 

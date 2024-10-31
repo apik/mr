@@ -84,8 +84,8 @@ namespace mr
 
   // run asStart from muStart to muEnd, 
   // using RGE with nf active flavours 
-  double run(long double asStart, long double muStart, long double muEnd, size_t NF = 5, size_t loops = 4);
-  //double run(long double asStart, long double muStart, long double muEnd, size_t NF, size_t loops);
+  double run(double asStart, double muStart, double muEnd, size_t NF = 5, size_t loops = 4);
+  //double run(double asStart, double muStart, double muEnd, size_t NF, size_t loops);
 
 
 
@@ -111,8 +111,8 @@ namespace mr
     to higher scale with as(nf=6) if needed.
   */
 
-  long double as5nf2as6nf(long double M, long double mu, long double as, size_t nl = 5, size_t ord = 3);
-  // long double as5nf2as6nf(long double, long double, long double, size_t, size_t);
+  double as5nf2as6nf(double M, double mu, double as, size_t nl = 5, size_t ord = 3);
+  // double as5nf2as6nf(double, double, double, size_t, size_t);
 
 
 
@@ -131,7 +131,7 @@ namespace mr
 
     // Running down to bottom mass with nf=5
     // and upto Mt with threshold at Mt
-    AlphaS(OSinput oi_, long double asMZ = pdg2014::asMZ, size_t loops_ = 4, size_t nfFixed_ = 0) 
+    AlphaS(OSinput oi_, double asMZ = pdg2014::asMZ, size_t loops_ = 4, size_t nfFixed_ = 0) 
       : loops(loops_), asStart(asMZ), oi(oi_), nfFixed(nfFixed_)
     { 
       muStart = oi.MZ();
@@ -142,14 +142,14 @@ namespace mr
     }
 
     // Same with manual thresholds for Mb and Mt
-    AlphaS(long double mu = pdg2014::MZ, long double asMZ = pdg2014::asMZ, size_t loops_ = 4, size_t nfFixed_ = 5, long double mtth_ = pdg2014::Mt) 
+    AlphaS(double mu = pdg2014::MZ, double asMZ = pdg2014::asMZ, size_t loops_ = 4, size_t nfFixed_ = 5, double mtth_ = pdg2014::Mt) 
       : muStart(mu), mtth(mtth_), loops(loops_), asStart(asMZ),  nfFixed(nfFixed_)
     { 
       mbth = 0;
     }
 
   
-    double operator()(long double mu)
+    double operator()(double mu)
     {
     
       // Running with decoupling
@@ -169,10 +169,10 @@ namespace mr
           // Threshold at Mt
           else 
             {
-              long double asMt5 = run(asStart, muStart, mtth, 5, loops );
+              double asMt5 = run(asStart, muStart, mtth, 5, loops );
             
               // We use (L-1)-loop decoupling for L-loop running
-              long double asMt6 =
+              double asMt6 =
                 as5nf2as6nf(mtth, mtth, asMt5, /* nl= */5, loops - 1);
             
               // Return as(nf=6,mu=Mt)

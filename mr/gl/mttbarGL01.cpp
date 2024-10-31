@@ -1,9 +1,9 @@
 #include <tt.hpp>
-long double tt::xgl01(size_t nL, size_t nH, size_t boson)
+double tt::xgl01(size_t nL, size_t nH, size_t boson)
 {     
       
       
-    std::complex<long double> armttbarGL[5], mttbarGLret;
+    std::complex<double> armttbarGL[5], mttbarGLret;
 
     armttbarGL[1]=double(boson);
     armttbarGL[2]=Tsil::A(MMt,mu2);

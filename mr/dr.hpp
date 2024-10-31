@@ -37,8 +37,8 @@ namespace mr
   class dr<OS>
   {
   
-    long double MMb,MMt, MMH, MMW, MMZ, mu2;
-    long double SW, CW;
+    double MMb,MMt, MMH, MMW, MMZ, mu2;
+    double SW, CW;
   
   
   public:
@@ -46,28 +46,28 @@ namespace mr
     {
     }
   
-    dr(long double,long double,long double,long double,long double);
+    dr(double,double,double,double,double);
   
-    dr(OSinput, long double);
+    dr(OSinput, double);
   
     void init();
   
     // 
     // Delta-r
     // 
-    long double dr10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+    double dr10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
   
-    long double dr11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+    double dr11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
-    long double dr20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+    double dr20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
 
     // Gaugeless limit
-    long double drgl10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+    double drgl10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
   
-    long double drgl11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+    double drgl11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
-    long double drgl20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+    double drgl20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
   
   };
@@ -77,8 +77,8 @@ namespace mr
   class dr<MS>
   {
   
-    long double mmb,mmt, mmH, mmW, mmZ, mu2;
-    long double s, c;
+    double mmb,mmt, mmH, mmW, mmZ, mu2;
+    double s, c;
   
   
   public:
@@ -86,20 +86,20 @@ namespace mr
     {
     }
   
-    dr(long double,long double,long double,long double,long double);
+    dr(double,double,double,double,double);
   
-    dr(MSinput, long double);
+    dr(MSinput, double);
   
     void init();
   
     // 
     // Delta-r
     // 
-    long double dr10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+    double dr10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
   
-    long double dr11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+    double dr11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
-    long double dr20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+    double dr20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
   
   };
 } // namespace mr

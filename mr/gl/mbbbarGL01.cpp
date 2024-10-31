@@ -1,9 +1,9 @@
 #include <bb.hpp>
-long double bb::xgl01(size_t nL, size_t nH, size_t boson)
+double bb::xgl01(size_t nL, size_t nH, size_t boson)
 {     
       
       
-    std::complex<long double> armbbbarGL[5], mbbbarGLret;
+    std::complex<double> armbbbarGL[5], mbbbarGLret;
 
     armbbbarGL[1]=double(boson);
     armbbbarGL[2]=Tsil::A(mmb,mu2);

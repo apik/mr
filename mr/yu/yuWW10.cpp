@@ -1,11 +1,11 @@
 #include <WW.hpp>
 namespace mr
 {
-  long double WW<OS>::y10(size_t nL, size_t nH, size_t boson)
+  double WW<OS>::y10(size_t nL, size_t nH, size_t boson)
   {     
       
       
-    std::complex<long double> aryuWW[30], yuWWret;
+    std::complex<double> aryuWW[30], yuWWret;
 
     aryuWW[1]=double(nH);
     aryuWW[2]=double(boson);

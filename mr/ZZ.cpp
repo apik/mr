@@ -26,7 +26,7 @@
 
 namespace mr
 {
-  ZZ<OS>::ZZ(OSinput sm, long double mu2_)
+  ZZ<OS>::ZZ(OSinput sm, double mu2_)
   {
     MMb = sm.MMb();
     MMW = sm.MMW();
@@ -132,7 +132,7 @@ namespace mr
   }
 
 
-  ZZ<MS>::ZZ(MSinput sm, long double mu2_)
+  ZZ<MS>::ZZ(MSinput sm, double mu2_)
   {
     mmb = sm.mmb();
     mmW = sm.mmW();

@@ -26,7 +26,7 @@
 
 namespace mr
 {
-  WW<OS>::WW(OSinput sm, long double mu2_)
+  WW<OS>::WW(OSinput sm, double mu2_)
   {
     MMb = sm.MMb();
     MMW = sm.MMW();
@@ -153,7 +153,7 @@ namespace mr
   }
 
 
-  WW<MS>::WW(MSinput sm, long double mu2_)
+  WW<MS>::WW(MSinput sm, double mu2_)
   {
     mmb = sm.mmb();
     mmW = sm.mmW();

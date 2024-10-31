@@ -1,11 +1,11 @@
 #include <bb.hpp>
 namespace mr
 {
-  long double bb<OS>::x01(size_t nL, size_t nH, size_t boson)
+  double bb<OS>::x01(size_t nL, size_t nH, size_t boson)
   {     
       
       
-    std::complex<long double> armbbbar[5], mbbbarret;
+    std::complex<double> armbbbar[5], mbbbarret;
 
     armbbbar[1]=double(boson);
     armbbbar[2]=Tsil::A(MMb,mu2);

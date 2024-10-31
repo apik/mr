@@ -1,11 +1,11 @@
 #include <tt.hpp>
 namespace mr
 {
-  long double tt<OS>::x11(size_t nL, size_t nH, size_t boson)
+  double tt<OS>::x11(size_t nL, size_t nH, size_t boson)
   {     
       
       
-    std::complex<long double> armttbar[82], mttbarret;
+    std::complex<double> armttbar[82], mttbarret;
 
     armttbar[1]=double(nH);
     armttbar[2]=pow(CW,-1);
