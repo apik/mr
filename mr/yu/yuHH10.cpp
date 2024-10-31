@@ -1,11 +1,11 @@
 #include <HH.hpp>
 namespace mr
 {
-  long double HH<OS>::y10(size_t nL, size_t nH, size_t boson)
+  double HH<OS>::y10(size_t nL, size_t nH, size_t boson)
   {     
       
       
-    std::complex<long double> aryuHH[29], yuHHret;
+    std::complex<double> aryuHH[29], yuHHret;
 
     aryuHH[1]=double(nH);
     aryuHH[2]=double(boson);

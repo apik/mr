@@ -14,7 +14,7 @@ TEST_CASE
   OSinput oi(pdg2014::mb,pdg2014::MW,pdg2014::MZ,pdg2014::MH,pdg2014::Mt);
   AlphaS aS(oi);
   
-  long double aMt5,aMt6,a100k6;
+  double aMt5,aMt6,a100k6;
   
   aMt5 = run(pdg2014::asMZ, pdg2014::MZ, pdg2014::Mt, 5 , 4);
       

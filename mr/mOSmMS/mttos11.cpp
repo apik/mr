@@ -1,11 +1,11 @@
 #include <tt.hpp>
 namespace mr
 {
-  long double tt<MS>::x11(size_t nL, size_t nH, size_t boson)
+  double tt<MS>::x11(size_t nL, size_t nH, size_t boson)
   {     
       
       
-    std::complex<long double> armttos[79], mttosret;
+    std::complex<double> armttos[79], mttosret;
 
     armttos[1]=double(nH);
     armttos[2]=pow(mmZ,-1);

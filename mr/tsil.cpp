@@ -22,30 +22,30 @@
 
 namespace mr
 {
-  std::complex<long double> c2pp(TSIL_COMPLEX z)
+  std::complex<double> c2pp(TSIL_COMPLEX z)
   {
-    return std::complex<long double>(__real__ z, __imag__ z);
+    return std::complex<double>(__real__ z, __imag__ z);
   }
 
-  std::complex<long double> csqrt(long double z)
+  std::complex<double> csqrt(double z)
   {
-    return sqrt(std::complex<long double>(z,0));
+    return sqrt(std::complex<double>(z,0));
   }
 
-  std::complex<long double> Li2(std::complex<long double> z)
+  std::complex<double> Li2(std::complex<double> z)
   {
-    return TSIL_Dilog(z.real()+1.0I*z.imag());
+    return TSIL_Dilog(*((TSIL_COMPLEX*) (&z)));
   }
 
-  std::complex<long double> Li3(std::complex<long double> z)
+  std::complex<double> Li3(std::complex<double> z)
   {
-    return TSIL_Trilog(z.real()+1.0I*z.imag());
+    return TSIL_Trilog(*((TSIL_COMPLEX*) (&z)));
   }
 
-  std::complex<long double> acc(std::complex<long double> z)
-  {    return z;  }  
+  std::complex<double> acc(std::complex<double> z)
+  {    return z;  }
 
-  std::complex<long double> inv(std::complex<long double> z)
-  {    return std::complex<long double>(1.,0)/z;  }  
+  std::complex<double> inv(std::complex<double> z)
+  {    return std::complex<double>(1.,0)/z;  }
 
 } // namespace mr

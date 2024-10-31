@@ -1,11 +1,11 @@
 #include <tt.hpp>
 namespace mr
 {
-  long double tt<OS>::ygl10(size_t nL, size_t nH, size_t boson)
+  double tt<OS>::ygl10(size_t nL, size_t nH, size_t boson)
   {     
       
       
-    std::complex<long double> aryuttGL[10], yuttGLret;
+    std::complex<double> aryuttGL[10], yuttGLret;
 
     aryuttGL[1]=double(boson);
     aryuttGL[2]=pow(SW,-1);

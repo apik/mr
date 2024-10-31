@@ -30,7 +30,7 @@ namespace mr
   typedef controlled_runge_kutta< error_stepper_type > controlled_stepper_type;
 
 
-  double run(long double asStart, long double muStart, long double muEnd, size_t NF, size_t loops)
+  double run(double asStart, double muStart, double muEnd, size_t NF, size_t loops)
   {
     SMCouplings as4pi(1);
   
@@ -63,15 +63,15 @@ namespace mr
   // Chetyrkin, Kuhn, Sturm 
   // Nucl.Phys. B744 (2006) 121-135
   // arXiv:hep-ph/0512060
-  long double as5nf2as6nf(long double M, long double mu, long double as, size_t nl, size_t ord)
+  double as5nf2as6nf(double M, double mu, double as, size_t nl, size_t ord)
   {
   
-    long double as4Pi = as/4./Pi;
+    double as4Pi = as/4./Pi;
   
-    long double Lmu2MM = 2.*log(mu/M);
+    double Lmu2MM = 2.*log(mu/M);
   
     // z[as(nf=5)] = as(nf=6)/as(nf=5)
-    long double z = 1;
+    double z = 1;
 
     if(ord > 0)
     

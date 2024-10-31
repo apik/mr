@@ -1,11 +1,11 @@
 #include <HH.hpp>
 namespace mr
 {
-  long double HH<OS>::xgl10(size_t nL, size_t nH, size_t boson)
+  double HH<OS>::xgl10(size_t nL, size_t nH, size_t boson)
   {     
       
       
-    std::complex<long double> armHHbarGL[12], mHHbarGLret;
+    std::complex<double> armHHbarGL[12], mHHbarGLret;
 
     armHHbarGL[1]=double(boson);
     armHHbarGL[2]=Tsil::B(MMH,MMH,MMH,mu2);

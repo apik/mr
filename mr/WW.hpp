@@ -39,66 +39,65 @@ namespace mr
   class WW<OS> : public PoleMassAndCouplings
   {
 
-    long double MMb, MMt, MMH, MMW, MMZ, mu2;
-    long double SW, CW;
+    double MMb, MMt, MMH, MMW, MMZ, mu2;
+    double SW, CW;
 
-    Tsil* protWHHWW;
-    Tsil* protWHZWW;
-    Tsil* protWZZWW;
-    Tsil* protWWHHH;
-    Tsil* protWWHZZ;
-    Tsil* protWWZZH;
-    Tsil* protWtZ00;
-    Tsil* protW0HWW;
-    Tsil* protW0Htt;
-    Tsil* protW0ZWW;
-    Tsil* protW0Ztt;
-    Tsil* protW0Z00;
-    Tsil* prot0WW0W;
-    Tsil* prot0Wt0t;
-    Tsil* prot0W0Z0;
-    Tsil* prot00Wt0;
-    Tsil* prot00W00;
-    Tsil* prot00ttZ;
-    Tsil* prot00tt0;
-    Tsil* prot0000Z;
-    Tsil* prot00000;
-    TsilSTU* protWH0H;
-    TsilSTU* protWZ0Z;
-    TsilSTU* protHW00;
+    std::unique_ptr<Tsil> protWHHWW;
+    std::unique_ptr<Tsil> protWHZWW;
+    std::unique_ptr<Tsil> protWZZWW;
+    std::unique_ptr<Tsil> protWWHHH;
+    std::unique_ptr<Tsil> protWWHZZ;
+    std::unique_ptr<Tsil> protWWZZH;
+    std::unique_ptr<Tsil> protWtZ00;
+    std::unique_ptr<Tsil> protW0HWW;
+    std::unique_ptr<Tsil> protW0Htt;
+    std::unique_ptr<Tsil> protW0ZWW;
+    std::unique_ptr<Tsil> protW0Ztt;
+    std::unique_ptr<Tsil> protW0Z00;
+    std::unique_ptr<Tsil> prot0WW0W;
+    std::unique_ptr<Tsil> prot0Wt0t;
+    std::unique_ptr<Tsil> prot0W0Z0;
+    std::unique_ptr<Tsil> prot00Wt0;
+    std::unique_ptr<Tsil> prot00W00;
+    std::unique_ptr<Tsil> prot00ttZ;
+    std::unique_ptr<Tsil> prot00tt0;
+    std::unique_ptr<Tsil> prot0000Z;
+    std::unique_ptr<Tsil> prot00000;
+    std::unique_ptr<TsilSTU> protWH0H;
+    std::unique_ptr<TsilSTU> protWZ0Z;
+    std::unique_ptr<TsilSTU> protHW00;
   
-    TsilST* protos[24];
   public:
     WW()
     {
     }
 
-    WW(long double,long double,long double,long double,long double);
+    WW(double,double,double,double,double);
 
-    WW(OSinput, long double);
+    WW(OSinput, double);
 
     void init();
   
 
     // Pole -> MS
   
-    long double x10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+    double x10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
   
-    long double x11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+    double x11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
   
 
-    long double x20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+    double x20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
 
     // Yukawa
-    long double y10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+    double y10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
   
-    long double y11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+    double y11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
   
 
-    long double y20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+    double y20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
   };
 
@@ -107,55 +106,54 @@ namespace mr
   class WW<MS> : public BaseMass
   {
 
-    long double mmb, mmt, mmH, mmW, mmZ, mu2;
-    long double s, c;
+    double mmb, mmt, mmH, mmW, mmZ, mu2;
+    double s, c;
 
-    Tsil* protWHHWW;
-    Tsil* protWHZWW;
-    Tsil* protWZZWW;
-    Tsil* protWWHHH;
-    Tsil* protWWHZZ;
-    Tsil* protWWZZH;
-    Tsil* protWtZ00;
-    Tsil* protW0HWW;
-    Tsil* protW0Htt;
-    Tsil* protW0ZWW;
-    Tsil* protW0Ztt;
-    Tsil* protW0Z00;
-    Tsil* prot0WW0W;
-    Tsil* prot0Wt0t;
-    Tsil* prot0W0Z0;
-    Tsil* prot00Wt0;
-    Tsil* prot00W00;
-    Tsil* prot00ttZ;
-    Tsil* prot00tt0;
-    Tsil* prot0000Z;
-    Tsil* prot00000;
-    TsilSTU* protWH0H;
-    TsilSTU* protWZ0Z;
-    TsilSTU* protHW00;
-  
-    TsilST* protos[24];
+    std::unique_ptr<Tsil> protWHHWW;
+    std::unique_ptr<Tsil> protWHZWW;
+    std::unique_ptr<Tsil> protWZZWW;
+    std::unique_ptr<Tsil> protWWHHH;
+    std::unique_ptr<Tsil> protWWHZZ;
+    std::unique_ptr<Tsil> protWWZZH;
+    std::unique_ptr<Tsil> protWtZ00;
+    std::unique_ptr<Tsil> protW0HWW;
+    std::unique_ptr<Tsil> protW0Htt;
+    std::unique_ptr<Tsil> protW0ZWW;
+    std::unique_ptr<Tsil> protW0Ztt;
+    std::unique_ptr<Tsil> protW0Z00;
+    std::unique_ptr<Tsil> prot0WW0W;
+    std::unique_ptr<Tsil> prot0Wt0t;
+    std::unique_ptr<Tsil> prot0W0Z0;
+    std::unique_ptr<Tsil> prot00Wt0;
+    std::unique_ptr<Tsil> prot00W00;
+    std::unique_ptr<Tsil> prot00ttZ;
+    std::unique_ptr<Tsil> prot00tt0;
+    std::unique_ptr<Tsil> prot0000Z;
+    std::unique_ptr<Tsil> prot00000;
+    std::unique_ptr<TsilSTU> protWH0H;
+    std::unique_ptr<TsilSTU> protWZ0Z;
+    std::unique_ptr<TsilSTU> protHW00;
+
   public:
     WW()
     {
     }
 
-    WW(long double,long double,long double,long double,long double);
+    WW(double,double,double,double,double);
 
-    WW(MSinput, long double);
+    WW(MSinput, double);
 
     void init();
   
     // Pole -> MS
   
-    long double x10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+    double x10(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
   
-    long double x11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+    double x11(size_t nL = 2, size_t nH = 1, size_t boson = 1);
   
 
-    long double x20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
+    double x20(size_t nL = 2, size_t nH = 1, size_t boson = 1);
 
 
   };

@@ -1,11 +1,11 @@
 #include <bb.hpp>
 namespace mr
 {
-  long double bb<OS>::y01(size_t nL, size_t nH, size_t boson)
+  double bb<OS>::y01(size_t nL, size_t nH, size_t boson)
   {     
       
       
-    std::complex<long double> aryubb[5], yubbret;
+    std::complex<double> aryubb[5], yubbret;
 
     aryubb[1]=double(boson);
     aryubb[2]=Tsil::A(MMb,mu2);

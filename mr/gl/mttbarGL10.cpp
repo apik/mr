@@ -1,11 +1,11 @@
 #include <tt.hpp>
 namespace mr
 {
-  long double tt<OS>::xgl10(size_t nL, size_t nH, size_t boson)
+  double tt<OS>::xgl10(size_t nL, size_t nH, size_t boson)
   {     
       
       
-    std::complex<long double> armttbarGL[12], mttbarGLret;
+    std::complex<double> armttbarGL[12], mttbarGLret;
 
     armttbarGL[1]=double(boson);
     armttbarGL[2]=Tsil::B(MMH,MMt,MMt,mu2);

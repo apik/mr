@@ -1,11 +1,11 @@
 #include <alphaGF.hpp>
 namespace mr
 {
-  long double alphaGF::a20(size_t nL, size_t nH, size_t boson)
+  double alphaGF::a20(size_t nL, size_t nH, size_t boson)
   {     
       
       
-    std::complex<long double> aralphaGF[693], alphaGFret;
+    std::complex<double> aralphaGF[693], alphaGFret;
 
     aralphaGF[1]=double(nL + nH);
     aralphaGF[2]=pow(CW,-1);

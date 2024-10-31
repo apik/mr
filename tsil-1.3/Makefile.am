@@ -10,9 +10,9 @@ lib_LIBRARIES = libtsil.a
 # Uncomment one of these to choose the floating point data size (if
 # unset, LONG will be used):
 #
- TSIL_SIZE	= -DTSIL_SIZE_LONG    # long double/long double complex
+# TSIL_SIZE	= -DTSIL_SIZE_LONG    # long double/long double complex
 #
-# TSIL_SIZE	= -DTSIL_SIZE_DOUBLE  # double/double complex
+ TSIL_SIZE	= -DTSIL_SIZE_DOUBLE  # double/double complex
 #
 ########################## COMPILER ################################
 # Uncomment the choices appropriate for your computing environment.

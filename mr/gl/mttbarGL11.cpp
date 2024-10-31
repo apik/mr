@@ -1,11 +1,11 @@
 #include <tt.hpp>
 namespace mr
 {
-  long double tt<OS>::xgl11(size_t nL, size_t nH, size_t boson)
+  double tt<OS>::xgl11(size_t nL, size_t nH, size_t boson)
   {     
       
       
-    std::complex<long double> armttbarGL[30], mttbarGLret;
+    std::complex<double> armttbarGL[30], mttbarGLret;
 
     armttbarGL[1]=double(boson);
     armttbarGL[2]=pow(SW,-1);

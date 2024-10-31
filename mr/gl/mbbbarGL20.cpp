@@ -1,11 +1,11 @@
 #include <bb.hpp>
 namespace mr
 {
-  long double bb<OS>::xgl20(size_t nL, size_t nH, size_t boson)
+  double bb<OS>::xgl20(size_t nL, size_t nH, size_t boson)
   {     
       
       
-    std::complex<long double> armbbbarGL[29], mbbbarGLret;
+    std::complex<double> armbbbarGL[29], mbbbarGLret;
 
     armbbbarGL[1]=double(boson);
     armbbbarGL[2]=pow(SW,-1);

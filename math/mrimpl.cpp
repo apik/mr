@@ -813,12 +813,10 @@ void XtQCD(long double mb, long double mW, long double mZ, long double mH, long 
 
 
 // P2MS interface
-void ConstantsFromPoleMasses(long double Mb, long double MW, long double MZ, long double MH, long double Mt, long double mu, int ordEW, int ordMixed, int ordQCD) 
+void ConstantsFromPoleMasses(long double Mb, long double MW, long double MZ, long double MH, long double Mt, long double mu, long double asMZ, int ordEW, int ordMixed, int ordQCD) 
 {
   OSinput oi(Mb, MW, MZ, MH, Mt);
   
-  AlphaS as(oi);
-
   unsigned calc_ord = 0;
   if(ordEW >= 1)
     calc_ord |= order::x10;
@@ -837,8 +835,14 @@ void ConstantsFromPoleMasses(long double Mb, long double MW, long double MZ, lon
   if(ordQCD >= 4)
     calc_ord |= order::x04;
 
+  // One coupling running from mu=Mz with nf=5 to mu=Mt 
+  // and jump to nf=6 scheme
+  AlphaS asDec(oi,asMZ);
+  // as defined in nf=6 scheme to run from Mt to scale mu
+  AlphaS asnf6(oi.Mt(), asDec(oi.Mt()), 4, 6);
   
-  P2MS<AlphaGF> pMS(oi,pdg2014::Gf, as(mu), mu, calc_ord);
+  
+  P2MS<AlphaGF> pMS(oi,pdg2014::Gf, asnf6(mu), mu, calc_ord);
 
   bb<OS> bbm = get_bb(oi, pow(mu,2));
 

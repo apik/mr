@@ -1176,7 +1176,7 @@
 
 
 (* gamma[mphi] = gamma[mphi^2]/2 = beta[mphi]/mphi = 1/mphi*(dmphi/dt) *)
-(* t=Log[mu^2] *)
+(* t=Log[mu^2]                                                         *)
    gamma[mphi] = (
 
        + h * (
@@ -1396,6 +1396,203 @@
           + 63/800*a1^3*NG^2
           + 77/1200*a1^3*NG^2*NC
           + 847/64800*a1^3*NG^2*NC^2
+          ));
+
+(*   gamma[HH] = -(d Log[Zh]/dt)/2   *)
+(*   t=Log[mu^2]                     *)
+(*   Feynman gauge:                  *)
+(*                  xiW = 1          *)
+(*                  xiB = 1          *)
+
+   gamma[HH] = (
+
+       + h * (
+          + atau
+          + ab*NC
+          + at*NC
+          - 9/4*a2
+          + 3/4*a2*(1-xiW)
+          - 9/20*a1
+          + 3/20*a1*(1-xiB)
+          )
+
+       + h^2 * (
+          + 6*alam^2
+          - 9/4*atau^2
+          - 9/4*ab^2*NC
+          + 1/2*at*ab*NC
+          - 9/4*at^2*NC
+          + 5*as*ab*CF*NC
+          + 5*as*at*CF*NC
+          + 15/8*a2*atau
+          + 15/8*a2*ab*NC
+          + 15/8*a2*at*NC
+          - 511/32*a2^2
+          + 3*a2^2*(1-xiW)
+          + 3/8*a2^2*(1-xiW)^2
+          + 5/8*a2^2*NG
+          + 5/8*a2^2*NG*NC
+          + 15/8*a1*atau
+          + 5/24*a1*ab*NC
+          + 17/24*a1*at*NC
+          + 27/80*a1*a2
+          + 93/800*a1^2
+          + 9/40*a1^2*NG
+          + 11/120*a1^2*NG*NC
+          )
+
+       + h^3 * (
+          - 36*alam^3
+          - 45/2*atau*alam^2
+          + 15*atau^2*alam
+          + 71/16*atau^3
+          + 3*atau^3*Zeta[3]
+          - 45/2*ab*alam^2*NC
+          + 6*ab*atau^2*NC
+          + 15*ab^2*alam*NC
+          + 6*ab^2*atau*NC
+          - 25/16*ab^3*NC
+          + 6*ab^3*NC^2
+          + 3*ab^3*Zeta[3]*NC
+          - 45/2*at*alam^2*NC
+          + 6*at*atau^2*NC
+          - 1/2*at*ab*atau*NC
+          + 13/16*at*ab^2*NC
+          + 11/2*at*ab^2*NC^2
+          + 15*at^2*alam*NC
+          + 6*at^2*atau*NC
+          + 13/16*at^2*ab*NC
+          + 11/2*at^2*ab*NC^2
+          - 25/16*at^3*NC
+          + 6*at^3*NC^2
+          + 3*at^3*Zeta[3]*NC
+          + 15/8*as*ab^2*CF*NC
+          - 18*as*ab^2*CF*Zeta[3]*NC
+          + 57/4*as*at*ab*CF*NC
+          - 12*as*at*ab*CF*Zeta[3]*NC
+          + 15/8*as*at^2*CF*NC
+          - 18*as*at^2*CF*Zeta[3]*NC
+          - 16*as^2*ab*CF*TF*NG*NC
+          - 119/4*as^2*ab*CF^2*NC
+          + 36*as^2*ab*CF^2*Zeta[3]*NC
+          + 77/2*as^2*ab*CA*CF*NC
+          - 18*as^2*ab*CA*CF*Zeta[3]*NC
+          - 16*as^2*at*CF*TF*NG*NC
+          - 119/4*as^2*at*CF^2*NC
+          + 36*as^2*at*CF^2*Zeta[3]*NC
+          + 77/2*as^2*at*CA*CF*NC
+          - 18*as^2*at*CA*CF*Zeta[3]*NC
+          + 45*a2*alam^2
+          - 315/16*a2*atau^2
+          + 9*a2*atau^2*Zeta[3]
+          - 9/2*a2*ab*atau*NC
+          - 279/16*a2*ab^2*NC
+          - 9/4*a2*ab^2*NC^2
+          + 9*a2*ab^2*Zeta[3]*NC
+          - 9/2*a2*at*atau*NC
+          - 21/8*a2*at*ab*NC
+          - 9/2*a2*at*ab*NC^2
+          - 279/16*a2*at^2*NC
+          - 9/4*a2*at^2*NC^2
+          + 9*a2*at^2*Zeta[3]*NC
+          - 489/16*a2*as*ab*CF*NC
+          + 27*a2*as*ab*CF*Zeta[3]*NC
+          - 489/16*a2*as*at*CF*NC
+          + 27*a2*as*at*CF*Zeta[3]*NC
+          + 117/16*a2^2*alam
+          - 27/2*a2^2*alam*Zeta[3]
+          + 2433/128*a2^2*atau
+          - 63/4*a2^2*atau*Zeta[3]
+          - 21/32*a2^2*atau*NG
+          - 21/32*a2^2*atau*NG*NC
+          + 2433/128*a2^2*ab*NC
+          - 63/4*a2^2*ab*Zeta[3]*NC
+          - 21/32*a2^2*ab*NG*NC
+          - 21/32*a2^2*ab*NG*NC^2
+          + 2433/128*a2^2*at*NC
+          - 63/4*a2^2*at*Zeta[3]*NC
+          - 21/32*a2^2*at*NG*NC
+          - 21/32*a2^2*at*NG*NC^2
+          + 135/16*a2^2*as*CF*NG*NC
+          - 9*a2^2*as*CF*NG*Zeta[3]*NC
+          - 70519/576*a2^3
+          + 1521/64*a2^3*(1-xiW)
+          + 117/32*a2^3*(1-xiW)^2
+          + 15/16*a2^3*(1-xiW)^3
+          - 207/16*a2^3*Zeta[3]
+          + 9/8*a2^3*Zeta[3]*(1-xiW)^2
+          + 2381/288*a2^3*NG
+          - 51/32*a2^3*NG*(1-xiW)
+          + 2381/288*a2^3*NG*NC
+          - 51/32*a2^3*NG*NC*(1-xiW)
+          + 45/4*a2^3*NG*Zeta[3]
+          + 45/4*a2^3*NG*Zeta[3]*NC
+          + 35/144*a2^3*NG^2
+          + 35/72*a2^3*NG^2*NC
+          + 35/144*a2^3*NG^2*NC^2
+          + 9*a1*alam^2
+          - 27/16*a1*atau^2
+          - 27/5*a1*atau^2*Zeta[3]
+          - 9/10*a1*ab*atau*NC
+          - 303/80*a1*ab^2*NC
+          - 9/20*a1*ab^2*NC^2
+          + 9/5*a1*ab^2*Zeta[3]*NC
+          - 9/10*a1*at*atau*NC
+          - 31/40*a1*at*ab*NC
+          - 9/10*a1*at*ab*NC^2
+          + 8/5*a1*at*ab*Zeta[3]*NC
+          - 211/80*a1*at^2*NC
+          - 9/20*a1*at^2*NC^2
+          - 3/5*a1*at^2*Zeta[3]*NC
+          - 991/240*a1*as*ab*CF*NC
+          + 3*a1*as*ab*CF*Zeta[3]*NC
+          - 2419/240*a1*as*at*CF*NC
+          + 51/5*a1*as*at*CF*Zeta[3]*NC
+          + 117/40*a1*a2*alam
+          - 27/5*a1*a2*alam*Zeta[3]
+          - 1233/320*a1*a2*atau
+          + 54/5*a1*a2*atau*Zeta[3]
+          + 671/320*a1*a2*ab*NC
+          - 9/5*a1*a2*ab*Zeta[3]*NC
+          + 371/320*a1*a2*at*NC
+          + 27/10*a1*a2*at*Zeta[3]*NC
+          + 153/64*a1*a2^2
+          - 27/80*a1*a2^2*Zeta[3]
+          + 171/160*a1*a2^2*NG
+          - 9/160*a1*a2^2*NG*NC
+          - 27/20*a1*a2^2*NG*Zeta[3]
+          - 3/20*a1*a2^2*NG*Zeta[3]*NC
+          + 351/400*a1^2*alam
+          - 81/50*a1^2*alam*Zeta[3]
+          - 25551/3200*a1^2*atau
+          + 351/100*a1^2*atau*Zeta[3]
+          - 1053/800*a1^2*atau*NG
+          - 429/800*a1^2*atau*NG*NC
+          - 5479/28800*a1^2*ab*NC
+          - 29/100*a1^2*ab*Zeta[3]*NC
+          - 93/800*a1^2*ab*NG*NC
+          - 341/7200*a1^2*ab*NG*NC^2
+          - 52831/28800*a1^2*at*NC
+          + 1/100*a1^2*at*Zeta[3]*NC
+          - 381/800*a1^2*at*NG*NC
+          - 1397/7200*a1^2*at*NG*NC^2
+          + 99/80*a1^2*as*CF*NG*NC
+          - 33/25*a1^2*as*CF*NG*Zeta[3]*NC
+          + 837/800*a1^2*a2
+          + 81/400*a1^2*a2*Zeta[3]
+          + 81/200*a1^2*a2*NG
+          - 3/50*a1^2*a2*NG*NC
+          - 81/100*a1^2*a2*NG*Zeta[3]
+          - 9/100*a1^2*a2*NG*Zeta[3]*NC
+          + 413/2000*a1^3
+          - 81/2000*a1^3*Zeta[3]
+          + 1353/1000*a1^3*NG
+          + 2261/9000*a1^3*NG*NC
+          - 729/500*a1^3*NG*Zeta[3]
+          - 137/500*a1^3*NG*Zeta[3]*NC
+          + 63/400*a1^3*NG^2
+          + 77/600*a1^3*NG^2*NC
+          + 847/32400*a1^3*NG^2*NC^2
           ));
 
 

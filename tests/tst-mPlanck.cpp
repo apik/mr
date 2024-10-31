@@ -28,7 +28,7 @@ TEST_CASE
        3);
   
   
-  long double mmPlanck = pow(1.2209,2) * pow(10.,2*19); 
+  double mmPlanck = pow(1.2209,2) * pow(10.,2*19); 
   SMCouplings avMpl = av(mmPlanck);
   
   REQUIRE( (4.*Pi*sqrt(avMpl[couplings::g1])) == Approx( 0.6154 ).epsilon( 0.0001 ) );
@@ -70,7 +70,7 @@ TEST_CASE
        3);
   
   
-  long double mmPlanck = pow(1.2209,2) * pow(10.,2*19); 
+  double mmPlanck = pow(1.2209,2) * pow(10.,2*19); 
   SMCouplings avMpl = av(mmPlanck);
   
   REQUIRE( (4.*Pi*sqrt(avMpl[couplings::g1])) == Approx( 0.6133 ).epsilon( 0.0001 ) );

@@ -156,32 +156,32 @@ namespace mr
 
   };
 
-  typedef OSinputTemplate<long double> OSinput;
+  typedef OSinputTemplate<double> OSinput;
 
 
 
   class MSinput
   {
-    long double imb;
-    long double imW;
-    long double imZ;
-    long double imH;
-    long double imt;
+    double imb;
+    double imW;
+    double imZ;
+    double imH;
+    double imt;
     // only MS
-    long double iv;
-    long double ig;
-    long double igp;
+    double iv;
+    double ig;
+    double igp;
     // scale, usually coincide with pole masses
-    long double scale;
+    double scale;
 
     bool onlyMasses;
   public:
-    MSinput(long double mb_, long double mW_, long double mZ_, long double mH_, long double mt_) : 
+    MSinput(double mb_, double mW_, double mZ_, double mH_, double mt_) : 
       imb(mb_), imW(mW_), imZ(mZ_), imH(mH_), imt(mt_), onlyMasses(true)
     {
     }
     // With vev
-    MSinput(long double mb_, long double mW_, long double mZ_, long double mH_, long double mt_, long double v_, long double scale_) : 
+    MSinput(double mb_, double mW_, double mZ_, double mH_, double mt_, double v_, double scale_) : 
       imb(mb_), imW(mW_), imZ(mZ_), imH(mH_), imt(mt_), iv(v_), scale(scale_), onlyMasses(false)
     {
     }
@@ -208,43 +208,43 @@ namespace mr
     }
 
     // Factory to construct from running masses
-    static MSinput fromMasses(long double mb, long double mW, long double mZ, long double mH, long double mt)
+    static MSinput fromMasses(double mb, double mW, double mZ, double mH, double mt)
     {
       return MSinput(mb, mW, mZ, mH, mt);
     }
 
     // Factory to construct from running couplings
-    static MSinput fromCouplings(long double g1,     // U(1)  g1 = sqrt(5/3)*gp
-                                 long double g2,     // SU(2) g2 = g
-                                 long double yb, 
-                                 long double yt, 
-                                 long double lam, 
-                                 long double mphi,  //Higgs mass parameter
+    static MSinput fromCouplings(double g1,     // U(1)  g1 = sqrt(5/3)*gp
+                                 double g2,     // SU(2) g2 = g
+                                 double yb, 
+                                 double yt, 
+                                 double lam, 
+                                 double mphi,  //Higgs mass parameter
                                                     //normalized as mphi=Mh at
                                                     //tree level
-                                 long double scale) // Input scale
+                                 double scale) // Input scale
                                  
     {
       
-      long double vev = mphi/sqrt(2.*lam);
+      double vev = mphi/sqrt(2.*lam);
       
-      long double mb = vev*yb/sqrt(2);
-      long double mW = vev*g2/2.;
-      long double mZ = sqrt(g2*g2+g1*g1*3./5.)*vev/2.;
-      long double mH = mphi;
-      long double mt = vev*yt/sqrt(2);
+      double mb = vev*yb/sqrt(2);
+      double mW = vev*g2/2.;
+      double mZ = sqrt(g2*g2+g1*g1*3./5.)*vev/2.;
+      double mH = mphi;
+      double mt = vev*yt/sqrt(2);
       return MSinput(mb, mW, mZ, mH, mt, vev, scale);
     }
 
     // Scale mu^2
-    long double Q2() const
+    double Q2() const
     {
       if(! onlyMasses)
         return scale;
       else
         throw std::logic_error("ERROR: not availbale when constructed from masses");
     }
-    long double vev() const
+    double vev() const
     {
       if(! onlyMasses)
         return iv;
@@ -252,102 +252,102 @@ namespace mr
         throw std::logic_error("ERROR: not availbale when constructed from masses");
     }
     // constants 
-    long double g() const
+    double g() const
     {
       return 2.*imW/vev();
     }
-    long double gp() const
+    double gp() const
     {
       return 2.*sqrt(imZ*imZ-imW*imW)/vev();
     }
-    long double alpha() const
+    double alpha() const
     {
       return gp()*gp()*g()*g()/(gp()*gp()+g()*g())/4./Pi;
     }  
     // m^2
-    long double mmb() const
+    double mmb() const
     {
       return imb*imb;
     }
-    long double mmW() const
+    double mmW() const
     {
       return imW*imW;
     }
-    long double mmZ() const
+    double mmZ() const
     {
       return imZ*imZ;
     }
-    long double mmH() const
+    double mmH() const
     {
       return imH*imH;
     }
-    long double mmt() const
+    double mmt() const
     {
       return imt*imt;
     }
 
     // Weinberg trigonometric
-    long double cW() const
+    double cW() const
     {
       return imW/imZ;
     }
-    long double ccW() const
+    double ccW() const
     {
       return pow(imW/imZ,2);
     }
-    long double sW() const
+    double sW() const
     {
       return sqrt(1-ccW());
     }
-    long double ssW() const
+    double ssW() const
     {
       return 1-ccW();
     }
 
 
-    long double mb() const
+    double mb() const
     {
       return imb;
     }
-    long double mW() const
+    double mW() const
     {
       return imW;
     }
-    long double mZ() const
+    double mZ() const
     {
       return imZ;
     }
-    long double mH() const
+    double mH() const
     {
       return imH;
     }
-    long double mt() const
+    double mt() const
     {
       return imt;
     }
 
     // modification
-    MSinput& setmb(long double mb)
+    MSinput& setmb(double mb)
     {
       imb = mb;
       return *this;
     }
-    MSinput& setmW(long double mW)
+    MSinput& setmW(double mW)
     {
       imW = mW;
       return *this;
     }
-    MSinput& setmZ(long double mZ)
+    MSinput& setmZ(double mZ)
     {
       imZ = mZ;
       return *this;
     }
-    MSinput& setmH(long double mH)
+    MSinput& setmH(double mH)
     {
       imH = mH;
       return *this;
     }
-    MSinput& setmt(long double mt)
+    MSinput& setmt(double mt)
     {
       imt = mt;
       return *this;

@@ -24,7 +24,7 @@
 
 namespace mr
 {
-  dr<OS>::dr(OSinput sm, long double mu2_)
+  dr<OS>::dr(OSinput sm, double mu2_)
   {
     MMb = sm.MMb();
     MMW = sm.MMW();
@@ -45,7 +45,7 @@ namespace mr
  
   }
 
-  dr<MS>::dr(MSinput sm, long double mu2_)
+  dr<MS>::dr(MSinput sm, double mu2_)
   {
     mmb = sm.mmb();
     mmW = sm.mmW();

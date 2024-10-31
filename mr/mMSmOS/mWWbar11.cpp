@@ -1,11 +1,11 @@
 #include <WW.hpp>
 namespace mr
 {
-  long double WW<OS>::x11(size_t nL, size_t nH, size_t boson)
+  double WW<OS>::x11(size_t nL, size_t nH, size_t boson)
   {     
       
       
-    std::complex<long double> armWWbar[21], mWWbarret;
+    std::complex<double> armWWbar[21], mWWbarret;
 
     armWWbar[1]=double(nH);
     armWWbar[2]=pow(CW,-1);
